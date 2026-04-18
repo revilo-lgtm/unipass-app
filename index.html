@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniPass - Học trúng đích, Thi qua môn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4F46E5; /* Indigo */
+            --primary-light: #818CF8;
+            --secondary: #EC4899; /* Pink */
+            --bg-color: #F8FAFC;
+            --surface: #FFFFFF;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
+            --grad-ueh: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+            --grad-ftu: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 100%);
+            --grad-bk: linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%);
+            --grad-neu: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%);
+            --grad-hcmus: linear-gradient(135deg, #10B981 0%, #06B6D4 100%);
+            --grad-tdtu: linear-gradient(135deg, #F97316 0%, #F43F5E 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--surface);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- Navbar --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span { color: var(--secondary); }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        /* --- Buttons --- */
+        .btn {
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-gradient {
+            background: var(--gradient);
+            color: white;
+            box-shadow: 0 10px 20px -10px rgba(79, 70, 229, 0.5);
+        }
+
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px -10px rgba(79, 70, 229, 0.6);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-main);
+            border: 2px solid #E2E8F0;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 180px 0 100px;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(circle at 50% -20%, #E0E7FF 0%, var(--surface) 60%);
+        }
+
+        .badge-new {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(79, 70, 229, 0.1);
+            color: var(--primary);
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            border: 1px solid rgba(79, 70, 229, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            line-height: 1.2;
+            font-weight: 800;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 .text-gradient {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        /* --- Section Headers --- */
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 18px;
+        }
+
+        /* --- Features Section --- */
+        .features {
+            padding: 100px 0;
+            background: var(--surface);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .feature-card {
+            background: var(--surface);
+            border: 1px solid #F1F5F9;
+            padding: 40px 32px;
+            border-radius: 24px;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+            border-color: var(--primary-light);
+        }
+
+        .icon-box {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 24px;
+        }
+
+        .icon-box.purple { background: #EEF2FF; color: var(--primary); }
+        .icon-box.pink { background: #FDF2F8; color: var(--secondary); }
+        .icon-box.blue { background: #F0F9FF; color: #0284C7; }
+
+        .feature-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+        .feature-card p { color: var(--text-muted); line-height: 1.6; }
+
+        /* --- Courses Section (New) --- */
+        .courses {
+            padding: 100px 0;
+            background: var(--bg-color); /* Light gray to separate sections */
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .course-card {
+            background: var(--surface);
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid #F1F5F9;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+        }
+
+        .course-thumb {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            color: rgba(255,255,255,0.9);
+            position: relative;
+        }
+        
+        .course-thumb.ueh { background: var(--grad-ueh); }
+        .course-thumb.ftu { background: var(--grad-ftu); }
+        .course-thumb.bk { background: var(--grad-bk); }
+        .course-thumb.neu { background: var(--grad-neu); }
+        .course-thumb.hcmus { background: var(--grad-hcmus); }
+        .course-thumb.tdtu { background: var(--grad-tdtu); }
+
+        .course-info {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .uni-badge {
+            font-size: 12px;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            display: inline-block;
+            width: fit-content;
+            letter-spacing: 0.5px;
+        }
+
+        .uni-badge.ueh { background: #EEF2FF; color: #4F46E5; }
+        .uni-badge.ftu { background: #FDF2F8; color: #EC4899; }
+        .uni-badge.bk { background: #F0F9FF; color: #0284C7; }
+        .uni-badge.neu { background: #FFF7ED; color: #B45309; }
+        .uni-badge.hcmus { background: #ECFDF5; color: #047857; }
+        .uni-badge.tdtu { background: #FFF1F2; color: #BE123C; }
+
+        .course-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .course-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid #F1F5F9;
+        }
+
+        .course-meta span {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .course-info .btn {
+            width: 100%;
+            text-align: center;
+            margin-top: 16px;
+            padding: 10px;
+        }
+
+        /* --- Pricing Section --- */
+        .pricing {
+            padding: 100px 0;
+            background: var(--surface);
+        }
+
+        .pricing-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .pricing-card {
+            background: var(--surface);
+            border-radius: 24px;
+            padding: 48px 40px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+            border: 1px solid #F1F5F9;
+        }
+
+        .pricing-card.premium {
+            border: 2px solid var(--primary);
+            transform: scale(1.05);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(236, 72, 153, 0.3);
+        }
+
+        .pricing-card h3 { font-size: 20px; color: var(--text-muted); margin-bottom: 16px; }
+        .price { font-size: 48px; font-weight: 800; color: var(--text-main); margin-bottom: 32px; }
+        .price span { font-size: 18px; font-weight: 500; color: var(--text-muted); }
+
+        .features-list { list-style: none; margin-bottom: 40px; }
+        .features-list li { margin-bottom: 16px; display: flex; align-items: center; color: var(--text-main); font-weight: 500; }
+        .features-list li i { color: #10B981; margin-right: 12px; font-size: 18px; }
+
+        .pricing-card .btn { width: 100%; text-align: center; }
+
+        /* --- Footer --- */
+        footer {
+            background: #0F172A;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-content .logo { color: white; }
+        .copyright { text-align: center; color: #94A3B8; font-size: 14px; }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 40px; }
+            .nav-links { display: none; }
+            .hero-actions { flex-direction: column; }
+            .pricing-card.premium { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <nav class="container">
+            <a href="#" class="logo">Uni<span>Pass</span></a>
+            <ul class="nav-links">
+                <li><a href="#features">Giải pháp</a></li>
+                <li><a href="#courses">Khóa học</a></li>
+                <li><a href="#pricing">Gói cước</a></li>
+            </ul>
+            <a href="#pricing" class="btn btn-gradient">Tham gia ngay</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="badge-new">✨ Phiên bản Beta 1.0</div>
+            <h1>Học trúng đích – <br> <span class="text-gradient">Thi qua môn dễ dàng</span></h1>
+            <p>Khác biệt hoàn toàn với các nền tảng đại trà. UniPass được "may đo" bằng AI RAG theo đúng giáo trình, slide và phong cách ra đề của từng giảng viên tại trường Đại học của bạn.</p>
+            <div class="hero-actions">
+                <a href="#courses" class="btn btn-gradient">Xem lộ trình ôn tập</a>
+                <a href="#features" class="btn btn-outline">Khám phá công nghệ</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Vũ khí đắc lực cho kỳ thi</h2>
+                <p>Khắc phục hội chứng "học mông lung" với công nghệ AI tiên tiến</p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card reveal">
+                    <div class="icon-box purple"><i class="fa-solid fa-location-dot"></i></div>
+                    <h3>Siêu địa phương hóa</h3>
+                    <p>Dữ liệu được nội địa hóa 100%. Chatbot AI chỉ truy xuất từ kho giáo trình chính thống được thẩm định bởi đội ngũ Học thuật, loại bỏ hoàn toàn rủi ro "ảo giác AI".</p>
+                </div>
+
+                <div class="course-card reveal">
+                    <div class="course-thumb neu">
+                        <i class="fa-solid fa-landmark"></i>
+                    </div>
+                    <div class="course-info">
+                        <span class="uni-badge neu">ĐH Kinh tế Quốc dân (NEU)</span>
+                        <h3>Kinh tế Vĩ mô</h3>
+                        <p>Ôn tập trọng tâm IS-LM, lạm phát và thất nghiệp; bao gồm bài tập phân tích cân bằng tổng thể và bộ đề minh họa.</p>
+                        <div class="course-meta">
+                            <span><i class="fa-solid fa-file-lines"></i> 18 Bộ đề</span>
+                            <span><i class="fa-solid fa-users"></i> 1.4k SV</span>
+                        </div>
+                        <a href="course-neu.html" class="btn btn-outline">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <div class="course-card reveal">
+                    <div class="course-thumb hcmus">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <div class="course-info">
+                        <span class="uni-badge hcmus">Trường Đại học Khoa học Tự nhiên (HCMUS)</span>
+                        <h3>Cấu trúc dữ liệu và Giải thuật</h3>
+                        <p>Hệ thống bài tập và hướng dẫn bằng C++: Danh sách, Cây, Đồ thị và các phương pháp thuật toán chuẩn.</p>
+                        <div class="course-meta">
+                            <span><i class="fa-solid fa-file-lines"></i> 20 Bộ đề</span>
+                            <span><i class="fa-solid fa-users"></i> 1.8k SV</span>
+                        </div>
+                        <a href="course-hcmus.html" class="btn btn-outline">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <div class="course-card reveal">
+                    <div class="course-thumb tdtu">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <div class="course-info">
+                        <span class="uni-badge tdtu">Đại học Tôn Đức Thắng (TDTU)</span>
+                        <h3>Marketing căn bản</h3>
+                        <p>Giới thiệu 4P, phân tích SWOT và các case study địa phương phù hợp với thị trường Việt Nam.</p>
+                        <div class="course-meta">
+                            <span><i class="fa-solid fa-file-lines"></i> 10 Bộ đề</span>
+                            <span><i class="fa-solid fa-users"></i> 760 SV</span>
+                        </div>
+                        <a href="course-tdtu.html" class="btn btn-outline">Xem chi tiết</a>
+                    </div>
+                </div>
+                
+                <div class="feature-card reveal">
+                    <div class="icon-box pink"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h3>AI Gap Analysis</h3>
+                    <p>Hệ thống mô phỏng bài thi thực chiến, phân tích điểm yếu và tự động thiết kế lộ trình ôn tập cấp tốc (Last-minute study) hiệu quả nhất cho từng cá nhân.</p>
+                </div>
+                
+                <div class="feature-card reveal">
+                    <div class="icon-box blue"><i class="fa-solid fa-radar"></i></div>
+                    <h3>Exam Radar & Study Group</h3>
+                    <p>Dự báo cấu trúc đề dựa trên dữ liệu lịch sử. Kết nối phòng học ảo thông minh để sinh viên thảo luận và nhờ AI giải đáp bài tập thời gian thực.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="courses" id="courses">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Lộ trình ôn tập siêu tốc</h2>
+                <p>Các môn học đang được "giải cứu" nhiều nhất tuần qua, sát 100% đề thi thực tế</p>
+            </div>
+
+            <div class="course-grid">
+                <div class="course-card reveal">
+                    <div class="course-thumb ueh">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <div class="course-info">
+                        <span class="uni-badge ueh">ĐH Kinh tế TP.HCM (UEH)</span>
+                        <h3>Hành vi người tiêu dùng</h3>
+                        <p>Nắm trọn các framework phân tích hành vi, giải quyết bài tập case study thực tế và bộ đề thi tự luận qua các năm.</p>
+                        <div class="course-meta">
+                            <span><i class="fa-solid fa-file-lines"></i> 12 Bộ đề</span>
+                            <span><i class="fa-solid fa-users"></i> 1.2k SV</span>
+                        </div>
+                        <a href="course-ueh.html" class="btn btn-outline">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <div class="course-card reveal">
+                    <div class="course-thumb bk">
+                        <i class="fa-solid fa-square-root-variable"></i>
+                    </div>
+                    <div class="course-info">
+                        <span class="uni-badge bk">ĐH Bách Khoa (HCMUT)</span>
+                        <h3>Đại số tuyến tính & Giải tích</h3>
+                        <p>Lộ trình luyện thi cấp tốc môn Toán cao cấp. Hệ thống bài tập trắc nghiệm và tự luận có hướng dẫn giải chi tiết bằng AI.</p>
+                        <div class="course-meta">
+                            <span><i class="fa-solid fa-file-lines"></i> 24 Bộ đề</span>
+                            <span><i class="fa-solid fa-users"></i> 2.5k SV</span>
+                        </div>
+                        <a href="course-bk.html" class="btn btn-outline">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <div class="course-card reveal">
+                    <div class="course-thumb ftu">
+                        <i class="fa-solid fa-earth-americas"></i>
+                    </div>
+                    <div class="course-info">
+                        <span class="uni-badge ftu">ĐH Ngoại thương (FTU)</span>
+                        <h3>Kinh tế Vi mô</h3>
+                        <p>Tóm tắt lý thuyết trọng tâm, công thức tính toán và chữa đề thi cuối kỳ chi tiết bám sát giáo trình nội bộ của trường.</p>
+                        <div class="course-meta">
+                            <span><i class="fa-solid fa-file-lines"></i> 15 Bộ đề</span>
+                            <span><i class="fa-solid fa-users"></i> 950 SV</span>
+                        </div>
+                        <a href="course-ftu.html" class="btn btn-outline">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Đầu tư thông minh cho GPA</h2>
+                <p>Mô hình Subscription tiết kiệm hơn 80% chi phí mua tài liệu lẻ</p>
+            </div>
+
+            <div class="pricing-wrapper">
+                <div class="pricing-card reveal">
+                    <h3>Gói Học Kỳ</h3>
+                    <div class="price">199.000đ <span>/ kỳ</span></div>
+                    <ul class="features-list">
+                        <li><i class="fa-solid fa-check"></i> Truy cập toàn bộ tài liệu theo trường</li>
+                        <li><i class="fa-solid fa-check"></i> 100 lượt hỏi Chatbot AI RAG / tháng</li>
+                        <li><i class="fa-solid fa-check"></i> Thi thử mô phỏng đề thi thực tế</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">Đăng ký ngay</a>
+                </div>
+
+                <div class="pricing-card premium reveal">
+                    <div class="popular-badge">Được Gen Z ưa chuộng</div>
+                    <h3>Gói Cả Năm</h3>
+                    <div class="price">349.000đ <span>/ năm</span></div>
+                    <ul class="features-list">
+                        <li><i class="fa-solid fa-check"></i> Toàn quyền truy cập mọi môn học</li>
+                        <li><i class="fa-solid fa-check"></i> <b>Không giới hạn</b> hỏi AI RAG</li>
+                        <li><i class="fa-solid fa-check"></i> Mở khóa tính năng Exam Radar</li>
+                        <li><i class="fa-solid fa-check"></i> Tham gia Study Group AI</li>
+                    </ul>
+                    <a href="#" class="btn btn-gradient">Đăng ký trọn gói</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="logo">Uni<span>Pass</span></a>
+                <p>Nền tảng EdTech "Cá nhân hóa" dành cho Sinh viên Đại học.</p>
+            </div>
+            <div class="copyright">
+                &copy; 2026 UniPass Project. Bảo lưu mọi quyền.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.05)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
+
+        const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+                observer.unobserve(entry.target);
+            });
+        }, revealOptions);
+
+        revealElements.forEach(el => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(30px)";
+            el.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
+            revealOnScroll.observe(el);
+        });
+    </script>
+</body>
+</html>

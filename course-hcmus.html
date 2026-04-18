@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCMUS — Cấu trúc dữ liệu & Giải thuật | UniPass</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root{--primary:#4F46E5;--surface:#fff;--text-main:#0F172A;--grad-hcmus: linear-gradient(135deg, #10B981 0%, #06B6D4 100%)}
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Plus Jakarta Sans',sans-serif}
+        body{background:var(--surface);color:var(--text-main)}
+        .container{max-width:1100px;margin:0 auto;padding:0 20px}
+        header{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.95);backdrop-filter:blur(6px);z-index:1000;border-bottom:1px solid rgba(0,0,0,0.05)}
+        .course-thumb{width:140px;height:140px;border-radius:18px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:48px}
+        .course-thumb.hcmus{background:var(--grad-hcmus)}
+        .uni-badge.hcmus{background:#ECFDF5;color:#047857}
+        .hero{padding:140px 0 60px}
+        .syllabus{margin-top:40px}
+        .chapter{background:#fff;border:1px solid #F1F5F9;padding:18px;border-radius:12px;margin-bottom:12px}
+        footer{background:#0F172A;color:#fff;padding:40px 0 20px;margin-top:60px}
+    </style>
+</head>
+<body>
+    <header id="header"><nav class="container"><a href="index.html" class="logo">Uni<span>Pass</span></a><a href="index.html#pricing" class="btn">Tham gia ngay</a></nav></header>
+    <main class="container" style="padding-top:120px;">
+        <section class="hero">
+            <div style="display:flex;gap:24px;align-items:center;">
+                <div class="course-thumb hcmus"><i class="fa-solid fa-code"></i></div>
+                <div>
+                    <span class="uni-badge hcmus">ĐH Khoa học Tự nhiên (HCMUS)</span>
+                    <h1>Cấu trúc dữ liệu và Giải thuật — Lộ trình ôn tập</h1>
+                    <p style="color:var(--text-muted)">Tập trung C++, cấu trúc cây, đồ thị và thuật toán quan trọng cho kỳ thi.</p>
+                    <div style="margin-top:12px;"><a href="#syllabus" class="btn">Xem lộ trình</a> <a href="#" class="btn btn-gradient">Đăng ký Premium</a></div>
+                </div>
+            </div>
+            <div class="syllabus" id="syllabus">
+                <div class="chapter"><h4>Chương 1: Cấu trúc tuyến tính</h4><ul style="list-style:none;padding-left:0;margin-top:8px;color:var(--text-muted)"><li>Danh sách liên kết</li><li>Ngăn xếp & Hàng đợi</li><li>Ứng dụng</li></ul></div>
+                <div class="chapter"><h4>Chương 2: Cây</h4><ul style="list-style:none;padding-left:0;margin-top:8px;color:var(--text-muted)"><li>Cây nhị phân</li><li>Cây tìm kiếm</li><li>Thuật toán duyệt</li></ul></div>
+                <div class="chapter"><h4>Chương 3: Đồ thị & Thuật toán</h4><ul style="list-style:none;padding-left:0;margin-top:8px;color:var(--text-muted)"><li>DFS/BFS</li><li>Dijkstra</li><li>Minimum Spanning Tree</li></ul></div>
+                <div class="chapter"><h4>Chương 4: Bộ đề luyện tập</h4><ul style="list-style:none;padding-left:0;margin-top:8px;color:var(--text-muted)"><li>Bộ đề 1</li><li>Bộ đề 2</li><li>Bộ đề 3</li></ul></div>
+            </div>
+        </section>
+    </main>
+    <footer><div class="container"><div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.08)"><a href="index.html" class="logo">Uni<span>Pass</span></a><p style="color:#94A3B8">Nền tảng EdTech "Cá nhân hóa" dành cho Sinh viên Đại học.</p></div><div style="text-align:center;color:#94A3B8;margin-top:12px">&copy; 2026 UniPass Project. Bảo lưu mọi quyền.</div></div></footer>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FTU — Kinh tế Vi mô | UniPass</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root{ --primary:#4F46E5; --surface:#fff; --text-main:#0F172A; --grad-ftu: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 100%); }
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Plus Jakarta Sans',sans-serif}
+        body{background:var(--surface);color:var(--text-main)}
+        .container{max-width:1100px;margin:0 auto;padding:0 20px}
+        header{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.95);backdrop-filter:blur(6px);z-index:1000;border-bottom:1px solid rgba(0,0,0,0.05)}
+        .course-thumb{width:140px;height:140px;border-radius:18px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:48px}
+        .course-thumb.ftu{background:var(--grad-ftu)}
+        .uni-badge.ftu{background:#FDF2F8;color:#EC4899}
+        .hero{padding:140px 0 60px}
+        .syllabus{margin-top:40px}
+        .chapter{background:#fff;border:1px solid #F1F5F9;padding:18px;border-radius:12px;margin-bottom:12px}
+        footer{background:#0F172A;color:#fff;padding:40px 0 20px;margin-top:60px}
+    </style>
+</head>
+<body>
+    <header id="header"><nav class="container"><a href="index.html" class="logo">Uni<span>Pass</span></a><a href="index.html#pricing" class="btn">Tham gia ngay</a></nav></header>
+    <main class="container" style="padding-top:120px;">
+        <section class="hero">
+            <div style="display:flex;gap:24px;align-items:center;">
+                <div class="course-thumb ftu"><i class="fa-solid fa-earth-americas"></i></div>
+                <div>
+                    <span class="uni-badge ftu">ĐH Ngoại thương (FTU)</span>
+                    <h1>Kinh tế Vi mô — Lộ trình ôn tập</h1>
+                    <p style="color:var(--text-muted)">Tóm tắt lý thuyết trọng tâm và chữa đề sát giáo trình nội bộ.</p>
+                    <div style="margin-top:12px;"><a href="#syllabus" class="btn">Xem lộ trình</a></div>
+                </div>
+            </div>
+            <div class="syllabus" id="syllabus">
+                <div class="chapter"><h4>Chương 1: Cầu - cung</h4><ul style="list-style:none;padding-left:0;margin-top:8px;color:var(--text-muted)"><li>Bài 1.1: Cân bằng thị trường</li><li>Bài 1.2: Ảnh hưởng giá</li><li>Bài 1.3: Bài tập minh họa</li></ul></div>
+                <div class="chapter"><h4>Chương 2: Lý thuyết doanh nghiệp</h4><ul style="list-style:none;padding-left:0;margin-top:8px;color:var(--text-muted)"><li>Sản xuất và chi phí</li><li>Đầu tư và lợi nhuận</li><li>Bài tập tổng hợp</li></ul></div>
+                <div class="chapter"><h4>Chương 3: Thị trường cạnh tranh</h4><ul style="list-style:none;padding-left:0;margin-top:8px;color:var(--text-muted)"><li>Đặc điểm thị trường</li><li>Giá và khuyến mãi</li><li>Ứng dụng bài tập</li></ul></div>
+                <div class="chapter"><h4>Chương 4: Bộ đề luyện tập</h4><ul style="list-style:none;padding-left:0;margin-top:8px;color:var(--text-muted)"><li>Bộ đề 1</li><li>Bộ đề 2</li><li>Bộ đề 3</li></ul></div>
+            </div>
+        </section>
+    </main>
+    <footer><div class="container"><div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.08)"><a href="index.html" class="logo">Uni<span>Pass</span></a><p style="color:#94A3B8">Nền tảng EdTech "Cá nhân hóa" dành cho Sinh viên Đại học.</p></div><div style="text-align:center;color:#94A3B8;margin-top:12px">&copy; 2026 UniPass Project. Bảo lưu mọi quyền.</div></div></footer>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCMUT — Đại số tuyến tính | UniPass</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Basic styles copied from index for consistency */
+        :root{ --primary:#4F46E5; --surface:#FFFFFF; --text-main:#0F172A; --text-muted:#64748B; --grad-bk: linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%); }
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Plus Jakarta Sans',sans-serif}
+        body{background:var(--surface);color:var(--text-main)}
+        .container{max-width:1100px;margin:0 auto;padding:0 20px}
+        header{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.95);backdrop-filter:blur(6px);z-index:1000;border-bottom:1px solid rgba(0,0,0,0.05)}
+        nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+        .logo{font-size:24px;font-weight:800;color:var(--primary);text-decoration:none}
+        .btn{padding:10px 20px;border-radius:999px;text-decoration:none;font-weight:600}
+        .course-thumb{width:140px;height:140px;border-radius:18px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:48px}
+        .course-thumb.bk{background:var(--grad-bk)}
+        .uni-badge{display:inline-block;padding:6px 12px;border-radius:18px;font-weight:700;margin-bottom:12px}
+        .uni-badge.bk{background:#F0F9FF;color:#0284C7}
+        .hero{padding:140px 0 60px}
+        .syllabus{margin-top:40px}
+        .chapter{background:#fff;border:1px solid #F1F5F9;padding:18px;border-radius:12px;margin-bottom:12px}
+        footer{background:#0F172A;color:#fff;padding:40px 0 20px;margin-top:60px}
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav class="container">
+            <a href="index.html" class="logo">Uni<span>Pass</span></a>
+            <a href="index.html#pricing" class="btn">Tham gia ngay</a>
+        </nav>
+    </header>
+
+    <main class="container" style="padding-top:120px;">
+        <section class="hero">
+            <div style="display:flex;gap:24px;align-items:center;">
+                <div class="course-thumb bk"><i class="fa-solid fa-square-root-variable"></i></div>
+                <div>
+                    <span class="uni-badge bk">ĐH Bách Khoa (HCMUT)</span>
+                    <h1>Đại số tuyến tính & Giải tích — Lộ trình ôn tập</h1>
+                    <p style="color:var(--text-muted)">Tập trung tối ưu các dạng bài thường gặp theo giáo trình trường và bộ đề tương tự đề thi.</p>
+                    <div style="margin-top:12px;"><a href="#syllabus" class="btn">Xem lộ trình</a></div>
+                </div>
+            </div>
+
+            <div class="syllabus" id="syllabus">
+                <div class="chapter"><h4>Chương 1: Ma trận và Hệ phương trình</h4><ul style="list-style:none;padding-left:0;margin-top:8px;color:var(--text-muted)"><li>Bài 1.1: Phép biến đổi sơ cấp</li><li>Bài 1.2: Định thức và Ứng dụng</li><li>Bài 1.3: Bài tập tuyển chọn</li></ul></div>
+                <div class="chapter"><h4>Chương 2: Không gian véc tơ</h4><ul style="list-style:none;padding-left:0;margin-top:8px;color:var(--text-muted)"><li>Bài 2.1: Không gian con</li><li>Bài 2.2: Cơ sở và hạng</li><li>Bài 2.3: Ứng dụng vào giải tích</li></ul></div>
+                <div class="chapter"><h4>Chương 3: Ứng dụng trong giải tích</h4><ul style="list-style:none;padding-left:0;margin-top:8px;color:var(--text-muted)"><li>Bài 3.1: Đa thức và đạo hàm</li><li>Bài 3.2: Giải tích đa biến</li><li>Bài 3.3: Bài tập tổng hợp</li></ul></div>
+                <div class="chapter"><h4>Chương 4: Bộ đề luyện tập</h4><ul style="list-style:none;padding-left:0;margin-top:8px;color:var(--text-muted)"><li>Bộ đề 1</li><li>Bộ đề 2</li><li>Bộ đề 3</li></ul></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.08)"><a href="index.html" class="logo">Uni<span>Pass</span></a><p style="color:#94A3B8">Nền tảng EdTech "Cá nhân hóa" dành cho Sinh viên Đại học.</p></div>
+            <div style="text-align:center;color:#94A3B8;margin-top:12px">&copy; 2026 UniPass Project. Bảo lưu mọi quyền.</div>
+        </div>
+    </footer>
+</body>
+</html>
