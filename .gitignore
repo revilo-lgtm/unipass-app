@@ -1,0 +1,8 @@
+node_modules/
+unipass.db
+unipass.db-shm
+unipass.db-wal
+uploads/
+.env
+.DS_Store
+*.log

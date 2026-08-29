@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch sử Giao dịch - Admin UniPass</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="admin-shared.css">
+    <style>
+        /* HỆ THỐNG BIẾN MÀU SẮC CHUNG */
+        :root {
+            --primary: #4F46E5;
+            --primary-light: #818CF8;
+            --secondary: #EC4899;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
+            
+            --bg-color: #F1F5F9; 
+            --surface: #FFFFFF;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0F172A;       
+            --surface: #1E293B;        
+            --text-main: #F8FAFC;      
+            --text-muted: #94A3B8;     
+            --border-color: #334155;   
+            --header-bg: rgba(30, 41, 59, 0.95);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); overflow-x: hidden; transition: 0.3s; }
+        
+        /* --- Navbar --- */
+        header { position: fixed; top: 0; width: 100%; background: var(--header-bg); border-bottom: 1px solid var(--border-color); z-index: 1000; height: 70px; display: flex; align-items: center; }
+        .header-container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; min-width: 0; }
+        .logo { font-size: 24px; font-weight: 800; color: var(--text-main); text-decoration: none; }
+        .logo span { color: var(--primary); }
+        .nav-right { display: flex; align-items: center; gap: 20px; min-width: 0; }
+        
+        .theme-toggle { background: transparent; border: 1px solid var(--border-color); color: var(--text-main); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        .theme-toggle:hover { background: var(--surface); color: var(--primary); border-color: var(--primary); }
+        
+        .admin-profile { display: flex; align-items: center; gap: 10px; padding: 6px 12px; border-radius: 50px; border: 1px solid var(--primary); background: rgba(79, 70, 229, 0.05); }
+        .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--text-main); display: flex; align-items: center; justify-content: center; color: var(--surface); font-size: 14px; }
+        .admin-name { font-weight: 700; font-size: 14px; color: var(--primary); }
+
+        /* --- Dashboard Layout --- */
+        .dashboard-wrapper { display: flex; max-width: 1400px; margin: 70px auto 0; min-height: calc(100vh - 70px); }
+        
+        /* Sidebar */
+        .sidebar { width: 260px; background: var(--surface); border-right: 1px solid var(--border-color); padding: 24px 0; position: fixed; height: calc(100vh - 70px); overflow-y: auto; }
+        .nav-menu { list-style: none; padding: 0 16px; }
+        .nav-menu li { margin-bottom: 8px; }
+        .nav-menu a { display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: var(--text-muted); text-decoration: none; font-weight: 600; border-radius: 12px; transition: 0.2s; }
+        .nav-menu a i { font-size: 18px; width: 24px; text-align: center; }
+        .nav-menu a:hover { background: var(--bg-color); color: var(--primary); }
+        .nav-menu a.active { background: var(--primary); color: white; box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3); }
+
+        /* Main Content */
+        .main-content { flex: 1; min-width: 0; padding: 32px 40px; margin-left: 260px; }
+        
+        .page-header { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 24px; }
+        .page-header h1 { font-size: 28px; font-weight: 800; color: var(--text-main); margin-bottom: 8px; }
+        .page-header p { color: var(--text-muted); font-size: 15px; }
+        .export-btn { padding: 10px 20px; background: var(--surface); border: 1px solid var(--border-color); color: var(--text-main); font-weight: 600; border-radius: 10px; cursor: pointer; transition: 0.2s; display: flex; align-items: center; gap: 8px; }
+        .export-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+        /* Mini KPIs */
+        .kpi-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 24px; }
+        .kpi-mini { background: var(--surface); border: 1px solid var(--border-color); padding: 20px; border-radius: 16px; display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm); }
+        .kpi-info h3 { font-size: 13px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 8px; }
+        .kpi-info p { font-size: 24px; font-weight: 800; color: var(--text-main); }
+        .kpi-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+        .kpi-icon.green { background: rgba(16, 185, 129, 0.1); color: var(--success); }
+        .kpi-icon.blue { background: rgba(56, 189, 248, 0.1); color: #0284C7; }
+        .kpi-icon.orange { background: rgba(245, 158, 11, 0.1); color: var(--warning); }
+
+        /* Filter Bar */
+        .filter-bar { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; background: var(--surface); padding: 16px; border-radius: 16px; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); }
+        .search-box { flex: 1 1 280px; min-width: 0; position: relative; }
+        .search-box i { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+        .search-box input { width: 100%; padding: 10px 10px 10px 40px; border: 1px solid var(--border-color); border-radius: 10px; background: var(--bg-color); color: var(--text-main); outline: none; transition: 0.2s; }
+        .search-box input:focus { border-color: var(--primary); }
+        .filter-select { flex: 0 1 220px; min-width: 0; padding: 10px 16px; border: 1px solid var(--border-color); border-radius: 10px; background: var(--bg-color); color: var(--text-main); outline: none; cursor: pointer; }
+
+        /* Table Area */
+        .table-container { width: 100%; max-width: 100%; background: var(--surface); border-radius: 16px; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); overflow-x: auto; }
+        table { width: 100%; min-width: 900px; border-collapse: collapse; text-align: left; }
+        thead { background: var(--bg-color); border-bottom: 1px solid var(--border-color); }
+        th { padding: 16px 24px; font-size: 13px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+        td { padding: 16px 24px; border-bottom: 1px solid var(--border-color); color: var(--text-main); font-size: 14px; vertical-align: middle; }
+        tbody tr:hover { background: rgba(79, 70, 229, 0.02); }
+        tbody tr:last-child td { border-bottom: none; }
+
+        .txn-id { font-family: monospace; font-weight: 700; color: var(--primary); background: rgba(79, 70, 229, 0.1); padding: 4px 8px; border-radius: 6px; }
+        .amount { font-weight: 800; }
+        .amount.positive { color: var(--success); }
+
+        /* Badges */
+        .badge { padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; }
+        
+        /* Payment Methods */
+        .pay-momo { background: #FFE3EE; color: #A50064; border: 1px solid rgba(165, 0, 100, 0.2); }
+        .pay-vnpay { background: #E0F2FE; color: #0369A1; border: 1px solid rgba(3, 105, 161, 0.2); }
+        .pay-visa { background: #F3F4F6; color: #1F2937; border: 1px solid #D1D5DB; }
+
+        /* Statuses */
+        .status-success { background: rgba(16, 185, 129, 0.1); color: var(--success); }
+        .status-pending { background: rgba(245, 158, 11, 0.1); color: var(--warning); }
+        .status-failed { background: rgba(239, 68, 68, 0.1); color: var(--danger); }
+
+        .badge-new { background: var(--secondary); color: white; font-size: 10px; padding: 2px 6px; border-radius: 4px; animation: pulse 2s infinite; margin-left: 8px; }
+
+        /* Actions */
+        .btn-icon { width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border-color); background: transparent; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
+        .btn-icon:hover { background: var(--bg-color); color: var(--primary); border-color: var(--primary); }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.4); }
+            70% { box-shadow: 0 0 0 6px rgba(236, 72, 153, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
+        }
+
+        @media (max-width: 1024px) { .sidebar { display: none; } .main-content { margin-left: 0; padding: 24px 20px; } .kpi-row { grid-template-columns: 1fr; } }
+        @media (max-width: 640px) { .header-container { padding: 0 14px; } .logo { font-size: 19px; } .admin-profile { display: none; } .nav-right { gap: 8px; } .page-header { align-items: stretch; flex-direction: column; } .page-header h1 { font-size: 23px; } .export-btn { justify-content: center; } .filter-select { flex: 1 1 100%; width: 100%; } .main-content { padding: 20px 14px; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="admin-dashboard.html" class="logo">UniPass <span>Admin</span></a>
+            <div class="nav-right">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div class="admin-profile">
+                    <div class="avatar"><i class="fa-solid fa-shield-halved"></i></div>
+                    <span class="admin-name">Quản trị viên</span>
+                </div>
+                <a href="#" id="admin-logout" style="background:var(--danger);color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:700;margin-left:8px;">Đăng xuất</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <ul class="nav-menu">
+                <li><a href="admin-dashboard.html"><i class="fa-solid fa-chart-pie"></i> Tổng quan</a></li>
+                <li><a href="admin-students.html"><i class="fa-solid fa-users"></i> Quản lý Học viên</a></li>
+                <li><a href="admin-transactions.html" class="active"><i class="fa-solid fa-file-invoice-dollar"></i> Lịch sử Giao dịch</a></li>
+                <li><a href="admin-rag.html"><i class="fa-solid fa-database"></i> Dữ liệu AI RAG</a></li>
+                <li><a href="admin-settings.html"><i class="fa-solid fa-gear"></i> Cài đặt Hệ thống</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="page-header">
+                <div>
+                    <h1>Lịch sử Giao dịch</h1>
+                    <p>Đối soát và quản lý dòng tiền từ các gói đăng ký Membership.</p>
+                </div>
+                <button class="export-btn"><i class="fa-solid fa-file-excel"></i> Xuất Báo cáo</button>
+            </div>
+
+            <div class="kpi-row">
+                <div class="kpi-mini">
+                    <div class="kpi-info">
+                        <h3>Thu trong ngày</h3>
+                        <p id="today-revenue" style="color: var(--success);">Đang tải...</p>
+                    </div>
+                    <div class="kpi-icon green"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                </div>
+                <div class="kpi-mini">
+                    <div class="kpi-info">
+                        <h3>GD Thành công</h3>
+                        <p><span id="successful-count">Đang tải...</span> <span style="font-size: 14px; font-weight: normal; color: var(--text-muted);">giao dịch</span></p>
+                    </div>
+                    <div class="kpi-icon blue"><i class="fa-solid fa-check-double"></i></div>
+                </div>
+                <div class="kpi-mini">
+                    <div class="kpi-info">
+                        <h3>Chờ xử lý (Pending)</h3>
+                        <p><span id="pending-count">Đang tải...</span> <span style="font-size: 14px; font-weight: normal; color: var(--text-muted);">giao dịch</span></p>
+                    </div>
+                    <div class="kpi-icon orange"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                </div>
+            </div>
+
+            <div class="filter-bar">
+                <div class="search-box">
+                    <i class="fa-solid fa-search"></i>
+                    <input id="transaction-search" type="search" placeholder="Tìm mã giao dịch hoặc tên học viên..." autocomplete="off">
+                </div>
+                <select id="method-filter" class="filter-select">
+                    <option value="all">Tất cả Cổng thanh toán</option>
+                    <option value="momo">Ví MoMo</option>
+                    <option value="vnpay">VNPay</option>
+                    <option value="visa">Thẻ Quốc tế (Visa/Mastercard)</option>
+                </select>
+                <select id="status-filter" class="filter-select">
+                    <option value="all">Tất cả Trạng thái</option>
+                    <option value="success">Thành công</option>
+                    <option value="pending">Chờ thanh toán</option>
+                    <option value="failed">Thất bại</option>
+                </select>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mã GD</th>
+                            <th>Khách hàng</th>
+                            <th>Gói dịch vụ</th>
+                            <th>Số tiền</th>
+                            <th>Phương thức</th>
+                            <th>Trạng thái</th>
+                            <th>Ngày giờ</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="txn-table-body">
+                        </tbody>
+                </table>
+            </div>
+            
+        </main>
+    </div>
+
+    <script>
+        /* --- DARK MODE LOGIC --- */
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = themeToggleBtn.querySelector('i');
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem('unipass_theme');
+        if (savedTheme) { htmlElement.setAttribute('data-theme', savedTheme); updateIcon(savedTheme); }
+        else if (window.matchMedia('(prefers-color-scheme: dark)').matches) { htmlElement.setAttribute('data-theme', 'dark'); updateIcon('dark'); }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const newTheme = htmlElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('unipass_theme', newTheme);
+            updateIcon(newTheme);
+        });
+
+        function updateIcon(theme) { themeIcon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon'; }
+
+    </script>
+    <script src="auth.js"></script>
+    <script>
+        document.getElementById('admin-logout').addEventListener('click', event => {
+            event.preventDefault();
+            window.Auth.logout();
+            window.location.href = 'login.html';
+        });
+
+        const tableBody = document.getElementById('txn-table-body');
+        const searchInput = document.getElementById('transaction-search');
+        const methodFilter = document.getElementById('method-filter');
+        const statusFilter = document.getElementById('status-filter');
+        const formatVND = amount => new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(Number(amount) || 0);
+        const formatDate = value => new Intl.DateTimeFormat('vi-VN', { dateStyle: 'short', timeStyle: 'short' }).format(new Date(value));
+        const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
+
+        function methodPresentation(method) {
+            const normalized = String(method || '').toLowerCase();
+            if (normalized.includes('momo')) return ['MoMo', 'pay-momo', 'fa-solid fa-wallet', 'momo'];
+            if (normalized.includes('vnpay')) return ['VNPay', 'pay-vnpay', 'fa-solid fa-qrcode', 'vnpay'];
+            if (normalized.includes('visa') || normalized.includes('master')) return [method, 'pay-visa', 'fa-brands fa-cc-visa', 'visa'];
+            return [method || 'Không xác định', 'pay-visa', 'fa-solid fa-money-bill', 'other'];
+        }
+
+        function statusPresentation(status) {
+            const normalized = String(status || '').toLowerCase();
+            if (normalized === 'success' || normalized === 'successful') return ['Thành công', 'status-success', 'success'];
+            if (normalized === 'pending') return ['Chờ thanh toán', 'status-pending', 'pending'];
+            return ['Thất bại', 'status-failed', 'failed'];
+        }
+
+        let transactionsData = [];
+        function renderTable() {
+            const query = searchInput.value.trim().toLowerCase();
+            const method = methodFilter.value;
+            const status = statusFilter.value;
+            const filtered = transactionsData.filter(transaction => {
+                const transactionMethod = methodPresentation(transaction.method)[3];
+                const transactionStatus = statusPresentation(transaction.status)[2];
+                const searchable = [transaction.id, transaction.name, transaction.plan].join(' ').toLowerCase();
+                return (!query || searchable.includes(query)) && (method === 'all' || transactionMethod === method) && (status === 'all' || transactionStatus === status);
+            });
+
+            if (!filtered.length) {
+                tableBody.innerHTML = '<tr><td colspan="8" style="text-align:center; color:var(--text-muted); padding:32px;">Không có giao dịch phù hợp.</td></tr>';
+                return;
+            }
+            tableBody.innerHTML = filtered.map(transaction => {
+                const [methodLabel, methodClass, methodIcon] = methodPresentation(transaction.method);
+                const [statusLabel, statusClass] = statusPresentation(transaction.status);
+                const isSuccessful = statusClass === 'status-success';
+                return `<tr>
+                    <td><span class="txn-id">${escapeHtml(transaction.id)}</span></td>
+                    <td style="font-weight: 600;">${escapeHtml(transaction.name)}</td>
+                    <td style="color: var(--text-muted); font-size: 13px;">${escapeHtml(transaction.plan)}</td>
+                    <td class="amount${isSuccessful ? ' positive' : ''}">${isSuccessful ? '+' : ''} ${formatVND(transaction.amount)}</td>
+                    <td><span class="badge ${methodClass}"><i class="${methodIcon}"></i> ${escapeHtml(methodLabel)}</span></td>
+                    <td><span class="badge ${statusClass}">${statusLabel}</span></td>
+                    <td style="color: var(--text-muted); font-size: 13px; white-space: nowrap;">${escapeHtml(formatDate(transaction.date))}</td>
+                    <td><div style="display:flex; gap:8px;"><button class="btn-icon" type="button" title="In biên lai"><i class="fa-solid fa-print"></i></button><button class="btn-icon" type="button" title="Chi tiết giao dịch"><i class="fa-solid fa-circle-info"></i></button></div></td>
+                </tr>`;
+            }).join('');
+        }
+
+        function loadTransactions() {
+            window.Auth.adminRequest('/api/admin/transactions').then(({ transactions, summary }) => {
+                transactionsData = transactions || [];
+                document.getElementById('today-revenue').textContent = `+ ${formatVND(summary.todayRevenue)}`;
+                document.getElementById('successful-count').textContent = summary.successfulCount;
+                document.getElementById('pending-count').textContent = summary.pendingCount;
+                renderTable();
+            }).catch(error => {
+                tableBody.innerHTML = `<tr><td colspan="8" style="text-align:center; color:var(--danger); padding:32px;">${escapeHtml(error.message)}</td></tr>`;
+                document.getElementById('today-revenue').textContent = 'Lỗi';
+                document.getElementById('successful-count').textContent = 'Lỗi';
+                document.getElementById('pending-count').textContent = 'Lỗi';
+            });
+        }
+
+        searchInput.addEventListener('input', renderTable);
+        methodFilter.addEventListener('change', renderTable);
+        statusFilter.addEventListener('change', renderTable);
+        loadTransactions();
+    </script>
+</body>
+</html>

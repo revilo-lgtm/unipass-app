@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xem tài liệu PDF - UniPass</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #2c2c2c;
+            color: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+        *::-webkit-scrollbar { width: 8px; height: 8px; }
+        *::-webkit-scrollbar-track { background: #252525; }
+        *::-webkit-scrollbar-thumb { background: #555555; border-radius: 4px; }
+        *::-webkit-scrollbar-thumb:hover { background: #6b6b6b; }
+        body { margin: 0; padding: 0; min-height: 100vh; background-color: #2c2c2c; overflow-x: hidden; }
+        main { min-height: 100vh; padding: 72px 20px 40px; }
+        .back-link { position: fixed; top: 16px; left: 16px; z-index: 10; padding: 6px 10px; color: #d4d4d4; background: #3a3a3a; border: 1px solid #505050; border-radius: 4px; font-size: 12px; text-decoration: none; }
+        .back-link:hover { color: #ffffff; background: #484848; }
+        h1 { margin: 0 0 12px; text-align: center; font-size: 18px; font-weight: 500; }
+        #pdf-status { margin: 0 0 16px; color: #bdbdbd; text-align: center; }
+        #payment-banner {
+            display: none;
+            max-width: 720px;
+            margin: 0 auto 20px;
+            padding: 16px 20px;
+            color: #fff7ed;
+            background: #9a3412;
+            border: 1px solid #fb923c;
+            border-radius: 8px;
+            line-height: 1.5;
+        }
+        #payment-banner.show { display: block; }
+        #payment-banner strong { display: block; margin-bottom: 4px; }
+        #payment-banner a { color: #fff; font-weight: 700; }
+        #pdf-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            padding: 40px 20px;
+            background-color: #f0f0f0;
+        }
+        #pdf-container canvas {
+            display: block;
+            background-color: white;
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .pdf-page-wrapper { position: relative; max-width: 100%; }
+        .pdf-page-wrapper canvas { position: relative; z-index: 1; }
+        .textLayer { position: absolute; inset: 0; z-index: 2; overflow: hidden; line-height: 1; pointer-events: none; }
+        .textLayer span { position: absolute; color: transparent; white-space: pre; transform-origin: 0 0; cursor: text; }
+        .error { color: #ff8a8a !important; }
+    </style>
+</head>
+<body>
+    <a class="back-link" id="back-link" href="dashboard.html">&larr; Quay lại</a>
+    <main>
+        <section aria-labelledby="viewer-title">
+            <h1 id="viewer-title">Tài liệu PDF</h1>
+            <p id="pdf-status" role="status">Đang tải tài liệu...</p>
+            <div id="payment-banner" role="alert">
+                <strong>Thanh toán phí duy trì để mở tài liệu</strong>
+                <span>Tài khoản của bạn đang chờ thanh toán. Bạn vẫn có thể ở lại trang này.</span>
+                <a href="index.html#pricing">Xem các gói thanh toán</a>
+            </div>
+            <div id="pdf-container"></div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        const backLink = document.getElementById('back-link');
+        const viewerParams = new URLSearchParams(window.location.search);
+        const requestedReturnTo = viewerParams.get('returnTo');
+        const referrer = document.referrer;
+        let returnUrl = 'dashboard.html';
+        try {
+            const candidate = requestedReturnTo || referrer;
+            const parsed = new URL(candidate, window.location.href);
+            const isSameOrigin = parsed.origin === window.location.origin;
+            const isAllowedPage = /^(course-(ueh|bk|ftu)\.html|dashboard\.html)$/.test(parsed.pathname.split('/').pop());
+            if (isSameOrigin && isAllowedPage) returnUrl = `${parsed.pathname}${parsed.search}${parsed.hash}`;
+        } catch (error) { /* Keep the dashboard fallback. */ }
+        backLink.href = returnUrl;
+    </script>
+    <script src="pdf-renderer.js"></script>
+</body>
+</html>

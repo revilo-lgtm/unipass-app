@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Học viên - Admin UniPass</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="admin-shared.css">
+    <style>
+        /* HỆ THỐNG BIẾN MÀU SẮC CHUNG */
+        :root {
+            --primary: #4F46E5;
+            --primary-light: #818CF8;
+            --secondary: #EC4899;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
+            
+            --bg-color: #F1F5F9; 
+            --surface: #FFFFFF;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0F172A;       
+            --surface: #1E293B;        
+            --text-main: #F8FAFC;      
+            --text-muted: #94A3B8;     
+            --border-color: #334155;   
+            --header-bg: rgba(30, 41, 59, 0.95);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); overflow-x: hidden; transition: 0.3s; }
+        
+        /* --- Navbar --- */
+        header { position: fixed; top: 0; width: 100%; background: var(--header-bg); border-bottom: 1px solid var(--border-color); z-index: 1000; height: 70px; display: flex; align-items: center; }
+        .header-container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: 800; color: var(--text-main); text-decoration: none; }
+        .logo span { color: var(--primary); }
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        
+        .theme-toggle { background: transparent; border: 1px solid var(--border-color); color: var(--text-main); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        .theme-toggle:hover { background: var(--surface); color: var(--primary); border-color: var(--primary); }
+        
+        .admin-profile { display: flex; align-items: center; gap: 10px; padding: 6px 12px; border-radius: 50px; border: 1px solid var(--primary); background: rgba(79, 70, 229, 0.05); }
+        .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--text-main); display: flex; align-items: center; justify-content: center; color: var(--surface); font-size: 14px; }
+        .admin-name { font-weight: 700; font-size: 14px; color: var(--primary); }
+
+        /* --- Dashboard Layout --- */
+        .dashboard-wrapper { display: flex; max-width: 1400px; margin: 70px auto 0; min-height: calc(100vh - 70px); }
+        
+        /* Sidebar */
+        .sidebar { width: 260px; background: var(--surface); border-right: 1px solid var(--border-color); padding: 24px 0; position: fixed; height: calc(100vh - 70px); overflow-y: auto; }
+        .nav-menu { list-style: none; padding: 0 16px; }
+        .nav-menu li { margin-bottom: 8px; }
+        .nav-menu a { display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: var(--text-muted); text-decoration: none; font-weight: 600; border-radius: 12px; transition: 0.2s; }
+        .nav-menu a i { font-size: 18px; width: 24px; text-align: center; }
+        .nav-menu a:hover { background: var(--bg-color); color: var(--primary); }
+        .nav-menu a.active { background: var(--primary); color: white; box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3); }
+
+        /* Main Content */
+        .main-content { flex: 1; padding: 32px 40px; margin-left: 260px; }
+        
+        .page-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 32px; }
+        .page-header h1 { font-size: 28px; font-weight: 800; color: var(--text-main); margin-bottom: 8px; }
+        .page-header p { color: var(--text-muted); font-size: 15px; }
+        .export-btn { padding: 10px 20px; background: var(--surface); border: 1px solid var(--border-color); color: var(--text-main); font-weight: 600; border-radius: 10px; cursor: pointer; transition: 0.2s; display: flex; align-items: center; gap: 8px; }
+        .export-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+        /* Filter Bar */
+        .filter-bar { display: flex; gap: 16px; margin-bottom: 24px; background: var(--surface); padding: 16px; border-radius: 16px; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); }
+        .search-box { flex: 1; position: relative; }
+        .search-box i { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+        .search-box input { width: 100%; padding: 10px 10px 10px 40px; border: 1px solid var(--border-color); border-radius: 10px; background: var(--bg-color); color: var(--text-main); outline: none; transition: 0.2s; }
+        .search-box input:focus { border-color: var(--primary); }
+        
+        .filter-select { padding: 10px 16px; border: 1px solid var(--border-color); border-radius: 10px; background: var(--bg-color); color: var(--text-main); outline: none; cursor: pointer; }
+
+        /* Table Area */
+        .table-container { background: var(--surface); border-radius: 16px; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        thead { background: var(--bg-color); border-bottom: 1px solid var(--border-color); }
+        th { padding: 16px 24px; font-size: 13px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        td { padding: 16px 24px; border-bottom: 1px solid var(--border-color); color: var(--text-main); font-size: 14px; vertical-align: middle; }
+        tbody tr:hover { background: rgba(79, 70, 229, 0.02); }
+        tbody tr:last-child td { border-bottom: none; }
+
+        /* Student Info Cell */
+        .student-info { display: flex; align-items: center; gap: 12px; }
+        .student-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--gradient); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; }
+        .student-name { font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+        .student-email { color: var(--text-muted); font-size: 13px; }
+        
+        /* Badges */
+        .badge { padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 700; display: inline-block; }
+        .badge-new { background: var(--secondary); color: white; font-size: 10px; padding: 2px 6px; border-radius: 4px; animation: pulse 2s infinite; }
+        
+        .uni-ueh { background: rgba(79, 70, 229, 0.1); color: var(--primary); }
+        .uni-bk { background: rgba(2, 132, 199, 0.1); color: #0284C7; }
+        .uni-ftu { background: rgba(236, 72, 153, 0.1); color: var(--secondary); }
+        .uni-neu { background: rgba(16, 185, 129, 0.1); color: var(--success); }
+
+        .status-active { background: rgba(16, 185, 129, 0.1); color: var(--success); }
+        .status-pending { background: rgba(245, 158, 11, 0.1); color: var(--warning); }
+
+        /* Actions */
+        .action-btns { display: flex; gap: 8px; }
+        .btn-icon { width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border-color); background: transparent; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
+        .btn-icon:hover { background: var(--bg-color); color: var(--primary); border-color: var(--primary); }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.4); }
+            70% { box-shadow: 0 0 0 6px rgba(236, 72, 153, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
+        }
+
+        @media (max-width: 1024px) { .sidebar { display: none; } .main-content { margin-left: 0; padding: 24px 20px; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="admin-dashboard.html" class="logo">UniPass <span>Admin</span></a>
+            <div class="nav-right">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div class="admin-profile">
+                    <div class="avatar"><i class="fa-solid fa-shield-halved"></i></div>
+                    <span class="admin-name">Quản trị viên</span>
+                </div>
+                <a href="#" id="admin-logout" style="background:var(--danger);color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:700;margin-left:8px;">Đăng xuất</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <ul class="nav-menu">
+                <li><a href="admin-dashboard.html"><i class="fa-solid fa-chart-pie"></i> Tổng quan</a></li>
+                <li><a href="admin-students.html" class="active"><i class="fa-solid fa-users"></i> Quản lý Học viên</a></li>
+                <li><a href="admin-transactions.html"><i class="fa-solid fa-file-invoice-dollar"></i> Lịch sử Giao dịch</a></li>
+                <li><a href="admin-rag.html"><i class="fa-solid fa-database"></i> Dữ liệu AI RAG</a></li>
+                <li><a href="admin-settings.html"><i class="fa-solid fa-gear"></i> Cài đặt Hệ thống</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="page-header">
+                <div>
+                    <h1>Quản lý Học viên</h1>
+                    <p>Theo dõi danh sách sinh viên đăng ký hệ thống theo thời gian thực.</p>
+                </div>
+                <button class="export-btn"><i class="fa-solid fa-download"></i> Xuất CSV</button>
+            </div>
+
+            <div class="filter-bar">
+                <div class="search-box">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" id="student-search" placeholder="Tìm kiếm theo tên hoặc email...">
+                </div>
+                <select class="filter-select" id="university-filter">
+                    <option value="all">Tất cả Trường</option>
+                    <option value="ueh">ĐH Kinh tế TP.HCM (UEH)</option>
+                    <option value="bk">ĐH Bách Khoa (HCMUT)</option>
+                    <option value="ftu">ĐH Ngoại thương (FTU)</option>
+                    <option value="neu">ĐH Kinh tế Quốc dân (NEU)</option>
+                    <option value="hcmus">ĐH Khoa học Tự nhiên (HCMUS)</option>
+                    <option value="tdtu">ĐH Tôn Đức Thắng (TDTU)</option>
+                </select>
+                <select class="filter-select" id="status-filter">
+                    <option value="all">Tất cả Trạng thái</option>
+                    <option value="active">Đang hoạt động</option>
+                    <option value="pending">Chờ thanh toán</option>
+                </select>
+            </div>
+
+            <form id="account-create-form" style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;padding:20px;background:var(--surface);border:1px solid var(--border-color);border-radius:12px;">
+                <input id="account-fullname" type="text" placeholder="Họ và tên" required style="flex:1;min-width:180px;padding:10px;border:1px solid var(--border-color);border-radius:8px;background:var(--surface);color:var(--text-main);">
+                <input id="account-email" type="email" placeholder="Email @st.ueh.edu.vn" required style="flex:1;min-width:220px;padding:10px;border:1px solid var(--border-color);border-radius:8px;background:var(--surface);color:var(--text-main);">
+                <input id="account-password" type="password" placeholder="Mật khẩu tạm thời" required style="flex:1;min-width:180px;padding:10px;border:1px solid var(--border-color);border-radius:8px;background:var(--surface);color:var(--text-main);">
+                <button type="submit" class="export-btn"><i class="fa-solid fa-user-plus"></i> Tạo account</button>
+            </form>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Học viên</th>
+                            <th>Trường ĐH</th>
+                            <th>Gói đăng ký</th>
+                            <th>Ngày tham gia</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="student-table-body">
+                        </tbody>
+                </table>
+            </div>
+            
+        </main>
+    </div>
+
+    <script>
+        /* --- DARK MODE LOGIC --- */
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = themeToggleBtn.querySelector('i');
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem('unipass_theme');
+        if (savedTheme) { htmlElement.setAttribute('data-theme', savedTheme); updateIcon(savedTheme); }
+        else if (window.matchMedia('(prefers-color-scheme: dark)').matches) { htmlElement.setAttribute('data-theme', 'dark'); updateIcon('dark'); }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const newTheme = htmlElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('unipass_theme', newTheme);
+            updateIcon(newTheme);
+        });
+
+        function updateIcon(theme) { themeIcon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon'; }
+
+        /* --- DATA RENDER LOGIC --- */
+        const tableBody = document.getElementById('student-table-body');
+        
+        // 1. Dữ liệu giả lập (Mock data) những người đã đăng ký từ trước
+        let studentsData = [
+            { name: "Nguyễn Thị Xuân Mai", email: "xuanmai@st.ueh.edu.vn", uni: "UEH", uniClass: "uni-ueh", plan: "Gói Cả Năm", date: "22/04/2026", status: "Hoạt động", statusClass: "status-active" },
+            { name: "Trần Hữu Kiên", email: "kien.tran@hcmut.edu.vn", uni: "HCMUT", uniClass: "uni-bk", plan: "Gói Học Kỳ", date: "20/04/2026", status: "Hoạt động", statusClass: "status-active" },
+            { name: "Lê Ngọc Hân", email: "ngoc.han@ftu.edu.vn", uni: "FTU", uniClass: "uni-ftu", plan: "Gói Học Kỳ", date: "18/04/2026", status: "Chờ duyệt", statusClass: "status-pending" },
+            { name: "Phạm Hoàng Bách", email: "bach.pham@st.neu.edu.vn", uni: "NEU", uniClass: "uni-neu", plan: "Gói Cả Năm", date: "15/04/2026", status: "Hoạt động", statusClass: "status-active" }
+        ];
+
+        // 2. TÍNH NĂNG LIÊN KẾT: Kiểm tra xem có user nào VỪA ĐĂNG KÝ ở trang index không?
+        const newlyRegisteredUser = localStorage.getItem('unipass_user');
+        
+        if (newlyRegisteredUser) {
+            // Tự động generate một email giả dựa trên tên
+            const emailPrefix = newlyRegisteredUser.toLowerCase().replace(/\s/g, '');
+            
+            // Đẩy user mới này lên ĐẦU danh sách (unshift)
+            studentsData.unshift({
+                name: newlyRegisteredUser,
+                email: `${emailPrefix}@student.edu.vn`,
+                uni: "Hệ thống tự nhận",
+                uniClass: "uni-ueh", // Mặc định hiển thị badge UEH
+                plan: "Membership",
+                date: "Vừa xong",
+                status: "Hoạt động",
+                statusClass: "status-active",
+                isNew: true // Đánh dấu là user vừa đăng ký
+            });
+        }
+
+        // 3. Render dữ liệu ra bảng
+        function renderTable() {
+            let html = '';
+            
+            studentsData.forEach(student => {
+                const avatarChar = student.name.charAt(0).toUpperCase();
+                const newBadge = student.isNew ? `<span class="badge-new">NEW</span>` : '';
+                
+                html += `
+                    <tr>
+                        <td>
+                            <div class="student-info">
+                                <div class="student-avatar">${avatarChar}</div>
+                                <div>
+                                    <div class="student-name">${student.name} ${newBadge}</div>
+                                    <div class="student-email">${student.email}</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td><span class="badge ${student.uniClass}">${student.uni}</span></td>
+                        <td style="font-weight: 600;">${student.plan}</td>
+                        <td>${student.date}</td>
+                        <td><span class="badge ${student.statusClass}">${student.status}</span></td>
+                        <td>
+                            <div class="action-btns">
+                                <button class="btn-icon" title="Xem chi tiết"><i class="fa-solid fa-eye"></i></button>
+                                <button class="btn-icon" title="Chỉnh sửa"><i class="fa-solid fa-pen"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            });
+            
+            tableBody.innerHTML = html;
+        }
+
+        // Khởi chạy render
+        renderTable();
+    </script>
+    <script src="auth.js"></script>
+    <script>
+        (function(){
+            const form = document.getElementById('account-create-form');
+            const tableBody = document.getElementById('student-table-body');
+            const searchInput = document.getElementById('student-search');
+            const universityFilter = document.getElementById('university-filter');
+            const statusFilter = document.getElementById('status-filter');
+            let allAccounts = [];
+
+            const universityInfo = email => {
+                const domain = String(email || '').toLowerCase().split('@')[1] || '';
+                const info = {
+                    'st.ueh.edu.vn': ['UEH', 'uni-ueh', 'ueh'],
+                    'hcmut.edu.vn': ['HCMUT', 'uni-bk', 'bk'],
+                    'ftu.edu.vn': ['FTU', 'uni-ftu', 'ftu'],
+                    'st.neu.edu.vn': ['NEU', 'uni-neu', 'neu'],
+                    'hcmus.edu.vn': ['HCMUS', 'uni-bk', 'hcmus'],
+                    'tdtu.edu.vn': ['TDTU', 'uni-ueh', 'tdtu'],
+                };
+                return info[domain] || ['Khác', 'uni-ueh', 'other'];
+            };
+
+            const statusInfo = status => status === 'active'
+                ? ['Đang hoạt động', 'status-active']
+                : ['Chờ thanh toán', 'status-pending'];
+
+            function filteredAccounts(){
+                const query = searchInput.value.trim().toLowerCase();
+                return allAccounts.filter(account => {
+                    const [, , universityFilterValue] = universityInfo(account.Email);
+                    return (!query || `${account.Fullname} ${account.Email}`.toLowerCase().includes(query))
+                        && (universityFilter.value === 'all' || universityFilterValue === universityFilter.value)
+                        && (statusFilter.value === 'all' || account.Status === statusFilter.value);
+                });
+            }
+
+            function renderAccounts(accounts){
+                if(!accounts.length){
+                    tableBody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--text-muted);">Không tìm thấy học viên phù hợp.</td></tr>';
+                    return;
+                }
+                tableBody.innerHTML = accounts.map(account => {
+                    const [university, universityClass] = universityInfo(account.Email);
+                    const [statusLabel, statusClass] = statusInfo(account.Status);
+                    const nextStatus = account.Status === 'active' ? 'pending' : 'active';
+                    const nextLabel = account.Status === 'active' ? 'Chuyển sang chờ thanh toán' : 'Kích hoạt tài khoản';
+                    return `
+                    <tr>
+                        <td><div class="student-info"><div class="student-avatar">${(account.Fullname || account.Email).charAt(0).toUpperCase()}</div><div><div class="student-name">${account.Fullname || account.Email}</div><div class="student-email">${account.Email} · ${account.User_ID}</div></div></div></td>
+                        <td><span class="badge ${universityClass}">${university}</span></td>
+                        <td style="font-weight:600;">${account.Role}</td>
+                        <td>-</td>
+                        <td><span class="badge ${statusClass}">${statusLabel}</span></td>
+                        <td><div class="action-btns"><button class="btn-icon toggle-status" data-user-id="${account.User_ID}" data-next-status="${nextStatus}" title="${nextLabel}"><i class="fa-solid fa-toggle-${account.Status === 'active' ? 'on' : 'off'}"></i></button><button class="btn-icon reset-password" data-user-id="${account.User_ID}" title="Reset mật khẩu"><i class="fa-solid fa-key"></i></button><button class="btn-icon delete-account" data-user-id="${account.User_ID}" title="Xóa account"><i class="fa-solid fa-trash"></i></button></div></td>
+                    </tr>
+                `;
+                }).join('');
+                document.querySelectorAll('.toggle-status').forEach(button => {
+                    button.addEventListener('click', async () => {
+                        try {
+                            await window.Auth.adminRequest(`/api/admin/accounts/${button.dataset.userId}/status`, {method:'PATCH', body:JSON.stringify({status:button.dataset.nextStatus})});
+                            await loadAccounts();
+                        } catch(error) { alert(error.message); }
+                    });
+                });
+                document.querySelectorAll('.reset-password').forEach(button => {
+                    button.addEventListener('click', async () => {
+                        const password = prompt('Nhập mật khẩu mới:');
+                        if(!password) return;
+                        try {
+                            await window.Auth.adminRequest(`/api/admin/accounts/${button.dataset.userId}/reset-password`, {method:'POST', body:JSON.stringify({password})});
+                            alert('Đã reset mật khẩu thành công.');
+                        } catch(error) { alert(error.message); }
+                    });
+                });
+                document.querySelectorAll('.delete-account').forEach(button => {
+                    button.addEventListener('click', async () => {
+                        if(!confirm('Bạn có chắc muốn xóa account này?')) return;
+                        try {
+                            await window.Auth.adminRequest(`/api/admin/accounts/${button.dataset.userId}`, {method:'DELETE'});
+                            await loadAccounts();
+                            alert('Đã xóa account thành công.');
+                        } catch(error) { alert(error.message); }
+                    });
+                });
+            }
+
+            async function loadAccounts(){
+                try {
+                    const data = await window.Auth.adminRequest('/api/admin/accounts');
+                    allAccounts = data.accounts;
+                    renderAccounts(filteredAccounts());
+                } catch(error) {
+                    tableBody.innerHTML = `<tr><td colspan="6">${error.message}</td></tr>`;
+                }
+            }
+
+            form.addEventListener('submit', async event => {
+                event.preventDefault();
+                try {
+                    await window.Auth.adminRequest('/api/admin/accounts', {method:'POST', body:JSON.stringify({
+                        fullname: document.getElementById('account-fullname').value,
+                        email: document.getElementById('account-email').value,
+                        password: document.getElementById('account-password').value,
+                    })});
+                    form.reset();
+                    await loadAccounts();
+                    alert('Đã tạo account thành công.');
+                } catch(error) { alert(error.message); }
+            });
+
+            [searchInput, universityFilter, statusFilter].forEach(element => {
+                element.addEventListener('input', () => renderAccounts(filteredAccounts()));
+                element.addEventListener('change', () => renderAccounts(filteredAccounts()));
+            });
+
+            loadAccounts();
+        })();
+    </script>
+    <script>
+        (function(){
+            const btn = document.getElementById('admin-logout');
+            if(!btn) return;
+            btn.addEventListener('click', function(e){
+                e.preventDefault();
+                try{ if(window.Auth && window.Auth.logout) window.Auth.logout(); }catch(e){}
+                localStorage.removeItem('unipass_user');
+                localStorage.removeItem('unipass_current_v1');
+                window.location.href = 'login.html';
+            });
+        })();
+    </script>
+</body>
+</html>

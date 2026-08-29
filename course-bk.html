@@ -1,65 +1,483 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HCMUT — Đại số tuyến tính | UniPass</title>
+    <title>Đại số tuyến tính & Giải tích (HCMUT) - UniPass</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Basic styles copied from index for consistency */
-        :root{ --primary:#4F46E5; --surface:#FFFFFF; --text-main:#0F172A; --text-muted:#64748B; --grad-bk: linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%); }
-        *{margin:0;padding:0;box-sizing:border-box;font-family:'Plus Jakarta Sans',sans-serif}
-        body{background:var(--surface);color:var(--text-main)}
-        .container{max-width:1100px;margin:0 auto;padding:0 20px}
-        header{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.95);backdrop-filter:blur(6px);z-index:1000;border-bottom:1px solid rgba(0,0,0,0.05)}
-        nav{height:72px;display:flex;align-items:center;justify-content:space-between}
-        .logo{font-size:24px;font-weight:800;color:var(--primary);text-decoration:none}
-        .btn{padding:10px 20px;border-radius:999px;text-decoration:none;font-weight:600}
-        .course-thumb{width:140px;height:140px;border-radius:18px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:48px}
-        .course-thumb.bk{background:var(--grad-bk)}
-        .uni-badge{display:inline-block;padding:6px 12px;border-radius:18px;font-weight:700;margin-bottom:12px}
-        .uni-badge.bk{background:#F0F9FF;color:#0284C7}
-        .hero{padding:140px 0 60px}
-        .syllabus{margin-top:40px}
-        .chapter{background:#fff;border:1px solid #F1F5F9;padding:18px;border-radius:12px;margin-bottom:12px}
-        footer{background:#0F172A;color:#fff;padding:40px 0 20px;margin-top:60px}
+        /* HỆ THỐNG BIẾN MÀU SẮC KẾ THỪA TỪ TRANG CHỦ - TONE XANH BÁCH KHOA */
+        :root {
+            --primary: #0284C7; 
+            --primary-light: #38BDF8;
+            --secondary: #0EA5E9;
+            --gradient: linear-gradient(135deg, #0284C7 0%, #0EA5E9 100%);
+            --grad-bk: linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%);
+            
+            --bg-color: #F8FAFC;
+            --surface: #FFFFFF;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
+            --header-bg: rgba(255, 255, 255, 0.85);
+            --icon-blue-bg: #F0F9FF;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0F172A;       
+            --surface: #1E293B;        
+            --text-main: #F8FAFC;      
+            --text-muted: #94A3B8;     
+            --border-color: #334155;   
+            --header-bg: rgba(15, 23, 42, 0.85);
+            --icon-blue-bg: rgba(2, 132, 199, 0.2);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--bg-color); color: var(--text-main); overflow-x: hidden; transition: background-color 0.3s ease, color 0.3s ease; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* --- Navbar --- */
+        header { position: fixed; top: 0; width: 100%; background: var(--header-bg); backdrop-filter: blur(12px); z-index: 1000; border-bottom: 1px solid var(--border-color); }
+        nav { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .logo { font-size: 28px; font-weight: 800; color: var(--primary); text-decoration: none; }
+        .logo span { color: #4F46E5; }
+        .nav-right { display: flex; align-items: center; gap: 24px; }
+        .theme-toggle { background: transparent; border: 1px solid var(--border-color); color: var(--text-main); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
+        .theme-toggle:hover { background: var(--surface); color: var(--primary); border-color: var(--primary); }
+
+        /* --- Buttons --- */
+        .btn { padding: 12px 28px; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.3s ease; cursor: pointer; border: none; text-align: center; }
+        .btn-gradient { background: var(--gradient); color: white; box-shadow: 0 10px 20px -10px rgba(2, 132, 199, 0.5); }
+        .btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 15px 25px -10px rgba(2, 132, 199, 0.6); }
+        .btn-outline { background: transparent; color: var(--text-main); border: 2px solid var(--border-color); }
+        .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+
+        /* --- Course Hero Section --- */
+        .course-hero { padding: 140px 0 60px; background: var(--grad-bk); color: white; position: relative; }
+        .breadcrumb { margin-bottom: 24px; font-size: 14px; font-weight: 500; opacity: 0.9; }
+        .breadcrumb a { color: white; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .course-hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
+        .course-hero p { font-size: 18px; opacity: 0.9; max-width: 700px; margin-bottom: 32px; line-height: 1.6; }
+        .course-stats { display: flex; gap: 32px; flex-wrap: wrap; }
+        .stat-item { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 600; background: rgba(255,255,255,0.15); padding: 8px 16px; border-radius: 12px; backdrop-filter: blur(5px); }
+
+        /* --- Course Layout --- */
+        .course-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; padding: 60px 0 100px; }
+        .section-title { font-size: 24px; font-weight: 700; margin-bottom: 24px; color: var(--text-main); display: flex; align-items: center; gap: 12px; }
+        .section-title i { color: var(--primary); }
+
+        /* Accordion */
+        .syllabus { margin-bottom: 40px; }
+        .accordion-item { background: var(--surface); border: 1px solid var(--border-color); border-radius: 16px; margin-bottom: 16px; overflow: hidden; box-shadow: var(--shadow-sm); }
+        .accordion-header { padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 600; color: var(--text-main); transition: background 0.3s; }
+        .accordion-header:hover { background: var(--bg-color); }
+        .accordion-header .chapter-title { display: flex; align-items: center; gap: 12px; }
+        .accordion-header .chapter-meta { font-size: 14px; color: var(--text-muted); font-weight: 500; }
+        .accordion-content { padding: 0 24px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding 0.3s ease; background: var(--bg-color); }
+        .accordion-item.active .accordion-content { padding: 20px 24px; max-height: 600px; border-top: 1px solid var(--border-color); }
+        .accordion-item.active .fa-chevron-down { transform: rotate(180deg); }
+        .lesson-list { list-style: none; }
+        .lesson-list li { display: grid; grid-template-columns: minmax(0, 1fr) 112px 82px; align-items: center; column-gap: 12px; padding: 12px 0; border-bottom: 1px dashed var(--border-color); color: var(--text-main); }
+        .lesson-list li > span:first-child { min-width: 0; line-height: 1.45; }
+        .lesson-pdfs { flex-basis: 100%; padding: 6px 0 0 28px; }
+        .lesson-pdfs a { color: var(--primary); font-size: 13px; text-decoration: none; }
+        .lesson-type.pdf-download { text-decoration: none; cursor: pointer; }
+        .lesson-type.pdf-download:hover { filter: brightness(0.9); }
+        .lesson-list li:last-child { border-bottom: none; }
+        .lesson-list li i { color: var(--text-muted); margin-right: 12px; }
+        .lesson-complete { display: inline-flex; align-items: center; justify-content: flex-end; gap: 6px; color: var(--text-muted); font-size: 12px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+        .lesson-complete input { width: 16px; height: 16px; accent-color: var(--primary); cursor: pointer; }
+        .lesson-list li.is-complete > span:first-child { color: var(--text-muted); text-decoration: line-through; }
+        .course-progress-summary { margin-left: auto; color: var(--primary); font-size: 13px; font-weight: 700; }
+        .lesson-type { min-width: 0; text-align: center; font-size: 12px; padding: 4px 8px; border-radius: 20px; font-weight: 600; }
+        .type-doc { background: var(--icon-blue-bg); color: #0284C7; }
+        .type-quiz { background: rgba(236, 72, 153, 0.1); color: #EC4899; }
+        .type-ai { background: rgba(16, 185, 129, 0.1); color: #10B981; }
+        @media (max-width: 640px) {
+            .lesson-list li { grid-template-columns: minmax(0, 1fr) auto; row-gap: 8px; }
+            .lesson-list li > .lesson-type { grid-column: 2; grid-row: 1; }
+            .lesson-list li > .lesson-complete { grid-column: 1 / -1; grid-row: 2; justify-self: start; }
+        }
+
+        /* --- Sidebar (Right) --- */
+        .sidebar-card { background: var(--surface); border: 1px solid var(--border-color); border-radius: 24px; padding: 32px; box-shadow: var(--shadow-lg); position: sticky; top: 100px; }
+        .price-box { margin-bottom: 24px; }
+        .price-box .current-price { font-size: 36px; font-weight: 800; color: var(--text-main); }
+        .price-box .period { font-size: 16px; color: var(--text-muted); font-weight: 500; }
+        .sidebar-card .btn { width: 100%; margin-bottom: 16px; }
+        .includes-list { list-style: none; margin-top: 24px; }
+        .includes-list li { margin-bottom: 12px; color: var(--text-muted); font-size: 15px; display: flex; align-items: flex-start; gap: 10px;}
+        .includes-list li i { color: var(--primary); margin-top: 4px; }
+
+        /* --- MODAL / POPUP ĐĂNG KÝ --- */
+        .modal {
+            display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); backdrop-filter: blur(5px);
+            align-items: center; justify-content: center;
+            opacity: 0; transition: opacity 0.3s ease;
+        }
+        .modal.show { display: flex; opacity: 1; }
+        .modal-content {
+            background-color: var(--surface); border-radius: 24px; padding: 40px;
+            width: 90%; max-width: 450px; position: relative;
+            transform: translateY(-30px); transition: transform 0.3s ease;
+            box-shadow: var(--shadow-lg); border: 1px solid var(--border-color);
+        }
+        .modal.show .modal-content { transform: translateY(0); }
+        .close-btn { position: absolute; top: 20px; right: 24px; font-size: 28px; font-weight: bold; color: var(--text-muted); cursor: pointer; transition: 0.2s; }
+        .close-btn:hover { color: var(--primary); }
+        .modal-content h3 { font-size: 24px; margin-bottom: 8px; color: var(--text-main); }
+        
+        #checkout-form { margin-top: 24px; }
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; color: var(--text-main); }
+        .form-group input, .form-group select {
+            width: 100%; padding: 12px 16px; border: 1px solid var(--border-color); border-radius: 12px;
+            background: var(--bg-color); color: var(--text-main); font-size: 15px; outline: none; transition: border-color 0.2s;
+        }
+        .form-group input:focus, .form-group select:focus { border-color: var(--primary); }
+
+        /* --- Footer --- */
+        footer { background: #0B1120; color: white; padding: 40px 0; border-top: 1px solid #1E293B; text-align: center; }
+
+        @media (max-width: 900px) { .course-layout { grid-template-columns: 1fr; } .sidebar-card { position: relative; top: 0; } .modal-content { padding: 30px 20px; } }
     </style>
 </head>
 <body>
+
     <header id="header">
         <nav class="container">
-            <a href="index.html" class="logo">Uni<span>Pass</span></a>
-            <a href="index.html#pricing" class="btn">Tham gia ngay</a>
+            <a href="dashboard.html" class="logo">Uni<span>Pass</span></a>
+            <div class="nav-right">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div id="auth-area"></div>
+            </div>
         </nav>
     </header>
 
-    <main class="container" style="padding-top:120px;">
-        <section class="hero">
-            <div style="display:flex;gap:24px;align-items:center;">
-                <div class="course-thumb bk"><i class="fa-solid fa-square-root-variable"></i></div>
-                <div>
-                    <span class="uni-badge bk">ĐH Bách Khoa (HCMUT)</span>
-                    <h1>Đại số tuyến tính & Giải tích — Lộ trình ôn tập</h1>
-                    <p style="color:var(--text-muted)">Tập trung tối ưu các dạng bài thường gặp theo giáo trình trường và bộ đề tương tự đề thi.</p>
-                    <div style="margin-top:12px;"><a href="#syllabus" class="btn">Xem lộ trình</a></div>
+    <section class="course-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Trang chủ</a> > <a href="index.html#courses">Lộ trình ôn tập</a> > Đại số tuyến tính & Giải tích
+            </div>
+            <h1>Đại số tuyến tính & Giải tích</h1>
+            <p>Lộ trình luyện thi Toán cao cấp được thiết kế riêng biệt để "giải cứu" sinh viên Đại học Bách Khoa (HCMUT). Vượt qua nỗi ám ảnh rớt môn với kho bài tập có hướng dẫn giải từng bước từ AI RAG.</p>
+            
+            <div class="course-stats">
+                <div class="stat-item"><i class="fa-solid fa-university"></i> ĐH Bách Khoa (HCMUT)</div>
+                <div class="stat-item"><i class="fa-solid fa-users"></i> 2,540 Sinh viên đã học</div>
+                <div class="stat-item"><i class="fa-solid fa-star" style="color: #FCD34D;"></i> 4.8/5 (Đánh giá)</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container course-layout">
+        <main>
+            <h2 class="section-title"><i class="fa-solid fa-square-root-variable"></i> Tổng quan môn học</h2>
+            <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 40px;">
+                Môn học được coi là "cửa ải" khó nhằn nhất năm nhất Bách Khoa. Khóa học của UniPass sẽ chia nhỏ các khái niệm phức tạp (như Ma trận, Không gian Vector, Tích phân bội) thành các dạng bài tập cụ thể. AI Study Group sẽ đóng vai trò như một trợ giảng 24/7, giúp bạn kiểm tra lỗi sai trong từng phép tính tích phân.
+            </p>
+
+            <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> Lộ trình học tập (Syllabus) <span class="course-progress-summary" id="course-progress-summary">0% đã học</span></h2>
+            <div class="syllabus">
+                
+                <div class="accordion-item active">
+                    <div class="accordion-header">
+                        <div class="chapter-title"><i class="fa-solid fa-calculator"></i> Chương 1: Ma trận & Hệ phương trình tuyến tính</div>
+                        <div class="chapter-meta">4 Bài học <i class="fa-solid fa-chevron-down" style="margin-left: 10px; transition: 0.3s;"></i></div>
+                    </div>
+                    <div class="accordion-content">
+                        <ul class="lesson-list">
+                            <li><span><i class="fa-solid fa-file-pdf"></i> Các phép toán Ma trận & Định thức (Determinant)</span><span class="lesson-type type-doc">Lý thuyết</span></li>
+                            <li><span><i class="fa-solid fa-video"></i> Kỹ năng biến đổi Gauss-Jordan siêu tốc</span><span class="lesson-type type-doc">Video bài giảng</span></li>
+                            <li><span><i class="fa-solid fa-robot"></i> Chẩn đoán lỗi sai: Giải hệ phương trình Cramer</span><span class="lesson-type type-ai">AI Chữa bài</span></li>
+                            <li><span><i class="fa-solid fa-pen-to-square"></i> Luyện tập: 50 câu trắc nghiệm Ma trận</span><span class="lesson-type type-quiz">Thi thử AI</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <div class="chapter-title"><i class="fa-solid fa-chart-line"></i> Chương 2: Không gian Vector & Ánh xạ tuyến tính</div>
+                        <div class="chapter-meta">3 Bài học <i class="fa-solid fa-chevron-down" style="margin-left: 10px; transition: 0.3s;"></i></div>
+                    </div>
+                    <div class="accordion-content">
+                        <ul class="lesson-list">
+                            <li><span><i class="fa-solid fa-file-pdf"></i> Độc lập/Phụ thuộc tuyến tính và Cơ sở của không gian</span> <span class="lesson-type type-doc">Lý thuyết</span></li>
+                            <li><span><i class="fa-solid fa-file-pdf"></i> Chéo hóa ma trận và ứng dụng</span> <span class="lesson-type type-doc">Lý thuyết</span></li>
+                            <li><span><i class="fa-solid fa-pen-to-square"></i> Đề thi tự luận Giữa kỳ các năm 2020-2025</span> <span class="lesson-type type-quiz">Thi thử AI</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <div class="chapter-title"><i class="fa-solid fa-infinity"></i> Chương 3: Phép tính Vi phân & Tích phân nhiều biến</div>
+                        <div class="chapter-meta">5 Bài học <i class="fa-solid fa-chevron-down" style="margin-left: 10px; transition: 0.3s;"></i></div>
+                    </div>
+                    <div class="accordion-content">
+                        <ul class="lesson-list">
+                            <li><span><i class="fa-solid fa-file-pdf"></i> Đạo hàm riêng và Cực trị hàm nhiều biến</span> <span class="lesson-type type-doc">Lý thuyết</span></li>
+                            <li><span><i class="fa-solid fa-robot"></i> AI Tips: Mẹo tìm cực trị có điều kiện (Lagrange)</span> <span class="lesson-type type-ai">AI Tips</span></li>
+                            <li><span><i class="fa-solid fa-file-pdf"></i> Tích phân kép và Tích phân bội ba</span> <span class="lesson-type type-doc">Lý thuyết</span></li>
+                            <li><span><i class="fa-solid fa-file-pdf"></i> Tích phân đường & Tích phân mặt</span> <span class="lesson-type type-doc">Lý thuyết</span></li>
+                            <li><span><i class="fa-solid fa-pen-to-square"></i> Bộ 15 đề thi cuối kỳ môn Giải tích 2 (Đề đóng)</span> <span class="lesson-type type-quiz">Thi thử AI</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+        </main>
 
-            <div class="syllabus" id="syllabus">
-                <div class="chapter"><h4>Chương 1: Ma trận và Hệ phương trình</h4><ul style="list-style:none;padding-left:0;margin-top:8px;color:var(--text-muted)"><li>Bài 1.1: Phép biến đổi sơ cấp</li><li>Bài 1.2: Định thức và Ứng dụng</li><li>Bài 1.3: Bài tập tuyển chọn</li></ul></div>
-                <div class="chapter"><h4>Chương 2: Không gian véc tơ</h4><ul style="list-style:none;padding-left:0;margin-top:8px;color:var(--text-muted)"><li>Bài 2.1: Không gian con</li><li>Bài 2.2: Cơ sở và hạng</li><li>Bài 2.3: Ứng dụng vào giải tích</li></ul></div>
-                <div class="chapter"><h4>Chương 3: Ứng dụng trong giải tích</h4><ul style="list-style:none;padding-left:0;margin-top:8px;color:var(--text-muted)"><li>Bài 3.1: Đa thức và đạo hàm</li><li>Bài 3.2: Giải tích đa biến</li><li>Bài 3.3: Bài tập tổng hợp</li></ul></div>
-                <div class="chapter"><h4>Chương 4: Bộ đề luyện tập</h4><ul style="list-style:none;padding-left:0;margin-top:8px;color:var(--text-muted)"><li>Bộ đề 1</li><li>Bộ đề 2</li><li>Bộ đề 3</li></ul></div>
+        <aside>
+            <div class="sidebar-card">
+                <div class="price-box">
+                    <div class="current-price">199.000đ</div>
+                    <div class="period">Đăng ký Membership 1 Học kỳ</div>
+                </div>
+                <a href="#" class="btn btn-gradient checkout-btn">Đăng ký Học kỳ</a>
+                <a href="#" class="btn btn-outline checkout-btn" style="border-color: var(--border-color);">Nâng cấp Gói Cả Năm (349k)</a>
+                
+                <ul class="includes-list">
+                    <li><i class="fa-solid fa-check-circle"></i> Truy cập bộ tài liệu môn Đại số/Giải tích chuẩn HCMUT</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Nhờ AI RAG giải chi tiết các bài toán Tích phân phức tạp</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Thi thử trực tuyến chấm điểm tự động</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Mở khóa tính năng Exam Radar dự đoán đề</li>
+                </ul>
             </div>
-        </section>
-    </main>
+        </aside>
+    </section>
+
+    <div class="uploaded-pdfs" id="uploaded-pdfs"><h3><i class="fa-solid fa-file-pdf"></i> Tài liệu PDF</h3><div class="pdf-list">Đang tải tài liệu...</div></div>
+
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modal-title">Đăng ký Membership</h3>
+            <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 15px;">Điền thông tin để kích hoạt lộ trình học tập trúng đích.</p>
+            
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label for="fullname">Họ và tên</label>
+                    <input type="text" id="fullname" placeholder="Nhập họ và tên của bạn" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email sinh viên</label>
+                    <input type="email" id="email" placeholder="VD: sv.tenban@hcmut.edu.vn" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="university">Trường Đại học</label>
+                    <select id="university" required>
+                        <option value="ueh">Đại học Kinh tế TP.HCM (UEH)</option>
+                        <option value="bk" selected>Đại học Bách Khoa (HCMUT)</option>
+                        <option value="ftu">Đại học Ngoại thương (FTU)</option>
+                        <option value="neu">Đại học Kinh tế Quốc dân (NEU)</option>
+                        <option value="other">Trường Đại học khác</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="reg-password">Tạo mật khẩu</label>
+                    <input type="password" id="reg-password" placeholder="Tạo mật khẩu cho tài khoản" required minlength="6">
+                </div>
+
+                <button type="submit" class="btn btn-gradient" style="width: 100%; margin-top: 10px; font-size: 16px;">
+                    <i class="fa-solid fa-credit-card" style="margin-right: 8px;"></i> Xác nhận thanh toán
+                </button>
+            </form>
+        </div>
+    </div>
 
     <footer>
         <div class="container">
-            <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.08)"><a href="index.html" class="logo">Uni<span>Pass</span></a><p style="color:#94A3B8">Nền tảng EdTech "Cá nhân hóa" dành cho Sinh viên Đại học.</p></div>
-            <div style="text-align:center;color:#94A3B8;margin-top:12px">&copy; 2026 UniPass Project. Bảo lưu mọi quyền.</div>
+            <p>&copy; 2026 UniPass Project. Đồng hành cùng sinh viên Bách Khoa.</p>
         </div>
     </footer>
+
+    <script src="auth.js"></script>
+    <script>
+        const lessonItems = document.querySelectorAll('.lesson-list li');
+        const courseProgressId = 'course-bk';
+        const progressToken = localStorage.getItem('unipass_token') || '';
+        lessonItems.forEach((lesson, index) => {
+            lesson.dataset.lessonId = `lesson-${index}`;
+            const completeLabel = document.createElement('label');
+            completeLabel.className = 'lesson-complete';
+            completeLabel.innerHTML = `<input type="checkbox" data-lesson-progress="lesson-${index}"> Đã học`;
+            lesson.appendChild(completeLabel);
+        });
+        const progressSummary = document.getElementById('course-progress-summary');
+        const progressCheckboxes = document.querySelectorAll('[data-lesson-progress]');
+        function updateProgressSummary() {
+            const completedCount = [...progressCheckboxes].filter(checkbox => checkbox.checked).length;
+            progressSummary.textContent = `${Math.round((completedCount / lessonItems.length) * 100)}% đã học`;
+        }
+        async function loadCourseProgress() {
+            const response = await fetch(`/api/course-progress/${courseProgressId}`, { headers: { Authorization: `Bearer ${progressToken}` } });
+            if (!response.ok) throw new Error('Không thể tải tiến độ.');
+            const data = await response.json();
+            const completed = new Set(data.completedLessonIds || []);
+            progressCheckboxes.forEach(checkbox => {
+                checkbox.checked = completed.has(checkbox.dataset.lessonProgress);
+                checkbox.closest('li').classList.toggle('is-complete', checkbox.checked);
+            });
+            updateProgressSummary();
+        }
+        progressCheckboxes.forEach(checkbox => checkbox.addEventListener('change', async () => {
+            checkbox.disabled = true;
+            try {
+                const response = await fetch(`/api/course-progress/${courseProgressId}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${progressToken}` },
+                    body: JSON.stringify({ lessonId: checkbox.dataset.lessonProgress, completed: checkbox.checked })
+                });
+                if (!response.ok) throw new Error('Không thể lưu tiến độ.');
+                checkbox.closest('li').classList.toggle('is-complete', checkbox.checked);
+                updateProgressSummary();
+            } catch (error) {
+                checkbox.checked = !checkbox.checked;
+                window.alert(error.message);
+            } finally {
+                checkbox.disabled = false;
+            }
+        }));
+        loadCourseProgress().catch(() => { progressSummary.textContent = 'Chưa đồng bộ'; });
+        document.getElementById('uploaded-pdfs').hidden = true;
+        const normalizeLessonTitle = title => title.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
+        const findLessonForPdf = pdfDocument => {
+            const pdfTitle = normalizeLessonTitle(pdfDocument.lessonTitle || '');
+            if (pdfTitle) {
+                const exactLesson = [...lessonItems].find(lesson => normalizeLessonTitle(lesson.querySelector('span')?.textContent || '').includes(pdfTitle));
+                if (exactLesson) return exactLesson;
+                const pdfWords = new Set(pdfTitle.split(' ').filter(word => word.length > 2));
+                const similarLesson = [...lessonItems].find(lesson => {
+                    const lessonWords = normalizeLessonTitle(lesson.querySelector('span')?.textContent || '').split(' ');
+                    const matchingWords = lessonWords.filter(word => pdfWords.has(word)).length;
+                    return matchingWords >= Math.max(3, Math.ceil(pdfWords.size * 0.6));
+                });
+                if (similarLesson) return similarLesson;
+            }
+            return document.querySelector(`[data-lesson-id="${pdfDocument.lessonId}"]`);
+        };
+        fetch('/api/course-pdfs?course=bk_giai_tich').then(response => response.json()).then(data => data.documents.forEach(pdfDocument => {
+            const lesson = findLessonForPdf(pdfDocument);
+            const lessonType = lesson?.querySelector('.lesson-type.type-doc');
+            if (lessonType) {
+                const downloadLink = document.createElement('a');
+                downloadLink.className = 'lesson-type type-doc pdf-download';
+                downloadLink.href = `pdf-viewer.html?docId=${encodeURIComponent(pdfDocument.id)}&returnTo=${encodeURIComponent(window.location.href)}`;
+                downloadLink.title = `Đọc ${pdfDocument.originalName}`;
+                downloadLink.innerHTML = '<i class="fa-solid fa-book-open"></i> ' + lessonType.textContent.trim();
+                lessonType.replaceWith(downloadLink);
+            }
+        }));
+    </script>
+    <script>
+        /* --- DARK MODE LOGIC --- */
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = themeToggleBtn.querySelector('i');
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem('unipass_theme');
+        if (savedTheme) {
+            htmlElement.setAttribute('data-theme', savedTheme);
+            updateIcon(savedTheme);
+        } else {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (prefersDark) {
+                htmlElement.setAttribute('data-theme', 'dark');
+                updateIcon('dark');
+            }
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('unipass_theme', newTheme);
+            updateIcon(newTheme);
+        });
+
+        function updateIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        }
+
+        /* --- ACCORDION LOGIC --- */
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        document.querySelectorAll('.accordion-item').forEach(item => item.classList.add('active'));
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        /* --- MODAL / POPUP LOGIC --- */
+        const modal = document.getElementById('checkout-modal');
+        const closeBtn = document.querySelector('.close-btn');
+        const modalTitle = document.getElementById('modal-title');
+        const checkoutForm = document.getElementById('checkout-form');
+        const checkoutButtons = document.querySelectorAll('.checkout-btn');
+
+        if (window.Auth && window.Auth.current && window.Auth.current()) {
+            document.querySelector('.sidebar-card').hidden = true;
+        }
+
+        // Mở modal khi bấm nút Đăng ký
+        checkoutButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault(); 
+                if (window.Auth && window.Auth.current && window.Auth.current()) return;
+                
+                // Set tiêu đề modal dựa vào nút được bấm
+                const planName = this.innerText;
+                if (planName.includes('Cả Năm')) {
+                    modalTitle.innerText = 'Đăng ký Gói Cả Năm';
+                } else {
+                    modalTitle.innerText = 'Đăng ký Gói Học Kỳ';
+                }
+                
+                modal.classList.add('show');
+            });
+        });
+
+        // Đóng modal
+        closeBtn.addEventListener('click', () => { modal.classList.remove('show'); });
+        window.addEventListener('click', (e) => { if (e.target === modal) { modal.classList.remove('show'); } });
+
+        // Xử lý Form (đăng ký + lưu user)
+        checkoutForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const fullname = document.getElementById('fullname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('reg-password') ? document.getElementById('reg-password').value : '';
+            const university = document.getElementById('university') ? document.getElementById('university').value : '';
+            const res = window.Auth.register({fullname, email, password, university});
+            if(res.ok){
+                alert(`🎉 Cảm ơn ${fullname}! Bạn đã đăng ký thành công và được đăng nhập tự động.`);
+                modal.classList.remove('show');
+                this.reset();
+                window.location.href = 'dashboard.html';
+            } else {
+                alert(res.msg || 'Đăng ký thất bại.');
+            }
+        });
+    </script>
 </body>
 </html>

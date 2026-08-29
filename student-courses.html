@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lộ trình của tôi - UniPass</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=optional" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="student-shared.css">
+    <style>
+        /* HỆ THỐNG BIẾN MÀU SẮC CHUNG */
+        :root {
+            --danger: #EF4444;
+            --primary: #4F46E5;
+            --primary-light: #818CF8;
+            --secondary: #EC4899;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
+            
+            --bg-color: #F1F5F9; 
+            --surface: #FFFFFF;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            
+            /* Biến màu động cho từng trường (Sẽ được JS ghi đè tùy user) */
+            --uni-color: #4F46E5;
+            --uni-bg: rgba(79, 70, 229, 0.1);
+            --uni-grad: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0F172A;       
+            --surface: #1E293B;        
+            --text-main: #F8FAFC;      
+            --text-muted: #94A3B8;     
+            --border-color: #334155;   
+            --header-bg: rgba(30, 41, 59, 0.95);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); overflow-x: hidden; transition: 0.3s; }
+        
+        /* --- Navbar --- */
+        header { position: fixed; top: 0; width: 100%; background: var(--header-bg); border-bottom: 1px solid var(--border-color); z-index: 1000; height: 70px; display: flex; align-items: center; }
+        .header-container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: 800; color: var(--primary); text-decoration: none; }
+        .logo span { color: var(--secondary); }
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        .theme-toggle { background: transparent; border: 1px solid var(--border-color); color: var(--text-main); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        .theme-toggle:hover { background: var(--surface); color: var(--primary); border-color: var(--primary); }
+        .user-profile { display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 6px 12px; border-radius: 50px; border: 1px solid var(--border-color); background: var(--surface); transition: 0.2s; }
+        .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--gradient); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px; }
+        .user-name { font-weight: 600; font-size: 14px; }
+
+        /* --- Dashboard Layout --- */
+        .dashboard-wrapper { display: flex; max-width: 1400px; margin: 70px auto 0; min-height: calc(100vh - 70px); }
+        
+        /* Sidebar */
+        .sidebar { width: 260px; background: var(--surface); border-right: 1px solid var(--border-color); padding: 24px 0; position: fixed; height: calc(100vh - 70px); overflow-y: auto; transition: 0.3s; }
+        .nav-menu { list-style: none; padding: 0 16px; }
+        .nav-menu li { margin-bottom: 8px; }
+        .nav-menu a { display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: var(--text-muted); text-decoration: none; font-weight: 600; border-radius: 12px; transition: 0.2s; }
+        .nav-menu a i { font-size: 18px; width: 24px; text-align: center; }
+        .nav-menu a:hover { background: var(--bg-color); color: var(--primary); }
+        .nav-menu a.active { background: var(--uni-bg); color: var(--uni-color); }
+        
+        .logout-btn { margin-top: 40px; border-top: 1px solid var(--border-color); padding-top: 20px; }
+        .logout-btn a { color: #EF4444; }
+        .logout-btn a:hover { background: rgba(239, 68, 68, 0.1); color: #EF4444; }
+
+        /* Main Content */
+        .main-content { flex: 1; padding: 32px 40px; margin-left: 260px; transition: 0.3s; }
+
+        /* Page Header */
+        .page-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 32px; background: var(--surface); padding: 32px; border-radius: 20px; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: 0; right: 0; width: 150px; height: 100%; background: var(--uni-grad); opacity: 0.1; clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%); }
+        .header-info h1 { font-size: 28px; font-weight: 800; color: var(--text-main); margin-bottom: 8px; display: flex; align-items: center; gap: 12px; }
+        .header-info p { color: var(--text-muted); font-size: 15px; }
+        .uni-badge { background: var(--uni-bg); color: var(--uni-color); padding: 6px 16px; border-radius: 20px; font-size: 14px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--uni-color); }
+
+        /* Tabs */
+        .tabs { display: flex; gap: 32px; border-bottom: 1px solid var(--border-color); margin-bottom: 32px; }
+        .tab-btn { background: none; border: none; padding: 0 0 16px 0; font-size: 16px; font-weight: 600; color: var(--text-muted); cursor: pointer; position: relative; }
+        .tab-btn.active { color: var(--uni-color); }
+        .tab-btn.active::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 3px; background: var(--uni-color); border-radius: 3px 3px 0 0; }
+        .tab-count { background: var(--border-color); color: var(--text-main); padding: 2px 8px; border-radius: 20px; font-size: 12px; margin-left: 6px; }
+        .tab-btn.active .tab-count { background: var(--uni-color); color: white; }
+
+        /* Course Grid */
+        .course-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        
+        /* Detailed Course Card */
+        .course-card-detail { background: var(--surface); border: 1px solid var(--border-color); border-radius: 20px; padding: 24px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: 0.3s; position: relative; overflow: hidden; }
+        .course-card-detail:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--uni-color); }
+        
+        .course-top { display: flex; gap: 20px; margin-bottom: 24px; }
+        .course-icon { width: 80px; height: 80px; border-radius: 16px; background: var(--uni-grad); display: flex; align-items: center; justify-content: center; font-size: 32px; color: white; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .course-info h3 { font-size: 20px; font-weight: 700; color: var(--text-main); margin-bottom: 8px; line-height: 1.3; }
+        .course-info p { color: var(--text-muted); font-size: 14px; display: flex; align-items: center; gap: 6px; }
+        
+        /* Progress Section */
+        .progress-section { background: var(--bg-color); padding: 16px; border-radius: 12px; margin-bottom: 24px; }
+        .progress-header { display: flex; justify-content: space-between; font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 10px; }
+        .progress-bar { width: 100%; height: 8px; background: var(--border-color); border-radius: 10px; overflow: hidden; }
+        .progress-fill { height: 100%; background: var(--uni-grad); border-radius: 10px; position: relative; }
+        
+        .next-lesson { font-size: 13px; color: var(--text-muted); margin-top: 12px; display: flex; align-items: center; gap: 8px; }
+        .next-lesson i { color: var(--warning); }
+
+        /* Actions */
+        .card-actions { display: flex; gap: 12px; margin-top: auto; }
+        .btn-main { flex: 1; padding: 12px; background: var(--uni-grad); color: white; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: 0.2s; text-align: center; text-decoration: none; }
+        .btn-main:hover { opacity: 0.9; transform: translateY(-2px); }
+        .btn-sec { padding: 12px 16px; background: transparent; border: 1px solid var(--border-color); color: var(--text-main); border-radius: 12px; font-weight: 600; cursor: pointer; transition: 0.2s; }
+        .btn-sec:hover { border-color: var(--uni-color); color: var(--uni-color); }
+
+        /* AI Alert inside Card */
+        .ai-hint { position: absolute; top: 24px; right: 24px; background: rgba(236, 72, 153, 0.1); color: var(--secondary); padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; display: flex; align-items: center; gap: 4px; border: 1px solid rgba(236, 72, 153, 0.2); }
+
+        @media (max-width: 1024px) { .course-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .sidebar { transform: translateX(-100%); z-index: 999; } .main-content { margin-left: 0; padding: 24px 20px; } .page-header { flex-direction: column; align-items: flex-start; gap: 16px; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="dashboard.html" class="logo">Uni<span>Pass</span></a>
+            <div class="nav-right">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div class="user-profile" id="user-profile">
+                    <div class="avatar" id="user-avatar">U</div>
+                    <span class="user-name" id="display-name">Người dùng</span>
+                    <i class="fa-solid fa-chevron-down" style="font-size: 12px; color: var(--text-muted);"></i>
+                </div>
+                <a href="login.html" class="user-header-logout" style="background:var(--danger);color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:700;">Đăng xuất</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <ul class="nav-menu">
+                <li><a href="dashboard.html"><i class="fa-solid fa-house"></i> Tổng quan</a></li>
+                <li><a href="student-courses.html" class="active"><i class="fa-solid fa-book-open"></i> Lộ trình của tôi</a></li>
+                <li><a href="student-rag.html"><i class="fa-solid fa-robot"></i> Thi thử & AI RAG</a></li>
+                <li><a href="student-gap.html"><i class="fa-solid fa-chart-line"></i> Gap Analysis</a></li>
+                <li><a href="student-studygroup.html"><i class="fa-solid fa-users"></i> Study Group AI</a></li>
+                <li><a href="student-radar.html"><i class="fa-solid fa-calendar-check"></i> Exam Radar</a></li>
+            </ul>
+            
+        </aside>
+
+        <main class="main-content">
+            
+            <div class="page-header">
+                <div class="header-info">
+                    <h1>Lộ trình học tập</h1>
+                    <p>Giáo trình và bài tập được tùy biến riêng cho trường của bạn.</p>
+                </div>
+                <div class="uni-badge" id="uni-badge">
+                    <i class="fa-solid fa-university"></i> Đang tải dữ liệu...
+                </div>
+            </div>
+
+            <div class="tabs">
+                <button class="tab-btn active">Đang học <span class="tab-count" id="count-active">0</span></button>
+                <button class="tab-btn">Đã hoàn thành <span class="tab-count">0</span></button>
+                <button class="tab-btn">Đã lưu <span class="tab-count">0</span></button>
+            </div>
+
+            <div class="course-grid" id="course-container">
+                </div>
+
+        </main>
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+        /* --- 1. KIỂM TRA ĐĂNG NHẬP (HỖ TRỢ CẢ AUTH MỚI VÀ KHÓA CŨ) --- */
+        function getLoggedInDisplay() {
+            // 1) Kiểm tra API Auth hiện đại nếu có
+            if (window.Auth && typeof window.Auth.current === 'function') {
+                try {
+                    const u = window.Auth.current();
+                    if (u) return u.fullname || (u.email && u.email.split('@')[0]) || u.username || null;
+                } catch (e) {}
+            }
+
+            // 2) Kiểm tra khóa legacy `unipass_user`
+            const legacy = localStorage.getItem('unipass_user');
+            if (legacy) {
+                try {
+                    const obj = JSON.parse(legacy);
+                    return obj.fullname || (obj.email && obj.email.split('@')[0]) || obj.username || null;
+                } catch (e) {
+                    return legacy;
+                }
+            }
+
+            // 3) Kiểm tra khóa `unipass_current_v1` (có thể là JSON hoặc chỉ là email string set bởi auth.js)
+            const cur = localStorage.getItem('unipass_current_v1');
+            if (cur) {
+                // Try parse as JSON first
+                try {
+                    const obj = JSON.parse(cur);
+                    if (obj) return obj.fullname || (obj.email && obj.email.split('@')[0]) || obj.username || null;
+                } catch (e) {
+                    // If parse fails, cur may be plain email (auth.js sets email string)
+                    const email = cur;
+                    if (email === 'admin') return 'Administrator';
+                    try {
+                        const users = JSON.parse(localStorage.getItem('unipass_users_v1') || '[]');
+                        const found = users.find(u => u.email === email);
+                        if (found) return found.fullname || (found.email && found.email.split('@')[0]) || null;
+                        // fallback: return local part of email
+                        return email.split('@')[0];
+                    } catch (e2) {
+                        return email.split('@')[0];
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        const displayName = getLoggedInDisplay();
+        if (!displayName) {
+            window.location.href = 'login.html';
+        } else {
+        }
+
+        /* --- 2. DARK MODE LOGIC --- */
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = themeToggleBtn.querySelector('i');
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem('unipass_theme');
+        if (savedTheme) { htmlElement.setAttribute('data-theme', savedTheme); updateIcon(savedTheme); }
+        else if (window.matchMedia('(prefers-color-scheme: dark)').matches) { htmlElement.setAttribute('data-theme', 'dark'); updateIcon('dark'); }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const newTheme = htmlElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('unipass_theme', newTheme);
+            updateIcon(newTheme);
+        });
+
+        function updateIcon(theme) { themeIcon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon'; }
+
+        /* --- 3. DỮ LIỆU ĐỘNG (TÙY BIẾN THEO TRƯỜNG CỦA SINH VIÊN) --- */
+        // Giả lập Logic: Hệ thống sẽ ngẫu nhiên (hoặc dựa trên một rule) gán user vào 1 trường.
+        const loggedInEmail = localStorage.getItem('unipass_current_v1') || '';
+        const emailDomain = loggedInEmail.toLowerCase().split('@')[1] || '';
+        const assignedUni = {
+            'st.ueh.edu.vn': 'UEH',
+            'hcmut.edu.vn': 'BK',
+            'ftu.edu.vn': 'FTU',
+            'st.neu.edu.vn': 'NEU',
+            'hcmus.edu.vn': 'HCMUS',
+            'tdtu.edu.vn': 'TDTU'
+        }[emailDomain] || 'UEH';
+
+        const universityProfiles = {
+            "UEH": {
+                name: "Đại học Kinh tế TP.HCM (UEH)",
+                color: "#4F46E5",
+                bg: "rgba(79, 70, 229, 0.1)",
+                gradient: "linear-gradient(135deg, #667EEA 0%, #764BA2 100%)",
+                courses: [
+                    { title: "Hành vi người tiêu dùng", icon: "fa-bullseye", link: "course-ueh.html", courseId: "course-ueh", totalLessons: 10, next: "Chương 2: Mô hình Howard-Sheth", aiHint: "Cần ôn tập gấp" },
+                    { title: "Quản trị Marketing", icon: "fa-chart-simple", link: "#", courseId: "course-marketing", totalLessons: 10, next: "Chương 1: Định vị thương hiệu", aiHint: null },
+                    { title: "Kinh tế Vĩ mô", icon: "fa-earth-asia", link: "#", courseId: "course-macro", totalLessons: 10, next: "Chương 1: GDP & Lạm phát", aiHint: null }
+                ]
+            },
+            "BK": {
+                name: "Đại học Bách Khoa (HCMUT)",
+                color: "#0284C7",
+                bg: "rgba(2, 132, 199, 0.1)",
+                gradient: "linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%)",
+                courses: [
+                    { title: "Đại số tuyến tính", icon: "fa-square-root-variable", link: "course-bk.html", courseId: "course-bk", totalLessons: 12, next: "Chương 2: Ma trận nghịch đảo", aiHint: "Hổng kiến thức Ma trận" },
+                    { title: "Vật lý Đại cương 1", icon: "fa-atom", link: "#", courseId: "course-physics", totalLessons: 10, next: "Chương 1: Động học chất điểm", aiHint: null }
+                ]
+            },
+            "FTU": {
+                name: "Đại học Ngoại thương (FTU)",
+                color: "#E11D48",
+                bg: "rgba(225, 29, 72, 0.1)",
+                gradient: "linear-gradient(135deg, #FF758C 0%, #FF7EB3 100%)",
+                courses: [
+                    { title: "Kinh tế Vi mô", icon: "fa-chart-pie", link: "course-ftu.html", courseId: "course-ftu", totalLessons: 10, next: "Chương 3: Độc quyền bán", aiHint: "Sẵn sàng cho bài thi" },
+                    { title: "Thanh toán Quốc tế", icon: "fa-money-bill-transfer", link: "#", courseId: "course-international-payment", totalLessons: 10, next: "Chương 1: Tỷ giá hối đoái", aiHint: null }
+                ]
+            },
+            "NEU": {
+                name: "Đại học Kinh tế Quốc dân (NEU)",
+                color: "#15803D",
+                bg: "rgba(21, 128, 61, 0.1)",
+                gradient: "linear-gradient(135deg, #22C55E 0%, #166534 100%)",
+                courses: [
+                    { title: "Kinh tế học cơ bản", icon: "fa-chart-line", link: "#", courseId: "course-basic-economics", totalLessons: 10, next: "Chương 1: Cung và cầu", aiHint: null },
+                    { title: "Toán kinh tế", icon: "fa-calculator", link: "#", courseId: "course-econometrics", totalLessons: 10, next: "Chương 1: Hàm số", aiHint: null }
+                ]
+            },
+            "HCMUS": {
+                name: "Đại học Khoa học Tự nhiên (HCMUS)",
+                color: "#0369A1",
+                bg: "rgba(3, 105, 161, 0.1)",
+                gradient: "linear-gradient(135deg, #38BDF8 0%, #075985 100%)",
+                courses: [
+                    { title: "Lập trình cơ bản", icon: "fa-code", link: "#", courseId: "course-programming", totalLessons: 10, next: "Chương 1: Thuật toán", aiHint: null },
+                    { title: "Toán rời rạc", icon: "fa-diagram-project", link: "#", courseId: "course-discrete-math", totalLessons: 10, next: "Chương 1: Mệnh đề logic", aiHint: null }
+                ]
+            },
+            "TDTU": {
+                name: "Đại học Tôn Đức Thắng (TDTU)",
+                color: "#B45309",
+                bg: "rgba(180, 83, 9, 0.1)",
+                gradient: "linear-gradient(135deg, #F59E0B 0%, #92400E 100%)",
+                courses: [
+                    { title: "Kỹ năng học đại học", icon: "fa-graduation-cap", link: "#", courseId: "course-study-skills", totalLessons: 10, next: "Chương 1: Lập kế hoạch học tập", aiHint: null },
+                    { title: "Tin học ứng dụng", icon: "fa-laptop-code", link: "#", courseId: "course-applied-it", totalLessons: 10, next: "Chương 1: Công cụ số", aiHint: null }
+                ]
+            }
+        };
+
+        // Khởi tạo giao diện dựa trên trường được gán
+        function initStudentProfile() {
+            const profile = universityProfiles[assignedUni];
+            
+            // Cập nhật CSS Variables để đổi màu toàn trang
+            const root = document.documentElement;
+            root.style.setProperty('--uni-color', profile.color);
+            root.style.setProperty('--uni-bg', profile.bg);
+            root.style.setProperty('--uni-grad', profile.gradient);
+
+            // Cập nhật Badge Trường
+            document.getElementById('uni-badge').innerHTML = `<i class="fa-solid fa-university"></i> ${profile.name}`;
+            
+            // Render Courses
+            const container = document.getElementById('course-container');
+            document.getElementById('count-active').innerText = profile.courses.length;
+            
+            let html = '';
+            profile.courses.forEach(course => {
+                const aiBadge = course.aiHint ? `<div class="ai-hint"><i class="fa-solid fa-robot"></i> ${course.aiHint}</div>` : '';
+                
+                html += `
+                    <div class="course-card-detail">
+                        ${aiBadge}
+                        <div class="course-top">
+                            <div class="course-icon"><i class="fa-solid ${course.icon}"></i></div>
+                            <div class="course-info">
+                                <h3>${course.title}</h3>
+                                <p><i class="fa-solid fa-layer-group"></i> 12 Bài giảng • Theo giáo trình ${assignedUni}</p>
+                            </div>
+                        </div>
+
+                        <div class="progress-section" data-course-progress="${course.courseId}" data-total-lessons="${course.totalLessons}">
+                            <div class="progress-header">
+                                <span>Tiến độ học tập</span>
+                                <span class="course-progress-percent">0%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%; transition: width 1s ease-out;"></div>
+                            </div>
+                            <div class="next-lesson">
+                                <i class="fa-solid fa-circle-play"></i> Học tiếp: ${course.next}
+                            </div>
+                        </div>
+
+                        <div class="card-actions">
+                            <a href="${course.link}" class="btn-main">Vào lớp học</a>
+                            <button class="btn-sec" title="Thi thử môn này"><i class="fa-solid fa-pen-to-square"></i></button>
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+
+            document.querySelectorAll('[data-course-progress]').forEach(progressSection => {
+                loadCourseProgress(progressSection).catch(() => {
+                    progressSection.querySelector('.course-progress-percent').textContent = 'Chưa đồng bộ';
+                });
+            });
+        }
+
+        async function loadCourseProgress(progressSection) {
+            const response = await fetch(`/api/course-progress/${progressSection.dataset.courseProgress}`, {
+                headers: { Authorization: `Bearer ${localStorage.getItem('unipass_token') || ''}` }
+            });
+            if (!response.ok) throw new Error('Không thể tải tiến độ.');
+            const data = await response.json();
+            const completedCount = Array.isArray(data.completedLessonIds) ? data.completedLessonIds.length : 0;
+            const percentage = Math.round((completedCount / Number(progressSection.dataset.totalLessons)) * 100);
+            progressSection.querySelector('.course-progress-percent').textContent = `${percentage}%`;
+            progressSection.querySelector('.progress-fill').style.width = `${percentage}%`;
+        }
+
+        // Chạy hàm khởi tạo
+        initStudentProfile();
+    </script>
+</body>

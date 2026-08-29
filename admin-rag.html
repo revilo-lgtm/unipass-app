@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Dữ liệu AI RAG - Admin UniPass</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="admin-shared.css">
+    <style>
+        /* HỆ THỐNG BIẾN MÀU SẮC CHUNG */
+        :root {
+            --primary: #4F46E5;
+            --primary-light: #818CF8;
+            --secondary: #EC4899;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --info: #0284C7;
+            --gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
+            
+            --bg-color: #F1F5F9; 
+            --surface: #FFFFFF;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0F172A;       
+            --surface: #1E293B;        
+            --text-main: #F8FAFC;      
+            --text-muted: #94A3B8;     
+            --border-color: #334155;   
+            --header-bg: rgba(30, 41, 59, 0.95);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); overflow-x: hidden; transition: 0.3s; }
+        
+        /* --- Navbar --- */
+        header { position: fixed; top: 0; width: 100%; background: var(--header-bg); border-bottom: 1px solid var(--border-color); z-index: 1000; height: 70px; display: flex; align-items: center; }
+        .header-container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: 800; color: var(--text-main); text-decoration: none; }
+        .logo span { color: var(--primary); }
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        .theme-toggle { background: transparent; border: 1px solid var(--border-color); color: var(--text-main); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        .theme-toggle:hover { background: var(--surface); color: var(--primary); border-color: var(--primary); }
+        .admin-profile { display: flex; align-items: center; gap: 10px; padding: 6px 12px; border-radius: 50px; border: 1px solid var(--primary); background: rgba(79, 70, 229, 0.05); }
+        .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--text-main); display: flex; align-items: center; justify-content: center; color: var(--surface); font-size: 14px; }
+        .admin-name { font-weight: 700; font-size: 14px; color: var(--primary); }
+
+        /* --- Dashboard Layout --- */
+        .dashboard-wrapper { display: flex; max-width: 1400px; margin: 70px auto 0; min-height: calc(100vh - 70px); }
+        
+        /* Sidebar */
+        .sidebar { width: 260px; background: var(--surface); border-right: 1px solid var(--border-color); padding: 24px 0; position: fixed; height: calc(100vh - 70px); overflow-y: auto; }
+        .nav-menu { list-style: none; padding: 0 16px; }
+        .nav-menu li { margin-bottom: 8px; }
+        .nav-menu a { display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: var(--text-muted); text-decoration: none; font-weight: 600; border-radius: 12px; transition: 0.2s; }
+        .nav-menu a i { font-size: 18px; width: 24px; text-align: center; }
+        .nav-menu a:hover { background: var(--bg-color); color: var(--primary); }
+        .nav-menu a.active { background: var(--primary); color: white; box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3); }
+
+        /* Main Content */
+        .main-content { flex: 1; padding: 32px 40px; margin-left: 260px; }
+        
+        .page-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px; }
+        .page-header h1 { font-size: 28px; font-weight: 800; color: var(--text-main); margin-bottom: 8px; display: flex; align-items: center; gap: 12px; }
+        .page-header h1 i { color: var(--primary); font-size: 24px; }
+        .page-header p { color: var(--text-muted); font-size: 15px; }
+        .sync-btn { padding: 10px 20px; background: var(--gradient); color: white; font-weight: 600; border-radius: 10px; cursor: pointer; transition: 0.2s; border: none; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3); }
+        .sync-btn:hover { transform: translateY(-2px); }
+
+        /* Mini KPIs */
+        .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 24px; }
+        .kpi-mini { background: var(--surface); border: 1px solid var(--border-color); padding: 20px; border-radius: 16px; box-shadow: var(--shadow-sm); position: relative; overflow: hidden; }
+        .kpi-info h3 { font-size: 13px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 8px; }
+        .kpi-info p { font-size: 24px; font-weight: 800; color: var(--text-main); }
+        .kpi-bg-icon { position: absolute; right: -10px; bottom: -10px; font-size: 64px; opacity: 0.05; }
+        .kpi-mini.blue .kpi-bg-icon { color: var(--info); opacity: 0.1;}
+        .kpi-mini.purple .kpi-bg-icon { color: var(--primary); opacity: 0.1;}
+        .kpi-mini.green .kpi-bg-icon { color: var(--success); opacity: 0.1;}
+        .kpi-mini.orange .kpi-bg-icon { color: var(--warning); opacity: 0.1;}
+
+        /* Upload Zone */
+        .upload-zone { background: var(--surface); border: 2px dashed var(--primary-light); border-radius: 16px; padding: 40px; text-align: center; margin-bottom: 32px; transition: 0.3s; cursor: pointer; }
+        .upload-zone:hover { background: rgba(79, 70, 229, 0.02); border-color: var(--primary); }
+        .upload-icon { font-size: 48px; color: var(--primary-light); margin-bottom: 16px; }
+        .upload-zone h3 { font-size: 18px; color: var(--text-main); margin-bottom: 8px; }
+        .upload-zone p { color: var(--text-muted); font-size: 14px; margin-bottom: 16px; }
+        .btn-upload { background: var(--surface); border: 1px solid var(--border-color); padding: 8px 16px; border-radius: 8px; font-weight: 600; color: var(--primary); cursor: pointer; transition: 0.2s; }
+        .btn-upload:hover { border-color: var(--primary); }
+            .pdf-file-picker { display: inline-flex; align-items: center; gap: 8px; padding: 9px 12px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--surface); color: var(--text-main); cursor: pointer; font-size: 13px; }
+            .pdf-file-picker:hover { border-color: var(--primary); color: var(--primary); }
+            .pdf-file-picker input { max-width: 220px; font-size: 12px; }
+            .upload-message-error { color: var(--danger); }
+            .upload-message-success { color: var(--success); }
+
+        /* Table Area */
+        .section-title { font-size: 18px; font-weight: 700; margin-bottom: 16px; color: var(--text-main); }
+        .table-container { background: var(--surface); border-radius: 16px; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        thead { background: var(--bg-color); border-bottom: 1px solid var(--border-color); }
+        th { padding: 16px 24px; font-size: 13px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        td { padding: 16px 24px; border-bottom: 1px solid var(--border-color); color: var(--text-main); font-size: 14px; vertical-align: middle; }
+        tbody tr:hover { background: rgba(79, 70, 229, 0.02); }
+        tbody tr:last-child td { border-bottom: none; }
+
+        .file-info { display: flex; align-items: center; gap: 12px; }
+        .file-icon { font-size: 24px; }
+        .file-icon.pdf { color: #EF4444; }
+        .file-icon.word { color: #2563EB; }
+        .file-icon.ppt { color: #D97706; }
+        .file-name { font-weight: 600; margin-bottom: 4px; }
+        .file-size { color: var(--text-muted); font-size: 12px; }
+
+        .tag { padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; border: 1px solid var(--border-color); background: var(--bg-color); }
+        
+        .status-badge { padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; }
+        .status-success { background: rgba(16, 185, 129, 0.1); color: var(--success); }
+        .status-processing { background: rgba(245, 158, 11, 0.1); color: var(--warning); animation: pulse-orange 2s infinite; }
+        .status-failed { background: rgba(239, 68, 68, 0.1); color: var(--danger); }
+
+        /* Actions */
+        .action-btns { display: flex; gap: 8px; }
+        .btn-icon { width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border-color); background: transparent; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
+        .btn-icon:hover { background: var(--bg-color); color: var(--primary); border-color: var(--primary); }
+        .btn-icon.delete:hover { color: var(--danger); border-color: var(--danger); }
+
+        @keyframes pulse-orange {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        @media (max-width: 1024px) { .sidebar { display: none; } .main-content { margin-left: 0; padding: 24px 20px; } .kpi-row { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .kpi-row { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="admin-dashboard.html" class="logo">UniPass <span>Admin</span></a>
+            <div class="nav-right">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div class="admin-profile">
+                    <div class="avatar"><i class="fa-solid fa-shield-halved"></i></div>
+                    <span class="admin-name">Quản trị viên</span>
+                </div>
+                <a href="#" id="admin-logout" style="background:var(--danger);color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:700;margin-left:8px;">Đăng xuất</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <ul class="nav-menu">
+                <li><a href="admin-dashboard.html"><i class="fa-solid fa-chart-pie"></i> Tổng quan</a></li>
+                <li><a href="admin-students.html"><i class="fa-solid fa-users"></i> Quản lý Học viên</a></li>
+                <li><a href="admin-transactions.html"><i class="fa-solid fa-file-invoice-dollar"></i> Lịch sử Giao dịch</a></li>
+                <li><a href="admin-rag.html" class="active"><i class="fa-solid fa-database"></i> Dữ liệu AI RAG</a></li>
+                <li><a href="admin-settings.html"><i class="fa-solid fa-gear"></i> Cài đặt Hệ thống</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="page-header">
+                <div>
+                    <h1><i class="fa-solid fa-brain"></i> Kho Tri thức AI (Knowledge Base)</h1>
+                    <p>Quản lý tài liệu, nhúng vector (Embedding) và tối ưu hóa độ chính xác cho Chatbot.</p>
+                </div>
+                <button class="sync-btn" id="sync-db-btn"><i class="fa-solid fa-rotate"></i> Đồng bộ Vector DB</button>
+            </div>
+
+            <div class="kpi-row">
+                <div class="kpi-mini blue">
+                    <div class="kpi-info">
+                        <h3>Tổng tài liệu (Docs)</h3>
+                        <p id="total-docs">1,248</p>
+                    </div>
+                    <i class="fa-solid fa-file-lines kpi-bg-icon"></i>
+                </div>
+                <div class="kpi-mini purple">
+                    <div class="kpi-info">
+                        <h3>Tổng số Vector (Chunks)</h3>
+                        <p id="total-chunks">84,590</p>
+                    </div>
+                    <i class="fa-solid fa-cubes kpi-bg-icon"></i>
+                </div>
+                <div class="kpi-mini green">
+                    <div class="kpi-info">
+                        <h3>Độ chính xác (Retrieval Score)</h3>
+                        <p>94.5%</p>
+                    </div>
+                    <i class="fa-solid fa-bullseye kpi-bg-icon"></i>
+                </div>
+                <div class="kpi-mini orange">
+                    <div class="kpi-info">
+                        <h3>Dung lượng Pinecone DB</h3>
+                        <p>1.2 GB</p>
+                    </div>
+                    <i class="fa-solid fa-hard-drive kpi-bg-icon"></i>
+                </div>
+            </div>
+
+            <div class="upload-zone" id="upload-zone">
+                <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                <h3>Tải tài liệu PDF vào khóa học</h3>
+                <p>Chỉ hỗ trợ PDF, tối đa 50MB/file.</p>
+                <form id="pdf-upload-form" style="display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;">
+                    <select id="pdf-course" required style="padding:10px;border-radius:8px;border:1px solid var(--border-color);">
+                        <option value="ueh_hvntd">UEH - Hành vi người tiêu dùng</option>
+                        <option value="bk_giai_tich">HCMUT - Giải tích 2</option>
+                        <option value="ftu_vamo">FTU - Kinh tế Vi mô</option>
+                    </select>
+                    <select id="pdf-lesson" required style="padding:10px;border-radius:8px;border:1px solid var(--border-color);"></select>
+                    <label class="pdf-file-picker" for="pdf-file"><i class="fa-solid fa-file-pdf"></i> Chọn file PDF
+                        <input id="pdf-file" type="file" accept="application/pdf,.pdf" required>
+                    </label>
+                    <button type="submit" class="btn-upload">Tải PDF lên</button>
+                </form>
+                <div id="pdf-upload-message" style="margin-top:12px;"></div>
+            </div>
+
+            <h2 class="section-title">Danh sách Tài liệu Nguồn</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tên tài liệu</th>
+                            <th>Môn học / Trường</th>
+                            <th>Kích thước & Chunks</th>
+                            <th>Trạng thái Embedding</th>
+                            <th>Ngày cập nhật</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rag-table-body">
+                        </tbody>
+                </table>
+            </div>
+            
+        </main>
+    </div>
+
+    <script>
+        /* --- DARK MODE LOGIC --- */
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = themeToggleBtn.querySelector('i');
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem('unipass_theme');
+        if (savedTheme) { htmlElement.setAttribute('data-theme', savedTheme); updateIcon(savedTheme); }
+        else if (window.matchMedia('(prefers-color-scheme: dark)').matches) { htmlElement.setAttribute('data-theme', 'dark'); updateIcon('dark'); }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const newTheme = htmlElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('unipass_theme', newTheme);
+            updateIcon(newTheme);
+        });
+
+        function updateIcon(theme) { themeIcon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon'; }
+
+        /* --- DATA RENDER LOGIC --- */
+        const tableBody = document.getElementById('rag-table-body');
+        const uploadZone = document.getElementById('upload-zone');
+        const totalDocsEl = document.getElementById('total-docs');
+        const totalChunksEl = document.getElementById('total-chunks');
+
+        let documentsData = [];
+
+        function renderTable() {
+            let html = '';
+            documentsData.forEach(doc => {
+                html += `
+                    <tr>
+                        <td>
+                            <div class="file-info">
+                                <i class="fa-solid ${doc.icon} file-icon ${doc.iconClass}"></i>
+                                <div>
+                                    <div class="file-name">${doc.name}</div>
+                                    <div class="file-size">${doc.size}</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                                <div style="margin-bottom: 4px; font-weight: 600;">${doc.lessonTitle}</div>
+                            <span class="tag">${doc.uni}</span>
+                        </td>
+                        <td>
+                            <div style="font-weight: 700; color: var(--primary);">${doc.chunks} chunks</div>
+                        </td>
+                        <td>
+                            <span class="status-badge ${doc.statusClass}">
+                                <i class="fa-solid ${doc.statusIcon}"></i> ${doc.status}
+                            </span>
+                        </td>
+                        <td style="color: var(--text-muted); font-size: 13px;">${doc.date}</td>
+                        <td>
+                            <div class="action-btns">
+                                <a class="btn-icon" title="Mở PDF" href="/api/course-pdfs/${doc.id}/download" target="_blank"><i class="fa-solid fa-eye"></i></a>
+                                <button class="btn-icon delete" title="Xóa PDF" data-document-id="${doc.id}" type="button"><i class="fa-solid fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            });
+            tableBody.innerHTML = html;
+        }
+
+        const lessonCatalog = {
+            ueh_hvntd: ['Tóm tắt lý thuyết trọng tâm Chương 1', 'Các giai đoạn ra quyết định & Mô hình EKB', 'Yếu tố rủi ro cảm nhận', 'Động cơ, Nhận thức và Thái độ', 'Tháp nhu cầu Maslow ứng dụng trong Marketing'],
+            bk_giai_tich: ['Các phép toán Ma trận & Định thức', 'Kỹ năng biến đổi Gauss-Jordan', 'Giải hệ phương trình Cramer', 'Độc lập tuyến tính và Cơ sở không gian', 'Chéo hóa ma trận và ứng dụng', 'Đạo hàm riêng và Cực trị hàm nhiều biến', 'Tích phân kép và Tích phân bội ba'],
+            ftu_vamo: ['Lý thuyết Cung - Cầu và Điểm cân bằng thị trường', 'Các dạng bài tập tính Độ co giãn', 'Đường bàng quan và Đường ngân sách', 'Tối đa hóa hữu dụng', 'Thị trường Cạnh tranh hoàn hảo', 'Độc quyền bán & Độc quyền nhóm']
+        };
+        const courseSelect = document.getElementById('pdf-course');
+        const lessonSelect = document.getElementById('pdf-lesson');
+        function updateLessonOptions() {
+            lessonSelect.innerHTML = lessonCatalog[courseSelect.value].map((title, index) => `<option value="lesson-${index}">${title}</option>`).join('');
+        }
+        courseSelect.addEventListener('change', updateLessonOptions);
+        updateLessonOptions();
+
+        function formatSize(bytes) { return `${(bytes / 1024 / 1024).toFixed(2)} MB`; }
+        async function deleteDocument(documentId) {
+            if (!window.confirm('Bạn có chắc muốn xóa tài liệu PDF này không?')) return;
+            try {
+                await window.Auth.adminRequest(`/api/admin/course-pdfs/${encodeURIComponent(documentId)}`, { method: 'DELETE' });
+                await loadDocuments();
+            } catch (error) {
+                window.alert(error.message);
+            }
+        }
+
+        tableBody.addEventListener('click', event => {
+            const deleteButton = event.target.closest('[data-document-id]');
+            if (deleteButton) deleteDocument(deleteButton.dataset.documentId);
+        });
+
+        async function loadDocuments() {
+            const courses = ['ueh_hvntd', 'bk_giai_tich', 'ftu_vamo'];
+            const lists = await Promise.all(courses.map(async course => {
+                const response = await fetch(`/api/course-pdfs?course=${encodeURIComponent(course)}`);
+                if (!response.ok) throw new Error('Không thể tải danh sách tài liệu.');
+                return response.json();
+            }));
+            documentsData = lists.flatMap(list => list.documents.map(document => ({
+                id: document.id, name: document.originalName, icon: 'fa-file-pdf', iconClass: 'pdf', subject: document.course, lessonTitle: document.lessonTitle || 'Chưa gán bài học', uni: document.course.split('_')[0].toUpperCase(), size: formatSize(document.size), chunks: '-', status: 'Đã tải lên', statusClass: 'status-success', statusIcon: 'fa-check', date: new Date(document.createdAt).toLocaleDateString('vi-VN')
+            })));
+            totalDocsEl.innerText = documentsData.length.toLocaleString();
+            renderTable();
+        }
+
+        document.getElementById('pdf-upload-form').addEventListener('submit', async event => {
+            event.preventDefault();
+            const formData = new FormData();
+            formData.append('course', document.getElementById('pdf-course').value);
+            formData.append('lessonId', document.getElementById('pdf-lesson').value);
+            formData.append('lessonTitle', document.getElementById('pdf-lesson').selectedOptions[0].text);
+            formData.append('pdf', document.getElementById('pdf-file').files[0]);
+            const message = document.getElementById('pdf-upload-message');
+            message.className = '';
+            const file = document.getElementById('pdf-file').files[0];
+            if (!file) {
+                message.className = 'upload-message-error';
+                message.textContent = 'Vui lòng chọn file PDF.';
+                return;
+            }
+            try {
+                await window.Auth.adminRequest('/api/admin/course-pdfs', { method: 'POST', body: formData });
+                message.className = 'upload-message-success';
+                message.textContent = 'Đã tải PDF thành công.';
+                event.target.reset();
+                await loadDocuments();
+            } catch (error) {
+                message.className = 'upload-message-error';
+                message.textContent = error.message;
+            }
+        });
+
+        loadDocuments().catch(error => { tableBody.innerHTML = `<tr><td colspan="6">${error.message}</td></tr>`; });
+
+        // Nút Đồng bộ
+        document.getElementById('sync-db-btn').addEventListener('click', function() {
+            const btn = this;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang đồng bộ...';
+            
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Đã đồng bộ Pinecone DB';
+                setTimeout(() => btn.innerHTML = originalText, 2000);
+            }, 1500);
+        });
+    </script>
+    <script src="auth.js"></script>
+    <script>
+        document.getElementById('admin-logout').addEventListener('click', event => {
+            event.preventDefault();
+            window.Auth.logout();
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>
