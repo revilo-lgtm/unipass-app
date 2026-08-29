@@ -85,7 +85,7 @@
             const candidate = requestedReturnTo || referrer;
             const parsed = new URL(candidate, window.location.href);
             const isSameOrigin = parsed.origin === window.location.origin;
-            const isAllowedPage = /^(course-(ueh|bk|ftu)\.html|dashboard\.html)$/.test(parsed.pathname.split('/').pop());
+            const isAllowedPage = /^(course-(ueh|bk|ftu)\.html|dashboard\.html|admin-rag\.html)$/.test(parsed.pathname.split('/').pop());
             if (isSameOrigin && isAllowedPage) returnUrl = `${parsed.pathname}${parsed.search}${parsed.hash}`;
         } catch (error) { /* Keep the dashboard fallback. */ }
         backLink.href = returnUrl;
