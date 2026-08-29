@@ -308,7 +308,7 @@
                         <td style="color: var(--text-muted); font-size: 13px;">${doc.date}</td>
                         <td>
                             <div class="action-btns">
-                                <a class="btn-icon" title="Mở PDF" href="/api/course-pdfs/${doc.id}/download" target="_blank"><i class="fa-solid fa-eye"></i></a>
+                                <a class="btn-icon" title="Mở PDF" href="pdf-viewer.html?docId=${encodeURIComponent(doc.id)}&returnTo=${encodeURIComponent('admin-rag.html')}"><i class="fa-solid fa-eye"></i></a>
                                 <button class="btn-icon delete" title="Xóa PDF" data-document-id="${doc.id}" type="button"><i class="fa-solid fa-trash"></i></button>
                             </div>
                         </td>
