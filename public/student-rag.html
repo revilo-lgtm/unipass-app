@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thi thử & AI RAG - UniPass</title>    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="student-shared.css">
+    <link rel="stylesheet" href="/vendor/katex/katex.min.css">
+    <script src="/vendor/katex/katex.min.js"></script>
+    <script src="/vendor/marked.umd.js"></script>
+    <script src="/vendor/marked-katex-extension.umd.js"></script>
+    <style>
+        /* HỆ THỐNG BIẾN MÀU SẮC CHUNG */
+        :root {
+            --primary: #4F46E5;
+            --primary-light: #818CF8;
+            --secondary: #EC4899;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
+            
+            --bg-color: #F1F5F9; 
+            --surface: #FFFFFF;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0F172A;       
+            --surface: #1E293B;        
+            --text-main: #F8FAFC;      
+            --text-muted: #94A3B8;     
+            --border-color: #334155;   
+            --header-bg: rgba(30, 41, 59, 0.95);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); overflow-x: hidden; transition: 0.3s; }
+        
+        /* --- Navbar & Sidebar --- */
+        header { position: fixed; top: 0; width: 100%; background: var(--header-bg); border-bottom: 1px solid var(--border-color); z-index: 1000; height: 70px; display: flex; align-items: center; }
+        .header-container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: 800; color: var(--primary); text-decoration: none; }
+        .logo span { color: var(--secondary); }
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        .theme-toggle { background: transparent; border: 1px solid var(--border-color); color: var(--text-main); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        .theme-toggle:hover { background: var(--surface); color: var(--primary); border-color: var(--primary); }
+        .user-profile { display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 6px 12px; border-radius: 50px; border: 1px solid var(--border-color); background: var(--surface); transition: 0.2s; }
+        .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--gradient); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px; }
+        
+        .dashboard-wrapper { display: flex; max-width: 1400px; margin: 70px auto 0; min-height: calc(100vh - 70px); }
+        .sidebar { width: 260px; background: var(--surface); border-right: 1px solid var(--border-color); padding: 24px 0; position: fixed; height: calc(100vh - 70px); overflow-y: auto; transition: 0.3s; }
+        .nav-menu { list-style: none; padding: 0 16px; }
+        .nav-menu li { margin-bottom: 8px; }
+        .nav-menu a { display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: var(--text-muted); text-decoration: none; font-weight: 600; border-radius: 12px; transition: 0.2s; }
+        .nav-menu a i { font-size: 18px; width: 24px; text-align: center; }
+        .nav-menu a:hover { background: var(--bg-color); color: var(--primary); }
+        .nav-menu a.active { background: rgba(79, 70, 229, 0.1); color: var(--primary); }
+
+        /* --- Main Content --- */
+        .main-content { flex: 1; padding: 32px 40px; margin-left: 260px; transition: 0.3s; display: flex; flex-direction: column; height: calc(100vh - 70px); overflow: hidden; }
+        
+        .page-header { margin-bottom: 24px; flex-shrink: 0; }
+        .page-header h1 { font-size: 28px; font-weight: 800; color: var(--text-main); margin-bottom: 8px; }
+        .page-header p { color: var(--text-muted); font-size: 15px; }
+
+        /* Main Layout: Chat is Central (1fr), Exams Sidebar on the Right (380px) */
+        .rag-layout { 
+            display: grid; 
+            grid-template-columns: 1fr 380px; 
+            gap: 24px; 
+            flex: 1; 
+            overflow: hidden; 
+        }
+
+        /* --- RIGHT: Thi thử (Exams according to Roadmap & Recent) --- */
+        .exams-section { 
+            background: var(--surface); 
+            border: 1px solid var(--border-color); 
+            border-radius: 20px; 
+            padding: 22px; 
+            box-shadow: var(--shadow-sm); 
+            overflow-y: auto; 
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .section-title { 
+            font-size: 16.5px; 
+            font-weight: 800; 
+            margin-bottom: 6px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between;
+            color: var(--text-main); 
+        }
+        .section-title-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-title i { color: var(--secondary); }
+        
+        .exam-card { 
+            border: 1px solid var(--border-color); 
+            border-radius: 16px; 
+            padding: 16px; 
+            transition: all 0.2s ease; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: var(--bg-color); 
+            gap: 12px;
+        }
+        .exam-card:hover { 
+            border-color: var(--primary); 
+            box-shadow: var(--shadow-md); 
+            transform: translateY(-2px);
+        }
+        .exam-info {
+            flex: 1;
+            min-width: 0;
+        }
+        .exam-info h3 { 
+            font-size: 14px; 
+            font-weight: 700; 
+            color: var(--text-main); 
+            margin-bottom: 4px; 
+            line-height: 1.35;
+        }
+        .exam-meta { 
+            font-size: 12px; 
+            color: var(--text-muted); 
+            display: flex; 
+            gap: 12px; 
+            flex-wrap: wrap;
+        }
+        .exam-meta span { display: flex; align-items: center; gap: 5px; }
+        
+        .btn-start { 
+            padding: 8px 16px; 
+            background: linear-gradient(135deg, #4F46E5 0%, #4338CA 100%); 
+            color: white; 
+            border: none; 
+            border-radius: 10px; 
+            font-weight: 700; 
+            font-size: 13px;
+            cursor: pointer; 
+            transition: 0.2s; 
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 6px rgba(79, 70, 229, 0.3);
+        }
+        .btn-start:hover { 
+            transform: scale(1.03); 
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.45);
+        }
+        
+        /* --- CENTER: AI Chatbot (RAG) --- */
+        .chat-section { 
+            background: var(--surface); 
+            border: 1px solid var(--border-color); 
+            border-radius: 20px; 
+            box-shadow: var(--shadow-md); 
+            display: flex; 
+            flex-direction: column; 
+            overflow: hidden; 
+            position: relative; 
+        }
+        
+        .chat-header { 
+            padding: 16px 22px; 
+            border-bottom: 1px solid var(--border-color); 
+            background: var(--bg-color); 
+            display: flex; 
+            flex-direction: column; 
+            gap: 10px; 
+        }
+        .chat-title { 
+            font-weight: 800; 
+            font-size: 17px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            color: var(--primary); 
+        }
+        
+        /* Box 1: Cố định cơ sở dữ liệu mặc định của trường */
+        .scope-info-box { display: flex; align-items: center; gap: 8px; font-size: 13px; padding: 8px 14px; border-radius: 10px; background: rgba(79, 70, 229, 0.08); border: 1px solid rgba(79, 70, 229, 0.18); color: var(--text-main); }
+        .scope-label { font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 6px; white-space: nowrap; font-size: 12px; }
+        .scope-value { font-weight: 600; color: var(--text-main); font-size: 13px; }
+
+        /* Box 2: Select Context (RAG Source Filter) */
+        .context-selector { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--text-muted); }
+        .context-selector label { font-weight: 700; display: flex; align-items: center; gap: 6px; white-space: nowrap; color: var(--text-muted); font-size: 12.5px; }
+        .context-selector select { padding: 8px 14px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--surface); color: var(--text-main); outline: none; font-size: 13px; flex: 1; font-weight: 600; cursor: pointer; transition: 0.2s; }
+        .context-selector select:focus { border-color: var(--primary); }
+
+        /* Chat Area */
+        .chat-body { flex: 1; padding: 24px; overflow-y: auto; display: flex; flex-direction: column; gap: 16px; background: var(--surface); }
+        
+        .message { display: flex; gap: 12px; max-width: 85%; }
+        .message.user { align-self: flex-end; flex-direction: row-reverse; }
+        .message.ai { align-self: flex-start; }
+        
+        .msg-avatar { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
+        .msg-avatar.user { background: var(--gradient); color: white; font-weight: bold; }
+        .msg-avatar.ai { background: rgba(79, 70, 229, 0.12); color: var(--primary); }
+        
+        .msg-bubble { padding: 14px 18px; border-radius: 18px; font-size: 14px; line-height: 1.55; position: relative; overflow-wrap: break-word; word-break: break-word; max-width: 100%; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+        .user .msg-bubble { background: var(--primary); color: white; border-top-right-radius: 4px; }
+        .ai .msg-bubble { background: var(--bg-color); color: var(--text-main); border: 1px solid var(--border-color); border-top-left-radius: 4px; }
+        
+        /* Quick Prompt Chips */
+        .quick-prompts-bar {
+            display: flex;
+            gap: 8px;
+            padding: 8px 20px;
+            background: var(--bg-color);
+            border-top: 1px solid var(--border-color);
+            overflow-x: auto;
+        }
+        .quick-chip {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 5px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+        .quick-chip:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(79, 70, 229, 0.05);
+        }
+
+        /* Input Area */
+        .chat-input-area { padding: 14px 20px; border-top: 1px solid var(--border-color); background: var(--bg-color); }
+        .input-wrapper { display: flex; gap: 10px; background: var(--surface); border: 1px solid var(--border-color); padding: 8px 16px; border-radius: 24px; align-items: center; box-shadow: 0 2px 6px rgba(0,0,0,0.03); }
+        .input-wrapper input { flex: 1; border: none; outline: none; background: transparent; color: var(--text-main); font-size: 14px; }
+        .btn-send { background: var(--primary); color: white; border: none; width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.2s; flex-shrink: 0; }
+        .btn-send:hover { background: var(--primary-light); transform: scale(1.05); }
+
+        @media (max-width: 1024px) {
+            .rag-layout { grid-template-columns: 1fr; overflow-y: auto; }
+            .chat-section { height: 550px; flex-shrink: 0; }
+        }
+        @media (max-width: 768px) { .sidebar { display: none; } .main-content { margin-left: 0; padding: 20px; } }
+    </style>
+    <link rel="stylesheet" href="ui-alerts.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.9/purify.min.js"></script>
+</head>
+<body>
+
+    <header>
+            <div class="header-container">
+      <a href="dashboard.html" class="logo">Uni<span>Pass</span></a>
+      <div class="nav-right">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <div class="user-profile" id="user-profile">
+          <div class="avatar" id="user-avatar">U</div>
+          <span class="user-identity">
+            <span class="user-name" id="display-name">Người dùng</span>
+            <span class="session-status" id="session-status">Thiết bị đang hoạt động: 1/2</span>
+          </span>
+          <i class="fa-solid fa-chevron-down" style="font-size: 12px; color: var(--text-muted);"></i>
+        </div>
+        <a href="login.html" class="user-header-logout" style="background:var(--danger);color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:700;">Đăng xuất</a>
+      </div>
+    </div>
+  </header>
+
+    <div class="dashboard-wrapper">
+            <aside class="sidebar">
+            <ul class="nav-menu">
+                <li><a href="dashboard.html" ><i class="fa-solid fa-house"></i> Tổng quan</a></li>
+                <li><a href="student-courses.html" ><i class="fa-solid fa-book-open"></i> Lộ trình của tôi</a></li>
+                <li><a href="student-rag.html" class="active"><i class="fa-solid fa-robot"></i> Thi thử & Trợ giảng AI</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="page-header">
+                <h1>Hệ thống Đánh giá & Trợ giảng AI</h1>
+                <p>Mô phỏng đề thi thực chiến và giải đáp thắc mắc dựa trên 100% giáo trình nội bộ.</p>
+            </div>
+
+            <div class="rag-layout">
+                <!-- KHU VỰC TRỌNG TÂM: AI CHATBOT Ở GIỮA -->
+                <div class="chat-section">
+                    <div class="chat-header">
+                        <div class="chat-title">
+                            <span><i class="fa-solid fa-robot"></i> Trợ giảng AI UniPass</span>
+                        </div>
+                        <div class="scope-info-box">
+                            <span class="scope-label"><i class="fa-solid fa-database"></i> Cơ sở dữ liệu:</span>
+                            <span class="scope-value" id="default-uni-scope">🏛️ Toàn bộ giáo trình sinh viên</span>
+                        </div>
+                        <div class="context-selector">
+                            <label for="rag-context"><i class="fa-solid fa-filter"></i> Lọc theo môn học:</label>
+                            <select id="rag-context">
+                                <option value="all" selected>Tất cả môn học (Mặc định)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="chat-body" id="chat-body">
+                        <div class="message ai">
+                            <div class="msg-avatar ai"><i class="fa-solid fa-robot"></i></div>
+                            <div class="msg-bubble">
+                                Chào bạn! Mình là AI Trợ giảng của UniPass. Mình được huấn luyện để giải đáp các thắc mắc chuyên sâu dựa trên giáo trình nội bộ của nhà trường.<br><br>
+                                Hiện tại chúng ta đang ôn tập tài liệu: <strong id="rag-subject"></strong>. Bạn có câu hỏi nào cần giải đáp không?
+                            </div>
+                        </div>
+                        
+                        <div class="typing-indicator" id="typing-indicator">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+
+                    <div class="quick-prompts-bar">
+                        <div class="quick-chip" onclick="quickAsk('Tóm tắt những kiến thức trọng tâm cần nhớ')"><i class="fa-solid fa-wand-magic-sparkles"></i> Tóm tắt kiến thức trọng tâm</div>
+                        <div class="quick-chip" onclick="quickAsk('Giải thích các công thức và ví dụ quan trọng')"><i class="fa-solid fa-calculator"></i> Công thức & ví dụ</div>
+                        <div class="quick-chip" onclick="quickAsk('Cho mình 3 câu hỏi trắc nghiệm tự luyện kèm lời giải')"><i class="fa-solid fa-pen-to-square"></i> Đặt câu hỏi tự luyện</div>
+                    </div>
+
+                    <div class="chat-input-area">
+                        <form class="input-wrapper" id="chat-form">
+                            <input type="text" id="chat-input" placeholder="Nhập câu hỏi của bạn..." autocomplete="off">
+                            <button type="submit" class="btn-send"><i class="fa-solid fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- KHU VỰC PHỤ: ĐỀ THI THEO LỘ TRÌNH & GỢI Ý RECENT TỪ BACKEND -->
+                <div class="exams-section">
+                    <div class="section-title">
+                        <div class="section-title-left">
+                            <i class="fa-solid fa-file-pen"></i> <span>Đề thi Lộ trình & Gợi ý</span>
+                        </div>
+                        <span id="exams-count-badge" style="font-size: 11px; padding: 2px 8px; border-radius: 10px; background: rgba(236,72,153,0.12); color: #EC4899; font-weight: 700;">Recent AI</span>
+                    </div>
+                    
+                    <div id="exams-container" style="display: flex; flex-direction: column; gap: 12px;">
+                        <div style="text-align: center; padding: 30px 10px; color: var(--text-muted); font-size: 13px;">
+                            <i class="fa-solid fa-spinner fa-spin" style="font-size: 20px; margin-bottom: 8px; display: block;"></i>
+                            Đang kết nối Backend nạp gợi ý đề thi...
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+        /* --- KIỂM TRA ĐĂNG NHẬP & HEADER --- */
+        const currentUser = window.Auth.current();
+        const currentEmail = (currentUser && currentUser.email) || localStorage.getItem('unipass_current_v1') || '';
+        const loggedInUser = currentUser && (currentUser.fullname || currentEmail.split('@')[0]);
+        if (loggedInUser) {
+        }
+        /* --- ĐỒNG BỘ DỮ LIỆU MÔN HỌC & ĐỀ THI VỚI STUDENT-COURSES.HTML --- */
+        const localUniversityCourses = {
+            BK: {
+                name: 'ĐH Bách Khoa (HCMUT)',
+                courses: [
+                    { title: "Đại số tuyến tính", icon: "fa-square-root-variable", link: "course-bk.html", courseId: "bk_giai_tich", totalLessons: 12, next: "Chương 2: Ma trận nghịch đảo", aiHint: "Hổng kiến thức Ma trận" },
+                    { title: "Vật lý Đại cương 1", icon: "fa-atom", link: "course-bk-physics.html", courseId: "bk_physics", totalLessons: 9, next: "Chương 1: Động học chất điểm", aiHint: null },
+                    { title: "Giải tích 1", icon: "fa-chart-area", link: "course-bk-calculus.html", courseId: "bk_calculus_1", totalLessons: 10, next: "Chương 2: Tích phân suy rộng", aiHint: "Quan trọng" },
+                    { title: "Hóa đại cương", icon: "fa-flask", link: "course-bk-chemistry.html", courseId: "bk_chemistry", totalLessons: 9, next: "Chương 2: Cấu tạo nguyên tử", aiHint: null },
+                    { title: "Nhập môn lập trình", icon: "fa-laptop-code", link: "course-bk-programming.html", courseId: "bk_programming", totalLessons: 10, next: "Chương 3: Con trỏ", aiHint: "Cơ bản" }
+                ]
+            },
+            UEH: {
+                name: 'ĐH Kinh tế TP.HCM (UEH)',
+                courses: [
+                    { title: "Hành vi người tiêu dùng", icon: "fa-bullseye", link: "course-ueh.html", courseId: "ueh_hvntd", totalLessons: 10, next: "Chương 2: Mô hình Howard-Sheth", aiHint: "Cần ôn tập gấp" },
+                    { title: "Quản trị Marketing", icon: "fa-chart-simple", link: "course-ueh-marketing.html", courseId: "ueh_marketing", totalLessons: 12, next: "Chương 1: Định vị thương hiệu", aiHint: null },
+                    { title: "Kinh tế Vĩ mô", icon: "fa-earth-asia", link: "course-ueh-macro.html", courseId: "ueh_macro", totalLessons: 12, next: "Chương 1: GDP & Lạm phát", aiHint: null },
+                    { title: "Nguyên lý kế toán", icon: "fa-file-invoice", link: "course-ueh-accounting.html", courseId: "ueh_accounting", totalLessons: 12, next: "Chương 3: Bảng cân đối kế toán", aiHint: "Khá khó" },
+                    { title: "Toán tài chính", icon: "fa-calculator", link: "course-ueh-math.html", courseId: "ueh_math", totalLessons: 9, next: "Chương 2: Lãi kép", aiHint: null },
+                    { title: "Quản trị nguồn nhân lực", icon: "fa-users", link: "course-ueh-hr.html", courseId: "ueh_hr", totalLessons: 9, next: "Chương 2: Tuyển dụng", aiHint: "Sắp thi" }
+                ]
+            },
+            FTU: {
+                name: 'ĐH Ngoại thương (FTU)',
+                courses: [
+                    { title: "Kinh tế Vi mô", icon: "fa-chart-pie", link: "course-ftu.html", courseId: "ftu_vamo", totalLessons: 10, next: "Chương 3: Độc quyền bán", aiHint: "Sẵn sàng cho bài thi" },
+                    { title: "Thanh toán Quốc tế", icon: "fa-money-bill-transfer", link: "course-ftu-payment.html", courseId: "ftu_international-payment", totalLessons: 8, next: "Chương 1: Tỷ giá hối đoái", aiHint: null },
+                    { title: "Logistics & Chuỗi cung ứng", icon: "fa-truck-fast", link: "course-ftu-logistics.html", courseId: "ftu_logistics", totalLessons: 8, next: "Chương 2: Chuỗi cung ứng", aiHint: "Đang học" },
+                    { title: "Giao dịch thương mại quốc tế", icon: "fa-handshake", link: "course-ftu-trade.html", courseId: "ftu_trade", totalLessons: 8, next: "Chương 2: Hợp đồng ngoại thương", aiHint: null },
+                    { title: "Tiếng Anh chuyên ngành", icon: "fa-language", link: "course-ftu-english.html", courseId: "ftu_english", totalLessons: 8, next: "Unit 2: Financial Terms", aiHint: null }
+                ]
+            }
+        };
+
+        let currentUniCode = window.Auth.universityFromEmail(currentEmail) || 'BK';
+        let defaultProfile = localUniversityCourses[currentUniCode] || localUniversityCourses.BK;
+        let currentUniName = defaultProfile.name;
+        let currentStudentCourses = defaultProfile.courses;
+
+        
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+        window.escapeHtml = escapeHtml;
+
+        let recentCoursesCache = [];
+let syllabusCache = {};
+
+        // Helper hàm hỏi nhanh cho thanh quick prompt chips
+        window.quickAsk = function(promptText) {
+            const input = document.getElementById('chat-input');
+            if (input) {
+                input.value = promptText;
+                document.getElementById('chat-form')?.dispatchEvent(new Event('submit'));
+            }
+        };
+
+        // Render danh sách Đề thi CHƯƠNG HỌC (Chapter Exams) trực tiếp từ Backend
+        async function renderExamsForContext(selectedCourseId = 'all') {
+            const examsContainer = document.getElementById('exams-container');
+            if (!examsContainer) return;
+
+            examsContainer.innerHTML = '<div style="text-align: center; padding: 30px 10px; color: var(--text-muted); font-size: 13px;"><i class="fa-solid fa-spinner fa-spin" style="font-size: 20px; margin-bottom: 8px; display: block;"></i> Đang nạp đề thi các chương từ giáo trình...</div>';
+
+            try {
+                const token = localStorage.getItem('unipass_token') || '';
+                let examsList = [];
+                let targetCourses = [];
+
+                if (!selectedCourseId || selectedCourseId === 'all') {
+                    // Lấy các môn gần nhất (Recent) hoặc danh sách môn học của sinh viên
+                    if (recentCoursesCache.length === 0) {
+                        try {
+                            const recRes = await fetch('/api/user/recent-courses', {
+                                headers: { Authorization: 'Bearer ' + token }
+                            });
+                            if (recRes.ok) {
+                                const recData = await recRes.json();
+                                recentCoursesCache = recData.courses || [];
+                            }
+                        } catch (e) {}
+                    }
+
+                    if (recentCoursesCache.length > 0) {
+                        targetCourses = recentCoursesCache.map(c => ({ courseId: c.courseId, title: c.courseTitle, uni: c.university }));
+                    } else {
+                        targetCourses = (currentStudentCourses || []).slice(0, 3).map(c => ({ courseId: c.courseId, title: c.title, uni: currentUniName }));
+                    }
+                } else {
+                    // Môn học được chọn cụ thể từ Dropdown
+                    const found = (currentStudentCourses || []).find(c => c.courseId === selectedCourseId);
+                    targetCourses = [{ courseId: selectedCourseId, title: found ? found.title : 'Môn học', uni: currentUniName }];
+                }
+
+                // Tải danh sách chương học từ backend cho từng môn
+                for (const course of targetCourses) {
+                    let chapters = [];
+                    if (syllabusCache[course.courseId]) {
+                        chapters = syllabusCache[course.courseId].chapters || [];
+                    } else {
+                        try {
+                            const sylRes = await fetch(`/api/courses/syllabus/${course.courseId}`);
+                            if (sylRes.ok) {
+                                const sylData = await sylRes.json();
+                                syllabusCache[course.courseId] = sylData;
+                                chapters = sylData.chapters || [];
+                                if (sylData.course && sylData.course.title) {
+                                    course.title = sylData.course.title;
+                                }
+                            }
+                        } catch (e) {}
+                    }
+
+                    chapters.forEach((ch, idx) => {
+                        const cleanChapterTitle = ch.title || `Chương ${idx + 1}`;
+                        examsList.push({
+                            title: `Đề thi: ${cleanChapterTitle}`,
+                            subject: course.title,
+                            courseId: course.courseId,
+                            chapterTitle: cleanChapterTitle,
+                            chapterId: ch.id,
+                            time: '45 phút',
+                            courseName: course.title,
+                            uniBadge: course.uni || currentUniName,
+                            desc: `Sinh đề thi trắc nghiệm AI từ giáo trình PDF của ${cleanChapterTitle}`,
+                            targetScope: 'chapter'
+                        });
+                    });
+                }
+
+                if (examsList.length === 0) {
+                    examsContainer.innerHTML = '<div style="color: var(--text-muted); font-size: 13px; padding: 24px; text-align: center;"><i class="fa-solid fa-folder-open" style="font-size: 24px; display: block; margin-bottom: 8px; opacity: 0.5;"></i> Chưa có chương học nào cho môn học này.</div>';
+                    return;
+                }
+
+                examsContainer.innerHTML = examsList.map((exam, idx) => `
+                    <div class="exam-card">
+                        <div class="exam-info">
+                            <h3 id="exam-title-${idx}" style="font-size: 14px; font-weight: 700; color: var(--text-main); margin-bottom: 4px;">${escapeHtml(exam.title)}</h3>
+                            <div style="font-size: 11.5px; color: var(--primary); font-weight: 600; margin-bottom: 4px;">
+                                <i class="fa-solid fa-book-bookmark"></i> ${escapeHtml(exam.courseName)}
+                            </div>
+                            <div class="exam-meta">
+                                <span><i class="fa-regular fa-clock"></i> ${exam.time}</span>
+                                <span><i class="fa-solid fa-wand-magic-sparkles" style="color: #EC4899;"></i> Đề AI từ PDF</span>
+                            </div>
+                        </div>
+                        <button class="btn-start" id="btn-start-${idx}" 
+                            data-idx="${idx}" 
+                            data-title="${encodeURIComponent(exam.title)}" 
+                            data-subject="${encodeURIComponent(exam.subject)}"
+                            data-course-id="${encodeURIComponent(exam.courseId || '')}"
+                            data-chapter="${encodeURIComponent(exam.chapterTitle || '')}"
+                            data-chapter-id="${encodeURIComponent(exam.chapterId || '')}"
+                            data-scope="chapter">
+                            <i class="fa-solid fa-play"></i> Bắt đầu
+                        </button>
+                    </div>
+                `).join('');
+
+                // Gắn event listener cho tất cả nút thi
+                examsContainer.querySelectorAll('.btn-start').forEach(btn => {
+                    btn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const idx = this.getAttribute('data-idx');
+                        const title = decodeURIComponent(this.getAttribute('data-title'));
+                        const subject = decodeURIComponent(this.getAttribute('data-subject'));
+                        const courseId = decodeURIComponent(this.getAttribute('data-course-id'));
+                        const chapter = decodeURIComponent(this.getAttribute('data-chapter'));
+                        const scope = decodeURIComponent(this.getAttribute('data-scope'));
+                        window.generateExamDynamic(title, subject, currentUniCode, courseId, chapter, scope, idx);
+                    });
+                });
+
+            } catch (err) {
+                console.error('Error loading chapter exams:', err);
+                examsContainer.innerHTML = '<div style="color: var(--danger); font-size: 13px; padding: 16px;">Lỗi tải danh sách đề thi.</div>';
+            }
+        }
+
+        function updateRagSubject() {
+
+            const select = document.getElementById('rag-context');
+            if(select && select.options.length > 0) {
+                const selectedOption = select.options[select.selectedIndex];
+                const subject = selectedOption.getAttribute('data-subject') || selectedOption.text;
+                
+                const subjectEl = document.getElementById('rag-subject');
+                if(subjectEl) subjectEl.innerText = subject;
+                
+                const chatInput = document.getElementById('chat-input');
+                if(chatInput) chatInput.placeholder = `Nhập câu hỏi của bạn về ${subject}...`;
+
+                // Cập nhật danh sách đề thi tương ứng với môn học đang chọn
+                renderExamsForContext(select.value);
+            }
+        }
+        document.getElementById('rag-context').addEventListener('change', updateRagSubject);
+
+        // Hiển thị ngay lập tức không cần đợi fetch
+        function applyCoursesToUI(uniCode, uniName, courses) {
+            currentUniCode = uniCode;
+            currentUniName = uniName;
+            currentStudentCourses = courses;
+
+            const defaultUniScopeEl = document.getElementById('default-uni-scope');
+            if (defaultUniScopeEl) {
+                defaultUniScopeEl.innerHTML = `Toàn bộ môn học ${uniName}`;
+            }
+
+            const selectEl = document.getElementById('rag-context');
+            let optionsHtml = `<option value="all" data-subject="tất cả các môn học ${uniName}">Tất cả môn học (Mặc định)</option>`;
+            if (Array.isArray(courses)) {
+                courses.forEach(course => {
+                    optionsHtml += `<option value="${course.courseId}" data-subject="${course.title}">📘 ${course.title}</option>`;
+                });
+            }
+            selectEl.innerHTML = optionsHtml;
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const targetCourse = urlParams.get('course');
+            if (targetCourse && selectEl.querySelector(`option[value="${targetCourse}"]`)) {
+                selectEl.value = targetCourse;
+            }
+
+            updateRagSubject();
+        }
+
+        // 1. Áp dụng ngay lập tức dữ liệu mặc định
+        applyCoursesToUI(currentUniCode, currentUniName, currentStudentCourses);
+
+        // 2. Gọi API để đồng bộ nếu có thay đổi từ Backend
+        async function syncCoursesWithBackend() {
+            try {
+                const response = await fetch('/api/courses', {
+                    headers: { Authorization: `Bearer ${localStorage.getItem('unipass_token') || ''}` }
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data && data.profile) {
+                        applyCoursesToUI(data.uni || currentUniCode, data.profile.name || currentUniName, data.profile.courses || currentStudentCourses);
+                    }
+                }
+            } catch (err) {
+                console.warn("Dùng dữ liệu cục bộ:", err);
+            }
+        }
+
+        syncCoursesWithBackend();
+
+        /* --- LOGIC SINH ĐỀ THI 50 CÂU TỪ PDF & CHUYỂN TRANG TEST --- */
+        async function generateExamDynamic(examTitle, subjectTitle, uniCode, courseId, chapterTitle, targetScope, idx) {
+            const btn = document.getElementById(`btn-start-${idx}`);
+            btn.disabled = true;
+
+            // Hiển thị phần trăm tiến trình sinh đề AI
+            let progressVal = 15;
+            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Đang tạo đề ${progressVal}%</span>`;
+            const progressTimer = setInterval(() => {
+                if (progressVal < 92) {
+                    progressVal += Math.floor(Math.random() * 8) + 4;
+                    if (progressVal > 92) progressVal = 92;
+                    btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Đang tạo đề ${progressVal}%</span>`;
+                }
+            }, 320);
+
+            try {
+                const select = document.getElementById('rag-context');
+                const finalCourseId = courseId || (select ? select.value : 'all');
+
+                const data = await window.Auth.adminRequest('/api/ai/generate-exam', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        examTitle: examTitle,
+                        subject: subjectTitle,
+                        university: uniCode,
+                        courseId: finalCourseId,
+                        chapterTitle: chapterTitle || '',
+                        targetScope: targetScope || 'chapter',
+                        timeLimitMinutes: 45
+                    })
+                });
+
+                if (!data || !data.questions || data.questions.length === 0) {
+                    throw new Error('AI không thể sinh câu hỏi. Vui lòng thử lại.');
+                }
+
+                clearInterval(progressTimer);
+                btn.innerHTML = `<i class="fa-solid fa-check"></i> <span>Hoàn tất 100%!</span>`;
+                // Lưu dữ liệu đề thi 50 câu vào SessionStorage
+                sessionStorage.setItem('current_exam_data', JSON.stringify(data));
+                sessionStorage.setItem('exam_return_url', 'student-rag.html');
+                window.location.href = 'exam-room.html?returnTo=student-rag.html';
+                
+            } catch (err) {
+                clearInterval(progressTimer);
+                const cleanMsg = (err.message || '').replace(/^HTTP \d+:?\s*/i, '');
+                alert(cleanMsg || `Môn học / Chương "${subjectTitle}" hiện chưa có tài liệu PDF giáo trình trong hệ thống.`);
+                btn.innerHTML = '<i class="fa-solid fa-play"></i> Bắt đầu';
+                btn.disabled = false;
+            }
+        }
+        window.generateExamDynamic = generateExamDynamic;
+
+        function showExamModal(data) {
+            // Remove old modal if exists
+            const oldModal = document.getElementById('ai-exam-modal');
+            if (oldModal) oldModal.remove();
+
+            window.currentExamData = data;
+            window.currentExamPage = 0;
+            window.examSubmitted = false;
+            const pageSize = 10;
+            const totalPages = Math.ceil(data.questions.length / pageSize);
+
+            // Giao diện khung chứa Modal kèm CSS mượt mà
+            const modalHtml = `
+            <style>
+                @keyframes modalFadeIn {
+                    from { opacity: 0; transform: translateY(20px) scale(0.95); }
+                    to { opacity: 1; transform: translateY(0) scale(1); }
+                }
+                .ai-modal-content {
+                    background: var(--surface); width: 90%; max-width: 800px; height: 90vh; 
+                    display: flex; flex-direction: column; border-radius: 12px; 
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                    animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+                }
+                .exam-option {
+                    display: flex; align-items: center; margin: 8px 0; padding: 12px 16px; 
+                    background: var(--bg-color); border: 1px solid transparent; border-radius: 8px; 
+                    cursor: pointer; transition: all 0.2s ease;
+                }
+                .exam-option:hover:not(.disabled) {
+                    background: var(--border-color);
+                }
+                .exam-option:has(input:checked):not(.disabled) {
+                    background: rgba(79, 70, 229, 0.1);
+                    border-color: var(--primary);
+                }
+                .exam-option.disabled {
+                    cursor: default;
+                }
+                .exam-option.correct {
+                    background: rgba(16, 185, 129, 0.2) !important;
+                    border-color: var(--success) !important;
+                }
+                .exam-option.wrong {
+                    background: rgba(239, 68, 68, 0.2) !important;
+                    border-color: var(--danger) !important;
+                }
+                .exam-option input[type="radio"] {
+                    accent-color: var(--primary);
+                    transform: scale(1.2);
+                    margin-right: 12px;
+                }
+            </style>
+            <div id="ai-exam-modal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; display:flex; align-items:center; justify-content:center; color: var(--text-main);">
+                <div class="ai-modal-content">
+                    <!-- Header -->
+                    <div style="padding: 24px 24px 16px 24px; border-bottom: 1px solid var(--border-color); display:flex; justify-content:space-between; align-items:center;">
+                        <h2 style="font-size: 20px; margin:0;"><i class="fa-solid fa-file-signature"></i> ${data.examTitle} <span id="exam-score-display" style="color:var(--success); margin-left: 10px;"></span></h2>
+                        <button onclick="document.getElementById('ai-exam-modal').remove()" style="background:none; border:none; font-size: 24px; color:var(--text-muted); cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    
+                    <!-- Content (Questions) -->
+                    <div id="exam-questions-container" style="padding: 24px; overflow-y: auto; flex: 1;">
+                        <!-- Rendered by JS -->
+                    </div>
+
+                    <!-- Footer (Pagination & Submit) -->
+                    <div style="padding: 16px 24px; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.02);">
+                        <div id="exam-pagination">
+                            <!-- Rendered by JS -->
+                        </div>
+                        <div>
+                            <button id="btn-submit-exam" onclick="submitExam()" class="btn btn-primary" style="padding: 10px 20px; font-weight: 600;"><i class="fa-solid fa-check-to-slot"></i> Nộp bài</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `;
+            // Hàm lưu kết quả người dùng chọn
+            window.saveAnswer = function(qIdx, oIdx) {
+                if(window.examSubmitted) return;
+                window.currentExamData.questions[qIdx].userAnswer = oIdx;
+            }
+
+            // Hàm tính điểm và nộp bài
+            window.submitExam = function() {
+                if(window.examSubmitted) return; // Đã nộp rồi thì bỏ qua
+                
+                let score = 0;
+                window.currentExamData.questions.forEach(q => {
+                    if (q.userAnswer === q.correctAnswer) score++;
+                });
+
+                window.examSubmitted = true;
+                
+                // Hiển thị điểm số
+                document.getElementById('exam-score-display').innerText = `(Điểm: ${score}/${window.currentExamData.questions.length})`;
+                document.getElementById('btn-submit-exam').style.display = 'none';
+
+                // Render lại trang hiện tại để hiện màu chấm điểm
+                window.renderExamPage();
+            }
+
+            // Hàm Render Câu hỏi theo trang
+            window.renderExamPage = function(page = window.currentExamPage) {
+                window.currentExamPage = page;
+                const startIdx = page * pageSize;
+                const endIdx = Math.min(startIdx + pageSize, window.currentExamData.questions.length);
+                const pageQuestions = window.currentExamData.questions.slice(startIdx, endIdx);
+
+                let questionsHtml = '';
+                pageQuestions.forEach((q, idx) => {
+                    const globalQIdx = startIdx + idx;
+                    let optionsHtml = '';
+                    
+                    q.options.forEach((opt, oIdx) => {
+                        const isChecked = q.userAnswer === oIdx ? 'checked' : '';
+                        const isDisabled = window.examSubmitted ? 'disabled' : '';
+                        let extraClass = window.examSubmitted ? 'disabled' : '';
+                        if (window.examSubmitted) {
+                            if (oIdx === q.correctAnswer) extraClass += ' correct';
+                            else if (q.userAnswer === oIdx) extraClass += ' wrong';
+                        }
+
+                        optionsHtml += `
+                            <label class="exam-option ${extraClass}">
+                                <input type="radio" name="q${globalQIdx}" value="${oIdx}" onchange="saveAnswer(${globalQIdx}, ${oIdx})" ${isChecked} ${isDisabled}>
+                                <span>${opt}</span>
+                            </label>
+                        `;
+                    });
+                    
+                    const explanationStyle = window.examSubmitted ? 'display:block;' : 'display:none;';
+                    
+                    questionsHtml += `
+                        <div class="exam-question" style="margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--border-color);">
+                            <h4 style="margin-bottom: 12px;">Câu ${globalQIdx + 1}: ${q.question}</h4>
+                            <div class="options-container">${optionsHtml}</div>
+                            <div class="exam-explanation" style="${explanationStyle} margin-top: 12px; padding: 12px; background: rgba(16, 185, 129, 0.1); border-left: 4px solid var(--success); border-radius: 4px;">
+                                <strong>Đáp án đúng: ${q.options[q.correctAnswer]}</strong><br>
+                                <em>Giải thích: ${q.explanation}</em>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                document.getElementById('exam-questions-container').innerHTML = questionsHtml;
+
+                // Render nút phân trang
+                let paginationHtml = '';
+                if (window.currentExamPage > 0) {
+                    paginationHtml += `<button onclick="renderExamPage(${window.currentExamPage - 1})" class="btn" style="margin-right: 10px;"><i class="fa-solid fa-chevron-left"></i> Trang trước</button>`;
+                }
+                paginationHtml += `<span style="margin: 0 15px; font-weight: 600;">Trang ${window.currentExamPage + 1} / ${totalPages}</span>`;
+                if (window.currentExamPage < totalPages - 1) {
+                    paginationHtml += `<button onclick="renderExamPage(${window.currentExamPage + 1})" class="btn">Trang sau <i class="fa-solid fa-chevron-right"></i></button>`;
+                }
+                document.getElementById('exam-pagination').innerHTML = paginationHtml;
+                
+                // Scroll to top of modal content
+                document.getElementById('exam-questions-container').scrollTop = 0;
+            }
+
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+            window.renderExamPage();
+        }
+
+        /* --- DARK MODE LOGIC --- */
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = themeToggleBtn.querySelector('i');
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem('unipass_theme');
+        if (savedTheme) { htmlElement.setAttribute('data-theme', savedTheme); updateIcon(savedTheme); }
+        else if (window.matchMedia('(prefers-color-scheme: dark)').matches) { htmlElement.setAttribute('data-theme', 'dark'); updateIcon('dark'); }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const newTheme = htmlElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('unipass_theme', newTheme);
+            updateIcon(newTheme);
+        });
+        function updateIcon(theme) { themeIcon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon'; }
+
+        /* --- LOGIC CHATBOT RAG (MÔ PHỎNG) --- */
+        const chatForm = document.getElementById('chat-form');
+        const chatInput = document.getElementById('chat-input');
+        const chatBody = document.getElementById('chat-body');
+        const typingIndicator = document.getElementById('typing-indicator');
+        const ragContextSelect = document.getElementById('rag-context');
+
+        // Lấy tên User để hiển thị Avatar
+        const userInitial = loggedInUser ? loggedInUser.charAt(0).toUpperCase() : "U";
+
+        function parseMarkdownAndMath(markdownText) {
+            if (!markdownText) return '';
+            
+            // 1. Phục hồi LaTeX và newlines
+            let text = markdownText
+                .replace(/\\\$/g, "$")
+                .replace(/\\neq\b/g, "__LATEX_NEQ__")
+                .replace(/\\notin\b/g, "__LATEX_NOTIN__")
+                .replace(/\\neg\b/g, "__LATEX_NEG__")
+                .replace(/\\nabla\b/g, "__LATEX_NABLA__")
+                .replace(/\\not\b/g, "__LATEX_NOT__")
+                .replace(/\\natural\b/g, "__LATEX_NATURAL__")
+                .replace(/\\nu\b/g, "__LATEX_NU__")
+                .replace(/\\null\b/g, "__LATEX_NULL__")
+                .replace(/\\n/g, "\n")
+                .replace(/__LATEX_NEQ__/g, "\\neq")
+                .replace(/__LATEX_NOTIN__/g, "\\notin")
+                .replace(/__LATEX_NEG__/g, "\\neg")
+                .replace(/__LATEX_NABLA__/g, "\\nabla")
+                .replace(/__LATEX_NOT__/g, "\\not")
+                .replace(/__LATEX_NATURAL__/g, "\\natural")
+                .replace(/__LATEX_NU__/g, "\\nu")
+                .replace(/__LATEX_NULL__/g, "\\null")
+                .replace(/(?:[\t\x0c ]|\b)imes\b/g, "\\times")
+                .replace(/(?:[\t\x0c ]|\b)orall\b/g, "\\forall")
+                .replace(/(?:[\t\x0c ]|\b)ext\{/g, "\\text{")
+                .replace(/(?:[\n ]|\b)otin\b/g, "\\notin")
+                .replace(/(?:[\n ]|\b)eq\b/g, "\\neq")
+                .replace(/(?:[\x08 ]|\b)igcup\b/g, "\\bigcup")
+                .replace(/(?:[\x08 ]|\b)ar\{/g, "\\bar{");
+
+            // 2. Tách math ra placeholders trước khi marked parse để không bị Markdown nuốt dấu _, *, \
+            const mathBlocks = [];
+            
+            if (window.katex) {
+                // Block math $$...$$
+                text = text.replace(/\$\$([\s\S]*?)\$\$/g, (match, expr) => {
+                    const id = `MATHBLOCK_${mathBlocks.length}_XYZ`;
+                    try {
+                        mathBlocks.push(window.katex.renderToString(expr.trim(), { displayMode: true, throwOnError: false }));
+                    } catch (e) {
+                        mathBlocks.push(match);
+                    }
+                    return id;
+                });
+
+                // Inline math $...$
+                text = text.replace(/(?<!\$)\$([^\$\n]+?)\$(?!\$)/g, (match, expr) => {
+                    const id = `MATHINLINE_${mathBlocks.length}_XYZ`;
+                    try {
+                        mathBlocks.push(window.katex.renderToString(expr.trim(), { displayMode: false, throwOnError: false }));
+                    } catch (e) {
+                        mathBlocks.push(match);
+                    }
+                    return id;
+                });
+            }
+
+            // 3. Render Markdown
+            let html = window.marked ? window.marked.parse(text) : text;
+
+            // 4. Trả lại các khối toán đã render đẹp vào HTML
+            mathBlocks.forEach((mathHtml, idx) => {
+                html = html.replace(new RegExp(`MATH(BLOCK|INLINE)_${idx}_XYZ`, "g"), mathHtml);
+            });
+
+            return html;
+        }
+
+        chatForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const messageText = chatInput.value.trim();
+            if (!messageText) return;
+
+            // 1. Thêm tin nhắn của User vào khung Chat
+            appendMessage('user', messageText);
+            chatInput.value = '';
+
+            // Cuộn xuống cuối
+            scrollToBottom();
+
+            // 2. Hiện hiệu ứng AI đang gõ
+            chatBody.appendChild(typingIndicator); // Đưa hiệu ứng xuống cuối
+            typingIndicator.style.display = 'flex';
+            scrollToBottom();
+
+            // 3. Gọi AI Backend
+            try {
+                const selectedOption = ragContextSelect.options[ragContextSelect.selectedIndex];
+                const selectedContextText = selectedOption.text;
+                const activeSubject = selectedOption.getAttribute('data-subject');
+                const courseId = selectedOption.value; // e.g. 'bk_giai_tich'
+                
+                const data = await window.Auth.adminRequest('/api/ai/rag-chat', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        message: messageText,
+                        context: selectedContextText,
+                        subject: activeSubject,
+                        courseId: courseId
+                    })
+                });
+
+                typingIndicator.style.display = 'none'; // Tắt hiệu ứng gõ
+
+                // Render Markdown + KaTeX Math
+                let htmlReply = parseMarkdownAndMath(data.reply);
+
+                const aiReply = `
+                    <div class="rag-content">
+                        ${htmlReply}
+                    </div>
+                    <div class="rag-citation">
+                        <i class="fa-solid fa-file-circle-check"></i> Trích xuất từ: ${data.citation}
+                    </div>
+                `;
+
+                appendMessage('ai', aiReply);
+                scrollToBottom();
+            } catch(err) {
+                typingIndicator.style.display = 'none';
+                appendMessage('ai', `<span style="color:var(--danger)">Lỗi: ${err.message}</span>`);
+                scrollToBottom();
+            }
+        });
+
+        async function rateRag(queryId, rating, btnElement) {
+            try {
+                await window.Auth.adminRequest('/api/ai/rate-rag', {
+                    method: 'POST',
+                    body: JSON.stringify({ query_id: queryId, rating: rating })
+                });
+                const container = document.getElementById(`rating-${queryId}`);
+                if (container) {
+                    container.innerHTML = `<span style="color: var(--success); font-size: 13px;"><i class="fa-solid fa-check"></i> Cảm ơn bạn đã góp ý!</span>`;
+                }
+            } catch (err) {
+                console.error(err);
+                alert('Có lỗi khi gửi đánh giá');
+            }
+        }
+
+        function appendMessage(sender, text) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `message ${sender}`;
+            
+            // Sanitize text to prevent XSS
+            const safeText = DOMPurify.sanitize(text, { ADD_ATTR: ['target', 'onclick'] });
+            
+            if (sender === 'user') {
+                msgDiv.innerHTML = `
+                    <div class="msg-bubble">${safeText}</div>
+                    <div class="msg-avatar user">${userInitial}</div>
+                `;
+            } else {
+                msgDiv.innerHTML = `
+                    <div class="msg-avatar ai"><i class="fa-solid fa-robot"></i></div>
+                    <div class="msg-bubble">${safeText}</div>
+                `;
+            }
+            chatBody.appendChild(msgDiv);
+        }
+
+        function scrollToBottom() {
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+    </script>
+    <script src="ui-alerts.js"></script>
+</body>
+</html>

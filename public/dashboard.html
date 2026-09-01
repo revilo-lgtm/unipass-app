@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảng điều khiển - UniPass</title>
+  <script>
+    if (!localStorage.getItem('unipass_token')) {
+      window.location.href = 'login.html';
+    }
+  </script>    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="student-shared.css">
+  <style>
+    :root{--danger:#EF4444}
+    /* HỆ THỐNG BIẾN MÀU SẮC CHUNG */
+    :root {
+      --primary: #4F46E5;
+      --primary-light: #818CF8;
+      --secondary: #EC4899;
+      --gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
+            
+      --bg-color: #F1F5F9; /* Nền dashboard hơi xám nhẹ để nổi bật các Card trắng */
+      --surface: #FFFFFF;
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --border-color: #E2E8F0;
+      --header-bg: rgba(255, 255, 255, 0.95);
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #0F172A;       
+      --surface: #1E293B;        
+      --text-main: #F8FAFC;      
+      --text-muted: #94A3B8;     
+      --border-color: #334155;   
+      --header-bg: rgba(30, 41, 59, 0.95);
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background-color: var(--bg-color); color: var(--text-main); overflow-x: hidden; transition: 0.3s; }
+        
+    /* --- Navbar --- */
+    header { position: fixed; top: 0; width: 100%; background: var(--header-bg); border-bottom: 1px solid var(--border-color); z-index: 1000; height: 70px; display: flex; align-items: center; }
+    .header-container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 24px; font-weight: 800; color: var(--primary); text-decoration: none; }
+    .logo span { color: var(--secondary); }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+        
+    .theme-toggle { background: transparent; border: 1px solid var(--border-color); color: var(--text-main); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+    .theme-toggle:hover { background: var(--surface); color: var(--primary); border-color: var(--primary); }
+        
+    .user-profile { display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 6px 12px; border-radius: 50px; border: 1px solid var(--border-color); background: var(--surface); transition: 0.2s; }
+    .user-profile:hover { border-color: var(--primary); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--gradient); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px; }
+    .user-name { font-weight: 600; font-size: 14px; }
+    .user-identity { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+    .session-status { color: var(--text-muted); font-size: 10px; font-weight: 600; white-space: nowrap; }
+
+    /* --- Dashboard Layout --- */
+    .dashboard-wrapper { display: flex; max-width: 1400px; margin: 70px auto 0; min-height: calc(100vh - 70px); }
+        
+    /* Sidebar */
+    .sidebar { width: 260px; background: var(--surface); border-right: 1px solid var(--border-color); padding: 24px 0; position: fixed; height: calc(100vh - 70px); overflow-y: auto; transition: 0.3s; }
+    .nav-menu { list-style: none; padding: 0 16px; }
+    .nav-menu li { margin-bottom: 8px; }
+    .nav-menu a { display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: var(--text-muted); text-decoration: none; font-weight: 600; border-radius: 12px; transition: 0.2s; }
+    .nav-menu a i { font-size: 18px; width: 24px; text-align: center; }
+    .nav-menu a:hover { background: var(--bg-color); color: var(--primary); }
+    .nav-menu a.active { background: rgba(79, 70, 229, 0.1); color: var(--primary); }
+        
+    .logout-btn { margin-top: 40px; border-top: 1px solid var(--border-color); padding-top: 20px; }
+    .logout-btn a { color: #EF4444; }
+    .logout-btn a:hover { background: rgba(239, 68, 68, 0.1); color: #EF4444; }
+
+    /* Main Content */
+    .main-content { flex: 1; padding: 32px 40px; margin-left: 260px; transition: 0.3s; }
+        
+    .welcome-banner { background: var(--gradient); border-radius: 20px; padding: 24px 28px; color: white; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; min-height: 104px; box-shadow: var(--shadow-md); position: relative; overflow: hidden; }
+    .welcome-banner::after { content: ''; position: absolute; right: -50px; top: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%; }
+    .welcome-img { position: relative; z-index: 1; font-size: 52px; opacity: 0.8; }
+
+    /* Two Columns Layout */
+    .content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; }
+    .content-grid.single-column { grid-template-columns: 1fr; }
+        
+    .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .section-header h2 { font-size: 18px; font-weight: 700; color: var(--text-main); }
+    .section-header a { color: var(--primary); font-size: 14px; font-weight: 600; text-decoration: none; }
+        
+    /* Course Card */
+    .card { background: var(--surface); border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; box-shadow: var(--shadow-sm); margin-bottom: 16px; }
+    .course-card { display: flex; gap: 20px; align-items: center; }
+    .course-thumb { width: 80px; height: 80px; border-radius: 12px; background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%); display: flex; align-items: center; justify-content: center; font-size: 32px; color: white; flex-shrink: 0; }
+    .course-details { flex: 1; }
+    .uni-tag { font-size: 12px; color: var(--primary); font-weight: 700; background: rgba(79, 70, 229, 0.1); padding: 4px 10px; border-radius: 20px; display: inline-block; margin-bottom: 8px; }
+    .course-title { font-size: 18px; font-weight: 700; color: var(--text-main); margin-bottom: 8px; }
+        
+    .progress-wrapper { margin-top: 12px; }
+    .progress-header { display: flex; justify-content: space-between; font-size: 13px; color: var(--text-muted); font-weight: 600; margin-bottom: 6px; }
+    .progress-bar { width: 100%; height: 8px; background: var(--bg-color); border-radius: 10px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--primary); width: 65%; border-radius: 10px; }
+
+    .btn-continue { padding: 10px 20px; background: var(--primary); color: white; border-radius: 10px; text-decoration: none; font-weight: 600; transition: 0.2s; white-space: nowrap; }
+    .btn-continue:hover { background: var(--primary-light); }
+
+    /* AI Warning Card */
+    .ai-alert-card { background: rgba(236, 72, 153, 0.05); border: 1px solid rgba(236, 72, 153, 0.2); border-left: 4px solid var(--secondary); padding: 14px 16px; border-radius: 12px; display: flex; gap: 16px; margin-bottom: 12px; }
+    .ai-icon { font-size: 24px; color: var(--secondary); }
+    .ai-content h4 { font-size: 15px; color: var(--text-main); margin-bottom: 4px; }
+    .ai-content p { font-size: 13px; color: var(--text-muted); margin-bottom: 10px; line-height: 1.5; }
+    .ai-action { font-size: 13px; font-weight: 700; color: var(--secondary); text-decoration: none; }
+    .ai-action:hover { text-decoration: underline; }
+
+    /* Personal library */
+    .library-section { margin-bottom: 20px; }
+    .library-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .library-card { overflow: hidden; padding: 0; }
+    .library-card-body { padding: 16px; }
+    .library-card-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+    .library-card h3 { margin-bottom: 0; font-size: 16px; color: var(--text-main); }
+    .library-recent-tag { display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px; background: rgba(79, 70, 229, 0.1); color: var(--primary); font-size: 11px; font-weight: 700; border-radius: 6px; }
+    .library-recent-tag.unread { background: rgba(100, 116, 139, 0.1); color: var(--text-muted); }
+    .library-card p { margin-bottom: 12px; color: var(--text-muted); font-size: 13px; line-height: 1.4; }
+    .library-card .library-access-status { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; color: var(--warning); font-size: 12px; font-weight: 700; }
+    .library-access-status i { font-size: 11px; }
+    .library-trust-badge { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 12px; color: var(--success); font-size: 11px; font-weight: 700; }
+    .library-trust-badge i { font-size: 12px; }
+    .btn-read { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 9px 14px; background: var(--primary); color: white; border-radius: 10px; text-decoration: none; font-size: 13px; font-weight: 700; transition: 0.2s; }
+    .btn-read:hover { background: var(--primary-light); transform: translateY(-1px); }
+    .library-empty { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--text-muted); }
+    .library-empty i { display: block; margin-bottom: 12px; font-size: 28px; color: var(--primary-light); }
+
+    /* Exam Radar List */
+    .exam-item { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border-color); }
+    .exam-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .exam-date { background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 10px; padding: 8px 12px; text-align: center; min-width: 60px; }
+    .exam-date .day { display: block; font-size: 20px; font-weight: 800; color: var(--primary); }
+    .exam-date .month { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; }
+    .exam-info h4 { font-size: 15px; color: var(--text-main); margin-bottom: 4px; }
+    .exam-info p { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+    .exam-badge { display: inline-block; padding: 4px 8px; background: rgba(245, 158, 11, 0.1); color: #D97706; font-size: 11px; font-weight: 700; border-radius: 6px; }
+
+    @media (max-width: 1024px) {
+      .content-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .sidebar { transform: translateX(-100%); z-index: 999; }
+      .main-content { margin-left: 0; padding: 24px 20px; }
+      .course-card { flex-direction: column; text-align: center; }
+      .btn-continue { width: 100%; text-align: center; margin-top: 10px; }
+      .library-grid { grid-template-columns: 1fr; }
+      .session-status { display: none; }
+      .welcome-img { display: none; }
+    }
+    @media (min-width: 769px) and (max-height: 900px) {
+      .main-content { padding-top: 20px; padding-bottom: 20px; }
+      .welcome-banner { padding: 20px 24px; margin-bottom: 20px; }
+      .welcome-text h1 { font-size: 24px; }
+      .section-header { margin-bottom: 10px; }
+      .section-header h2 { font-size: 16px; }
+      .course-thumb { width: 64px; height: 64px; font-size: 26px; }
+      .course-title { font-size: 16px; }
+      .progress-wrapper { margin-top: 8px; }
+      .ai-content p { margin-bottom: 6px; }
+      .exam-info p { margin-bottom: 4px; }
+    }
+  </style>
+    <link rel="stylesheet" href="ui-alerts.css">
+</head>
+<body>
+
+  <header>
+        <div class="header-container">
+      <a href="dashboard.html" class="logo">Uni<span>Pass</span></a>
+      <div class="nav-right">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <div class="user-profile" id="user-profile">
+          <div class="avatar" id="user-avatar">U</div>
+          <span class="user-identity">
+            <span class="user-name" id="display-name">Người dùng</span>
+            <span class="session-status" id="session-status">Thiết bị đang hoạt động: 1/2</span>
+          </span>
+          <i class="fa-solid fa-chevron-down" style="font-size: 12px; color: var(--text-muted);"></i>
+        </div>
+        <a href="login.html" class="user-header-logout" style="background:var(--danger);color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:700;">Đăng xuất</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="dashboard-wrapper">
+    <aside class="sidebar">
+      <ul class="nav-menu">
+                <li><a href="dashboard.html" class="active"><i class="fa-solid fa-house"></i> Tổng quan</a></li>
+                <li><a href="student-courses.html" ><i class="fa-solid fa-book-open"></i> Lộ trình của tôi</a></li>
+                <li><a href="student-rag.html" ><i class="fa-solid fa-robot"></i> Thi thử & Trợ giảng AI</a></li>
+            </ul>
+            
+    </aside>
+
+    <main class="main-content">
+      <div class="welcome-banner">
+        <div class="welcome-text">
+          <h1 style="margin-bottom: 8px;">Chào mừng trở lại, <span id="welcome-name">Sinh viên</span>! 👋</h1>
+          <div class="welcome-meta-badges" style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <span class="welcome-badge-item" id="welcome-expiry-badge" style="display: inline-flex; align-items: center; gap: 6px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(8px); padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 700; color: #fff;">
+              <i class="fa-solid fa-clock" style="color: #FDE047;"></i> Hạn truy cập: <span id="welcome-expiry-text">Đang tải...</span>
+            </span>
+            <span class="welcome-badge-item" style="display: inline-flex; align-items: center; gap: 6px; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px); padding: 4px 12px; border-radius: 20px; font-size: 12.5px; font-weight: 700; color: #fff;">
+              <i class="fa-solid fa-shield-halved" style="color: #4ADE80;"></i> Được bảo vệ bởi UniPass DRM
+            </span>
+          </div>
+        </div>
+        <div class="welcome-img">
+          🚀
+        </div>
+      </div>
+
+      <section class="library-section" aria-labelledby="library-title">
+        <div class="section-header">
+          <h2 id="library-title">Tủ sách của tôi</h2>
+        </div>
+        <div class="library-grid" id="library-grid">
+          <div class="card library-empty"><i class="fa-solid fa-spinner fa-spin"></i>Đang tải tài liệu...</div>
+        </div>
+      </section>
+
+      <div class="content-grid single-column">
+        <div class="left-col">
+          <div class="section-header">
+            <h2>Tiếp tục ôn tập</h2>
+            <a href="student-courses.html">Xem tất cả</a>
+          </div>
+                    
+          <div id="recent-courses-list" style="display: flex; flex-direction: column; gap: 14px;">
+            <div class="card course-card" style="padding: 24px; text-align: center; color: var(--text-muted);">
+              <i class="fa-solid fa-spinner fa-spin" style="font-size: 20px; margin-bottom: 8px;"></i>
+              <div>Đang tải 2 phiên học gần nhất...</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <script src="auth.js"></script>
+  <script>
+    /* --- 1. KIỂM TRA ĐĂNG NHẬP --- */
+    // Sử dụng Auth hiện có để kiểm tra
+    const user = window.Auth && window.Auth.current ? window.Auth.current() : null;
+    if (!user) {
+      window.location.href = 'login.html';
+    } else {
+      const display = user.fullname || user.email.split('@')[0];
+      document.getElementById('welcome-name').innerText = display;
+      // update header area from Auth if any
+      window.Auth.updateUI && window.Auth.updateUI();
+
+      // Cập nhật hạn truy cập trên Welcome Banner
+      let expiryText = 'Chưa kích hoạt';
+      if (user.Expiry_Date) {
+        const diffMs = new Date(user.Expiry_Date) - new Date();
+        if (diffMs > 0) {
+          const days = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+          expiryText = `Còn ${days} ngày`;
+        } else {
+          expiryText = 'Đã hết hạn';
+        }
+      } else if (user.Role === 'admin' || user.Role === 'Giảng viên') {
+        expiryText = 'Vô thời hạn (Admin)';
+      }
+      const welcomeExpiryEl = document.getElementById('welcome-expiry-text');
+      if (welcomeExpiryEl) welcomeExpiryEl.textContent = expiryText;
+    }
+
+    const overviewUni = user && (user.university || window.Auth.universityFromEmail(user.email)) || 'UEH';
+
+    async function loadOverviewProgress() {
+      try {
+        const token = localStorage.getItem('unipass_token') || '';
+        const response = await fetch('/api/user/recent-courses', {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        if (response.ok) {
+          const data = await response.json();
+          const courses = data.courses || [];
+          const container = document.getElementById('recent-courses-list');
+          if (!container) return;
+
+          if (courses.length === 0) {
+            container.innerHTML = '<div style="color: var(--text-muted); font-size: 13.5px; padding: 16px;">Chưa có môn học nào được ghi nhận.</div>';
+            return;
+          }
+
+          let html = '';
+          courses.forEach(c => {
+            const isDone = c.percentage === 100;
+            html += `
+              <div class="card course-card" style="transition: all 0.2s; margin-bottom: 0;">
+                <div class="course-thumb"><i class="fa-solid ${c.icon || 'fa-book'}"></i></div>
+                <div class="course-details">
+                  <span class="uni-tag">${c.university}</span>
+                  <h3 class="course-title" style="font-size: 16px; font-weight: 800;">${escapeHtml(c.courseTitle)}</h3>
+                  <div class="progress-wrapper">
+                    <div class="progress-header">
+                      <span style="font-size: 12.5px; color: var(--text-muted); font-weight: 600;">${escapeHtml(c.chapterTitle)}</span>
+                      <span style="font-weight: 800; font-size: 13px; color: ${isDone ? 'var(--success)' : 'var(--primary)'};">${c.percentage}%</span>
+                    </div>
+                    <div class="progress-bar" style="height: 7px; background: var(--border-color); border-radius: 10px; overflow: hidden;">
+                      <div class="progress-fill" style="width: ${c.percentage}%; height: 100%; border-radius: 10px; transition: width 0.6s ease; ${isDone ? 'background: linear-gradient(135deg, #10B981 0%, #059669 100%);' : ''}"></div>
+                    </div>
+                  </div>
+                </div>
+                <a href="${c.link}" class="btn-continue" style="font-weight: 700; white-space: nowrap;">${isDone ? 'Ôn lại' : 'Học tiếp'}</a>
+              </div>
+            `;
+          });
+
+          container.innerHTML = html;
+          return;
+        }
+      } catch (error) {
+        console.error('Error loading recent courses:', error);
+      }
+    }
+    loadOverviewProgress();
+    const libraryGrid = document.getElementById('library-grid');
+    const libraryCourses = {
+      UEH: 'ueh_hvntd',
+      BK: 'bk_giai_tich',
+      FTU: 'ftu_vamo'
+    };
+
+    function timeAgo(dateString) {
+      if (!dateString) return '';
+      const now = new Date();
+      const past = new Date(dateString);
+      const diffSec = Math.max(0, Math.floor((now - past) / 1000));
+      if (diffSec < 60) return 'Vừa đọc xong';
+      const diffMin = Math.floor(diffSec / 60);
+      if (diffMin < 60) return `Đọc ${diffMin} phút trước`;
+      const diffHours = Math.floor(diffMin / 60);
+      if (diffHours < 24) return `Đọc ${diffHours} giờ trước`;
+      const diffDays = Math.floor(diffHours / 24);
+      if (diffDays === 1) return 'Đọc hôm qua';
+      if (diffDays < 7) return `Đọc ${diffDays} ngày trước`;
+      return `Đọc ngày ${past.toLocaleDateString('vi-VN')}`;
+    }
+
+    function escapeHtml(value) {
+      return String(value || '').replace(/[&<>"']/g, character => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      }[character]));
+    }
+
+    function renderLibrary(documents) {
+      if (!documents || !documents.length) {
+        libraryGrid.innerHTML = '<div class="card library-empty"><i class="fa-solid fa-book-open"></i>Chưa có tài liệu nào trong tủ sách của bạn.</div>';
+        return;
+      }
+
+      libraryGrid.innerHTML = documents.map(doc => {
+        const courseNames = {
+          ueh_hvntd: 'Hành vi người tiêu dùng',
+          bk_giai_tich: 'Đại số Tuyến tính',
+          bk_physics: 'Vật lý Đại cương 1',
+          ftu_vamo: 'Kinh tế Vi mô'
+        };
+        const course = escapeHtml(doc.courseTitle || courseNames[doc.course] || 'Khóa học');
+        const lesson = escapeHtml(doc.lessonTitle || doc.originalName || 'Chương học');
+        const documentId = encodeURIComponent(doc.id);
+        const docTitle = encodeURIComponent(doc.originalName || doc.lessonTitle || '');
+        const isRecent = doc.isRecent || Boolean(doc.lastReadAt);
+        const recentBadge = doc.lastReadAt 
+          ? `<span class="library-recent-tag"><i class="fa-solid fa-clock-rotate-left"></i> ${timeAgo(doc.lastReadAt)}</span>` 
+          : `<span class="library-recent-tag unread"><i class="fa-regular fa-bookmark"></i> Đề xuất cho bạn</span>`;
+
+        return `<article class="card library-card">
+          <div class="library-card-body">
+            <div class="library-card-header">
+              <h3>${course}</h3>
+              ${recentBadge}
+            </div>
+            <p>${lesson}</p>
+            <a class="btn-read" href="pdf-viewer.html?id=${documentId}&title=${docTitle}&returnTo=dashboard.html">
+              <i class="fa-solid fa-book-open"></i> ${doc.lastReadAt ? 'Đọc tiếp' : 'Đọc tài liệu'}
+            </a>
+          </div>
+        </article>`;
+      }).join('');
+    }
+
+    async function loadLibrary() {
+      try {
+        const token = localStorage.getItem('unipass_token') || '';
+        if (token) {
+          const res = await fetch('/api/user/recent-reads', {
+            headers: { 'Authorization': `Bearer ${token}` }
+          });
+          if (res.ok) {
+            const data = await res.json();
+            if (data.documents && data.documents.length > 0) {
+              renderLibrary(data.documents);
+              return;
+            }
+          }
+        }
+        
+        // Fallback: nếu chưa đăng nhập hoặc chưa có lịch sử đọc
+        const course = libraryCourses[overviewUni] || '';
+        let response = await fetch(`/api/course-pdfs?course=${encodeURIComponent(course)}`);
+        let data = await response.json();
+        
+        if (!data.documents || data.documents.length === 0) {
+          response = await fetch(`/api/course-pdfs`);
+          data = await response.json();
+        }
+        
+        renderLibrary(Array.isArray(data.documents) ? data.documents : []);
+      } catch (error) {
+        libraryGrid.innerHTML = '<div class="card library-empty"><i class="fa-solid fa-circle-exclamation"></i>Không thể tải tủ sách lúc này.</div>';
+      }
+    }
+    loadLibrary();
+
+    /* --- 2. DARK MODE LOGIC --- */
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = themeToggleBtn.querySelector('i');
+    const htmlElement = document.documentElement;
+
+    const savedTheme = localStorage.getItem('unipass_theme');
+    if (savedTheme) {
+      htmlElement.setAttribute('data-theme', savedTheme);
+      updateIcon(savedTheme);
+    } else {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (prefersDark) {
+        htmlElement.setAttribute('data-theme', 'dark');
+        updateIcon('dark');
+      }
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = htmlElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      htmlElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('unipass_theme', newTheme);
+      updateIcon(newTheme);
+    });
+
+    function updateIcon(theme) {
+      if (theme === 'dark') {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+      } else {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+      }
+    }
+  </script>
+    <script src="ui-alerts.js"></script>
+</body>
+</html>

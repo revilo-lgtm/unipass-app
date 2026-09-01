@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiếng Anh Chuyên ngành Kinh tế (FTU) - UniPass</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="student-shared.css">
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --primary-light: #818CF8;
+            --secondary: #EC4899;
+            --gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
+            --grad-uni: linear-gradient(135deg, #FF758C 0%, #FF7EB3 100%);
+            --bg-color: #F8FAFC;
+            --surface: #FFFFFF;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --icon-blue-bg: #F0F9FF;
+            --icon-pink-bg: #FDF2F8;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0F172A;       
+            --surface: #1E293B;        
+            --text-main: #F8FAFC;      
+            --text-muted: #94A3B8;     
+            --border-color: #334155;   
+            --header-bg: rgba(15, 23, 42, 0.95);
+            --icon-blue-bg: rgba(2, 132, 199, 0.2);
+            --icon-pink-bg: rgba(236, 72, 153, 0.2);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--bg-color); color: var(--text-main); overflow-x: hidden; transition: background-color 0.3s ease, color 0.3s ease; }
+        .container { max-width: 1300px; margin: 0 auto; padding: 0 24px; }
+
+        .btn { padding: 12px 24px; border-radius: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s ease; cursor: pointer; border: none; font-size: 14px; }
+        .btn-gradient { background: var(--gradient); color: white; box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35); }
+        .btn-gradient:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(79, 70, 229, 0.45); }
+        .btn-outline { background: var(--surface); color: var(--primary); border: 1px solid var(--border-color); }
+        .btn-outline:hover { border-color: var(--primary); background: rgba(79, 70, 229, 0.05); }
+
+        .course-hero { padding: 110px 0 50px; background: var(--grad-uni); color: white; position: relative; }
+        .breadcrumb { margin-bottom: 16px; font-size: 13.5px; font-weight: 600; opacity: 0.9; }
+        .breadcrumb a { color: white; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .course-hero h1 { font-size: 38px; font-weight: 800; margin-bottom: 12px; line-height: 1.2; letter-spacing: -0.5px; }
+        .course-hero p { font-size: 16px; opacity: 0.95; max-width: 760px; margin-bottom: 24px; line-height: 1.6; }
+        .course-stats { display: flex; gap: 14px; flex-wrap: wrap; }
+        .stat-item { display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 700; background: rgba(255,255,255,0.18); padding: 6px 14px; border-radius: 10px; backdrop-filter: blur(5px); }
+
+        .course-layout { display: block; max-width: 1000px; margin: 0 auto; padding: 32px 0 80px; }
+        .section-title { font-size: 20px; font-weight: 800; margin-bottom: 20px; color: var(--text-main); display: flex; align-items: center; gap: 10px; }
+        .section-title i { color: var(--primary); }
+
+        .accordion-item { background: var(--surface); border: 1px solid var(--border-color); border-radius: 16px; margin-bottom: 14px; overflow: hidden; box-shadow: var(--shadow-sm); }
+        .accordion-header { padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 700; color: var(--text-main); font-size: 15px; transition: background 0.2s; }
+        .accordion-header:hover { background: var(--bg-color); }
+        .accordion-header .chapter-title { display: flex; align-items: center; gap: 10px; }
+        .accordion-header .chapter-meta { font-size: 13px; color: var(--text-muted); font-weight: 600; }
+        .accordion-content { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding 0.3s ease; background: var(--bg-color); }
+        .accordion-item.active .accordion-content { padding: 16px 20px; max-height: 600px; border-top: 1px solid var(--border-color); }
+        .accordion-item.active .fa-chevron-down { transform: rotate(180deg); }
+
+        .lesson-list { list-style: none; }
+        .lesson-list li { display: grid; grid-template-columns: minmax(0, 1fr) 110px 85px; align-items: center; column-gap: 12px; padding: 12px 0; border-bottom: 1px dashed var(--border-color); color: var(--text-main); font-size: 14px; font-weight: 600; }
+        .lesson-list li:last-child { border-bottom: none; }
+        .lesson-list li i { color: var(--text-muted); margin-right: 8px; }
+        .lesson-complete { display: inline-flex; align-items: center; justify-content: flex-end; gap: 6px; color: var(--text-muted); font-size: 12px; font-weight: 700; cursor: pointer; }
+        .lesson-complete input { width: 16px; height: 16px; accent-color: var(--primary); cursor: pointer; }
+        .lesson-list li.is-complete > span:first-child { color: var(--text-muted); text-decoration: line-through; }
+        
+        .lesson-type { min-width: 0; text-align: center; font-size: 11px; padding: 3px 8px; border-radius: 20px; font-weight: 700; }
+        .type-doc { background: var(--icon-blue-bg); color: #0284C7; }
+        .type-quiz { background: var(--icon-pink-bg); color: var(--secondary); }
+
+        /* Student Dashboard Sidebar */
+        .sidebar-card { background: var(--surface); border: 1px solid var(--border-color); border-radius: 20px; padding: 24px; box-shadow: var(--shadow-sm); position: sticky; top: 90px; }
+        .student-status-badge { display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 700; color: #10B981; background: rgba(16, 185, 129, 0.1); padding: 8px 14px; border-radius: 10px; margin-bottom: 18px; border: 1px solid rgba(16, 185, 129, 0.2); }
+        
+        .progress-box { margin-bottom: 20px; }
+        .progress-label { display: flex; justify-content: space-between; font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+        .progress-track { height: 8px; width: 100%; background: var(--border-color); border-radius: 10px; overflow: hidden; }
+        .progress-bar-fill { height: 100%; background: var(--gradient); border-radius: 10px; transition: width 0.4s ease; }
+
+        .course-info-list { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border-color); }
+        .info-row { display: flex; justify-content: space-between; font-size: 12.5px; padding: 6px 0; color: var(--text-muted); font-weight: 600; }
+        .info-val { color: var(--text-main); font-weight: 700; }
+
+        footer { background: #0B1120; color: white; padding: 36px 0; border-top: 1px solid #1E293B; text-align: center; }
+
+        
+    </style>
+    <link rel="stylesheet" href="ui-alerts.css">
+</head>
+<body>
+
+    <header>
+      <div class="header-container">
+        <a href="dashboard.html" class="logo">Uni<span>Pass</span></a>
+        <div class="nav-right">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <div class="user-profile" id="user-profile">
+            <div class="avatar" id="user-avatar">U</div>
+            <span class="user-identity">
+              <span class="user-name" id="display-name">Người dùng</span>
+              <span class="session-status" id="session-status">Thiết bị đang hoạt động: 1/2</span>
+            </span>
+            <i class="fa-solid fa-chevron-down" style="font-size: 12px; color: var(--text-muted);"></i>
+          </div>
+          <a href="login.html" class="user-header-logout" style="background:var(--danger);color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:700;">Đăng xuất</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="course-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="dashboard.html">Trang chủ</a> > <a href="student-courses.html">Lộ trình của tôi</a> > Tiếng Anh Chuyên ngành Kinh tế
+            </div>
+            <h1>Tiếng Anh Chuyên ngành Kinh tế</h1>
+            <p>Học phần Tiếng Anh Chuyên ngành Kinh tế: Thuật ngữ tài chính, ngoại thương, soạn thảo thư tín thương mại quốc tế.</p>
+            
+            <div class="course-stats">
+                <div class="stat-item"><i class="fa-solid fa-university"></i> Đại học Ngoại thương (FTU)</div>
+                <div class="stat-item"><i class="fa-solid fa-folder-open"></i> 2 Chương học</div>
+                <div class="stat-item"><i class="fa-solid fa-layer-group"></i> 5 Bài học trọng tâm</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container course-layout">
+        <main>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2 class="section-title" style="margin-bottom: 0;"><i class="fa-solid fa-list-check"></i> Khung chương trình ôn tập</h2>
+                <div id="course-progress-summary" style="font-weight: 700; color: var(--primary); font-size: 14px;">Đã hoàn thành: 0/5 bài</div>
+            </div>
+            <div class="syllabus">
+                
+            <div class="accordion-item active">
+                <div class="accordion-header">
+                    <div class="chapter-title"><i class="fa-solid fa-folder-open"></i> Unit 1: International Trade & Business Correspondence</div>
+                    <div class="chapter-meta">3 Bài học <i class="fa-solid fa-chevron-down" style="margin-left: 8px;"></i></div>
+                </div>
+                <div class="accordion-content">
+                    <ul class="lesson-list">
+                        
+                <li data-lesson-id="ftu_eng_1_1">
+                    <span><i class="fa-solid fa-circle-play"></i> Vocabulary: Trade Terms, Tariffs & Trade Barriers</span>
+                    <span class="lesson-type type-doc"><i class="fa-solid fa-file-lines"></i> Tài liệu</span>
+                    <label class="lesson-complete"><input type="checkbox"> Đã học</label>
+                </li>
+            
+                <li data-lesson-id="ftu_eng_1_2">
+                    <span><i class="fa-solid fa-circle-play"></i> Business Email: Inquiry, Quotation & Order Placement</span>
+                    <span class="lesson-type type-doc"><i class="fa-solid fa-file-lines"></i> Tài liệu</span>
+                    <label class="lesson-complete"><input type="checkbox"> Đã học</label>
+                </li>
+            
+                <li data-lesson-id="ftu_eng_1_3">
+                    <span><i class="fa-solid fa-pen-to-square"></i> Quiz: Commercial Terms Vocabulary Test</span>
+                    <span class="lesson-type type-quiz"><i class="fa-solid fa-pen-nib"></i> Trắc nghiệm</span>
+                    <label class="lesson-complete"><input type="checkbox"> Đã học</label>
+                </li>
+            
+                    </ul>
+                </div>
+            </div>
+        
+            <div class="accordion-item ">
+                <div class="accordion-header">
+                    <div class="chapter-title"><i class="fa-solid fa-folder-open"></i> Unit 2: Contract Translation & Exam Practice</div>
+                    <div class="chapter-meta">2 Bài học <i class="fa-solid fa-chevron-down" style="margin-left: 8px;"></i></div>
+                </div>
+                <div class="accordion-content">
+                    <ul class="lesson-list">
+                        
+                <li data-lesson-id="ftu_eng_2_1">
+                    <span><i class="fa-solid fa-circle-play"></i> Techniques for Translating International Sales Contracts</span>
+                    <span class="lesson-type type-doc"><i class="fa-solid fa-file-lines"></i> Tài liệu</span>
+                    <label class="lesson-complete"><input type="checkbox"> Đã học</label>
+                </li>
+            
+                <li data-lesson-id="ftu_eng_2_2">
+                    <span><i class="fa-solid fa-pen-to-square"></i> Full Practice Exam: FTU Business English</span>
+                    <span class="lesson-type type-quiz"><i class="fa-solid fa-pen-nib"></i> Trắc nghiệm</span>
+                    <label class="lesson-complete"><input type="checkbox"> Đã học</label>
+                </li>
+            
+                    </ul>
+                </div>
+            </div>
+        
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 UniPass EdTech. Nền tảng học tập & ôn thi trúng đích dành riêng cho sinh viên Việt Nam.</p>
+        </div>
+    </footer>
+
+    <script src="auth.js"></script>
+    <script src="course-portal.js"></script>
+    <script>
+        const currentUser = window.Auth.current();
+        if (!currentUser) {
+            window.location.href = 'login.html';
+        }
+
+        // Accordion Toggle
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Dark Mode
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = themeToggleBtn.querySelector('i');
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem('unipass_theme');
+        if (savedTheme) { htmlElement.setAttribute('data-theme', savedTheme); updateIcon(savedTheme); }
+        else if (window.matchMedia('(prefers-color-scheme: dark)').matches) { htmlElement.setAttribute('data-theme', 'dark'); updateIcon('dark'); }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const newTheme = htmlElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('unipass_theme', newTheme);
+            updateIcon(newTheme);
+        });
+
+        function updateIcon(theme) { themeIcon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon'; }
+
+        // Course Progress
+        const COURSE_ID = 'ftu_english';
+        const progressSummary = document.getElementById('course-progress-summary');
+        const sidebarProgressPercent = document.getElementById('sidebar-progress-percent');
+        const sidebarProgressBar = document.getElementById('sidebar-progress-bar');
+
+        async function loadProgress() {
+            try {
+                const response = await fetch(`/api/course-progress/${COURSE_ID}`, {
+                    headers: { Authorization: `Bearer ${localStorage.getItem('unipass_token') || ''}` }
+                });
+                if (!response.ok) return;
+                const data = await response.json();
+                const completed = Array.isArray(data.completedLessonIds) ? data.completedLessonIds : [];
+                
+                let count = 0;
+                document.querySelectorAll('[data-lesson-id]').forEach(li => {
+                    const id = li.dataset.lessonId;
+                    const checkbox = li.querySelector('input[type="checkbox"]');
+                    if (completed.includes(id)) {
+                        checkbox.checked = true;
+                        li.classList.add('is-complete');
+                        count++;
+                    } else {
+                        checkbox.checked = false;
+                        li.classList.remove('is-complete');
+                    }
+                });
+
+                const total = document.querySelectorAll('[data-lesson-id]').length || 1;
+                const percent = Math.round((count / total) * 100);
+                if (progressSummary) progressSummary.textContent = `Đã hoàn thành: ${count}/${total} bài (${percent}%)`;
+                if (sidebarProgressPercent) sidebarProgressPercent.textContent = `${percent}%`;
+                if (sidebarProgressBar) sidebarProgressBar.style.width = `${percent}%`;
+            } catch (err) {}
+        }
+
+        document.querySelectorAll('.lesson-complete input').forEach(cb => {
+            cb.addEventListener('change', async (e) => {
+                const li = e.target.closest('[data-lesson-id]');
+                const lessonId = li.dataset.lessonId;
+                const checked = e.target.checked;
+                
+                try {
+                    await fetch(`/api/course-progress/${COURSE_ID}`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            Authorization: `Bearer ${localStorage.getItem('unipass_token') || ''}`
+                        },
+                        body: JSON.stringify({ lessonId, completed: checked })
+                    });
+                    loadProgress();
+                } catch (err) {}
+            });
+        });
+
+        loadProgress();
+    </script>
+    <script src="ui-alerts.js"></script>
+</body>
+</html>

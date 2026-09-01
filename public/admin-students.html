@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Học viên - Admin UniPass</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="admin-shared.css">
+    <style>
+        /* HỆ THỐNG BIẾN MÀU SẮC CHUNG */
+        :root {
+            --primary: #4F46E5;
+            --primary-light: #818CF8;
+            --primary-bg: rgba(79, 70, 229, 0.08);
+            --secondary: #EC4899;
+            --success: #10B981;
+            --success-bg: rgba(16, 185, 129, 0.1);
+            --warning: #F59E0B;
+            --warning-bg: rgba(245, 158, 11, 0.1);
+            --danger: #EF4444;
+            --danger-bg: rgba(239, 68, 68, 0.1);
+            --gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
+            --gradient-subtle: linear-gradient(135deg, rgba(79, 70, 229, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);
+
+            --bg-color: #F8FAFC;
+            --surface: #FFFFFF;
+            --surface-hover: #F1F5F9;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+            --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        [data-theme="dark"] {
+            --primary-bg: rgba(99, 102, 241, 0.15);
+            --bg-color: #0B1120;
+            --surface: #1E293B;
+            --surface-hover: #273549;
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --border-color: #334155;
+            --header-bg: rgba(15, 23, 42, 0.95);
+            --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 14px -1px rgba(0, 0, 0, 0.4);
+            --gradient-subtle: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(236, 72, 153, 0.05) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* --- Navbar --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--header-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-container {
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-tag {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 3px 8px;
+            background: var(--primary-bg);
+            color: var(--primary);
+            border-radius: 6px;
+            border: 1px solid rgba(79, 70, 229, 0.2);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .theme-toggle {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            font-size: 15px;
+        }
+
+        .theme-toggle:hover {
+            background: var(--surface-hover);
+            color: var(--primary);
+            border-color: var(--primary-light);
+            transform: translateY(-1px);
+        }
+
+        .admin-profile {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 12px 4px 4px;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            background: var(--surface);
+            box-shadow: var(--shadow-xs);
+        }
+
+        .avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .admin-name {
+            font-weight: 700;
+            font-size: 13.5px;
+            color: var(--text-main);
+        }
+
+        .btn-logout {
+            background: var(--danger-bg);
+            color: var(--danger);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            padding: 8px 16px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .btn-logout:hover {
+            background: var(--danger);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+        }
+
+        /* --- Dashboard Layout --- */
+        .dashboard-wrapper {
+            display: flex;
+            max-width: 1440px;
+            margin: 70px auto 0;
+            min-height: calc(100vh - 70px);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            background: var(--surface);
+            border-right: 1px solid var(--border-color);
+            padding: 24px 12px;
+            position: fixed;
+            height: calc(100vh - 70px);
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .sidebar-section-title {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            padding: 8px 16px 12px;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-bottom: 6px;
+        }
+
+        .nav-menu a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 12px;
+            transition: all 0.2s;
+        }
+
+        .nav-menu a i {
+            font-size: 16px;
+            width: 22px;
+            text-align: center;
+            color: var(--text-muted);
+            transition: color 0.2s;
+        }
+
+        .nav-menu a:hover {
+            background: var(--bg-color);
+            color: var(--primary);
+        }
+
+        .nav-menu a:hover i {
+            color: var(--primary);
+        }
+
+        .nav-menu a.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+        }
+
+        .nav-menu a.active i {
+            color: white;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 32px 40px;
+            margin-left: 260px;
+            min-width: 0;
+        }
+
+        /* Page Header */
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 28px;
+            background: var(--surface);
+            padding: 28px 32px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 220px;
+            height: 100%;
+            background: var(--gradient-subtle);
+            pointer-events: none;
+        }
+
+        .page-header-text h1 {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .page-header-text p {
+            color: var(--text-muted);
+            font-size: 14.5px;
+        }
+
+        .btn-action {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 10px 18px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 13.5px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            box-shadow: var(--shadow-xs);
+        }
+
+        .btn-action:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-1px);
+        }
+
+        .btn-primary-action {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 13.5px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn-primary-action:hover {
+            background: #4338CA;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
+        }
+
+        /* Card Section */
+        .content-card {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 24px;
+        }
+
+        .content-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .content-card-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Create Account Form */
+        .account-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1.5fr;
+            gap: 14px;
+            align-items: stretch;
+        }
+
+        .form-col-span-2 {
+            grid-column: span 2;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: stretch;
+            width: 100%;
+        }
+
+        .input-group input {
+            flex: 1;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .input-addon {
+            display: flex;
+            align-items: center;
+            padding: 0 14px;
+            background: var(--surface-hover);
+            border: 1px solid var(--border-color);
+            border-left: none;
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
+            color: var(--text-muted);
+            font-size: 13.5px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 11px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background: var(--bg-color);
+            color: var(--text-main);
+            font-size: 14px;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .form-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 260px;
+            position: relative;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 11px 16px 11px 42px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background: var(--surface);
+            color: var(--text-main);
+            outline: none;
+            transition: all 0.2s;
+            font-size: 13.5px;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+        }
+
+        .filter-select {
+            padding: 11px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background: var(--surface);
+            color: var(--text-main);
+            outline: none;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: 600;
+        }
+
+        .filter-select:focus {
+            border-color: var(--primary);
+        }
+
+        /* Table Area */
+        .table-container {
+            background: var(--surface);
+            border-radius: 18px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            min-width: 860px;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        thead {
+            background: var(--bg-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            padding: 16px 20px;
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-main);
+            font-size: 13.5px;
+            vertical-align: middle;
+        }
+
+        tbody tr:hover {
+            background: var(--surface-hover);
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Student Info Cell */
+        .student-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .student-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .student-name {
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 2px;
+        }
+
+        .student-email {
+            color: var(--text-muted);
+            font-size: 12.5px;
+        }
+
+        /* Badges */
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .uni-ueh {
+            background: rgba(79, 70, 229, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(79, 70, 229, 0.2);
+        }
+
+        .uni-bk {
+            background: rgba(2, 132, 199, 0.1);
+            color: #0284C7;
+            border: 1px solid rgba(2, 132, 199, 0.2);
+        }
+
+        .uni-ftu {
+            background: rgba(236, 72, 153, 0.1);
+            color: var(--secondary);
+            border: 1px solid rgba(236, 72, 153, 0.2);
+        }
+
+        .uni-neu {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .uni-hcmus {
+            background: rgba(14, 165, 233, 0.1);
+            color: #0284C7;
+            border: 1px solid rgba(14, 165, 233, 0.2);
+        }
+
+        .uni-tdtu {
+            background: rgba(245, 158, 11, 0.1);
+            color: #D97706;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        .status-active {
+            background: var(--success-bg);
+            color: var(--success);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+        }
+
+        .status-pending {
+            background: var(--warning-bg);
+            color: var(--warning);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+        }
+
+        /* Actions */
+        .action-btns {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background: var(--surface);
+            color: var(--text-muted);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .btn-icon:hover {
+            background: var(--surface-hover);
+            color: var(--primary);
+            border-color: var(--primary-light);
+            transform: translateY(-1px);
+        }
+
+        .btn-icon.danger:hover {
+            color: var(--danger);
+            border-color: var(--danger);
+            background: var(--danger-bg);
+        }
+
+        @media (max-width: 720px) {
+            .account-form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-col-span-2 {
+                grid-column: span 1;
+            }
+        }
+
+        /* Responsive Sidebar for Split-Screen & Tablet (không bao giờ bị mất menu khi chia đôi màn hình) */
+        @media (max-width: 1080px) {
+            .sidebar {
+                width: 68px !important;
+                padding: 16px 6px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+            .sidebar-section-title {
+                display: none !important;
+            }
+            .nav-menu {
+                width: 100% !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 6px !important;
+            }
+            .nav-menu li {
+                width: 100% !important;
+                margin-bottom: 0 !important;
+            }
+            .nav-menu a {
+                justify-content: center !important;
+                padding: 12px 8px !important;
+                font-size: 0 !important;
+                border-radius: 10px !important;
+                gap: 0 !important;
+                position: relative;
+            }
+            .nav-menu a i {
+                font-size: 17px !important;
+                margin: 0 !important;
+                width: auto !important;
+            }
+            .main-content {
+                margin-left: 68px !important;
+                padding: 20px 16px !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .sidebar {
+                display: none !important;
+            }
+            .main-content {
+                margin-left: 0 !important;
+                padding: 16px 12px !important;
+            }
+        }
+
+    </style>
+    <link rel="stylesheet" href="ui-alerts.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="admin-dashboard.html" class="logo" title="Trang tổng quan Quản trị" title="Tổng quan Báo cáo">
+                Uni<span>Pass</span>
+                <span class="logo-tag">Admin</span>
+            </a>
+            <div class="nav-right">
+                <a href="index.html" class="btn-visit-home" style="display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:20px; font-size:12.5px; font-weight:700; text-decoration:none; color:var(--text-main); background:var(--surface); border:1px solid var(--border-color); box-shadow:0 2px 4px rgba(0,0,0,0.02); transition:all 0.2s;" title="Xem trang chủ UniPass"><i class="fa-solid fa-arrow-up-right-from-square" style="color:var(--primary); font-size:11px;"></i> <span>Trang chủ</span></a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode"
+                    title="Chuyển đổi giao diện Sáng/Tối">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div class="admin-profile">
+                    <div class="avatar"><i class="fa-solid fa-shield-halved"></i></div>
+                    <span class="admin-name" id="admin-display-name">Quản trị viên</span>
+                </div>
+                <a href="#" id="admin-logout" class="btn-logout" title="Đăng xuất khỏi hệ thống">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <span>Đăng xuất</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-section-title">Quản trị Hệ thống</div>
+            <ul class="nav-menu">
+                <li><a href="admin-dashboard.html" title="Tổng quan Báo cáo"><i class="fa-solid fa-chart-pie"></i> Tổng quan</a></li>
+                <li><a href="admin-students.html" class="active" title="Quản lý Học viên"><i class="fa-solid fa-users"></i> Quản lý Học viên</a>
+                </li>
+                <li><a href="admin-transactions.html" title="Lịch sử Giao dịch"><i class="fa-solid fa-file-invoice-dollar"></i> Lịch sử Giao
+                        dịch</a></li>
+                <li><a href="admin-rag.html" title="Dữ liệu AI RAG"><i class="fa-solid fa-database"></i> Dữ liệu AI RAG</a></li>
+                <li><a href="admin-settings.html" title="Cài đặt Hệ thống"><i class="fa-solid fa-gear"></i> Cài đặt Hệ thống</a></li>
+                <li class="sidebar-home-link" style="margin-top: 14px; border-top: 1px dashed var(--border-color); padding-top: 12px;"><a href="index.html"  style="color: var(--primary); font-weight: 700;" title="Về Trang chủ UniPass"><i class="fa-solid fa-house"></i> Về Trang chủ</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="page-header">
+                <div class="page-header-text">
+                    <h1><i class="fa-solid fa-users" style="color: var(--primary);"></i> Quản lý Học viên</h1>
+                    <p>Theo dõi, duyệt kích hoạt và quản lý tài khoản sinh viên toàn hệ thống theo thời gian thực.</p>
+                </div>
+                <button id="btn-export-csv" class="btn-action">
+                    <i class="fa-solid fa-file-csv" style="color: var(--success);"></i>
+                    <span>Xuất CSV</span>
+                </button>
+            </div>
+
+            <!-- Create Account Card -->
+            <div class="content-card">
+                <div class="content-card-header">
+                    <span class="content-card-title"><i class="fa-solid fa-user-plus"
+                            style="color: var(--primary);"></i> Thêm tài khoản mới thủ công</span>
+                </div>
+                <form id="account-create-form" class="account-form-grid">
+                    <select id="account-role" class="form-input">
+                        <option value="Học viên">Học viên</option>
+                        <option value="Giảng viên">Giảng viên</option>
+                    </select>
+                    <select id="account-university" class="form-input">
+                        <option value="st.ueh.edu.vn">ĐH Kinh tế (UEH)</option>
+                        <option value="hcmut.edu.vn">ĐH Bách Khoa (HCMUT)</option>
+                        <option value="ftu.edu.vn">ĐH Ngoại thương (FTU)</option>
+                        <option value="st.neu.edu.vn">ĐH KTQD (NEU)</option>
+                        <option value="hcmus.edu.vn">ĐH KHTN (HCMUS)</option>
+                        <option value="tdtu.edu.vn">ĐH Tôn Đức Thắng (TDTU)</option>
+                    </select>
+                    <input id="account-fullname" class="form-input" type="text" placeholder="Họ và tên" required>
+
+                    <div class="input-group form-col-span-2">
+                        <input id="account-username" class="form-input" type="text"
+                            placeholder="Tên tài khoản (username)" required>
+                        <span id="account-domain-addon" class="input-addon">@st.ueh.edu.vn</span>
+                    </div>
+
+                    <div style="display: flex; gap: 14px;">
+                        <input id="account-password" class="form-input" type="password" placeholder="Mật khẩu" required
+                            style="flex: 1;">
+                        <button type="submit" class="btn-primary-action" style="white-space: nowrap;">
+                            <i class="fa-solid fa-plus"></i> Tạo
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="filter-bar">
+                <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 20px;">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <!-- Honeypot for aggressive autofill -->
+                        <input type="text" style="display:none" autocomplete="username">
+                        <input type="text" id="student-search" class="filter-input"
+                            placeholder="Tìm kiếm tên, email, mssv..." autocomplete="off" data-lpignore="true">
+                    </div>
+                    <select class="filter-select" id="university-filter">
+                        <option value="all">Tất cả Trường Đại học</option>
+                        <option value="uni-ueh">ĐH Kinh tế TP.HCM (UEH)</option>
+                        <option value="uni-bk">ĐH Bách Khoa (HCMUT)</option>
+                        <option value="uni-ftu">ĐH Ngoại thương (FTU)</option>
+                        <option value="uni-neu">ĐH Kinh tế Quốc dân (NEU)</option>
+                        <option value="uni-hcmus">ĐH Khoa học Tự nhiên (HCMUS)</option>
+                        <option value="uni-tdtu">ĐH Tôn Đức Thắng (TDTU)</option>
+                        <option value="unipass">Tài khoản nội bộ (Admin/GV)</option>
+                    </select>
+                    <select class="filter-select" id="status-filter">
+                        <option value="all">Tất cả Trạng thái</option>
+                        <option value="active">Đang hoạt động</option>
+                        <option value="pending">Chờ kích hoạt / Chưa thanh toán</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Accounts Table -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Người dùng</th>
+                            <th>Trường ĐH</th>
+                            <th>Phân quyền</th>
+                            <th>Trạng thái & Hạn truy cập</th>
+                            <th style="text-align: right;">Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="student-table-body">
+                        <tr>
+                            <td colspan="5" style="text-align: center; padding: 32px; color: var(--text-muted);">Đang
+                                tải dữ liệu học viên...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+        // 1. Phân quyền & Khởi tạo Admin
+        const currentAdmin = window.Auth.current();
+        if (!currentAdmin || (currentAdmin.role !== 'admin' && currentAdmin.role !== 'Giảng viên')) {
+            window.location.href = 'login.html';
+        } else {
+            const adminNameElem = document.getElementById('admin-display-name');
+            if (adminNameElem && currentAdmin.fullname) {
+                adminNameElem.textContent = currentAdmin.fullname;
+            }
+
+            if (currentAdmin.role === 'Giảng viên') {
+                // Ẩn form tạo user
+                const createFormCard = document.querySelector('.content-card');
+                if (createFormCard) createFormCard.style.display = 'none';
+
+                // Ẩn menu không cho phép
+                document.querySelectorAll('.nav-menu li').forEach(li => {
+                    const link = li.querySelector('a').getAttribute('href') || '';
+                    if (!link.includes('admin-students.html') && !link.includes('admin-rag.html') && !link.includes('admin-dashboard.html')) {
+                        li.style.display = 'none';
+                    }
+                });
+            }
+        }
+
+        document.getElementById('admin-logout').addEventListener('click', event => {
+            event.preventDefault();
+            window.Auth.logout();
+            window.location.href = 'login.html';
+        });
+
+        // 2. Dark Mode Toggle
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = themeToggleBtn.querySelector('i');
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem('unipass_theme');
+        if (savedTheme) {
+            htmlElement.setAttribute('data-theme', savedTheme);
+            updateIcon(savedTheme);
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            htmlElement.setAttribute('data-theme', 'dark');
+            updateIcon('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const newTheme = htmlElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('unipass_theme', newTheme);
+            updateIcon(newTheme);
+        });
+
+        function updateIcon(theme) {
+            themeIcon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+        }
+
+        // 3. Quản lý Học viên & Dữ liệu Backend
+        (function () {
+            const form = document.getElementById('account-create-form');
+            const tableBody = document.getElementById('student-table-body');
+            const searchInput = document.getElementById('student-search');
+            const universityFilter = document.getElementById('university-filter');
+            const statusFilter = document.getElementById('status-filter');
+            let allAccounts = [];
+
+            const universityInfo = (email, role) => {
+                if (role === 'admin' || role === 'Giảng viên') return ['UniPass', 'uni-ueh', 'unipass'];
+                const domain = String(email || '').toLowerCase().split('@')[1] || '';
+                const info = {
+                    'st.ueh.edu.vn': ['UEH', 'uni-ueh', 'ueh'],
+                    'hcmut.edu.vn': ['HCMUT', 'uni-bk', 'bk'],
+                    'ftu.edu.vn': ['FTU', 'uni-ftu', 'ftu'],
+                    'st.neu.edu.vn': ['NEU', 'uni-neu', 'neu'],
+                    'hcmus.edu.vn': ['HCMUS', 'uni-hcmus', 'hcmus'],
+                    'tdtu.edu.vn': ['TDTU', 'uni-tdtu', 'tdtu'],
+                };
+                return info[domain] || ['Khác', 'uni-ueh', 'other'];
+            };
+
+            const statusInfo = status => status === 'active'
+                ? ['Đang hoạt động', 'status-active']
+                : ['Chờ thanh toán', 'status-pending'];
+
+            const escapeHTML = (str) => {
+                if (!str) return '';
+                return String(str).replace(/[&<>'"]/g,
+                    tag => ({
+                        '&': '&amp;',
+                        '<': '&lt;',
+                        '>': '&gt;',
+                        "'": '&#39;',
+                        '"': '&quot;'
+                    }[tag])
+                );
+            };
+
+            function filteredAccounts() {
+                const query = searchInput.value.trim().toLowerCase();
+                return allAccounts.filter(account => {
+                    const [, , universityFilterValue] = universityInfo(account.Email, account.Role);
+                    return (!query || `${account.Fullname} ${account.Email} ${account.User_ID}`.toLowerCase().includes(query))
+                        && (universityFilter.value === 'all' || universityFilterValue === universityFilter.value)
+                        && (statusFilter.value === 'all' || account.Status === statusFilter.value);
+                });
+            }
+
+            function renderAccounts(accounts) {
+                if (!accounts.length) {
+                    tableBody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:32px;color:var(--text-muted);">Không tìm thấy học viên nào phù hợp.</td></tr>';
+                    return;
+                }
+                tableBody.innerHTML = accounts.map(account => {
+                    const [university, universityClass] = universityInfo(account.Email, account.Role);
+                    const [statusLabel, statusClass] = statusInfo(account.Status);
+                    const nextStatus = account.Status === 'active' ? 'pending' : 'active';
+                    const nextLabel = account.Status === 'active' ? 'Chuyển sang Chờ thanh toán' : 'Kích hoạt tài khoản';
+                    const initial = (account.Fullname || account.Email || 'U').charAt(0).toUpperCase();
+
+                    let statusColumnHtml = '';
+                    if (account.Role !== 'admin' && account.Role !== 'Giảng viên') {
+                        let expiryLabel = '<span style="color:var(--text-muted);font-style:italic;">Chưa kích hoạt</span>';
+                        if (account.Expiry_Date) {
+                            const ed = new Date(account.Expiry_Date);
+                            const now = new Date();
+                            const diffMs = ed - now;
+
+                            if (diffMs <= 0) {
+                                const dateStr = ed.toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' });
+                                expiryLabel = `<span style="color:var(--danger);font-weight:600;">Hết hạn (${dateStr})</span>`;
+                            } else {
+                                const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+                                const hours = Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                const minutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+                                const seconds = Math.floor((diffMs % (1000 * 60)) / 1000);
+
+                                let timeStr = '';
+                                if (days > 0) timeStr += `${days}d `;
+                                if (hours > 0 || days > 0) timeStr += `${hours}h `;
+                                timeStr += `${minutes}m ${seconds}s`;
+
+                                expiryLabel = `<span class="live-countdown" data-expiry="${account.Expiry_Date}" style="color:var(--primary);font-weight:600;"><i class="fa-regular fa-clock"></i> Còn ${timeStr}</span>`;
+                            }
+                        }
+
+                        statusColumnHtml = `
+                            <div style="display: flex; flex-direction: column; gap: 6px; align-items: flex-start;">
+                                <span class="badge ${statusClass}">${statusLabel}</span>
+                                <div style="font-size: 12.5px;">${expiryLabel}</div>
+                            </div>
+                        `;
+                    }
+
+                    const resetWarning = account.reset_requested === 1
+                        ? ' <span title="Yêu cầu cấp lại mật khẩu" style="color: var(--danger); font-size: 14px; margin-left: 8px; animation: pulse 2s infinite;"><i class="fa-solid fa-circle-exclamation"></i> Yêu cầu cấp lại mật khẩu</span>'
+                        : '';
+
+                    return `
+                    <tr>
+                        <td>
+                            <div class="student-info">
+                                <div class="student-avatar">${initial}</div>
+                                <div>
+                                    <div class="student-name">${escapeHTML(account.Fullname) || 'Chưa đặt tên'}${resetWarning}</div>
+                                    <div class="student-email">${escapeHTML(account.Email)}</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td><span class="badge ${universityClass}">${university}</span></td>
+                        <td><span style="font-weight:600;color:var(--text-main);">${escapeHTML(account.Role)}</span></td>
+                        <td>
+                            ${statusColumnHtml}
+                        </td>
+                        <td style="text-align: right;">
+                            <div class="action-btns" style="justify-content: flex-end;">
+                                ${account.Role !== 'admin' ? `
+                                <button type="button" class="btn-icon toggle-status" data-user-id="${account.User_ID}" data-next-status="${nextStatus}" title="${nextLabel}">
+                                    <i class="fa-solid fa-toggle-${account.Status === 'active' ? 'on' : 'off'}" style="color:${account.Status === 'active' ? 'var(--success)' : 'var(--text-muted)'};font-size:16px;"></i>
+                                </button>
+                                <button type="button" class="btn-icon reset-password" data-user-id="${account.User_ID}" title="Đặt lại mật khẩu">
+                                    <i class="fa-solid fa-key"></i>
+                                </button>
+                                <button type="button" class="btn-icon danger delete-account" data-user-id="${account.User_ID}" title="Xóa tài khoản" ${currentAdmin.role === 'Giảng viên' ? 'style="display:none;"' : ''}>
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                                ` : '<span style="font-size:13px; color:var(--text-muted); font-weight:600;">Toàn quyền</span>'}
+                            </div>
+                        </td>
+                    </tr>
+                `;
+                }).join('');
+
+                // Gắn sự kiện các nút thao tác
+                document.querySelectorAll('.toggle-status').forEach(button => {
+                    button.addEventListener('click', async () => {
+                        try {
+                            await window.Auth.adminRequest(`/api/admin/accounts/${button.dataset.userId}/status`, {
+                                method: 'PATCH',
+                                body: JSON.stringify({ status: button.dataset.nextStatus })
+                            });
+                            await loadAccounts();
+                        } catch (error) { alert(error.message); }
+                    });
+                });
+
+                document.querySelectorAll('.reset-password').forEach(button => {
+                    button.addEventListener('click', async () => {
+                        const confirmReset = await window.showConfirm('Người dùng sẽ phải đổi mật khẩu mới ở lần đăng nhập tới.', 'warning', 'Reset Mật Khẩu', 'Xác nhận reset');
+                        if (!confirmReset) return;
+                        try {
+                            await window.Auth.adminRequest(`/api/admin/accounts/${button.dataset.userId}/reset-password`, {
+                                method: 'POST',
+                                body: JSON.stringify({})
+                            });
+                            window.showAlert('Đã reset mật khẩu thành Trống (Blank).', 'success');
+                            loadAccounts();
+                        } catch (error) {
+                            window.showAlert(error.message, 'error');
+                        }
+                    });
+                });
+
+                document.querySelectorAll('.delete-account').forEach(button => {
+                    button.addEventListener('click', async () => {
+                        const confirmDelete = await window.showConfirm('Bạn có chắc chắn muốn xóa vĩnh viễn tài khoản này?\nHành động này không thể hoàn tác.', 'error', 'Cảnh báo Xóa', 'Xóa Vĩnh Viễn');
+                        if (!confirmDelete) return;
+                        try {
+                            await window.Auth.adminRequest(`/api/admin/accounts/${button.dataset.userId}`, { method: 'DELETE' });
+                            await loadAccounts();
+                            alert('Đã xóa tài khoản thành công.');
+                        } catch (error) { alert(error.message); }
+                    });
+                });
+            }
+
+            async function loadAccounts() {
+                try {
+                    const data = await window.Auth.adminRequest('/api/admin/accounts');
+                    allAccounts = data.accounts || [];
+                    renderAccounts(filteredAccounts());
+                } catch (error) {
+                    tableBody.innerHTML = `<tr><td colspan="6" style="text-align:center;color:var(--danger);padding:32px;">Lỗi tải dữ liệu: ${error.message}</td></tr>`;
+                }
+            }
+
+            // Form Logic
+            const roleSelect = document.getElementById('account-role');
+            const uniSelect = document.getElementById('account-university');
+            const domainAddon = document.getElementById('account-domain-addon');
+
+            function updateDomain() {
+                if (roleSelect && roleSelect.value === 'Giảng viên') {
+                    if (uniSelect) uniSelect.disabled = true;
+                    if (domainAddon) domainAddon.textContent = '@unipass.edu.vn';
+                } else {
+                    if (uniSelect) {
+                        uniSelect.disabled = false;
+                        if (domainAddon) domainAddon.textContent = '@' + uniSelect.value;
+                    }
+                }
+            }
+            if (roleSelect) roleSelect.addEventListener('change', updateDomain);
+            if (uniSelect) uniSelect.addEventListener('change', updateDomain);
+
+            form.addEventListener('submit', async event => {
+                event.preventDefault();
+                const submitBtn = form.querySelector('button[type="submit"]');
+                submitBtn.disabled = true;
+                try {
+                    const username = document.getElementById('account-username').value.trim();
+                    const domain = document.getElementById('account-domain-addon').textContent;
+                    const finalEmail = username + domain;
+
+                    await window.Auth.adminRequest('/api/admin/accounts', {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            fullname: document.getElementById('account-fullname').value.trim(),
+                            email: finalEmail,
+                            password: document.getElementById('account-password').value,
+                            role: roleSelect ? roleSelect.value : 'Học viên'
+                        })
+                    });
+                    form.reset();
+                    await loadAccounts();
+                    window.showAlert('Tạo tài khoản thành công.', 'success');
+                } catch (error) {
+                    window.showAlert(error.message, 'error');
+                } finally {
+                    submitBtn.disabled = false;
+                }
+            });
+
+            [searchInput, universityFilter, statusFilter].forEach(element => {
+                element.addEventListener('input', () => renderAccounts(filteredAccounts()));
+                element.addEventListener('change', () => renderAccounts(filteredAccounts()));
+            });
+
+            // Export CSV
+            document.getElementById('btn-export-csv').addEventListener('click', () => {
+                if (!allAccounts.length) {
+                    alert('Chưa có dữ liệu để xuất.');
+                    return;
+                }
+                let csvContent = "data:text/csv;charset=utf-8,ID,Fullname,Email,Role,Status,Expiry_Date\n";
+                allAccounts.forEach(acc => {
+                    csvContent += `"${acc.User_ID}","${acc.Fullname || ''}","${acc.Email}","${acc.Role}","${acc.Status}","${acc.Expiry_Date || ''}"\n`;
+                });
+                const encodedUri = encodeURI(csvContent);
+                const link = document.createElement("a");
+                link.setAttribute("href", encodedUri);
+                link.setAttribute("download", `unipass_students_${new Date().toISOString().split('T')[0]}.csv`);
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+
+            loadAccounts();
+
+            // Real-time countdown updater
+            setInterval(() => {
+                document.querySelectorAll('.live-countdown').forEach(el => {
+                    const expiry = el.getAttribute('data-expiry');
+                    if (!expiry) return;
+
+                    const ed = new Date(expiry);
+                    const now = new Date();
+                    const diffMs = ed - now;
+
+                    if (diffMs <= 0) {
+                        const dateStr = ed.toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' });
+                        el.outerHTML = `<span style="color:var(--danger);font-weight:600;">Hết hạn (${dateStr})</span>`;
+                        return;
+                    }
+
+                    const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((diffMs % (1000 * 60)) / 1000);
+
+                    let timeStr = '';
+                    if (days > 0) timeStr += `${days}d `;
+                    if (hours > 0 || days > 0) timeStr += `${hours}h `;
+                    timeStr += `${minutes}m ${seconds}s`;
+
+                    el.innerHTML = `<i class="fa-regular fa-clock"></i> Còn ${timeStr}`;
+                });
+            }, 1000);
+        })();
+    </script>
+    <script src="ui-alerts.js"></script>
+</body>
+
+</html>

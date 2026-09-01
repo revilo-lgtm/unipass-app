@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chính Sách Bảo Mật & DRM - UniPass EdTech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --primary-light: #818CF8;
+            --secondary: #EC4899;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
+            
+            --bg-color: #F8FAFC;
+            --surface: #FFFFFF;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
+            --card-bg: #FFFFFF;
+            --hero-bg: linear-gradient(180deg, rgba(16, 185, 129, 0.06) 0%, transparent 100%);
+            --header-bg: rgba(255, 255, 255, 0.9);
+            --toc-active-bg: rgba(16, 185, 129, 0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0B1120;
+            --surface: #1E293B;
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --border-color: #334155;
+            --card-bg: #131D31;
+            --hero-bg: linear-gradient(180deg, rgba(16, 185, 129, 0.15) 0%, transparent 100%);
+            --header-bg: rgba(11, 17, 32, 0.9);
+            --toc-active-bg: rgba(16, 185, 129, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* --- Header --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 72px;
+            background: var(--header-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .theme-toggle {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: 0.2s;
+        }
+
+        .btn-header {
+            padding: 8px 18px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            background: transparent;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: #FFFFFF;
+            border: none;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 130px 24px 50px;
+            background: var(--hero-bg);
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            color: var(--success);
+            font-size: 12.5px;
+            font-weight: 700;
+            border-radius: 30px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 16px;
+            max-width: 680px;
+            margin: 0 auto 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* --- Main Content Layout --- */
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* --- Sticky Table of Contents --- */
+        .toc-wrapper {
+            position: sticky;
+            top: 100px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .toc-title {
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-main);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-list li {
+            margin-bottom: 6px;
+        }
+
+        .toc-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13.5px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .toc-link i {
+            font-size: 13px;
+            color: var(--success);
+            opacity: 0.8;
+            width: 16px;
+        }
+
+        .toc-link:hover, .toc-link.active {
+            background: var(--toc-active-bg);
+            color: var(--success);
+        }
+
+        /* --- Articles --- */
+        .terms-article {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            transition: border-color 0.2s;
+        }
+
+        .section-card:hover {
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .section-body {
+            font-size: 14.5px;
+            color: var(--text-main);
+            opacity: 0.9;
+        }
+
+        .section-body p {
+            margin-bottom: 14px;
+        }
+
+        .section-body ul {
+            margin-left: 20px;
+            margin-bottom: 14px;
+        }
+
+        .section-body li {
+            margin-bottom: 8px;
+            color: var(--text-muted);
+        }
+
+        .section-body li b {
+            color: var(--text-main);
+        }
+
+        .callout-box {
+            background: rgba(16, 185, 129, 0.06);
+            border-left: 4px solid var(--success);
+            border-radius: 0 12px 12px 0;
+            padding: 16px 20px;
+            margin: 16px 0;
+            font-size: 13.5px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #0B1120;
+            color: #94A3B8;
+            padding: 60px 0 25px;
+            border-top: 1px solid #1E293B;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1.2fr 1.2fr 1.4fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #1E293B;
+            margin-bottom: 25px;
+        }
+
+        .footer-col-brand .logo {
+            color: #FFFFFF;
+            font-size: 24px;
+            font-weight: 800;
+            text-decoration: none;
+            margin-bottom: 14px;
+            display: inline-block;
+        }
+
+        .footer-col-brand .logo span {
+            color: var(--secondary);
+        }
+
+        .footer-col h4 {
+            color: #F8FAFC;
+            font-size: 14.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 18px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #94A3B8;
+            text-decoration: none;
+            font-size: 13.5px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #64748B;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .footer-bottom a {
+            color: #64748B;
+            text-decoration: none;
+        }
+
+        @media (max-width: 992px) {
+            .content-container {
+                grid-template-columns: 1fr;
+            }
+            .toc-wrapper {
+                display: none;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-graduation-cap" style="color: var(--primary);"></i> Uni<span>Pass</span>
+            </a>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Đổi giao diện Sáng/Tối">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+                <a href="index.html" class="btn-header btn-outline">
+                    <i class="fa-solid fa-house"></i> Trang chủ
+                </a>
+                <a href="login.html" class="btn-header btn-primary">
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i> Đăng nhập
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-badge">
+            <i class="fa-solid fa-shield-halved"></i> An toàn thông tin & Bảo vệ Dữ liệu
+        </div>
+        <h1>Chính Sách Bảo Mật & DRM</h1>
+        <p>Cam kết bảo mật thông tin cá nhân, mã hóa phiên giao dịch và công nghệ định danh chống sao chép tài liệu học tập chuẩn Thương mại điện tử.</p>
+        <div class="hero-meta">
+            <span><i class="fa-regular fa-calendar-check" style="color:var(--success);"></i> Cập nhật: 31/08/2026</span>
+            <span><i class="fa-solid fa-lock" style="color:var(--primary);"></i> Chuẩn: Mã hóa AES-256 & Hash Bcrypt</span>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <div class="content-container">
+        <!-- Table of Contents Sticky Sidebar -->
+        <aside class="toc-wrapper">
+            <div class="toc-title">
+                <i class="fa-solid fa-list-ul" style="color:var(--success);"></i> Danh mục bảo mật
+            </div>
+            <ul class="toc-list">
+                <li><a href="#sec-collect" class="toc-link"><i class="fa-solid fa-database"></i> 1. Thu thập dữ liệu</a></li>
+                <li><a href="#sec-drm" class="toc-link"><i class="fa-solid fa-fingerprint"></i> 2. Công nghệ DRM Watermark</a></li>
+                <li><a href="#sec-forensic" class="toc-link"><i class="fa-solid fa-shield-virus"></i> 3. Nhật ký Forensic Logs</a></li>
+                <li><a href="#sec-payment" class="toc-link"><i class="fa-solid fa-receipt"></i> 4. An toàn thanh toán</a></li>
+                <li><a href="#sec-rights" class="toc-link"><i class="fa-solid fa-user-check"></i> 5. Quyền của người dùng</a></li>
+            </ul>
+        </aside>
+
+        <!-- Terms Body -->
+        <main class="terms-article">
+            <!-- Mục 1 -->
+            <section id="sec-collect" class="section-card">
+                <div class="section-header">
+                    <div class="section-icon-box">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h2>1. Thu thập Thông tin & Mục đích Sử dụng</h2>
+                </div>
+                <div class="section-body">
+                    <p>UniPass chỉ thu thập các trường thông tin tối thiểu cần thiết để phục vụ trải nghiệm học tập và xác thực quyền lợi của sinh viên:</p>
+                    <ul>
+                        <li><b>Thông tin tài khoản:</b> Họ tên sinh viên, Email định danh theo trường Đại học (@hcmut, @ueh, @ftu, @neu, @hcmus, @tdtu), mật khẩu đã được băm mã hóa một chiều qua thuật toán <b>Bcrypt (Salt rounds = 10)</b>.</li>
+                        <li><b>Thông tin thiết bị & Phiên:</b> Mã vân tay thiết bị (Device Fingerprint), Địa chỉ IP, Trình duyệt truy cập nhằm phục vụ giới hạn 2 thiết bị và bảo vệ tài khoản khỏi xâm nhập trái phép.</li>
+                        <li><b>Lịch sử học tập:</b> Tiến độ học tập, điểm số bài thi trắc nghiệm, lịch sử đặt câu hỏi cho Trợ giảng AI RAG để cá nhân hóa sơ đồ lỗ hổng kiến thức (Gap Analysis).</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Mục 2 -->
+            <section id="sec-drm" class="section-card">
+                <div class="section-header">
+                    <div class="section-icon-box">
+                        <i class="fa-solid fa-fingerprint"></i>
+                    </div>
+                    <h2>2. Công nghệ Bảo vệ Bản quyền Giáo trình (DRM Canvas Watermark)</h2>
+                </div>
+                <div class="section-body">
+                    <p>Để bảo vệ bản quyền giáo trình biên soạn từ giảng viên và các trường Đại học, UniPass áp dụng cơ chế hiển thị tài liệu độc quyền:</p>
+                    <ul>
+                        <li><b>Bảo vệ Binary Stream:</b> Toàn bộ luồng dữ liệu PDF được truyền tải qua API xác thực phiên JWT nghiêm ngặt (Header Bearer), ngăn chặn việc tải về tập tin gốc không mã hóa.</li>
+                        <li><b>Dynamic Canvas Overlay:</b> Trình kết xuất tài liệu chèn thủy ấn ẩn và hiện động trực tiếp lên lớp Canvas (Bao gồm Tên sinh viên, MSSV, IP, Timestamp) theo góc nghiêng 45 độ.</li>
+                        <li><b>Chặn thao tác sao chép:</b> Vô hiệu hóa chuột phải, phím tắt in ấn (Ctrl+P/Cmd+P), phím tắt Devtools (F12) trên trình đọc PDF để đảm bảo tính toàn vẹn của học liệu.</li>
+                    </ul>
+                    <div class="callout-box">
+                        <b>Cam kết minh bạch:</b> Thủy ấn định danh không che khuất nội dung học tập và chỉ xuất hiện nhằm bảo vệ sinh viên khỏi các hành vi bị kẻ xấu đánh cắp tài liệu chia sẻ trái phép.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mục 3 -->
+            <section id="sec-forensic" class="section-card">
+                <div class="section-header">
+                    <div class="section-icon-box">
+                        <i class="fa-solid fa-shield-virus"></i>
+                    </div>
+                    <h2>3. Nhật ký Điều tra An ninh (Forensic Audit Logs)</h2>
+                </div>
+                <div class="section-body">
+                    <p>Hệ thống máy chủ UniPass tự động ghi nhận nhật ký an ninh số trong các trường hợp:</p>
+                    <ul>
+                        <li>Đăng nhập thất bại liên tiếp (chống tấn công dò mật khẩu Brute-force).</li>
+                        <li>Cố gắng truy cập tài liệu giáo trình khi tài khoản chưa được kích hoạt hoặc hết hạn gói cước.</li>
+                        <li>Phát hiện hành vi gửi yêu cầu AI với tần suất bất thường (Rate Limiting 30 req/h để chống cạn kiệt tài nguyên ví AI).</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Mục 4 -->
+            <section id="sec-payment" class="section-card">
+                <div class="section-header">
+                    <div class="section-icon-box">
+                        <i class="fa-solid fa-receipt"></i>
+                    </div>
+                    <h2>4. An toàn Thanh toán & Chống Tấn công Lặp lại (Anti-Replay)</h2>
+                </div>
+                <div class="section-body">
+                    <p>Hệ thống thanh toán tự động qua VietQR TPBank và MoMo được thiết kế với chuẩn an ninh TMĐT cao cấp:</p>
+                    <ul>
+                        <li><b>Xác thực chữ ký HMAC-SHA256:</b> Mọi dữ liệu Webhook từ cổng thanh toán đều được kiểm tra chữ ký điện tử bí mật trước khi cập nhật trạng thái.</li>
+                        <li><b>Idempotency Key:</b> Mỗi mã giao dịch ngân hàng chỉ được phép kích hoạt đúng 01 lần duy nhất, ngăn chặn hoàn toàn tấn công lặp lại (Replay Attacks).</li>
+                        <li><b>Không lưu trữ thông tin thẻ:</b> UniPass không thu thập hay lưu trữ số thẻ ngân hàng hoặc mã PIN của học viên.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Mục 5 -->
+            <section id="sec-rights" class="section-card">
+                <div class="section-header">
+                    <div class="section-icon-box">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <h2>5. Quyền Lợi & Bảo vệ Dữ liệu Cá nhân</h2>
+                </div>
+                <div class="section-body">
+                    <p>Sinh viên có toàn quyền đối với dữ liệu học tập cá nhân của mình trên hệ thống:</p>
+                    <ul>
+                        <li>Quyền yêu cầu xuất lịch sử học tập và kết quả thi thử.</li>
+                        <li>Quyền thay đổi mật khẩu và thu hồi các phiên đăng nhập trên thiết bị lạ.</li>
+                        <li>Quyền gửi yêu cầu xóa vĩnh viễn tài khoản và dữ liệu liên quan qua email <b>privacy@unipass.edu.vn</b>.</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col-brand">
+                    <a href="index.html" class="logo">Uni<span>Pass</span></a>
+                    <p style="font-size:13.5px; line-height:1.6; margin-top:8px;">
+                        Nền tảng Trợ giảng AI RAG & Sinh đề thi May đo chuẩn theo đề cương từng trường Đại học.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Giải pháp</h4>
+                    <ul>
+                        <li><a href="index.html#features">Trợ giảng AI RAG</a></li>
+                        <li><a href="index.html#features">Sinh đề thi từ PDF</a></li>
+                        <li><a href="index.html#features">Thi thử bấm giờ 24/7</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Trường Đại học</h4>
+                    <ul>
+                        <li><a href="index.html#universities">ĐH Bách Khoa (HCMUT)</a></li>
+                        <li><a href="index.html#universities">ĐH Kinh tế TP.HCM (UEH)</a></li>
+                        <li><a href="index.html#universities">ĐH Ngoại thương (FTU)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Pháp lý & Hỗ trợ</h4>
+                    <ul>
+                        <li><a href="terms.html">Điều khoản dịch vụ</a></li>
+                        <li><a href="privacy.html">Chính sách Bảo mật</a></li>
+                        <li><a href="mailto:support@unipass.edu.vn">support@unipass.edu.vn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>
+                    &copy; 2026 <b>UniPass EdTech Corporation</b>. Bản quyền thuộc về Dự án Bảo mật Thông tin TMĐT.
+                </div>
+                <div style="display:flex; gap:16px;">
+                    <a href="terms.html">Điều khoản</a>
+                    <a href="privacy.html">Bảo mật</a>
+                    <a href="index.html">Trang chủ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = themeToggleBtn.querySelector('i');
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem('unipass_theme') || 'dark';
+        htmlElement.setAttribute('data-theme', savedTheme);
+        updateIcon(savedTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('unipass_theme', newTheme);
+            updateIcon(newTheme);
+        });
+
+        function updateIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.className = 'fa-solid fa-sun';
+                themeIcon.style.color = '#F59E0B';
+            } else {
+                themeIcon.className = 'fa-solid fa-moon';
+                themeIcon.style.color = '#10B981';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xem tài liệu PDF Giáo trình - UniPass</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            color-scheme: dark;
+            --primary: #4F46E5;
+            --secondary: #EC4899;
+            --bg-color: #1E293B;
+            --surface: #0F172A;
+            --border-color: #334155;
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+        *::-webkit-scrollbar { width: 8px; height: 8px; }
+        *::-webkit-scrollbar-track { background: #0F172A; }
+        *::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+        *::-webkit-scrollbar-thumb:hover { background: #64748B; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* Top Bar */
+        .viewer-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            gap: 14px;
+            z-index: 1000;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            min-width: 0;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            background: #334155;
+            color: #F8FAFC;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .btn-back:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .doc-title-box {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 320px;
+        }
+
+        /* Center Toolbar: Zoom & Page Search */
+        .header-center {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pdf-toolbar-group {
+            display: flex;
+            align-items: center;
+            background: #1E293B;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 3px 6px;
+            gap: 4px;
+        }
+
+        .toolbar-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+
+        .toolbar-btn:hover {
+            background: #334155;
+            color: #818CF8;
+        }
+
+        .toolbar-btn:disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+        }
+
+        .toolbar-btn-text {
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            padding: 0 8px;
+            height: 32px;
+            border-radius: 8px;
+            font-size: 12.5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .toolbar-btn-text:hover {
+            background: #334155;
+        }
+
+        .page-search-box {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--text-muted);
+            padding: 0 4px;
+        }
+
+        .page-search-box input {
+            width: 48px;
+            height: 28px;
+            background: #0F172A;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: #F8FAFC;
+            text-align: center;
+            font-weight: 800;
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .page-search-box input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.25);
+        }
+
+        .page-search-box input::-webkit-outer-spin-button,
+        .page-search-box input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .page-search-box input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 960px) {
+            .doc-title-box { display: none; }
+        }
+        @media (max-width: 700px) {
+            .header-right { display: none; }
+            .header-center { flex: 1; justify-content: flex-end; }
+        }
+        .drm-tag {
+            background: rgba(16, 185, 129, 0.15);
+            color: #10B981;
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Main Container */
+        main {
+            margin-top: 60px;
+            flex: 1;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #pdf-status {
+            margin-bottom: 20px;
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 600;
+        }
+        #pdf-status.error {
+            color: #EF4444 !important;
+        }
+
+        #pdf-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            width: 100%;
+            max-width: 880px;
+            transition: max-width 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.2s ease;
+        }
+
+        .pdf-page-wrapper {
+            position: relative;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+        }
+        .pdf-page-wrapper canvas {
+            display: block;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: auto;
+        }
+        .textLayer {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            overflow: hidden;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        #payment-wall {
+            display: none;
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 50;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 24px;
+        }
+        #payment-wall.show { display: flex; }
+        
+        .payment-card {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 32px 28px;
+            max-width: 480px;
+            width: 92%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            text-align: left;
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .payment-title { font-size: 22px; font-weight: 800; margin-bottom: 6px; color: var(--text-main); text-align: center; }
+        .payment-subtitle { font-size: 13.5px; color: var(--text-muted); margin-bottom: 18px; text-align: center; }
+        
+        /* Plan Selector Pills */
+        .plan-select-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .plan-select-btn {
+            background: var(--bg-color);
+            border: 1.5px solid var(--border-color);
+            border-radius: 12px;
+            padding: 10px 6px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .plan-select-btn:hover {
+            border-color: var(--primary);
+        }
+
+        .plan-select-btn.active {
+            border-color: var(--primary);
+            background: rgba(79, 70, 229, 0.12);
+            box-shadow: 0 0 0 1px var(--primary);
+        }
+
+        .plan-select-btn .plan-mini-name {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 2px;
+            white-space: nowrap;
+        }
+
+        .plan-select-btn .plan-mini-price {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .plan-select-btn .plan-mini-badge {
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient);
+            color: white;
+            font-size: 9px;
+            font-weight: 800;
+            padding: 2px 6px;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+
+        /* Summary Box */
+        .pay-summary-box {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 14px 18px;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .pay-plan-title {
+            font-weight: 700;
+            color: var(--text-main);
+            font-size: 15px;
+        }
+
+        .pay-plan-amount {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .pay-methods-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .pay-tab-btn {
+            flex: 1;
+            padding: 10px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-color);
+            color: var(--text-muted);
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .pay-tab-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .qr-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 16px;
+            text-align: center;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .qr-image-wrapper {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 10px;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+        }
+
+        .qr-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .pay-details-table {
+            width: 100%;
+            font-size: 13px;
+            text-align: left;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .pay-details-table td {
+            padding: 5px 4px;
+            color: #475569;
+        }
+
+        .pay-details-table td:last-child {
+            text-align: right;
+            font-weight: 700;
+            color: #0F172A;
+        }
+
+        .copy-chip {
+            background: #EEF2FF;
+            color: var(--primary);
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-family: monospace;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: background 0.2s;
+        }
+
+        .copy-chip:hover {
+            background: #E0E7FF;
+        }
+
+        .pay-countdown-bar {
+            text-align: center;
+            font-size: 12.5px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .btn-payment-verify {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 13px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 8px 16px rgba(79, 70, 229, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .btn-payment-verify:hover { transform: translateY(-1px); box-shadow: 0 10px 20px rgba(79, 70, 229, 0.35); }
+    </style>
+    <link rel="stylesheet" href="ui-alerts.css">
+</head>
+<body>
+
+    <header class="viewer-header">
+        <div class="header-left">
+            <a class="btn-back" id="back-link" href="student-courses.html">
+                <i class="fa-solid fa-arrow-left"></i> Quay lại
+            </a>
+            <div class="doc-title-box">
+                <i class="fa-solid fa-file-pdf" style="color: #EF4444;"></i>
+                <span id="viewer-title">Tài liệu PDF Giáo trình</span>
+            </div>
+        </div>
+
+        <!-- Toolbar: Page Search & Zoom -->
+        <div class="header-center" id="pdf-header-controls">
+            <!-- Nhóm tìm & chuyển trang -->
+            <div class="pdf-toolbar-group">
+                <button type="button" id="btn-prev-page" class="toolbar-btn" title="Trang trước"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="page-search-box">
+                    <span>Trang</span>
+                    <input type="text" id="page-search-input" value="1" title="Nhập số trang và nhấn Enter" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                    <span>/ <span id="page-count-total">--</span></span>
+                </div>
+                <button type="button" id="btn-next-page" class="toolbar-btn" title="Trang sau"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+
+            <!-- Nhóm Zoom tỷ lệ -->
+            <div class="pdf-toolbar-group">
+                <button type="button" id="btn-zoom-out" class="toolbar-btn" title="Thu nhỏ (Ctrl -)"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+                <button type="button" id="btn-zoom-reset" class="toolbar-btn-text" title="Đặt lại 100%"><span id="zoom-level-text">100%</span></button>
+                <button type="button" id="btn-zoom-in" class="toolbar-btn" title="Phóng to (Ctrl +)"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+                <button type="button" id="btn-fit-width" class="toolbar-btn" title="Vừa chiều rộng"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <div class="drm-tag">
+                <i class="fa-solid fa-shield-halved"></i> UniPass DRM Active
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <p id="pdf-status" role="status"><i class="fa-solid fa-spinner fa-spin"></i> Đang tải tài liệu PDF...</p>
+        <div id="payment-wall">
+            <div class="payment-card">
+                <h2 class="payment-title">Mở khóa Tài liệu Giáo trình</h2>
+                <p class="payment-subtitle">Chọn gói cước phù hợp để mở khóa toàn bộ bài giảng & tài liệu.</p>
+                
+                <!-- Plan Selector Pills -->
+                <div class="plan-select-grid">
+                    <div class="plan-select-btn" data-plan="monthly" data-name="Gói 1 Tháng" data-price="79.000đ" data-amount="79000">
+                        <div class="plan-mini-name">1 Tháng</div>
+                        <div class="plan-mini-price">79.000đ</div>
+                    </div>
+                    <div class="plan-select-btn active" data-plan="semester" data-name="Gói Nửa Năm (Học Kỳ)" data-price="149.000đ" data-amount="149000">
+                        <span class="plan-mini-badge">Phổ biến</span>
+                        <div class="plan-mini-name">Nửa Năm</div>
+                        <div class="plan-mini-price">149.000đ</div>
+                    </div>
+                    <div class="plan-select-btn" data-plan="yearly" data-name="Gói 1 Năm VIP" data-price="249.000đ" data-amount="249000">
+                        <span class="plan-mini-badge">-75%</span>
+                        <div class="plan-mini-name">1 Năm VIP</div>
+                        <div class="plan-mini-price">249.000đ</div>
+                    </div>
+                </div>
+
+                <!-- Tóm tắt gói cước -->
+                <div class="pay-summary-box">
+                    <div>
+                        <div style="font-size: 12px; color: var(--text-muted); font-weight: 600;">Gói đã chọn</div>
+                        <div class="pay-plan-title" id="pay-plan-name">Gói Nửa Năm (Học Kỳ)</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-align: right;">Thành tiền</div>
+                        <div class="pay-plan-amount" id="pay-plan-price">149.000đ</div>
+                    </div>
+                </div>
+
+                <!-- Tabs Phương thức -->
+                <div class="pay-methods-tabs" id="pay-methods-tabs">
+                    <button type="button" class="pay-tab-btn active" id="tab-vietqr" data-method="vietqr"><i class="fa-solid fa-qrcode"></i> VietQR 24/7</button>
+                    <button type="button" class="pay-tab-btn" id="tab-momo" data-method="momo"><i class="fa-solid fa-wallet"></i> Ví MoMo</button>
+                </div>
+
+                <!-- Khung Thông báo Bảo trì khi cả 2 cổng đều tắt -->
+                <div id="payment-maintenance-box" style="display: none; background: rgba(245, 158, 11, 0.1); border: 1.5px dashed #F59E0B; border-radius: 16px; padding: 22px 18px; text-align: center; margin-bottom: 16px;">
+                    <i class="fa-solid fa-triangle-exclamation" style="font-size: 32px; color: #F59E0B; margin-bottom: 10px; display: inline-block;"></i>
+                    <h3 style="font-size: 15.5px; font-weight: 800; color: var(--text-main); margin-bottom: 6px;">Hệ thống đang bảo trì thanh toán</h3>
+                    <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin: 0;">Các cổng thanh toán tự động đang tạm thời gián đoạn để nâng cấp hệ thống. Quý học viên vui lòng quay lại sau hoặc kích hoạt dùng thử 1 ngày miễn phí bên dưới.</p>
+                </div>
+
+                <!-- Khung mã QR Code -->
+                <div class="qr-card" id="pay-qr-card">
+                    <div class="qr-image-wrapper">
+                        <img id="qr-code-img" src="" alt="Mã QR Thanh toán">
+                    </div>
+                    <div style="font-size: 12px; color: #64748B; font-weight: 600;">Mở ứng dụng Ngân hàng / MoMo quét mã QR</div>
+
+                    <table class="pay-details-table">
+                        <tr id="pay-row-bank">
+                            <td>Ngân hàng:</td>
+                            <td id="pay-bank-name">TPBank (Tiên Phong Bank)</td>
+                        </tr>
+                        <tr>
+                            <td id="pay-label-acc">Số tài khoản:</td>
+                            <td><span id="pay-val-acc">trunglnm</span> <span class="copy-chip" id="btn-copy-stk"><i class="fa-regular fa-copy"></i></span></td>
+                        </tr>
+                        <tr>
+                            <td>Chủ tài khoản:</td>
+                            <td>LE NGUYEN MINH TRUNG</td>
+                        </tr>
+                        <tr>
+                            <td>Nội dung CK:</td>
+                            <td><span id="transfer-syntax" style="color:var(--primary);">UNIPASS SV001</span> <span class="copy-chip" id="btn-copy-memo"><i class="fa-regular fa-copy"></i></span></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="pay-countdown-bar" id="pay-countdown-bar">
+                    <i class="fa-regular fa-clock" style="color: var(--secondary);"></i>
+                    <span>Mã thanh toán hết hạn sau: <b id="pay-timer" style="color: var(--text-main);">10:00</b></span>
+                </div>
+                
+                <div id="payment-action-box">
+                    <button id="btn-mock-verify" class="btn-payment-verify">
+                        <i class="fa-solid fa-circle-check"></i> Tôi đã chuyển khoản xong (Kích hoạt)
+                    </button>
+                    
+                    <!-- Nhóm nút khi chưa nhận diện được thanh toán: Thử lại & Gửi xác thực Admin -->
+                    <div id="payment-failed-actions" style="display: none; flex-direction: column; gap: 8px;">
+                        <div id="pay-failed-msg" style="background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.25); border-radius: 10px; padding: 10px 12px; font-size: 12.5px; color: #EF4444; font-weight: 600; text-align: center;">
+                            <i class="fa-solid fa-circle-exclamation"></i> Hệ thống ngân hàng chưa ghi nhận tiền tự động.
+                        </div>
+                        <div id="pay-failed-btn-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                            <button id="btn-recheck-pay" type="button" style="padding: 11px 8px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--bg-color, #ffffff); color: var(--text-main); font-weight: 700; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                                <i class="fa-solid fa-rotate-right"></i> Thử kiểm tra lại
+                            </button>
+                            <button id="btn-send-admin-request" type="button" style="padding: 11px 8px; border-radius: 10px; border: none; background: #4F46E5; color: #ffffff; font-weight: 700; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                                <i class="fa-solid fa-paper-plane"></i> Gửi xác thực Admin
+                            </button>
+                        </div>
+                        <div id="pay-pending-waiting-banner" style="display: none; background: rgba(79, 70, 229, 0.1); border: 1.5px dashed #4F46E5; border-radius: 12px; padding: 12px; font-size: 13px; color: var(--text-main); font-weight: 700; text-align: center;">
+                            <i class="fa-solid fa-hourglass-half fa-spin" style="color: #4F46E5; margin-right: 6px;"></i> Đang chờ Admin duyệt giao dịch...
+                        </div>
+                    </div>
+                </div>
+
+                <button id="btn-pdf-trial" style="width: 100%; margin-top: 10px; padding: 11px; border-radius: 12px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-main); font-weight: 700; font-size: 13.5px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <i class="fa-solid fa-gift" style="color: var(--secondary);"></i> Hoặc Kích hoạt dùng thử 1 ngày miễn phí
+                </button>
+            </div>
+        </div>
+        <div id="pdf-container"></div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        const backLink = document.getElementById('back-link');
+        const viewerParams = new URLSearchParams(window.location.search);
+        const requestedReturnTo = viewerParams.get('returnTo');
+        const referrer = document.referrer;
+        let returnUrl = 'student-courses.html';
+
+        try {
+            const candidate = requestedReturnTo || referrer;
+            if (candidate) {
+                const parsed = new URL(candidate, window.location.href);
+                if (parsed.origin === window.location.origin) {
+                    returnUrl = `${parsed.pathname}${parsed.search}${parsed.hash}`;
+                }
+            }
+        } catch (error) {}
+        backLink.href = returnUrl;
+    </script>
+    <script src="auth.js"></script>
+    <script src="pdf-renderer.js"></script>
+    <script src="ui-alerts.js"></script>
+</body>
+</html>
