@@ -11,12 +11,6 @@ const { getDb } = require('./config/database');
 
 const app = express();
 const port = process.env.PORT || 3000;
-const isProduction = process.env.NODE_ENV === 'production';
-if (isProduction && !process.env.JWT_SECRET) {
-	console.error('Set JWT_SECRET before starting in production.');
-	process.exit(1);
-}
-app.set('trust proxy', 1);
 
 // Security Middlewares
 app.use(helmet({
@@ -35,7 +29,7 @@ app.use(helmet({
 }));
 
 const corsOptions = {
-	origin: isProduction ? true : ['http://localhost:3000', 'http://127.0.0.1:3000'],
+	origin: ['http://localhost:3000', 'http://127.0.0.1:3000'], // Thay đổi tên miền thực tế khi deploy
 	exposedHeaders: ['X-Viewer-IP'],
 	credentials: true
 };
