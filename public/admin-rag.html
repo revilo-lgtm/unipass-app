@@ -1540,12 +1540,18 @@
                             <label for="mgr-course-select"><i class="fa-solid fa-book-bookmark"></i> 2. Chọn Môn học để chỉnh sửa</label>
                             <select id="mgr-course-select" class="form-select" onchange="onMgrCourseChange()"></select>
                         </div>
-                        <div style="display: flex; gap: 10px; align-self: flex-end;">
-                            <button id="btn-edit-course-modal" type="button" class="btn btn-outline" onclick="openEditCourseModal()" style="padding: 10px 16px; font-size: 13.5px;">
-                                <i class="fa-solid fa-pen-to-square"></i> Đổi tên & Mô tả Môn
+                        <div style="display: flex; gap: 8px; align-self: flex-end; flex-wrap: wrap;">
+                            <button id="btn-add-course-modal" type="button" class="btn btn-primary" style="padding: 10px 16px; font-size: 13.5px;">
+                                <i class="fa-solid fa-plus"></i> Thêm môn
                             </button>
-                            <button id="btn-add-chapter-modal" type="button" class="btn btn-primary" onclick="openAddChapterModal()" style="padding: 10px 18px; font-size: 13.5px;">
-                                <i class="fa-solid fa-plus"></i> Thêm Chương mới
+                            <button id="btn-edit-course-modal" type="button" class="btn btn-outline" style="padding: 10px 16px; font-size: 13.5px;">
+                                <i class="fa-solid fa-pen-to-square"></i> Sửa môn
+                            </button>
+                            <button id="btn-delete-course" type="button" class="btn btn-danger" style="padding: 10px 16px; font-size: 13.5px;">
+                                <i class="fa-solid fa-trash-can"></i> Xóa môn
+                            </button>
+                            <button id="btn-add-chapter-modal" type="button" class="btn btn-outline" style="padding: 10px 18px; font-size: 13.5px;">
+                                <i class="fa-solid fa-folder-plus"></i> Thêm chương
                             </button>
                         </div>
                     </div>
@@ -1585,11 +1591,23 @@
             <div id="modal-course-details" class="admin-modal-overlay">
                 <div class="admin-modal-box">
                     <div class="admin-modal-header">
-                        <div class="admin-modal-title"><i class="fa-solid fa-pen-to-square" style="color: var(--primary);"></i> Chỉnh sửa Thông tin Môn học</div>
+                        <div class="admin-modal-title" id="modal-course-details-title"><i class="fa-solid fa-pen-to-square" style="color: var(--primary);"></i> Chỉnh sửa Thông tin Môn học</div>
                         <button type="button" class="btn-icon" data-close-modal="modal-course-details" title="Đóng"><i class="fa-solid fa-xmark"></i></button>
                     </div>
                     <form id="form-course-details">
+                        <input type="hidden" id="course-details-mode" value="edit">
                         <div class="admin-modal-body">
+                            <div class="form-group-field" id="add-course-catalog-wrap" style="display: none;">
+                                <label for="add-course-from-catalog"><i class="fa-solid fa-list"></i> Chọn từ catalog có sẵn (tùy chọn)</label>
+                                <select id="add-course-from-catalog" class="form-select">
+                                    <option value="">-- Tạo môn mới --</option>
+                                </select>
+                            </div>
+                            <div class="form-group-field">
+                                <label for="edit-course-id"><i class="fa-solid fa-fingerprint"></i> Mã môn học</label>
+                                <input type="text" id="edit-course-id" class="form-input" required placeholder="Ví dụ: bk_physics" autocomplete="off">
+                                <div style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">Chữ, số, gạch dưới. Trùng mã với trang học viên (vd. bk_physics).</div>
+                            </div>
                             <div class="form-group-field">
                                 <label for="edit-course-title"><i class="fa-solid fa-book"></i> Tên Môn học</label>
                                 <input type="text" id="edit-course-title" class="form-input" required placeholder="Ví dụ: Đại số Tuyến tính">
@@ -1612,7 +1630,7 @@
                         </div>
                         <div class="admin-modal-footer">
                             <button type="button" class="btn btn-outline" data-close-modal="modal-course-details">Hủy</button>
-                            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Lưu thay đổi</button>
+                            <button type="submit" class="btn btn-primary" id="btn-save-course-details"><i class="fa-solid fa-floppy-disk"></i> Lưu môn học</button>
                         </div>
                     </form>
                 </div>
@@ -1993,88 +2011,69 @@
             'tdtu_pe': 'course-tdtu-pe.html'
         };
 
-        // Cập nhật danh sách Môn học theo Trường
-        function updateCourseOptions() {
+        // Cập nhật danh sách Môn học theo Trường (catalog + môn đã lưu trong DB)
+        async function updateCourseOptions() {
             const uni = uniSelect.value;
-            const courses = (universityHierarchy[uni] && universityHierarchy[uni].courses) || {};
+            const courses = {};
 
-            courseSelect.innerHTML = Object.entries(courses).map(([id, info]) => {
-                return `<option value="${id}">${info.title}</option>`;
-            }).join('');
+            try {
+                const res = await window.Auth.adminRequest('/api/admin/courses-list');
+                (res.courses || []).forEach(c => {
+                    if (String(c.university || '').trim().toUpperCase() !== String(uni).toUpperCase()) return;
+                    courses[c.course_id] = { title: c.title || c.course_id };
+                });
+            } catch (e) { }
 
-            updateChapterOptions();
+            const entries = Object.entries(courses);
+            courseSelect.innerHTML = entries.length
+                ? entries.map(([id, info]) => `<option value="${id}">${info.title}</option>`).join('')
+                : '<option value="">(Chưa có môn — thêm ở tab Khung chương trình)</option>';
+
+            await updateChapterOptions();
         }
 
         let currentParsedCourse = { chapters: [] };
 
-        // Tự động phân tích cây Chương và Bài học trực tiếp từ file HTML của môn học
-        async function loadCourseStructure(courseId) {
-            const htmlFile = courseHtmlMap[courseId] || 'course-bk.html';
-            try {
-                const response = await fetch(htmlFile);
-                if (!response.ok) throw new Error('Lỗi tải file html');
-                const htmlText = await response.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(htmlText, 'text/html');
-                const accordions = doc.querySelectorAll('.accordion-item');
-                
-                const chapters = [];
-                accordions.forEach((acc, cIdx) => {
-                    const titleEl = acc.querySelector('.accordion-header .chapter-title') || acc.querySelector('.accordion-header');
-                    let chTitle = `Chương ${cIdx + 1}`;
-                    if (titleEl) {
-                        const clone = titleEl.cloneNode(true);
-                        clone.querySelectorAll('.chapter-meta, i, .fa-chevron-down').forEach(el => el.remove());
-                        const cleanTxt = clone.textContent.trim().replace(/\s+/g, ' ');
-                        if (cleanTxt) chTitle = cleanTxt;
-                    }
-                    
-                    const lessons = [];
-                    const liElements = acc.querySelectorAll('.lesson-list li');
-                    liElements.forEach((li, lIdx) => {
-                        const mainSpan = li.querySelector('div > span:first-child') || li.querySelector('span:first-child');
-                        let lTitle = `Bài học ${lIdx + 1}`;
-                        if (mainSpan) {
-                            const clone = mainSpan.cloneNode(true);
-                            clone.querySelectorAll('i').forEach(el => el.remove());
-                            const cleanTxt = clone.textContent.trim().replace(/\s+/g, ' ');
-                            if (cleanTxt) lTitle = cleanTxt;
-                        } else {
-                            const clone = li.cloneNode(true);
-                            clone.querySelectorAll('.lesson-complete, .lesson-type, .btn-action-item, button, input, label, i').forEach(el => el.remove());
-                            const cleanTxt = clone.textContent.trim().replace(/\s+/g, ' ');
-                            if (cleanTxt) lTitle = cleanTxt;
-                        }
-                        lessons.push({
-                            id: lIdx + 1,
-                            title: lTitle
-                        });
-                    });
-                    
-                    chapters.push({
-                        id: `chapter-${cIdx + 1}`,
-                        title: chTitle,
-                        lessons: lessons.length > 0 ? lessons : [{ id: 1, title: 'Tài liệu / Bài học 1' }]
-                    });
-                });
+        function mapDbSyllabus(data) {
+            const chapters = (data.chapters || []).map((ch, cIdx) => {
+                const chapterNum = ch.chapter_order || (cIdx + 1);
+                const docLessons = (ch.lessons || []).filter(l => l.type !== 'quiz');
+                const lessons = docLessons.length
+                    ? docLessons.map((l, lIdx) => ({ id: lIdx + 1, title: l.title || `Bài ${lIdx + 1}`, dbId: l.id }))
+                    : [{ id: 1, title: 'Tài liệu / Bài học 1' }];
+                return {
+                    id: `chapter-${chapterNum}`,
+                    title: ch.title || `Chương ${chapterNum}`,
+                    lessons
+                };
+            });
+            return chapters.length ? { chapters } : null;
+        }
 
-                if (chapters.length > 0) {
-                    currentParsedCourse = { chapters };
-                    return currentParsedCourse;
-                }
-            } catch (err) {
-                console.warn('Fallback sang cấu trúc tĩnh:', err);
+        async function loadSyllabusFromDb(courseId) {
+            const ids = [...new Set([
+                courseId,
+                String(courseId || '').replace(/_/g, '-'),
+                String(courseId || '').replace(/-/g, '_')
+            ])].filter(Boolean);
+            for (const id of ids) {
+                try {
+                    const response = await fetch(`/api/courses/syllabus/${encodeURIComponent(id)}`);
+                    if (!response.ok) continue;
+                    const mapped = mapDbSyllabus(await response.json());
+                    if (mapped) return mapped;
+                } catch (e) { }
             }
-            
-            // Fallback nếu không tải được HTML
-            const uni = uniSelect.value;
-            const fallbackCourse = universityHierarchy[uni]?.courses[courseId];
-            const fallbackChapters = (fallbackCourse?.chapters || ['Chương 1: Tổng quan']).map((ch, idx) => ({
-                id: `chapter-${idx + 1}`,
-                title: ch,
-                lessons: [{ id: 1, title: 'Bài 1: Nội dung trọng tâm' }]
-            }));
-            currentParsedCourse = { chapters: fallbackChapters };
+            return null;
+        }
+
+        async function loadCourseStructure(courseId) {
+            if (!courseId) {
+                currentParsedCourse = { chapters: [] };
+                return currentParsedCourse;
+            }
+            const fromDb = await loadSyllabusFromDb(courseId);
+            currentParsedCourse = fromDb || { chapters: [] };
             return currentParsedCourse;
         }
 
@@ -2087,6 +2086,13 @@
             lessonSelect.disabled = true;
 
             const courseData = await loadCourseStructure(courseId);
+            if (!courseData.chapters.length) {
+                chapterSelect.innerHTML = '<option value="">(Chưa có chương trong DB — thêm ở tab Khung chương trình)</option>';
+                lessonSelect.innerHTML = '<option value="">(Chưa có bài học)</option>';
+                chapterSelect.disabled = false;
+                lessonSelect.disabled = true;
+                return;
+            }
             chapterSelect.innerHTML = courseData.chapters.map(ch => {
                 return `<option value="${ch.id}">${ch.title}</option>`;
             }).join('');
@@ -2405,6 +2411,7 @@
                 if (docsTabBtn) docsTabBtn.classList.add('active');
                 if (syllabusSection) syllabusSection.style.display = 'none';
                 if (docsSection) docsSection.style.display = 'block';
+                updateCourseOptions();
             }
         }
 
@@ -2430,9 +2437,17 @@
             }
 
             if (filtered.length === 0) {
-                courseSelect.innerHTML = '<option value="">(Không có môn nào)</option>';
+                courseSelect.innerHTML = '<option value="">(Chưa có môn — bấm Thêm môn)</option>';
                 const container = document.getElementById('mgr-chapters-container');
-                if (container) container.innerHTML = '<div style="text-align:center; padding:30px; color:var(--text-muted);">Không tìm thấy môn học nào thuộc trường này.</div>';
+                if (container) container.innerHTML = '<div style="text-align:center; padding:30px; color:var(--text-muted);">Chưa có môn học. Bấm <strong>Thêm môn</strong> để tạo môn mới hoặc chọn từ catalog.</div>';
+                const titleEl = document.getElementById('mgr-banner-title');
+                if (titleEl) titleEl.textContent = 'Chưa chọn môn học';
+                const descEl = document.getElementById('mgr-banner-desc');
+                if (descEl) descEl.textContent = 'Thêm môn rồi mới thêm chương / bài học.';
+                const chCountEl = document.getElementById('mgr-banner-chapters-count');
+                if (chCountEl) chCountEl.textContent = '0';
+                const lesCountEl = document.getElementById('mgr-banner-lessons-count');
+                if (lesCountEl) lesCountEl.textContent = '0';
                 return;
             }
 
@@ -2622,7 +2637,64 @@
             }
         });
 
-        // 1. Edit Course Details
+        // 1. Add / Edit / Delete Course
+        function listCatalogCourses() {
+            const existing = new Set((adminCoursesList || []).map(c => String(c.course_id || '')));
+            const items = [];
+            Object.keys(universityHierarchy || {}).forEach(uni => {
+                const courses = universityHierarchy[uni] && universityHierarchy[uni].courses;
+                if (!courses) return;
+                Object.entries(courses).forEach(([id, info]) => {
+                    if (existing.has(id)) return;
+                    items.push({
+                        id,
+                        title: info.title,
+                        university: uni,
+                        description: (info.chapters && info.chapters[0]) || ''
+                    });
+                });
+            });
+            return items.sort((a, b) => a.university.localeCompare(b.university) || a.title.localeCompare(b.title, 'vi'));
+        }
+
+        function fillCatalogPicker() {
+            const picker = document.getElementById('add-course-from-catalog');
+            if (!picker) return;
+            const items = listCatalogCourses();
+            picker.innerHTML = '<option value="">-- Tạo môn mới --</option>' + items.map(item => {
+                return `<option value="${item.id}">[${item.university}] ${escapeHtml(item.title)}</option>`;
+            }).join('');
+        }
+
+        function slugifyCourseId(uni, title) {
+            const prefix = String(uni || 'course').toLowerCase();
+            const slug = String(title || '')
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .toLowerCase()
+                .replace(/đ/g, 'd')
+                .replace(/[^a-z0-9]+/g, '_')
+                .replace(/^_+|_+$/g, '')
+                .slice(0, 48);
+            return slug ? `${prefix}_${slug}` : `${prefix}_mon`;
+        }
+
+        function openAddCourseModal() {
+            document.getElementById('course-details-mode').value = 'add';
+            document.getElementById('modal-course-details-title').innerHTML = '<i class="fa-solid fa-plus" style="color: var(--primary);"></i> Thêm môn học';
+            document.getElementById('add-course-catalog-wrap').style.display = 'block';
+            const idInput = document.getElementById('edit-course-id');
+            idInput.readOnly = false;
+            idInput.value = '';
+            document.getElementById('edit-course-title').value = '';
+            document.getElementById('edit-course-desc').value = '';
+            const uniFilter = document.getElementById('mgr-uni-select')?.value;
+            document.getElementById('edit-course-uni').value = (uniFilter && uniFilter !== 'ALL') ? uniFilter : 'BK';
+            fillCatalogPicker();
+            document.getElementById('add-course-from-catalog').value = '';
+            openModal('modal-course-details');
+        }
+
         function openEditCourseModal() {
             const courseSelect = document.getElementById('mgr-course-select');
             const courseId = courseSelect ? courseSelect.value : '';
@@ -2636,6 +2708,12 @@
                 ? currentSyllabusData.course 
                 : (adminCoursesList.find(c => c.course_id === courseId) || {});
 
+            document.getElementById('course-details-mode').value = 'edit';
+            document.getElementById('modal-course-details-title').innerHTML = '<i class="fa-solid fa-pen-to-square" style="color: var(--primary);"></i> Sửa thông tin môn học';
+            document.getElementById('add-course-catalog-wrap').style.display = 'none';
+            const idInput = document.getElementById('edit-course-id');
+            idInput.value = courseId;
+            idInput.readOnly = true;
             document.getElementById('edit-course-title').value = course.title || '';
             document.getElementById('edit-course-uni').value = course.university || document.getElementById('mgr-uni-select').value || 'BK';
             document.getElementById('edit-course-desc').value = course.description || '';
@@ -2644,22 +2722,66 @@
 
         async function handleSaveCourseDetails(e) {
             e.preventDefault();
-            const courseId = document.getElementById('mgr-course-select').value;
+            const mode = document.getElementById('course-details-mode').value;
+            const courseId = String(document.getElementById('edit-course-id').value || '').trim();
             const title = document.getElementById('edit-course-title').value.trim();
             const university = document.getElementById('edit-course-uni').value;
             const description = document.getElementById('edit-course-desc').value.trim();
 
+            if (!/^[a-z0-9_-]+$/i.test(courseId)) {
+                if (window.showAlert) window.showAlert('Mã môn học chỉ được dùng chữ, số, _ và -.', 'warning');
+                else alert('Mã môn học chỉ được dùng chữ, số, _ và -.');
+                return;
+            }
+
             try {
-                await window.Auth.adminRequest(`/api/admin/course-details/${courseId}`, {
+                await window.Auth.adminRequest(`/api/admin/course-details/${encodeURIComponent(courseId)}`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ title, university, description })
                 });
 
                 closeModal('modal-course-details');
-                if (window.showToast) window.showToast('Đã cập nhật thông tin môn học thành công!', 'success');
+                if (window.showToast) window.showToast(mode === 'add' ? 'Đã thêm môn học.' : 'Đã cập nhật môn học.', 'success');
+                else if (window.showAlert) window.showAlert(mode === 'add' ? 'Đã thêm môn học.' : 'Đã cập nhật môn học.', 'success');
+
+                const uniSelect = document.getElementById('mgr-uni-select');
+                if (uniSelect && uniSelect.value !== 'ALL' && uniSelect.value !== university) {
+                    uniSelect.value = university;
+                }
                 await loadAdminCoursesList();
-                await onMgrCourseChange();
+                const courseSelect = document.getElementById('mgr-course-select');
+                if (courseSelect) {
+                    courseSelect.value = courseId;
+                    await onMgrCourseChange();
+                }
+            } catch (err) {
+                if (window.showAlert) window.showAlert('Lỗi: ' + err.message, 'error');
+                else alert('Lỗi: ' + err.message);
+            }
+        }
+
+        async function handleDeleteCourse() {
+            const courseSelect = document.getElementById('mgr-course-select');
+            const courseId = courseSelect ? courseSelect.value : '';
+            if (!courseId) {
+                if (window.showAlert) window.showAlert('Vui lòng chọn môn học trước!', 'warning');
+                else alert('Vui lòng chọn môn học trước!');
+                return;
+            }
+
+            const label = courseSelect.options[courseSelect.selectedIndex]
+                ? courseSelect.options[courseSelect.selectedIndex].text
+                : courseId;
+            const ok = window.confirm(`Xóa môn "${label}"?\nToàn bộ chương và bài học của môn này sẽ bị xóa. Không thể hoàn tác.`);
+            if (!ok) return;
+
+            try {
+                await window.Auth.adminRequest(`/api/admin/course-details/${encodeURIComponent(courseId)}`, { method: 'DELETE' });
+                if (window.showToast) window.showToast('Đã xóa môn học.', 'success');
+                else if (window.showAlert) window.showAlert('Đã xóa môn học.', 'success');
+                currentSyllabusData = null;
+                await loadAdminCoursesList();
             } catch (err) {
                 if (window.showAlert) window.showAlert('Lỗi: ' + err.message, 'error');
                 else alert('Lỗi: ' + err.message);
@@ -2886,7 +3008,9 @@
         window.openModal = openModal;
         window.closeModal = closeModal;
         window.openEditCourseModal = openEditCourseModal;
+        window.openAddCourseModal = openAddCourseModal;
         window.handleSaveCourseDetails = handleSaveCourseDetails;
+        window.handleDeleteCourse = handleDeleteCourse;
         window.openAddChapterModal = openAddChapterModal;
         window.openEditChapterModal = openEditChapterModal;
         window.handleSaveChapter = handleSaveChapter;
@@ -2904,7 +3028,34 @@
         document.getElementById('mgr-uni-select')?.addEventListener('change', onMgrUniChange);
         document.getElementById('mgr-course-select')?.addEventListener('change', onMgrCourseChange);
         document.getElementById('btn-edit-course-modal')?.addEventListener('click', openEditCourseModal);
+        document.getElementById('btn-add-course-modal')?.addEventListener('click', openAddCourseModal);
+        document.getElementById('btn-delete-course')?.addEventListener('click', handleDeleteCourse);
         document.getElementById('btn-add-chapter-modal')?.addEventListener('click', openAddChapterModal);
+
+        document.getElementById('add-course-from-catalog')?.addEventListener('change', (e) => {
+            const selected = listCatalogCourses().find(item => item.id === e.target.value);
+            if (!selected) return;
+            document.getElementById('edit-course-id').value = selected.id;
+            document.getElementById('edit-course-title').value = selected.title;
+            document.getElementById('edit-course-uni').value = selected.university;
+            document.getElementById('edit-course-desc').value = selected.description || '';
+        });
+
+        document.getElementById('edit-course-title')?.addEventListener('input', () => {
+            if (document.getElementById('course-details-mode').value !== 'add') return;
+            if (document.getElementById('add-course-from-catalog')?.value) return;
+            const uni = document.getElementById('edit-course-uni').value;
+            const title = document.getElementById('edit-course-title').value;
+            document.getElementById('edit-course-id').value = slugifyCourseId(uni, title);
+        });
+
+        document.getElementById('edit-course-uni')?.addEventListener('change', () => {
+            if (document.getElementById('course-details-mode').value !== 'add') return;
+            if (document.getElementById('add-course-from-catalog')?.value) return;
+            const uni = document.getElementById('edit-course-uni').value;
+            const title = document.getElementById('edit-course-title').value;
+            if (title) document.getElementById('edit-course-id').value = slugifyCourseId(uni, title);
+        });
 
         // Forms Direct Submit Listeners
         document.getElementById('form-course-details')?.addEventListener('submit', handleSaveCourseDetails);

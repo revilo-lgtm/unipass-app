@@ -17,6 +17,7 @@
 
     // 2. Xác định Course ID hiện tại từ URL hoặc tên file
     const pathName = window.location.pathname.split('/').pop() || 'course-ueh.html';
+    const urlCourseId = new URLSearchParams(window.location.search).get('id');
     const courseMap = {
         'course-ueh.html': 'ueh_hvntd',
         'course-ueh-marketing.html': 'ueh_marketing',
@@ -56,8 +57,13 @@
         'course-tdtu-pe.html': 'tdtu_pe'
     };
 
-    const COURSE_ID = window.COURSE_ID || courseMap[pathName] || 'ueh_hvntd';
+    const COURSE_ID = urlCourseId || window.COURSE_ID || courseMap[pathName] || '';
+    if (!COURSE_ID) {
+        window.location.href = 'student-courses.html';
+        return;
+    }
     const normCourseId = COURSE_ID.replace(/-/g, '_');
+    const returnToPage = urlCourseId ? `course.html?id=${encodeURIComponent(COURSE_ID)}` : pathName;
 
     // 3. Inject CSS Styles
     const portalStyles = `
@@ -414,6 +420,11 @@
                         };
                     });
                 }
+            } else {
+                const syllabusContainer = document.querySelector('.syllabus');
+                if (syllabusContainer) {
+                    syllabusContainer.innerHTML = '<div class="accordion-item"><div class="accordion-content" style="max-height:none;padding:20px;color:var(--text-muted);font-weight:600;">Chưa có chương học trong database. Admin thêm chương ở tab Khung chương trình.</div></div>';
+                }
             }
 
             // 4. Cập nhật Badges thống kê ở Hero Header
@@ -468,7 +479,7 @@
                             const courseTitle = currentSyllabus?.course?.title || '';
                             const fullTitle = chapterHeader ? `${chapterHeader}: ${lessonTitle}` : lessonTitle;
                             
-                            window.location.href = `pdf-viewer.html?id=${encodeURIComponent(matchingPdf.id)}&course=${encodeURIComponent(courseTitle)}&chapter=${encodeURIComponent(chapterHeader)}&lesson=${encodeURIComponent(lessonTitle)}&title=${encodeURIComponent(fullTitle)}&returnTo=${encodeURIComponent(pathName)}`;
+                            window.location.href = `pdf-viewer.html?id=${encodeURIComponent(matchingPdf.id)}&course=${encodeURIComponent(courseTitle)}&chapter=${encodeURIComponent(chapterHeader)}&lesson=${encodeURIComponent(lessonTitle)}&title=${encodeURIComponent(fullTitle)}&returnTo=${encodeURIComponent(returnToPage)}`;
                         }, 60);
                     };
                 }
@@ -540,8 +551,8 @@
                     btn.innerHTML = `<i class="fa-solid fa-check"></i> <span>Hoàn tất 100%!</span>`;
                     // Lưu dữ liệu đề thi và chuyển sang phòng thi exam-room.html
                     sessionStorage.setItem('current_exam_data', JSON.stringify(examData));
-                    sessionStorage.setItem('exam_return_url', pathName);
-                    window.location.href = `exam-room.html?returnTo=${encodeURIComponent(pathName)}`;
+                    sessionStorage.setItem('exam_return_url', returnToPage);
+                    window.location.href = `exam-room.html?returnTo=${encodeURIComponent(returnToPage)}`;
 
                 } catch (err) {
                     clearInterval(progressTimer);

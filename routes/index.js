@@ -425,7 +425,7 @@ router.get('/user/active-progress', requireActiveSession, async (req, res) => {
 			completedCount,
 			totalLessons,
 			percentage,
-			link: courseInfo.link
+			link: `course.html?id=${encodeURIComponent(activeCourseId)}`
 		});
 	} catch (err) {
 		console.error('Error getting active progress:', err);
@@ -578,7 +578,7 @@ router.get('/user/recent-courses', requireActiveSession, async (req, res) => {
 				completedCount,
 				totalLessons,
 				percentage,
-				link: cInfo.link
+				link: `course.html?id=${encodeURIComponent(cId)}`
 			});
 		}
 
@@ -647,6 +647,9 @@ router.put('/admin/course-details/:courseId', requireStaff, async (req, res) => 
 		const db = await getDb();
 		const courseId = String(req.params.courseId || '').trim();
 		const { title, description, university } = req.body || {};
+		if (!/^[a-z0-9_-]+$/i.test(courseId)) {
+			return res.status(400).json({ message: 'Mã môn học không hợp lệ (chỉ dùng chữ, số, _ và -).' });
+		}
 		if (!title) return res.status(400).json({ message: 'Tên môn học không được để trống.' });
 
 		await db.run(`
@@ -663,6 +666,30 @@ router.put('/admin/course-details/:courseId', requireStaff, async (req, res) => 
 	} catch (err) {
 		console.error('Error updating course details:', err);
 		return res.status(500).json({ message: 'Lỗi cập nhật môn học.' });
+	}
+});
+
+router.delete('/admin/course-details/:courseId', requireStaff, async (req, res) => {
+	try {
+		const db = await getDb();
+		const courseId = String(req.params.courseId || '').trim();
+		if (!/^[a-z0-9_-]+$/i.test(courseId)) {
+			return res.status(400).json({ message: 'Mã môn học không hợp lệ.' });
+		}
+
+		const existing = await db.get('SELECT course_id FROM course_details WHERE course_id = ?', [courseId]);
+		if (!existing) {
+			return res.status(404).json({ message: 'Không tìm thấy môn học.' });
+		}
+
+		await db.run('DELETE FROM course_lessons WHERE course_id = ?', [courseId]);
+		await db.run('DELETE FROM course_chapters WHERE course_id = ?', [courseId]);
+		await db.run('DELETE FROM course_details WHERE course_id = ?', [courseId]);
+
+		return res.status(200).json({ success: true, message: 'Đã xóa môn học và toàn bộ chương, bài học liên quan.' });
+	} catch (err) {
+		console.error('Error deleting course:', err);
+		return res.status(500).json({ message: 'Lỗi xóa môn học.' });
 	}
 });
 

@@ -237,6 +237,10 @@
                 
                 // Render Courses
                 const container = document.getElementById('course-container');
+                if (!profile.courses || !profile.courses.length) {
+                    container.innerHTML = '<p style="color:var(--text-muted);font-weight:600;padding:24px;">Chưa có môn học trong database cho trường này. Admin thêm môn ở Khung chương trình.</p>';
+                    return;
+                }
                 let html = '';
                 profile.courses.forEach(course => {
                     const percent = typeof course.percentage === 'number' ? course.percentage : 0;

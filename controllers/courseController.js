@@ -82,27 +82,43 @@ const universityProfiles = {
 
 exports.universityProfiles = universityProfiles;
 
+function catalogMetaById() {
+    const map = {};
+    Object.keys(universityProfiles).forEach(uni => {
+        (universityProfiles[uni].courses || []).forEach(course => {
+            map[course.courseId] = { ...course, university: uni };
+        });
+    });
+    return map;
+}
+
+function coursePageLink(courseId) {
+    return `course.html?id=${encodeURIComponent(courseId)}`;
+}
+
+function uniFromEmail(email) {
+    const emailDomain = String(email || '').toLowerCase().split('@')[1] || '';
+    return {
+        'st.ueh.edu.vn': 'UEH',
+        'hcmut.edu.vn': 'BK',
+        'ftu.edu.vn': 'FTU',
+        'st.neu.edu.vn': 'NEU',
+        'hcmus.edu.vn': 'HCMUS',
+        'tdtu.edu.vn': 'TDTU'
+    }[emailDomain] || 'UEH';
+}
+
+exports.coursePageLink = coursePageLink;
+exports.catalogMetaById = catalogMetaById;
+
 exports.getCourses = async (req, res) => {
     try {
-        let emailDomain = '';
-        if (req.user && req.user.Email) {
-            emailDomain = req.user.Email.toLowerCase().split('@')[1] || '';
-        }
-        
-        const assignedUni = {
-            'st.ueh.edu.vn': 'UEH',
-            'hcmut.edu.vn': 'BK',
-            'ftu.edu.vn': 'FTU',
-            'st.neu.edu.vn': 'NEU',
-            'hcmus.edu.vn': 'HCMUS',
-            'tdtu.edu.vn': 'TDTU'
-        }[emailDomain] || 'UEH';
-        
+        const assignedUni = uniFromEmail(req.user && req.user.Email);
         const baseProfile = universityProfiles[assignedUni] || universityProfiles.UEH;
         const db = await (require('../config/database')).getDb();
         const userId = req.user ? req.user.User_ID : '';
+        const catalog = catalogMetaById();
 
-        // Query real lesson and chapter counts from database
         const lessonCountRows = await db.all("SELECT course_id, COUNT(*) as count FROM course_lessons WHERE type != 'quiz' GROUP BY course_id");
         const chapterCountRows = await db.all('SELECT course_id, COUNT(*) as count FROM course_chapters GROUP BY course_id');
         const lessonCountMap = {};
@@ -110,13 +126,11 @@ exports.getCourses = async (req, res) => {
         const chapterCountMap = {};
         for (const row of chapterCountRows) { chapterCountMap[row.course_id] = row.count; }
 
-        // Query real course details (title, description) from database
-        const courseDetailRows = await db.all('SELECT course_id, title, description, university FROM course_details');
-        const courseDetailMap = {};
-        for (const row of courseDetailRows) {
-            courseDetailMap[row.course_id] = row;
-        }
-        
+        const dbCourses = await db.all(
+            'SELECT course_id, title, description, university FROM course_details WHERE university = ? ORDER BY title ASC',
+            [assignedUni]
+        );
+
         const progressRows = await db.all('SELECT course_id, lesson_id, completed_at FROM course_progress WHERE user_id = ?', [userId]);
         const progressMap = {};
         for (const row of progressRows) {
@@ -130,30 +144,35 @@ exports.getCourses = async (req, res) => {
             if (!recentReadMap[r.course_id]) recentReadMap[r.course_id] = r;
         }
 
-        // Tạo danh sách khóa học kèm tiến độ học tập thực tế của user
-        const liveCourses = baseProfile.courses.map(course => {
-            const completedList = progressMap[course.courseId] || [];
-            const dbDetail = courseDetailMap[course.courseId] || {};
-            const realTotalLessons = (lessonCountMap[course.courseId] !== undefined ? (lessonCountMap[course.courseId] + (chapterCountMap[course.courseId] || 0)) : (course.totalLessons || 1)) || 1;
+        const liveCourses = dbCourses.map(row => {
+            const courseId = row.course_id;
+            const meta = catalog[courseId] || {};
+            const completedList = progressMap[courseId] || [];
+            const realTotalLessons = ((lessonCountMap[courseId] || 0) + (chapterCountMap[courseId] || 0)) || 1;
             const completedCount = Math.min(completedList.length, realTotalLessons);
             const percentage = Math.min(100, Math.round((completedCount / realTotalLessons) * 100));
-            
-            let nextText = course.next;
+
+            let nextText = row.description || 'Chưa có chương học';
             if (percentage === 100) {
                 nextText = '🎉 Đã hoàn thành 100% môn học';
             } else if (completedCount > 0) {
                 nextText = `Đã hoàn thành ${completedCount}/${realTotalLessons} bài • Học tiếp bài sau`;
-            } else if (recentReadMap[course.courseId]) {
-                nextText = `Đang học: ${recentReadMap[course.courseId].lesson_title || 'Tài liệu môn học'}`;
+            } else if (recentReadMap[courseId]) {
+                nextText = `Đang học: ${recentReadMap[courseId].lesson_title || 'Tài liệu môn học'}`;
+            } else if (!(chapterCountMap[courseId] > 0)) {
+                nextText = 'Chưa có chương — admin thêm ở khung chương trình';
             }
 
             return {
-                ...course,
-                title: dbDetail.title || course.title,
+                title: row.title,
+                icon: meta.icon || 'fa-book',
+                link: coursePageLink(courseId),
+                courseId,
                 totalLessons: realTotalLessons,
                 completedCount,
                 percentage,
-                next: nextText
+                next: nextText,
+                aiHint: meta.aiHint || null
             };
         });
 
@@ -171,13 +190,24 @@ exports.getCourses = async (req, res) => {
 
 exports.getPublicCourses = async (req, res) => {
     try {
+        const db = await (require('../config/database')).getDb();
+        const catalog = catalogMetaById();
+        const rows = await db.all('SELECT course_id, title, description, university FROM course_details ORDER BY university ASC, title ASC');
         const uniList = Object.keys(universityProfiles).map(code => ({
             code: code,
             name: universityProfiles[code].name,
             color: universityProfiles[code].color,
             bg: universityProfiles[code].bg,
             gradient: universityProfiles[code].gradient,
-            courses: universityProfiles[code].courses
+            courses: rows.filter(row => String(row.university || '').toUpperCase() === code).map(row => ({
+                title: row.title,
+                icon: (catalog[row.course_id] && catalog[row.course_id].icon) || 'fa-book',
+                link: coursePageLink(row.course_id),
+                courseId: row.course_id,
+                totalLessons: 0,
+                next: row.description || '',
+                aiHint: null
+            }))
         }));
         return res.status(200).json({ universities: uniList });
     } catch (err) {
