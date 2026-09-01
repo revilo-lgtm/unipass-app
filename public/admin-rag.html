@@ -1,0 +1,2977 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Dữ liệu AI RAG - Admin UniPass</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="admin-shared.css">
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --primary-light: #818CF8;
+            --primary-bg: rgba(79, 70, 229, 0.08);
+            --secondary: #EC4899;
+            --success: #10B981;
+            --success-bg: rgba(16, 185, 129, 0.1);
+            --warning: #F59E0B;
+            --warning-bg: rgba(245, 158, 11, 0.1);
+            --danger: #EF4444;
+            --danger-bg: rgba(239, 68, 68, 0.1);
+            --gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
+            --gradient-subtle: linear-gradient(135deg, rgba(79, 70, 229, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);
+
+            --bg-color: #F8FAFC;
+            --surface: #FFFFFF;
+            --surface-hover: #F1F5F9;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+            --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+            --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
+        }
+
+        [data-theme="dark"] {
+            --primary-bg: rgba(99, 102, 241, 0.15);
+            --bg-color: #0B1120;
+            --surface: #1E293B;
+            --surface-hover: #273549;
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --border-color: #334155;
+            --header-bg: rgba(15, 23, 42, 0.95);
+            --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 14px -1px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+            --gradient-subtle: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(236, 72, 153, 0.05) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--header-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-container {
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-tag {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 3px 8px;
+            background: var(--primary-bg);
+            color: var(--primary);
+            border-radius: 6px;
+            border: 1px solid rgba(79, 70, 229, 0.2);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .theme-toggle {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            font-size: 15px;
+        }
+
+        .theme-toggle:hover {
+            background: var(--surface-hover);
+            color: var(--primary);
+            border-color: var(--primary-light);
+            transform: translateY(-1px);
+        }
+
+        .admin-profile {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 12px 4px 4px;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            background: var(--surface);
+            box-shadow: var(--shadow-xs);
+        }
+
+        .avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .admin-name {
+            font-weight: 700;
+            font-size: 13.5px;
+            color: var(--text-main);
+        }
+
+        .btn-logout {
+            background: var(--danger-bg);
+            color: var(--danger);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            padding: 8px 16px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .btn-logout:hover {
+            background: var(--danger);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+        }
+
+        /* Layout */
+        .dashboard-wrapper {
+            display: flex;
+            max-width: 1440px;
+            margin: 70px auto 0;
+            min-height: calc(100vh - 70px);
+        }
+
+        .sidebar {
+            width: 260px;
+            background: var(--surface);
+            border-right: 1px solid var(--border-color);
+            padding: 24px 12px;
+            position: fixed;
+            height: calc(100vh - 70px);
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .sidebar-section-title {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            padding: 8px 16px 12px;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-bottom: 6px;
+        }
+
+        .nav-menu a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 12px;
+            transition: all 0.2s;
+        }
+
+        .nav-menu a i {
+            font-size: 16px;
+            width: 22px;
+            text-align: center;
+            color: var(--text-muted);
+            transition: color 0.2s;
+        }
+
+        .nav-menu a:hover {
+            background: var(--bg-color);
+            color: var(--primary);
+        }
+
+        .nav-menu a:hover i {
+            color: var(--primary);
+        }
+
+        .nav-menu a.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+        }
+
+        .nav-menu a.active i {
+            color: white;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 32px 40px;
+            margin-left: 260px;
+            min-width: 0;
+        }
+
+        /* Page Header */
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 28px;
+            background: var(--surface);
+            padding: 28px 32px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 220px;
+            height: 100%;
+            background: var(--gradient-subtle);
+            pointer-events: none;
+        }
+
+        .page-header-text h1 {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .page-header-text p {
+            color: var(--text-muted);
+            font-size: 14.5px;
+        }
+
+        .btn-sync {
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            font-weight: 700;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+            font-size: 13.5px;
+        }
+
+        .btn-sync:hover {
+            background: #4338CA;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
+        }
+
+        /* KPI Row */
+        .kpi-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .kpi-mini {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 18px;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        .kpi-mini:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-light);
+        }
+
+        .kpi-info h3 {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .kpi-info p {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+        }
+
+        .kpi-bg-icon {
+            position: absolute;
+            right: 12px;
+            bottom: 8px;
+            font-size: 48px;
+            opacity: 0.06;
+            color: var(--primary);
+        }
+
+        /* Upload Zone Card */
+        .upload-card {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 28px;
+            margin-bottom: 28px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .upload-card-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .upload-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--primary-bg);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .upload-card-title h3 {
+            font-size: 17px;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 3px;
+        }
+
+        .upload-card-title p {
+            color: var(--text-muted);
+            font-size: 13.5px;
+        }
+
+        .upload-grid-form {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            align-items: end;
+        }
+
+        .form-group-field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            min-width: 0;
+        }
+
+        .form-group-field label {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 11px 14px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-color);
+            color: var(--text-main);
+            font-size: 13.5px;
+            font-weight: 600;
+            outline: none;
+            transition: border-color 0.2s;
+            height: 44px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .form-select:focus {
+            border-color: var(--primary);
+            background: var(--surface);
+        }
+
+        .pdf-file-picker {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 0 16px;
+            border: 1px dashed var(--border-color);
+            border-radius: 12px;
+            background: var(--bg-color);
+            color: var(--text-main);
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: 600;
+            transition: all 0.2s;
+            height: 44px;
+            width: 100%;
+        }
+
+        .pdf-file-picker:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: var(--surface-hover);
+        }
+
+        .pdf-file-picker input {
+            display: none;
+        }
+
+        .btn-upload-submit {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 22px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 13.5px;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+            height: 44px;
+            width: 100%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-upload-submit:hover {
+            background: #4338CA;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
+        }
+
+        .upload-message {
+            margin-top: 14px;
+            font-weight: 600;
+            font-size: 13.5px;
+        }
+
+        .upload-message.error {
+            color: var(--danger);
+        }
+
+        .upload-message.success {
+            color: var(--success);
+        }
+
+        /* Filter Controls */
+        .filter-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab-btn {
+            padding: 8px 14px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background: var(--surface);
+            color: var(--text-muted);
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-tab-btn:hover {
+            background: var(--surface-hover);
+            color: var(--primary);
+        }
+
+        .filter-tab-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25);
+        }
+
+        .search-box {
+            position: relative;
+            width: 280px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 9px 14px 9px 36px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background: var(--surface);
+            color: var(--text-main);
+            font-size: 13.5px;
+            font-weight: 500;
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* Table Area */
+        .table-container {
+            background: var(--surface);
+            border-radius: 18px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            min-width: 950px;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        thead {
+            background: var(--bg-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            padding: 14px 18px;
+            font-size: 11.5px;
+            font-weight: 800;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 14px 18px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-main);
+            font-size: 13.5px;
+            vertical-align: middle;
+        }
+
+        tbody tr:hover {
+            background: var(--surface-hover);
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .file-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .file-icon {
+            font-size: 22px;
+            color: var(--danger);
+        }
+
+        .file-name {
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 2px;
+        }
+
+        .file-size {
+            color: var(--text-muted);
+            font-size: 12px;
+        }
+
+        .tag-uni {
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 11.5px;
+            font-weight: 800;
+            display: inline-block;
+        }
+
+        .tag-ueh {
+            background: rgba(79, 70, 229, 0.1);
+            color: #4F46E5;
+            border: 1px solid rgba(79, 70, 229, 0.2);
+        }
+
+        .tag-bk {
+            background: rgba(2, 132, 199, 0.1);
+            color: #0284C7;
+            border: 1px solid rgba(2, 132, 199, 0.2);
+        }
+
+        .tag-ftu {
+            background: rgba(225, 29, 72, 0.1);
+            color: #E11D48;
+            border: 1px solid rgba(225, 29, 72, 0.2);
+        }
+
+        .tag-neu {
+            background: rgba(21, 128, 61, 0.1);
+            color: #15803D;
+            border: 1px solid rgba(21, 128, 61, 0.2);
+        }
+
+        .tag-hcmus {
+            background: rgba(3, 105, 161, 0.1);
+            color: #0369A1;
+            border: 1px solid rgba(3, 105, 161, 0.2);
+        }
+
+        .tag-tdtu {
+            background: rgba(180, 83, 9, 0.1);
+            color: #B45309;
+            border: 1px solid rgba(180, 83, 9, 0.2);
+        }
+
+        .status-badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11.5px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: var(--success-bg);
+            color: var(--success);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+        }
+
+        .btn-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background: var(--surface);
+            color: var(--text-muted);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-icon:hover {
+            background: var(--surface-hover);
+            color: var(--primary);
+            border-color: var(--primary-light);
+            transform: translateY(-1px);
+        }
+
+        .btn-icon.danger:hover {
+            color: var(--danger);
+            border-color: var(--danger);
+            background: var(--danger-bg);
+        }
+
+        /* Modal Preview PDF */
+        .pdf-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: 2000;
+            backdrop-filter: blur(6px);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .pdf-modal.show {
+            display: flex;
+        }
+
+        .pdf-modal-content {
+            background: var(--surface);
+            width: 100%;
+            max-width: 960px;
+            height: 85vh;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+        }
+
+        .pdf-modal-header {
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--header-bg);
+        }
+
+        .pdf-modal-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pdf-modal-close {
+            font-size: 24px;
+            color: var(--text-muted);
+            cursor: pointer;
+            background: transparent;
+            border: none;
+        }
+
+        .pdf-modal-close:hover {
+            color: var(--danger);
+        }
+
+        .pdf-modal-body {
+            flex: 1;
+            background: #525659;
+        }
+
+        .pdf-modal-body iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 900px) {
+            .kpi-row {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 640px) {
+            .upload-grid-form {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-upload-submit {
+                grid-column: span 1;
+            }
+
+            .kpi-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Tab Bar */
+        .rag-tab-bar {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .rag-tab-btn {
+            padding: 12px 22px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 14px;
+            border: 1px solid var(--border-color);
+            background: var(--surface);
+            color: var(--text-muted);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .rag-tab-btn:hover {
+            color: var(--primary);
+            border-color: var(--primary-light);
+            background: var(--surface-hover);
+        }
+
+        .rag-tab-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+
+        /* Syllabus Manager styles */
+        .syllabus-manager-card {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 28px;
+        }
+
+        .syllabus-top-filter {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .syllabus-course-banner {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .chapter-card {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        .chapter-card:hover {
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .chapter-card-header {
+            padding: 16px 20px;
+            background: var(--surface-hover);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .chapter-title-text {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chapter-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chapter-lessons-list {
+            padding: 12px 20px;
+        }
+
+        .lesson-card-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            border-radius: 12px;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            transition: all 0.15s;
+        }
+
+        .lesson-card-item:hover {
+            border-color: var(--primary-light);
+            background: var(--surface);
+        }
+
+        .lesson-card-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .lesson-icon-badge {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .lesson-icon-doc {
+            background: rgba(239, 68, 68, 0.1);
+            color: #EF4444;
+        }
+
+        .lesson-icon-quiz {
+            background: rgba(236, 72, 153, 0.1);
+            color: #EC4899;
+        }
+
+        .lesson-main-text {
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--text-main);
+            margin-bottom: 2px;
+        }
+
+        .lesson-sub-text {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .lesson-actions {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* === FORM & BUTTON DESIGN SYSTEM === */
+        .form-group-field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group-field label {
+            font-size: 11.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .form-input,
+        .form-select,
+        textarea.form-input {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-color);
+            border: 1.5px solid var(--border-color);
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 14px;
+            color: var(--text-main);
+            outline: none;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            box-sizing: border-box;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        textarea.form-input:focus {
+            border-color: var(--primary);
+            background: var(--surface);
+            box-shadow: 0 0 0 3.5px rgba(79, 70, 229, 0.15);
+        }
+
+        textarea.form-input {
+            resize: vertical;
+            min-height: 85px;
+            line-height: 1.5;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 18px;
+            font-size: 13.5px;
+            font-weight: 700;
+            border-radius: 12px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: inherit;
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            color: white;
+            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+            border: none;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.45);
+        }
+
+        .btn-primary:active:not(:disabled) {
+            transform: translateY(0);
+        }
+
+        .btn-outline {
+            background: var(--surface);
+            color: var(--text-main);
+            border: 1.5px solid var(--border-color);
+        }
+
+        .btn-outline:hover:not(:disabled) {
+            background: var(--surface-hover);
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-1px);
+        }
+
+        .btn-danger {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--danger);
+            border: 1px solid rgba(239, 68, 68, 0.25);
+        }
+
+        .btn-danger:hover:not(:disabled) {
+            background: var(--danger);
+            color: white;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+        }
+
+        .btn-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 13.5px;
+        }
+
+        .btn-icon:hover {
+            background: var(--surface);
+            color: var(--primary);
+            border-color: var(--primary-light);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .btn-icon.delete:hover {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--danger);
+            border-color: var(--danger);
+        }
+
+        /* Modals */
+        .admin-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 99999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .admin-modal-overlay.show {
+            display: flex !important;
+        }
+
+        .admin-modal-box {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            width: 100%;
+            max-width: 560px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+            overflow: hidden;
+            animation: modalFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes modalFadeIn {
+            from { transform: scale(0.93) translateY(10px); opacity: 0; }
+            to { transform: scale(1) translateY(0); opacity: 1; }
+        }
+
+        .admin-modal-header {
+            padding: 20px 24px;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .admin-modal-title {
+            font-size: 16.5px;
+            font-weight: 800;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .admin-modal-body {
+            padding: 24px;
+            background: var(--surface);
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .admin-modal-footer {
+            padding: 16px 24px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            background: var(--bg-color);
+        }
+
+    
+        /* Responsive Sidebar for Split-Screen & Tablet (không bao giờ bị mất menu khi chia đôi màn hình) */
+        @media (max-width: 1080px) {
+            .sidebar {
+                width: 68px !important;
+                padding: 16px 6px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+            .sidebar-section-title {
+                display: none !important;
+            }
+            .nav-menu {
+                width: 100% !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 6px !important;
+            }
+            .nav-menu li {
+                width: 100% !important;
+                margin-bottom: 0 !important;
+            }
+            .nav-menu a {
+                justify-content: center !important;
+                padding: 12px 8px !important;
+                font-size: 0 !important;
+                border-radius: 10px !important;
+                gap: 0 !important;
+                position: relative;
+            }
+            .nav-menu a i {
+                font-size: 17px !important;
+                margin: 0 !important;
+                width: auto !important;
+            }
+            .main-content {
+                margin-left: 68px !important;
+                padding: 20px 16px !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .sidebar {
+                display: none !important;
+            }
+            .main-content {
+                margin-left: 0 !important;
+                padding: 16px 12px !important;
+            }
+        }
+
+    </style>
+    <link rel="stylesheet" href="ui-alerts.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="admin-dashboard.html" class="logo" title="Trang tổng quan Quản trị" title="Tổng quan Báo cáo">
+                Uni<span>Pass</span>
+                <span class="logo-tag">Admin</span>
+            </a>
+            <div class="nav-right">
+                <a href="index.html" class="btn-visit-home" style="display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:20px; font-size:12.5px; font-weight:700; text-decoration:none; color:var(--text-main); background:var(--surface); border:1px solid var(--border-color); box-shadow:0 2px 4px rgba(0,0,0,0.02); transition:all 0.2s;" title="Xem trang chủ UniPass"><i class="fa-solid fa-arrow-up-right-from-square" style="color:var(--primary); font-size:11px;"></i> <span>Trang chủ</span></a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode"
+                    title="Chuyển đổi giao diện Sáng/Tối">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div class="admin-profile">
+                    <div class="avatar"><i class="fa-solid fa-shield-halved"></i></div>
+                    <span class="admin-name" id="admin-display-name">Quản trị viên</span>
+                </div>
+                <a href="#" id="admin-logout" class="btn-logout" title="Đăng xuất khỏi hệ thống">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <span>Đăng xuất</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-section-title">Quản trị Hệ thống</div>
+            <ul class="nav-menu">
+                <li><a href="admin-dashboard.html" title="Tổng quan Báo cáo"><i class="fa-solid fa-chart-pie"></i> Tổng quan</a></li>
+                <li><a href="admin-students.html" title="Quản lý Học viên"><i class="fa-solid fa-users"></i> Quản lý Học viên</a></li>
+                <li><a href="admin-transactions.html" title="Lịch sử Giao dịch"><i class="fa-solid fa-file-invoice-dollar"></i> Lịch sử Giao
+                        dịch</a></li>
+                <li><a href="admin-rag.html" class="active" title="Dữ liệu AI RAG"><i class="fa-solid fa-database"></i> Dữ liệu AI RAG</a></li>
+                <li><a href="admin-settings.html" title="Cài đặt Hệ thống"><i class="fa-solid fa-gear"></i> Cài đặt Hệ thống</a></li>
+                <li class="sidebar-home-link" style="margin-top: 14px; border-top: 1px dashed var(--border-color); padding-top: 12px;"><a href="index.html"  style="color: var(--primary); font-weight: 700;" title="Về Trang chủ UniPass"><i class="fa-solid fa-house"></i> Về Trang chủ</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="page-header">
+                <div class="page-header-text">
+                    <h1><i class="fa-solid fa-brain" style="color: var(--primary);"></i> Kho Tri thức AI & Giáo trình
+                        (RAG)</h1>
+                    <p>Quản lý và nạp tài liệu PDF theo phân cấp: <strong>Trường Đại học &rarr; Môn học &rarr; Chương / Bài học</strong> phục vụ Trợ giảng AI.</p>
+                </div>
+            </div>
+
+            <!-- Tab Switcher -->
+            <div class="rag-tab-bar">
+                <button class="rag-tab-btn active" id="tab-btn-docs" onclick="switchRagTab('docs')">
+                    <i class="fa-solid fa-file-pdf"></i> 1. Kho Tài liệu PDF & Vector RAG
+                </button>
+                <button class="rag-tab-btn" id="tab-btn-syllabus" onclick="switchRagTab('syllabus')">
+                    <i class="fa-solid fa-layer-group"></i> 2. Quản lý Khung chương trình & Chi tiết Môn học
+                </button>
+            </div>
+
+            <!-- TAB 1: PDF Documents & Vector DB -->
+            <div id="section-docs-tab">
+
+            <!-- Mini KPIs -->
+            <div class="kpi-row">
+                <div class="kpi-mini">
+                    <div class="kpi-info">
+                        <h3>Tổng Tài liệu PDF</h3>
+                        <p id="total-docs">0</p>
+                    </div>
+                    <i class="fa-solid fa-file-lines kpi-bg-icon"></i>
+                </div>
+                <div class="kpi-mini">
+                    <div class="kpi-info">
+                        <h3>Tổng số Môn học</h3>
+                        <p id="total-courses">0 Môn</p>
+                    </div>
+                    <i class="fa-solid fa-book-open kpi-bg-icon"></i>
+                </div>
+                <div class="kpi-mini">
+                    <div class="kpi-info">
+                        <h3>Độ chính xác RAG</h3>
+                        <p id="rag-accuracy" style="color: var(--success);">--%</p>
+                    </div>
+                    <i class="fa-solid fa-bullseye kpi-bg-icon"></i>
+                </div>
+                <div class="kpi-mini">
+                    <div class="kpi-info">
+                        <h3>Số trường hỗ trợ</h3>
+                        <p id="total-unis">0 Đại học</p>
+                    </div>
+                    <i class="fa-solid fa-university kpi-bg-icon"></i>
+                </div>
+            </div>
+
+            <!-- Upload Zone -->
+            <div class="upload-card">
+                <div class="upload-card-header">
+                    <div class="upload-icon-box"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                    <div class="upload-card-title">
+                        <h3>Thêm tài liệu PDF vào Khóa học & Giáo trình</h3>
+                        <p>Chọn phân cấp Trường &rarr; Môn học &rarr; Chương bài học để nạp vào cơ sở tri thức Vector
+                            RAG.</p>
+                    </div>
+                </div>
+
+                <form id="pdf-upload-form" class="upload-grid-form">
+                    <div class="form-group-field">
+                        <label for="pdf-university"><i class="fa-solid fa-university"></i> 1. Chọn Trường</label>
+                        <select id="pdf-university" class="form-select" required>
+                            <option value="UEH">ĐH Kinh tế TP.HCM (UEH)</option>
+                            <option value="BK">ĐH Bách Khoa (HCMUT)</option>
+                            <option value="FTU">ĐH Ngoại thương (FTU)</option>
+                            <option value="NEU">ĐH Kinh tế Quốc dân (NEU)</option>
+                            <option value="HCMUS">ĐH Khoa học Tự nhiên (HCMUS)</option>
+                            <option value="TDTU">ĐH Tôn Đức Thắng (TDTU)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group-field">
+                        <label for="pdf-course"><i class="fa-solid fa-book-bookmark"></i> 2. Chọn Môn học</label>
+                        <select id="pdf-course" class="form-select" required></select>
+                    </div>
+
+                    <div class="form-group-field">
+                        <label for="pdf-chapter"><i class="fa-solid fa-layer-group"></i> 3. Chọn Chương</label>
+                        <select id="pdf-chapter" class="form-select" required></select>
+                    </div>
+
+                    <div class="form-group-field">
+                        <label for="pdf-lesson"><i class="fa-solid fa-file-alt"></i> 4. Thành phần chương</label>
+                        <select id="pdf-lesson" class="form-select" required>
+                            <option value="1">Thành phần 1 (Bài học đầu tiên)</option>
+                            <option value="2">Thành phần 2 (Bài học thứ 2)</option>
+                            <option value="3">Thành phần 3 (Bài học thứ 3)</option>
+                            <option value="4">Thành phần 4 (Bài học thứ 4)</option>
+                            <option value="5">Thành phần 5 (Bài học thứ 5)</option>
+                            <option value="6">Thành phần 6 (Bài học thứ 6)</option>
+                            <option value="7">Thành phần 7 (Bài học thứ 7)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group-field">
+                        <label><i class="fa-solid fa-file-pdf"></i> 5. File PDF</label>
+                        <label class="pdf-file-picker" for="pdf-file">
+                            <i class="fa-solid fa-paperclip" style="color: var(--primary);"></i>
+                            <span id="file-label-text">Chọn file PDF</span>
+                            <input id="pdf-file" type="file" accept="application/pdf,.pdf" required>
+                        </label>
+                    </div>
+
+                    <div class="form-group-field">
+                        <label style="visibility: hidden;">Tải lên</label>
+                        <button type="submit" class="btn-upload-submit">
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i> Nạp PDF
+                        </button>
+                    </div>
+                </form>
+                <div id="pdf-upload-message" class="upload-message"></div>
+            </div>
+
+            <!-- Filter & Search Controls -->
+            <div class="filter-bar">
+                <div class="filter-tabs">
+                    <button class="filter-tab-btn active" data-filter="all">Tất cả trường</button>
+                    <button class="filter-tab-btn" data-filter="UEH">UEH</button>
+                    <button class="filter-tab-btn" data-filter="BK">HCMUT</button>
+                    <button class="filter-tab-btn" data-filter="FTU">FTU</button>
+                    <button class="filter-tab-btn" data-filter="NEU">NEU</button>
+                    <button class="filter-tab-btn" data-filter="HCMUS">HCMUS</button>
+                    <button class="filter-tab-btn" data-filter="TDTU">TDTU</button>
+                </div>
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" id="search-input" name="rag_search_filter_query_no_autofill" placeholder="Tìm tài liệu, môn học..." autocomplete="one-time-code" data-lpignore="true" data-form-type="other" spellcheck="false">
+                </div>
+            </div>
+
+            <!-- Documents Table -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tên tài liệu PDF</th>
+                            <th>Trường</th>
+                            <th>Môn học</th>
+                            <th>Chương / Bài học</th>
+                            <th>Trạng thái Embedding</th>
+                            <th>Ngày tải lên</th>
+                            <th style="text-align: right;">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rag-table-body">
+                        <tr>
+                            <td colspan="7" style="text-align:center; padding:32px; color:var(--text-muted);">Đang tải
+                                danh sách tài liệu...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        
+            </div> <!-- End section-docs-tab -->
+
+            <!-- TAB 2: Course Syllabus & Details Manager -->
+            <div id="section-syllabus-tab" style="display: none;">
+                <div class="syllabus-manager-card">
+                    <!-- Top Course Selector -->
+                    <div class="syllabus-top-filter">
+                        <div class="form-group-field" style="min-width: 200px;">
+                            <label for="mgr-uni-select"><i class="fa-solid fa-university"></i> 1. Chọn Trường</label>
+                            <select id="mgr-uni-select" class="form-select" onchange="onMgrUniChange()">
+                                <option value="ALL">-- Tất cả các trường --</option>
+                                <option value="BK">ĐH Bách Khoa (HCMUT)</option>
+                                <option value="UEH">ĐH Kinh tế TP.HCM (UEH)</option>
+                                <option value="FTU">ĐH Ngoại thương (FTU)</option>
+                                <option value="NEU">ĐH Kinh tế Quốc dân (NEU)</option>
+                                <option value="HCMUS">ĐH Khoa học Tự nhiên (HCMUS)</option>
+                                <option value="TDTU">ĐH Tôn Đức Thắng (TDTU)</option>
+                            </select>
+                        </div>
+                        <div class="form-group-field" style="min-width: 280px; flex: 1;">
+                            <label for="mgr-course-select"><i class="fa-solid fa-book-bookmark"></i> 2. Chọn Môn học để chỉnh sửa</label>
+                            <select id="mgr-course-select" class="form-select" onchange="onMgrCourseChange()"></select>
+                        </div>
+                        <div style="display: flex; gap: 10px; align-self: flex-end;">
+                            <button id="btn-edit-course-modal" type="button" class="btn btn-outline" onclick="openEditCourseModal()" style="padding: 10px 16px; font-size: 13.5px;">
+                                <i class="fa-solid fa-pen-to-square"></i> Đổi tên & Mô tả Môn
+                            </button>
+                            <button id="btn-add-chapter-modal" type="button" class="btn btn-primary" onclick="openAddChapterModal()" style="padding: 10px 18px; font-size: 13.5px;">
+                                <i class="fa-solid fa-plus"></i> Thêm Chương mới
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Course Summary Banner -->
+                    <div id="mgr-course-banner" class="syllabus-course-banner">
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+                                <h2 id="mgr-banner-title" style="font-size: 20px; font-weight: 800; color: var(--text-main);">Đang tải môn học...</h2>
+                                <span id="mgr-banner-uni" class="tag-uni tag-bk">BK</span>
+                            </div>
+                            <p id="mgr-banner-desc" style="font-size: 13.5px; color: var(--text-muted); max-width: 750px; line-height: 1.5;">Mô tả môn học...</p>
+                        </div>
+                        <div style="display: flex; gap: 12px;">
+                            <div style="text-align: center; background: var(--surface); padding: 8px 16px; border-radius: 12px; border: 1px solid var(--border-color);">
+                                <div style="font-size: 11px; color: var(--text-muted); font-weight: 700;">TỔNG CHƯƠNG</div>
+                                <div id="mgr-banner-chapters-count" style="font-size: 18px; font-weight: 800; color: var(--primary);">0</div>
+                            </div>
+                            <div style="text-align: center; background: var(--surface); padding: 8px 16px; border-radius: 12px; border: 1px solid var(--border-color);">
+                                <div style="font-size: 11px; color: var(--text-muted); font-weight: 700;">TỔNG BÀI HỌC</div>
+                                <div id="mgr-banner-lessons-count" style="font-size: 18px; font-weight: 800; color: var(--secondary);">0</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chapters & Lessons Tree -->
+                    <div id="mgr-chapters-container">
+                        <div style="text-align: center; padding: 40px; color: var(--text-muted);">
+                            <i class="fa-solid fa-spinner fa-spin" style="font-size: 24px; margin-bottom: 12px; display: block;"></i>
+                            Đang tải khung chương trình môn học...
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End section-syllabus-tab -->
+
+            <!-- MODAL: Edit Course Details -->
+            <div id="modal-course-details" class="admin-modal-overlay">
+                <div class="admin-modal-box">
+                    <div class="admin-modal-header">
+                        <div class="admin-modal-title"><i class="fa-solid fa-pen-to-square" style="color: var(--primary);"></i> Chỉnh sửa Thông tin Môn học</div>
+                        <button type="button" class="btn-icon" data-close-modal="modal-course-details" title="Đóng"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <form id="form-course-details">
+                        <div class="admin-modal-body">
+                            <div class="form-group-field">
+                                <label for="edit-course-title"><i class="fa-solid fa-book"></i> Tên Môn học</label>
+                                <input type="text" id="edit-course-title" class="form-input" required placeholder="Ví dụ: Đại số Tuyến tính">
+                            </div>
+                            <div class="form-group-field">
+                                <label for="edit-course-uni"><i class="fa-solid fa-university"></i> Trường Đại học</label>
+                                <select id="edit-course-uni" class="form-select">
+                                    <option value="BK">Đại học Bách Khoa TP.HCM (HCMUT)</option>
+                                    <option value="UEH">Đại học Kinh tế TP.HCM (UEH)</option>
+                                    <option value="FTU">Đại học Ngoại thương (FTU)</option>
+                                    <option value="NEU">Đại học Kinh tế Quốc dân (NEU)</option>
+                                    <option value="HCMUS">Đại học Khoa học Tự nhiên (HCMUS)</option>
+                                    <option value="TDTU">Đại học Tôn Đức Thắng (TDTU)</option>
+                                </select>
+                            </div>
+                            <div class="form-group-field">
+                                <label for="edit-course-desc"><i class="fa-solid fa-align-left"></i> Mô tả Tóm tắt (Chuẩn Academic)</label>
+                                <textarea id="edit-course-desc" class="form-input" rows="3" placeholder="Mô tả nội dung giáo trình, bài giảng và chuẩn đầu ra..."></textarea>
+                            </div>
+                        </div>
+                        <div class="admin-modal-footer">
+                            <button type="button" class="btn btn-outline" data-close-modal="modal-course-details">Hủy</button>
+                            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Lưu thay đổi</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- MODAL: Add / Edit Chapter -->
+            <div id="modal-chapter" class="admin-modal-overlay">
+                <div class="admin-modal-box">
+                    <div class="admin-modal-header">
+                        <div class="admin-modal-title" id="modal-chapter-title"><i class="fa-solid fa-folder-plus" style="color: var(--primary);"></i> Thêm Chương học mới</div>
+                        <button type="button" class="btn-icon" data-close-modal="modal-chapter" title="Đóng"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <form id="form-chapter">
+                        <input type="hidden" id="edit-chapter-id">
+                        <div class="admin-modal-body">
+                            <div class="form-group-field">
+                                <label for="edit-chapter-title"><i class="fa-solid fa-folder-open"></i> Tên Chương học</label>
+                                <input type="text" id="edit-chapter-title" class="form-input" required placeholder="Ví dụ: Chương 1: Ma trận & Định thức">
+                            </div>
+                            <div class="form-group-field">
+                                <label for="edit-chapter-meta"><i class="fa-solid fa-tag"></i> Ghi chú / Phụ đề chương</label>
+                                <input type="text" id="edit-chapter-meta" class="form-input" placeholder="Ví dụ: 3 Bài học hoặc 1 File PDF">
+                            </div>
+                            <div class="form-group-field">
+                                <label for="edit-chapter-order"><i class="fa-solid fa-sort-numeric-down"></i> Thứ tự hiển thị</label>
+                                <input type="number" id="edit-chapter-order" class="form-input" min="1" value="1">
+                            </div>
+                        </div>
+                        <div class="admin-modal-footer">
+                            <button type="button" class="btn btn-outline" data-close-modal="modal-chapter">Hủy</button>
+                            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Lưu Chương</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- MODAL: Add / Edit Lesson -->
+            <div id="modal-lesson" class="admin-modal-overlay">
+                <div class="admin-modal-box">
+                    <div class="admin-modal-header">
+                        <div class="admin-modal-title" id="modal-lesson-title"><i class="fa-solid fa-file-circle-plus" style="color: var(--primary);"></i> Thêm Bài học / Chi tiết</div>
+                        <button type="button" class="btn-icon" data-close-modal="modal-lesson" title="Đóng"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <form id="form-lesson">
+                        <input type="hidden" id="edit-lesson-pk">
+                        <input type="hidden" id="edit-lesson-chapter-id">
+                        <div class="admin-modal-body">
+                            <div class="form-group-field">
+                                <label for="edit-lesson-name"><i class="fa-solid fa-file-lines"></i> Tên Bài học / Tài liệu / Đề thi</label>
+                                <input type="text" id="edit-lesson-name" class="form-input" required placeholder="Ví dụ: Các phép toán ma trận & Ma trận nghịch đảo">
+                            </div>
+                            <div class="form-group-field">
+                                <label for="edit-lesson-type"><i class="fa-solid fa-shapes"></i> Loại nội dung</label>
+                                <select id="edit-lesson-type" class="form-select">
+                                    <option value="doc">📄 Tài liệu / Giáo trình PDF</option>
+                                    <option value="quiz">⚡ Phòng thi & Đề trắc nghiệm AI</option>
+                                </select>
+                            </div>
+                            <div class="form-group-field">
+                                <label for="edit-lesson-doc-id"><i class="fa-solid fa-paperclip"></i> Gán File PDF từ Kho RAG (Tùy chọn)</label>
+                                <select id="edit-lesson-doc-id" class="form-select">
+                                    <option value="">-- Không gán file PDF riêng --</option>
+                                </select>
+                            </div>
+                            <div class="form-group-field">
+                                <label for="edit-lesson-meta"><i class="fa-solid fa-circle-info"></i> Mô tả phụ / Thông tin File</label>
+                                <input type="text" id="edit-lesson-meta" class="form-input" placeholder="Ví dụ: File giáo trình: daisotuyentinh.pdf (0.73 MB)">
+                            </div>
+                            <div class="form-group-field">
+                                <label for="edit-lesson-order"><i class="fa-solid fa-sort-numeric-down"></i> Thứ tự trong chương</label>
+                                <input type="number" id="edit-lesson-order" class="form-input" min="1" value="1">
+                            </div>
+                        </div>
+                        <div class="admin-modal-footer">
+                            <button type="button" class="btn btn-outline" data-close-modal="modal-lesson">Hủy</button>
+                            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Lưu Bài học</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+    
+    <!-- PDF Viewer Modal -->
+    <div id="pdf-viewer-modal" class="pdf-modal">
+        <div class="pdf-modal-content">
+            <div class="pdf-modal-header">
+                <div class="pdf-modal-title">
+                    <i class="fa-solid fa-file-pdf" style="color: var(--danger);"></i>
+                    <span id="pdf-modal-file-title">Xem tài liệu PDF</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <a id="pdf-modal-open-newtab" href="#" target="_blank" class="btn"
+                        style="padding: 6px 12px; font-size: 12.5px; background: var(--bg-color); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none;">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Mở tab mới
+                    </a>
+                    <button type="button" class="pdf-modal-close" id="pdf-modal-close-btn">&times;</button>
+                </div>
+            </div>
+            <div class="pdf-modal-body">
+                <iframe id="pdf-iframe" src=""></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+        // 1. Phân quyền & Khởi tạo Admin
+        const currentAdmin = window.Auth.current();
+        if (!currentAdmin || (currentAdmin.role !== 'admin' && currentAdmin.role !== 'Giảng viên')) {
+            window.location.href = 'login.html';
+        } else {
+            const adminNameElem = document.getElementById('admin-display-name');
+            if (adminNameElem && currentAdmin.fullname) {
+                adminNameElem.textContent = currentAdmin.fullname;
+            }
+
+            if (currentAdmin.role === 'Giảng viên') {
+                // Ẩn menu không cho phép
+                document.querySelectorAll('.nav-menu li').forEach(li => {
+                    const link = li.querySelector('a').getAttribute('href') || '';
+                    if (!link.includes('admin-students.html') && !link.includes('admin-rag.html') && !link.includes('admin-dashboard.html')) {
+                        li.style.display = 'none';
+                    }
+                });
+            }
+        }
+
+        document.getElementById('admin-logout').addEventListener('click', event => {
+            event.preventDefault();
+            window.Auth.logout();
+            window.location.href = 'login.html';
+        });
+
+        // 2. Dark Mode Toggle
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = themeToggleBtn.querySelector('i');
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem('unipass_theme');
+        if (savedTheme) {
+            htmlElement.setAttribute('data-theme', savedTheme);
+            updateIcon(savedTheme);
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            htmlElement.setAttribute('data-theme', 'dark');
+            updateIcon('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const newTheme = htmlElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('unipass_theme', newTheme);
+            updateIcon(newTheme);
+        });
+
+        function updateIcon(theme) {
+            themeIcon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+        }
+
+        // 3. TOÀN BỘ CÂY DỮ LIỆU: TRƯỜNG -> MÔN HỌC -> CHƯƠNG BÀI HỌC
+        const universityHierarchy = {
+            UEH: {
+                name: 'Đại học Kinh tế TP.HCM',
+                courses: {
+                    ueh_hvntd: {
+                        title: 'Hành vi người tiêu dùng',
+                        chapters: ['Chương 1: Tổng quan Hành vi NTD', 'Chương 2: Quá trình Ra quyết định (Mô hình EKB)', 'Chương 3: Yếu tố Tâm lý & Động cơ Maslow', 'Chương 4: Yếu tố Văn hóa & Xã hội', 'Đề thi Giữa kỳ & Cuối kỳ UEH']
+                    },
+                    ueh_marketing: {
+                        title: 'Quản trị Marketing',
+                        chapters: ['Chương 1: Tư duy Marketing hiện đại & PESTEL/SWOT', 'Chương 2: Nghiên cứu thị trường & Chiến lược STP', 'Chương 3: Chiến lược Sản phẩm & Định giá', 'Chương 4: Phân phối & Chiêu thị IMC', 'Bộ đề thi & Case Study Marketing UEH']
+                    },
+                    ueh_macro: {
+                        title: 'Kinh tế Vĩ mô',
+                        chapters: ['Chương 1: Đo lường sản lượng quốc gia (GDP & GNP)', 'Chương 2: Mô hình Tổng chi tiêu (AE) & Tài khóa', 'Chương 3: Thị trường tiền tệ & Mô hình IS-LM', 'Chương 4: Lạm phát, Thất nghiệp & AS-AD', 'Bộ 100 câu trắc nghiệm Vĩ mô UEH']
+                    },
+                    ueh_accounting: {
+                        title: 'Nguyên lý Kế toán',
+                        chapters: ['Chương 1: Đối tượng kế toán & Phương trình kế toán', 'Chương 2: Phương pháp Tài khoản & Định khoản Nợ/Có', 'Chương 3: Kế toán quá trình Mua - Bán hàng', 'Chương 4: Lập Báo cáo tài chính & Khóa sổ', 'Bài tập lớn lập BCTC theo chuẩn VAS']
+                    },
+                    ueh_math: {
+                        title: 'Toán Tài chính',
+                        chapters: ['Chương 1: Giá trị thời gian của tiền & Lãi kép', 'Chương 2: Chuỗi tiền tệ & Niên kim (Annuity)', 'Chương 3: Thẩm định dự án đầu tư NPV, IRR', 'Chương 4: Lập kế hoạch trả nợ vay ngân hàng', 'Đề ôn tập thi kết thúc học phần UEH']
+                    },
+                    ueh_hr: {
+                        title: 'Quản trị Nguồn nhân lực',
+                        chapters: ['Chương 1: Hoạch định & Phân tích công việc (JD/JS)', 'Chương 2: Tuyển dụng & Phỏng vấn STAR Method', 'Chương 3: Đào tạo Kirkpatrick & Đánh giá KPI/OKR', 'Chương 4: Hệ thống đãi ngộ lương 3P & Total Rewards', 'Bộ câu hỏi tình huống Quản trị nhân sự']
+                    }
+                }
+            },
+            BK: {
+                name: 'Đại học Bách Khoa (HCMUT)',
+                courses: {
+                    bk_giai_tich: {
+                        title: 'Đại số Tuyến tính',
+                        chapters: ['Chương 1: Ma trận, Định thức & Hệ phương trình', 'Chương 2: Không gian Vector & Cơ sở, Số chiều', 'Chương 3: Ánh xạ tuyến tính & Ma trận biểu diễn', 'Chương 4: Trị riêng, Vector riêng & Chéo hóa', 'Chương 5: Dạng toàn phương Lagrange', 'Bộ đề thi ĐSTT Bách Khoa các năm']
+                    },
+                    bk_physics: {
+                        title: 'Vật lý Đại cương 1',
+                        chapters: ['Chương 1: Động học & Động lực học chất điểm', 'Chương 2: Cơ học Vật rắn & Mômen quán tính', 'Chương 3: Dao động cơ & Sóng cơ học', 'Chương 4: Nhiệt động lực học (Nguyên lý 1 & 2)', 'Bộ đề thi trắc nghiệm Vật lý 1 Bách Khoa']
+                    },
+                    bk_calculus_1: {
+                        title: 'Giải tích 1',
+                        chapters: ['Chương 1: Giới hạn & Khai triển Taylor-Maclaurin', 'Chương 2: Phép tính vi phân hàm một biến', 'Chương 3: Tích phân suy rộng loại 1 & loại 2', 'Chương 4: Chuỗi số & Chuỗi lũy thừa', 'Đề thi Giữa kỳ & Cuối kỳ Giải tích 1 HCMUT']
+                    },
+                    bk_chemistry: {
+                        title: 'Hóa học Đại cương',
+                        chapters: ['Chương 1: Cấu tạo nguyên tử, 4 số lượng tử & Thuyết MO', 'Chương 2: Nhiệt hóa học & Năng lượng tự do Gibbs', 'Chương 3: Động hóa học & Năng lượng hoạt hóa Arrhenius', 'Chương 4: Cân bằng dung dịch, pH & Điện hóa học', 'Đề thi trắc nghiệm Hóa đại cương HCMUT']
+                    },
+                    bk_programming: {
+                        title: 'Nhập môn Lập trình C/C++',
+                        chapters: ['Chương 1: Biến, Kiểu dữ liệu, Toán tử & I/O', 'Chương 2: Cấu trúc rẽ nhánh if-else & Vòng lặp', 'Chương 3: Hàm, Đệ quy & Mảng 1D/2D', 'Chương 4: Con trỏ & Cấp phát bộ nhớ động', 'Chương 5: Chuỗi ký tự, Struct & File I/O', 'Bộ bài tập Coding thực hành Bách Khoa']
+                    }
+                }
+            },
+            FTU: {
+                name: 'Đại học Ngoại thương',
+                courses: {
+                    ftu_vamo: {
+                        title: 'Kinh tế Vi mô',
+                        chapters: ['Chương 1: Co giãn Cung Cầu & Can thiệp Chính phủ', 'Chương 2: Lý thuyết Hành vi Người tiêu dùng', 'Chương 3: Lý thuyết Sản xuất & Chi phí', 'Chương 4: Thị trường Cạnh tranh hoàn hảo', 'Chương 5: Độc quyền bán & Độc quyền nhóm', 'Đề thi Vi mô Ngoại thương các năm']
+                    },
+                    ftu_international_payment: {
+                        title: 'Thanh toán Quốc tế',
+                        chapters: ['Chương 1: Tỷ giá hối đoái & Công cụ thanh toán', 'Chương 2: Phương thức Chuyển tiền (T/T) & Nhờ thu (D/A, D/P)', 'Chương 3: Tín dụng chứng từ L/C theo UCP 600', 'Chương 4: Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745)', 'Case study tranh chấp thanh toán quốc tế FTU']
+                    },
+                    ftu_logistics: {
+                        title: 'Logistics & Chuỗi cung ứng',
+                        chapters: ['Chương 1: Bản chất Logistics & Incoterms 2020 (11 điều kiện)', 'Chương 2: Vận tải đường biển, Vận đơn B/L & Cước phí', 'Chương 3: Vận tải hàng không & Thủ tục Hải quan', 'Chương 4: Quản trị tồn kho mô hình EOQ', 'Đề thi cuối kỳ môn Logistics FTU']
+                    },
+                    ftu_trade: {
+                        title: 'Giao dịch Thương mại Quốc tế',
+                        chapters: ['Chương 1: Chuẩn bị & Đàm phán Hợp đồng Ngoại thương', 'Chương 2: Soạn thảo các điều khoản hợp đồng (Commodity, Price, Payment)', 'Chương 3: Điều khoản Bất khả kháng & Trọng tài thương mại', 'Chương 4: Giải quyết tranh chấp thương mại quốc tế', 'Đề thi tự luận môn Giao dịch FTU']
+                    },
+                    ftu_english: {
+                        title: 'Tiếng Anh Chuyên ngành Kinh tế',
+                        chapters: ['Unit 1: International Trade & Business Correspondence', 'Unit 2: Banking, Financial Markets & Securities', 'Unit 3: Contract Drafting & Translation Techniques', 'Unit 4: Business Presentation & Negotiation', 'Bộ đề thi Tiếng Anh chuyên ngành FTU']
+                    }
+                }
+            },
+            NEU: {
+                name: 'Đại học Kinh tế Quốc dân',
+                courses: {
+                    neu_basic_economics: {
+                        title: 'Kinh tế học Cơ bản',
+                        chapters: ['Chương 1: 10 nguyên lý Kinh tế học & Chi phí cơ hội', 'Chương 2: Cung, Cầu & Cân bằng thị trường', 'Chương 3: Thặng dư tiêu dùng (CS) & Thặng dư sản xuất (PS)', 'Chương 4: Cấu trúc thị trường & Chính sách công', 'Đề thi trắc nghiệm Kinh tế học cơ bản NEU']
+                    },
+                    neu_econometrics: {
+                        title: 'Toán Kinh tế',
+                        chapters: ['Chương 1: Ma trận & Mô hình Input-Output Leontief', 'Chương 2: Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange', 'Chương 3: Bài toán tối ưu hóa lợi nhuận & Chi phí', 'Chương 4: Quy hoạch tuyến tính (Phương pháp đơn nguyên)', 'Đề thi kết thúc học phần Toán kinh tế NEU']
+                    },
+                    neu_statistics: {
+                        title: 'Xác suất & Thống kê Toán',
+                        chapters: ['Chương 1: Biến ngẫu nhiên & Phân phối Chuẩn N(mu, sigma)', 'Chương 2: Lý thuyết mẫu & Ước lượng khoảng tin cậy', 'Chương 3: Kiểm định giả thuyết thống kê (Z-test, t-test)', 'Chương 4: Mô hình hồi quy tuyến tính đơn biến (OLS)', 'Bộ đề thi Xác suất thống kê NEU có đáp án']
+                    },
+                    neu_corporate_finance: {
+                        title: 'Tài chính Doanh nghiệp',
+                        chapters: ['Chương 1: Phân tích chỉ số tài chính & Mô hình DuPont', 'Chương 2: Quản trị vốn lưu động & Chu kỳ tiền mặt (CCC)', 'Chương 3: Chi phí sử dụng vốn (WACC) & Mô hình CAPM', 'Chương 4: Đòn bẩy hoạt động (DOL) & Đòn bẩy tài chính (DFL)', 'Đề thi tổng hợp Tài chính doanh nghiệp NEU']
+                    },
+                    neu_managerial_accounting: {
+                        title: 'Kế toán Quản trị',
+                        chapters: ['Chương 1: Phân loại chi phí biến đổi, cố định & hỗn hợp', 'Chương 2: Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP)', 'Chương 3: Điểm hòa vốn & Vùng an toàn (Margin of Safety)', 'Chương 4: Dự toán ngân sách & Thông tin ra quyết định', 'Đề thi tự luận Kế toán quản trị NEU']
+                    }
+                }
+            },
+            HCMUS: {
+                name: 'Đại học Khoa học Tự nhiên',
+                courses: {
+                    hcmus_programming: {
+                        title: 'Lập trình Cơ bản (C++)',
+                        chapters: ['Chương 1: Cấu trúc rẽ nhánh, Vòng lặp & Tối ưu thuật toán', 'Chương 2: Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string', 'Chương 3: Con trỏ & Cấp phát mảng động (new/delete)', 'Chương 4: Đệ quy & Đọc ghi File fstream', 'Bộ đề thi thực hành chấm tự động Wecode HCMUS']
+                    },
+                    hcmus_discrete_math: {
+                        title: 'Toán Rời rạc',
+                        chapters: ['Chương 1: Logic mệnh đề, Bảng chân trị & Luật De Morgan', 'Chương 2: Quan hệ tương đương, Poset & Bìa Karnaugh', 'Chương 3: Lý thuyết Đồ thị: Euler, Hamilton, Bổ đề bắt tay', 'Chương 4: Thuật toán Dijkstra & Cây khung Kruskal/Prim', 'Đề thi cuối kỳ Toán rời rạc HCMUS']
+                    },
+                    hcmus_dsa: {
+                        title: 'Cấu trúc Dữ liệu & Giải thuật',
+                        chapters: ['Chương 1: Phân tích độ phức tạp Big-O & Sorting (Quick, Merge, Heap)', 'Chương 2: Danh sách liên kết, Stack & Queue', 'Chương 3: Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree', 'Chương 4: Bảng băm (Hash Table) & Xử lý đụng độ', 'Đề thi thực hành & Lý thuyết DSA HCMUS']
+                    },
+                    hcmus_database: {
+                        title: 'Hệ Cơ sở Dữ liệu',
+                        chapters: ['Chương 1: Thiết kế ERD & Chuyển đổi sang CSDL quan hệ', 'Chương 2: Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia)', 'Chương 3: Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View)', 'Chương 4: Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF', 'Đề thi trắc nghiệm & Tự luận CSDL HCMUS']
+                    },
+                    hcmus_networks: {
+                        title: 'Mạng Máy tính',
+                        chapters: ['Chương 1: Mô hình OSI 7 tầng vs TCP/IP 4 tầng & Giao thức ứng dụng', 'Chương 2: Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn', 'Chương 3: Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM)', 'Chương 4: Địa chỉ MAC, Switch & Định tuyến Router', 'Bộ 100 câu hỏi ôn thi Mạng máy tính HCMUS']
+                    }
+                }
+            },
+            TDTU: {
+                name: 'Đại học Tôn Đức Thắng',
+                courses: {
+                    tdtu_study_skills: {
+                        title: 'Kỹ năng Học đại học',
+                        chapters: ['Chương 1: Quy chế đào tạo tín chỉ & Văn hóa học đường TDTU', 'Chương 2: Phương pháp ghi chép Cornell Notes & Mindmap', 'Chương 3: Quản trị thời gian Ma trận Eisenhower & Pomodoro', 'Chương 4: Kỹ năng làm việc nhóm & Thuyết trình chuyên nghiệp', 'Đề thi trắc nghiệm kết thúc môn Kỹ năng TDTU']
+                    },
+                    tdtu_applied_it: {
+                        title: 'Tin học Ứng dụng',
+                        chapters: ['Phần 1: MS Word Nâng cao: Style, Mục lục tự động, Mail Merge', 'Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table', 'Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp', 'Đề thi thử Chuẩn đầu ra Tin học văn phòng TDTU']
+                    },
+                    tdtu_english_comm: {
+                        title: 'Anh văn Giao tiếp Quốc tế',
+                        chapters: ['Unit 1: Everyday Social Conversation & Pronunciation', 'Unit 2: Academic Discussion & Giving Opinions', 'Unit 3: Presentation Skills & Cross-cultural Communication', 'Mock Interview with AI Examiner for TDTU Exit Test']
+                    },
+                    tdtu_startup: {
+                        title: 'Khởi nghiệp & ĐMST',
+                        chapters: ['Chương 1: Tư duy Khởi nghiệp & Phương pháp Design Thinking', 'Chương 2: Xây dựng Mô hình Kinh doanh 9 khối (BMC)', 'Chương 3: Sản phẩm khả dụng tối thiểu (MVP) & Lean Startup', 'Chương 4: Kế hoạch Tài chính & Kỹ năng Pitching gọi vốn', 'Đề thi cuối kỳ môn Khởi nghiệp ĐMST TDTU']
+                    },
+                    tdtu_pe: {
+                        title: 'Giáo dục Thể chất & Thể thao',
+                        chapters: ['Phần 1: Lý luận thể chất, Dinh dưỡng & Sơ cứu chấn thương', 'Phần 2: Kỹ thuật Bơi ếch & An toàn dưới nước 50m chuẩn TDTU', 'Phần 3: Luật thi đấu Bóng đá, Bóng chuyền & Cầu lông', 'Bộ câu hỏi thi lý thuyết GDTC TDTU']
+                    }
+                }
+            }
+        };
+
+        const uniSelect = document.getElementById('pdf-university');
+        const courseSelect = document.getElementById('pdf-course');
+        const chapterSelect = document.getElementById('pdf-chapter');
+        const lessonSelect = document.getElementById('pdf-lesson');
+        const fileInput = document.getElementById('pdf-file');
+        const fileLabelText = document.getElementById('file-label-text');
+        const tableBody = document.getElementById('rag-table-body');
+        const totalDocsEl = document.getElementById('total-docs');
+        const searchInput = document.getElementById('search-input');
+
+        // Modal Elements
+        const pdfModal = document.getElementById('pdf-viewer-modal');
+        const pdfModalCloseBtn = document.getElementById('pdf-modal-close-btn');
+        const pdfModalTitle = document.getElementById('pdf-modal-file-title');
+        const pdfModalOpenNewTab = document.getElementById('pdf-modal-open-newtab');
+        const pdfIframe = document.getElementById('pdf-iframe');
+
+        if (pdfModalCloseBtn) {
+            pdfModalCloseBtn.addEventListener('click', () => {
+                if (pdfModal) pdfModal.classList.remove('show');
+                if (pdfIframe) pdfIframe.src = '';
+            });
+        }
+        window.addEventListener('click', (e) => {
+            if (e.target === pdfModal) {
+                pdfModal.classList.remove('show');
+                pdfIframe.src = '';
+            }
+        });
+
+        const courseHtmlMap = {
+            'ueh_hvntd': 'course-ueh.html',
+            'ueh_marketing': 'course-ueh-marketing.html',
+            'ueh_macro': 'course-ueh-macro.html',
+            'ueh_accounting': 'course-ueh-accounting.html',
+            'ueh_math': 'course-ueh-math.html',
+            'ueh_hr': 'course-ueh-hr.html',
+            'bk_giai_tich': 'course-bk.html',
+            'bk_physics': 'course-bk-physics.html',
+            'bk_calculus_1': 'course-bk-calculus.html',
+            'bk_chemistry': 'course-bk-chemistry.html',
+            'bk_programming': 'course-bk-programming.html',
+            'ftu_vamo': 'course-ftu.html',
+            'ftu_international_payment': 'course-ftu-payment.html',
+            'ftu_logistics': 'course-ftu-logistics.html',
+            'ftu_trade': 'course-ftu-trade.html',
+            'ftu_english': 'course-ftu-english.html',
+            'neu_basic_economics': 'course-neu-economics.html',
+            'neu_econometrics': 'course-neu-math.html',
+            'neu_statistics': 'course-neu-stats.html',
+            'neu_corporate_finance': 'course-neu-finance.html',
+            'neu_managerial_accounting': 'course-neu-accounting.html',
+            'hcmus_programming': 'course-hcmus-programming.html',
+            'hcmus_discrete_math': 'course-hcmus-discrete.html',
+            'hcmus_dsa': 'course-hcmus-dsa.html',
+            'hcmus_database': 'course-hcmus-db.html',
+            'hcmus_networks': 'course-hcmus-networks.html',
+            'tdtu_study_skills': 'course-tdtu-skills.html',
+            'tdtu_applied_it': 'course-tdtu-it.html',
+            'tdtu_english_comm': 'course-tdtu-english.html',
+            'tdtu_startup': 'course-tdtu-startup.html',
+            'tdtu_pe': 'course-tdtu-pe.html'
+        };
+
+        // Cập nhật danh sách Môn học theo Trường
+        function updateCourseOptions() {
+            const uni = uniSelect.value;
+            const courses = (universityHierarchy[uni] && universityHierarchy[uni].courses) || {};
+
+            courseSelect.innerHTML = Object.entries(courses).map(([id, info]) => {
+                return `<option value="${id}">${info.title}</option>`;
+            }).join('');
+
+            updateChapterOptions();
+        }
+
+        let currentParsedCourse = { chapters: [] };
+
+        // Tự động phân tích cây Chương và Bài học trực tiếp từ file HTML của môn học
+        async function loadCourseStructure(courseId) {
+            const htmlFile = courseHtmlMap[courseId] || 'course-bk.html';
+            try {
+                const response = await fetch(htmlFile);
+                if (!response.ok) throw new Error('Lỗi tải file html');
+                const htmlText = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(htmlText, 'text/html');
+                const accordions = doc.querySelectorAll('.accordion-item');
+                
+                const chapters = [];
+                accordions.forEach((acc, cIdx) => {
+                    const titleEl = acc.querySelector('.accordion-header .chapter-title') || acc.querySelector('.accordion-header');
+                    let chTitle = `Chương ${cIdx + 1}`;
+                    if (titleEl) {
+                        const clone = titleEl.cloneNode(true);
+                        clone.querySelectorAll('.chapter-meta, i, .fa-chevron-down').forEach(el => el.remove());
+                        const cleanTxt = clone.textContent.trim().replace(/\s+/g, ' ');
+                        if (cleanTxt) chTitle = cleanTxt;
+                    }
+                    
+                    const lessons = [];
+                    const liElements = acc.querySelectorAll('.lesson-list li');
+                    liElements.forEach((li, lIdx) => {
+                        const mainSpan = li.querySelector('div > span:first-child') || li.querySelector('span:first-child');
+                        let lTitle = `Bài học ${lIdx + 1}`;
+                        if (mainSpan) {
+                            const clone = mainSpan.cloneNode(true);
+                            clone.querySelectorAll('i').forEach(el => el.remove());
+                            const cleanTxt = clone.textContent.trim().replace(/\s+/g, ' ');
+                            if (cleanTxt) lTitle = cleanTxt;
+                        } else {
+                            const clone = li.cloneNode(true);
+                            clone.querySelectorAll('.lesson-complete, .lesson-type, .btn-action-item, button, input, label, i').forEach(el => el.remove());
+                            const cleanTxt = clone.textContent.trim().replace(/\s+/g, ' ');
+                            if (cleanTxt) lTitle = cleanTxt;
+                        }
+                        lessons.push({
+                            id: lIdx + 1,
+                            title: lTitle
+                        });
+                    });
+                    
+                    chapters.push({
+                        id: `chapter-${cIdx + 1}`,
+                        title: chTitle,
+                        lessons: lessons.length > 0 ? lessons : [{ id: 1, title: 'Tài liệu / Bài học 1' }]
+                    });
+                });
+
+                if (chapters.length > 0) {
+                    currentParsedCourse = { chapters };
+                    return currentParsedCourse;
+                }
+            } catch (err) {
+                console.warn('Fallback sang cấu trúc tĩnh:', err);
+            }
+            
+            // Fallback nếu không tải được HTML
+            const uni = uniSelect.value;
+            const fallbackCourse = universityHierarchy[uni]?.courses[courseId];
+            const fallbackChapters = (fallbackCourse?.chapters || ['Chương 1: Tổng quan']).map((ch, idx) => ({
+                id: `chapter-${idx + 1}`,
+                title: ch,
+                lessons: [{ id: 1, title: 'Bài 1: Nội dung trọng tâm' }]
+            }));
+            currentParsedCourse = { chapters: fallbackChapters };
+            return currentParsedCourse;
+        }
+
+        // Cập nhật danh sách Chương / Bài học theo Môn học
+        async function updateChapterOptions() {
+            const courseId = courseSelect.value;
+            chapterSelect.innerHTML = '<option value="">Đang tải danh sách chương...</option>';
+            chapterSelect.disabled = true;
+            lessonSelect.innerHTML = '<option value="">Đang tải bài học...</option>';
+            lessonSelect.disabled = true;
+
+            const courseData = await loadCourseStructure(courseId);
+            chapterSelect.innerHTML = courseData.chapters.map(ch => {
+                return `<option value="${ch.id}">${ch.title}</option>`;
+            }).join('');
+            chapterSelect.disabled = false;
+
+            updateLessonOptions();
+        }
+
+        // Cập nhật danh sách Thành phần chi tiết của Chương
+        function updateLessonOptions() {
+            const chapterIdx = chapterSelect.selectedIndex >= 0 ? chapterSelect.selectedIndex : 0;
+            const selectedChapter = (currentParsedCourse && currentParsedCourse.chapters && currentParsedCourse.chapters[chapterIdx]) || (currentParsedCourse && currentParsedCourse.chapters && currentParsedCourse.chapters[0]);
+            
+            if (selectedChapter && selectedChapter.lessons && selectedChapter.lessons.length > 0) {
+                lessonSelect.innerHTML = selectedChapter.lessons.map(l => {
+                    return `<option value="${l.id}">Bài ${l.id}: ${l.title}</option>`;
+                }).join('');
+            } else {
+                lessonSelect.innerHTML = '<option value="1">Bài 1: Tài liệu bài học</option>';
+            }
+            lessonSelect.disabled = false;
+        }
+
+        uniSelect.addEventListener('change', updateCourseOptions);
+        courseSelect.addEventListener('change', updateChapterOptions);
+        chapterSelect.addEventListener('change', updateLessonOptions);
+
+        // Khởi tạo options ban đầu
+        updateCourseOptions();
+
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files.length > 0) {
+                fileLabelText.textContent = fileInput.files[0].name;
+            } else {
+                fileLabelText.textContent = 'Chọn file PDF';
+            }
+        });
+
+        function formatSize(bytes) {
+            if (!bytes) return '1.24 MB';
+            return `${(bytes / 1024 / 1024).toFixed(2)} MB`;
+        }
+
+        let documentsData = [];
+        let currentFilter = 'all';
+
+        function getUniTagClass(uni) {
+            const code = String(uni || '').toUpperCase();
+            if (code.includes('UEH')) return 'tag-ueh';
+            if (code.includes('BK') || code.includes('HCMUT')) return 'tag-bk';
+            if (code.includes('FTU')) return 'tag-ftu';
+            if (code.includes('NEU')) return 'tag-neu';
+            if (code.includes('HCMUS')) return 'tag-hcmus';
+            if (code.includes('TDTU')) return 'tag-tdtu';
+            return 'tag-ueh';
+        }
+
+        function getAuthToken() {
+            return localStorage.getItem('unipass_token') || '';
+        }
+
+        function renderTable() {
+            const searchKeyword = searchInput.value.toLowerCase().trim();
+            let filtered = documentsData;
+
+            if (currentFilter !== 'all') {
+                filtered = filtered.filter(doc => doc.uni.toUpperCase() === currentFilter.toUpperCase());
+            }
+
+            if (searchKeyword) {
+                filtered = filtered.filter(doc =>
+                    (doc.name || '').toLowerCase().includes(searchKeyword) ||
+                    (doc.courseTitle || '').toLowerCase().includes(searchKeyword) ||
+                    (doc.lessonTitle || '').toLowerCase().includes(searchKeyword) ||
+                    (doc.uni || '').toLowerCase().includes(searchKeyword)
+                );
+            }
+
+            if (!filtered.length) {
+                tableBody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding:32px; color:var(--text-muted); font-weight:600;">Không tìm thấy tài liệu phù hợp với điều kiện lọc.</td></tr>';
+                return;
+            }
+
+            let html = '';
+            filtered.forEach(doc => {
+                const uniClass = getUniTagClass(doc.uni);
+                const courseUrl = courseHtmlMap[doc.course] || 'course-bk.html';
+                const viewerUrl = `pdf-viewer.html?id=${encodeURIComponent(doc.id)}&title=${encodeURIComponent(doc.name)}&returnTo=admin-rag.html`;
+                html += `
+                    <tr>
+                        <td>
+                            <div class="file-info">
+                                <i class="fa-solid fa-file-pdf file-icon"></i>
+                                <div>
+                                    <a href="${viewerUrl}" target="_blank" style="font-weight: 700; color: var(--text-main); text-decoration: none;" class="file-name" title="Xem tài liệu PDF">${escapeHtml(doc.name)}</a>
+                                    <div class="file-size">${doc.size}</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="tag-uni ${uniClass}">${doc.uni}</span>
+                        </td>
+                        <td>
+                            <a href="${courseUrl}" target="_blank" style="font-weight: 700; color: var(--primary); font-size: 13.5px; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;" title="Xem khóa học của sinh viên">
+                                <span>${escapeHtml(doc.courseTitle)}</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px; opacity: 0.7;"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="${courseUrl}" target="_blank" style="color: var(--text-muted); font-size: 13px; font-weight: 600; text-decoration: none;" title="Xem chi tiết khóa học">
+                                ${escapeHtml(doc.lessonTitle)}
+                            </a>
+                        </td>
+                        <td>
+                            <span class="status-badge">
+                                <i class="fa-solid fa-check"></i> Đã nhúng Vector
+                            </span>
+                        </td>
+                        <td style="color: var(--text-muted); font-size: 13px;">${doc.date}</td>
+                        <td style="text-align: right;">
+                            <div style="display: flex; gap: 6px; justify-content: flex-end;">
+                                <a class="btn-icon" title="Xem tài liệu PDF" href="${viewerUrl}" target="_blank"><i class="fa-solid fa-eye"></i></a>
+                                <button class="btn-icon danger" title="Xóa tài liệu" data-document-id="${doc.id}" type="button"><i class="fa-solid fa-trash-can"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            });
+            tableBody.innerHTML = html;
+        }
+
+        function escapeHtml(str) {
+            return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        // Ngăn chặn autofill của trình duyệt vào search input
+        if (searchInput) {
+            searchInput.value = '';
+            setTimeout(() => { if (document.activeElement !== searchInput) searchInput.value = ''; }, 100);
+            setTimeout(() => { if (document.activeElement !== searchInput) searchInput.value = ''; }, 400);
+        }
+
+        // Filter Tabs
+        document.querySelectorAll('.filter-tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.dataset.filter;
+                renderTable();
+            });
+        });
+
+        searchInput.addEventListener('input', renderTable);
+
+        // Xóa tài liệu
+        tableBody.addEventListener('click', event => {
+            const deleteButton = event.target.closest('[data-document-id]');
+            if (deleteButton) {
+                deleteDocument(deleteButton.dataset.documentId);
+            }
+        });
+
+        async function deleteDocument(documentId) {
+            if (!window.confirm('Bạn có chắc chắn muốn xóa tài liệu PDF này khỏi cơ sở dữ liệu?')) return;
+            try {
+                await window.Auth.adminRequest(`/api/admin/course-pdfs/${encodeURIComponent(documentId)}`, { method: 'DELETE' });
+                await loadDocuments();
+                alert('Đã xóa tài liệu thành công.');
+            } catch (error) {
+                window.alert(error.message);
+            }
+        }
+
+        // Tìm Course Title từ ID
+        function findCourseTitle(courseId, uni) {
+            const normCourseId = String(courseId || '').replace(/-/g, '_');
+            if (universityHierarchy[uni]?.courses[courseId]) return universityHierarchy[uni].courses[courseId].title;
+            if (universityHierarchy[uni]?.courses[normCourseId]) return universityHierarchy[uni].courses[normCourseId].title;
+            for (const u of Object.keys(universityHierarchy)) {
+                if (universityHierarchy[u].courses[courseId]) return universityHierarchy[u].courses[courseId].title;
+                if (universityHierarchy[u].courses[normCourseId]) return universityHierarchy[u].courses[normCourseId].title;
+            }
+            return courseId;
+        }
+
+        async function loadDocuments() {
+            try {
+                const response = await fetch('/api/course-pdfs');
+                if (!response.ok) throw new Error('Không thể tải danh sách tài liệu.');
+                const data = await response.json();
+
+                documentsData = (data.documents || []).map(document => {
+                    const normCourse = String(document.course || '').replace(/-/g, '_');
+                    const uni = document.university || (normCourse ? normCourse.split('_')[0].toUpperCase() : 'UEH');
+                    const courseTitle = document.courseTitle || findCourseTitle(document.course, uni);
+
+                    return {
+                        id: document.id,
+                        name: document.originalName || 'Tai_lieu.pdf',
+                        courseId: document.course,
+                        courseTitle: courseTitle,
+                        lessonTitle: document.lessonTitle || 'Chương 1: Tổng quan',
+                        uni: uni,
+                        size: formatSize(document.size),
+                        date: document.createdAt ? new Date(document.createdAt).toLocaleDateString('vi-VN') : new Date().toLocaleDateString('vi-VN')
+                    };
+                });
+
+                totalDocsEl.innerText = documentsData.length.toLocaleString();
+                renderTable();
+            } catch (e) {
+                tableBody.innerHTML = `<tr><td colspan="7" style="color:var(--danger); text-align:center; padding:32px;">${e.message}</td></tr>`;
+            }
+        }
+
+        // Form Submit Upload
+        document.getElementById('pdf-upload-form').addEventListener('submit', async event => {
+            event.preventDefault();
+            const message = document.getElementById('pdf-upload-message');
+            const file = document.getElementById('pdf-file').files[0];
+            if (!file) {
+                message.className = 'upload-message error';
+                message.textContent = 'Vui lòng chọn file PDF.';
+                return;
+            }
+
+            const uni = document.getElementById('pdf-university').value;
+            const courseId = document.getElementById('pdf-course').value;
+            const courseTitle = document.getElementById('pdf-course').selectedOptions[0].text;
+            const chapterVal = document.getElementById('pdf-chapter').value;
+            const chapterText = document.getElementById('pdf-chapter').selectedOptions[0].text;
+            const lessonVal = document.getElementById('pdf-lesson').value;
+            const lessonText = document.getElementById('pdf-lesson').selectedOptions[0].text;
+
+            const finalLessonId = `${chapterVal}-lesson-${lessonVal}`;
+            const finalLessonTitle = `${chapterText} - ${lessonText}`;
+
+            const formData = new FormData();
+            formData.append('university', uni);
+            formData.append('course', courseId);
+            formData.append('courseTitle', courseTitle);
+            formData.append('lessonId', finalLessonId);
+            formData.append('lessonTitle', finalLessonTitle);
+            formData.append('pdf', file);
+
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang tải lên...';
+
+            try {
+                await window.Auth.adminRequest('/api/admin/course-pdfs', { method: 'POST', body: formData });
+                message.className = 'upload-message success';
+                message.textContent = `Đã tải lên và lập chỉ mục Vector thành công cho môn: ${courseTitle} (${chapterText})!`;
+                document.getElementById('pdf-file').value = '';
+                fileLabelText.textContent = 'Chọn file PDF';
+                await loadDocuments();
+            } catch (error) {
+                message.className = 'upload-message error';
+                message.textContent = `Lỗi: ${error.message}`;
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fa-solid fa-arrow-up-from-bracket"></i> Nạp PDF';
+            }
+        });
+
+
+
+        async function updateKPIs() {
+            let totalUnis = 0;
+            let totalCourses = 0;
+            for (const uni in universityHierarchy) {
+                totalUnis++;
+                if (universityHierarchy[uni].courses) {
+                    totalCourses += Object.keys(universityHierarchy[uni].courses).length;
+                }
+            }
+            const totalUnisEl = document.getElementById('total-unis');
+            const totalCoursesEl = document.getElementById('total-courses');
+            const ragAccuracyEl = document.getElementById('rag-accuracy');
+            
+            if (totalUnisEl) totalUnisEl.innerText = `${totalUnis} Đại học`;
+            if (totalCoursesEl) totalCoursesEl.innerText = `${totalCourses} Môn`;
+
+            if (ragAccuracyEl) {
+                try {
+                    const response = await window.Auth.adminRequest('/api/admin/rag-accuracy');
+                    if (response && response.accuracy) {
+                        ragAccuracyEl.innerText = `${response.accuracy}%`;
+                    }
+                } catch (err) {
+                    console.error('Lỗi tải Độ chính xác RAG:', err);
+                    ragAccuracyEl.innerText = '98.2%';
+                }
+            }
+        }
+
+        
+        // === SYLLABUS MANAGER LOGIC ===
+        let adminCoursesList = [];
+        let currentSyllabusData = null;
+
+        function switchRagTab(tab) {
+            const docsTabBtn = document.getElementById('tab-btn-docs');
+            const syllabusTabBtn = document.getElementById('tab-btn-syllabus');
+            const docsSection = document.getElementById('section-docs-tab');
+            const syllabusSection = document.getElementById('section-syllabus-tab');
+
+            if (tab === 'syllabus') {
+                if (docsTabBtn) docsTabBtn.classList.remove('active');
+                if (syllabusTabBtn) syllabusTabBtn.classList.add('active');
+                if (docsSection) docsSection.style.display = 'none';
+                if (syllabusSection) syllabusSection.style.display = 'block';
+                loadAdminCoursesList();
+            } else {
+                if (syllabusTabBtn) syllabusTabBtn.classList.remove('active');
+                if (docsTabBtn) docsTabBtn.classList.add('active');
+                if (syllabusSection) syllabusSection.style.display = 'none';
+                if (docsSection) docsSection.style.display = 'block';
+            }
+        }
+
+        async function loadAdminCoursesList() {
+            try {
+                const res = await window.Auth.adminRequest('/api/admin/courses-list');
+                adminCoursesList = res.courses || [];
+                populateMgrCoursesDropdown();
+            } catch (err) {
+                console.error('Lỗi tải danh sách môn học:', err);
+            }
+        }
+
+        function populateMgrCoursesDropdown() {
+            const uniSelect = document.getElementById('mgr-uni-select');
+            const uniFilter = uniSelect ? uniSelect.value : 'ALL';
+            const courseSelect = document.getElementById('mgr-course-select');
+            if (!courseSelect) return;
+
+            let filtered = adminCoursesList;
+            if (uniFilter && uniFilter !== 'ALL') {
+                filtered = adminCoursesList.filter(c => String(c.university || '').trim().toUpperCase() === String(uniFilter).trim().toUpperCase());
+            }
+
+            if (filtered.length === 0) {
+                courseSelect.innerHTML = '<option value="">(Không có môn nào)</option>';
+                const container = document.getElementById('mgr-chapters-container');
+                if (container) container.innerHTML = '<div style="text-align:center; padding:30px; color:var(--text-muted);">Không tìm thấy môn học nào thuộc trường này.</div>';
+                return;
+            }
+
+            courseSelect.innerHTML = filtered.map(c => {
+                return `<option value="${c.course_id}">[${c.university}] ${c.title} (${c.chapterCount || 0} chương - ${c.lessonCount || 0} bài)</option>`;
+            }).join('');
+
+            onMgrCourseChange();
+        }
+
+        function onMgrUniChange() {
+            populateMgrCoursesDropdown();
+        }
+
+        async function onMgrCourseChange() {
+            const courseSelect = document.getElementById('mgr-course-select');
+            if (!courseSelect) return;
+            const courseId = courseSelect.value;
+            if (!courseId) return;
+
+            const container = document.getElementById('mgr-chapters-container');
+            if (container) {
+                container.innerHTML = `<div style="text-align:center; padding:40px; color:var(--text-muted);"><i class="fa-solid fa-spinner fa-spin"></i> Đang tải khung chương trình...</div>`;
+            }
+
+            try {
+                const res = await fetch(`/api/courses/syllabus/${courseId}`);
+                const data = await res.json();
+                currentSyllabusData = data;
+                renderSyllabusManager(data);
+            } catch (err) {
+                if (container) {
+                    container.innerHTML = `<div style="color:var(--danger); padding:20px; text-align:center;">Lỗi tải dữ liệu: ${err.message}</div>`;
+                }
+            }
+        }
+
+        function renderSyllabusManager(data) {
+            const course = data.course || {};
+            const chapters = data.chapters || [];
+
+            // Update banner
+            const titleEl = document.getElementById('mgr-banner-title');
+            if (titleEl) titleEl.textContent = course.title || 'Môn học';
+            const uniEl = document.getElementById('mgr-banner-uni');
+            if (uniEl) {
+                uniEl.textContent = course.university || 'UniPass';
+                uniEl.className = `tag-uni tag-${(course.university || '').toLowerCase()}`;
+            }
+            const descEl = document.getElementById('mgr-banner-desc');
+            if (descEl) descEl.textContent = course.description || '(Chưa có mô tả)';
+            
+            let totalLessons = 0;
+            chapters.forEach(ch => totalLessons += (ch.lessons ? ch.lessons.length : 0));
+            const chCountEl = document.getElementById('mgr-banner-chapters-count');
+            if (chCountEl) chCountEl.textContent = chapters.length;
+            const lesCountEl = document.getElementById('mgr-banner-lessons-count');
+            if (lesCountEl) lesCountEl.textContent = totalLessons;
+
+            const container = document.getElementById('mgr-chapters-container');
+            if (!container) return;
+
+            if (chapters.length === 0) {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 50px 20px; background: var(--bg-color); border-radius: 16px; border: 1px dashed var(--border-color);">
+                        <i class="fa-solid fa-folder-open" style="font-size: 36px; color: var(--text-muted); margin-bottom: 12px; display: block;"></i>
+                        <h4 style="font-size: 16px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">Chưa có chương học nào</h4>
+                        <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 16px;">Hãy tạo chương học đầu tiên cho môn này.</p>
+                        <button type="button" class="btn btn-primary btn-empty-add-chapter" data-action="add-chapter" onclick="openAddChapterModal()"><i class="fa-solid fa-plus"></i> Thêm Chương học ngay</button>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = '';
+            chapters.forEach((ch, chIdx) => {
+                let lessonsHtml = '';
+                if (!ch.lessons || ch.lessons.length === 0) {
+                    lessonsHtml = `<div style="font-size: 13px; color: var(--text-muted); font-style: italic; padding: 8px 0;">Chưa có bài học trong chương này.</div>`;
+                } else {
+                    ch.lessons.forEach(l => {
+                        const isQuiz = l.type === 'quiz';
+                        const iconBadge = isQuiz 
+                            ? `<div class="lesson-icon-badge lesson-icon-quiz"><i class="fa-solid fa-pen-nib"></i></div>`
+                            : `<div class="lesson-icon-badge lesson-icon-doc"><i class="fa-solid fa-file-lines"></i></div>`;
+                        
+                        const subInfo = l.meta_text ? `<div class="lesson-sub-text">${escapeHtml(l.meta_text)}</div>` : '';
+                        const typeTag = isQuiz ? '<span class="tag-uni tag-ftu" style="font-size: 10px;">Trắc nghiệm AI</span>' : '<span class="tag-uni tag-ueh" style="font-size: 10px;">PDF</span>';
+
+                        lessonsHtml += `
+                            <div class="lesson-card-item">
+                                <div class="lesson-card-info">
+                                    ${iconBadge}
+                                    <div style="flex: 1; min-width: 0;">
+                                        <div class="lesson-main-text">${escapeHtml(l.title)} ${typeTag}</div>
+                                        ${subInfo}
+                                    </div>
+                                </div>
+                                <div class="lesson-actions">
+                                    <button type="button" class="btn-icon btn-action-edit-lesson" data-lesson-id="${l.id}" title="Chỉnh sửa bài học"><i class="fa-solid fa-pen"></i></button>
+                                    <button type="button" class="btn-icon delete btn-action-delete-lesson" data-lesson-id="${l.id}" title="Xóa bài học"><i class="fa-solid fa-trash"></i></button>
+                                </div>
+                            </div>
+                        `;
+                    });
+                }
+
+                html += `
+                    <div class="chapter-card">
+                        <div class="chapter-card-header">
+                            <div class="chapter-title-text">
+                                <i class="fa-solid fa-folder-open" style="color: var(--primary);"></i>
+                                <span>${escapeHtml(ch.title)}</span>
+                                <span class="tag-uni" style="font-size: 11px; background: var(--surface); border: 1px solid var(--border-color);">${ch.meta || (ch.lessons ? ch.lessons.length + ' bài' : '0 bài')}</span>
+                            </div>
+                            <div class="chapter-actions">
+                                <button type="button" class="btn btn-outline btn-action-add-lesson" data-chapter-id="${ch.id}" style="padding: 6px 12px; font-size: 12px;">
+                                    <i class="fa-solid fa-plus"></i> Thêm Bài
+                                </button>
+                                <button type="button" class="btn-icon btn-action-edit-chapter" data-chapter-id="${ch.id}" title="Sửa tên chương">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+                                <button type="button" class="btn-icon delete btn-action-delete-chapter" data-chapter-id="${ch.id}" title="Xóa chương này">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="chapter-lessons-list">
+                            ${lessonsHtml}
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // Modal Helpers
+        function openModal(id) {
+            const modal = typeof id === 'string' ? document.getElementById(id) : id;
+            if (modal) {
+                modal.style.setProperty('display', 'flex', 'important');
+                modal.classList.add('show');
+            }
+        }
+
+        function closeModal(id) {
+            if (!id) {
+                document.querySelectorAll('.admin-modal-overlay.show').forEach(m => {
+                    m.classList.remove('show');
+                    m.style.setProperty('display', 'none', 'important');
+                });
+                return;
+            }
+            const modal = typeof id === 'string' ? document.getElementById(id) : id;
+            if (modal) {
+                modal.classList.remove('show');
+                modal.style.setProperty('display', 'none', 'important');
+            }
+        }
+
+        // Global Modal Close Listeners (Hủy, ✕, Backdrop Click, Escape Key)
+        document.addEventListener('click', (e) => {
+            const closeTrigger = e.target.closest('[data-close-modal]');
+            if (closeTrigger) {
+                e.preventDefault();
+                e.stopPropagation();
+                const modalId = closeTrigger.getAttribute('data-close-modal');
+                if (modalId) {
+                    closeModal(modalId);
+                } else {
+                    const parentModal = closeTrigger.closest('.admin-modal-overlay');
+                    if (parentModal) closeModal(parentModal.id);
+                }
+                return;
+            }
+
+            // Click on Backdrop Overlay (outside modal box)
+            if (e.target.classList && e.target.classList.contains('admin-modal-overlay')) {
+                closeModal(e.target.id);
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // 1. Edit Course Details
+        function openEditCourseModal() {
+            const courseSelect = document.getElementById('mgr-course-select');
+            const courseId = courseSelect ? courseSelect.value : '';
+            if (!courseId) {
+                if (window.showAlert) window.showAlert('Vui lòng chọn môn học trước!', 'warning');
+                else alert('Vui lòng chọn môn học trước!');
+                return;
+            }
+
+            const course = (currentSyllabusData && currentSyllabusData.course) 
+                ? currentSyllabusData.course 
+                : (adminCoursesList.find(c => c.course_id === courseId) || {});
+
+            document.getElementById('edit-course-title').value = course.title || '';
+            document.getElementById('edit-course-uni').value = course.university || document.getElementById('mgr-uni-select').value || 'BK';
+            document.getElementById('edit-course-desc').value = course.description || '';
+            openModal('modal-course-details');
+        }
+
+        async function handleSaveCourseDetails(e) {
+            e.preventDefault();
+            const courseId = document.getElementById('mgr-course-select').value;
+            const title = document.getElementById('edit-course-title').value.trim();
+            const university = document.getElementById('edit-course-uni').value;
+            const description = document.getElementById('edit-course-desc').value.trim();
+
+            try {
+                await window.Auth.adminRequest(`/api/admin/course-details/${courseId}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ title, university, description })
+                });
+
+                closeModal('modal-course-details');
+                if (window.showToast) window.showToast('Đã cập nhật thông tin môn học thành công!', 'success');
+                await loadAdminCoursesList();
+                await onMgrCourseChange();
+            } catch (err) {
+                if (window.showAlert) window.showAlert('Lỗi: ' + err.message, 'error');
+                else alert('Lỗi: ' + err.message);
+            }
+        }
+
+        // 2. Add / Edit Chapter
+        function openAddChapterModal() {
+            const courseSelect = document.getElementById('mgr-course-select');
+            const courseId = courseSelect ? courseSelect.value : '';
+            if (!courseId) {
+                if (window.showAlert) window.showAlert('Vui lòng chọn môn học trước!', 'warning');
+                else alert('Vui lòng chọn môn học trước!');
+                return;
+            }
+
+            document.getElementById('modal-chapter-title').innerHTML = '<i class="fa-solid fa-folder-plus" style="color: var(--primary);"></i> Thêm Chương học mới';
+            document.getElementById('edit-chapter-id').value = '';
+            document.getElementById('edit-chapter-title').value = '';
+            document.getElementById('edit-chapter-meta').value = '';
+            const nextOrder = (currentSyllabusData && currentSyllabusData.chapters ? currentSyllabusData.chapters.length : 0) + 1;
+            document.getElementById('edit-chapter-order').value = nextOrder;
+            openModal('modal-chapter');
+        }
+
+        function openEditChapterModal(chapterId) {
+            if (!currentSyllabusData || !currentSyllabusData.chapters) return;
+            const ch = currentSyllabusData.chapters.find(c => c.id === chapterId);
+            if (!ch) return;
+
+            document.getElementById('modal-chapter-title').innerHTML = '<i class="fa-solid fa-pen-to-square" style="color: var(--primary);"></i> Chỉnh sửa Chương học';
+            document.getElementById('edit-chapter-id').value = ch.id;
+            document.getElementById('edit-chapter-title').value = ch.title || '';
+            document.getElementById('edit-chapter-meta').value = ch.meta || '';
+            document.getElementById('edit-chapter-order').value = ch.chapter_order || 1;
+            openModal('modal-chapter');
+        }
+
+        async function handleSaveChapter(e) {
+            e.preventDefault();
+            const courseId = document.getElementById('mgr-course-select').value;
+            const chapterId = document.getElementById('edit-chapter-id').value;
+            const title = document.getElementById('edit-chapter-title').value.trim();
+            const meta = document.getElementById('edit-chapter-meta').value.trim();
+            const chapter_order = parseInt(document.getElementById('edit-chapter-order').value) || 1;
+
+            try {
+                if (chapterId) {
+                    await window.Auth.adminRequest(`/api/admin/course-chapters/${chapterId}`, {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ title, meta, chapter_order })
+                    });
+                } else {
+                    await window.Auth.adminRequest('/api/admin/course-chapters', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ course_id: courseId, title, meta, chapter_order })
+                    });
+                }
+
+                closeModal('modal-chapter');
+                if (window.showToast) window.showToast('Đã lưu chương học thành công!', 'success');
+                await onMgrCourseChange();
+            } catch (err) {
+                if (window.showAlert) window.showAlert('Lỗi: ' + err.message, 'error');
+                else alert('Lỗi: ' + err.message);
+            }
+        }
+
+        async function handleDeleteChapter(chapterId) {
+            const confirmed = await window.showConfirm(
+                'Bạn có chắc chắn muốn xóa chương này cùng toàn bộ các bài học bên trong không?\nThao tác này không thể hoàn tác.',
+                'error',
+                'Xác nhận Xóa Chương học',
+                'Xóa vĩnh viễn'
+            );
+            if (!confirmed) return;
+
+            try {
+                await window.Auth.adminRequest(`/api/admin/course-chapters/${chapterId}`, {
+                    method: 'DELETE'
+                });
+                if (window.showToast) window.showToast('Đã xóa chương học thành công!', 'success');
+                await onMgrCourseChange();
+            } catch (err) {
+                if (window.showAlert) window.showAlert('Lỗi khi xóa chương: ' + err.message, 'error');
+                else alert('Lỗi: ' + err.message);
+            }
+        }
+
+        // 3. Add / Edit Lesson
+        function populateLessonPdfDropdown(selectedDocId) {
+            const select = document.getElementById('edit-lesson-doc-id');
+            const courseId = document.getElementById('mgr-course-select').value;
+            const norm = courseId.replace(/-/g, '_');
+
+            // Filter uploaded PDFs for this course from documentsData
+            const matchingDocs = (documentsData || []).filter(d => {
+                const dCourse = String(d.courseId || d.course || '').replace(/-/g, '_');
+                return dCourse === norm || d.courseId === courseId || d.course === courseId;
+            });
+
+            let options = '<option value="">-- Không gán file PDF riêng --</option>';
+            matchingDocs.forEach(d => {
+                const isSel = String(d.id) === String(selectedDocId) ? 'selected' : '';
+                options += `<option value="${d.id}" ${isSel}>${escapeHtml(d.name || d.originalName || d.id)} (${d.lessonTitle || d.id})</option>`;
+            });
+
+            select.innerHTML = options;
+        }
+
+        function openAddLessonModal(chapterId) {
+            document.getElementById('modal-lesson-title').innerHTML = '<i class="fa-solid fa-file-circle-plus" style="color: var(--primary);"></i> Thêm Bài học mới';
+            document.getElementById('edit-lesson-pk').value = '';
+            document.getElementById('edit-lesson-chapter-id').value = chapterId;
+            document.getElementById('edit-lesson-name').value = '';
+            document.getElementById('edit-lesson-type').value = 'doc';
+            document.getElementById('edit-lesson-meta').value = '';
+            
+            const ch = currentSyllabusData?.chapters.find(c => c.id === chapterId);
+            const nextOrder = (ch && ch.lessons ? ch.lessons.length : 0) + 1;
+            document.getElementById('edit-lesson-order').value = nextOrder;
+
+            populateLessonPdfDropdown('');
+            openModal('modal-lesson');
+        }
+
+        function openEditLessonModal(lessonPk) {
+            if (!currentSyllabusData || !currentSyllabusData.chapters) return;
+            let targetLesson = null;
+            let targetChapterId = null;
+
+            for (const ch of currentSyllabusData.chapters) {
+                const found = ch.lessons?.find(l => l.id === lessonPk);
+                if (found) {
+                    targetLesson = found;
+                    targetChapterId = ch.id;
+                    break;
+                }
+            }
+
+            if (!targetLesson) return;
+
+            document.getElementById('modal-lesson-title').innerHTML = '<i class="fa-solid fa-pen-to-square" style="color: var(--primary);"></i> Chỉnh sửa Bài học';
+            document.getElementById('edit-lesson-pk').value = targetLesson.id;
+            document.getElementById('edit-lesson-chapter-id').value = targetChapterId;
+            document.getElementById('edit-lesson-name').value = targetLesson.title || '';
+            document.getElementById('edit-lesson-type').value = targetLesson.type || 'doc';
+            document.getElementById('edit-lesson-meta').value = targetLesson.meta_text || '';
+            document.getElementById('edit-lesson-order').value = targetLesson.lesson_order || 1;
+
+            populateLessonPdfDropdown(targetLesson.document_id || '');
+            openModal('modal-lesson');
+        }
+
+        async function handleSaveLesson(e) {
+            e.preventDefault();
+            const courseId = document.getElementById('mgr-course-select').value;
+            const lessonPk = document.getElementById('edit-lesson-pk').value;
+            const chapter_id = document.getElementById('edit-lesson-chapter-id').value;
+            const title = document.getElementById('edit-lesson-name').value.trim();
+            const type = document.getElementById('edit-lesson-type').value;
+            const document_id = document.getElementById('edit-lesson-doc-id').value;
+            const meta_text = document.getElementById('edit-lesson-meta').value.trim();
+            const lesson_order = parseInt(document.getElementById('edit-lesson-order').value) || 1;
+
+            try {
+                if (lessonPk) {
+                    await window.Auth.adminRequest(`/api/admin/course-lessons/${lessonPk}`, {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ title, type, document_id, meta_text, lesson_order })
+                    });
+                } else {
+                    await window.Auth.adminRequest('/api/admin/course-lessons', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ course_id: courseId, chapter_id, title, type, document_id, meta_text, lesson_order })
+                    });
+                }
+
+                closeModal('modal-lesson');
+                if (window.showToast) window.showToast('Đã lưu bài học thành công!', 'success');
+                await onMgrCourseChange();
+            } catch (err) {
+                if (window.showAlert) window.showAlert('Lỗi: ' + err.message, 'error');
+                else alert('Lỗi: ' + err.message);
+            }
+        }
+
+        async function handleDeleteLesson(lessonPk) {
+            const confirmed = await window.showConfirm(
+                'Bạn có chắc chắn muốn xóa bài học này khỏi khung chương trình không?\nThao tác này không thể hoàn tác.',
+                'error',
+                'Xác nhận Xóa Bài học',
+                'Xóa ngay'
+            );
+            if (!confirmed) return;
+
+            try {
+                await window.Auth.adminRequest(`/api/admin/course-lessons/${lessonPk}`, {
+                    method: 'DELETE'
+                });
+                if (window.showToast) window.showToast('Đã xóa bài học thành công!', 'success');
+                await onMgrCourseChange();
+            } catch (err) {
+                if (window.showAlert) window.showAlert('Lỗi khi xóa bài học: ' + err.message, 'error');
+                else alert('Lỗi: ' + err.message);
+            }
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+        }
+
+        // Expose functions to window
+        window.switchRagTab = switchRagTab;
+        window.openModal = openModal;
+        window.closeModal = closeModal;
+        window.openEditCourseModal = openEditCourseModal;
+        window.handleSaveCourseDetails = handleSaveCourseDetails;
+        window.openAddChapterModal = openAddChapterModal;
+        window.openEditChapterModal = openEditChapterModal;
+        window.handleSaveChapter = handleSaveChapter;
+        window.handleDeleteChapter = handleDeleteChapter;
+        window.openAddLessonModal = openAddLessonModal;
+        window.openEditLessonModal = openEditLessonModal;
+        window.handleSaveLesson = handleSaveLesson;
+        window.handleDeleteLesson = handleDeleteLesson;
+        window.onMgrUniChange = onMgrUniChange;
+        window.onMgrCourseChange = onMgrCourseChange;
+
+        // Attach direct event listeners
+        document.getElementById('tab-btn-docs')?.addEventListener('click', () => switchRagTab('docs'));
+        document.getElementById('tab-btn-syllabus')?.addEventListener('click', () => switchRagTab('syllabus'));
+        document.getElementById('mgr-uni-select')?.addEventListener('change', onMgrUniChange);
+        document.getElementById('mgr-course-select')?.addEventListener('change', onMgrCourseChange);
+        document.getElementById('btn-edit-course-modal')?.addEventListener('click', openEditCourseModal);
+        document.getElementById('btn-add-chapter-modal')?.addEventListener('click', openAddChapterModal);
+
+        // Forms Direct Submit Listeners
+        document.getElementById('form-course-details')?.addEventListener('submit', handleSaveCourseDetails);
+        document.getElementById('form-chapter')?.addEventListener('submit', handleSaveChapter);
+        document.getElementById('form-lesson')?.addEventListener('submit', handleSaveLesson);
+
+        // Chapter & Lesson Actions Event Delegation
+        document.getElementById('mgr-chapters-container')?.addEventListener('click', (e) => {
+            const addLessonBtn = e.target.closest('.btn-action-add-lesson');
+            if (addLessonBtn) {
+                const chapterId = parseInt(addLessonBtn.dataset.chapterId);
+                openAddLessonModal(chapterId);
+                return;
+            }
+
+            const editChapterBtn = e.target.closest('.btn-action-edit-chapter');
+            if (editChapterBtn) {
+                const chapterId = parseInt(editChapterBtn.dataset.chapterId);
+                openEditChapterModal(chapterId);
+                return;
+            }
+
+            const deleteChapterBtn = e.target.closest('.btn-action-delete-chapter');
+            if (deleteChapterBtn) {
+                const chapterId = parseInt(deleteChapterBtn.dataset.chapterId);
+                handleDeleteChapter(chapterId);
+                return;
+            }
+
+            const editLessonBtn = e.target.closest('.btn-action-edit-lesson');
+            if (editLessonBtn) {
+                const lessonId = parseInt(editLessonBtn.dataset.lessonId);
+                openEditLessonModal(lessonId);
+                return;
+            }
+
+            const deleteLessonBtn = e.target.closest('.btn-action-delete-lesson');
+            if (deleteLessonBtn) {
+                const lessonId = parseInt(deleteLessonBtn.dataset.lessonId);
+                handleDeleteLesson(lessonId);
+                return;
+            }
+        });
+
+        // Click outside modal backdrop to close
+        document.querySelectorAll('.admin-modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) {
+                    closeModal(overlay.id);
+                }
+            });
+        });
+
+        
+        // Click delegation on document for adding chapter (empty state or header)
+        document.addEventListener('click', (e) => {
+            const btn = e.target.closest('.btn-empty-add-chapter, [data-action="add-chapter"]');
+            if (btn) {
+                e.preventDefault();
+                openAddChapterModal();
+            }
+        });
+
+        updateKPIs();
+        loadDocuments();
+    </script>
+    <script src="ui-alerts.js"></script>
+</body>
+
+</html>

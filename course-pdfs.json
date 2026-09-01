@@ -1,12 +1,26 @@
 [
   {
-    "id": "pdf-1787919253315",
+    "id": "pdf-1788180097119-107",
     "course": "bk_giai_tich",
-    "lessonId": "lesson-0",
-    "lessonTitle": "Các phép toán Ma trận & Định thức",
-    "originalName": "Ma TraÌ£Ìn.pdf",
-    "filePath": "/Users/trunglnm/Documents/UnipassNew/uploads/course-pdfs/1787919253307-Ma_Tra____n.pdf",
-    "size": 1600999,
-    "createdAt": "2026-08-28T12:14:13.315Z"
+    "courseTitle": "Đại số Tuyến tính",
+    "university": "BK",
+    "lessonId": "chapter-1-lesson-1",
+    "lessonTitle": "Mục 1: Tài liệu Giáo trình Học tập - Bài 1: Chương 1: Các phép toán ma trận, Hạng ma trận & Ma trận nghịch đảo",
+    "originalName": "daisotuyentinh.pdf",
+    "filePath": "/Users/trunglnm/Documents/UnipassNew/uploads/course-pdfs/1788180097115-daisotuyentinh.pdf",
+    "size": 768621,
+    "createdAt": "2026-08-31T12:41:37.119Z"
+  },
+  {
+    "id": "pdf-1788188327836-672",
+    "course": "bk_physics",
+    "courseTitle": "Vật lý Đại cương 1",
+    "university": "BK",
+    "lessonId": "chapter-2-lesson-1",
+    "lessonTitle": "Chương 2: Cơ học Vật rắn & Mômen quán tính - Bài 1: Mômen lực, Mômen quán tính & Định lý Huygens-Steiner",
+    "originalName": "vatly1c2.pdf",
+    "filePath": "/Users/trunglnm/Documents/UnipassNew/uploads/course-pdfs/1788188327832-vatly1c2.pdf",
+    "size": 1640861,
+    "createdAt": "2026-08-31T14:58:47.836Z"
   }
 ]

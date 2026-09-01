@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - UniPass</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* HỆ THỐNG BIẾN MÀU SẮC CHUNG */
+        :root {
+            --primary: #4F46E5;
+            --primary-light: #818CF8;
+            --secondary: #EC4899;
+            --gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
+            
+            --bg-color: #F8FAFC;
+            --surface: #FFFFFF;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
+            --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        #session-notice { display: none; max-width: 420px; margin: 0 auto 18px; padding: 12px 14px; color: #7f1d1d; background: #fee2e2; border: 1px solid #fca5a5; border-radius: 8px; font-size: 13px; line-height: 1.45; }
+        #session-notice.show { display: block; }
+
+        [data-theme="dark"] {
+            --bg-color: #0F172A;       
+            --surface: #1E293B;        
+            --text-main: #F8FAFC;      
+            --text-muted: #94A3B8;     
+            --border-color: #334155;   
+            --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hình nền trang trí */
+        .bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.5;
+        }
+        .bg-shape-1 { top: -10%; left: -10%; width: 400px; height: 400px; background: rgba(79, 70, 229, 0.3); }
+        .bg-shape-2 { bottom: -10%; right: -10%; width: 500px; height: 500px; background: rgba(236, 72, 153, 0.2); }
+
+        /* Nút quay lại & Nút Dark Mode */
+        .top-controls {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            width: 100%;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            z-index: 10;
+        }
+
+        .back-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+        }
+        .back-link:hover { color: var(--primary); }
+
+        .theme-toggle {
+            background: transparent; border: 1px solid var(--border-color); color: var(--text-main);
+            width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex;
+            align-items: center; justify-content: center; transition: all 0.3s;
+        }
+        .theme-toggle:hover { background: var(--surface); color: var(--primary); border-color: var(--primary); }
+
+        /* Container Đăng nhập */
+        .login-container {
+            background: var(--surface);
+            width: 100%;
+            max-width: 480px;
+            padding: 48px;
+            border-radius: 24px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            z-index: 1;
+            position: relative;
+        }
+
+        .logo-center {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .logo-center span { color: var(--secondary); }
+
+        .login-header { text-align: center; margin-bottom: 32px; }
+        .login-header h1 { font-size: 24px; color: var(--text-main); margin-bottom: 8px; font-weight: 800; }
+        .login-header p { color: var(--text-muted); font-size: 15px; }
+
+        /* Form Controls */
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; margin-bottom: 7px; font-weight: 700; font-size: 13.5px; color: var(--text-main); }
+        .form-group input, .form-group select {
+            width: 100%; padding: 13px 16px;
+            border: 1px solid var(--border-color); border-radius: 12px;
+            background: var(--bg-color); color: var(--text-main); font-size: 15px; outline: none;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus, .form-group select:focus { border-color: var(--primary); }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+        .remember-me { display: flex; align-items: center; gap: 8px; color: var(--text-muted); cursor: pointer; }
+        .forgot-password { color: var(--primary); text-decoration: none; font-weight: 600; }
+        .forgot-password:hover { text-decoration: underline; }
+
+        /* Nút Submit */
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 16px;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px -10px rgba(79, 70, 229, 0.5);
+        }
+        .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 15px 25px -10px rgba(79, 70, 229, 0.6); }
+
+        .register-link {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 15px;
+            color: var(--text-muted);
+        }
+        .register-link a { color: var(--primary); font-weight: 600; text-decoration: none; }
+        .register-link a:hover { text-decoration: underline; }
+
+        /* Modal Đăng ký 2 bước & Thanh toán */
+        .register-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(8px);
+        }
+        .register-modal.show { display: flex; }
+        .register-modal-content {
+            position: relative;
+            width: min(100%, 520px);
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+            padding: 32px;
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            background: var(--surface);
+            box-shadow: var(--shadow-lg);
+        }
+        .register-modal-content h2, .register-modal-content h3 { 
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 6px; 
+        }
+        .register-modal-content p { color: var(--text-muted); margin-bottom: 20px; font-size: 14px; }
+        .register-close {
+            position: absolute;
+            top: 18px;
+            right: 20px;
+            border: 0;
+            background: transparent;
+            color: var(--text-muted);
+            font-size: 24px;
+            line-height: 1;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        .register-close:hover {
+            background: var(--bg-color);
+            color: var(--text-main);
+        }
+
+        /* Input Group Suffix */
+        .input-group-suffix {
+            display: flex;
+            align-items: stretch;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+        .input-group-suffix:focus-within {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+        }
+        .input-group-suffix input {
+            flex: 1;
+            border: none !important;
+            background: transparent !important;
+            padding: 12px 14px;
+            font-size: 15px;
+            color: var(--text-main);
+            outline: none;
+            box-shadow: none !important;
+        }
+        .input-suffix-badge {
+            background: rgba(79, 70, 229, 0.1);
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 13px;
+            padding: 0 14px;
+            display: flex;
+            align-items: center;
+            border-left: 1px solid var(--border-color);
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        /* Plan Selector in Login Modal */
+        .plan-select-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .plan-card-option {
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 10px 8px;
+            text-align: center;
+            cursor: pointer;
+            background: var(--bg-color);
+            transition: all 0.2s;
+        }
+        .plan-card-option:hover {
+            border-color: var(--primary-light);
+        }
+        .plan-card-option.active {
+            border-color: var(--primary);
+            background: rgba(79, 70, 229, 0.08);
+        }
+        .plan-card-option .p-name {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 2px;
+        }
+        .plan-card-option .p-price {
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .plan-card-option .p-badge {
+            font-size: 10px;
+            font-weight: 700;
+            background: var(--secondary);
+            color: white;
+            padding: 1px 6px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+
+        /* Payment Screen Styles */
+        .pay-summary-box {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 14px 18px;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .pay-plan-title {
+            font-weight: 700;
+            color: var(--text-main);
+            font-size: 15px;
+        }
+        .pay-plan-amount {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .pay-methods-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+        .pay-tab-btn {
+            flex: 1;
+            padding: 9px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-color);
+            color: var(--text-muted);
+            font-weight: 700;
+            font-size: 12.5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+        .pay-tab-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .qr-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 14px;
+            text-align: center;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-sm);
+        }
+        .qr-image-wrapper {
+            width: 175px;
+            height: 175px;
+            margin: 0 auto 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+        }
+        .qr-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .pay-details-table {
+            width: 100%;
+            font-size: 12.5px;
+            text-align: left;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .pay-details-table td {
+            padding: 5px 3px;
+            color: #475569;
+        }
+        .pay-details-table td:last-child {
+            text-align: right;
+            font-weight: 700;
+            color: #0F172A;
+        }
+        .copy-chip {
+            background: #EEF2FF;
+            color: var(--primary);
+            padding: 2px 7px;
+            border-radius: 6px;
+            font-family: monospace;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: background 0.2s;
+        }
+        .copy-chip:hover {
+            background: #E0E7FF;
+        }
+        .pay-countdown-bar {
+            text-align: center;
+            font-size: 12.5px;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .btn-gradient {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-gradient:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.35);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-outline:hover {
+            background: var(--bg-color);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        @media (max-width: 600px) {
+            .login-container { margin: 20px; padding: 32px 24px; }
+            .top-controls { padding: 0 20px; top: 20px; }
+            .register-modal-content { padding: 24px 18px; }
+            .plan-select-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <link rel="stylesheet" href="ui-alerts.css">
+</head>
+<body>
+
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+
+    <div class="top-controls">
+        <a href="index.html" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> Quay lại trang chủ
+        </a>
+        <button class="theme-toggle" id="theme-toggle" title="Chuyển chế độ sáng/tối">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </div>
+
+    <!-- Container Đăng nhập -->
+    <div class="login-container">
+        <a href="index.html" class="logo-center">Uni<span>Pass</span></a>
+        
+        <div class="login-header">
+            <h1>Đăng nhập Sinh viên</h1>
+            <p>Hệ thống May đo Đề thi & Trợ giảng AI Theo Trường</p>
+        </div>
+
+        <div id="session-notice"></div>
+
+        <form id="login-form">
+            <div class="form-group">
+                <label for="email">Tài khoản (Email sinh viên hoặc Username)</label>
+                <input type="text" id="email" placeholder="VD: sv.tenban@st.ueh.edu.vn hoặc admin" required autocomplete="username">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mật khẩu</label>
+                <input type="password" id="password" placeholder="Mật khẩu (để trống nếu Admin vừa reset)" autocomplete="current-password">
+            </div>
+
+            <div class="form-options">
+                <label class="remember-me">
+                    <input type="checkbox" id="remember"> Ghi nhớ đăng nhập
+                </label>
+                <a href="#" class="forgot-password" id="open-forgot-modal">Quên mật khẩu?</a>
+            </div>
+
+            <button type="submit" class="btn-submit">Đăng nhập ngay</button>
+        </form>
+
+        <div class="register-link">
+            Chưa có tài khoản? <a href="#" id="open-register-modal">Đăng ký tài khoản</a>
+        </div>
+    </div>
+
+    <!-- MODAL ĐĂNG KÝ TÀI KHOẢN & THANH TOÁN (2 BƯỚC NHẤT QUÁN VỚI INDEX) -->
+    <div class="register-modal" id="register-modal" role="dialog" aria-modal="true" aria-labelledby="register-modal-title">
+        <div class="register-modal-content">
+            <button type="button" class="register-close" id="close-register-modal" aria-label="Đóng">&times;</button>
+            
+            <!-- STEP 1: THÔNG TIN SINH VIÊN & GÓI HỌC TẬP -->
+            <div id="reg-step-1">
+                <h2 id="register-modal-title">Đăng ký Tài khoản Học tập</h2>
+                <p>Chọn trường và gói cước ôn thi may đo chuẩn đề cương Đại học.</p>
+                
+                <!-- Chọn gói cước -->
+                <label style="display: block; margin-bottom: 8px; font-weight: 700; font-size: 13px; color: var(--text-main);">
+                    <i class="fa-solid fa-crown" style="color:var(--primary); margin-right:4px;"></i> Gói dịch vụ
+                </label>
+                <div class="plan-select-grid">
+                    <div class="plan-card-option" data-plan="monthly" data-amount="79000" data-name="Gói 1 Tháng">
+                        <div class="p-name">1 Tháng</div>
+                        <div class="p-price">79.000đ</div>
+                    </div>
+                    <div class="plan-card-option active" data-plan="semester" data-amount="149000" data-name="Gói Nửa Năm (Học Kỳ)">
+                        <span class="p-badge">Phổ biến</span>
+                        <div class="p-name">Nửa Năm</div>
+                        <div class="p-price">149.000đ</div>
+                    </div>
+                    <div class="plan-card-option" data-plan="yearly" data-amount="249000" data-name="Gói 1 Năm VIP">
+                        <div class="p-name">1 Năm VIP</div>
+                        <div class="p-price">249.000đ</div>
+                    </div>
+                </div>
+
+                <form id="register-form-step1">
+                    <!-- 1. Chọn trường Đại học -->
+                    <div class="form-group">
+                        <label for="register-university"><i class="fa-solid fa-building-columns" style="color:var(--primary); margin-right:4px;"></i> 1. Chọn Trường Đại học</label>
+                        <select id="register-university" required>
+                            <option value="bk" selected>🏛️ Đại học Bách Khoa (HCMUT)</option>
+                            <option value="ueh">🏛️ Đại học Kinh tế TP.HCM (UEH)</option>
+                            <option value="ftu">🏛️ Đại học Ngoại thương (FTU)</option>
+                            <option value="neu">🏛️ Đại học Kinh tế Quốc dân (NEU)</option>
+                            <option value="hcmus">🏛️ Đại học Khoa học Tự nhiên (HCMUS)</option>
+                            <option value="tdtu">🏛️ Đại học Tôn Đức Thắng (TDTU)</option>
+                            <option value="other">🏛️ Trường Đại học khác</option>
+                        </select>
+                    </div>
+
+                    <!-- 2. Họ và tên -->
+                    <div class="form-group">
+                        <label for="register-fullname"><i class="fa-solid fa-user" style="color:var(--primary); margin-right:4px;"></i> 2. Họ và tên sinh viên</label>
+                        <input type="text" id="register-fullname" placeholder="VD: Lê Trung" required autocomplete="off">
+                    </div>
+
+                    <!-- 3. Tên tài khoản với đuôi Email phụ thuộc vào trường -->
+                    <div class="form-group">
+                        <label for="register-student-username"><i class="fa-solid fa-envelope" style="color:var(--primary); margin-right:4px;"></i> 3. Email sinh viên (Tài khoản)</label>
+                        <div class="input-group-suffix">
+                            <input type="text" id="register-student-username" placeholder="Nhập username hoặc MSSV" required autocomplete="one-time-code" data-lpignore="true" data-form-type="other">
+                            <span class="input-suffix-badge" id="reg-email-domain-badge">@hcmut.edu.vn</span>
+                        </div>
+                        <small style="color: var(--text-muted); font-size: 12px; margin-top: 5px; display: block;">
+                            Email hoàn chỉnh: <b id="reg-preview-full-email" style="color: var(--primary);">...@hcmut.edu.vn</b>
+                        </small>
+                    </div>
+
+                    <!-- 4. Mật khẩu -->
+                    <div class="form-group">
+                        <label for="register-password"><i class="fa-solid fa-lock" style="color:var(--primary); margin-right:4px;"></i> 4. Tạo mật khẩu</label>
+                        <input type="password" id="register-password" placeholder="Tạo mật khẩu (tối thiểu 8 ký tự, gồm Hoa, thường, số, ký tự đặc biệt)" required minlength="8" autocomplete="new-password">
+                        <small style="color: var(--text-muted); font-size: 11.5px; margin-top: 4px; display: block;">
+                            <i class="fa-solid fa-shield-halved" style="color: var(--primary); margin-right: 3px;"></i> Tối thiểu 8 ký tự, gồm ít nhất 1 chữ hoa, 1 chữ thường, 1 chữ số & 1 ký tự đặc biệt (VD: Pass@123)
+                        </small>
+                    </div>
+
+                    <button type="submit" class="btn-submit" style="margin-top: 10px;">
+                        Tiếp tục đến Thanh toán <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- STEP 2: MÀN HÌNH THANH TOÁN QR & HOẶC DÙNG THỬ -->
+            <div id="reg-step-2" style="display: none;">
+                <h3>Thanh toán & Kích hoạt</h3>
+                <p style="color: var(--text-muted); margin-bottom: 16px; font-size: 13.5px;">Quét mã QR để kích hoạt gói học tập ngay tức thì.</p>
+
+                <!-- Tóm tắt gói cước -->
+                <div class="pay-summary-box">
+                    <div>
+                        <div style="font-size: 12px; color: var(--text-muted); font-weight: 600;">Gói đăng ký</div>
+                        <div class="pay-plan-title" id="reg-pay-plan-name">Gói Nửa Năm (Học Kỳ)</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-align: right;">Thành tiền</div>
+                        <div class="pay-plan-amount" id="reg-pay-plan-price">149.000đ</div>
+                    </div>
+                </div>
+
+                <!-- Tabs Phương thức -->
+                <div class="pay-methods-tabs" id="reg-pay-methods-tabs">
+                    <button type="button" class="pay-tab-btn active" id="reg-tab-vietqr" data-method="vietqr"><i class="fa-solid fa-qrcode"></i> VietQR 24/7</button>
+                    <button type="button" class="pay-tab-btn" id="reg-tab-momo" data-method="momo"><i class="fa-solid fa-wallet"></i> Ví MoMo</button>
+                </div>
+
+                <!-- Khung Thông báo Bảo trì khi cả 2 cổng đều tắt -->
+                <div id="reg-payment-maintenance-box" style="display: none; background: rgba(245, 158, 11, 0.1); border: 1.5px dashed #F59E0B; border-radius: 16px; padding: 20px 16px; text-align: center; margin-bottom: 16px;">
+                    <i class="fa-solid fa-triangle-exclamation" style="font-size: 28px; color: #F59E0B; margin-bottom: 8px; display: inline-block;"></i>
+                    <h3 style="font-size: 15px; font-weight: 800; color: var(--text-main); margin-bottom: 6px;">Hệ thống đang bảo trì thanh toán</h3>
+                    <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin: 0;">Các cổng thanh toán tự động đang tạm thời gián đoạn để nâng cấp. Bạn vui lòng quay lại sau hoặc kích hoạt dùng thử 1 ngày miễn phí bên dưới.</p>
+                </div>
+
+                <!-- Khung mã QR Code -->
+                <div class="qr-card" id="reg-pay-qr-card">
+                    <div class="qr-image-wrapper">
+                        <img id="reg-pay-qr-img" src="" alt="Mã QR Thanh toán">
+                    </div>
+                    <div style="font-size: 12px; color: #64748B; font-weight: 600;">Mở ứng dụng Ngân hàng / MoMo quét mã QR</div>
+
+                    <table class="pay-details-table">
+                        <tr id="reg-pay-row-bank">
+                            <td>Ngân hàng:</td>
+                            <td id="reg-pay-bank-name">TPBank (Tiên Phong Bank)</td>
+                        </tr>
+                        <tr>
+                            <td id="reg-pay-label-acc">Số tài khoản:</td>
+                            <td><span id="reg-pay-val-acc">trunglnm</span> <span class="copy-chip" id="reg-btn-copy-stk"><i class="fa-regular fa-copy"></i></span></td>
+                        </tr>
+                        <tr>
+                            <td>Chủ tài khoản:</td>
+                            <td>LE NGUYEN MINH TRUNG</td>
+                        </tr>
+                        <tr>
+                            <td>Nội dung CK:</td>
+                            <td><span id="reg-pay-memo-text" style="color:var(--primary);">UNIPASS_98421</span> <span class="copy-chip" id="reg-btn-copy-memo"><i class="fa-regular fa-copy"></i></span></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="pay-countdown-bar" id="reg-pay-countdown-bar">
+                    <i class="fa-regular fa-clock" style="color: var(--secondary);"></i>
+                    <span>Mã thanh toán hết hạn sau: <b id="reg-pay-timer" style="color: var(--text-main);">10:00</b></span>
+                </div>
+
+                <!-- Action Box: Nút xác nhận thanh toán & Các nút Thử lại / Gửi Admin -->
+                <div id="reg-payment-action-box" style="margin-bottom: 10px;">
+                    <button type="button" id="reg-btn-confirm-paid" class="btn-gradient" style="width: 100%; font-size: 15px; padding: 13px;">
+                        <i class="fa-solid fa-circle-check" style="margin-right: 6px;"></i> Tôi đã chuyển khoản xong (Kích hoạt)
+                    </button>
+
+                    <!-- Nhóm nút khi chưa nhận diện được thanh toán: Thử lại & Gửi xác thực Admin -->
+                    <div id="reg-payment-failed-actions" style="display: none; flex-direction: column; gap: 8px;">
+                        <div id="reg-pay-failed-msg" style="background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.25); border-radius: 10px; padding: 10px 12px; font-size: 12.5px; color: #EF4444; font-weight: 600; text-align: center;">
+                            <i class="fa-solid fa-circle-exclamation"></i> Hệ thống ngân hàng chưa ghi nhận tiền tự động.
+                        </div>
+                        <div id="reg-pay-failed-btn-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                            <button id="reg-btn-recheck" type="button" style="padding: 11px 8px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--surface, #ffffff); color: var(--text-main); font-weight: 700; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                                <i class="fa-solid fa-rotate-right"></i> Thử kiểm tra lại
+                            </button>
+                            <button id="reg-btn-send-admin" type="button" style="padding: 11px 8px; border-radius: 10px; border: none; background: #4F46E5; color: #ffffff; font-weight: 700; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                                <i class="fa-solid fa-paper-plane"></i> Gửi xác thực Admin
+                            </button>
+                        </div>
+                        <div id="reg-pay-pending-waiting" style="display: none; background: rgba(79, 70, 229, 0.1); border: 1.5px dashed #4F46E5; border-radius: 12px; padding: 12px; font-size: 13px; color: var(--text-main); font-weight: 700; text-align: center;">
+                            <i class="fa-solid fa-hourglass-half fa-spin" style="color: #4F46E5; margin-right: 6px;"></i> Đang chờ Admin duyệt giao dịch...
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tùy chọn DÙNG THỬ MIỄN PHÍ nếu chưa thanh toán -->
+                <button type="button" id="reg-btn-activate-trial" class="btn-outline" style="width: 100%; font-size: 13.5px; padding: 11px;">
+                    <i class="fa-solid fa-gift" style="color: var(--secondary); margin-right: 6px;"></i> Hoặc Kích hoạt dùng thử 1 ngày miễn phí
+                </button>
+
+                <a href="#" id="reg-btn-back-step1" style="display: block; text-align: center; margin-top: 14px; font-size: 13px; color: var(--text-muted); text-decoration: none;">
+                    <i class="fa-solid fa-arrow-left"></i> Quay lại sửa thông tin
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL QUÊN MẬT KHẨU -->
+    <div class="register-modal" id="forgot-modal" role="dialog" aria-modal="true" aria-labelledby="forgot-modal-title">
+        <div class="register-modal-content">
+            <button type="button" class="register-close" id="close-forgot-modal" aria-label="Đóng">&times;</button>
+            <h2 id="forgot-modal-title">Quên mật khẩu</h2>
+            <p>Nhập email sinh viên của bạn để yêu cầu Admin cấp lại mật khẩu.</p>
+            <form id="forgot-form">
+                <div class="form-group">
+                    <label for="forgot-email">Email sinh viên</label>
+                    <input type="email" id="forgot-email" placeholder="VD: sv.tenban@st.ueh.edu.vn" required>
+                </div>
+                <button type="submit" class="btn-submit">Gửi yêu cầu khôi phục</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="ui-alerts.js"></script>
+    <script>
+        function formatVND(amount) {
+            return Number(amount || 0).toLocaleString('vi-VN') + 'đ';
+        }
+
+        const sessionNotice = document.getElementById('session-notice');
+        const sessionNoticeMessage = localStorage.getItem('unipass_session_notice');
+        if(sessionNoticeMessage){
+            sessionNotice.textContent = sessionNoticeMessage;
+            sessionNotice.classList.add('show');
+            localStorage.removeItem('unipass_session_notice');
+        }
+
+        /* --- DARK MODE LOGIC ĐỒNG BỘ --- */
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = themeToggleBtn.querySelector('i');
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem('unipass_theme');
+        if (savedTheme) {
+            htmlElement.setAttribute('data-theme', savedTheme);
+            updateIcon(savedTheme);
+        } else {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (prefersDark) {
+                htmlElement.setAttribute('data-theme', 'dark');
+                updateIcon('dark');
+            }
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('unipass_theme', newTheme);
+            updateIcon(newTheme);
+        });
+
+        function updateIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        }
+
+        /* --- XỬ LÝ ĐĂNG NHẬP --- */
+        document.getElementById('login-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+
+            let finalEmail = email;
+            if(finalEmail !== 'admin' && !finalEmail.includes('@')){
+                finalEmail = finalEmail + '@unipass.edu.vn';
+            }
+
+            if(finalEmail !== 'admin'){
+                const simpleEmailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if(!simpleEmailRe.test(finalEmail)){
+                    alert('Vui lòng nhập email hợp lệ (ví dụ: sv.tendangnhap@st.ueh.edu.vn) hoặc tên đăng nhập của giảng viên');
+                    return;
+                }
+            }
+
+            try {
+                const res = await window.Auth.login(finalEmail, password);
+                if(res.ok){
+                    const role = res.user ? (res.user.Role || res.user.role) : '';
+                    const uEmail = res.user ? (res.user.Email || res.user.email) : '';
+                    if (res.user && (role === 'admin' || role === 'Giảng viên' || uEmail === 'admin')) {
+                        window.location.href = 'admin-dashboard.html';
+                    } else {
+                        window.location.href = 'dashboard.html';
+                    }
+                } else {
+                    alert(res.msg || 'Email hoặc mật khẩu không đúng. Tài khoản mẫu: mssv@st.ueh.edu.vn / 123456.');
+                }
+            } catch(error) {
+                alert('Không thể kết nối đến máy chủ. Vui lòng thử lại sau.');
+            }
+        });
+
+        /* --- LOGIC ĐĂNG KÝ 2 BƯỚC & THANH TOÁN (ĐỒNG BỘ INDEX) --- */
+        const domainMap = {
+            'bk': '@hcmut.edu.vn',
+            'ueh': '@st.ueh.edu.vn',
+            'ftu': '@ftu.edu.vn',
+            'neu': '@st.neu.edu.vn',
+            'hcmus': '@hcmus.edu.vn',
+            'tdtu': '@tdtu.edu.vn',
+            'other': '@gmail.com'
+        };
+
+        let selectedPlan = {
+            id: 'semester',
+            name: 'Gói Nửa Năm (Học Kỳ)',
+            amount: 149000
+        };
+
+        const regModal = document.getElementById('register-modal');
+        const openRegBtn = document.getElementById('open-register-modal');
+        const closeRegBtn = document.getElementById('close-register-modal');
+        const step1 = document.getElementById('reg-step-1');
+        const step2 = document.getElementById('reg-step-2');
+        const formStep1 = document.getElementById('register-form-step1');
+        const uniSelect = document.getElementById('register-university');
+        const studentUserInput = document.getElementById('register-student-username');
+        const domainBadge = document.getElementById('reg-email-domain-badge');
+        const previewFullEmail = document.getElementById('reg-preview-full-email');
+
+        let registeredCredentials = null;
+        let regCountdownInterval = null;
+        let regApprovalPoller = null;
+        let paymentConfig = { vietqr_active: 'true', momo_active: 'true', momo_phone: '0903768871' };
+
+        async function fetchPaymentConfig() {
+            try {
+                const res = await fetch('/api/payment/config');
+                if (res.ok) paymentConfig = await res.json();
+            } catch (e) {}
+        }
+        fetchPaymentConfig();
+
+        // Mở/Đóng Modal
+        openRegBtn.addEventListener('click', (e) => { 
+            e.preventDefault(); 
+            step1.style.display = 'block';
+            step2.style.display = 'none';
+            updateEmailDomain();
+            regModal.classList.add('show'); 
+        });
+        closeRegBtn.addEventListener('click', () => regModal.classList.remove('show'));
+
+        // Cập nhật Domain Badge & Preview Email
+        function updateEmailDomain() {
+            const domain = domainMap[uniSelect.value] || '@hcmut.edu.vn';
+            if (domainBadge) domainBadge.textContent = domain;
+            let prefix = studentUserInput.value.trim();
+            if (prefix.includes('@')) prefix = prefix.split('@')[0];
+            const full = prefix ? `${prefix}${domain}` : `...${domain}`;
+            if (previewFullEmail) previewFullEmail.textContent = full;
+        }
+
+        uniSelect.addEventListener('change', updateEmailDomain);
+        studentUserInput.addEventListener('input', updateEmailDomain);
+
+        // Chọn Gói dịch vụ trong Modal
+        document.querySelectorAll('.plan-card-option').forEach(card => {
+            card.addEventListener('click', function() {
+                document.querySelectorAll('.plan-card-option').forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+                selectedPlan = {
+                    id: this.getAttribute('data-plan'),
+                    name: this.getAttribute('data-name'),
+                    amount: parseInt(this.getAttribute('data-amount'))
+                };
+            });
+        });
+
+        // Step 1: Submit -> Step 2
+        formStep1.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const fullname = document.getElementById('register-fullname').value.trim();
+            let userPart = studentUserInput.value.trim();
+            if (userPart.includes('@')) userPart = userPart.split('@')[0];
+            const university = uniSelect.value;
+            const domain = domainMap[university] || '@hcmut.edu.vn';
+            const fullEmail = `${userPart}${domain}`.toLowerCase();
+            const password = document.getElementById('register-password').value;
+
+            if (!fullname || !userPart || !password) {
+                showAlert('Vui lòng điền đầy đủ các trường thông tin.', 'warning');
+                return;
+            }
+
+            // KIỂM TRA ĐỘ PHỨC TẠP CỦA MẬT KHẨU
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/;
+            if (!passwordRegex.test(password)) {
+                showAlert('Mật khẩu phải dài ít nhất 8 ký tự, bao gồm ít nhất 1 chữ hoa, 1 chữ thường, 1 chữ số và 1 ký tự đặc biệt (VD: Pass@123).', 'warning');
+                return;
+            }
+
+            const memoCode = `UNIPASS_${Date.now().toString().slice(-6)}`;
+            
+            registeredCredentials = {
+                fullname,
+                email: fullEmail,
+                password,
+                university,
+                memoCode,
+                planId: selectedPlan.id,
+                planName: selectedPlan.name,
+                amount: selectedPlan.amount
+            };
+
+            // Ghi nhận trước bản ghi đăng ký & giao dịch chờ thanh toán
+            try {
+                await fetch('/api/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        fullname,
+                        email: fullEmail,
+                        password,
+                        university,
+                        isTrial: false,
+                        planId: selectedPlan.id,
+                        planName: selectedPlan.name,
+                        amount: selectedPlan.amount,
+                        method: 'VietQR 24/7',
+                        txId: memoCode
+                    })
+                });
+            } catch (err) {}
+
+            // Chuyển sang Step 2
+            renderRegPaymentScreen(memoCode);
+        });
+
+        async function renderRegPaymentScreen(memoCode) {
+            step1.style.display = 'none';
+            step2.style.display = 'block';
+
+            // Reset trạng thái các nút
+            const confirmBtn = document.getElementById('reg-btn-confirm-paid');
+            const failedActions = document.getElementById('reg-payment-failed-actions');
+            const failedBtnGroup = document.getElementById('reg-pay-failed-btn-group');
+            const pendingBanner = document.getElementById('reg-pay-pending-waiting');
+
+            if (confirmBtn) {
+                confirmBtn.style.display = 'flex';
+                confirmBtn.disabled = false;
+                confirmBtn.innerHTML = '<i class="fa-solid fa-circle-check" style="margin-right: 6px;"></i> Tôi đã chuyển khoản xong (Kích hoạt)';
+            }
+            if (failedActions) failedActions.style.display = 'none';
+            if (failedBtnGroup) failedBtnGroup.style.display = 'grid';
+            if (pendingBanner) pendingBanner.style.display = 'none';
+
+            // Update UI
+            document.getElementById('reg-pay-plan-name').textContent = selectedPlan.name;
+            document.getElementById('reg-pay-plan-price').textContent = formatVND(selectedPlan.amount);
+            document.getElementById('reg-pay-memo-text').textContent = memoCode;
+
+            await fetchPaymentConfig();
+
+            const tabVietqr = document.getElementById('reg-tab-vietqr');
+            const tabMomo = document.getElementById('reg-tab-momo');
+            const tabsContainer = document.getElementById('reg-pay-methods-tabs');
+            const qrCard = document.getElementById('reg-pay-qr-card');
+            const countdownBar = document.getElementById('reg-pay-countdown-bar');
+            const maintenanceBox = document.getElementById('reg-payment-maintenance-box');
+
+            const isVietQRActive = (paymentConfig.vietqr_active === 'true' || paymentConfig.vietqr_active === true || paymentConfig.vietqr_active === undefined);
+            const isMomoActive = (paymentConfig.momo_active === 'true' || paymentConfig.momo_active === true);
+            const momoPhone = paymentConfig.momo_phone || '0903768871';
+
+            // 1. Nếu cả 2 cổng đóng -> Báo bảo trì
+            if (!isVietQRActive && !isMomoActive) {
+                if (tabsContainer) tabsContainer.style.display = 'none';
+                if (qrCard) qrCard.style.display = 'none';
+                if (countdownBar) countdownBar.style.display = 'none';
+                if (confirmBtn) confirmBtn.style.display = 'none';
+                if (maintenanceBox) maintenanceBox.style.display = 'block';
+            } else {
+                if (tabsContainer) tabsContainer.style.display = 'flex';
+                if (qrCard) qrCard.style.display = 'block';
+                if (countdownBar) countdownBar.style.display = 'flex';
+                if (confirmBtn) confirmBtn.style.display = 'flex';
+                if (maintenanceBox) maintenanceBox.style.display = 'none';
+
+                if (tabVietqr) tabVietqr.style.display = isVietQRActive ? 'flex' : 'none';
+                if (tabMomo) tabMomo.style.display = isMomoActive ? 'flex' : 'none';
+
+                if (!isVietQRActive && isMomoActive) {
+                    tabMomo?.classList.add('active');
+                    tabVietqr?.classList.remove('active');
+                } else if (isVietQRActive && !isMomoActive) {
+                    tabVietqr?.classList.add('active');
+                    tabMomo?.classList.remove('active');
+                } else {
+                    tabVietqr?.classList.add('active');
+                    tabMomo?.classList.remove('active');
+                }
+            }
+
+            function refreshRegQR() {
+                if (!isVietQRActive && !isMomoActive) return;
+
+                const isMomo = tabMomo?.classList.contains('active');
+                const imgQr = document.getElementById('reg-pay-qr-img');
+                const bankNameEl = document.getElementById('reg-pay-bank-name');
+                const labelAccEl = document.getElementById('reg-pay-label-acc');
+                const valAccEl = document.getElementById('reg-pay-val-acc');
+
+                if (isMomo) {
+                    if (imgQr) imgQr.src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(`2|99|${momoPhone}|||0|0|${selectedPlan.amount}|${memoCode}|transfer_myqr`)}`;
+                    if (bankNameEl) bankNameEl.innerText = 'Ví MoMo (MoMo QR)';
+                    if (labelAccEl) labelAccEl.innerText = 'Số điện thoại Ví:';
+                    if (valAccEl) valAccEl.innerText = momoPhone;
+                } else {
+                    if (imgQr) imgQr.src = `https://img.vietqr.io/image/tpbank-trunglnm-compact2.png?amount=${selectedPlan.amount}&addInfo=${encodeURIComponent(memoCode)}&accountName=LE%20NGUYEN%20MINH%20TRUNG`;
+                    if (bankNameEl) bankNameEl.innerText = 'VietQR 24/7 (TPBank)';
+                    if (labelAccEl) labelAccEl.innerText = 'Số tài khoản:';
+                    if (valAccEl) valAccEl.innerText = 'trunglnm';
+                }
+            }
+            refreshRegQR();
+
+            if (tabVietqr) {
+                tabVietqr.onclick = () => {
+                    tabVietqr.classList.add('active');
+                    tabMomo?.classList.remove('active');
+                    refreshRegQR();
+                };
+            }
+            if (tabMomo) {
+                tabMomo.onclick = () => {
+                    tabMomo.classList.add('active');
+                    tabVietqr?.classList.remove('active');
+                    refreshRegQR();
+                };
+            }
+
+            // Copy buttons
+            const copyStkBtn = document.getElementById('reg-btn-copy-stk');
+            if (copyStkBtn) {
+                copyStkBtn.onclick = () => {
+                    const isMomo = tabMomo?.classList.contains('active');
+                    const acc = isMomo ? momoPhone : 'trunglnm';
+                    navigator.clipboard.writeText(acc);
+                    showAlert(`Đã sao chép: ${acc}`, 'success');
+                };
+            }
+            const copyMemoBtn = document.getElementById('reg-btn-copy-memo');
+            if (copyMemoBtn) {
+                copyMemoBtn.onclick = () => {
+                    navigator.clipboard.writeText(memoCode);
+                    showAlert(`Đã sao chép Nội dung CK: ${memoCode}`, 'success');
+                };
+            }
+
+            // Đếm ngược
+            let secondsLeft = 600;
+            if (regCountdownInterval) clearInterval(regCountdownInterval);
+            const timerEl = document.getElementById('reg-pay-timer');
+            regCountdownInterval = setInterval(() => {
+                secondsLeft--;
+                if (secondsLeft <= 0) { clearInterval(regCountdownInterval); if (timerEl) timerEl.innerText = "Hết hạn"; }
+                else if (timerEl) {
+                    const m = String(Math.floor(secondsLeft / 60)).padStart(2, '0');
+                    const s = String(secondsLeft % 60).padStart(2, '0');
+                    timerEl.innerText = `${m}:${s}`;
+                }
+            }, 1000);
+        }
+
+        document.getElementById('reg-btn-back-step1').addEventListener('click', (e) => {
+            e.preventDefault();
+            step2.style.display = 'none';
+            step1.style.display = 'block';
+        });
+
+        async function handleLoginRegSuccess(verifyData) {
+            localStorage.setItem('unipass_token', verifyData.token);
+            localStorage.setItem('unipass_user', JSON.stringify(verifyData.user));
+            localStorage.setItem('unipass_current_v1', verifyData.user.Email);
+            if (regCountdownInterval) clearInterval(regCountdownInterval);
+            if (regApprovalPoller) clearInterval(regApprovalPoller);
+            await showAlert(`🎉 Thanh toán thành công! Gói học tập đã được kích hoạt.`, 'success');
+            regModal.classList.remove('show');
+            window.location.href = 'student-courses.html';
+        }
+
+        function startLoginRegPolling(memo, email) {
+            if (!regApprovalPoller) {
+                regApprovalPoller = setInterval(async () => {
+                    try {
+                        const verifyRes = await fetch('/api/payment/check-transfer', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ email, memoCode: memo, planId: selectedPlan.id })
+                        });
+                        const verifyData = await verifyRes.json();
+                        if (verifyRes.ok && verifyData.token) {
+                            clearInterval(regApprovalPoller);
+                            await handleLoginRegSuccess(verifyData);
+                        }
+                    } catch (e) {}
+                }, 3500);
+            }
+        }
+
+        // 1. Nút "Tôi đã chuyển khoản xong (Kích hoạt)"
+        const regConfirmPaidBtn = document.getElementById('reg-btn-confirm-paid');
+        const regFailedActionsBox = document.getElementById('reg-payment-failed-actions');
+        const regBtnRecheck = document.getElementById('reg-btn-recheck');
+        const regBtnSendAdmin = document.getElementById('reg-btn-send-admin');
+        const regFailedBtnGroup = document.getElementById('reg-pay-failed-btn-group');
+        const regPendingWaiting = document.getElementById('reg-pay-pending-waiting');
+
+        if (regConfirmPaidBtn) {
+            regConfirmPaidBtn.addEventListener('click', async function() {
+                this.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang đối soát giao dịch...';
+                this.disabled = true;
+
+                try {
+                    const memo = registeredCredentials ? registeredCredentials.memoCode : '';
+                    const email = registeredCredentials ? registeredCredentials.email : '';
+                    const verifyRes = await fetch('/api/payment/check-transfer', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email, memoCode: memo, planId: selectedPlan.id })
+                    });
+                    const verifyData = await verifyRes.json();
+
+                    if (verifyRes.ok && verifyData.token) {
+                        await handleLoginRegSuccess(verifyData);
+                    } else {
+                        // Chưa nhận được tiền -> Hiện Thử lại & Gửi Admin
+                        this.style.display = 'none';
+                        if (regFailedActionsBox) regFailedActionsBox.style.display = 'flex';
+                        if (regFailedBtnGroup) regFailedBtnGroup.style.display = 'grid';
+                        if (regPendingWaiting) regPendingWaiting.style.display = 'none';
+
+                        showAlert(`⚠️ Hệ thống ngân hàng chưa ghi nhận tiền tự động cho mã ${memo}.\n\nBạn hãy kiểm tra lại hoặc bấm "Gửi xác thực Admin" để Admin duyệt kích hoạt thủ công.`, 'warning');
+                    }
+                } catch (err) {
+                    await showAlert('Lỗi kết nối: ' + err.message, 'error');
+                    this.innerHTML = '<i class="fa-solid fa-circle-check" style="margin-right: 6px;"></i> Tôi đã chuyển khoản xong (Kích hoạt)';
+                    this.disabled = false;
+                }
+            });
+        }
+
+        // 2. Nút "Thử kiểm tra lại"
+        if (regBtnRecheck) {
+            regBtnRecheck.addEventListener('click', async function() {
+                this.disabled = true;
+                this.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang kiểm tra...';
+
+                try {
+                    const memo = registeredCredentials ? registeredCredentials.memoCode : '';
+                    const email = registeredCredentials ? registeredCredentials.email : '';
+
+                    const verifyRes = await fetch('/api/payment/check-transfer', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email, memoCode: memo, planId: selectedPlan.id })
+                    });
+                    const verifyData = await verifyRes.json();
+
+                    if (verifyRes.ok && verifyData.token) {
+                        await handleLoginRegSuccess(verifyData);
+                        return;
+                    }
+
+                    showAlert(`⚠️ Vẫn chưa nhận diện được chuyển khoản. Nếu bạn đã trừ tiền, hãy bấm "Gửi xác thực Admin".`, 'warning');
+                } catch (e) {
+                    showAlert('Lỗi kết nối kiểm tra: ' + e.message, 'error');
+                } finally {
+                    this.disabled = false;
+                    this.innerHTML = '<i class="fa-solid fa-rotate-right"></i> Thử kiểm tra lại';
+                }
+            });
+        }
+
+        // 3. Nút "Gửi xác thực Admin"
+        if (regBtnSendAdmin) {
+            regBtnSendAdmin.addEventListener('click', async function() {
+                const isMomo = document.getElementById('reg-tab-momo')?.classList.contains('active');
+                const activeMethodName = isMomo ? 'Ví MoMo' : 'VietQR 24/7';
+
+                this.disabled = true;
+                this.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang gửi...';
+
+                try {
+                    const memo = registeredCredentials ? registeredCredentials.memoCode : '';
+                    const email = registeredCredentials ? registeredCredentials.email : '';
+
+                    const regRes = await fetch('/api/register', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            ...registeredCredentials,
+                            isTrial: false,
+                            submitPending: true,
+                            planId: selectedPlan.id,
+                            planName: selectedPlan.name,
+                            amount: selectedPlan.amount,
+                            method: activeMethodName,
+                            txId: memo
+                        })
+                    });
+                    const regData = await regRes.json();
+
+                    await showAlert(`📨 Đã gửi yêu cầu xác thực giao dịch (${memo} - ${formatVND(selectedPlan.amount)}) tới Quản trị viên! Vui lòng chờ Admin duyệt kích hoạt trong mục Quản lý thanh toán.`, 'info');
+                    if (regFailedBtnGroup) regFailedBtnGroup.style.display = 'none';
+                    if (regPendingWaiting) regPendingWaiting.style.display = 'block';
+
+                    // Auto-polling
+                    startLoginRegPolling(memo, email);
+                } catch (error) {
+                    await showAlert('Lỗi kết nối: ' + error.message, 'error');
+                    this.disabled = false;
+                    this.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Gửi xác thực Admin';
+                }
+            });
+        }
+
+        // Kích hoạt Dùng thử 1 ngày (LÚC NÀY MỚI ĐĂNG NHẬP)
+        document.getElementById('reg-btn-activate-trial').addEventListener('click', async function() {
+            this.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang kích hoạt dùng thử...';
+            this.disabled = true;
+
+            try {
+                if (registeredCredentials) {
+                    const regRes = await window.Auth.register({
+                        ...registeredCredentials,
+                        isTrial: true,
+                        planId: selectedPlan.id
+                    });
+                    if (!regRes.ok) {
+                        if (regRes.msg && (regRes.msg.includes('đã được sử dụng') || regRes.msg.includes('tồn tại'))) {
+                            const loginRes = await window.Auth.login(registeredCredentials.email, registeredCredentials.password);
+                            if (!loginRes.ok) {
+                                await showAlert(loginRes.msg || 'Đăng nhập không thành công.', 'error');
+                                this.innerHTML = '<i class="fa-solid fa-gift" style="color: var(--secondary); margin-right: 6px;"></i> Hoặc Kích hoạt dùng thử 1 ngày miễn phí';
+                                this.disabled = false;
+                                return;
+                            }
+                        } else {
+                            await showAlert(regRes.msg || 'Không thể tạo tài khoản dùng thử.', 'error');
+                            this.innerHTML = '<i class="fa-solid fa-gift" style="color: var(--secondary); margin-right: 6px;"></i> Hoặc Kích hoạt dùng thử 1 ngày miễn phí';
+                            this.disabled = false;
+                            return;
+                        }
+                    }
+                }
+
+                if (regCountdownInterval) clearInterval(regCountdownInterval);
+                if (regApprovalPoller) clearInterval(regApprovalPoller);
+                await showAlert(`🎁 Chúc mừng bạn đã kích hoạt gói Dùng thử 1 ngày Miễn phí thành công!`, 'success');
+                regModal.classList.remove('show');
+                window.location.href = 'student-courses.html';
+            } catch (err) {
+                await showAlert('Lỗi kết nối: ' + err.message, 'error');
+                this.innerHTML = '<i class="fa-solid fa-gift" style="color: var(--secondary); margin-right: 6px;"></i> Hoặc Kích hoạt dùng thử 1 ngày miễn phí';
+                this.disabled = false;
+            }
+        });
+
+        // Quên mật khẩu
+        const forgotModal = document.getElementById('forgot-modal');
+        const openForgotBtn = document.getElementById('open-forgot-modal');
+        const closeForgotBtn = document.getElementById('close-forgot-modal');
+
+        openForgotBtn.addEventListener('click', (e) => { e.preventDefault(); forgotModal.classList.add('show'); });
+        closeForgotBtn.addEventListener('click', () => forgotModal.classList.remove('show'));
+
+        window.addEventListener('click', (e) => {
+            if (e.target === regModal) regModal.classList.remove('show');
+            if (e.target === forgotModal) forgotModal.classList.remove('show');
+        });
+
+        document.getElementById('forgot-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const email = document.getElementById('forgot-email').value.trim();
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang xử lý...';
+            
+            try {
+                const response = await fetch('/api/forgot-password', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ email })
+                });
+                const data = await response.json();
+                if (response.ok) {
+                    await showAlert('Hệ thống đã ghi nhận yêu cầu. Mật khẩu mới sẽ được cấp lại sau khi Admin đối chiếu thông tin.', 'success');
+                    forgotModal.classList.remove('show');
+                    this.reset();
+                } else {
+                    showAlert(data.message || 'Lỗi gửi yêu cầu', 'error');
+                }
+            } catch (error) {
+                showAlert('Không thể kết nối đến máy chủ.', 'error');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Gửi yêu cầu khôi phục';
+            }
+        });
+    </script>
+    <script src="ui-alerts.js"></script>
+</body>
+</html>

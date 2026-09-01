@@ -1,0 +1,311 @@
+/* ui-alerts.css - Hệ thống thông báo Glassmorphism */
+
+/* =========================================
+   Toast Container (Góc trên phải)
+========================================= */
+#ui-toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    pointer-events: none;
+}
+
+/* =========================================
+   Toast Item
+========================================= */
+.ui-toast {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    padding: 16px 20px;
+    min-width: 280px;
+    max-width: 350px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    transform: translateX(120%);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.ui-toast.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.ui-toast.hide {
+    transform: translateX(120%);
+    opacity: 0;
+}
+
+.ui-toast-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.ui-toast-content {
+    flex-grow: 1;
+}
+
+.ui-toast-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+    color: #1e293b;
+}
+
+.ui-toast-message {
+    font-size: 0.875rem;
+    color: #475569;
+    line-height: 1.4;
+}
+
+/* Biến thể Toast */
+.ui-toast.success .ui-toast-icon { color: #10b981; }
+.ui-toast.error .ui-toast-icon { color: #ef4444; }
+.ui-toast.warning .ui-toast-icon { color: #f59e0b; }
+.ui-toast.info .ui-toast-icon { color: #3b82f6; }
+
+/* Thanh tiến trình bên dưới */
+.ui-toast-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.ui-toast-progress-bar {
+    height: 100%;
+    width: 100%;
+    transform-origin: left;
+}
+.ui-toast.success .ui-toast-progress-bar { background: #10b981; }
+.ui-toast.error .ui-toast-progress-bar { background: #ef4444; }
+.ui-toast.warning .ui-toast-progress-bar { background: #f59e0b; }
+.ui-toast.info .ui-toast-progress-bar { background: #3b82f6; }
+
+
+/* =========================================
+   Modal Alert Overlay
+========================================= */
+#ui-alert-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+#ui-alert-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =========================================
+   Modal Box
+========================================= */
+.ui-alert-box {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transform: scale(0.85) translateY(20px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#ui-alert-overlay.show .ui-alert-box {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+.ui-alert-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 1.8rem;
+}
+
+.ui-alert-box.success .ui-alert-icon-wrapper { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+.ui-alert-box.error .ui-alert-icon-wrapper { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+.ui-alert-box.warning .ui-alert-icon-wrapper { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+.ui-alert-box.info .ui-alert-icon-wrapper { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+
+.ui-alert-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.ui-alert-message {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    word-break: break-word;
+    white-space: pre-wrap; /* Quan trọng để xử lý \n */
+}
+
+.ui-alert-btn {
+    background: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+}
+
+.ui-alert-btn:hover {
+    background: #4338ca;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(79, 70, 229, 0.4);
+}
+
+/* =========================================
+   Prompt UI Additions
+========================================= */
+/* Modal Prompt & Confirm Overlay */
+#ui-prompt-overlay,
+#ui-confirm-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#ui-prompt-overlay.show,
+#ui-confirm-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#ui-prompt-overlay .ui-alert-box.show,
+#ui-confirm-overlay .ui-alert-box.show,
+#ui-prompt-overlay.show .ui-alert-box,
+#ui-confirm-overlay.show .ui-alert-box {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.ui-prompt-input {
+    width: 100%;
+    padding: 12px 16px;
+    margin-top: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.2s;
+    background: rgba(255, 255, 255, 0.5);
+    color: var(--text-main, #1e293b);
+}
+.ui-prompt-input:focus {
+    border-color: var(--primary, #4f46e5);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+    background: #fff;
+}
+
+[data-theme="dark"] .ui-prompt-input {
+    background: rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #f1f5f9;
+}
+[data-theme="dark"] .ui-prompt-input:focus {
+    background: rgba(0, 0, 0, 0.4);
+    border-color: var(--primary, #6366f1);
+}
+
+.ui-prompt-btn-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+.ui-prompt-btn-group .ui-alert-btn {
+    margin-top: 0;
+    flex: 1;
+}
+.ui-prompt-btn-group .ui-alert-btn.cancel {
+    background: rgba(100, 116, 139, 0.1);
+    color: #64748b;
+}
+.ui-prompt-btn-group .ui-alert-btn.cancel:hover {
+    background: rgba(100, 116, 139, 0.2);
+}
+[data-theme="dark"] .ui-prompt-btn-group .ui-alert-btn.cancel {
+    background: rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
+}
+[data-theme="dark"] .ui-prompt-btn-group .ui-alert-btn.cancel:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* Dark Theme for Alert & Confirm Boxes */
+[data-theme="dark"] .ui-alert-box {
+    background: #1e293b !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6) !important;
+}
+[data-theme="dark"] .ui-alert-title {
+    color: #f8fafc !important;
+}
+[data-theme="dark"] .ui-alert-message {
+    color: #cbd5e1 !important;
+}
+[data-theme="dark"] .ui-toast {
+    background: rgba(30, 41, 59, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+[data-theme="dark"] .ui-toast-title {
+    color: #f8fafc !important;
+}
+[data-theme="dark"] .ui-toast-message {
+    color: #cbd5e1 !important;
+}
