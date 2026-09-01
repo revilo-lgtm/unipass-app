@@ -1,0 +1,272 @@
+[
+  {
+    "course_id": "bk_calculus_1",
+    "course_title": "Giải tích 1",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Giới hạn & Khai triển Taylor-Maclaurin",
+    "lesson_order": 1,
+    "lesson_id": "chapter-1-lesson-1",
+    "lesson_title": "Vô cùng bé, vô cùng lớn và quy tắc L'Hospital",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Chương Giới hạn & Khai triển Taylor-Maclaurin mở đầu môn Giải tích 1 bằng ngôn ngữ so sánh tốc độ tiến về 0 hoặc vô cùng của các hàm số. Khi tính lim(x→0) sin x / x ta gặp dạng 0/0 — tử và mẫu cùng tiến về 0 nhưng tỷ số vẫn có giới hạn hữu hạn. Khái niệm vô cùng bé bậc cao hơn (vcb) và vô cùng lớn (vcl) giúp phân loại các hàm theo \"tốc độ\" tiến về 0 hay ∞, từ đó chọn phương pháp tính giới hạn phù hợp. Quy tắc L'Hospital là công cụ mạnh để xử lý các dạng vô định 0/0 và ∞/∞ bằng cách lấy đạo hàm tử và mẫu."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Định nghĩa: f là vô cùng bé khi x→a nếu lim f(x)=0. Gọi f là vcb bậc k (k>0) so với g nếu lim f(x)/g(x)=c≠0 (hữu hạn). Ví dụ: khi x→0 thì x² là vcb bậc 2, sin x ~ x (bậc 1), 1-cos x ~ x²/2 (bậc 2).\n\nQuy tắc thay thế vcb: Trong tỷ số các vcb cùng bậc, giữ lại hạng tử bậc thấp nhất. Ví dụ: (sin 3x - 3x) / x³ → thay sin 3x ≈ 3x - (3x)³/6.\n\nVô cùng lớn: f là vcl bậc k nếu lim 1/f(x)=0 với tốc độ x^(-k). So sánh: ln x chậm hơn mọi x^α (α>0); x^n chậm hơn a^x (a>1); a^x chậm hơn x!.\n\nQuy tắc L'Hospital: Nếu lim f(x)/g(x) có dạng 0/0 hoặc ∞/∞ và f', g' tồn tại gần a, thì lim f/g = lim f'/g' (khi giới hạn vế phải tồn tại). Có thể áp dụng lặp lại nhiều lần.\n\nCác dạng vô định khác: 0·∞ → chuyển thành 0/(1/∞) hoặc ∞/(1/0); ∞-∞ → quy đồng hoặc nhân liên hợp; 0⁰, 1^∞, ∞⁰ → đặt ln rồi dùng L'Hospital."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ 1 — So sánh vcb: Tính lim(x→0) (e^x - 1 - x) / x².\nKhai triển: e^x = 1 + x + x²/2 + x³/6 + o(x³). Tử = x²/2 + x³/6 + o(x³). Chia cho x² được 1/2 + x/6 → 0 = 1/2.\n\nVí dụ 2 — L'Hospital: lim(x→0) (1 - cos x) / x².\nDạng 0/0. Áp dụng L'Hospital: lim sin x / (2x) = lim cos x / 2 = 1/2.\n\nVí dụ 3 — Dạng ∞/∞: lim(x→+∞) (ln x) / x^0.5.\nL'Hospital: lim (1/x) / (0.5 x^(-0.5)) = lim 2/(x^0.5) = 0. Kết luận: ln x tăng chậm hơn √x."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Vô cùng bé bậc cao hơn tiến về 0 nhanh hơn; khi tính giới hạn tỷ số vcb, giữ hạng tử bậc thấp nhất.\nQuy tắc L'Hospital áp dụng cho dạng 0/0 và ∞/∞; kiểm tra điều kiện trước khi lấy đạo hàm.\nln x chậm hơn mọi lũy thừa dương; dùng thứ bậc vcl để so sánh nhanh khi x→+∞."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_calculus_1",
+    "course_title": "Giải tích 1",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Giới hạn & Khai triển Taylor-Maclaurin",
+    "lesson_order": 2,
+    "lesson_id": "chapter-1-lesson-2",
+    "lesson_title": "Công thức Taylor-Maclaurin ứng dụng tính giới hạn",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Tiếp nối phần vô cùng bé và L'Hospital, bài này trình bày khai triển Taylor-Maclaurin — cách biểu diễn hàm khả vi dưới dạng đa thức cộng với phần dư. Đây là công cụ cốt lõi của chương Giới hạn & Khai triển Taylor-Maclaurin: thay hàm phức tạp bằng đa thức đơn giản quanh điểm cần xét, rồi tính giới hạn bằng phép chia đa thức. Phương pháp này đặc biệt hiệu quả khi L'Hospital phải lặp nhiều lần hoặc đạo hàm bậc cao rườm rà."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Công thức Taylor tại x=a:\nf(x) = f(a) + f'(a)(x-a) + f''(a)(x-a)²/2! + ... + f⁽ⁿ⁾(a)(x-a)ⁿ/n! + Rₙ(x).\n\nMaclaurin (a=0) — các hàm thường dùng:\n• e^x = 1 + x + x²/2! + x³/3! + ...\n• sin x = x - x³/3! + x⁵/5! - ...\n• cos x = 1 - x²/2! + x⁴/4! - ...\n• ln(1+x) = x - x²/2 + x³/3 - x⁴/4 + ... (|x|<1)\n• (1+x)^α = 1 + αx + α(α-1)x²/2! + ... (|x|<1)\n• 1/(1-x) = 1 + x + x² + x³ + ... (|x|<1)\n\nNguyên tắc tính giới hạn: Xác định bậc của mẫu (sau khi nhân liên hợp nếu cần), khai triển đủ số hạng để triệt tiêu hạng tử bậc thấp hơn bậc mẫu, rồi chia.\n\nPhần dư Peano: Rₙ(x) = o(xⁿ) khi x→0 — đủ cho giới hạn. Phần dư Lagrange: |Rₙ(x)| ≤ M|x-a|ⁿ⁺¹/(n+1)! khi ước lượng sai số."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ 1: lim(x→0) (sin x - x cos x) / x³.\nKhai triển: sin x = x - x³/6 + o(x³); cos x = 1 - x²/2 + o(x²).\nx cos x = x - x³/2 + o(x³). Hiệu tử = x³/2 - x³/6 + o(x³) = x³/3 + o(x³).\nChia x³ → kết quả = 1/3.\n\nVí dụ 2: lim(x→0) (e^x - 1 - x - x²/2) / x³.\ne^x = 1 + x + x²/2 + x³/6 + x⁴/24 + ... Tử = x³/6 + o(x³). Kết quả = 1/6.\n\nVí dụ 3: lim(x→0) (ln(1+x) - x + x²/2) / x³.\nln(1+x) = x - x²/2 + x³/3 - x⁴/4 + ... Tử = x³/3 + o(x³). Kết quả = 1/3."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Taylor-Maclaurin biến hàm phi tuyến thành đa thức; chọn đủ bậc để khử hạng tử bậc thấp trong tỷ số giới hạn.\nGhi nhớ khai triển của e^x, sin x, cos x, ln(1+x) — dùng lặp lại trong đề thi Giải tích 1.\nKhi mẫu là xⁿ, khai triển đến bậc n-1 thường chưa đủ; cần đến bậc n để có hạng tử không triệt tiêu."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_calculus_1",
+    "course_title": "Giải tích 1",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Phép tính vi phân hàm một biến",
+    "lesson_order": 1,
+    "lesson_id": "chapter-2-lesson-1",
+    "lesson_title": "Tích phân suy rộng loại 1 và loại 2 (Xét hội tụ)",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Trong chương Phép tính vi phân hàm một biến, sinh viên đã nắm đạo hàm và ứng dụng cực trị. Bài này mở rộng sang tích phân trên cùng trục số: khi miền tích phân vô hạn hoặc hàm bị trượt tại điểm trong khoảng, tích phân Riemann thường không tồn tại — ta định nghĩa tích phân suy rộng bằng giới hạn. Việc xét hội tụ hay phân kỳ của tích phân suy rộng là kỹ năng cơ bản trước khi sang chương Tích phân suy rộng chuyên sâu và các tiêu chuẩn so sánh chuỗi-tích phân."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Tích phân suy rộng loại 1 (cận vô hạn):\n∫ₐ^+∞ f(x)dx = lim(t→+∞) ∫ₐᵗ f(x)dx.\nHội tụ nếu giới hạn tồn tại hữu hạn; ngược lại phân kỳ.\n\nTích phân suy rộng loại 2 (hàm không bị chận tại điểm c):\n∫ₐᵇ f(x)dx với f không bị chận tại c∈(a,b):\n= lim(ε→0⁺) [∫ₐ^(c-ε) f + ∫_(c+ε)^b f].\n\nTiêu chuẩn so sánh (tích phân dương):\n• 0 ≤ f(x) ≤ g(x), ∫g hội tụ ⇒ ∫f hội tụ.\n• 0 ≤ g(x) ≤ f(x), ∫f phân kỳ ⇒ ∫g phân kỳ.\n\nTiêu chuẩn so sánh giới hạn: f,g ≥ 0, lim f/g = L (0<L≤∞):\nL hữu hạn >0 ⇒ cùng hội tuy hoặc cùng phân kỳ.\n\nMẫu quan trọng: ∫₁^+∞ dx/x^p hội tụ ⇔ p>1; ∫₀¹ dx/x^p hội tụ ⇔ p<1."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ 1 — Loại 1: ∫₁^+∞ dx/(x²+1).\nNguyên hàm: arctan x|₁^∞ = π/2 - π/4 = π/4. Hội tụ.\n\nVí dụ 2 — Loại 1 phân kỳ: ∫₁^+∞ dx/√x = 2√x|₁^∞ = +∞. Phân kỳ (p=1/2 < 1 không áp dụng trực tiếp vì p=1/2<1 cho ∫₀¹; tại +∞ cần p>1, ở đây p=1/2 nên phân kỳ).\n\nVí dụ 3 — Loại 2: ∫₀¹ dx/√x.\n= lim(ε→0⁺) 2√x|_ε¹ = 2 - 0 = 2. Hội tụ (p=1/2 < 1).\n\nVí dụ 4 — So sánh: ∫₂^+∞ dx/(x ln²x). Đặt u=ln x, du=dx/x → ∫(ln 2)^+∞ du/u² hội tụ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Loại 1: cận vô hạn — dùng mẫu ∫₁^+∞ dx/x^p, hội tụ khi p>1.\nLoại 2: điểm kỳ dị trong khoảng — dùng ∫₀¹ dx/x^p, hội tuy khi p<1.\nTiêu chuẩn so sánh và so sánh giới hạn giúp xét nhanh không cần tính nguyên hàm."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_calculus_1",
+    "course_title": "Giải tích 1",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Phép tính vi phân hàm một biến",
+    "lesson_order": 2,
+    "lesson_id": "chapter-2-lesson-2",
+    "lesson_title": "Chuỗi số dương: D'Alembert, Cauchy, Tiêu chuẩn tích phân",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Chuỗi số là tổng vô hạn các số hạng a₁ + a₂ + a₃ + ... Trong chương Phép tính vi phân, chuỗi xuất hiện khi khai triển Taylor và xét hội tụ của các xấp xỉ. Bài này tập trung vào chuỗi dương (aₙ ≥ 0): khi các số hạng không đổi dấu, chuỗi hoặc hội tụ hoặc phân kỳ tới +∞, giúp ta áp dụng các tiêu chuẩn D'Alembert (tỷ số), Cauchy (căn) và tiêu chuẩn tích phân — ba công cụ chủ lực trong đề thi Giải tích 1."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Định nghĩa: Chuỗi ∑aₙ hội tụ nếu dãy tổng riêng Sₙ = a₁+...+aₙ có giới hạn hữu hạn.\n\nTiêu chuẩn so sánh: 0 ≤ aₙ ≤ bₙ, ∑bₙ hội tuy ⇒ ∑aₙ hội tụ. Ngược lại nếu ∑aₙ phân kỳ và aₙ ≥ bₙ thì ∑bₙ phân kỳ.\n\nTiêu chuẩn D'Alembert: L = lim |aₙ₊₁/aₙ|. L<1 hội tụ; L>1 phân kỳ; L=1 không kết luận.\n\nTiêu chuẩn Cauchy (căn): L = lim ⁿ√|aₙ|. Quy tắc tương tự D'Alembert.\n\nTiêu chuẩn tích phân: f(x) giảm, dương trên [1,+∞), aₙ=f(n). ∑aₙ hội tụ ⇔ ∫₁^+∞ f(x)dx hội tụ.\n\nChuỗi p: ∑1/n^p hội tuy ⇔ p>1. Đây là chuỗi chuẩn để so sánh.\n\nLưu ý: Tiêu chuẩn tích phân yêu cầu f giảm; D'Alembert thuận tiện khi có giai thừa hoặc lũy thừa n."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ 1 — D'Alembert: ∑(n!/nⁿ).\naₙ₊₁/aₙ = (n+1)!/(n+1)ⁿ⁺¹ · nⁿ/n! = nⁿ/(n+1)ⁿ = [n/(n+1)]ⁿ → e⁻¹ < 1. Hội tụ.\n\nVí dụ 2 — Cauchy: ∑(2ⁿ/nⁿ).\nⁿ√(2ⁿ/nⁿ) = 2/n → 0 < 1. Hội tụ.\n\nVí dụ 3 — Tích phân: ∑1/(n(n+1)).\nf(x)=1/(x(x+1)) giảm. ∫₁^+∞ 1/(x(x+1)) dx = ln(x/(x+1))|₁^∞ = ln(1/2) hữu hạn. Hội tụ.\n\nVí dụ 4 — Phân kỳ: ∑1/n (chuỗi điều hòa, p=1). ∫₁^+∞ dx/x = +∞ ⇒ phân kỳ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Chuỗi dương: chọn D'Alembert khi có giai thừa; Cauchy khi có dạng (uₙ)ⁿ; tích phân khi aₙ=f(n) với f giảm.\nChuỗi p ∑1/n^p là chuẩn so sánh: p>1 hội tuy, p≤1 phân kỳ.\nKhi L=1, chuyển sang tiêu chuẩn so sánh hoặc so sánh với chuỗi p."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_calculus_1",
+    "course_title": "Giải tích 1",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Phép tính vi phân hàm một biến",
+    "lesson_order": 3,
+    "lesson_id": "chapter-2-lesson-3",
+    "lesson_title": "Chuỗi đan dấu Leibniz & Bán kính hội tụ chuỗi lũy thừa",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Sau chuỗi dương, ta xét chuỗi đan dấu — các số hạng đổi dấu xen kẽ — và chuỗi lũy thừa ∑aₙ(x-x₀)ⁿ, vốn là cơ sở của khai triển Taylor. Tiêu chuẩn Leibniz cho chuỗi đan dấu đủ điều kiện; bán kính hội tụ R xác định khoảng mà chuỗi lũy thừa hội tụ tuyệt đối. Hai chủ đề này kết nối trực tiếp với chương Chuỗi số & Chuỗi lũy thừa và là dạng bài tính bán kính, khoảng hội tụ thường gặp tại BK."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Tiêu chuẩn Leibniz (chuỗi đan dấu): ∑(-1)ⁿbₙ với bₙ>0, giảm dần, lim bₙ=0 ⇒ chuỗi hội tuy. Sai số khi cắt sau n hạng không quá bₙ₊₁.\n\nHội tụ tuyệt đối: ∑|aₙ| hội tuy ⇒ ∑aₙ hội tuy. Ngược lại không đúng (ví dụ chuỗi điều hòa hội tuy nhưng không tuyệt đối).\n\nChuỗi lũy thừa: ∑aₙ(x-x₀)ⁿ. Bán kính hội tụ:\nR = 1 / lim sup ⁿ√|aₙ| (Cauchy-Hadamard),\nhoặc R = lim |aₙ/aₙ₊₁| nếu giới hạn tồn tại (D'Alembert).\n\nKhoảng hội tụ: (x₀-R, x₀+R). Kiểm tra riêng hai đầu mút x=x₀±R.\n\nĐịnh lý Abel: Chuỗi lũy thừa hội tuy tuyệt đối trong (x₀-R, x₀+R); hội tuy tại ít nhất một đầu mút nếu chuỗi hội tuy tại điểm đó."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ 1 — Leibniz: ∑(-1)ⁿ/(n+1).\nbₙ=1/(n+1) giảm, lim bₙ=0. Hội tuy. Tổng ≈ ln 2 (chuỗi điều hòa).\n\nVí dụ 2 — Bán kính: ∑xⁿ/n!.\n|aₙ/aₙ₊₁| = (n+1)!/n! = n+1 → +∞, R=+∞. Hội tuy mọi x (khớp e^x).\n\nVí dụ 3: ∑(x-1)ⁿ/n.\n|aₙ/aₙ₊₁| = (n+1)/n → 1, R=1. Khoảng: 0<x<2.\n• x=0: ∑(-1)ⁿ/n — Leibniz, hội tuy.\n• x=2: ∑1/n — phân kỳ.\nKhoảng hội tụ: [0, 2).\n\nVí dụ 4: ∑n²xⁿ. ⁿ√|aₙ|=n^(2/n)→1, R=1. |x|<1 hội tuy tuyệt đối."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Leibniz: bₙ giảm và →0 là đủ cho chuỗi đan dấu hội tuy.\nBán kính R từ Cauchy-Hadamard hoặc D'Alembert; luôn kiểm tra hai đầu mút.\nChuỗi lũy thừa hội tuy tuyệt đối trong (x₀-R, x₀+R); đầu mút cần xét riêng."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_calculus_1",
+    "course_title": "Giải tích 1",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Tích phân suy rộng loại 1 & loại 2",
+    "lesson_order": 1,
+    "lesson_id": "chapter-3-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Chương Tích phân suy rộng loại 1 & loại 2 hệ thống hóa toàn bộ lý thuyết về tích phân trên miền vô hạn và hàm không bị chận. Đây là phần mở rộng tự nhiên của tích phân Newton-Leibniz: thay vì chỉ tích phân trên đoạn [a,b] với hàm liên tục, ta định nghĩa tích phân bằng giới hạn và trang bị bộ tiêu chuẩn xét hội tuy — so sánh, so sánh giới hạn, tích phân mẫu p — để giải quyết các bài toán không tính được nguyên hàm sơ cấp."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Định nghĩa chính thức:\n• Loại 1: ∫ₐ^+∞ f(x)dx = lim(t→+∞) ∫ₐᵗ f(x)dx.\n• Loại 2 tại c: ∫ₐᵇ f = lim(ε→0⁺)[∫ₐ^(c-ε) f + ∫_(c+ε)^b f].\n\nTính chất: Tuyến tính; nếu ∫|f| hội tuy thì ∫f hội tuy (hội tuy tuyệt đối).\n\nTiêu chuẩn so sánh 1: 0 ≤ f ≤ g trên [a,+∞). ∫ₐ^+∞ g hội tuy ⇒ ∫ₐ^+∞ f hội tuy. ∫ₐ^+∞ f phân kỳ ⇒ ∫ₐ^+∞ g phân kỳ.\n\nTiêu chuẩn so sánh giới hạn: f,g ≥ 0, lim(x→+∞) f/g = L ∈ (0,+∞] ⇒ cùng hội tuy hoặc cùng phân kỳ.\n\nTích phân mẫu:\n∫₁^+∞ dx/x^p hội tuy ⇔ p>1.\n∫₀¹ dx/x^p hội tuy ⇔ p<1.\n\nPhương pháp: Nhận dạng loại 1 hay 2 → thử tính trực tiếp → nếu khó, so sánh với mẫu p hoặc dùng tiêu chuẩn giới hạn. Với loại 2 tại 0, đổi biến x=1/t chuyển về loại 1."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ 1: ∫₀^+∞ e^(-x) dx = lim(t→+∞) [-e^(-x)]₀ᵗ = 1. Hội tuy.\n\nVí dụ 2: ∫₁^+∞ dx/(x²+3x). So sánh: 1/(x²+3x) < 1/x², ∫₁^+∞ 1/x² hội tuy (p=2>1) ⇒ hội tuy.\n\nVí dụ 3 — Loại 2: ∫₀¹ dx/(x(1-x)). Điểm kỳ dị tại 0 và 1.\nPhân phần: 1/(x(1-x)) = 1/x + 1/(1-x). ∫₀¹ dx/x phân kỳ tại 0 ⇒ cả tích phân phân kỳ.\n\nVí dụ 4: ∫₀^+∞ x²e^(-x) dx. Tính trực tiếp bằng tích phân từng phần 2 lần = 2."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Phân biệt loại 1 (cận vô hạn) và loại 2 (điểm kỳ dị); mẫu p là công cụ so sánh nhanh nhất.\nHội tuy tuyệt đối (∫|f| hội tuy) là điều kiện đủ mạnh.\nLoại 2 tại 0 có thể quy về loại 1 bằng đổi biến x=1/t."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_calculus_1",
+    "course_title": "Giải tích 1",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Tích phân suy rộng loại 1 & loại 2",
+    "lesson_order": 2,
+    "lesson_id": "chapter-3-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Phần bài tập củng cố chương Tích phân suy rộng với các dạng đề thường gặp tại HCMUT: xét hội tuy-phân kỳ, tính giá trị tích phân hội tuy, và so sánh bằng tiêu chuẩn. Mỗi bài dưới đây có lời giải đầy đủ để bạn luyện quy trình: nhận dạng → chọn phương pháp → kết luận."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Quy trình giải bài tập tích phân suy rộng:\n\nBước 1: Xác định loại (cận vô hạn hay điểm kỳ dị).\nBước 2: Thử tính nguyên hàm và lấy giới hạn.\nBước 3: Nếu không tính được, ước lượng hành vi f(x) khi x→∞ hoặc x→0⁺, so sánh với 1/x^p.\nBước 4: Với hàm luợng giác/log, cân nhắc đổi biến hoặc bất đẳng thức (sin x ≤ x, ln x < x).\n\nMẹo thi: ∫₁^+∞ dx/(x^α ln^β x) hội tuy ⇔ α>1 hoặc (α=1 và β>1). Tương tự tại 0 với α<1."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài 1: Xét hội tuy ∫₁^+∞ (x+1)/(x³+2) dx.\nLời giải: (x+1)/(x³+2) ~ 1/x² khi x→∞. ∫₁^+∞ 1/x² hội tuy (p=2). Theo tiêu chuẩn so sánh giới hạn (L=1) ⇒ hội tuy.\n\nBài 2: Tính ∫₀^+∞ e^(-2x) sin x dx.\nLời giải: Tích phân hội tuy tuyệt đối vì |e^(-2x) sin x| ≤ e^(-2x) và ∫₀^+∞ e^(-2x)dx = 1/2. Dùng tích phân từng phần 2 lần hoặc công thức ∫₀^+∞ e^(ax) sin(bx)dx = b/(a²+b²). Kết quả: 1/5.\n\nBài 3: ∫₀¹ dx/√(1-x²).\nLời giải: Loại 2 tại x=1. Nguyên hàm: arcsin x|₀¹ = π/2. Hội tuy.\n\nBài 4: ∫₀¹ ln x dx.\nLời giải: Loại 2 tại 0 (ln x→-∞). Tích phân từng phần: x ln x - x |₀¹. lim(x→0⁺)(x ln x - x) = 0. Kết quả: -1."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Luôn so sánh với mẫu p trước khi tính nguyên hàm phức tạp.\nTích phân từng phần hiệu quả với e^(-x)·(đa thức hoặc lượng giác).\nKiểm tra điểm kỳ dị ở cả hai đầu khoảng tích phân."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_calculus_1",
+    "course_title": "Giải tích 1",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Chuỗi số & Chuỗi lũy thừa",
+    "lesson_order": 1,
+    "lesson_id": "chapter-4-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Chương Chuỗi số & Chuỗi lũy thừa tổng hợp toàn bộ lý thuyết hội tuy: từ chuỗi số thường, chuỗi dương, chuỗi đan dấu đến chuỗi lũy thừa và khai triển Taylor-Fourier cơ bản. Đây là chương then chốt của Giải tích 1, liên kết giới hạn dãy, tích phân suy rộng và đạo hàm của chuỗi lũy thừa — ba mảng thường xuất hiện trong cùng một đề thi giữa kỳ BK."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Điều kiện cần: lim aₙ = 0 là điều kiện cần hội tuy (nhưng chưa đủ — ví dụ ∑1/n).\n\nHệ tiêu chuẩn chuỗi dương:\n• So sánh, so sánh giới hạn\n• D'Alembert: L=lim|aₙ₊₁/aₙ|\n• Cauchy: L=lim ⁿ√|aₙ|\n• Tích phân: aₙ=f(n), f giảm dương\n\nChuỗi đan dấu: Leibniz; tiêu chuẩn Dirichlet và Abel (nâng cao).\n\nChuỗi lũy thừa ∑aₙ(x-x₀)ⁿ:\n• Bán kính R, khoảng (x₀-R, x₀+R)\n• Đạo hàm và tích phân term-by-term trong khoảng hội tuy tuyệt đối\n• ∑aₙxⁿ và ∑naₙxⁿ⁻¹ cùng R\n\nKhai triển Taylor từ chuỗi lũy thừa: f(x)=∑f⁽ⁿ⁾(x₀)(x-x₀)ⁿ/n! khi f khả vi vô hạn trong khoảng hội tuy."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ 1: ∑(3ⁿ+2ⁿ)/5ⁿ = ∑(3/5)ⁿ + ∑(2/5)ⁿ — hai cấp số nhân, mỗi cấp hội tuy vì |q|<1. Tổng = 3/2 + 2/3 = 13/6.\n\nVí dụ 2: Xét ∑n!/10ⁿ bằng D'Alembert.\naₙ₊₁/aₙ = (n+1)/10. Với n≥10, tỷ số >1 ⇒ phân kỳ.\n\nVí dụ 3: Tìm khoảng hội tuy ∑xⁿ/n².\nR=1 (Cauchy). x=1: ∑1/n² hội tuy (p=2). x=-1: ∑(-1)ⁿ/n² hội tuy tuyệt đối. Khoảng: [-1,1].\n\nVí dụ 4: Từ ∑(-1)ⁿxⁿ/(n+1) = ln(1+x)/x (x≠0), suy ra ln 2 = ∑(-1)ⁿ⁺¹/(n+1)."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "lim aₙ=0 là cần nhưng chưa đủ; cần tiêu chuẩn phù hợp loại chuỗi.\nChuỗi lũy thừa: tìm R, kiểm tra đầu mút, có thể đạo hàm/tích phân trong (-R,R).\nKhai triển Taylor là chuỗi lũy thừa đặc biệt với aₙ=f⁽ⁿ⁾(0)/n!."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_calculus_1",
+    "course_title": "Giải tích 1",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Chuỗi số & Chuỗi lũy thừa",
+    "lesson_order": 2,
+    "lesson_id": "chapter-4-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập chương Chuỗi số & Chuỗi lũy thừa gồm các dạng: xét hội tuy bằng nhiều tiêu chuẩn, tìm bán kính và khoảng hội tuy, tính tổng chuỗi cấp số nhân, và ứng dụng khai triển để tính giá trị xấp xỉ. Ba bài dưới đây mô phỏng độ khó đề giữa kỳ Giải tích 1 HCMUT."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Chiến lược chọn tiêu chuẩn:\n• Có n! hoặc (n!)² → D'Alembert\n• Có dạng (aₙ)ⁿ hoặc (expression)^n → Cauchy\n• aₙ = f(n), f dương giảm → tích phân\n• Đan dấu đơn giản → Leibniz\n• L=1 → so sánh với chuỗi p hoặc tích phân\n\nTìm tổng chuỗi: Nhận dạng cấp số nhân ∑arⁿ = a/(1-r); đạo hàm chuỗi lũy thừa để tính ∑nxⁿ = x/(1-x)²."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài 1: Xét hội tuy ∑(2n)!/(n!)² · (1/4)ⁿ.\nLời giải: Dùng Stirling n! ~ √(2πn)(n/e)ⁿ hoặc D'Alembert. aₙ₊₁/aₙ = (2n+2)(2n+1)/[(n+1)²·4] = (2n+2)(2n+1)/[4(n+1)²] → 1/2 < 1. Hội tuy.\n\nBài 2: Tìm khoảng hội tuy ∑(n+1)xⁿ/3ⁿ.\nLời giải: Viết ∑(n+1)(x/3)ⁿ. Đặt r=x/3, ∑(n+1)rⁿ = 1/(1-r)². Hội tuy khi |r|<1 ⇔ |x|<3. x=3: ∑(n+1) phân kỳ. x=-3: ∑(n+1)(-1)ⁿ phân kỳ. Khoảng: (-3, 3).\n\nBài 3: Tính tổng ∑₁^∞ 1/(n(n+2)).\nLời giải: Phân phần 1/(n(n+2)) = 1/2·(1/n - 1/(n+2)). Tổng telescopy: Sₙ = 1/2·(1 + 1/2 - 1/(n+1) - 1/(n+2)) → 3/4 khi n→∞."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "D'Alembert mạnh với giai thừa; đạo hàm chuỗi lũy thừa giúp tính ∑nxⁿ.\nKhoảng hội tuy: luôn thử x=x₀±R riêng biệt.\nPhân phần telescopy là kỹ thuật tính tổng chuỗi hữu hạn số hạng."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_calculus_1",
+    "course_title": "Giải tích 1",
+    "chapter_order": 5,
+    "chapter_title": "Đề thi Giữa kỳ & Cuối kỳ Giải tích 1 HCMUT",
+    "lesson_order": 1,
+    "lesson_id": "chapter-5-lesson-1",
+    "lesson_title": "Bài 1: Tài liệu ôn tập & đề thi",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Tài liệu ôn tập tổng hợp toàn bộ nội dung Giải tích 1 theo cấu trúc đề thi HCMUT: phần trắc nghiệm giới hạn-Taylor (30%), tích phân suy rộng (25%), chuỗi số và chuỗi lũy thừa (35%), cộng điểm tự luận (10%). Bài này cung cấp đề mẫu và hướng dẫn phân bổ thời gian 90 phút cho giữa kỳ và 120 phút cho cuối kỳ."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Cấu trúc đề thi mẫu Giữa kỳ (90 phút):\n• Câu 1-3: Giới hạn — dùng vcb, L'Hospital hoặc Taylor\n• Câu 4-5: Đạo hàm và ứng dụng (cực trị, tiệm cận)\n• Câu 6-7: Tích phân suy rộng — xét hội tuy\n• Câu 8-10: Chuỗi — D'Alembert, bán kính\n\nCấu trúc Cuối kỳ (120 phút): thêm chuỗi lũy thừa tại đầu mút, tích phân suy rộng loại 2 kép, bài tự luận khai triển Taylor và tính tổng chuỗi.\n\nBảng công thức cần thuộc:\n• Maclaurin: e^x, sin x, cos x, ln(1+x), (1+x)^α\n• ∫₁^+∞ dx/x^p: p>1; ∫₀¹ dx/x^p: p<1\n• ∑1/n^p: p>1; bán kính R=1/lim|aₙ/aₙ₊₁|\n\nChiến lược: Làm trắc nghiệm trước (2 phút/câu dễ), giữ 40% thời gian cho tự luận."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Đề mẫu Giữa kỳ — Trích 3 câu:\n\nCâu 1: lim(x→0) (tan x - sin x)/x³ = ?\nĐáp án: 1/2 (Taylor: tan x = x + x³/3, sin x = x - x³/6).\n\nCâu 2: ∫₁^+∞ dx/(x√(x-1)) hội tuy hay phân kỳ?\nĐáp án: Hội tuy. Đổi t=√(x-1) hoặc so sánh ~ 1/x^1.5.\n\nCâu 3: Bán kính hội tuy ∑(2n-1)xⁿ/n.\nĐáp án: R=1 (|aₙ/aₙ₊₁|→1). x=1: ∑(2n-1)/n phân kỳ. Khoảng (-1,1).\n\nTự luận mẫu: Khai triển Maclaurin đến bậc 4 của f(x)=e^(-x)cos x và tính lim(x→0) (f(x)-1+x)/x⁴.\nLời giải ngắn: f(x)=1-x+x³/3-x⁴/6+o(x⁴). Kết quả: -1/6."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Ôn theo 4 trụ: giới hạn-Taylor, tích phân suy rộng, chuỗi dương, chuỗi lũy thừa.\nThuộc bảng Maclaurin và mẫu p — tiết kiệm 50% thời gian trắc nghiệm.\nLuyện ít nhất 3 đề thời gian thực trước kỳ thi."
+      }
+    ]
+  }
+]

@@ -1,0 +1,272 @@
+[
+  {
+    "course_id": "ueh_math",
+    "course_title": "Toán tài chính",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Giá trị thời gian của tiền & Lãi kép",
+    "lesson_order": 1,
+    "lesson_id": "chapter-1-lesson-1",
+    "lesson_title": "Lãi đơn, Lãi kép và Lãi suất tương đương",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Lãi đơn, Lãi kép và Lãi suất tương đương là nội dung trọng tâm trong Giá trị thời gian của tiền & Lãi kép — môn Toán tài chính. Giá trị thời gian của tiền. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn Minh Phú (Toán tài chính): doanh thu 490 tỷ VND, biên gộp 29%, chi phí cố định 8 tỷ — áp dụng Lãi đơn, Lãi kép và Lãi suất tương đương phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Lãi đơn, Lãi kép và Lãi suất tương đương:\n\n1. FV = PV(1+r)^n\n2. PV = FV/(1+r)^n\n3. Effective rate vs nominal\n4. Compound vs simple interest\n\nCông thức:\nFV = PV(1+r)^n. PV = FV/(1+r)^n.\n\nThuật ngữ: . Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn Minh Phú (Toán tài chính): doanh thu 490 tỷ VND, biên gộp 29%, chi phí cố định 8 tỷ — áp dụng Lãi đơn, Lãi kép và Lãi suất tương đương phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Lãi đơn, Lãi kép và Lãi suất tương đương, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Lãi đơn, Lãi kép và Lãi suất tương đương:\nGửi 100M, r=8%/năm, 5 năm → FV = 146.9M.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=2900 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 21%. Liên hệ thực tiễn Minh Phú (Toán tài chính): doanh thu 490 tỷ VND, biên gộp 29%, chi phí cố định 8 tỷ — áp dụng Lãi đơn, Lãi kép và Lãi suất tương đương phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Lãi đơn, Lãi kép và Lãi suất tương đương, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tiền hôm nay > tiền mai. FV/PV. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn Minh Phú (Toán tài chính): doanh thu 490 tỷ VND, biên gộp 29%, chi phí cố định 8 tỷ — áp dụng Lãi đơn, Lãi kép và Lãi suất tương đương phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_math",
+    "course_title": "Toán tài chính",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Giá trị thời gian của tiền & Lãi kép",
+    "lesson_order": 2,
+    "lesson_id": "chapter-1-lesson-2",
+    "lesson_title": "Giá trị tương lai (FV) & Giá trị hiện tại (PV)",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Giá trị tương lai (FV) & Giá trị hiện tại (PV) là nội dung trọng tâm trong Giá trị thời gian của tiền & Lãi kép — môn Toán tài chính. Giá trị thời gian của tiền. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn Trung Nguyên (Toán tài chính): doanh thu 500 tỷ VND, biên gộp 30%, chi phí cố định 9 tỷ — áp dụng Giá trị tương lai (FV) & Giá trị hiện tại (PV) phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Giá trị tương lai (FV) & Giá trị hiện tại (PV):\n\n1. FV = PV(1+r)^n\n2. PV = FV/(1+r)^n\n3. Effective rate vs nominal\n4. Compound vs simple interest\n\nCông thức:\nFV = PV(1+r)^n. PV = FV/(1+r)^n.\n\nThuật ngữ: . Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn Trung Nguyên (Toán tài chính): doanh thu 500 tỷ VND, biên gộp 30%, chi phí cố định 9 tỷ — áp dụng Giá trị tương lai (FV) & Giá trị hiện tại (PV) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Giá trị tương lai (FV) & Giá trị hiện tại (PV), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Giá trị tương lai (FV) & Giá trị hiện tại (PV):\nGửi 100M, r=8%/năm, 5 năm → FV = 146.9M.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=1000 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 24%. Liên hệ thực tiễn Trung Nguyên (Toán tài chính): doanh thu 500 tỷ VND, biên gộp 30%, chi phí cố định 9 tỷ — áp dụng Giá trị tương lai (FV) & Giá trị hiện tại (PV) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Giá trị tương lai (FV) & Giá trị hiện tại (PV), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tiền hôm nay > tiền mai. FV/PV. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn Trung Nguyên (Toán tài chính): doanh thu 500 tỷ VND, biên gộp 30%, chi phí cố định 9 tỷ — áp dụng Giá trị tương lai (FV) & Giá trị hiện tại (PV) phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_math",
+    "course_title": "Toán tài chính",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Chuỗi tiền tệ & Niên kim (Annuity)",
+    "lesson_order": 1,
+    "lesson_id": "chapter-2-lesson-1",
+    "lesson_title": "Niên kim đầu kỳ, cuối kỳ và niên kim vĩnh viễn",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Niên kim đầu kỳ, cuối kỳ và niên kim vĩnh viễn là nội dung trọng tâm trong Chuỗi tiền tệ & Niên kim (Annuity) — môn Toán tài chính. Niên kim và NPV, IRR. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn VinFast (Toán tài chính): doanh thu 260 tỷ VND, biên gộp 31%, chi phí cố định 11 tỷ — áp dụng Niên kim đầu kỳ, cuối kỳ và niên kim vĩnh viễn phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Niên kim đầu kỳ, cuối kỳ và niên kim vĩnh viễn:\n\n1. Ordinary vs annuity due\n2. PV annuity = PMT×[(1-(1+r)^-n)/r]\n3. NPV = Σ CF/(1+r)^t - I0\n4. IRR: NPV=0\n\nCông thức:\nNPV rule: accept if NPV>0. IRR: rate where NPV=0.\n\nThuật ngữ: . Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn VinFast (Toán tài chính): doanh thu 260 tỷ VND, biên gộp 31%, chi phí cố định 11 tỷ — áp dụng Niên kim đầu kỳ, cuối kỳ và niên kim vĩnh viễn phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Niên kim đầu kỳ, cuối kỳ và niên kim vĩnh viễn, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Niên kim đầu kỳ, cuối kỳ và niên kim vĩnh viễn:\nDự án I0=500M, CF 150M×5 năm, r=10% → NPV=68.6M > 0 → chấp nhận.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=1600 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 18%. Liên hệ thực tiễn VinFast (Toán tài chính): doanh thu 260 tỷ VND, biên gộp 31%, chi phí cố định 11 tỷ — áp dụng Niên kim đầu kỳ, cuối kỳ và niên kim vĩnh viễn phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Niên kim đầu kỳ, cuối kỳ và niên kim vĩnh viễn, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "NPV>0 chấp nhận. IRR > r chấp nhận. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn VinFast (Toán tài chính): doanh thu 260 tỷ VND, biên gộp 31%, chi phí cố định 11 tỷ — áp dụng Niên kim đầu kỳ, cuối kỳ và niên kim vĩnh viễn phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_math",
+    "course_title": "Toán tài chính",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Chuỗi tiền tệ & Niên kim (Annuity)",
+    "lesson_order": 2,
+    "lesson_id": "chapter-2-lesson-2",
+    "lesson_title": "Phương pháp Giá trị hiện tại thuần (NPV) & IRR",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Phương pháp Giá trị hiện tại thuần (NPV) & IRR là nội dung trọng tâm trong Chuỗi tiền tệ & Niên kim (Annuity) — môn Toán tài chính. Niên kim và NPV, IRR. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn CellphoneS (Toán tài chính): doanh thu 250 tỷ VND, biên gộp 30%, chi phí cố định 10 tỷ — áp dụng Phương pháp Giá trị hiện tại thuần (NPV) & IRR phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Phương pháp Giá trị hiện tại thuần (NPV) & IRR:\n\n1. Ordinary vs annuity due\n2. PV annuity = PMT×[(1-(1+r)^-n)/r]\n3. NPV = Σ CF/(1+r)^t - I0\n4. IRR: NPV=0\n\nCông thức:\nNPV rule: accept if NPV>0. IRR: rate where NPV=0.\n\nThuật ngữ: . Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn CellphoneS (Toán tài chính): doanh thu 250 tỷ VND, biên gộp 30%, chi phí cố định 10 tỷ — áp dụng Phương pháp Giá trị hiện tại thuần (NPV) & IRR phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Phương pháp Giá trị hiện tại thuần (NPV) & IRR, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Phương pháp Giá trị hiện tại thuần (NPV) & IRR:\nDự án I0=500M, CF 150M×5 năm, r=10% → NPV=68.6M > 0 → chấp nhận.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=1500 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 15%. Liên hệ thực tiễn CellphoneS (Toán tài chính): doanh thu 250 tỷ VND, biên gộp 30%, chi phí cố định 10 tỷ — áp dụng Phương pháp Giá trị hiện tại thuần (NPV) & IRR phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Phương pháp Giá trị hiện tại thuần (NPV) & IRR, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "NPV>0 chấp nhận. IRR > r chấp nhận. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn CellphoneS (Toán tài chính): doanh thu 250 tỷ VND, biên gộp 30%, chi phí cố định 10 tỷ — áp dụng Phương pháp Giá trị hiện tại thuần (NPV) & IRR phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_math",
+    "course_title": "Toán tài chính",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Thẩm định dự án đầu tư NPV, IRR",
+    "lesson_order": 1,
+    "lesson_id": "chapter-3-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài lý thuyết chương \"Thẩm định dự án đầu tư NPV, IRR\" — môn Toán tài chính. Thẩm định dự án NPV, IRR. Củng cố khái niệm, mô hình, công thức và thuật ngữ then chốt — nền tảng cho bài tập vận dụng và thi cuối kỳ. Liên hệ thực tiễn Masan (Toán tài chính): doanh thu 310 tỷ VND, biên gộp 21%, chi phí cố định 12 tỷ — áp dụng Thẩm định dự án đầu tư NPV, IRR phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Thẩm định dự án đầu tư NPV, IRR, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Khung kiến thức Thẩm định dự án đầu tư NPV, IRR:\n\n1. Independent vs mutually exclusive\n2. IRR pitfall: multiple IRR\n3. NPV profile\n4. Profitability index\n\nThuật ngữ chuyên ngành: .\nĐiều kiện áp dụng: xác định giả định mô hình trước khi tính. Lỗi thường gặp: nhầm đơn vị (VND/USD), bỏ qua ràng buộc, kết luận không có số liệu hỗ trợ. Liên hệ thực tiễn Masan (Toán tài chính): doanh thu 310 tỷ VND, biên gộp 21%, chi phí cố định 12 tỷ — áp dụng Thẩm định dự án đầu tư NPV, IRR phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Thẩm định dự án đầu tư NPV, IRR, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ. Thuật ngữ Anh-Việt thường gặp trong đề Thẩm định dự án đầu tư NPV, IRR: tra cứu song ngữ trước khi thi. Tự luyện thêm với Q=2100 đơn vị sản phẩm để củng cố Thẩm định dự án đầu tư NPV, IRR."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa Thẩm định dự án đầu tư NPV, IRR:\nDự án A NPV 80M, B NPV 60M — chọn A nếu independent.\n\nPhân tích bổ sung: doanh thu 310 tỷ VND/năm, biên gộp 21%, chi phí cố định 12 tỷ. Case Masan — trình bày 4 bước: (1) Dữ kiện (2) Chọn mô hình (3) Tính toán Q=2100 (4) Kết luận và rủi ro nếu biến động 15%. Liên hệ thực tiễn Masan (Toán tài chính): doanh thu 310 tỷ VND, biên gộp 21%, chi phí cố định 12 tỷ — áp dụng Thẩm định dự án đầu tư NPV, IRR phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Thẩm định dự án đầu tư NPV, IRR, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Mutually exclusive: chọn NPV cao hơn. Chuyển sang bài tập vận dụng để tự kiểm tra. Ôn thuật ngữ Anh-Việt trước thi. Liên hệ thực tiễn Masan (Toán tài chính): doanh thu 310 tỷ VND, biên gộp 21%, chi phí cố định 12 tỷ — áp dụng Thẩm định dự án đầu tư NPV, IRR phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_math",
+    "course_title": "Toán tài chính",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Thẩm định dự án đầu tư NPV, IRR",
+    "lesson_order": 2,
+    "lesson_id": "chapter-3-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng chương \"Thẩm định dự án đầu tư NPV, IRR\" — môn Toán tài chính. Sau khi nắm lý thuyết, tự giải từng bài trước khi đối chiếu lời giải mẫu. Trình bày có bước: ghi công thức, thay số, đơn vị, kết luận. Không nhảy bước — giảng viên chấm theo quy trình giải. Liên hệ thực tiễn VinFast (Toán tài chính): doanh thu 300 tỷ VND, biên gộp 20%, chi phí cố định 11 tỷ — áp dụng Thẩm định dự án đầu tư NPV, IRR phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Hướng dẫn làm bài Thẩm định dự án đầu tư NPV, IRR:\n• Câu lý thuyết: định nghĩa chính xác + vẽ sơ đồ (nếu có) + ví dụ doanh nghiệp VN.\n• Câu tính toán: liệt kê dữ kiện → chọn công thức → thay số → đơn vị → kết luận kinh tế/quản trị.\n• Case study: tóm tắt tình huống → phân tích theo mô hình chương → khuyến nghị có căn cứ số liệu.\n\n\n\nKiến thức cốt lõi:\n1. Independent vs mutually exclusive\n2. IRR pitfall: multiple IRR\n3. NPV profile\n4. Profitability index Liên hệ thực tiễn VinFast (Toán tài chính): doanh thu 300 tỷ VND, biên gộp 20%, chi phí cố định 11 tỷ — áp dụng Thẩm định dự án đầu tư NPV, IRR phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Thẩm định dự án đầu tư NPV, IRR, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập mẫu chương Thẩm định dự án đầu tư NPV, IRR:\nDự án A NPV 80M, B NPV 60M — chọn A nếu independent.\n\nDữ kiện bổ sung: P=2000 VND/sp, Q=3000 sp, FC=1100 triệu VND, VC=1200 VND/sp.\n(a) Tính Contribution Margin/sp và tổng lợi nhuận.\n(b) Tính điểm hòa vốn (BEP) theo số lượng.\n(c) Margin of Safety khi Q thực tế = 3000.\n(d) Khuyến nghị cho VinFast dựa trên kết quả.\nĐáp án gợi ý: CM = P − VC; BEP = FC ÷ CM; MOS = (Q − BEP) ÷ Q. Liên hệ thực tiễn VinFast (Toán tài chính): doanh thu 300 tỷ VND, biên gộp 20%, chi phí cố định 11 tỷ — áp dụng Thẩm định dự án đầu tư NPV, IRR phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Thẩm định dự án đầu tư NPV, IRR, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Luyện đủ dạng số, lý thuyết và case cho Thẩm định dự án đầu tư NPV, IRR. Kiểm tra đơn vị và giả định mô hình. Tự giải 2–3 biến thể số liệu trước khi thi. Liên hệ thực tiễn VinFast (Toán tài chính): doanh thu 300 tỷ VND, biên gộp 20%, chi phí cố định 11 tỷ — áp dụng Thẩm định dự án đầu tư NPV, IRR phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_math",
+    "course_title": "Toán tài chính",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Lập kế hoạch trả nợ vay ngân hàng",
+    "lesson_order": 1,
+    "lesson_id": "chapter-4-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài lý thuyết chương \"Lập kế hoạch trả nợ vay ngân hàng\" — môn Toán tài chính. Kế hoạch trả nợ vay. Củng cố khái niệm, mô hình, công thức và thuật ngữ then chốt — nền tảng cho bài tập vận dụng và thi cuối kỳ. Liên hệ thực tiễn Vinamilk (Toán tài chính): doanh thu 360 tỷ VND, biên gộp 26%, chi phí cố định 5 tỷ — áp dụng Lập kế hoạch trả nợ vay ngân hàng phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Lập kế hoạch trả nợ vay ngân hàng, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Khung kiến thức Lập kế hoạch trả nợ vay ngân hàng:\n\n1. Amortization schedule\n2. PMT = PV×[r(1+r)^n]/[(1+r)^n-1]\n3. Principal vs interest each period\n4. Prepayment impact\n\nThuật ngữ chuyên ngành: .\nĐiều kiện áp dụng: xác định giả định mô hình trước khi tính. Lỗi thường gặp: nhầm đơn vị (VND/USD), bỏ qua ràng buộc, kết luận không có số liệu hỗ trợ. Liên hệ thực tiễn Vinamilk (Toán tài chính): doanh thu 360 tỷ VND, biên gộp 26%, chi phí cố định 5 tỷ — áp dụng Lập kế hoạch trả nợ vay ngân hàng phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Lập kế hoạch trả nợ vay ngân hàng, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ. Thuật ngữ Anh-Việt thường gặp trong đề Lập kế hoạch trả nợ vay ngân hàng: tra cứu song ngữ trước khi thi. Tự luyện thêm với Q=2600 đơn vị sản phẩm để củng cố Lập kế hoạch trả nợ vay ngân hàng."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa Lập kế hoạch trả nợ vay ngân hàng:\nVay 1 tỷ, 10 năm, 12%/năm → PMT ≈ 143.5M/năm.\n\nPhân tích bổ sung: doanh thu 360 tỷ VND/năm, biên gộp 26%, chi phí cố định 5 tỷ. Case Vinamilk — trình bày 4 bước: (1) Dữ kiện (2) Chọn mô hình (3) Tính toán Q=2600 (4) Kết luận và rủi ro nếu biến động 12%. Liên hệ thực tiễn Vinamilk (Toán tài chính): doanh thu 360 tỷ VND, biên gộp 26%, chi phí cố định 5 tỷ — áp dụng Lập kế hoạch trả nợ vay ngân hàng phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Lập kế hoạch trả nợ vay ngân hàng, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "PMT cố định. Lãi giảm dần. Chuyển sang bài tập vận dụng để tự kiểm tra. Ôn thuật ngữ Anh-Việt trước thi. Liên hệ thực tiễn Vinamilk (Toán tài chính): doanh thu 360 tỷ VND, biên gộp 26%, chi phí cố định 5 tỷ — áp dụng Lập kế hoạch trả nợ vay ngân hàng phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_math",
+    "course_title": "Toán tài chính",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Lập kế hoạch trả nợ vay ngân hàng",
+    "lesson_order": 2,
+    "lesson_id": "chapter-4-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng chương \"Lập kế hoạch trả nợ vay ngân hàng\" — môn Toán tài chính. Sau khi nắm lý thuyết, tự giải từng bài trước khi đối chiếu lời giải mẫu. Trình bày có bước: ghi công thức, thay số, đơn vị, kết luận. Không nhảy bước — giảng viên chấm theo quy trình giải. Liên hệ thực tiễn Masan (Toán tài chính): doanh thu 350 tỷ VND, biên gộp 25%, chi phí cố định 12 tỷ — áp dụng Lập kế hoạch trả nợ vay ngân hàng phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Hướng dẫn làm bài Lập kế hoạch trả nợ vay ngân hàng:\n• Câu lý thuyết: định nghĩa chính xác + vẽ sơ đồ (nếu có) + ví dụ doanh nghiệp VN.\n• Câu tính toán: liệt kê dữ kiện → chọn công thức → thay số → đơn vị → kết luận kinh tế/quản trị.\n• Case study: tóm tắt tình huống → phân tích theo mô hình chương → khuyến nghị có căn cứ số liệu.\n\n\n\nKiến thức cốt lõi:\n1. Amortization schedule\n2. PMT = PV×[r(1+r)^n]/[(1+r)^n-1]\n3. Principal vs interest each period\n4. Prepayment impact Liên hệ thực tiễn Masan (Toán tài chính): doanh thu 350 tỷ VND, biên gộp 25%, chi phí cố định 12 tỷ — áp dụng Lập kế hoạch trả nợ vay ngân hàng phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Lập kế hoạch trả nợ vay ngân hàng, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập mẫu chương Lập kế hoạch trả nợ vay ngân hàng:\nVay 1 tỷ, 10 năm, 12%/năm → PMT ≈ 143.5M/năm.\n\nDữ kiện bổ sung: P=2500 VND/sp, Q=3500 sp, FC=1200 triệu VND, VC=1500 VND/sp.\n(a) Tính Contribution Margin/sp và tổng lợi nhuận.\n(b) Tính điểm hòa vốn (BEP) theo số lượng.\n(c) Margin of Safety khi Q thực tế = 3500.\n(d) Khuyến nghị cho Masan dựa trên kết quả.\nĐáp án gợi ý: CM = P − VC; BEP = FC ÷ CM; MOS = (Q − BEP) ÷ Q. Liên hệ thực tiễn Masan (Toán tài chính): doanh thu 350 tỷ VND, biên gộp 25%, chi phí cố định 12 tỷ — áp dụng Lập kế hoạch trả nợ vay ngân hàng phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Lập kế hoạch trả nợ vay ngân hàng, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Luyện đủ dạng số, lý thuyết và case cho Lập kế hoạch trả nợ vay ngân hàng. Kiểm tra đơn vị và giả định mô hình. Tự giải 2–3 biến thể số liệu trước khi thi. Liên hệ thực tiễn Masan (Toán tài chính): doanh thu 350 tỷ VND, biên gộp 25%, chi phí cố định 12 tỷ — áp dụng Lập kế hoạch trả nợ vay ngân hàng phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_math",
+    "course_title": "Toán tài chính",
+    "chapter_order": 5,
+    "chapter_title": "Đề ôn tập thi kết thúc học phần UEH",
+    "lesson_order": 1,
+    "lesson_id": "chapter-5-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Tài liệu ôn thi môn Toán tài chính — Đề ôn tập thi kết thúc học phần UEH. Ôn thi Toán tài chính UEH. Hệ thống kiến thức toàn khóa, cấu trúc đề thi và chiến lược làm bài hiệu quả. Sinh viên ôn theo trình tự: lý thuyết từng chương → ví dụ có số liệu → bài tập cuối chương → đề tổng hợp có giới hạn thời gian (90–120 phút). Chuẩn bị thuật ngữ song ngữ Anh-Việt và case doanh nghiệp Việt Nam. Liên hệ thực tiễn Viettel (Toán tài chính): doanh thu 410 tỷ VND, biên gộp 31%, chi phí cố định 6 tỷ — áp dụng Đề ôn tập thi kết thúc học phần UEH phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Cấu trúc đề thi và phân bổ điểm:\nFV/PV 30%, NPV/IRR 40%, vay 30%\n\nChiến lược làm bài chi tiết: (1) Đọc toàn đề 5 phút, đánh dấu câu quen và câu khó. (2) Làm phần trắc nghiệm/tính toán trước — ghi công thức, thay số, đơn vị. (3) Phần case/tự luận: trình bày theo giả thiết → phân tích từng bước → kết luận và kiến nghị. (4) Giữ 20–25% thời gian kiểm tra lại logic và số học. (5) Đối chiếu rubric chấm điểm khi tự luyện. Liên hệ thực tiễn Viettel (Toán tài chính): doanh thu 410 tỷ VND, biên gộp 31%, chi phí cố định 6 tỷ — áp dụng Đề ôn tập thi kết thúc học phần UEH phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đề ôn tập thi kết thúc học phần UEH, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Đề mẫu ôn tập:\nTính NPV và IRR dự án.\n\nHướng dẫn luyện: giải đề các năm trước của Toán tài chính; thảo luận nhóm case khó; tự chấm điểm theo thang 10. Case doanh nghiệp VN như Viettel thường xuất hiện — chuẩn bị số liệu và phân tích SWOT/PESTEL nếu là môn marketing/kinh doanh. Với môn có tính toán: kiểm tra lại BEP, NPV, EOQ, tỷ giá tùy chương trình. Liên hệ thực tiễn Viettel (Toán tài chính): doanh thu 410 tỷ VND, biên gộp 31%, chi phí cố định 6 tỷ — áp dụng Đề ôn tập thi kết thúc học phần UEH phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đề ôn tập thi kết thúc học phần UEH, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Ôn TVM, NPV, IRR, amortization. Luyện đề có thời gian. Nắm thuật ngữ Anh-Việt. Kiểm tra đơn vị và giả định trước khi nộp bài. Liên hệ thực tiễn Viettel (Toán tài chính): doanh thu 410 tỷ VND, biên gộp 31%, chi phí cố định 6 tỷ — áp dụng Đề ôn tập thi kết thúc học phần UEH phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_math",
+    "course_title": "Toán tài chính",
+    "chapter_order": 5,
+    "chapter_title": "Đề ôn tập thi kết thúc học phần UEH",
+    "lesson_order": 2,
+    "lesson_id": "chapter-5-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Tài liệu ôn thi môn Toán tài chính — Đề ôn tập thi kết thúc học phần UEH. Ôn thi Toán tài chính UEH. Hệ thống kiến thức toàn khóa, cấu trúc đề thi và chiến lược làm bài hiệu quả. Sinh viên ôn theo trình tự: lý thuyết từng chương → ví dụ có số liệu → bài tập cuối chương → đề tổng hợp có giới hạn thời gian (90–120 phút). Chuẩn bị thuật ngữ song ngữ Anh-Việt và case doanh nghiệp Việt Nam. Liên hệ thực tiễn Vinamilk (Toán tài chính): doanh thu 400 tỷ VND, biên gộp 30%, chi phí cố định 5 tỷ — áp dụng Đề ôn tập thi kết thúc học phần UEH phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Cấu trúc đề thi và phân bổ điểm:\nFV/PV 30%, NPV/IRR 40%, vay 30%\n\nChiến lược làm bài chi tiết: (1) Đọc toàn đề 5 phút, đánh dấu câu quen và câu khó. (2) Làm phần trắc nghiệm/tính toán trước — ghi công thức, thay số, đơn vị. (3) Phần case/tự luận: trình bày theo giả thiết → phân tích từng bước → kết luận và kiến nghị. (4) Giữ 20–25% thời gian kiểm tra lại logic và số học. (5) Đối chiếu rubric chấm điểm khi tự luyện. Liên hệ thực tiễn Vinamilk (Toán tài chính): doanh thu 400 tỷ VND, biên gộp 30%, chi phí cố định 5 tỷ — áp dụng Đề ôn tập thi kết thúc học phần UEH phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đề ôn tập thi kết thúc học phần UEH, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Đề mẫu ôn tập:\nTính NPV và IRR dự án.\n\nHướng dẫn luyện: giải đề các năm trước của Toán tài chính; thảo luận nhóm case khó; tự chấm điểm theo thang 10. Case doanh nghiệp VN như Vinamilk thường xuất hiện — chuẩn bị số liệu và phân tích SWOT/PESTEL nếu là môn marketing/kinh doanh. Với môn có tính toán: kiểm tra lại BEP, NPV, EOQ, tỷ giá tùy chương trình. Liên hệ thực tiễn Vinamilk (Toán tài chính): doanh thu 400 tỷ VND, biên gộp 30%, chi phí cố định 5 tỷ — áp dụng Đề ôn tập thi kết thúc học phần UEH phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đề ôn tập thi kết thúc học phần UEH, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Ôn TVM, NPV, IRR, amortization. Luyện đề có thời gian. Nắm thuật ngữ Anh-Việt. Kiểm tra đơn vị và giả định trước khi nộp bài. Liên hệ thực tiễn Vinamilk (Toán tài chính): doanh thu 400 tỷ VND, biên gộp 30%, chi phí cố định 5 tỷ — áp dụng Đề ôn tập thi kết thúc học phần UEH phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  }
+]

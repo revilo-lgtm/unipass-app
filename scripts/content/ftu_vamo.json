@@ -1,0 +1,299 @@
+[
+  {
+    "course_id": "ftu_vamo",
+    "course_title": "Kinh tế Vi mô",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Co giãn Cung Cầu & Can thiệp Chính phủ",
+    "lesson_order": 1,
+    "lesson_id": "chapter-1-lesson-1",
+    "lesson_title": "Độ co giãn của cầu theo giá, thu nhập và giá chéo",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Độ co giãn của cầu theo giá, thu nhập và giá chéo là nội dung trọng tâm trong Co giãn Cung Cầu & Can thiệp Chính phủ — môn Kinh tế Vi mô. Co giãn cung cầu và can thiệp chính phủ — Ed, thuế, trợ cấp, giá trần/sàn. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn CellphoneS (Kinh tế Vi mô): doanh thu 210 tỷ VND, biên gộp 21%, chi phí cố định 10 tỷ — áp dụng Độ co giãn của cầu theo giá, thu nhập và giá chéo phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Độ co giãn của cầu theo giá, thu nhập và giá chéo:\n\n1. Ed = (%ΔQ)/(%ΔP). |Ed|>1 elastic; <1 inelastic\n2. Thuế tạo DWL = ½×t×ΔQ. Giá trần → shortage; sàn → surplus\n3. Giá sàn gạo VN: thặng dư, ngân sách mua dự trữ\n4. Exy: thay thế (>0) vs bổ sung (<0)\n\nCông thức:\nEd = (%ΔQd)/(%ΔP). DWL = ½×t×ΔQ. TR = P×Q.\n\nThuật ngữ: elasticity; deadweight loss; price ceiling; price floor; subsidy. Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn CellphoneS (Kinh tế Vi mô): doanh thu 210 tỷ VND, biên gộp 21%, chi phí cố định 10 tỷ — áp dụng Độ co giãn của cầu theo giá, thu nhập và giá chéo phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Độ co giãn của cầu theo giá, thu nhập và giá chéo:\nXăng +10% → cầu -3%, Ed=0.3. Giá sàn lúa 4,500 vs P* 4,000 → thặng dư 500,000 tấn.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=1100 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 15%.\n\nBài tập mở rộng:\nQd=100-2P, Qs=20+3P. Thuế 5 → DWL? Liên hệ thực tiễn CellphoneS (Kinh tế Vi mô): doanh thu 210 tỷ VND, biên gộp 21%, chi phí cố định 10 tỷ — áp dụng Độ co giãn của cầu theo giá, thu nhập và giá chéo phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Độ co giãn của cầu theo giá, thu nhập và giá chéo, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Ed quyết định tác động thuế. Can thiệp giá tạo DWL. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn CellphoneS (Kinh tế Vi mô): doanh thu 210 tỷ VND, biên gộp 21%, chi phí cố định 10 tỷ — áp dụng Độ co giãn của cầu theo giá, thu nhập và giá chéo phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ftu_vamo",
+    "course_title": "Kinh tế Vi mô",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Co giãn Cung Cầu & Can thiệp Chính phủ",
+    "lesson_order": 2,
+    "lesson_id": "chapter-1-lesson-2",
+    "lesson_title": "Tác động của Thuế, Trợ cấp, Giá trần và Giá sàn",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Tác động của Thuế, Trợ cấp, Giá trần và Giá sàn là nội dung trọng tâm trong Co giãn Cung Cầu & Can thiệp Chính phủ — môn Kinh tế Vi mô. Co giãn cung cầu và can thiệp chính phủ — Ed, thuế, trợ cấp, giá trần/sàn. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn VinFast (Kinh tế Vi mô): doanh thu 220 tỷ VND, biên gộp 22%, chi phí cố định 11 tỷ — áp dụng Tác động của Thuế, Trợ cấp, Giá trần và Giá sàn phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Tác động của Thuế, Trợ cấp, Giá trần và Giá sàn:\n\n1. Ed = (%ΔQ)/(%ΔP). |Ed|>1 elastic; <1 inelastic\n2. Thuế tạo DWL = ½×t×ΔQ. Giá trần → shortage; sàn → surplus\n3. Giá sàn gạo VN: thặng dư, ngân sách mua dự trữ\n4. Exy: thay thế (>0) vs bổ sung (<0)\n\nCông thức:\nEd = (%ΔQd)/(%ΔP). DWL = ½×t×ΔQ. TR = P×Q.\n\nThuật ngữ: elasticity; deadweight loss; price ceiling; price floor; subsidy. Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn VinFast (Kinh tế Vi mô): doanh thu 220 tỷ VND, biên gộp 22%, chi phí cố định 11 tỷ — áp dụng Tác động của Thuế, Trợ cấp, Giá trần và Giá sàn phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Tác động của Thuế, Trợ cấp, Giá trần và Giá sàn:\nXăng +10% → cầu -3%, Ed=0.3. Giá sàn lúa 4,500 vs P* 4,000 → thặng dư 500,000 tấn.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=1200 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 18%.\n\nBài tập mở rộng:\nQd=100-2P, Qs=20+3P. Thuế 5 → DWL? Liên hệ thực tiễn VinFast (Kinh tế Vi mô): doanh thu 220 tỷ VND, biên gộp 22%, chi phí cố định 11 tỷ — áp dụng Tác động của Thuế, Trợ cấp, Giá trần và Giá sàn phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Tác động của Thuế, Trợ cấp, Giá trần và Giá sàn, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Ed quyết định tác động thuế. Can thiệp giá tạo DWL. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn VinFast (Kinh tế Vi mô): doanh thu 220 tỷ VND, biên gộp 22%, chi phí cố định 11 tỷ — áp dụng Tác động của Thuế, Trợ cấp, Giá trần và Giá sàn phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ftu_vamo",
+    "course_title": "Kinh tế Vi mô",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Lý thuyết Hành vi Người tiêu dùng",
+    "lesson_order": 1,
+    "lesson_id": "chapter-2-lesson-1",
+    "lesson_title": "Đường đẳng ích, Đường ngân sách & Tối ưu hóa tiêu dùng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Đường đẳng ích, Đường ngân sách & Tối ưu hóa tiêu dùng là nội dung trọng tâm trong Lý thuyết Hành vi Người tiêu dùng — môn Kinh tế Vi mô. Hành vi người tiêu dùng — đẳng ích, ngân sách, MRS = Px/Py. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn Trung Nguyên (Kinh tế Vi mô): doanh thu 160 tỷ VND, biên gộp 31%, chi phí cố định 9 tỷ — áp dụng Đường đẳng ích, Đường ngân sách & Tối ưu hóa tiêu dùng phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Đường đẳng ích, Đường ngân sách & Tối ưu hóa tiêu dùng:\n\n1. Đường đẳng ích: U không đổi, lồi gốc\n2. Tối ưu: MUx/MUy = Px/Py\n3. Hiệu ứng thay thế (SE) vs thu nhập (IE)\n4. Hàm sản xuất Q=f(L,K); MP giảm dần\n5. TC=FC+VC; MC cắt AVC, ATC tại min\n\nCông thức:\nMRS = MUx/MUy = Px/Py. MC = ΔTC/ΔQ. ATC = TC/Q.\n\nThuật ngữ: . Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn Trung Nguyên (Kinh tế Vi mô): doanh thu 160 tỷ VND, biên gộp 31%, chi phí cố định 9 tỷ — áp dụng Đường đẳng ích, Đường ngân sách & Tối ưu hóa tiêu dùng phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Đường đẳng ích, Đường ngân sách & Tối ưu hóa tiêu dùng:\nThu nhập 5M: ăn ngoài 100K vs sách 200K. Ngân sách x+2y=50. May VN: FC 500M, VC 80K/áo, ATC 130K.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=2600 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 18%. Liên hệ thực tiễn Trung Nguyên (Kinh tế Vi mô): doanh thu 160 tỷ VND, biên gộp 31%, chi phí cố định 9 tỷ — áp dụng Đường đẳng ích, Đường ngân sách & Tối ưu hóa tiêu dùng phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đường đẳng ích, Đường ngân sách & Tối ưu hóa tiêu dùng, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tối ưu MRS=giá tương đối. MC cắt ATC tại min. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn Trung Nguyên (Kinh tế Vi mô): doanh thu 160 tỷ VND, biên gộp 31%, chi phí cố định 9 tỷ — áp dụng Đường đẳng ích, Đường ngân sách & Tối ưu hóa tiêu dùng phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ftu_vamo",
+    "course_title": "Kinh tế Vi mô",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Lý thuyết Hành vi Người tiêu dùng",
+    "lesson_order": 2,
+    "lesson_id": "chapter-2-lesson-2",
+    "lesson_title": "Hàm sản xuất, Năng suất cận biên & Các loại chi phí (TC, ATC, MC)",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Hàm sản xuất, Năng suất cận biên & Các loại chi phí (TC, ATC, MC) là nội dung trọng tâm trong Lý thuyết Hành vi Người tiêu dùng — môn Kinh tế Vi mô. Hành vi người tiêu dùng — đẳng ích, ngân sách, MRS = Px/Py. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn CellphoneS (Kinh tế Vi mô): doanh thu 170 tỷ VND, biên gộp 32%, chi phí cố định 10 tỷ — áp dụng Hàm sản xuất, Năng suất cận biên & Các loại chi phí (TC, ATC, MC) phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Hàm sản xuất, Năng suất cận biên & Các loại chi phí (TC, ATC, MC):\n\n1. Đường đẳng ích: U không đổi, lồi gốc\n2. Tối ưu: MUx/MUy = Px/Py\n3. Hiệu ứng thay thế (SE) vs thu nhập (IE)\n4. Hàm sản xuất Q=f(L,K); MP giảm dần\n5. TC=FC+VC; MC cắt AVC, ATC tại min\n\nCông thức:\nMRS = MUx/MUy = Px/Py. MC = ΔTC/ΔQ. ATC = TC/Q.\n\nThuật ngữ: . Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn CellphoneS (Kinh tế Vi mô): doanh thu 170 tỷ VND, biên gộp 32%, chi phí cố định 10 tỷ — áp dụng Hàm sản xuất, Năng suất cận biên & Các loại chi phí (TC, ATC, MC) phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Hàm sản xuất, Năng suất cận biên & Các loại chi phí (TC, ATC, MC):\nThu nhập 5M: ăn ngoài 100K vs sách 200K. Ngân sách x+2y=50. May VN: FC 500M, VC 80K/áo, ATC 130K.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=2700 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 21%. Liên hệ thực tiễn CellphoneS (Kinh tế Vi mô): doanh thu 170 tỷ VND, biên gộp 32%, chi phí cố định 10 tỷ — áp dụng Hàm sản xuất, Năng suất cận biên & Các loại chi phí (TC, ATC, MC) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Hàm sản xuất, Năng suất cận biên & Các loại chi phí (TC, ATC, MC), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tối ưu MRS=giá tương đối. MC cắt ATC tại min. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn CellphoneS (Kinh tế Vi mô): doanh thu 170 tỷ VND, biên gộp 32%, chi phí cố định 10 tỷ — áp dụng Hàm sản xuất, Năng suất cận biên & Các loại chi phí (TC, ATC, MC) phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ftu_vamo",
+    "course_title": "Kinh tế Vi mô",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Lý thuyết Sản xuất & Chi phí",
+    "lesson_order": 1,
+    "lesson_id": "chapter-3-lesson-1",
+    "lesson_title": "Thị trường Cạnh tranh hoàn hảo: Cân bằng ngắn & dài hạn",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Thị trường Cạnh tranh hoàn hảo: Cân bằng ngắn & dài hạn là nội dung trọng tâm trong Lý thuyết Sản xuất & Chi phí — môn Kinh tế Vi mô. Sản xuất, chi phí, cạnh tranh hoàn hảo và độc quyền. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn Minh Phú (Kinh tế Vi mô): doanh thu 110 tỷ VND, biên gộp 26%, chi phí cố định 8 tỷ — áp dụng Thị trường Cạnh tranh hoàn hảo: Cân bằng ngắn & dài hạn phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Thị trường Cạnh tranh hoàn hảo: Cân bằng ngắn & dài hạn:\n\n1. Cạnh tranh: ngắn hạn P=MC; dài hạn P=min ATC, π=0\n2. CS + PS = TS tối đa tại cân bằng\n3. Độc quyền: MR=MC, P>MC → DWL\n4. Phân biệt giá cấp 1, 2 (EVN bậc thang), 3 (vé máy bay)\n\nCông thức:\nĐộc quyền: MR = a-2bQ (nếu P=a-bQ). π = (P-ATC)×Q.\n\nThuật ngữ: . Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn Minh Phú (Kinh tế Vi mô): doanh thu 110 tỷ VND, biên gộp 26%, chi phí cố định 8 tỷ — áp dụng Thị trường Cạnh tranh hoàn hảo: Cân bằng ngắn & dài hạn phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Thị trường Cạnh tranh hoàn hảo: Cân bằng ngắn & dài hạn:\nVinamilk ~55% thị phần sữa. EVN bậc 1: 1,893đ/0-50kWh; bậc 4: 3,015đ/>400kWh.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=2100 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 21%. Liên hệ thực tiễn Minh Phú (Kinh tế Vi mô): doanh thu 110 tỷ VND, biên gộp 26%, chi phí cố định 8 tỷ — áp dụng Thị trường Cạnh tranh hoàn hảo: Cân bằng ngắn & dài hạn phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Thị trường Cạnh tranh hoàn hảo: Cân bằng ngắn & dài hạn, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Cạnh tranh hiệu quả. Độc quyền MR=MC. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn Minh Phú (Kinh tế Vi mô): doanh thu 110 tỷ VND, biên gộp 26%, chi phí cố định 8 tỷ — áp dụng Thị trường Cạnh tranh hoàn hảo: Cân bằng ngắn & dài hạn phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ftu_vamo",
+    "course_title": "Kinh tế Vi mô",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Lý thuyết Sản xuất & Chi phí",
+    "lesson_order": 2,
+    "lesson_id": "chapter-3-lesson-2",
+    "lesson_title": "Thị trường Độc quyền thuần túy & Phân biệt giá cấp 1, 2, 3",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Thị trường Độc quyền thuần túy & Phân biệt giá cấp 1, 2, 3 là nội dung trọng tâm trong Lý thuyết Sản xuất & Chi phí — môn Kinh tế Vi mô. Sản xuất, chi phí, cạnh tranh hoàn hảo và độc quyền. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn Trung Nguyên (Kinh tế Vi mô): doanh thu 120 tỷ VND, biên gộp 27%, chi phí cố định 9 tỷ — áp dụng Thị trường Độc quyền thuần túy & Phân biệt giá cấp 1, 2, 3 phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Thị trường Độc quyền thuần túy & Phân biệt giá cấp 1, 2, 3:\n\n1. Cạnh tranh: ngắn hạn P=MC; dài hạn P=min ATC, π=0\n2. CS + PS = TS tối đa tại cân bằng\n3. Độc quyền: MR=MC, P>MC → DWL\n4. Phân biệt giá cấp 1, 2 (EVN bậc thang), 3 (vé máy bay)\n\nCông thức:\nĐộc quyền: MR = a-2bQ (nếu P=a-bQ). π = (P-ATC)×Q.\n\nThuật ngữ: . Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn Trung Nguyên (Kinh tế Vi mô): doanh thu 120 tỷ VND, biên gộp 27%, chi phí cố định 9 tỷ — áp dụng Thị trường Độc quyền thuần túy & Phân biệt giá cấp 1, 2, 3 phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Thị trường Độc quyền thuần túy & Phân biệt giá cấp 1, 2, 3:\nVinamilk ~55% thị phần sữa. EVN bậc 1: 1,893đ/0-50kWh; bậc 4: 3,015đ/>400kWh.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=2200 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 24%. Liên hệ thực tiễn Trung Nguyên (Kinh tế Vi mô): doanh thu 120 tỷ VND, biên gộp 27%, chi phí cố định 9 tỷ — áp dụng Thị trường Độc quyền thuần túy & Phân biệt giá cấp 1, 2, 3 phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Thị trường Độc quyền thuần túy & Phân biệt giá cấp 1, 2, 3, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Cạnh tranh hiệu quả. Độc quyền MR=MC. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn Trung Nguyên (Kinh tế Vi mô): doanh thu 120 tỷ VND, biên gộp 27%, chi phí cố định 9 tỷ — áp dụng Thị trường Độc quyền thuần túy & Phân biệt giá cấp 1, 2, 3 phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ftu_vamo",
+    "course_title": "Kinh tế Vi mô",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Thị trường Cạnh tranh hoàn hảo",
+    "lesson_order": 1,
+    "lesson_id": "chapter-4-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài lý thuyết chương \"Thị trường Cạnh tranh hoàn hảo\" — môn Kinh tế Vi mô. Thị trường cạnh tranh hoàn hảo — cân bằng, Pareto, can thiệp. Củng cố khái niệm, mô hình, công thức và thuật ngữ then chốt — nền tảng cho bài tập vận dụng và thi cuối kỳ. Liên hệ thực tiễn VinFast (Kinh tế Vi mô): doanh thu 140 tỷ VND, biên gộp 34%, chi phí cố định 11 tỷ — áp dụng Thị trường Cạnh tranh hoàn hảo phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Thị trường Cạnh tranh hoàn hảo, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Khung kiến thức Thị trường Cạnh tranh hoàn hảo:\n\n1. Qd=Qs tại P*. Dịch chuyển cầu/cung\n2. Pareto optimal: cạnh tranh đạt được\n3. Thuế xăng 2,000đ/lít → DWL\n4. Vẽ CS, PS trên đồ thị\n\nThuật ngữ chuyên ngành: .\nĐiều kiện áp dụng: xác định giả định mô hình trước khi tính. Lỗi thường gặp: nhầm đơn vị (VND/USD), bỏ qua ràng buộc, kết luận không có số liệu hỗ trợ. Liên hệ thực tiễn VinFast (Kinh tế Vi mô): doanh thu 140 tỷ VND, biên gộp 34%, chi phí cố định 11 tỷ — áp dụng Thị trường Cạnh tranh hoàn hảo phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Thị trường Cạnh tranh hoàn hảo, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ. Thuật ngữ Anh-Việt thường gặp trong đề Thị trường Cạnh tranh hoàn hảo: tra cứu song ngữ trước khi thi. Tự luyện thêm với Q=2400 đơn vị sản phẩm để củng cố Thị trường Cạnh tranh hoàn hảo."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa Thị trường Cạnh tranh hoàn hảo:\n\n\nPhân tích bổ sung: doanh thu 140 tỷ VND/năm, biên gộp 34%, chi phí cố định 11 tỷ. Case VinFast — trình bày 4 bước: (1) Dữ kiện (2) Chọn mô hình (3) Tính toán Q=2400 (4) Kết luận và rủi ro nếu biến động 18%. Liên hệ thực tiễn VinFast (Kinh tế Vi mô): doanh thu 140 tỷ VND, biên gộp 34%, chi phí cố định 11 tỷ — áp dụng Thị trường Cạnh tranh hoàn hảo phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Thị trường Cạnh tranh hoàn hảo, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Cân bằng Qd=Qs. DWL từ can thiệp. Chuyển sang bài tập vận dụng để tự kiểm tra. Ôn thuật ngữ Anh-Việt trước thi. Liên hệ thực tiễn VinFast (Kinh tế Vi mô): doanh thu 140 tỷ VND, biên gộp 34%, chi phí cố định 11 tỷ — áp dụng Thị trường Cạnh tranh hoàn hảo phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ftu_vamo",
+    "course_title": "Kinh tế Vi mô",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Thị trường Cạnh tranh hoàn hảo",
+    "lesson_order": 2,
+    "lesson_id": "chapter-4-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng chương \"Thị trường Cạnh tranh hoàn hảo\" — môn Kinh tế Vi mô. Sau khi nắm lý thuyết, tự giải từng bài trước khi đối chiếu lời giải mẫu. Trình bày có bước: ghi công thức, thay số, đơn vị, kết luận. Không nhảy bước — giảng viên chấm theo quy trình giải. Liên hệ thực tiễn CellphoneS (Kinh tế Vi mô): doanh thu 130 tỷ VND, biên gộp 33%, chi phí cố định 10 tỷ — áp dụng Thị trường Cạnh tranh hoàn hảo phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Hướng dẫn làm bài Thị trường Cạnh tranh hoàn hảo:\n• Câu lý thuyết: định nghĩa chính xác + vẽ sơ đồ (nếu có) + ví dụ doanh nghiệp VN.\n• Câu tính toán: liệt kê dữ kiện → chọn công thức → thay số → đơn vị → kết luận kinh tế/quản trị.\n• Case study: tóm tắt tình huống → phân tích theo mô hình chương → khuyến nghị có căn cứ số liệu.\n\n\n\nKiến thức cốt lõi:\n1. Qd=Qs tại P*. Dịch chuyển cầu/cung\n2. Pareto optimal: cạnh tranh đạt được\n3. Thuế xăng 2,000đ/lít → DWL\n4. Vẽ CS, PS trên đồ thị Liên hệ thực tiễn CellphoneS (Kinh tế Vi mô): doanh thu 130 tỷ VND, biên gộp 33%, chi phí cố định 10 tỷ — áp dụng Thị trường Cạnh tranh hoàn hảo phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Thị trường Cạnh tranh hoàn hảo, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập mẫu chương Thị trường Cạnh tranh hoàn hảo:\nP*=16, Q*=68. Thuế → Q'=65, DWL=7.5.\n\nDữ kiện bổ sung: P=2300 VND/sp, Q=1300 sp, FC=1000 triệu VND, VC=1380 VND/sp.\n(a) Tính Contribution Margin/sp và tổng lợi nhuận.\n(b) Tính điểm hòa vốn (BEP) theo số lượng.\n(c) Margin of Safety khi Q thực tế = 1300.\n(d) Khuyến nghị cho CellphoneS dựa trên kết quả.\nĐáp án gợi ý: CM = P − VC; BEP = FC ÷ CM; MOS = (Q − BEP) ÷ Q. Liên hệ thực tiễn CellphoneS (Kinh tế Vi mô): doanh thu 130 tỷ VND, biên gộp 33%, chi phí cố định 10 tỷ — áp dụng Thị trường Cạnh tranh hoàn hảo phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Thị trường Cạnh tranh hoàn hảo, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Luyện đủ dạng số, lý thuyết và case cho Thị trường Cạnh tranh hoàn hảo. Kiểm tra đơn vị và giả định mô hình. Tự giải 2–3 biến thể số liệu trước khi thi. Liên hệ thực tiễn CellphoneS (Kinh tế Vi mô): doanh thu 130 tỷ VND, biên gộp 33%, chi phí cố định 10 tỷ — áp dụng Thị trường Cạnh tranh hoàn hảo phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ftu_vamo",
+    "course_title": "Kinh tế Vi mô",
+    "chapter_order": 5,
+    "chapter_title": "Chương 5: Độc quyền bán & Độc quyền nhóm",
+    "lesson_order": 1,
+    "lesson_id": "chapter-5-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài lý thuyết chương \"Độc quyền bán & Độc quyền nhóm\" — môn Kinh tế Vi mô. Oligopoly, game theory, Nash equilibrium, cartel OPEC. Củng cố khái niệm, mô hình, công thức và thuật ngữ then chốt — nền tảng cho bài tập vận dụng và thi cuối kỳ. Liên hệ thực tiễn Masan (Kinh tế Vi mô): doanh thu 190 tỷ VND, biên gộp 24%, chi phí cố định 12 tỷ — áp dụng Độc quyền bán & Độc quyền nhóm phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Độc quyền bán & Độc quyền nhóm, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Khung kiến thức Độc quyền bán & Độc quyền nhóm:\n\n1. Cournot, Bertrand, Stackelberg\n2. Cartel không bền — cheat incentive\n3. Prisoner's dilemma: Nash (thấp, thấp)\n4. VN: viễn thông, bia oligopoly\n\nThuật ngữ chuyên ngành: .\nĐiều kiện áp dụng: xác định giả định mô hình trước khi tính. Lỗi thường gặp: nhầm đơn vị (VND/USD), bỏ qua ràng buộc, kết luận không có số liệu hỗ trợ. Liên hệ thực tiễn Masan (Kinh tế Vi mô): doanh thu 190 tỷ VND, biên gộp 24%, chi phí cố định 12 tỷ — áp dụng Độc quyền bán & Độc quyền nhóm phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Độc quyền bán & Độc quyền nhóm, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ. Thuật ngữ Anh-Việt thường gặp trong đề Độc quyền bán & Độc quyền nhóm: tra cứu song ngữ trước khi thi. Tự luyện thêm với Q=2900 đơn vị sản phẩm để củng cố Độc quyền bán & Độc quyền nhóm."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa Độc quyền bán & Độc quyền nhóm:\nOPEC cắt 1M thùng → Brent 75→90 USD. P=100-Q, TC=20Q+100 → Q*=40 độc quyền.\n\nPhân tích bổ sung: doanh thu 190 tỷ VND/năm, biên gộp 24%, chi phí cố định 12 tỷ. Case Masan — trình bày 4 bước: (1) Dữ kiện (2) Chọn mô hình (3) Tính toán Q=2900 (4) Kết luận và rủi ro nếu biến động 15%. Liên hệ thực tiễn Masan (Kinh tế Vi mô): doanh thu 190 tỷ VND, biên gộp 24%, chi phí cố định 12 tỷ — áp dụng Độc quyền bán & Độc quyền nhóm phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Độc quyền bán & Độc quyền nhóm, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Nash = chiến lược tối ưu phản ứng. Cartel bền vững kém. Chuyển sang bài tập vận dụng để tự kiểm tra. Ôn thuật ngữ Anh-Việt trước thi. Liên hệ thực tiễn Masan (Kinh tế Vi mô): doanh thu 190 tỷ VND, biên gộp 24%, chi phí cố định 12 tỷ — áp dụng Độc quyền bán & Độc quyền nhóm phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ftu_vamo",
+    "course_title": "Kinh tế Vi mô",
+    "chapter_order": 5,
+    "chapter_title": "Chương 5: Độc quyền bán & Độc quyền nhóm",
+    "lesson_order": 2,
+    "lesson_id": "chapter-5-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng chương \"Độc quyền bán & Độc quyền nhóm\" — môn Kinh tế Vi mô. Sau khi nắm lý thuyết, tự giải từng bài trước khi đối chiếu lời giải mẫu. Trình bày có bước: ghi công thức, thay số, đơn vị, kết luận. Không nhảy bước — giảng viên chấm theo quy trình giải. Liên hệ thực tiễn VinFast (Kinh tế Vi mô): doanh thu 180 tỷ VND, biên gộp 23%, chi phí cố định 11 tỷ — áp dụng Độc quyền bán & Độc quyền nhóm phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Hướng dẫn làm bài Độc quyền bán & Độc quyền nhóm:\n• Câu lý thuyết: định nghĩa chính xác + vẽ sơ đồ (nếu có) + ví dụ doanh nghiệp VN.\n• Câu tính toán: liệt kê dữ kiện → chọn công thức → thay số → đơn vị → kết luận kinh tế/quản trị.\n• Case study: tóm tắt tình huống → phân tích theo mô hình chương → khuyến nghị có căn cứ số liệu.\n\n\n\nKiến thức cốt lõi:\n1. Cournot, Bertrand, Stackelberg\n2. Cartel không bền — cheat incentive\n3. Prisoner's dilemma: Nash (thấp, thấp)\n4. VN: viễn thông, bia oligopoly Liên hệ thực tiễn VinFast (Kinh tế Vi mô): doanh thu 180 tỷ VND, biên gộp 23%, chi phí cố định 11 tỷ — áp dụng Độc quyền bán & Độc quyền nhóm phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Độc quyền bán & Độc quyền nhóm, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập mẫu chương Độc quyền bán & Độc quyền nhóm:\nOPEC cắt 1M thùng → Brent 75→90 USD. P=100-Q, TC=20Q+100 → Q*=40 độc quyền.\n\nDữ kiện bổ sung: P=2800 VND/sp, Q=1800 sp, FC=1100 triệu VND, VC=1680 VND/sp.\n(a) Tính Contribution Margin/sp và tổng lợi nhuận.\n(b) Tính điểm hòa vốn (BEP) theo số lượng.\n(c) Margin of Safety khi Q thực tế = 1800.\n(d) Khuyến nghị cho VinFast dựa trên kết quả.\nĐáp án gợi ý: CM = P − VC; BEP = FC ÷ CM; MOS = (Q − BEP) ÷ Q. Liên hệ thực tiễn VinFast (Kinh tế Vi mô): doanh thu 180 tỷ VND, biên gộp 23%, chi phí cố định 11 tỷ — áp dụng Độc quyền bán & Độc quyền nhóm phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Độc quyền bán & Độc quyền nhóm, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Luyện đủ dạng số, lý thuyết và case cho Độc quyền bán & Độc quyền nhóm. Kiểm tra đơn vị và giả định mô hình. Tự giải 2–3 biến thể số liệu trước khi thi. Liên hệ thực tiễn VinFast (Kinh tế Vi mô): doanh thu 180 tỷ VND, biên gộp 23%, chi phí cố định 11 tỷ — áp dụng Độc quyền bán & Độc quyền nhóm phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ftu_vamo",
+    "course_title": "Kinh tế Vi mô",
+    "chapter_order": 6,
+    "chapter_title": "Đề thi Vi mô Ngoại thương các năm",
+    "lesson_order": 1,
+    "lesson_id": "chapter-6-lesson-1",
+    "lesson_title": "Bài 1: Tài liệu ôn tập & đề thi",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Tài liệu ôn thi môn Kinh tế Vi mô — Đề thi Vi mô Ngoại thương các năm. Ôn Vi mô Ngoại thương FTU. Hệ thống kiến thức toàn khóa, cấu trúc đề thi và chiến lược làm bài hiệu quả. Sinh viên ôn theo trình tự: lý thuyết từng chương → ví dụ có số liệu → bài tập cuối chương → đề tổng hợp có giới hạn thời gian (90–120 phút). Chuẩn bị thuật ngữ song ngữ Anh-Việt và case doanh nghiệp Việt Nam. Liên hệ thực tiễn Vinamilk (Kinh tế Vi mô): doanh thu 240 tỷ VND, biên gộp 29%, chi phí cố định 5 tỷ — áp dụng Đề thi Vi mô Ngoại thương các năm phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Cấu trúc đề thi và phân bổ điểm:\n• Trắc nghiệm Ed, MC, MR (35%)\n• Tính toán cân bằng, thuế, độc quyền (35%)\n• Đồ thị CS/PS, game 2×2 (30%)\n\nChiến lược làm bài chi tiết: (1) Đọc toàn đề 5 phút, đánh dấu câu quen và câu khó. (2) Làm phần trắc nghiệm/tính toán trước — ghi công thức, thay số, đơn vị. (3) Phần case/tự luận: trình bày theo giả thiết → phân tích từng bước → kết luận và kiến nghị. (4) Giữ 20–25% thời gian kiểm tra lại logic và số học. (5) Đối chiếu rubric chấm điểm khi tự luyện. Liên hệ thực tiễn Vinamilk (Kinh tế Vi mô): doanh thu 240 tỷ VND, biên gộp 29%, chi phí cố định 5 tỷ — áp dụng Đề thi Vi mô Ngoại thương các năm phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Đề mẫu ôn tập:\nQd=200-4P, Qs=50+P. Độc quyền TC=10Q+200. Tính π.\n\nHướng dẫn luyện: giải đề các năm trước của Kinh tế Vi mô; thảo luận nhóm case khó; tự chấm điểm theo thang 10. Case doanh nghiệp VN như Vinamilk thường xuất hiện — chuẩn bị số liệu và phân tích SWOT/PESTEL nếu là môn marketing/kinh doanh. Với môn có tính toán: kiểm tra lại BEP, NPV, EOQ, tỷ giá tùy chương trình. Liên hệ thực tiễn Vinamilk (Kinh tế Vi mô): doanh thu 240 tỷ VND, biên gộp 29%, chi phí cố định 5 tỷ — áp dụng Đề thi Vi mô Ngoại thương các năm phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đề thi Vi mô Ngoại thương các năm, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Ôn cung-cầu, Ed, chi phí, độc quyền, game theory. Luyện đề có thời gian. Nắm thuật ngữ Anh-Việt. Kiểm tra đơn vị và giả định trước khi nộp bài. Liên hệ thực tiễn Vinamilk (Kinh tế Vi mô): doanh thu 240 tỷ VND, biên gộp 29%, chi phí cố định 5 tỷ — áp dụng Đề thi Vi mô Ngoại thương các năm phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  }
+]

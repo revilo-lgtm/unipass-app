@@ -1,0 +1,245 @@
+[
+  {
+    "course_id": "neu_managerial_accounting",
+    "course_title": "Kế toán quản trị",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Phân loại chi phí biến đổi, cố định & hỗn hợp",
+    "lesson_order": 1,
+    "lesson_id": "chapter-1-lesson-1",
+    "lesson_title": "Số dư đảm phí (Contribution Margin) & Điểm hòa vốn",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Số dư đảm phí (Contribution Margin) & Điểm hòa vốn là nội dung trọng tâm trong Phân loại chi phí biến đổi, cố định & hỗn hợp — môn Kế toán quản trị. Phân loại chi phí và CVP. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn FPT (Kế toán quản trị): doanh thu 280 tỷ VND, biên gộp 33%, chi phí cố định 7 tỷ — áp dụng Số dư đảm phí (Contribution Margin) & Điểm hòa vốn phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Số dư đảm phí (Contribution Margin) & Điểm hòa vốn:\n\n1. FC, VC, mixed cost\n2. Contribution Margin = P-VC\n3. BEP = FC/CM per unit\n4. Operating leverage\n\nCông thức:\nCM ratio = CM/Sales. BEP(units) = FC/CMu. MOS = (Sales-BEP)/Sales.\n\nThuật ngữ: . Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn FPT (Kế toán quản trị): doanh thu 280 tỷ VND, biên gộp 33%, chi phí cố định 7 tỷ — áp dụng Số dư đảm phí (Contribution Margin) & Điểm hòa vốn phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Số dư đảm phí (Contribution Margin) & Điểm hòa vốn, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Số dư đảm phí (Contribution Margin) & Điểm hòa vốn:\nP=200K, VC=120K, FC=50M, Q=1000. CM=80K. BEP=625 sp. Profit=30M.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=2800 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 24%. Liên hệ thực tiễn FPT (Kế toán quản trị): doanh thu 280 tỷ VND, biên gộp 33%, chi phí cố định 7 tỷ — áp dụng Số dư đảm phí (Contribution Margin) & Điểm hòa vốn phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Số dư đảm phí (Contribution Margin) & Điểm hòa vốn, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "CM và BEP cho quyết định. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn FPT (Kế toán quản trị): doanh thu 280 tỷ VND, biên gộp 33%, chi phí cố định 7 tỷ — áp dụng Số dư đảm phí (Contribution Margin) & Điểm hòa vốn phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_managerial_accounting",
+    "course_title": "Kế toán quản trị",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Phân loại chi phí biến đổi, cố định & hỗn hợp",
+    "lesson_order": 2,
+    "lesson_id": "chapter-1-lesson-2",
+    "lesson_title": "Dự toán ngân sách hoạt động & Thông tin ra quyết định",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Dự toán ngân sách hoạt động & Thông tin ra quyết định là nội dung trọng tâm trong Phân loại chi phí biến đổi, cố định & hỗn hợp — môn Kế toán quản trị. Phân loại chi phí và CVP. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn Viettel (Kế toán quản trị): doanh thu 270 tỷ VND, biên gộp 32%, chi phí cố định 6 tỷ — áp dụng Dự toán ngân sách hoạt động & Thông tin ra quyết định phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Dự toán ngân sách hoạt động & Thông tin ra quyết định:\n\n1. FC, VC, mixed cost\n2. Contribution Margin = P-VC\n3. BEP = FC/CM per unit\n4. Operating leverage\n\nCông thức:\nCM ratio = CM/Sales. BEP(units) = FC/CMu. MOS = (Sales-BEP)/Sales.\n\nThuật ngữ: . Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn Viettel (Kế toán quản trị): doanh thu 270 tỷ VND, biên gộp 32%, chi phí cố định 6 tỷ — áp dụng Dự toán ngân sách hoạt động & Thông tin ra quyết định phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Dự toán ngân sách hoạt động & Thông tin ra quyết định, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Dự toán ngân sách hoạt động & Thông tin ra quyết định:\nP=200K, VC=120K, FC=50M, Q=1000. CM=80K. BEP=625 sp. Profit=30M.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=2700 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 21%. Liên hệ thực tiễn Viettel (Kế toán quản trị): doanh thu 270 tỷ VND, biên gộp 32%, chi phí cố định 6 tỷ — áp dụng Dự toán ngân sách hoạt động & Thông tin ra quyết định phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Dự toán ngân sách hoạt động & Thông tin ra quyết định, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "CM và BEP cho quyết định. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn Viettel (Kế toán quản trị): doanh thu 270 tỷ VND, biên gộp 32%, chi phí cố định 6 tỷ — áp dụng Dự toán ngân sách hoạt động & Thông tin ra quyết định phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_managerial_accounting",
+    "course_title": "Kế toán quản trị",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP)",
+    "lesson_order": 1,
+    "lesson_id": "chapter-2-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài lý thuyết chương \"Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP)\" — môn Kế toán quản trị. CVP analysis chi tiết. Củng cố khái niệm, mô hình, công thức và thuật ngữ then chốt — nền tảng cho bài tập vận dụng và thi cuối kỳ. Liên hệ thực tiễn CellphoneS (Kế toán quản trị): doanh thu 330 tỷ VND, biên gộp 33%, chi phí cố định 10 tỷ — áp dụng Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Khung kiến thức Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP):\n\n1. Multi-product BEP\n2. Target profit analysis\n3. Sensitivity analysis\n\nThuật ngữ chuyên ngành: .\nĐiều kiện áp dụng: xác định giả định mô hình trước khi tính. Lỗi thường gặp: nhầm đơn vị (VND/USD), bỏ qua ràng buộc, kết luận không có số liệu hỗ trợ. Liên hệ thực tiễn CellphoneS (Kế toán quản trị): doanh thu 330 tỷ VND, biên gộp 33%, chi phí cố định 10 tỷ — áp dụng Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ. Thuật ngữ Anh-Việt thường gặp trong đề Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP): tra cứu song ngữ trước khi thi. Tự luyện thêm với Q=2300 đơn vị sản phẩm để củng cố Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP)."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP):\n\n\nPhân tích bổ sung: doanh thu 330 tỷ VND/năm, biên gộp 33%, chi phí cố định 10 tỷ. Case CellphoneS — trình bày 4 bước: (1) Dữ kiện (2) Chọn mô hình (3) Tính toán Q=2300 (4) Kết luận và rủi ro nếu biến động 15%. Liên hệ thực tiễn CellphoneS (Kế toán quản trị): doanh thu 330 tỷ VND, biên gộp 33%, chi phí cố định 10 tỷ — áp dụng Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "CVP cho planning. Chuyển sang bài tập vận dụng để tự kiểm tra. Ôn thuật ngữ Anh-Việt trước thi. Liên hệ thực tiễn CellphoneS (Kế toán quản trị): doanh thu 330 tỷ VND, biên gộp 33%, chi phí cố định 10 tỷ — áp dụng Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP) phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_managerial_accounting",
+    "course_title": "Kế toán quản trị",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP)",
+    "lesson_order": 2,
+    "lesson_id": "chapter-2-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng chương \"Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP)\" — môn Kế toán quản trị. Sau khi nắm lý thuyết, tự giải từng bài trước khi đối chiếu lời giải mẫu. Trình bày có bước: ghi công thức, thay số, đơn vị, kết luận. Không nhảy bước — giảng viên chấm theo quy trình giải. Liên hệ thực tiễn VinFast (Kế toán quản trị): doanh thu 340 tỷ VND, biên gộp 34%, chi phí cố định 11 tỷ — áp dụng Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP) phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Hướng dẫn làm bài Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP):\n• Câu lý thuyết: định nghĩa chính xác + vẽ sơ đồ (nếu có) + ví dụ doanh nghiệp VN.\n• Câu tính toán: liệt kê dữ kiện → chọn công thức → thay số → đơn vị → kết luận kinh tế/quản trị.\n• Case study: tóm tắt tình huống → phân tích theo mô hình chương → khuyến nghị có căn cứ số liệu.\n\n\n\nKiến thức cốt lõi:\n1. Multi-product BEP\n2. Target profit analysis\n3. Sensitivity analysis Liên hệ thực tiễn VinFast (Kế toán quản trị): doanh thu 340 tỷ VND, biên gộp 34%, chi phí cố định 11 tỷ — áp dụng Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập mẫu chương Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP):\nTarget profit 50M → Q cần?\n\nDữ kiện bổ sung: P=2400 VND/sp, Q=3400 sp, FC=1100 triệu VND, VC=1440 VND/sp.\n(a) Tính Contribution Margin/sp và tổng lợi nhuận.\n(b) Tính điểm hòa vốn (BEP) theo số lượng.\n(c) Margin of Safety khi Q thực tế = 3400.\n(d) Khuyến nghị cho VinFast dựa trên kết quả.\nĐáp án gợi ý: CM = P − VC; BEP = FC ÷ CM; MOS = (Q − BEP) ÷ Q. Liên hệ thực tiễn VinFast (Kế toán quản trị): doanh thu 340 tỷ VND, biên gộp 34%, chi phí cố định 11 tỷ — áp dụng Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Luyện đủ dạng số, lý thuyết và case cho Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP). Kiểm tra đơn vị và giả định mô hình. Tự giải 2–3 biến thể số liệu trước khi thi. Liên hệ thực tiễn VinFast (Kế toán quản trị): doanh thu 340 tỷ VND, biên gộp 34%, chi phí cố định 11 tỷ — áp dụng Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP) phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_managerial_accounting",
+    "course_title": "Kế toán quản trị",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Điểm hòa vốn & Vùng an toàn (Margin of Safety)",
+    "lesson_order": 1,
+    "lesson_id": "chapter-3-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài lý thuyết chương \"Điểm hòa vốn & Vùng an toàn (Margin of Safety)\" — môn Kế toán quản trị. BEP và Margin of Safety. Củng cố khái niệm, mô hình, công thức và thuật ngữ then chốt — nền tảng cho bài tập vận dụng và thi cuối kỳ. Liên hệ thực tiễn Trung Nguyên (Kế toán quản trị): doanh thu 280 tỷ VND, biên gộp 28%, chi phí cố định 9 tỷ — áp dụng Điểm hòa vốn & Vùng an toàn (Margin of Safety) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Điểm hòa vốn & Vùng an toàn (Margin of Safety), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Khung kiến thức Điểm hòa vốn & Vùng an toàn (Margin of Safety):\n\n1. MOS đo rủi ro\n2. DOL = CM/Operating Income\n3. Break-even chart\n\nThuật ngữ chuyên ngành: .\nĐiều kiện áp dụng: xác định giả định mô hình trước khi tính. Lỗi thường gặp: nhầm đơn vị (VND/USD), bỏ qua ràng buộc, kết luận không có số liệu hỗ trợ. Liên hệ thực tiễn Trung Nguyên (Kế toán quản trị): doanh thu 280 tỷ VND, biên gộp 28%, chi phí cố định 9 tỷ — áp dụng Điểm hòa vốn & Vùng an toàn (Margin of Safety) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Điểm hòa vốn & Vùng an toàn (Margin of Safety), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ. Thuật ngữ Anh-Việt thường gặp trong đề Điểm hòa vốn & Vùng an toàn (Margin of Safety): tra cứu song ngữ trước khi thi. Tự luyện thêm với Q=1800 đơn vị sản phẩm để củng cố Điểm hòa vốn & Vùng an toàn (Margin of Safety)."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa Điểm hòa vốn & Vùng an toàn (Margin of Safety):\nSales 1.3B, BEP 1B → MOS=23%.\n\nPhân tích bổ sung: doanh thu 280 tỷ VND/năm, biên gộp 28%, chi phí cố định 9 tỷ. Case Trung Nguyên — trình bày 4 bước: (1) Dữ kiện (2) Chọn mô hình (3) Tính toán Q=1800 (4) Kết luận và rủi ro nếu biến động 18%. Liên hệ thực tiễn Trung Nguyên (Kế toán quản trị): doanh thu 280 tỷ VND, biên gộp 28%, chi phí cố định 9 tỷ — áp dụng Điểm hòa vốn & Vùng an toàn (Margin of Safety) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Điểm hòa vốn & Vùng an toàn (Margin of Safety), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "MOS càng cao càng an toàn. Chuyển sang bài tập vận dụng để tự kiểm tra. Ôn thuật ngữ Anh-Việt trước thi. Liên hệ thực tiễn Trung Nguyên (Kế toán quản trị): doanh thu 280 tỷ VND, biên gộp 28%, chi phí cố định 9 tỷ — áp dụng Điểm hòa vốn & Vùng an toàn (Margin of Safety) phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_managerial_accounting",
+    "course_title": "Kế toán quản trị",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Điểm hòa vốn & Vùng an toàn (Margin of Safety)",
+    "lesson_order": 2,
+    "lesson_id": "chapter-3-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng chương \"Điểm hòa vốn & Vùng an toàn (Margin of Safety)\" — môn Kế toán quản trị. Sau khi nắm lý thuyết, tự giải từng bài trước khi đối chiếu lời giải mẫu. Trình bày có bước: ghi công thức, thay số, đơn vị, kết luận. Không nhảy bước — giảng viên chấm theo quy trình giải. Liên hệ thực tiễn CellphoneS (Kế toán quản trị): doanh thu 290 tỷ VND, biên gộp 29%, chi phí cố định 10 tỷ — áp dụng Điểm hòa vốn & Vùng an toàn (Margin of Safety) phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Hướng dẫn làm bài Điểm hòa vốn & Vùng an toàn (Margin of Safety):\n• Câu lý thuyết: định nghĩa chính xác + vẽ sơ đồ (nếu có) + ví dụ doanh nghiệp VN.\n• Câu tính toán: liệt kê dữ kiện → chọn công thức → thay số → đơn vị → kết luận kinh tế/quản trị.\n• Case study: tóm tắt tình huống → phân tích theo mô hình chương → khuyến nghị có căn cứ số liệu.\n\n\n\nKiến thức cốt lõi:\n1. MOS đo rủi ro\n2. DOL = CM/Operating Income\n3. Break-even chart Liên hệ thực tiễn CellphoneS (Kế toán quản trị): doanh thu 290 tỷ VND, biên gộp 29%, chi phí cố định 10 tỷ — áp dụng Điểm hòa vốn & Vùng an toàn (Margin of Safety) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Điểm hòa vốn & Vùng an toàn (Margin of Safety), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập mẫu chương Điểm hòa vốn & Vùng an toàn (Margin of Safety):\nSales 1.3B, BEP 1B → MOS=23%.\n\nDữ kiện bổ sung: P=1900 VND/sp, Q=2900 sp, FC=1000 triệu VND, VC=1140 VND/sp.\n(a) Tính Contribution Margin/sp và tổng lợi nhuận.\n(b) Tính điểm hòa vốn (BEP) theo số lượng.\n(c) Margin of Safety khi Q thực tế = 2900.\n(d) Khuyến nghị cho CellphoneS dựa trên kết quả.\nĐáp án gợi ý: CM = P − VC; BEP = FC ÷ CM; MOS = (Q − BEP) ÷ Q. Liên hệ thực tiễn CellphoneS (Kế toán quản trị): doanh thu 290 tỷ VND, biên gộp 29%, chi phí cố định 10 tỷ — áp dụng Điểm hòa vốn & Vùng an toàn (Margin of Safety) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Điểm hòa vốn & Vùng an toàn (Margin of Safety), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Luyện đủ dạng số, lý thuyết và case cho Điểm hòa vốn & Vùng an toàn (Margin of Safety). Kiểm tra đơn vị và giả định mô hình. Tự giải 2–3 biến thể số liệu trước khi thi. Liên hệ thực tiễn CellphoneS (Kế toán quản trị): doanh thu 290 tỷ VND, biên gộp 29%, chi phí cố định 10 tỷ — áp dụng Điểm hòa vốn & Vùng an toàn (Margin of Safety) phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_managerial_accounting",
+    "course_title": "Kế toán quản trị",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Dự toán ngân sách & Thông tin ra quyết định",
+    "lesson_order": 1,
+    "lesson_id": "chapter-4-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài lý thuyết chương \"Dự toán ngân sách & Thông tin ra quyết định\" — môn Kế toán quản trị. Ngân sách và thông tin quyết định. Củng cố khái niệm, mô hình, công thức và thuật ngữ then chốt — nền tảng cho bài tập vận dụng và thi cuối kỳ. Liên hệ thực tiễn Minh Phú (Kế toán quản trị): doanh thu 230 tỷ VND, biên gộp 23%, chi phí cố định 8 tỷ — áp dụng Dự toán ngân sách & Thông tin ra quyết định phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Khung kiến thức Dự toán ngân sách & Thông tin ra quyết định:\n\n1. Master budget\n2. Flexible budget\n3. Variance analysis\n4. Make vs buy, special order\n\nThuật ngữ chuyên ngành: .\nĐiều kiện áp dụng: xác định giả định mô hình trước khi tính. Lỗi thường gặp: nhầm đơn vị (VND/USD), bỏ qua ràng buộc, kết luận không có số liệu hỗ trợ. Liên hệ thực tiễn Minh Phú (Kế toán quản trị): doanh thu 230 tỷ VND, biên gộp 23%, chi phí cố định 8 tỷ — áp dụng Dự toán ngân sách & Thông tin ra quyết định phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Dự toán ngân sách & Thông tin ra quyết định, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa Dự toán ngân sách & Thông tin ra quyết định:\nFlexible budget: actual 1100 units vs budget 1000.\n\nPhân tích bổ sung: doanh thu 230 tỷ VND/năm, biên gộp 23%, chi phí cố định 8 tỷ. Case Minh Phú — trình bày 4 bước: (1) Dữ kiện (2) Chọn mô hình (3) Tính toán Q=1300 (4) Kết luận và rủi ro nếu biến động 21%. Liên hệ thực tiễn Minh Phú (Kế toán quản trị): doanh thu 230 tỷ VND, biên gộp 23%, chi phí cố định 8 tỷ — áp dụng Dự toán ngân sách & Thông tin ra quyết định phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Dự toán ngân sách & Thông tin ra quyết định, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Ngân sách linh hoạt + variance. Chuyển sang bài tập vận dụng để tự kiểm tra. Ôn thuật ngữ Anh-Việt trước thi. Liên hệ thực tiễn Minh Phú (Kế toán quản trị): doanh thu 230 tỷ VND, biên gộp 23%, chi phí cố định 8 tỷ — áp dụng Dự toán ngân sách & Thông tin ra quyết định phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_managerial_accounting",
+    "course_title": "Kế toán quản trị",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Dự toán ngân sách & Thông tin ra quyết định",
+    "lesson_order": 2,
+    "lesson_id": "chapter-4-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng chương \"Dự toán ngân sách & Thông tin ra quyết định\" — môn Kế toán quản trị. Sau khi nắm lý thuyết, tự giải từng bài trước khi đối chiếu lời giải mẫu. Trình bày có bước: ghi công thức, thay số, đơn vị, kết luận. Không nhảy bước — giảng viên chấm theo quy trình giải. Liên hệ thực tiễn Trung Nguyên (Kế toán quản trị): doanh thu 240 tỷ VND, biên gộp 24%, chi phí cố định 9 tỷ — áp dụng Dự toán ngân sách & Thông tin ra quyết định phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Hướng dẫn làm bài Dự toán ngân sách & Thông tin ra quyết định:\n• Câu lý thuyết: định nghĩa chính xác + vẽ sơ đồ (nếu có) + ví dụ doanh nghiệp VN.\n• Câu tính toán: liệt kê dữ kiện → chọn công thức → thay số → đơn vị → kết luận kinh tế/quản trị.\n• Case study: tóm tắt tình huống → phân tích theo mô hình chương → khuyến nghị có căn cứ số liệu.\n\n\n\nKiến thức cốt lõi:\n1. Master budget\n2. Flexible budget\n3. Variance analysis\n4. Make vs buy, special order Liên hệ thực tiễn Trung Nguyên (Kế toán quản trị): doanh thu 240 tỷ VND, biên gộp 24%, chi phí cố định 9 tỷ — áp dụng Dự toán ngân sách & Thông tin ra quyết định phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Dự toán ngân sách & Thông tin ra quyết định, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập mẫu chương Dự toán ngân sách & Thông tin ra quyết định:\nFlexible budget: actual 1100 units vs budget 1000.\n\nDữ kiện bổ sung: P=1400 VND/sp, Q=2400 sp, FC=900 triệu VND, VC=840 VND/sp.\n(a) Tính Contribution Margin/sp và tổng lợi nhuận.\n(b) Tính điểm hòa vốn (BEP) theo số lượng.\n(c) Margin of Safety khi Q thực tế = 2400.\n(d) Khuyến nghị cho Trung Nguyên dựa trên kết quả.\nĐáp án gợi ý: CM = P − VC; BEP = FC ÷ CM; MOS = (Q − BEP) ÷ Q. Liên hệ thực tiễn Trung Nguyên (Kế toán quản trị): doanh thu 240 tỷ VND, biên gộp 24%, chi phí cố định 9 tỷ — áp dụng Dự toán ngân sách & Thông tin ra quyết định phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Dự toán ngân sách & Thông tin ra quyết định, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Luyện đủ dạng số, lý thuyết và case cho Dự toán ngân sách & Thông tin ra quyết định. Kiểm tra đơn vị và giả định mô hình. Tự giải 2–3 biến thể số liệu trước khi thi. Liên hệ thực tiễn Trung Nguyên (Kế toán quản trị): doanh thu 240 tỷ VND, biên gộp 24%, chi phí cố định 9 tỷ — áp dụng Dự toán ngân sách & Thông tin ra quyết định phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_managerial_accounting",
+    "course_title": "Kế toán quản trị",
+    "chapter_order": 5,
+    "chapter_title": "Đề thi tự luận Kế toán quản trị NEU",
+    "lesson_order": 1,
+    "lesson_id": "chapter-5-lesson-1",
+    "lesson_title": "Bài 1: Tài liệu ôn tập & đề thi",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Tài liệu ôn thi môn Kế toán quản trị — Đề thi tự luận Kế toán quản trị NEU. Ôn Kế toán quản trị NEU. Hệ thống kiến thức toàn khóa, cấu trúc đề thi và chiến lược làm bài hiệu quả. Sinh viên ôn theo trình tự: lý thuyết từng chương → ví dụ có số liệu → bài tập cuối chương → đề tổng hợp có giới hạn thời gian (90–120 phút). Chuẩn bị thuật ngữ song ngữ Anh-Việt và case doanh nghiệp Việt Nam. Liên hệ thực tiễn FPT (Kế toán quản trị): doanh thu 180 tỷ VND, biên gộp 33%, chi phí cố định 7 tỷ — áp dụng Đề thi tự luận Kế toán quản trị NEU phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Cấu trúc đề thi và phân bổ điểm:\nCVP 40%, ngân sách 30%, case 30%\n\nChiến lược làm bài chi tiết: (1) Đọc toàn đề 5 phút, đánh dấu câu quen và câu khó. (2) Làm phần trắc nghiệm/tính toán trước — ghi công thức, thay số, đơn vị. (3) Phần case/tự luận: trình bày theo giả thiết → phân tích từng bước → kết luận và kiến nghị. (4) Giữ 20–25% thời gian kiểm tra lại logic và số học. (5) Đối chiếu rubric chấm điểm khi tự luyện. Liên hệ thực tiễn FPT (Kế toán quản trị): doanh thu 180 tỷ VND, biên gộp 33%, chi phí cố định 7 tỷ — áp dụng Đề thi tự luận Kế toán quản trị NEU phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đề thi tự luận Kế toán quản trị NEU, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Đề mẫu ôn tập:\nP=150K, VC=90K, FC=60M. BEP và profit Q=2000.\n\nHướng dẫn luyện: giải đề các năm trước của Kế toán quản trị; thảo luận nhóm case khó; tự chấm điểm theo thang 10. Case doanh nghiệp VN như FPT thường xuất hiện — chuẩn bị số liệu và phân tích SWOT/PESTEL nếu là môn marketing/kinh doanh. Với môn có tính toán: kiểm tra lại BEP, NPV, EOQ, tỷ giá tùy chương trình. Liên hệ thực tiễn FPT (Kế toán quản trị): doanh thu 180 tỷ VND, biên gộp 33%, chi phí cố định 7 tỷ — áp dụng Đề thi tự luận Kế toán quản trị NEU phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đề thi tự luận Kế toán quản trị NEU, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Ôn CM, BEP, MOS, budget. Luyện đề có thời gian. Nắm thuật ngữ Anh-Việt. Kiểm tra đơn vị và giả định trước khi nộp bài. Liên hệ thực tiễn FPT (Kế toán quản trị): doanh thu 180 tỷ VND, biên gộp 33%, chi phí cố định 7 tỷ — áp dụng Đề thi tự luận Kế toán quản trị NEU phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  }
+]

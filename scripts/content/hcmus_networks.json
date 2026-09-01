@@ -1,0 +1,245 @@
+[
+  {
+    "course_id": "hcmus_networks",
+    "course_title": "Mạng máy tính",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Mô hình OSI 7 tầng vs TCP/IP 4 tầng & Giao thức ứng dụng",
+    "lesson_order": 1,
+    "lesson_id": "chapter-1-lesson-1",
+    "lesson_title": "Mô hình OSI vs TCP/IP & Giao thức HTTP, DNS, DHCP",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Mô hình OSI vs TCP/IP & Giao thức HTTP, DNS, DHCP là nội dung cốt lõi trong chương «Mô hình OSI 7 tầng vs TCP/IP 4 tầng & Giao thức ứng dụng» (Mạng máy tính). Bài học giải thích khái niệm, ký hiệu và vai trò của Mô hình OSI vs TCP/IP & Giao thức HTTP, DNS, DHCP trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Mô hình OSI vs TCP/IP & Giao thức HTTP, DNS, DHCP thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Mô hình OSI vs TCP/IP & Giao thức HTTP, DNS, DHCP:\nOSI 7 tầng; TCP/IP 4.\nHTTP, DNS, DHCP.\nÁp dụng Mô hình OSI vs TCP/IP & Giao thức HTTP, DNS, DHCP trong Mô hình OSI 7 tầng vs TCP/IP 4 tầng & Giao thức ứng dụng.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Mô hình OSI 7 tầng vs TCP/IP 4 tầng & Giao thức ứng dụng, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Mô hình OSI vs TCP/IP & Giao thức HTTP, DNS, DHCP:\nDNS→IP; DHCP 4 bước.\nBài tập mở rộng Mô hình OSI vs TCP/IP & Giao thức HTTP, DNS, DHCP.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Mô hình OSI vs TCP/IP & Giao thức HTTP, DNS, DHCP:\nTCP/IP thực tế Internet.\nLiên kết Mô hình OSI 7 tầng vs TCP/IP 4 tầng & Giao thức ứng dụng.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_networks",
+    "course_title": "Mạng máy tính",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Mô hình OSI 7 tầng vs TCP/IP 4 tầng & Giao thức ứng dụng",
+    "lesson_order": 2,
+    "lesson_id": "chapter-1-lesson-2",
+    "lesson_title": "Kỹ thuật chia mạng con IPv4 (VLSM & Subnet Mask)",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Kỹ thuật chia mạng con IPv4 (VLSM & Subnet Mask) là nội dung cốt lõi trong chương «Mô hình OSI 7 tầng vs TCP/IP 4 tầng & Giao thức ứng dụng» (Mạng máy tính). Bài học giải thích khái niệm, ký hiệu và vai trò của Kỹ thuật chia mạng con IPv4 (VLSM & Subnet Mask) trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Kỹ thuật chia mạng con IPv4 (VLSM & Subnet Mask) thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Kỹ thuật chia mạng con IPv4 (VLSM & Subnet Mask):\nOSI 7 tầng; TCP/IP 4.\nHTTP, DNS, DHCP.\nÁp dụng Kỹ thuật chia mạng con IPv4 (VLSM & Subnet Mask) trong Mô hình OSI 7 tầng vs TCP/IP 4 tầng & Giao thức ứng dụng.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Mô hình OSI 7 tầng vs TCP/IP 4 tầng & Giao thức ứng dụng, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Kỹ thuật chia mạng con IPv4 (VLSM & Subnet Mask):\nDNS→IP; DHCP 4 bước.\nBài tập mở rộng Kỹ thuật chia mạng con IPv4 (VLSM & Subnet Mask).\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Kỹ thuật chia mạng con IPv4 (VLSM & Subnet Mask):\nTCP/IP thực tế Internet.\nLiên kết Mô hình OSI 7 tầng vs TCP/IP 4 tầng & Giao thức ứng dụng.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_networks",
+    "course_title": "Mạng máy tính",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn",
+    "lesson_order": 1,
+    "lesson_id": "chapter-2-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn là nội dung cốt lõi trong chương «Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn» (Mạng máy tính). Bài học giải thích khái niệm, ký hiệu và vai trò của Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn:\nCông thức và định nghĩa Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn.\nÁp dụng Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn trong Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn:\nVí dụ Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn với số liệu.\nBài tập mở rộng Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn:\nThuộc Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn.\nLiên kết Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_networks",
+    "course_title": "Mạng máy tính",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn",
+    "lesson_order": 2,
+    "lesson_id": "chapter-2-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn (Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn). Mục tiêu: luyện kỹ năng giải bài từ cơ bản đến nâng cao với lời giải đầy đủ. Mỗi bài gồm: phát biểu đề, dữ liệu, lời giải từng bước và đáp số. Đây là dạng bài trọng tâm trong đề kiểm tra và thi cuối kỳ — cần vừa đúng kết quả vừa trình bày logic rõ ràng."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Phương pháp giải bài Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn:\nĐọc đề Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn.\nChọn công thức.\nGiải từng bước.\nKiểm tra biên.\n\nLưu ý: đọc kỹ đơn vị; kiểm tra biên (n=0, mảng rỗng, nồng độ cực nhỏ); với code — test case ẩn thường ở biên. Không bỏ qua bước trung gian vì đề chấm theo lời giải.\n\nMTU Ethernet 1500 byte. TTL giảm mỗi router; TTL=0 thì drop. NAT chuyển IP private ↔ public. TCP sequence/ack đảm bảo thứ tự. UDP header 8 byte, không handshake. Subnet mask AND với IP cho network address.\n\nLiên hệ Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn với Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập có lời giải:\nBài 1 cơ bản Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn.\nBài 2 đổi số.\nBài 3 tổng hợp Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn.\n\nSau mỗi bài, tự đặt câu hỏi «nếu đổi số liệu thì kết quả thay đổi thế nào?» để củng cố hiểu bài, không chỉ nhớ đáp án.\n\nVí dụ bổ sung Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn:\nLuyện 5 bài Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_networks",
+    "course_title": "Mạng máy tính",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM)",
+    "lesson_order": 1,
+    "lesson_id": "chapter-3-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM) là nội dung cốt lõi trong chương «Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM)» (Mạng máy tính). Bài học giải thích khái niệm, ký hiệu và vai trò của Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM) trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM) thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM):\n/n → 2^(32-n) địa chỉ.\nVLSM chia subnet khác size.\nÁp dụng Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM) trong Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM).\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM), cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán.\n\nMTU Ethernet 1500 byte. TTL giảm mỗi router; TTL=0 thì drop. NAT chuyển IP private ↔ public. TCP sequence/ack đảm bảo thứ tự. UDP header 8 byte, không handshake. Subnet mask AND với IP cho network address.\n\nLiên hệ Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM) với Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM): áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM):\n/24: 254 host.\n/26: 62 host.\nBài tập mở rộng Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM).\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM):\nAND mask→network.\nLiên kết Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM).\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_networks",
+    "course_title": "Mạng máy tính",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM)",
+    "lesson_order": 2,
+    "lesson_id": "chapter-3-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM) (Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM)). Mục tiêu: luyện kỹ năng giải bài từ cơ bản đến nâng cao với lời giải đầy đủ. Mỗi bài gồm: phát biểu đề, dữ liệu, lời giải từng bước và đáp số. Đây là dạng bài trọng tâm trong đề kiểm tra và thi cuối kỳ — cần vừa đúng kết quả vừa trình bày logic rõ ràng."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Phương pháp giải bài Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM):\nĐọc đề Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM).\nChọn công thức.\nGiải từng bước.\nKiểm tra biên.\n\nLưu ý: đọc kỹ đơn vị; kiểm tra biên (n=0, mảng rỗng, nồng độ cực nhỏ); với code — test case ẩn thường ở biên. Không bỏ qua bước trung gian vì đề chấm theo lời giải.\n\nMTU Ethernet 1500 byte. TTL giảm mỗi router; TTL=0 thì drop. NAT chuyển IP private ↔ public. TCP sequence/ack đảm bảo thứ tự. UDP header 8 byte, không handshake. Subnet mask AND với IP cho network address.\n\nLiên hệ Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM) với Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM): áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập có lời giải:\nBài 1 cơ bản Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM).\nBài 2 đổi số.\nBài 3 tổng hợp Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM).\n\nSau mỗi bài, tự đặt câu hỏi «nếu đổi số liệu thì kết quả thay đổi thế nào?» để củng cố hiểu bài, không chỉ nhớ đáp án.\n\nVí dụ bổ sung Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM): thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM):\nLuyện 5 bài Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM).\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_networks",
+    "course_title": "Mạng máy tính",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Địa chỉ MAC, Switch & Định tuyến Router",
+    "lesson_order": 1,
+    "lesson_id": "chapter-4-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Địa chỉ MAC, Switch & Định tuyến Router là nội dung cốt lõi trong chương «Địa chỉ MAC, Switch & Định tuyến Router» (Mạng máy tính). Bài học giải thích khái niệm, ký hiệu và vai trò của Địa chỉ MAC, Switch & Định tuyến Router trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Địa chỉ MAC, Switch & Định tuyến Router thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Địa chỉ MAC, Switch & Định tuyến Router:\nCông thức và định nghĩa Địa chỉ MAC, Switch & Định tuyến Router.\nÁp dụng Địa chỉ MAC, Switch & Định tuyến Router trong Địa chỉ MAC, Switch & Định tuyến Router.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Địa chỉ MAC, Switch & Định tuyến Router, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán.\n\nMTU Ethernet 1500 byte. TTL giảm mỗi router; TTL=0 thì drop. NAT chuyển IP private ↔ public. TCP sequence/ack đảm bảo thứ tự. UDP header 8 byte, không handshake. Subnet mask AND với IP cho network address.\n\nLiên hệ Địa chỉ MAC, Switch & Định tuyến Router với Địa chỉ MAC, Switch & Định tuyến Router: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Địa chỉ MAC, Switch & Định tuyến Router:\nVí dụ Địa chỉ MAC, Switch & Định tuyến Router với số liệu.\nBài tập mở rộng Địa chỉ MAC, Switch & Định tuyến Router.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Địa chỉ MAC, Switch & Định tuyến Router:\nThuộc Địa chỉ MAC, Switch & Định tuyến Router.\nLiên kết Địa chỉ MAC, Switch & Định tuyến Router.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_networks",
+    "course_title": "Mạng máy tính",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Địa chỉ MAC, Switch & Định tuyến Router",
+    "lesson_order": 2,
+    "lesson_id": "chapter-4-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng Địa chỉ MAC, Switch & Định tuyến Router (Địa chỉ MAC, Switch & Định tuyến Router). Mục tiêu: luyện kỹ năng giải bài từ cơ bản đến nâng cao với lời giải đầy đủ. Mỗi bài gồm: phát biểu đề, dữ liệu, lời giải từng bước và đáp số. Đây là dạng bài trọng tâm trong đề kiểm tra và thi cuối kỳ — cần vừa đúng kết quả vừa trình bày logic rõ ràng. Môn Mạng máy tính đánh giá khả năng vận dụng Địa chỉ MAC, Switch & Định tuyến Router qua bài tập và đề thi — cần luyện cả lý thuyết lẫn tính toán."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Phương pháp giải bài Địa chỉ MAC, Switch & Định tuyến Router:\nĐọc đề Địa chỉ MAC, Switch & Định tuyến Router.\nChọn công thức.\nGiải từng bước.\nKiểm tra biên.\n\nLưu ý: đọc kỹ đơn vị; kiểm tra biên (n=0, mảng rỗng, nồng độ cực nhỏ); với code — test case ẩn thường ở biên. Không bỏ qua bước trung gian vì đề chấm theo lời giải.\n\nMTU Ethernet 1500 byte. TTL giảm mỗi router; TTL=0 thì drop. NAT chuyển IP private ↔ public. TCP sequence/ack đảm bảo thứ tự. UDP header 8 byte, không handshake. Subnet mask AND với IP cho network address.\n\nLiên hệ Địa chỉ MAC, Switch & Định tuyến Router với Địa chỉ MAC, Switch & Định tuyến Router: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập có lời giải:\nBài 1 cơ bản Địa chỉ MAC, Switch & Định tuyến Router.\nBài 2 đổi số.\nBài 3 tổng hợp Địa chỉ MAC, Switch & Định tuyến Router.\n\nSau mỗi bài, tự đặt câu hỏi «nếu đổi số liệu thì kết quả thay đổi thế nào?» để củng cố hiểu bài, không chỉ nhớ đáp án.\n\nVí dụ bổ sung Địa chỉ MAC, Switch & Định tuyến Router: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Địa chỉ MAC, Switch & Định tuyến Router:\nLuyện 5 bài Địa chỉ MAC, Switch & Định tuyến Router.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_networks",
+    "course_title": "Mạng máy tính",
+    "chapter_order": 5,
+    "chapter_title": "Bộ 100 câu hỏi ôn thi Mạng máy tính HCMUS",
+    "lesson_order": 1,
+    "lesson_id": "chapter-5-lesson-1",
+    "lesson_title": "Bài 1: Tài liệu ôn tập & đề thi",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bộ 100 câu hỏi ôn thi Mạng máy tính HCMUS là nội dung cốt lõi trong chương «Bộ 100 câu hỏi ôn thi Mạng máy tính HCMUS» (Mạng máy tính). Bài học giải thích khái niệm, ký hiệu và vai trò của Bộ 100 câu hỏi ôn thi Mạng máy tính HCMUS trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Bộ 100 câu hỏi ôn thi Mạng máy tính HCMUS thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Bộ 100 câu hỏi ôn thi Mạng máy tính HCMUS:\nCông thức và định nghĩa Bộ 100 câu hỏi ôn thi Mạng máy tính HCMUS.\nÁp dụng Bộ 100 câu hỏi ôn thi Mạng máy tính HCMUS trong Bộ 100 câu hỏi ôn thi Mạng máy tính HCMUS.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Bộ 100 câu hỏi ôn thi Mạng máy tính HCMUS, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Bộ 100 câu hỏi ôn thi Mạng máy tính HCMUS:\nVí dụ Bộ 100 câu hỏi ôn thi Mạng máy tính HCMUS với số liệu.\nBài tập mở rộng Bộ 100 câu hỏi ôn thi Mạng máy tính HCMUS.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Bộ 100 câu hỏi ôn thi Mạng máy tính HCMUS:\nThuộc Bộ 100 câu hỏi ôn thi Mạng máy tính HCMUS.\nLiên kết Bộ 100 câu hỏi ôn thi Mạng máy tính HCMUS.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  }
+]

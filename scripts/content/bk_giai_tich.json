@@ -1,0 +1,299 @@
+[
+  {
+    "course_id": "bk_giai_tich",
+    "course_title": "Đại số tuyến tính",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Ma trận, Định thức & Hệ phương trình",
+    "lesson_order": 1,
+    "lesson_id": "chapter-1-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Ma trận, Định thức & Hệ phương trình là nội dung cốt lõi trong chương «Ma trận, Định thức & Hệ phương trình» (Đại số tuyến tính). Bài học giải thích khái niệm, ký hiệu và vai trò của Ma trận, Định thức & Hệ phương trình trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Ma trận, Định thức & Hệ phương trình thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Ma trận, Định thức & Hệ phương trình:\nCông thức và định nghĩa Ma trận, Định thức & Hệ phương trình.\nÁp dụng Ma trận, Định thức & Hệ phương trình trong Ma trận, Định thức & Hệ phương trình.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Ma trận, Định thức & Hệ phương trình, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán.\n\nMa trận vuông n×n có định thức và nghịch đảo nếu det ≠ 0. Hạng của ma trận = số pivot khi khử Gauss. Không gian con là tập con đóng cộng và nhân scalar. Ánh xạ tuyến tính giữ gốc và tổ hợp tuyến tính. Trị riêng λ là scalar; vector riêng v ≠ 0.\n\nLiên hệ Ma trận, Định thức & Hệ phương trình với Ma trận, Định thức & Hệ phương trình: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Ma trận, Định thức & Hệ phương trình:\nVí dụ Ma trận, Định thức & Hệ phương trình với số liệu.\nBài tập mở rộng Ma trận, Định thức & Hệ phương trình.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Ma trận, Định thức & Hệ phương trình:\nThuộc Ma trận, Định thức & Hệ phương trình.\nLiên kết Ma trận, Định thức & Hệ phương trình.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_giai_tich",
+    "course_title": "Đại số tuyến tính",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Ma trận, Định thức & Hệ phương trình",
+    "lesson_order": 2,
+    "lesson_id": "chapter-1-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng Ma trận, Định thức & Hệ phương trình (Ma trận, Định thức & Hệ phương trình). Mục tiêu: luyện kỹ năng giải bài từ cơ bản đến nâng cao với lời giải đầy đủ. Mỗi bài gồm: phát biểu đề, dữ liệu, lời giải từng bước và đáp số. Đây là dạng bài trọng tâm trong đề kiểm tra và thi cuối kỳ — cần vừa đúng kết quả vừa trình bày logic rõ ràng."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Phương pháp giải bài Ma trận, Định thức & Hệ phương trình:\nĐọc đề Ma trận, Định thức & Hệ phương trình.\nChọn công thức.\nGiải từng bước.\nKiểm tra biên.\n\nLưu ý: đọc kỹ đơn vị; kiểm tra biên (n=0, mảng rỗng, nồng độ cực nhỏ); với code — test case ẩn thường ở biên. Không bỏ qua bước trung gian vì đề chấm theo lời giải.\n\nMa trận vuông n×n có định thức và nghịch đảo nếu det ≠ 0. Hạng của ma trận = số pivot khi khử Gauss. Không gian con là tập con đóng cộng và nhân scalar. Ánh xạ tuyến tính giữ gốc và tổ hợp tuyến tính. Trị riêng λ là scalar; vector riêng v ≠ 0.\n\nLiên hệ Ma trận, Định thức & Hệ phương trình với Ma trận, Định thức & Hệ phương trình: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập có lời giải:\nBài 1 cơ bản Ma trận, Định thức & Hệ phương trình.\nBài 2 đổi số.\nBài 3 tổng hợp Ma trận, Định thức & Hệ phương trình.\n\nSau mỗi bài, tự đặt câu hỏi «nếu đổi số liệu thì kết quả thay đổi thế nào?» để củng cố hiểu bài, không chỉ nhớ đáp án.\n\nVí dụ bổ sung Ma trận, Định thức & Hệ phương trình: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Ma trận, Định thức & Hệ phương trình:\nLuyện 5 bài Ma trận, Định thức & Hệ phương trình.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_giai_tich",
+    "course_title": "Đại số tuyến tính",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Không gian Vector & Cơ sở, Số chiều",
+    "lesson_order": 1,
+    "lesson_id": "chapter-2-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Không gian Vector & Cơ sở, Số chiều là nội dung cốt lõi trong chương «Không gian Vector & Cơ sở, Số chiều» (Đại số tuyến tính). Bài học giải thích khái niệm, ký hiệu và vai trò của Không gian Vector & Cơ sở, Số chiều trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Không gian Vector & Cơ sở, Số chiều thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Không gian Vector & Cơ sở, Số chiều:\nCông thức và định nghĩa Không gian Vector & Cơ sở, Số chiều.\nÁp dụng Không gian Vector & Cơ sở, Số chiều trong Không gian Vector & Cơ sở, Số chiều.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Không gian Vector & Cơ sở, Số chiều, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán.\n\nMa trận vuông n×n có định thức và nghịch đảo nếu det ≠ 0. Hạng của ma trận = số pivot khi khử Gauss. Không gian con là tập con đóng cộng và nhân scalar. Ánh xạ tuyến tính giữ gốc và tổ hợp tuyến tính. Trị riêng λ là scalar; vector riêng v ≠ 0.\n\nLiên hệ Không gian Vector & Cơ sở, Số chiều với Không gian Vector & Cơ sở, Số chiều: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Không gian Vector & Cơ sở, Số chiều:\nVí dụ Không gian Vector & Cơ sở, Số chiều với số liệu.\nBài tập mở rộng Không gian Vector & Cơ sở, Số chiều.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Không gian Vector & Cơ sở, Số chiều:\nThuộc Không gian Vector & Cơ sở, Số chiều.\nLiên kết Không gian Vector & Cơ sở, Số chiều.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_giai_tich",
+    "course_title": "Đại số tuyến tính",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Không gian Vector & Cơ sở, Số chiều",
+    "lesson_order": 2,
+    "lesson_id": "chapter-2-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng Không gian Vector & Cơ sở, Số chiều (Không gian Vector & Cơ sở, Số chiều). Mục tiêu: luyện kỹ năng giải bài từ cơ bản đến nâng cao với lời giải đầy đủ. Mỗi bài gồm: phát biểu đề, dữ liệu, lời giải từng bước và đáp số. Đây là dạng bài trọng tâm trong đề kiểm tra và thi cuối kỳ — cần vừa đúng kết quả vừa trình bày logic rõ ràng."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Phương pháp giải bài Không gian Vector & Cơ sở, Số chiều:\nĐọc đề Không gian Vector & Cơ sở, Số chiều.\nChọn công thức.\nGiải từng bước.\nKiểm tra biên.\n\nLưu ý: đọc kỹ đơn vị; kiểm tra biên (n=0, mảng rỗng, nồng độ cực nhỏ); với code — test case ẩn thường ở biên. Không bỏ qua bước trung gian vì đề chấm theo lời giải.\n\nMa trận vuông n×n có định thức và nghịch đảo nếu det ≠ 0. Hạng của ma trận = số pivot khi khử Gauss. Không gian con là tập con đóng cộng và nhân scalar. Ánh xạ tuyến tính giữ gốc và tổ hợp tuyến tính. Trị riêng λ là scalar; vector riêng v ≠ 0.\n\nLiên hệ Không gian Vector & Cơ sở, Số chiều với Không gian Vector & Cơ sở, Số chiều: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập có lời giải:\nBài 1 cơ bản Không gian Vector & Cơ sở, Số chiều.\nBài 2 đổi số.\nBài 3 tổng hợp Không gian Vector & Cơ sở, Số chiều.\n\nSau mỗi bài, tự đặt câu hỏi «nếu đổi số liệu thì kết quả thay đổi thế nào?» để củng cố hiểu bài, không chỉ nhớ đáp án.\n\nVí dụ bổ sung Không gian Vector & Cơ sở, Số chiều: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Không gian Vector & Cơ sở, Số chiều:\nLuyện 5 bài Không gian Vector & Cơ sở, Số chiều.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_giai_tich",
+    "course_title": "Đại số tuyến tính",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Ánh xạ tuyến tính & Ma trận biểu diễn",
+    "lesson_order": 1,
+    "lesson_id": "chapter-3-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Ánh xạ tuyến tính & Ma trận biểu diễn là nội dung cốt lõi trong chương «Ánh xạ tuyến tính & Ma trận biểu diễn» (Đại số tuyến tính). Bài học giải thích khái niệm, ký hiệu và vai trò của Ánh xạ tuyến tính & Ma trận biểu diễn trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Ánh xạ tuyến tính & Ma trận biểu diễn thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Ánh xạ tuyến tính & Ma trận biểu diễn:\nCông thức và định nghĩa Ánh xạ tuyến tính & Ma trận biểu diễn.\nÁp dụng Ánh xạ tuyến tính & Ma trận biểu diễn trong Ánh xạ tuyến tính & Ma trận biểu diễn.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Ánh xạ tuyến tính & Ma trận biểu diễn, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Ánh xạ tuyến tính & Ma trận biểu diễn:\nVí dụ Ánh xạ tuyến tính & Ma trận biểu diễn với số liệu.\nBài tập mở rộng Ánh xạ tuyến tính & Ma trận biểu diễn.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Ánh xạ tuyến tính & Ma trận biểu diễn:\nThuộc Ánh xạ tuyến tính & Ma trận biểu diễn.\nLiên kết Ánh xạ tuyến tính & Ma trận biểu diễn.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_giai_tich",
+    "course_title": "Đại số tuyến tính",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Ánh xạ tuyến tính & Ma trận biểu diễn",
+    "lesson_order": 2,
+    "lesson_id": "chapter-3-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng Ánh xạ tuyến tính & Ma trận biểu diễn (Ánh xạ tuyến tính & Ma trận biểu diễn). Mục tiêu: luyện kỹ năng giải bài từ cơ bản đến nâng cao với lời giải đầy đủ. Mỗi bài gồm: phát biểu đề, dữ liệu, lời giải từng bước và đáp số. Đây là dạng bài trọng tâm trong đề kiểm tra và thi cuối kỳ — cần vừa đúng kết quả vừa trình bày logic rõ ràng."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Phương pháp giải bài Ánh xạ tuyến tính & Ma trận biểu diễn:\nĐọc đề Ánh xạ tuyến tính & Ma trận biểu diễn.\nChọn công thức.\nGiải từng bước.\nKiểm tra biên.\n\nLưu ý: đọc kỹ đơn vị; kiểm tra biên (n=0, mảng rỗng, nồng độ cực nhỏ); với code — test case ẩn thường ở biên. Không bỏ qua bước trung gian vì đề chấm theo lời giải.\n\nMa trận vuông n×n có định thức và nghịch đảo nếu det ≠ 0. Hạng của ma trận = số pivot khi khử Gauss. Không gian con là tập con đóng cộng và nhân scalar. Ánh xạ tuyến tính giữ gốc và tổ hợp tuyến tính. Trị riêng λ là scalar; vector riêng v ≠ 0.\n\nLiên hệ Ánh xạ tuyến tính & Ma trận biểu diễn với Ánh xạ tuyến tính & Ma trận biểu diễn: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập có lời giải:\nBài 1 cơ bản Ánh xạ tuyến tính & Ma trận biểu diễn.\nBài 2 đổi số.\nBài 3 tổng hợp Ánh xạ tuyến tính & Ma trận biểu diễn.\n\nSau mỗi bài, tự đặt câu hỏi «nếu đổi số liệu thì kết quả thay đổi thế nào?» để củng cố hiểu bài, không chỉ nhớ đáp án.\n\nVí dụ bổ sung Ánh xạ tuyến tính & Ma trận biểu diễn: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Ánh xạ tuyến tính & Ma trận biểu diễn:\nLuyện 5 bài Ánh xạ tuyến tính & Ma trận biểu diễn.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_giai_tich",
+    "course_title": "Đại số tuyến tính",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Trị riêng, Vector riêng & Chéo hóa",
+    "lesson_order": 1,
+    "lesson_id": "chapter-4-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Trị riêng, Vector riêng & Chéo hóa là nội dung cốt lõi trong chương «Trị riêng, Vector riêng & Chéo hóa» (Đại số tuyến tính). Bài học giải thích khái niệm, ký hiệu và vai trò của Trị riêng, Vector riêng & Chéo hóa trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Trị riêng, Vector riêng & Chéo hóa thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Trị riêng, Vector riêng & Chéo hóa:\nCông thức và định nghĩa Trị riêng, Vector riêng & Chéo hóa.\nÁp dụng Trị riêng, Vector riêng & Chéo hóa trong Trị riêng, Vector riêng & Chéo hóa.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Trị riêng, Vector riêng & Chéo hóa, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán.\n\nMa trận vuông n×n có định thức và nghịch đảo nếu det ≠ 0. Hạng của ma trận = số pivot khi khử Gauss. Không gian con là tập con đóng cộng và nhân scalar. Ánh xạ tuyến tính giữ gốc và tổ hợp tuyến tính. Trị riêng λ là scalar; vector riêng v ≠ 0.\n\nLiên hệ Trị riêng, Vector riêng & Chéo hóa với Trị riêng, Vector riêng & Chéo hóa: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Trị riêng, Vector riêng & Chéo hóa:\nVí dụ Trị riêng, Vector riêng & Chéo hóa với số liệu.\nBài tập mở rộng Trị riêng, Vector riêng & Chéo hóa.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Trị riêng, Vector riêng & Chéo hóa:\nThuộc Trị riêng, Vector riêng & Chéo hóa.\nLiên kết Trị riêng, Vector riêng & Chéo hóa.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_giai_tich",
+    "course_title": "Đại số tuyến tính",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Trị riêng, Vector riêng & Chéo hóa",
+    "lesson_order": 2,
+    "lesson_id": "chapter-4-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng Trị riêng, Vector riêng & Chéo hóa (Trị riêng, Vector riêng & Chéo hóa). Mục tiêu: luyện kỹ năng giải bài từ cơ bản đến nâng cao với lời giải đầy đủ. Mỗi bài gồm: phát biểu đề, dữ liệu, lời giải từng bước và đáp số. Đây là dạng bài trọng tâm trong đề kiểm tra và thi cuối kỳ — cần vừa đúng kết quả vừa trình bày logic rõ ràng. Môn Đại số tuyến tính đánh giá khả năng vận dụng Trị riêng, Vector riêng & Chéo hóa qua bài tập và đề thi — cần luyện cả lý thuyết lẫn tính toán."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Phương pháp giải bài Trị riêng, Vector riêng & Chéo hóa:\nĐọc đề Trị riêng, Vector riêng & Chéo hóa.\nChọn công thức.\nGiải từng bước.\nKiểm tra biên.\n\nLưu ý: đọc kỹ đơn vị; kiểm tra biên (n=0, mảng rỗng, nồng độ cực nhỏ); với code — test case ẩn thường ở biên. Không bỏ qua bước trung gian vì đề chấm theo lời giải.\n\nMa trận vuông n×n có định thức và nghịch đảo nếu det ≠ 0. Hạng của ma trận = số pivot khi khử Gauss. Không gian con là tập con đóng cộng và nhân scalar. Ánh xạ tuyến tính giữ gốc và tổ hợp tuyến tính. Trị riêng λ là scalar; vector riêng v ≠ 0.\n\nLiên hệ Trị riêng, Vector riêng & Chéo hóa với Trị riêng, Vector riêng & Chéo hóa: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập có lời giải:\nBài 1 cơ bản Trị riêng, Vector riêng & Chéo hóa.\nBài 2 đổi số.\nBài 3 tổng hợp Trị riêng, Vector riêng & Chéo hóa.\n\nSau mỗi bài, tự đặt câu hỏi «nếu đổi số liệu thì kết quả thay đổi thế nào?» để củng cố hiểu bài, không chỉ nhớ đáp án.\n\nVí dụ bổ sung Trị riêng, Vector riêng & Chéo hóa: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Trị riêng, Vector riêng & Chéo hóa:\nLuyện 5 bài Trị riêng, Vector riêng & Chéo hóa.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_giai_tich",
+    "course_title": "Đại số tuyến tính",
+    "chapter_order": 5,
+    "chapter_title": "Chương 5: Dạng toàn phương Lagrange",
+    "lesson_order": 1,
+    "lesson_id": "chapter-5-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Dạng toàn phương Lagrange là nội dung cốt lõi trong chương «Dạng toàn phương Lagrange» (Đại số tuyến tính). Bài học giải thích khái niệm, ký hiệu và vai trò của Dạng toàn phương Lagrange trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Dạng toàn phương Lagrange thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Dạng toàn phương Lagrange:\nCông thức và định nghĩa Dạng toàn phương Lagrange.\nÁp dụng Dạng toàn phương Lagrange trong Dạng toàn phương Lagrange.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Dạng toàn phương Lagrange, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán.\n\nMa trận vuông n×n có định thức và nghịch đảo nếu det ≠ 0. Hạng của ma trận = số pivot khi khử Gauss. Không gian con là tập con đóng cộng và nhân scalar. Ánh xạ tuyến tính giữ gốc và tổ hợp tuyến tính. Trị riêng λ là scalar; vector riêng v ≠ 0.\n\nLiên hệ Dạng toàn phương Lagrange với Dạng toàn phương Lagrange: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Dạng toàn phương Lagrange:\nVí dụ Dạng toàn phương Lagrange với số liệu.\nBài tập mở rộng Dạng toàn phương Lagrange.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Dạng toàn phương Lagrange:\nThuộc Dạng toàn phương Lagrange.\nLiên kết Dạng toàn phương Lagrange.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_giai_tich",
+    "course_title": "Đại số tuyến tính",
+    "chapter_order": 5,
+    "chapter_title": "Chương 5: Dạng toàn phương Lagrange",
+    "lesson_order": 2,
+    "lesson_id": "chapter-5-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng Dạng toàn phương Lagrange (Dạng toàn phương Lagrange). Mục tiêu: luyện kỹ năng giải bài từ cơ bản đến nâng cao với lời giải đầy đủ. Mỗi bài gồm: phát biểu đề, dữ liệu, lời giải từng bước và đáp số. Đây là dạng bài trọng tâm trong đề kiểm tra và thi cuối kỳ — cần vừa đúng kết quả vừa trình bày logic rõ ràng. Môn Đại số tuyến tính đánh giá khả năng vận dụng Dạng toàn phương Lagrange qua bài tập và đề thi — cần luyện cả lý thuyết lẫn tính toán."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Phương pháp giải bài Dạng toàn phương Lagrange:\nĐọc đề Dạng toàn phương Lagrange.\nChọn công thức.\nGiải từng bước.\nKiểm tra biên.\n\nLưu ý: đọc kỹ đơn vị; kiểm tra biên (n=0, mảng rỗng, nồng độ cực nhỏ); với code — test case ẩn thường ở biên. Không bỏ qua bước trung gian vì đề chấm theo lời giải.\n\nMa trận vuông n×n có định thức và nghịch đảo nếu det ≠ 0. Hạng của ma trận = số pivot khi khử Gauss. Không gian con là tập con đóng cộng và nhân scalar. Ánh xạ tuyến tính giữ gốc và tổ hợp tuyến tính. Trị riêng λ là scalar; vector riêng v ≠ 0.\n\nLiên hệ Dạng toàn phương Lagrange với Dạng toàn phương Lagrange: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập có lời giải:\nBài 1 cơ bản Dạng toàn phương Lagrange.\nBài 2 đổi số.\nBài 3 tổng hợp Dạng toàn phương Lagrange.\n\nSau mỗi bài, tự đặt câu hỏi «nếu đổi số liệu thì kết quả thay đổi thế nào?» để củng cố hiểu bài, không chỉ nhớ đáp án.\n\nVí dụ bổ sung Dạng toàn phương Lagrange: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Dạng toàn phương Lagrange:\nLuyện 5 bài Dạng toàn phương Lagrange.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề.\n\nÔn tập Dạng toàn phương Lagrange: liệt kê công thức chính, làm 3 bài tập đại diện, tự giải thích từng bước bằng lời nói."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_giai_tich",
+    "course_title": "Đại số tuyến tính",
+    "chapter_order": 6,
+    "chapter_title": "Bộ đề thi ĐSTT Bách Khoa các năm",
+    "lesson_order": 1,
+    "lesson_id": "chapter-6-lesson-1",
+    "lesson_title": "Bài 1: Tài liệu ôn tập & đề thi",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Ôn thi Đại số tuyến tính — Bộ đề thi ĐSTT Bách Khoa các năm (Bộ đề thi ĐSTT Bách Khoa các năm). Đề thi đại học kỹ thuật thường gồm trắc nghiệm lý thuyết và bài tập tính toán/viết code. Thời gian 60–120 phút tùy môn. Sinh viên cần nắm công thức cốt lõi, luyện đề cũ và phân bổ thời gian hợp lý: làm câu quen trước, ghi công thức lên nháp, kiểm tra đơn vị trước khi chọn đáp án."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Cấu trúc đề và trọng tâm Bộ đề thi ĐSTT Bách Khoa các năm:\nĐề Đại số tuyến tính: lý thuyết + tính toán Bộ đề thi ĐSTT Bách Khoa các năm.\nThời gian 60–120 phút.\nTrọng tâm Bộ đề thi ĐSTT Bách Khoa các năm.\n\nChiến lược: (1) quét nhanh toàn đề, đánh dấu câu dễ; (2) làm phần tính trước nếu tự tin; (3) dành 10 phút cuối kiểm tra đơn vị và câu chưa làm.\n\nMa trận vuông n×n có định thức và nghịch đảo nếu det ≠ 0. Hạng của ma trận = số pivot khi khử Gauss. Không gian con là tập con đóng cộng và nhân scalar. Ánh xạ tuyến tính giữ gốc và tổ hợp tuyến tính. Trị riêng λ là scalar; vector riêng v ≠ 0.\n\nLiên hệ Bộ đề thi ĐSTT Bách Khoa các năm với Bộ đề thi ĐSTT Bách Khoa các năm: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Câu hỏi mẫu Bộ đề thi ĐSTT Bách Khoa các năm:\nCâu lý thuyết Bộ đề thi ĐSTT Bách Khoa các năm.\nCâu tính thay số.\nCâu tổng hợp Bộ đề thi ĐSTT Bách Khoa các năm.\n\nVới mỗi câu mẫu, tự biến thể: đổi số liệu, thêm điều kiện, hoặc hỏi ngược (cho kết quả tìm đầu vào).\n\nVí dụ bổ sung Bộ đề thi ĐSTT Bách Khoa các năm: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Bộ đề thi ĐSTT Bách Khoa các năm:\nÔn đề cũ Bộ đề thi ĐSTT Bách Khoa các năm.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  }
+]

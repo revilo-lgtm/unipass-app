@@ -8,13 +8,16 @@
     "check": "node --check server.js",
     "seed:courses": "node scripts/seed-courses.js",
     "seed:chapters": "node scripts/seed-chapters.js",
-    "seed:lessons": "node scripts/seed-lessons.js"
+    "seed:lessons": "node scripts/seed-lessons.js",
+    "render:pdfs": "node scripts/render-pdfs.js",
+    "seed:pdfs": "node scripts/seed-pdfs.js"
   },
   "dependencies": {
     "@google/genai": "^2.19.0",
     "bcrypt": "^6.0.0",
     "compression": "^1.8.1",
     "cors": "^2.8.6",
+    "dejavu-fonts-ttf": "^2.37.3",
     "dotenv": "^17.4.2",
     "express": "^5.1.0",
     "express-rate-limit": "^8.6.2",
@@ -25,6 +28,7 @@
     "marked-katex-extension": "^5.1.12",
     "multer": "^2.0.2",
     "pdf-lib": "^1.17.1",
+    "pdfkit": "^0.20.2",
     "sqlite": "^5.1.1",
     "sqlite3": "^6.0.1"
   }

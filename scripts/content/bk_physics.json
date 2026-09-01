@@ -1,0 +1,245 @@
+[
+  {
+    "course_id": "bk_physics",
+    "course_title": "Vật lý Đại cương 1",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Động học & Động lực học chất điểm",
+    "lesson_order": 1,
+    "lesson_id": "chapter-1-lesson-1",
+    "lesson_title": "Phương trình chuyển động, Vận tốc, Gia tiếp tuyến & pháp tuyến",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Phương trình chuyển động, Vận tốc, Gia tiếp tuyến & pháp tuyến là nội dung cốt lõi trong chương «Động học & Động lực học chất điểm» (Vật lý Đại cương 1). Bài học giải thích khái niệm, ký hiệu và vai trò của Phương trình chuyển động, Vận tốc, Gia tiếp tuyến & pháp tuyến trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Phương trình chuyển động, Vận tốc, Gia tiếp tuyến & pháp tuyến thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Phương trình chuyển động, Vận tốc, Gia tiếp tuyến & pháp tuyến:\nCông thức và định nghĩa Phương trình chuyển động, Vận tốc, Gia tiếp tuyến & pháp tuyến.\nÁp dụng Phương trình chuyển động, Vận tốc, Gia tiếp tuyến & pháp tuyến trong Động học & Động lực học chất điểm.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Động học & Động lực học chất điểm, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Phương trình chuyển động, Vận tốc, Gia tiếp tuyến & pháp tuyến:\nVí dụ Phương trình chuyển động, Vận tốc, Gia tiếp tuyến & pháp tuyến với số liệu.\nBài tập mở rộng Phương trình chuyển động, Vận tốc, Gia tiếp tuyến & pháp tuyến.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Phương trình chuyển động, Vận tốc, Gia tiếp tuyến & pháp tuyến:\nThuộc Phương trình chuyển động, Vận tốc, Gia tiếp tuyến & pháp tuyến.\nLiên kết Động học & Động lực học chất điểm.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_physics",
+    "course_title": "Vật lý Đại cương 1",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Động học & Động lực học chất điểm",
+    "lesson_order": 2,
+    "lesson_id": "chapter-1-lesson-2",
+    "lesson_title": "Các định luật Newton & Định lý động lượng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Các định luật Newton & Định lý động lượng là nội dung cốt lõi trong chương «Động học & Động lực học chất điểm» (Vật lý Đại cương 1). Bài học giải thích khái niệm, ký hiệu và vai trò của Các định luật Newton & Định lý động lượng trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Các định luật Newton & Định lý động lượng thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Các định luật Newton & Định lý động lượng:\nCông thức và định nghĩa Các định luật Newton & Định lý động lượng.\nÁp dụng Các định luật Newton & Định lý động lượng trong Động học & Động lực học chất điểm.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Động học & Động lực học chất điểm, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Các định luật Newton & Định lý động lượng:\nVí dụ Các định luật Newton & Định lý động lượng với số liệu.\nBài tập mở rộng Các định luật Newton & Định lý động lượng.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Các định luật Newton & Định lý động lượng:\nThuộc Các định luật Newton & Định lý động lượng.\nLiên kết Động học & Động lực học chất điểm.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_physics",
+    "course_title": "Vật lý Đại cương 1",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Cơ học Vật rắn & Mômen quán tính",
+    "lesson_order": 1,
+    "lesson_id": "chapter-2-lesson-1",
+    "lesson_title": "Mômen lực, Mômen quán tính & Định lý Huygens-Steiner",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Mômen lực, Mômen quán tính & Định lý Huygens-Steiner là nội dung cốt lõi trong chương «Cơ học Vật rắn & Mômen quán tính» (Vật lý Đại cương 1). Bài học giải thích khái niệm, ký hiệu và vai trò của Mômen lực, Mômen quán tính & Định lý Huygens-Steiner trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Mômen lực, Mômen quán tính & Định lý Huygens-Steiner thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Mômen lực, Mômen quán tính & Định lý Huygens-Steiner:\nCông thức và định nghĩa Mômen lực, Mômen quán tính & Định lý Huygens-Steiner.\nÁp dụng Mômen lực, Mômen quán tính & Định lý Huygens-Steiner trong Cơ học Vật rắn & Mômen quán tính.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Cơ học Vật rắn & Mômen quán tính, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Mômen lực, Mômen quán tính & Định lý Huygens-Steiner:\nVí dụ Mômen lực, Mômen quán tính & Định lý Huygens-Steiner với số liệu.\nBài tập mở rộng Mômen lực, Mômen quán tính & Định lý Huygens-Steiner.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Mômen lực, Mômen quán tính & Định lý Huygens-Steiner:\nThuộc Mômen lực, Mômen quán tính & Định lý Huygens-Steiner.\nLiên kết Cơ học Vật rắn & Mômen quán tính.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_physics",
+    "course_title": "Vật lý Đại cương 1",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Cơ học Vật rắn & Mômen quán tính",
+    "lesson_order": 2,
+    "lesson_id": "chapter-2-lesson-2",
+    "lesson_title": "Phương trình cơ bản chuyển động quay của vật rắn",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Phương trình cơ bản chuyển động quay của vật rắn là nội dung cốt lõi trong chương «Cơ học Vật rắn & Mômen quán tính» (Vật lý Đại cương 1). Bài học giải thích khái niệm, ký hiệu và vai trò của Phương trình cơ bản chuyển động quay của vật rắn trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Phương trình cơ bản chuyển động quay của vật rắn thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Phương trình cơ bản chuyển động quay của vật rắn:\nCông thức và định nghĩa Phương trình cơ bản chuyển động quay của vật rắn.\nÁp dụng Phương trình cơ bản chuyển động quay của vật rắn trong Cơ học Vật rắn & Mômen quán tính.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Cơ học Vật rắn & Mômen quán tính, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Phương trình cơ bản chuyển động quay của vật rắn:\nVí dụ Phương trình cơ bản chuyển động quay của vật rắn với số liệu.\nBài tập mở rộng Phương trình cơ bản chuyển động quay của vật rắn.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Phương trình cơ bản chuyển động quay của vật rắn:\nThuộc Phương trình cơ bản chuyển động quay của vật rắn.\nLiên kết Cơ học Vật rắn & Mômen quán tính.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_physics",
+    "course_title": "Vật lý Đại cương 1",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Dao động cơ & Sóng cơ học",
+    "lesson_order": 1,
+    "lesson_id": "chapter-3-lesson-1",
+    "lesson_title": "Nguyên lý 1: Đẳng nhiệt, đẳng tích, đẳng áp, đoạn nhiệt",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Nguyên lý 1: Đẳng nhiệt, đẳng tích, đẳng áp, đoạn nhiệt là nội dung cốt lõi trong chương «Dao động cơ & Sóng cơ học» (Vật lý Đại cương 1). Bài học giải thích khái niệm, ký hiệu và vai trò của Nguyên lý 1: Đẳng nhiệt, đẳng tích, đẳng áp, đoạn nhiệt trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Nguyên lý 1: Đẳng nhiệt, đẳng tích, đẳng áp, đoạn nhiệt thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Nguyên lý 1: Đẳng nhiệt, đẳng tích, đẳng áp, đoạn nhiệt:\nCông thức và định nghĩa Nguyên lý 1: Đẳng nhiệt, đẳng tích, đẳng áp, đoạn nhiệt.\nÁp dụng Nguyên lý 1: Đẳng nhiệt, đẳng tích, đẳng áp, đoạn nhiệt trong Dao động cơ & Sóng cơ học.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Dao động cơ & Sóng cơ học, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Nguyên lý 1: Đẳng nhiệt, đẳng tích, đẳng áp, đoạn nhiệt:\nVí dụ Nguyên lý 1: Đẳng nhiệt, đẳng tích, đẳng áp, đoạn nhiệt với số liệu.\nBài tập mở rộng Nguyên lý 1: Đẳng nhiệt, đẳng tích, đẳng áp, đoạn nhiệt.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Nguyên lý 1: Đẳng nhiệt, đẳng tích, đẳng áp, đoạn nhiệt:\nThuộc Nguyên lý 1: Đẳng nhiệt, đẳng tích, đẳng áp, đoạn nhiệt.\nLiên kết Dao động cơ & Sóng cơ học.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_physics",
+    "course_title": "Vật lý Đại cương 1",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Dao động cơ & Sóng cơ học",
+    "lesson_order": 2,
+    "lesson_id": "chapter-3-lesson-2",
+    "lesson_title": "Nguyên lý 2: Chu trình Carnot & Tính toán Entropy",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Nguyên lý 2: Chu trình Carnot & Tính toán Entropy là nội dung cốt lõi trong chương «Dao động cơ & Sóng cơ học» (Vật lý Đại cương 1). Bài học giải thích khái niệm, ký hiệu và vai trò của Nguyên lý 2: Chu trình Carnot & Tính toán Entropy trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Nguyên lý 2: Chu trình Carnot & Tính toán Entropy thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Nguyên lý 2: Chu trình Carnot & Tính toán Entropy:\nCông thức và định nghĩa Nguyên lý 2: Chu trình Carnot & Tính toán Entropy.\nÁp dụng Nguyên lý 2: Chu trình Carnot & Tính toán Entropy trong Dao động cơ & Sóng cơ học.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Dao động cơ & Sóng cơ học, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Nguyên lý 2: Chu trình Carnot & Tính toán Entropy:\nVí dụ Nguyên lý 2: Chu trình Carnot & Tính toán Entropy với số liệu.\nBài tập mở rộng Nguyên lý 2: Chu trình Carnot & Tính toán Entropy.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Nguyên lý 2: Chu trình Carnot & Tính toán Entropy:\nThuộc Nguyên lý 2: Chu trình Carnot & Tính toán Entropy.\nLiên kết Dao động cơ & Sóng cơ học.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_physics",
+    "course_title": "Vật lý Đại cương 1",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Nhiệt động lực học (Nguyên lý 1 & 2)",
+    "lesson_order": 1,
+    "lesson_id": "chapter-4-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Nhiệt động lực học (Nguyên lý 1 & 2) là nội dung cốt lõi trong chương «Nhiệt động lực học (Nguyên lý 1 & 2)» (Vật lý Đại cương 1). Bài học giải thích khái niệm, ký hiệu và vai trò của Nhiệt động lực học (Nguyên lý 1 & 2) trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Nhiệt động lực học (Nguyên lý 1 & 2) thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Nhiệt động lực học (Nguyên lý 1 & 2):\nCông thức và định nghĩa Nhiệt động lực học (Nguyên lý 1 & 2).\nÁp dụng Nhiệt động lực học (Nguyên lý 1 & 2) trong Nhiệt động lực học (Nguyên lý 1 & 2).\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Nhiệt động lực học (Nguyên lý 1 & 2), cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Nhiệt động lực học (Nguyên lý 1 & 2):\nVí dụ Nhiệt động lực học (Nguyên lý 1 & 2) với số liệu.\nBài tập mở rộng Nhiệt động lực học (Nguyên lý 1 & 2).\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Nhiệt động lực học (Nguyên lý 1 & 2):\nThuộc Nhiệt động lực học (Nguyên lý 1 & 2).\nLiên kết Nhiệt động lực học (Nguyên lý 1 & 2).\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_physics",
+    "course_title": "Vật lý Đại cương 1",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Nhiệt động lực học (Nguyên lý 1 & 2)",
+    "lesson_order": 2,
+    "lesson_id": "chapter-4-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng Nhiệt động lực học (Nguyên lý 1 & 2) (Nhiệt động lực học (Nguyên lý 1 & 2)). Mục tiêu: luyện kỹ năng giải bài từ cơ bản đến nâng cao với lời giải đầy đủ. Mỗi bài gồm: phát biểu đề, dữ liệu, lời giải từng bước và đáp số. Đây là dạng bài trọng tâm trong đề kiểm tra và thi cuối kỳ — cần vừa đúng kết quả vừa trình bày logic rõ ràng."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Phương pháp giải bài Nhiệt động lực học (Nguyên lý 1 & 2):\nĐọc đề Nhiệt động lực học (Nguyên lý 1 & 2).\nChọn công thức.\nGiải từng bước.\nKiểm tra biên.\n\nLưu ý: đọc kỹ đơn vị; kiểm tra biên (n=0, mảng rỗng, nồng độ cực nhỏ); với code — test case ẩn thường ở biên. Không bỏ qua bước trung gian vì đề chấm theo lời giải.\n\nHệ SI: mét, kilogram, giây. Vector: cộng theo quy tắc hình bình hành. Công W = F·d·cosθ. Công suất P = F·v. Moment động lượng L = r×p bảo toàn khi Στ_ext = 0. Dao động điều hòa: x = A cos(ωt + φ), T = 2π/ω.\n\nLiên hệ Nhiệt động lực học (Nguyên lý 1 & 2) với Nhiệt động lực học (Nguyên lý 1 & 2): áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập có lời giải:\nBài 1 cơ bản Nhiệt động lực học (Nguyên lý 1 & 2).\nBài 2 đổi số.\nBài 3 tổng hợp Nhiệt động lực học (Nguyên lý 1 & 2).\n\nSau mỗi bài, tự đặt câu hỏi «nếu đổi số liệu thì kết quả thay đổi thế nào?» để củng cố hiểu bài, không chỉ nhớ đáp án.\n\nVí dụ bổ sung Nhiệt động lực học (Nguyên lý 1 & 2): thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Nhiệt động lực học (Nguyên lý 1 & 2):\nLuyện 5 bài Nhiệt động lực học (Nguyên lý 1 & 2).\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_physics",
+    "course_title": "Vật lý Đại cương 1",
+    "chapter_order": 5,
+    "chapter_title": "Bộ đề thi trắc nghiệm Vật lý 1 Bách Khoa",
+    "lesson_order": 1,
+    "lesson_id": "chapter-5-lesson-1",
+    "lesson_title": "Bài 1: Tài liệu ôn tập & đề thi",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Ôn thi Vật lý Đại cương 1 — Bộ đề thi trắc nghiệm Vật lý 1 Bách Khoa (Bộ đề thi trắc nghiệm Vật lý 1 Bách Khoa). Đề thi đại học kỹ thuật thường gồm trắc nghiệm lý thuyết và bài tập tính toán/viết code. Thời gian 60–120 phút tùy môn. Sinh viên cần nắm công thức cốt lõi, luyện đề cũ và phân bổ thời gian hợp lý: làm câu quen trước, ghi công thức lên nháp, kiểm tra đơn vị trước khi chọn đáp án."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Cấu trúc đề và trọng tâm Bộ đề thi trắc nghiệm Vật lý 1 Bách Khoa:\nĐề Vật lý Đại cương 1: lý thuyết + tính toán Bộ đề thi trắc nghiệm Vật lý 1 Bách Khoa.\nThời gian 60–120 phút.\nTrọng tâm Bộ đề thi trắc nghiệm Vật lý 1 Bách Khoa.\n\nChiến lược: (1) quét nhanh toàn đề, đánh dấu câu dễ; (2) làm phần tính trước nếu tự tin; (3) dành 10 phút cuối kiểm tra đơn vị và câu chưa làm.\n\nHệ SI: mét, kilogram, giây. Vector: cộng theo quy tắc hình bình hành. Công W = F·d·cosθ. Công suất P = F·v. Moment động lượng L = r×p bảo toàn khi Στ_ext = 0. Dao động điều hòa: x = A cos(ωt + φ), T = 2π/ω.\n\nLiên hệ Bộ đề thi trắc nghiệm Vật lý 1 Bách Khoa với Bộ đề thi trắc nghiệm Vật lý 1 Bách Khoa: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Câu hỏi mẫu Bộ đề thi trắc nghiệm Vật lý 1 Bách Khoa:\nCâu lý thuyết Bộ đề thi trắc nghiệm Vật lý 1 Bách Khoa.\nCâu tính thay số.\nCâu tổng hợp Bộ đề thi trắc nghiệm Vật lý 1 Bách Khoa.\n\nVới mỗi câu mẫu, tự biến thể: đổi số liệu, thêm điều kiện, hoặc hỏi ngược (cho kết quả tìm đầu vào).\n\nVí dụ bổ sung Bộ đề thi trắc nghiệm Vật lý 1 Bách Khoa: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Bộ đề thi trắc nghiệm Vật lý 1 Bách Khoa:\nÔn đề cũ Bộ đề thi trắc nghiệm Vật lý 1 Bách Khoa.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  }
+]

@@ -1,0 +1,245 @@
+[
+  {
+    "course_id": "ftu_international-payment",
+    "course_title": "Thanh toán Quốc tế",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Tỷ giá hối đoái & Công cụ thanh toán",
+    "lesson_order": 1,
+    "lesson_id": "chapter-1-lesson-1",
+    "lesson_title": "Tỷ giá hối đoái & Nghiệp vụ Spot, Forward",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Tỷ giá hối đoái & Nghiệp vụ Spot, Forward là nội dung trọng tâm trong Tỷ giá hối đoái & Công cụ thanh toán — môn Thanh toán Quốc tế. Tỷ giá và công cụ phòng ngừa rủi ro forex. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn Minh Phú (Thanh toán Quốc tế): doanh thu 550 tỷ VND, biên gộp 25%, chi phí cố định 8 tỷ — áp dụng Tỷ giá hối đoái & Nghiệp vụ Spot, Forward phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Tỷ giá hối đoái & Nghiệp vụ Spot, Forward:\n\n1. Spot, Forward, Swap\n2. Bill of Exchange, Séc quốc tế\n3. Tỷ giá VND/USD NHNN\n4. Hedging forward cho XK\n\nCông thức:\nForward rate ≈ Spot × (1+r_d)/(1+r_f)\n\nThuật ngữ: . Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn Minh Phú (Thanh toán Quốc tế): doanh thu 550 tỷ VND, biên gộp 25%, chi phí cố định 8 tỷ — áp dụng Tỷ giá hối đoái & Nghiệp vụ Spot, Forward phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Tỷ giá hối đoái & Nghiệp vụ Spot, Forward, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Tỷ giá hối đoái & Nghiệp vụ Spot, Forward:\nXK USD 500K, forward lock 24,500 VND/USD vs spot 24,800 — tiết kiệm 150M VND.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=2500 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 27%. Liên hệ thực tiễn Minh Phú (Thanh toán Quốc tế): doanh thu 550 tỷ VND, biên gộp 25%, chi phí cố định 8 tỷ — áp dụng Tỷ giá hối đoái & Nghiệp vụ Spot, Forward phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Tỷ giá hối đoái & Nghiệp vụ Spot, Forward, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Spot giao ngay; Forward khóa tỷ giá. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn Minh Phú (Thanh toán Quốc tế): doanh thu 550 tỷ VND, biên gộp 25%, chi phí cố định 8 tỷ — áp dụng Tỷ giá hối đoái & Nghiệp vụ Spot, Forward phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ftu_international-payment",
+    "course_title": "Thanh toán Quốc tế",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Tỷ giá hối đoái & Công cụ thanh toán",
+    "lesson_order": 2,
+    "lesson_id": "chapter-1-lesson-2",
+    "lesson_title": "Hối phiếu thương mại (Bill of Exchange) & Séc quốc tế",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Hối phiếu thương mại (Bill of Exchange) & Séc quốc tế là nội dung trọng tâm trong Tỷ giá hối đoái & Công cụ thanh toán — môn Thanh toán Quốc tế. Tỷ giá và công cụ phòng ngừa rủi ro forex. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn Trung Nguyên (Thanh toán Quốc tế): doanh thu 560 tỷ VND, biên gộp 26%, chi phí cố định 9 tỷ — áp dụng Hối phiếu thương mại (Bill of Exchange) & Séc quốc tế phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Hối phiếu thương mại (Bill of Exchange) & Séc quốc tế:\n\n1. Spot, Forward, Swap\n2. Bill of Exchange, Séc quốc tế\n3. Tỷ giá VND/USD NHNN\n4. Hedging forward cho XK\n\nCông thức:\nForward rate ≈ Spot × (1+r_d)/(1+r_f)\n\nThuật ngữ: . Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn Trung Nguyên (Thanh toán Quốc tế): doanh thu 560 tỷ VND, biên gộp 26%, chi phí cố định 9 tỷ — áp dụng Hối phiếu thương mại (Bill of Exchange) & Séc quốc tế phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Hối phiếu thương mại (Bill of Exchange) & Séc quốc tế, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Hối phiếu thương mại (Bill of Exchange) & Séc quốc tế:\nXK USD 500K, forward lock 24,500 VND/USD vs spot 24,800 — tiết kiệm 150M VND.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=2600 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 12%. Liên hệ thực tiễn Trung Nguyên (Thanh toán Quốc tế): doanh thu 560 tỷ VND, biên gộp 26%, chi phí cố định 9 tỷ — áp dụng Hối phiếu thương mại (Bill of Exchange) & Séc quốc tế phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Hối phiếu thương mại (Bill of Exchange) & Séc quốc tế, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Spot giao ngay; Forward khóa tỷ giá. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn Trung Nguyên (Thanh toán Quốc tế): doanh thu 560 tỷ VND, biên gộp 26%, chi phí cố định 9 tỷ — áp dụng Hối phiếu thương mại (Bill of Exchange) & Séc quốc tế phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ftu_international-payment",
+    "course_title": "Thanh toán Quốc tế",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Phương thức Chuyển tiền (T/T) & Nhờ thu (D/A, D/P)",
+    "lesson_order": 1,
+    "lesson_id": "chapter-2-lesson-1",
+    "lesson_title": "Quy trình phát hành và thanh toán Thư tín dụng L/C",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Quy trình phát hành và thanh toán Thư tín dụng L/C là nội dung trọng tâm trong Phương thức Chuyển tiền (T/T) & Nhờ thu (D/A, D/P) — môn Thanh toán Quốc tế. T/T, D/A, D/P và quy trình L/C. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn FPT (Thanh toán Quốc tế): doanh thu 500 tỷ VND, biên gộp 20%, chi phí cố định 7 tỷ — áp dụng Quy trình phát hành và thanh toán Thư tín dụng L/C phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Quy trình phát hành và thanh toán Thư tín dụng L/C:\n\n1. T/T: rủi ro Seller cao\n2. D/P: nhờ thu chống xuất\n3. D/A: nhờ thu chấp nhận — rủi ro XK\n4. L/C: cam kết NH, UCP 600\n\nThuật ngữ: . Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn FPT (Thanh toán Quốc tế): doanh thu 500 tỷ VND, biên gộp 20%, chi phí cố định 7 tỷ — áp dụng Quy trình phát hành và thanh toán Thư tín dụng L/C phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Quy trình phát hành và thanh toán Thư tín dụng L/C, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Quy trình phát hành và thanh toán Thư tín dụng L/C:\nL/C USD 245K at sight: Applicant→Issuing Bank→Advising Bank→Beneficiary. 5 ngày xử lý chứng từ.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=2000 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 12%.\n\nBài tập mở rộng:\nPhân tích rủi ro T/T vs L/C cho đơn hàng đầu tiên. Liên hệ thực tiễn FPT (Thanh toán Quốc tế): doanh thu 500 tỷ VND, biên gộp 20%, chi phí cố định 7 tỷ — áp dụng Quy trình phát hành và thanh toán Thư tín dụng L/C phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Quy trình phát hành và thanh toán Thư tín dụng L/C, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "L/C an toàn nhất XK. T/T cho đối tác quen. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn FPT (Thanh toán Quốc tế): doanh thu 500 tỷ VND, biên gộp 20%, chi phí cố định 7 tỷ — áp dụng Quy trình phát hành và thanh toán Thư tín dụng L/C phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ftu_international-payment",
+    "course_title": "Thanh toán Quốc tế",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Phương thức Chuyển tiền (T/T) & Nhờ thu (D/A, D/P)",
+    "lesson_order": 2,
+    "lesson_id": "chapter-2-lesson-2",
+    "lesson_title": "Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745)",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745) là nội dung trọng tâm trong Phương thức Chuyển tiền (T/T) & Nhờ thu (D/A, D/P) — môn Thanh toán Quốc tế. T/T, D/A, D/P và quy trình L/C. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn Minh Phú (Thanh toán Quốc tế): doanh thu 510 tỷ VND, biên gộp 21%, chi phí cố định 8 tỷ — áp dụng Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745) phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745):\n\n1. T/T: rủi ro Seller cao\n2. D/P: nhờ thu chống xuất\n3. D/A: nhờ thu chấp nhận — rủi ro XK\n4. L/C: cam kết NH, UCP 600\n\nThuật ngữ: . Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn Minh Phú (Thanh toán Quốc tế): doanh thu 510 tỷ VND, biên gộp 21%, chi phí cố định 8 tỷ — áp dụng Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745):\nL/C USD 245K at sight: Applicant→Issuing Bank→Advising Bank→Beneficiary. 5 ngày xử lý chứng từ.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=2100 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 15%.\n\nBài tập mở rộng:\nPhân tích rủi ro T/T vs L/C cho đơn hàng đầu tiên. Liên hệ thực tiễn Minh Phú (Thanh toán Quốc tế): doanh thu 510 tỷ VND, biên gộp 21%, chi phí cố định 8 tỷ — áp dụng Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "L/C an toàn nhất XK. T/T cho đối tác quen. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn Minh Phú (Thanh toán Quốc tế): doanh thu 510 tỷ VND, biên gộp 21%, chi phí cố định 8 tỷ — áp dụng Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745) phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ftu_international-payment",
+    "course_title": "Thanh toán Quốc tế",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Tín dụng chứng từ L/C theo UCP 600",
+    "lesson_order": 1,
+    "lesson_id": "chapter-3-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài lý thuyết chương \"Tín dụng chứng từ L/C theo UCP 600\" — môn Thanh toán Quốc tế. L/C theo UCP 600. Củng cố khái niệm, mô hình, công thức và thuật ngữ then chốt — nền tảng cho bài tập vận dụng và thi cuối kỳ. Liên hệ thực tiễn Viettel (Thanh toán Quốc tế): doanh thu 450 tỷ VND, biên gộp 30%, chi phí cố định 6 tỷ — áp dụng Tín dụng chứng từ L/C theo UCP 600 phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Tín dụng chứng từ L/C theo UCP 600, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Khung kiến thức Tín dụng chứng từ L/C theo UCP 600:\n\n1. UCP 600 Điều 14: 5 ngày kiểm tra\n2. Strict compliance — discrepancy = từ chối\n3. Amendment, waiver\n4. Confirmed L/C giảm rủi ro\n\nThuật ngữ chuyên ngành: .\nĐiều kiện áp dụng: xác định giả định mô hình trước khi tính. Lỗi thường gặp: nhầm đơn vị (VND/USD), bỏ qua ràng buộc, kết luận không có số liệu hỗ trợ. Liên hệ thực tiễn Viettel (Thanh toán Quốc tế): doanh thu 450 tỷ VND, biên gộp 30%, chi phí cố định 6 tỷ — áp dụng Tín dụng chứng từ L/C theo UCP 600 phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Tín dụng chứng từ L/C theo UCP 600, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa Tín dụng chứng từ L/C theo UCP 600:\nDiscrepancy: B/L ngày 15/03, L/C latest shipment 10/03 → từ chối.\n\nPhân tích bổ sung: doanh thu 450 tỷ VND/năm, biên gộp 30%, chi phí cố định 6 tỷ. Case Viettel — trình bày 4 bước: (1) Dữ kiện (2) Chọn mô hình (3) Tính toán Q=1500 (4) Kết luận và rủi ro nếu biến động 15%. Liên hệ thực tiễn Viettel (Thanh toán Quốc tế): doanh thu 450 tỷ VND, biên gộp 30%, chi phí cố định 6 tỷ — áp dụng Tín dụng chứng từ L/C theo UCP 600 phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Tín dụng chứng từ L/C theo UCP 600, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "UCP 600 strict compliance. 5 banking days. Chuyển sang bài tập vận dụng để tự kiểm tra. Ôn thuật ngữ Anh-Việt trước thi. Liên hệ thực tiễn Viettel (Thanh toán Quốc tế): doanh thu 450 tỷ VND, biên gộp 30%, chi phí cố định 6 tỷ — áp dụng Tín dụng chứng từ L/C theo UCP 600 phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ftu_international-payment",
+    "course_title": "Thanh toán Quốc tế",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Tín dụng chứng từ L/C theo UCP 600",
+    "lesson_order": 2,
+    "lesson_id": "chapter-3-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng chương \"Tín dụng chứng từ L/C theo UCP 600\" — môn Thanh toán Quốc tế. Sau khi nắm lý thuyết, tự giải từng bài trước khi đối chiếu lời giải mẫu. Trình bày có bước: ghi công thức, thay số, đơn vị, kết luận. Không nhảy bước — giảng viên chấm theo quy trình giải. Liên hệ thực tiễn FPT (Thanh toán Quốc tế): doanh thu 460 tỷ VND, biên gộp 31%, chi phí cố định 7 tỷ — áp dụng Tín dụng chứng từ L/C theo UCP 600 phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Hướng dẫn làm bài Tín dụng chứng từ L/C theo UCP 600:\n• Câu lý thuyết: định nghĩa chính xác + vẽ sơ đồ (nếu có) + ví dụ doanh nghiệp VN.\n• Câu tính toán: liệt kê dữ kiện → chọn công thức → thay số → đơn vị → kết luận kinh tế/quản trị.\n• Case study: tóm tắt tình huống → phân tích theo mô hình chương → khuyến nghị có căn cứ số liệu.\n\n\n\nKiến thức cốt lõi:\n1. UCP 600 Điều 14: 5 ngày kiểm tra\n2. Strict compliance — discrepancy = từ chối\n3. Amendment, waiver\n4. Confirmed L/C giảm rủi ro Liên hệ thực tiễn FPT (Thanh toán Quốc tế): doanh thu 460 tỷ VND, biên gộp 31%, chi phí cố định 7 tỷ — áp dụng Tín dụng chứng từ L/C theo UCP 600 phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Tín dụng chứng từ L/C theo UCP 600, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập mẫu chương Tín dụng chứng từ L/C theo UCP 600:\nDiscrepancy: B/L ngày 15/03, L/C latest shipment 10/03 → từ chối.\n\nDữ kiện bổ sung: P=1600 VND/sp, Q=4600 sp, FC=700 triệu VND, VC=960 VND/sp.\n(a) Tính Contribution Margin/sp và tổng lợi nhuận.\n(b) Tính điểm hòa vốn (BEP) theo số lượng.\n(c) Margin of Safety khi Q thực tế = 4600.\n(d) Khuyến nghị cho FPT dựa trên kết quả.\nĐáp án gợi ý: CM = P − VC; BEP = FC ÷ CM; MOS = (Q − BEP) ÷ Q. Liên hệ thực tiễn FPT (Thanh toán Quốc tế): doanh thu 460 tỷ VND, biên gộp 31%, chi phí cố định 7 tỷ — áp dụng Tín dụng chứng từ L/C theo UCP 600 phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Tín dụng chứng từ L/C theo UCP 600, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Luyện đủ dạng số, lý thuyết và case cho Tín dụng chứng từ L/C theo UCP 600. Kiểm tra đơn vị và giả định mô hình. Tự giải 2–3 biến thể số liệu trước khi thi. Liên hệ thực tiễn FPT (Thanh toán Quốc tế): doanh thu 460 tỷ VND, biên gộp 31%, chi phí cố định 7 tỷ — áp dụng Tín dụng chứng từ L/C theo UCP 600 phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ftu_international-payment",
+    "course_title": "Thanh toán Quốc tế",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745)",
+    "lesson_order": 1,
+    "lesson_id": "chapter-4-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài lý thuyết chương \"Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745)\" — môn Thanh toán Quốc tế. ISBP 745 kiểm tra chứng từ. Củng cố khái niệm, mô hình, công thức và thuật ngữ then chốt — nền tảng cho bài tập vận dụng và thi cuối kỳ. Liên hệ thực tiễn Vinamilk (Thanh toán Quốc tế): doanh thu 400 tỷ VND, biên gộp 25%, chi phí cố định 5 tỷ — áp dụng Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Khung kiến thức Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745):\n\n1. Invoice, B/L, Packing List, CO, Insurance\n2. ISBP: 'about', 'approximately' rules\n3. Data must not conflict\n4. On board B/L vs received for shipment\n\nThuật ngữ chuyên ngành: .\nĐiều kiện áp dụng: xác định giả định mô hình trước khi tính. Lỗi thường gặp: nhầm đơn vị (VND/USD), bỏ qua ràng buộc, kết luận không có số liệu hỗ trợ. Liên hệ thực tiễn Vinamilk (Thanh toán Quốc tế): doanh thu 400 tỷ VND, biên gộp 25%, chi phí cố định 5 tỷ — áp dụng Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745):\nInvoice 100.5 MT vs B/L 100 MT vs L/C 100 MT +/-3% — acceptable.\n\nPhân tích bổ sung: doanh thu 400 tỷ VND/năm, biên gộp 25%, chi phí cố định 5 tỷ. Case Vinamilk — trình bày 4 bước: (1) Dữ kiện (2) Chọn mô hình (3) Tính toán Q=1000 (4) Kết luận và rủi ro nếu biến động 18%. Liên hệ thực tiễn Vinamilk (Thanh toán Quốc tế): doanh thu 400 tỷ VND, biên gộp 25%, chi phí cố định 5 tỷ — áp dụng Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "ISBP chi tiết từng chứng từ. Không mâu thuẫn. Chuyển sang bài tập vận dụng để tự kiểm tra. Ôn thuật ngữ Anh-Việt trước thi. Liên hệ thực tiễn Vinamilk (Thanh toán Quốc tế): doanh thu 400 tỷ VND, biên gộp 25%, chi phí cố định 5 tỷ — áp dụng Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745) phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ftu_international-payment",
+    "course_title": "Thanh toán Quốc tế",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745)",
+    "lesson_order": 2,
+    "lesson_id": "chapter-4-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng chương \"Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745)\" — môn Thanh toán Quốc tế. Sau khi nắm lý thuyết, tự giải từng bài trước khi đối chiếu lời giải mẫu. Trình bày có bước: ghi công thức, thay số, đơn vị, kết luận. Không nhảy bước — giảng viên chấm theo quy trình giải. Liên hệ thực tiễn Viettel (Thanh toán Quốc tế): doanh thu 410 tỷ VND, biên gộp 26%, chi phí cố định 6 tỷ — áp dụng Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745) phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Hướng dẫn làm bài Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745):\n• Câu lý thuyết: định nghĩa chính xác + vẽ sơ đồ (nếu có) + ví dụ doanh nghiệp VN.\n• Câu tính toán: liệt kê dữ kiện → chọn công thức → thay số → đơn vị → kết luận kinh tế/quản trị.\n• Case study: tóm tắt tình huống → phân tích theo mô hình chương → khuyến nghị có căn cứ số liệu.\n\n\n\nKiến thức cốt lõi:\n1. Invoice, B/L, Packing List, CO, Insurance\n2. ISBP: 'about', 'approximately' rules\n3. Data must not conflict\n4. On board B/L vs received for shipment Liên hệ thực tiễn Viettel (Thanh toán Quốc tế): doanh thu 410 tỷ VND, biên gộp 26%, chi phí cố định 6 tỷ — áp dụng Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745) phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập mẫu chương Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745):\nInvoice 100.5 MT vs B/L 100 MT vs L/C 100 MT +/-3% — acceptable.\n\nDữ kiện bổ sung: P=1100 VND/sp, Q=4100 sp, FC=600 triệu VND, VC=660 VND/sp.\n(a) Tính Contribution Margin/sp và tổng lợi nhuận.\n(b) Tính điểm hòa vốn (BEP) theo số lượng.\n(c) Margin of Safety khi Q thực tế = 4100.\n(d) Khuyến nghị cho Viettel dựa trên kết quả.\nĐáp án gợi ý: CM = P − VC; BEP = FC ÷ CM; MOS = (Q − BEP) ÷ Q. Liên hệ thực tiễn Viettel (Thanh toán Quốc tế): doanh thu 410 tỷ VND, biên gộp 26%, chi phí cố định 6 tỷ — áp dụng Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745) phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Luyện đủ dạng số, lý thuyết và case cho Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745). Kiểm tra đơn vị và giả định mô hình. Tự giải 2–3 biến thể số liệu trước khi thi. Liên hệ thực tiễn Viettel (Thanh toán Quốc tế): doanh thu 410 tỷ VND, biên gộp 26%, chi phí cố định 6 tỷ — áp dụng Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745) phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "ftu_international-payment",
+    "course_title": "Thanh toán Quốc tế",
+    "chapter_order": 5,
+    "chapter_title": "Case study tranh chấp thanh toán quốc tế FTU",
+    "lesson_order": 1,
+    "lesson_id": "chapter-5-lesson-1",
+    "lesson_title": "Bài 1: Tài liệu ôn tập & đề thi",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Tài liệu ôn thi môn Thanh toán Quốc tế — Case study tranh chấp thanh toán quốc tế FTU. Case tranh chấp thanh toán FTU. Hệ thống kiến thức toàn khóa, cấu trúc đề thi và chiến lược làm bài hiệu quả. Sinh viên ôn theo trình tự: lý thuyết từng chương → ví dụ có số liệu → bài tập cuối chương → đề tổng hợp có giới hạn thời gian (90–120 phút). Chuẩn bị thuật ngữ song ngữ Anh-Việt và case doanh nghiệp Việt Nam. Liên hệ thực tiễn Masan (Thanh toán Quốc tế): doanh thu 350 tỷ VND, biên gộp 20%, chi phí cố định 12 tỷ — áp dụng Case study tranh chấp thanh toán quốc tế FTU phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Cấu trúc đề thi và phân bổ điểm:\nL/C process 40%, discrepancy 35%, forex 25%\n\nChiến lược làm bài chi tiết: (1) Đọc toàn đề 5 phút, đánh dấu câu quen và câu khó. (2) Làm phần trắc nghiệm/tính toán trước — ghi công thức, thay số, đơn vị. (3) Phần case/tự luận: trình bày theo giả thiết → phân tích từng bước → kết luận và kiến nghị. (4) Giữ 20–25% thời gian kiểm tra lại logic và số học. (5) Đối chiếu rubric chấm điểm khi tự luyện. Liên hệ thực tiễn Masan (Thanh toán Quốc tế): doanh thu 350 tỷ VND, biên gộp 20%, chi phí cố định 12 tỷ — áp dụng Case study tranh chấp thanh toán quốc tế FTU phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Case study tranh chấp thanh toán quốc tế FTU, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Đề mẫu ôn tập:\nL/C CIF, B/L Freight Prepaid, Insurance 100% — phân tích.\n\nHướng dẫn luyện: giải đề các năm trước của Thanh toán Quốc tế; thảo luận nhóm case khó; tự chấm điểm theo thang 10. Case doanh nghiệp VN như Masan thường xuất hiện — chuẩn bị số liệu và phân tích SWOT/PESTEL nếu là môn marketing/kinh doanh. Với môn có tính toán: kiểm tra lại BEP, NPV, EOQ, tỷ giá tùy chương trình. Liên hệ thực tiễn Masan (Thanh toán Quốc tế): doanh thu 350 tỷ VND, biên gộp 20%, chi phí cố định 12 tỷ — áp dụng Case study tranh chấp thanh toán quốc tế FTU phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Case study tranh chấp thanh toán quốc tế FTU, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Ôn UCP 600, ISBP, T/T, L/C, forex. Luyện đề có thời gian. Nắm thuật ngữ Anh-Việt. Kiểm tra đơn vị và giả định trước khi nộp bài. Liên hệ thực tiễn Masan (Thanh toán Quốc tế): doanh thu 350 tỷ VND, biên gộp 20%, chi phí cố định 12 tỷ — áp dụng Case study tranh chấp thanh toán quốc tế FTU phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  }
+]

@@ -1,0 +1,326 @@
+[
+  {
+    "course_id": "bk_programming",
+    "course_title": "Nhập môn lập trình",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Biến, Kiểu dữ liệu, Toán tử & I/O",
+    "lesson_order": 1,
+    "lesson_id": "chapter-1-lesson-1",
+    "lesson_title": "Kiểu dữ liệu, Biến, Toán tử và Nhập xuất chuẩn I/O",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Kiểu dữ liệu, Biến, Toán tử và Nhập xuất chuẩn I/O là nội dung cốt lõi trong chương «Biến, Kiểu dữ liệu, Toán tử & I/O» (Nhập môn lập trình). Bài học giải thích khái niệm, ký hiệu và vai trò của Kiểu dữ liệu, Biến, Toán tử và Nhập xuất chuẩn I/O trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Kiểu dữ liệu, Biến, Toán tử và Nhập xuất chuẩn I/O thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Kiểu dữ liệu, Biến, Toán tử và Nhập xuất chuẩn I/O:\nint, float, double, char; scanf/printf.\nToán tử ưu tiên; ép kiểu.\n& cho scanf.\nÁp dụng Kiểu dữ liệu, Biến, Toán tử và Nhập xuất chuẩn I/O trong Biến, Kiểu dữ liệu, Toán tử & I/O.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Biến, Kiểu dữ liệu, Toán tử & I/O, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Kiểu dữ liệu, Biến, Toán tử và Nhập xuất chuẩn I/O:\nDiện tích r=5 → S=78,54.\na=5,b=2: a/b=2, a%b=1.\nBài tập mở rộng Kiểu dữ liệu, Biến, Toán tử và Nhập xuất chuẩn I/O.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Kiểu dữ liệu, Biến, Toán tử và Nhập xuất chuẩn I/O:\nscanf cần &; chia int→int.\nLiên kết Biến, Kiểu dữ liệu, Toán tử & I/O.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_programming",
+    "course_title": "Nhập môn lập trình",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Biến, Kiểu dữ liệu, Toán tử & I/O",
+    "lesson_order": 2,
+    "lesson_id": "chapter-1-lesson-2",
+    "lesson_title": "Cấu trúc rẽ nhánh if-else và Vòng lặp for, while",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Cấu trúc rẽ nhánh if-else và Vòng lặp for, while là nội dung cốt lõi trong chương «Biến, Kiểu dữ liệu, Toán tử & I/O» (Nhập môn lập trình). Bài học giải thích khái niệm, ký hiệu và vai trò của Cấu trúc rẽ nhánh if-else và Vòng lặp for, while trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Cấu trúc rẽ nhánh if-else và Vòng lặp for, while thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Cấu trúc rẽ nhánh if-else và Vòng lặp for, while:\nint, float, double, char; scanf/printf.\nToán tử ưu tiên; ép kiểu.\n& cho scanf.\nÁp dụng Cấu trúc rẽ nhánh if-else và Vòng lặp for, while trong Biến, Kiểu dữ liệu, Toán tử & I/O.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Biến, Kiểu dữ liệu, Toán tử & I/O, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Cấu trúc rẽ nhánh if-else và Vòng lặp for, while:\nDiện tích r=5 → S=78,54.\na=5,b=2: a/b=2, a%b=1.\nBài tập mở rộng Cấu trúc rẽ nhánh if-else và Vòng lặp for, while.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Cấu trúc rẽ nhánh if-else và Vòng lặp for, while:\nscanf cần &; chia int→int.\nLiên kết Biến, Kiểu dữ liệu, Toán tử & I/O.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_programming",
+    "course_title": "Nhập môn lập trình",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Cấu trúc rẽ nhánh if-else & Vòng lặp",
+    "lesson_order": 1,
+    "lesson_id": "chapter-2-lesson-1",
+    "lesson_title": "Truyền tham trị & Tham chiếu trong C/C++",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Truyền tham trị & Tham chiếu trong C/C++ là nội dung cốt lõi trong chương «Cấu trúc rẽ nhánh if-else & Vòng lặp» (Nhập môn lập trình). Bài học giải thích khái niệm, ký hiệu và vai trò của Truyền tham trị & Tham chiếu trong C/C++ trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Truyền tham trị & Tham chiếu trong C/C++ thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Truyền tham trị & Tham chiếu trong C/C++:\nif/else/switch; for/while.\nbreak/continue.\nÁp dụng Truyền tham trị & Tham chiếu trong C/C++ trong Cấu trúc rẽ nhánh if-else & Vòng lặp.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Cấu trúc rẽ nhánh if-else & Vòng lặp, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán.\n\nBiên dịch C tạo file thực thi; lỗi cú pháp bắt ở compile, lỗi logic ở runtime. Hằng số #define và const. Hàm main trả 0 khi thành công. Định dạng printf: %.2f làm tròn 2 chữ số thập phân. Mảng tĩnh kích thước cố định; mảng động khi n nhập từ bàn phím.\n\nLiên hệ Truyền tham trị & Tham chiếu trong C/C++ với Cấu trúc rẽ nhánh if-else & Vòng lặp: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Truyền tham trị & Tham chiếu trong C/C++:\nSố nguyên tố: thử i đến √n.\nTổng 1..n=5050 (n=100).\nBài tập mở rộng Truyền tham trị & Tham chiếu trong C/C++.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Truyền tham trị & Tham chiếu trong C/C++:\nTest biên n=0,1.\nLiên kết Cấu trúc rẽ nhánh if-else & Vòng lặp.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_programming",
+    "course_title": "Nhập môn lập trình",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Cấu trúc rẽ nhánh if-else & Vòng lặp",
+    "lesson_order": 2,
+    "lesson_id": "chapter-2-lesson-2",
+    "lesson_title": "Con trỏ, Địa chỉ ô nhớ, Mảng và Struct",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Con trỏ, Địa chỉ ô nhớ, Mảng và Struct là nội dung cốt lõi trong chương «Cấu trúc rẽ nhánh if-else & Vòng lặp» (Nhập môn lập trình). Bài học giải thích khái niệm, ký hiệu và vai trò của Con trỏ, Địa chỉ ô nhớ, Mảng và Struct trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Con trỏ, Địa chỉ ô nhớ, Mảng và Struct thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Con trỏ, Địa chỉ ô nhớ, Mảng và Struct:\nif/else/switch; for/while.\nbreak/continue.\nÁp dụng Con trỏ, Địa chỉ ô nhớ, Mảng và Struct trong Cấu trúc rẽ nhánh if-else & Vòng lặp.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Cấu trúc rẽ nhánh if-else & Vòng lặp, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán.\n\nBiên dịch C tạo file thực thi; lỗi cú pháp bắt ở compile, lỗi logic ở runtime. Hằng số #define và const. Hàm main trả 0 khi thành công. Định dạng printf: %.2f làm tròn 2 chữ số thập phân. Mảng tĩnh kích thước cố định; mảng động khi n nhập từ bàn phím.\n\nLiên hệ Con trỏ, Địa chỉ ô nhớ, Mảng và Struct với Cấu trúc rẽ nhánh if-else & Vòng lặp: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Con trỏ, Địa chỉ ô nhớ, Mảng và Struct:\nSố nguyên tố: thử i đến √n.\nTổng 1..n=5050 (n=100).\nBài tập mở rộng Con trỏ, Địa chỉ ô nhớ, Mảng và Struct.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Con trỏ, Địa chỉ ô nhớ, Mảng và Struct:\nTest biên n=0,1.\nLiên kết Cấu trúc rẽ nhánh if-else & Vòng lặp.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_programming",
+    "course_title": "Nhập môn lập trình",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Cấu trúc rẽ nhánh if-else & Vòng lặp",
+    "lesson_order": 3,
+    "lesson_id": "chapter-2-lesson-3",
+    "lesson_title": "Cấp phát bộ nhớ động (new/delete, malloc/free)",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Cấp phát bộ nhớ động (new/delete, malloc/free) là nội dung cốt lõi trong chương «Cấu trúc rẽ nhánh if-else & Vòng lặp» (Nhập môn lập trình). Bài học giải thích khái niệm, ký hiệu và vai trò của Cấp phát bộ nhớ động (new/delete, malloc/free) trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Cấp phát bộ nhớ động (new/delete, malloc/free) thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Cấp phát bộ nhớ động (new/delete, malloc/free):\nif/else/switch; for/while.\nbreak/continue.\nÁp dụng Cấp phát bộ nhớ động (new/delete, malloc/free) trong Cấu trúc rẽ nhánh if-else & Vòng lặp.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Cấu trúc rẽ nhánh if-else & Vòng lặp, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán.\n\nBiên dịch C tạo file thực thi; lỗi cú pháp bắt ở compile, lỗi logic ở runtime. Hằng số #define và const. Hàm main trả 0 khi thành công. Định dạng printf: %.2f làm tròn 2 chữ số thập phân. Mảng tĩnh kích thước cố định; mảng động khi n nhập từ bàn phím.\n\nLiên hệ Cấp phát bộ nhớ động (new/delete, malloc/free) với Cấu trúc rẽ nhánh if-else & Vòng lặp: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Cấp phát bộ nhớ động (new/delete, malloc/free):\nSố nguyên tố: thử i đến √n.\nTổng 1..n=5050 (n=100).\nBài tập mở rộng Cấp phát bộ nhớ động (new/delete, malloc/free).\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Cấp phát bộ nhớ động (new/delete, malloc/free):\nTest biên n=0,1.\nLiên kết Cấu trúc rẽ nhánh if-else & Vòng lặp.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_programming",
+    "course_title": "Nhập môn lập trình",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Hàm, Đệ quy & Mảng 1D/2D",
+    "lesson_order": 1,
+    "lesson_id": "chapter-3-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Hàm, Đệ quy & Mảng 1D/2D là nội dung cốt lõi trong chương «Hàm, Đệ quy & Mảng 1D/2D» (Nhập môn lập trình). Bài học giải thích khái niệm, ký hiệu và vai trò của Hàm, Đệ quy & Mảng 1D/2D trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Hàm, Đệ quy & Mảng 1D/2D thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Hàm, Đệ quy & Mảng 1D/2D:\nBase case; binary search O(log n).\nMảng 2D hai vòng for.\nÁp dụng Hàm, Đệ quy & Mảng 1D/2D trong Hàm, Đệ quy & Mảng 1D/2D.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Hàm, Đệ quy & Mảng 1D/2D, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán.\n\nBiên dịch C tạo file thực thi; lỗi cú pháp bắt ở compile, lỗi logic ở runtime. Hằng số #define và const. Hàm main trả 0 khi thành công. Định dạng printf: %.2f làm tròn 2 chữ số thập phân. Mảng tĩnh kích thước cố định; mảng động khi n nhập từ bàn phím.\n\nLiên hệ Hàm, Đệ quy & Mảng 1D/2D với Hàm, Đệ quy & Mảng 1D/2D: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Hàm, Đệ quy & Mảng 1D/2D:\nfact(5)=120; bs tìm 5.\nBài tập mở rộng Hàm, Đệ quy & Mảng 1D/2D.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Hàm, Đệ quy & Mảng 1D/2D:\nĐệ quy + mảng sorted.\nLiên kết Hàm, Đệ quy & Mảng 1D/2D.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_programming",
+    "course_title": "Nhập môn lập trình",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Hàm, Đệ quy & Mảng 1D/2D",
+    "lesson_order": 2,
+    "lesson_id": "chapter-3-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng Hàm, Đệ quy & Mảng 1D/2D (Hàm, Đệ quy & Mảng 1D/2D). Mục tiêu: luyện kỹ năng giải bài từ cơ bản đến nâng cao với lời giải đầy đủ. Mỗi bài gồm: phát biểu đề, dữ liệu, lời giải từng bước và đáp số. Đây là dạng bài trọng tâm trong đề kiểm tra và thi cuối kỳ — cần vừa đúng kết quả vừa trình bày logic rõ ràng. Môn Nhập môn lập trình đánh giá khả năng vận dụng Hàm, Đệ quy & Mảng 1D/2D qua bài tập và đề thi — cần luyện cả lý thuyết lẫn tính toán."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Phương pháp giải bài Hàm, Đệ quy & Mảng 1D/2D:\nĐọc đề Hàm, Đệ quy & Mảng 1D/2D.\nChọn công thức.\nGiải từng bước.\nKiểm tra biên.\n\nLưu ý: đọc kỹ đơn vị; kiểm tra biên (n=0, mảng rỗng, nồng độ cực nhỏ); với code — test case ẩn thường ở biên. Không bỏ qua bước trung gian vì đề chấm theo lời giải.\n\nBiên dịch C tạo file thực thi; lỗi cú pháp bắt ở compile, lỗi logic ở runtime. Hằng số #define và const. Hàm main trả 0 khi thành công. Định dạng printf: %.2f làm tròn 2 chữ số thập phân. Mảng tĩnh kích thước cố định; mảng động khi n nhập từ bàn phím.\n\nLiên hệ Hàm, Đệ quy & Mảng 1D/2D với Hàm, Đệ quy & Mảng 1D/2D: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập có lời giải:\nBài 1 cơ bản Hàm, Đệ quy & Mảng 1D/2D.\nBài 2 đổi số.\nBài 3 tổng hợp Hàm, Đệ quy & Mảng 1D/2D.\n\nSau mỗi bài, tự đặt câu hỏi «nếu đổi số liệu thì kết quả thay đổi thế nào?» để củng cố hiểu bài, không chỉ nhớ đáp án.\n\nVí dụ bổ sung Hàm, Đệ quy & Mảng 1D/2D: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Hàm, Đệ quy & Mảng 1D/2D:\nLuyện 5 bài Hàm, Đệ quy & Mảng 1D/2D.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_programming",
+    "course_title": "Nhập môn lập trình",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Con trỏ & Cấp phát bộ nhớ động",
+    "lesson_order": 1,
+    "lesson_id": "chapter-4-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Con trỏ & Cấp phát bộ nhớ động là nội dung cốt lõi trong chương «Con trỏ & Cấp phát bộ nhớ động» (Nhập môn lập trình). Bài học giải thích khái niệm, ký hiệu và vai trò của Con trỏ & Cấp phát bộ nhớ động trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Con trỏ & Cấp phát bộ nhớ động thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Con trỏ & Cấp phát bộ nhớ động:\n*p dereference; arr[i]=*(arr+i).\nstruct . và ->\nÁp dụng Con trỏ & Cấp phát bộ nhớ động trong Con trỏ & Cấp phát bộ nhớ động.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Con trỏ & Cấp phát bộ nhớ động, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán.\n\nBiên dịch C tạo file thực thi; lỗi cú pháp bắt ở compile, lỗi logic ở runtime. Hằng số #define và const. Hàm main trả 0 khi thành công. Định dạng printf: %.2f làm tròn 2 chữ số thập phân. Mảng tĩnh kích thước cố định; mảng động khi n nhập từ bàn phím.\n\nLiên hệ Con trỏ & Cấp phát bộ nhớ động với Con trỏ & Cấp phát bộ nhớ động: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Con trỏ & Cấp phát bộ nhớ động:\nĐảo mảng; struct SV.\nBài tập mở rộng Con trỏ & Cấp phát bộ nhớ động.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Con trỏ & Cấp phát bộ nhớ động:\nMảng ≡ con trỏ.\nLiên kết Con trỏ & Cấp phát bộ nhớ động.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_programming",
+    "course_title": "Nhập môn lập trình",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Con trỏ & Cấp phát bộ nhớ động",
+    "lesson_order": 2,
+    "lesson_id": "chapter-4-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng Con trỏ & Cấp phát bộ nhớ động (Con trỏ & Cấp phát bộ nhớ động). Mục tiêu: luyện kỹ năng giải bài từ cơ bản đến nâng cao với lời giải đầy đủ. Mỗi bài gồm: phát biểu đề, dữ liệu, lời giải từng bước và đáp số. Đây là dạng bài trọng tâm trong đề kiểm tra và thi cuối kỳ — cần vừa đúng kết quả vừa trình bày logic rõ ràng."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Phương pháp giải bài Con trỏ & Cấp phát bộ nhớ động:\nĐọc đề Con trỏ & Cấp phát bộ nhớ động.\nChọn công thức.\nGiải từng bước.\nKiểm tra biên.\n\nLưu ý: đọc kỹ đơn vị; kiểm tra biên (n=0, mảng rỗng, nồng độ cực nhỏ); với code — test case ẩn thường ở biên. Không bỏ qua bước trung gian vì đề chấm theo lời giải.\n\nBiên dịch C tạo file thực thi; lỗi cú pháp bắt ở compile, lỗi logic ở runtime. Hằng số #define và const. Hàm main trả 0 khi thành công. Định dạng printf: %.2f làm tròn 2 chữ số thập phân. Mảng tĩnh kích thước cố định; mảng động khi n nhập từ bàn phím.\n\nLiên hệ Con trỏ & Cấp phát bộ nhớ động với Con trỏ & Cấp phát bộ nhớ động: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập có lời giải:\nBài 1 cơ bản Con trỏ & Cấp phát bộ nhớ động.\nBài 2 đổi số.\nBài 3 tổng hợp Con trỏ & Cấp phát bộ nhớ động.\n\nSau mỗi bài, tự đặt câu hỏi «nếu đổi số liệu thì kết quả thay đổi thế nào?» để củng cố hiểu bài, không chỉ nhớ đáp án.\n\nVí dụ bổ sung Con trỏ & Cấp phát bộ nhớ động: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Con trỏ & Cấp phát bộ nhớ động:\nLuyện 5 bài Con trỏ & Cấp phát bộ nhớ động.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_programming",
+    "course_title": "Nhập môn lập trình",
+    "chapter_order": 5,
+    "chapter_title": "Chương 5: Chuỗi ký tự, Struct & File I/O",
+    "lesson_order": 1,
+    "lesson_id": "chapter-5-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Chuỗi ký tự, Struct & File I/O là nội dung cốt lõi trong chương «Chuỗi ký tự, Struct & File I/O» (Nhập môn lập trình). Bài học giải thích khái niệm, ký hiệu và vai trò của Chuỗi ký tự, Struct & File I/O trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Chuỗi ký tự, Struct & File I/O thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Chuỗi ký tự, Struct & File I/O:\nCông thức và định nghĩa Chuỗi ký tự, Struct & File I/O.\nÁp dụng Chuỗi ký tự, Struct & File I/O trong Chuỗi ký tự, Struct & File I/O.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Chuỗi ký tự, Struct & File I/O, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán.\n\nBiên dịch C tạo file thực thi; lỗi cú pháp bắt ở compile, lỗi logic ở runtime. Hằng số #define và const. Hàm main trả 0 khi thành công. Định dạng printf: %.2f làm tròn 2 chữ số thập phân. Mảng tĩnh kích thước cố định; mảng động khi n nhập từ bàn phím.\n\nLiên hệ Chuỗi ký tự, Struct & File I/O với Chuỗi ký tự, Struct & File I/O: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Chuỗi ký tự, Struct & File I/O:\nVí dụ Chuỗi ký tự, Struct & File I/O với số liệu.\nBài tập mở rộng Chuỗi ký tự, Struct & File I/O.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Chuỗi ký tự, Struct & File I/O:\nThuộc Chuỗi ký tự, Struct & File I/O.\nLiên kết Chuỗi ký tự, Struct & File I/O.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_programming",
+    "course_title": "Nhập môn lập trình",
+    "chapter_order": 5,
+    "chapter_title": "Chương 5: Chuỗi ký tự, Struct & File I/O",
+    "lesson_order": 2,
+    "lesson_id": "chapter-5-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng Chuỗi ký tự, Struct & File I/O (Chuỗi ký tự, Struct & File I/O). Mục tiêu: luyện kỹ năng giải bài từ cơ bản đến nâng cao với lời giải đầy đủ. Mỗi bài gồm: phát biểu đề, dữ liệu, lời giải từng bước và đáp số. Đây là dạng bài trọng tâm trong đề kiểm tra và thi cuối kỳ — cần vừa đúng kết quả vừa trình bày logic rõ ràng. Môn Nhập môn lập trình đánh giá khả năng vận dụng Chuỗi ký tự, Struct & File I/O qua bài tập và đề thi — cần luyện cả lý thuyết lẫn tính toán."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Phương pháp giải bài Chuỗi ký tự, Struct & File I/O:\nĐọc đề Chuỗi ký tự, Struct & File I/O.\nChọn công thức.\nGiải từng bước.\nKiểm tra biên.\n\nLưu ý: đọc kỹ đơn vị; kiểm tra biên (n=0, mảng rỗng, nồng độ cực nhỏ); với code — test case ẩn thường ở biên. Không bỏ qua bước trung gian vì đề chấm theo lời giải.\n\nBiên dịch C tạo file thực thi; lỗi cú pháp bắt ở compile, lỗi logic ở runtime. Hằng số #define và const. Hàm main trả 0 khi thành công. Định dạng printf: %.2f làm tròn 2 chữ số thập phân. Mảng tĩnh kích thước cố định; mảng động khi n nhập từ bàn phím.\n\nLiên hệ Chuỗi ký tự, Struct & File I/O với Chuỗi ký tự, Struct & File I/O: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập có lời giải:\nBài 1 cơ bản Chuỗi ký tự, Struct & File I/O.\nBài 2 đổi số.\nBài 3 tổng hợp Chuỗi ký tự, Struct & File I/O.\n\nSau mỗi bài, tự đặt câu hỏi «nếu đổi số liệu thì kết quả thay đổi thế nào?» để củng cố hiểu bài, không chỉ nhớ đáp án.\n\nVí dụ bổ sung Chuỗi ký tự, Struct & File I/O: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Chuỗi ký tự, Struct & File I/O:\nLuyện 5 bài Chuỗi ký tự, Struct & File I/O.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_programming",
+    "course_title": "Nhập môn lập trình",
+    "chapter_order": 6,
+    "chapter_title": "Bộ bài tập Coding thực hành Bách Khoa",
+    "lesson_order": 1,
+    "lesson_id": "chapter-6-lesson-1",
+    "lesson_title": "Bài 1: Tài liệu ôn tập & đề thi",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bộ bài tập Coding thực hành Bách Khoa là nội dung cốt lõi trong chương «Bộ bài tập Coding thực hành Bách Khoa» (Nhập môn lập trình). Bài học giải thích khái niệm, ký hiệu và vai trò của Bộ bài tập Coding thực hành Bách Khoa trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Bộ bài tập Coding thực hành Bách Khoa thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Bộ bài tập Coding thực hành Bách Khoa:\nCông thức và định nghĩa Bộ bài tập Coding thực hành Bách Khoa.\nÁp dụng Bộ bài tập Coding thực hành Bách Khoa trong Bộ bài tập Coding thực hành Bách Khoa.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Bộ bài tập Coding thực hành Bách Khoa, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán.\n\nBiên dịch C tạo file thực thi; lỗi cú pháp bắt ở compile, lỗi logic ở runtime. Hằng số #define và const. Hàm main trả 0 khi thành công. Định dạng printf: %.2f làm tròn 2 chữ số thập phân. Mảng tĩnh kích thước cố định; mảng động khi n nhập từ bàn phím.\n\nLiên hệ Bộ bài tập Coding thực hành Bách Khoa với Bộ bài tập Coding thực hành Bách Khoa: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Bộ bài tập Coding thực hành Bách Khoa:\nVí dụ Bộ bài tập Coding thực hành Bách Khoa với số liệu.\nBài tập mở rộng Bộ bài tập Coding thực hành Bách Khoa.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Bộ bài tập Coding thực hành Bách Khoa:\nThuộc Bộ bài tập Coding thực hành Bách Khoa.\nLiên kết Bộ bài tập Coding thực hành Bách Khoa.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  }
+]

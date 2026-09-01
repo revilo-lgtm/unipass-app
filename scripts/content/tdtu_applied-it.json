@@ -1,0 +1,191 @@
+[
+  {
+    "course_id": "tdtu_applied-it",
+    "course_title": "Tin học ứng dụng",
+    "chapter_order": 1,
+    "chapter_title": "Phần 1: MS Word Nâng cao: Style, Mục lục tự động, Mail Merge",
+    "lesson_order": 1,
+    "lesson_id": "chapter-1-lesson-1",
+    "lesson_title": "Định dạng Style, Mục lục tự động & Mail Merge",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Định dạng Style, Mục lục tự động & Mail Merge là nội dung trọng tâm trong Phần 1: MS Word Nâng cao: Style, Mục lục tự động, Mail Merge — môn Tin học ứng dụng. Word nâng cao: Style, TOC, Mail Merge. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn Viettel (Tin học ứng dụng): doanh thu 390 tỷ VND, biên gộp 24%, chi phí cố định 6 tỷ — áp dụng Định dạng Style, Mục lục tự động & Mail Merge phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Định dạng Style, Mục lục tự động & Mail Merge:\n\n1. Heading 1-3 styles → auto TOC\n2. Mail Merge: Excel data + Word template\n3. Section breaks\n4. Cross-reference\n\nThuật ngữ: . Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn Viettel (Tin học ứng dụng): doanh thu 390 tỷ VND, biên gộp 24%, chi phí cố định 6 tỷ — áp dụng Định dạng Style, Mục lục tự động & Mail Merge phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Định dạng Style, Mục lục tự động & Mail Merge, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Định dạng Style, Mục lục tự động & Mail Merge:\nMerge 500 thư mời từ Excel danh sách sinh viên.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=1900 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 15%. Liên hệ thực tiễn Viettel (Tin học ứng dụng): doanh thu 390 tỷ VND, biên gộp 24%, chi phí cố định 6 tỷ — áp dụng Định dạng Style, Mục lục tự động & Mail Merge phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Định dạng Style, Mục lục tự động & Mail Merge, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Style + TOC tự động. Mail Merge hàng loạt. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn Viettel (Tin học ứng dụng): doanh thu 390 tỷ VND, biên gộp 24%, chi phí cố định 6 tỷ — áp dụng Định dạng Style, Mục lục tự động & Mail Merge phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "tdtu_applied-it",
+    "course_title": "Tin học ứng dụng",
+    "chapter_order": 1,
+    "chapter_title": "Phần 1: MS Word Nâng cao: Style, Mục lục tự động, Mail Merge",
+    "lesson_order": 2,
+    "lesson_id": "chapter-1-lesson-2",
+    "lesson_title": "Hàm Excel nâng cao (XLOOKUP, INDEX-MATCH, Pivot Table)",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Hàm Excel nâng cao (XLOOKUP, INDEX-MATCH, Pivot Table) là nội dung trọng tâm trong Phần 1: MS Word Nâng cao: Style, Mục lục tự động, Mail Merge — môn Tin học ứng dụng. Word nâng cao: Style, TOC, Mail Merge. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn FPT (Tin học ứng dụng): doanh thu 400 tỷ VND, biên gộp 25%, chi phí cố định 7 tỷ — áp dụng Hàm Excel nâng cao (XLOOKUP, INDEX-MATCH, Pivot Table) phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Hàm Excel nâng cao (XLOOKUP, INDEX-MATCH, Pivot Table):\n\n1. Heading 1-3 styles → auto TOC\n2. Mail Merge: Excel data + Word template\n3. Section breaks\n4. Cross-reference\n\nThuật ngữ: . Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn FPT (Tin học ứng dụng): doanh thu 400 tỷ VND, biên gộp 25%, chi phí cố định 7 tỷ — áp dụng Hàm Excel nâng cao (XLOOKUP, INDEX-MATCH, Pivot Table) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Hàm Excel nâng cao (XLOOKUP, INDEX-MATCH, Pivot Table), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Hàm Excel nâng cao (XLOOKUP, INDEX-MATCH, Pivot Table):\nMerge 500 thư mời từ Excel danh sách sinh viên.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=2000 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 18%. Liên hệ thực tiễn FPT (Tin học ứng dụng): doanh thu 400 tỷ VND, biên gộp 25%, chi phí cố định 7 tỷ — áp dụng Hàm Excel nâng cao (XLOOKUP, INDEX-MATCH, Pivot Table) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Hàm Excel nâng cao (XLOOKUP, INDEX-MATCH, Pivot Table), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Style + TOC tự động. Mail Merge hàng loạt. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn FPT (Tin học ứng dụng): doanh thu 400 tỷ VND, biên gộp 25%, chi phí cố định 7 tỷ — áp dụng Hàm Excel nâng cao (XLOOKUP, INDEX-MATCH, Pivot Table) phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "tdtu_applied-it",
+    "course_title": "Tin học ứng dụng",
+    "chapter_order": 2,
+    "chapter_title": "Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table",
+    "lesson_order": 1,
+    "lesson_id": "chapter-2-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài lý thuyết chương \"Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table\" — môn Tin học ứng dụng. Excel VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot. Củng cố khái niệm, mô hình, công thức và thuật ngữ then chốt — nền tảng cho bài tập vận dụng và thi cuối kỳ. Liên hệ thực tiễn Vinamilk (Tin học ứng dụng): doanh thu 340 tỷ VND, biên gộp 34%, chi phí cố định 5 tỷ — áp dụng Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Khung kiến thức Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table:\n\n1. VLOOKUP(lookup, table, col, FALSE)\n2. INDEX-MATCH linh hoạt hơn\n3. XLOOKUP thay thế VLOOKUP\n4. Pivot Table summarize\n\nCông thức và mô hình:\nXLOOKUP(lookup, array, return). INDEX-MATCH: INDEX(return,MATCH(lookup,lookup_col,0)).\n\nThuật ngữ chuyên ngành: .\nĐiều kiện áp dụng: xác định giả định mô hình trước khi tính. Lỗi thường gặp: nhầm đơn vị (VND/USD), bỏ qua ràng buộc, kết luận không có số liệu hỗ trợ. Liên hệ thực tiễn Vinamilk (Tin học ứng dụng): doanh thu 340 tỷ VND, biên gộp 34%, chi phí cố định 5 tỷ — áp dụng Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table:\nBảng 1000 NV: XLOOKUP mã NV → lương. Pivot: doanh số theo vùng.\n\nPhân tích bổ sung: doanh thu 340 tỷ VND/năm, biên gộp 34%, chi phí cố định 5 tỷ. Case Vinamilk — trình bày 4 bước: (1) Dữ kiện (2) Chọn mô hình (3) Tính toán Q=1400 (4) Kết luận và rủi ro nếu biến động 18%. Liên hệ thực tiễn Vinamilk (Tin học ứng dụng): doanh thu 340 tỷ VND, biên gộp 34%, chi phí cố định 5 tỷ — áp dụng Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "XLOOKUP > VLOOKUP. Pivot cho tổng hợp. Chuyển sang bài tập vận dụng để tự kiểm tra. Ôn thuật ngữ Anh-Việt trước thi. Liên hệ thực tiễn Vinamilk (Tin học ứng dụng): doanh thu 340 tỷ VND, biên gộp 34%, chi phí cố định 5 tỷ — áp dụng Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "tdtu_applied-it",
+    "course_title": "Tin học ứng dụng",
+    "chapter_order": 2,
+    "chapter_title": "Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table",
+    "lesson_order": 2,
+    "lesson_id": "chapter-2-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng chương \"Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table\" — môn Tin học ứng dụng. Sau khi nắm lý thuyết, tự giải từng bài trước khi đối chiếu lời giải mẫu. Trình bày có bước: ghi công thức, thay số, đơn vị, kết luận. Không nhảy bước — giảng viên chấm theo quy trình giải. Liên hệ thực tiễn Viettel (Tin học ứng dụng): doanh thu 350 tỷ VND, biên gộp 20%, chi phí cố định 6 tỷ — áp dụng Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Hướng dẫn làm bài Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table:\n• Câu lý thuyết: định nghĩa chính xác + vẽ sơ đồ (nếu có) + ví dụ doanh nghiệp VN.\n• Câu tính toán: liệt kê dữ kiện → chọn công thức → thay số → đơn vị → kết luận kinh tế/quản trị.\n• Case study: tóm tắt tình huống → phân tích theo mô hình chương → khuyến nghị có căn cứ số liệu.\n\nXLOOKUP(lookup, array, return). INDEX-MATCH: INDEX(return,MATCH(lookup,lookup_col,0)).\n\nKiến thức cốt lõi:\n1. VLOOKUP(lookup, table, col, FALSE)\n2. INDEX-MATCH linh hoạt hơn\n3. XLOOKUP thay thế VLOOKUP\n4. Pivot Table summarize Liên hệ thực tiễn Viettel (Tin học ứng dụng): doanh thu 350 tỷ VND, biên gộp 20%, chi phí cố định 6 tỷ — áp dụng Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập mẫu chương Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table:\nBảng 1000 NV: XLOOKUP mã NV → lương. Pivot: doanh số theo vùng.\n\nDữ kiện bổ sung: P=1500 VND/sp, Q=3500 sp, FC=600 triệu VND, VC=900 VND/sp.\n(a) Tính Contribution Margin/sp và tổng lợi nhuận.\n(b) Tính điểm hòa vốn (BEP) theo số lượng.\n(c) Margin of Safety khi Q thực tế = 3500.\n(d) Khuyến nghị cho Viettel dựa trên kết quả.\nĐáp án gợi ý: CM = P − VC; BEP = FC ÷ CM; MOS = (Q − BEP) ÷ Q. Liên hệ thực tiễn Viettel (Tin học ứng dụng): doanh thu 350 tỷ VND, biên gộp 20%, chi phí cố định 6 tỷ — áp dụng Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Luyện đủ dạng số, lý thuyết và case cho Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table. Kiểm tra đơn vị và giả định mô hình. Tự giải 2–3 biến thể số liệu trước khi thi. Liên hệ thực tiễn Viettel (Tin học ứng dụng): doanh thu 350 tỷ VND, biên gộp 20%, chi phí cố định 6 tỷ — áp dụng Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "tdtu_applied-it",
+    "course_title": "Tin học ứng dụng",
+    "chapter_order": 3,
+    "chapter_title": "Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp",
+    "lesson_order": 1,
+    "lesson_id": "chapter-3-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài lý thuyết chương \"Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp\" — môn Tin học ứng dụng. PowerPoint slide học thuật. Củng cố khái niệm, mô hình, công thức và thuật ngữ then chốt — nền tảng cho bài tập vận dụng và thi cuối kỳ. Liên hệ thực tiễn Masan (Tin học ứng dụng): doanh thu 290 tỷ VND, biên gộp 29%, chi phí cố định 12 tỷ — áp dụng Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Khung kiến thức Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp:\n\n1. 6×6 rule: max 6 bullets, 6 words\n2. Contrast, alignment, repetition\n3. Chart từ Excel link\n4. Presenter notes\n\nThuật ngữ chuyên ngành: .\nĐiều kiện áp dụng: xác định giả định mô hình trước khi tính. Lỗi thường gặp: nhầm đơn vị (VND/USD), bỏ qua ràng buộc, kết luận không có số liệu hỗ trợ. Liên hệ thực tiễn Masan (Tin học ứng dụng): doanh thu 290 tỷ VND, biên gộp 29%, chi phí cố định 12 tỷ — áp dụng Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp:\nSlide báo cáo: title + 3 bullet + 1 chart.\n\nPhân tích bổ sung: doanh thu 290 tỷ VND/năm, biên gộp 29%, chi phí cố định 12 tỷ. Case Masan — trình bày 4 bước: (1) Dữ kiện (2) Chọn mô hình (3) Tính toán Q=2900 (4) Kết luận và rủi ro nếu biến động 21%. Liên hệ thực tiễn Masan (Tin học ứng dụng): doanh thu 290 tỷ VND, biên gộp 29%, chi phí cố định 12 tỷ — áp dụng Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Slide sạch, ít chữ, chart rõ. Chuyển sang bài tập vận dụng để tự kiểm tra. Ôn thuật ngữ Anh-Việt trước thi. Liên hệ thực tiễn Masan (Tin học ứng dụng): doanh thu 290 tỷ VND, biên gộp 29%, chi phí cố định 12 tỷ — áp dụng Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "tdtu_applied-it",
+    "course_title": "Tin học ứng dụng",
+    "chapter_order": 3,
+    "chapter_title": "Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp",
+    "lesson_order": 2,
+    "lesson_id": "chapter-3-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng chương \"Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp\" — môn Tin học ứng dụng. Sau khi nắm lý thuyết, tự giải từng bài trước khi đối chiếu lời giải mẫu. Trình bày có bước: ghi công thức, thay số, đơn vị, kết luận. Không nhảy bước — giảng viên chấm theo quy trình giải. Liên hệ thực tiễn Vinamilk (Tin học ứng dụng): doanh thu 300 tỷ VND, biên gộp 30%, chi phí cố định 5 tỷ — áp dụng Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Hướng dẫn làm bài Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp:\n• Câu lý thuyết: định nghĩa chính xác + vẽ sơ đồ (nếu có) + ví dụ doanh nghiệp VN.\n• Câu tính toán: liệt kê dữ kiện → chọn công thức → thay số → đơn vị → kết luận kinh tế/quản trị.\n• Case study: tóm tắt tình huống → phân tích theo mô hình chương → khuyến nghị có căn cứ số liệu.\n\n\n\nKiến thức cốt lõi:\n1. 6×6 rule: max 6 bullets, 6 words\n2. Contrast, alignment, repetition\n3. Chart từ Excel link\n4. Presenter notes Liên hệ thực tiễn Vinamilk (Tin học ứng dụng): doanh thu 300 tỷ VND, biên gộp 30%, chi phí cố định 5 tỷ — áp dụng Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập mẫu chương Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp:\nSlide báo cáo: title + 3 bullet + 1 chart.\n\nDữ kiện bổ sung: P=1000 VND/sp, Q=3000 sp, FC=500 triệu VND, VC=600 VND/sp.\n(a) Tính Contribution Margin/sp và tổng lợi nhuận.\n(b) Tính điểm hòa vốn (BEP) theo số lượng.\n(c) Margin of Safety khi Q thực tế = 3000.\n(d) Khuyến nghị cho Vinamilk dựa trên kết quả.\nĐáp án gợi ý: CM = P − VC; BEP = FC ÷ CM; MOS = (Q − BEP) ÷ Q. Liên hệ thực tiễn Vinamilk (Tin học ứng dụng): doanh thu 300 tỷ VND, biên gộp 30%, chi phí cố định 5 tỷ — áp dụng Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Luyện đủ dạng số, lý thuyết và case cho Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp. Kiểm tra đơn vị và giả định mô hình. Tự giải 2–3 biến thể số liệu trước khi thi. Liên hệ thực tiễn Vinamilk (Tin học ứng dụng): doanh thu 300 tỷ VND, biên gộp 30%, chi phí cố định 5 tỷ — áp dụng Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "tdtu_applied-it",
+    "course_title": "Tin học ứng dụng",
+    "chapter_order": 4,
+    "chapter_title": "Đề thi thử Chuẩn đầu ra Tin học văn phòng TDTU",
+    "lesson_order": 1,
+    "lesson_id": "chapter-4-lesson-1",
+    "lesson_title": "Bài 1: Tài liệu ôn tập & đề thi",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Tài liệu ôn thi môn Tin học ứng dụng — Đề thi thử Chuẩn đầu ra Tin học văn phòng TDTU. Thi Tin học VP TDTU. Hệ thống kiến thức toàn khóa, cấu trúc đề thi và chiến lược làm bài hiệu quả. Sinh viên ôn theo trình tự: lý thuyết từng chương → ví dụ có số liệu → bài tập cuối chương → đề tổng hợp có giới hạn thời gian (90–120 phút). Chuẩn bị thuật ngữ song ngữ Anh-Việt và case doanh nghiệp Việt Nam. Liên hệ thực tiễn VinFast (Tin học ứng dụng): doanh thu 240 tỷ VND, biên gộp 24%, chi phí cố định 11 tỷ — áp dụng Đề thi thử Chuẩn đầu ra Tin học văn phòng TDTU phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Cấu trúc đề thi và phân bổ điểm:\nWord 30%, Excel 50%, PPT 20%\n\nChiến lược làm bài chi tiết: (1) Đọc toàn đề 5 phút, đánh dấu câu quen và câu khó. (2) Làm phần trắc nghiệm/tính toán trước — ghi công thức, thay số, đơn vị. (3) Phần case/tự luận: trình bày theo giả thiết → phân tích từng bước → kết luận và kiến nghị. (4) Giữ 20–25% thời gian kiểm tra lại logic và số học. (5) Đối chiếu rubric chấm điểm khi tự luyện. Liên hệ thực tiễn VinFast (Tin học ứng dụng): doanh thu 240 tỷ VND, biên gộp 24%, chi phí cố định 11 tỷ — áp dụng Đề thi thử Chuẩn đầu ra Tin học văn phòng TDTU phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đề thi thử Chuẩn đầu ra Tin học văn phòng TDTU, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Đề mẫu ôn tập:\nXLOOKUP + Pivot + Mail Merge.\n\nHướng dẫn luyện: giải đề các năm trước của Tin học ứng dụng; thảo luận nhóm case khó; tự chấm điểm theo thang 10. Case doanh nghiệp VN như VinFast thường xuất hiện — chuẩn bị số liệu và phân tích SWOT/PESTEL nếu là môn marketing/kinh doanh. Với môn có tính toán: kiểm tra lại BEP, NPV, EOQ, tỷ giá tùy chương trình. Liên hệ thực tiễn VinFast (Tin học ứng dụng): doanh thu 240 tỷ VND, biên gộp 24%, chi phí cố định 11 tỷ — áp dụng Đề thi thử Chuẩn đầu ra Tin học văn phòng TDTU phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đề thi thử Chuẩn đầu ra Tin học văn phòng TDTU, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Ôn Word TOC, Excel XLOOKUP/Pivot. Luyện đề có thời gian. Nắm thuật ngữ Anh-Việt. Kiểm tra đơn vị và giả định trước khi nộp bài. Liên hệ thực tiễn VinFast (Tin học ứng dụng): doanh thu 240 tỷ VND, biên gộp 24%, chi phí cố định 11 tỷ — áp dụng Đề thi thử Chuẩn đầu ra Tin học văn phòng TDTU phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  }
+]

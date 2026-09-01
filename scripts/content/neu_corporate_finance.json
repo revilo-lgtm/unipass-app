@@ -1,0 +1,245 @@
+[
+  {
+    "course_id": "neu_corporate_finance",
+    "course_title": "Tài chính doanh nghiệp",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Phân tích chỉ số tài chính & Mô hình DuPont",
+    "lesson_order": 1,
+    "lesson_id": "chapter-1-lesson-1",
+    "lesson_title": "Mô hình DuPont & Quản trị Vốn lưu động",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Mô hình DuPont & Quản trị Vốn lưu động là nội dung trọng tâm trong Phân tích chỉ số tài chính & Mô hình DuPont — môn Tài chính doanh nghiệp. Chỉ số tài chính và DuPont. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn CellphoneS (Tài chính doanh nghiệp): doanh thu 210 tỷ VND, biên gộp 31%, chi phí cố định 10 tỷ — áp dụng Mô hình DuPont & Quản trị Vốn lưu động phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Mô hình DuPont & Quản trị Vốn lưu động:\n\n1. ROE = NPM×TAT×EM (DuPont)\n2. Current ratio, Quick ratio\n3. DSO, DIO, DPO → CCC\n4. WACC = (E/V)Re + (D/V)Rd(1-T)\n\nCông thức:\nCCC = DSO + DIO - DPO. WACC formula.\n\nThuật ngữ: . Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn CellphoneS (Tài chính doanh nghiệp): doanh thu 210 tỷ VND, biên gộp 31%, chi phí cố định 10 tỷ — áp dụng Mô hình DuPont & Quản trị Vốn lưu động phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Mô hình DuPont & Quản trị Vốn lưu động, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Mô hình DuPont & Quản trị Vốn lưu động:\nROE 18% = 6%×2×1.5. CCC 45 ngày → cần giảm DSO.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=1100 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 27%. Liên hệ thực tiễn CellphoneS (Tài chính doanh nghiệp): doanh thu 210 tỷ VND, biên gộp 31%, chi phí cố định 10 tỷ — áp dụng Mô hình DuPont & Quản trị Vốn lưu động phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Mô hình DuPont & Quản trị Vốn lưu động, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "DuPont phân rã ROE. CCC quản trị VLĐ. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn CellphoneS (Tài chính doanh nghiệp): doanh thu 210 tỷ VND, biên gộp 31%, chi phí cố định 10 tỷ — áp dụng Mô hình DuPont & Quản trị Vốn lưu động phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_corporate_finance",
+    "course_title": "Tài chính doanh nghiệp",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Phân tích chỉ số tài chính & Mô hình DuPont",
+    "lesson_order": 2,
+    "lesson_id": "chapter-1-lesson-2",
+    "lesson_title": "Chi phí sử dụng vốn WACC & Đòn bẩy tài chính DFL",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Chi phí sử dụng vốn WACC & Đòn bẩy tài chính DFL là nội dung trọng tâm trong Phân tích chỉ số tài chính & Mô hình DuPont — môn Tài chính doanh nghiệp. Chỉ số tài chính và DuPont. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn Trung Nguyên (Tài chính doanh nghiệp): doanh thu 200 tỷ VND, biên gộp 30%, chi phí cố định 9 tỷ — áp dụng Chi phí sử dụng vốn WACC & Đòn bẩy tài chính DFL phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Chi phí sử dụng vốn WACC & Đòn bẩy tài chính DFL:\n\n1. ROE = NPM×TAT×EM (DuPont)\n2. Current ratio, Quick ratio\n3. DSO, DIO, DPO → CCC\n4. WACC = (E/V)Re + (D/V)Rd(1-T)\n\nCông thức:\nCCC = DSO + DIO - DPO. WACC formula.\n\nThuật ngữ: . Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn Trung Nguyên (Tài chính doanh nghiệp): doanh thu 200 tỷ VND, biên gộp 30%, chi phí cố định 9 tỷ — áp dụng Chi phí sử dụng vốn WACC & Đòn bẩy tài chính DFL phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Chi phí sử dụng vốn WACC & Đòn bẩy tài chính DFL, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Chi phí sử dụng vốn WACC & Đòn bẩy tài chính DFL:\nROE 18% = 6%×2×1.5. CCC 45 ngày → cần giảm DSO.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=1000 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 24%. Liên hệ thực tiễn Trung Nguyên (Tài chính doanh nghiệp): doanh thu 200 tỷ VND, biên gộp 30%, chi phí cố định 9 tỷ — áp dụng Chi phí sử dụng vốn WACC & Đòn bẩy tài chính DFL phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Chi phí sử dụng vốn WACC & Đòn bẩy tài chính DFL, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "DuPont phân rã ROE. CCC quản trị VLĐ. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn Trung Nguyên (Tài chính doanh nghiệp): doanh thu 200 tỷ VND, biên gộp 30%, chi phí cố định 9 tỷ — áp dụng Chi phí sử dụng vốn WACC & Đòn bẩy tài chính DFL phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_corporate_finance",
+    "course_title": "Tài chính doanh nghiệp",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Quản trị vốn lưu động & Chu kỳ tiền mặt (CCC)",
+    "lesson_order": 1,
+    "lesson_id": "chapter-2-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài lý thuyết chương \"Quản trị vốn lưu động & Chu kỳ tiền mặt (CCC)\" — môn Tài chính doanh nghiệp. Vốn lưu động và CCC. Củng cố khái niệm, mô hình, công thức và thuật ngữ then chốt — nền tảng cho bài tập vận dụng và thi cuối kỳ. Liên hệ thực tiễn VinFast (Tài chính doanh nghiệp): doanh thu 260 tỷ VND, biên gộp 21%, chi phí cố định 11 tỷ — áp dụng Quản trị vốn lưu động & Chu kỳ tiền mặt (CCC) phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Khung kiến thức Quản trị vốn lưu động & Chu kỳ tiền mặt (CCC):\n\n1. Working capital = CA-CL\n2. Cash conversion cycle\n3. Credit policy impact on DSO\n\nThuật ngữ chuyên ngành: .\nĐiều kiện áp dụng: xác định giả định mô hình trước khi tính. Lỗi thường gặp: nhầm đơn vị (VND/USD), bỏ qua ràng buộc, kết luận không có số liệu hỗ trợ. Liên hệ thực tiễn VinFast (Tài chính doanh nghiệp): doanh thu 260 tỷ VND, biên gộp 21%, chi phí cố định 11 tỷ — áp dụng Quản trị vốn lưu động & Chu kỳ tiền mặt (CCC) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Quản trị vốn lưu động & Chu kỳ tiền mặt (CCC), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa Quản trị vốn lưu động & Chu kỳ tiền mặt (CCC):\nDSO 60→45 ngày giải phóng 2 tỷ cash.\n\nPhân tích bổ sung: doanh thu 260 tỷ VND/năm, biên gộp 21%, chi phí cố định 11 tỷ. Case VinFast — trình bày 4 bước: (1) Dữ kiện (2) Chọn mô hình (3) Tính toán Q=1600 (4) Kết luận và rủi ro nếu biến động 24%. Liên hệ thực tiễn VinFast (Tài chính doanh nghiệp): doanh thu 260 tỷ VND, biên gộp 21%, chi phí cố định 11 tỷ — áp dụng Quản trị vốn lưu động & Chu kỳ tiền mặt (CCC) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Quản trị vốn lưu động & Chu kỳ tiền mặt (CCC), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Giảm CCC = giải phóng tiền. Chuyển sang bài tập vận dụng để tự kiểm tra. Ôn thuật ngữ Anh-Việt trước thi. Liên hệ thực tiễn VinFast (Tài chính doanh nghiệp): doanh thu 260 tỷ VND, biên gộp 21%, chi phí cố định 11 tỷ — áp dụng Quản trị vốn lưu động & Chu kỳ tiền mặt (CCC) phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_corporate_finance",
+    "course_title": "Tài chính doanh nghiệp",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Quản trị vốn lưu động & Chu kỳ tiền mặt (CCC)",
+    "lesson_order": 2,
+    "lesson_id": "chapter-2-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng chương \"Quản trị vốn lưu động & Chu kỳ tiền mặt (CCC)\" — môn Tài chính doanh nghiệp. Sau khi nắm lý thuyết, tự giải từng bài trước khi đối chiếu lời giải mẫu. Trình bày có bước: ghi công thức, thay số, đơn vị, kết luận. Không nhảy bước — giảng viên chấm theo quy trình giải. Liên hệ thực tiễn CellphoneS (Tài chính doanh nghiệp): doanh thu 250 tỷ VND, biên gộp 20%, chi phí cố định 10 tỷ — áp dụng Quản trị vốn lưu động & Chu kỳ tiền mặt (CCC) phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Hướng dẫn làm bài Quản trị vốn lưu động & Chu kỳ tiền mặt (CCC):\n• Câu lý thuyết: định nghĩa chính xác + vẽ sơ đồ (nếu có) + ví dụ doanh nghiệp VN.\n• Câu tính toán: liệt kê dữ kiện → chọn công thức → thay số → đơn vị → kết luận kinh tế/quản trị.\n• Case study: tóm tắt tình huống → phân tích theo mô hình chương → khuyến nghị có căn cứ số liệu.\n\n\n\nKiến thức cốt lõi:\n1. Working capital = CA-CL\n2. Cash conversion cycle\n3. Credit policy impact on DSO Liên hệ thực tiễn CellphoneS (Tài chính doanh nghiệp): doanh thu 250 tỷ VND, biên gộp 20%, chi phí cố định 10 tỷ — áp dụng Quản trị vốn lưu động & Chu kỳ tiền mặt (CCC) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Quản trị vốn lưu động & Chu kỳ tiền mặt (CCC), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập mẫu chương Quản trị vốn lưu động & Chu kỳ tiền mặt (CCC):\nDSO 60→45 ngày giải phóng 2 tỷ cash.\n\nDữ kiện bổ sung: P=1500 VND/sp, Q=2500 sp, FC=1000 triệu VND, VC=900 VND/sp.\n(a) Tính Contribution Margin/sp và tổng lợi nhuận.\n(b) Tính điểm hòa vốn (BEP) theo số lượng.\n(c) Margin of Safety khi Q thực tế = 2500.\n(d) Khuyến nghị cho CellphoneS dựa trên kết quả.\nĐáp án gợi ý: CM = P − VC; BEP = FC ÷ CM; MOS = (Q − BEP) ÷ Q. Liên hệ thực tiễn CellphoneS (Tài chính doanh nghiệp): doanh thu 250 tỷ VND, biên gộp 20%, chi phí cố định 10 tỷ — áp dụng Quản trị vốn lưu động & Chu kỳ tiền mặt (CCC) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Quản trị vốn lưu động & Chu kỳ tiền mặt (CCC), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Luyện đủ dạng số, lý thuyết và case cho Quản trị vốn lưu động & Chu kỳ tiền mặt (CCC). Kiểm tra đơn vị và giả định mô hình. Tự giải 2–3 biến thể số liệu trước khi thi. Liên hệ thực tiễn CellphoneS (Tài chính doanh nghiệp): doanh thu 250 tỷ VND, biên gộp 20%, chi phí cố định 10 tỷ — áp dụng Quản trị vốn lưu động & Chu kỳ tiền mặt (CCC) phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_corporate_finance",
+    "course_title": "Tài chính doanh nghiệp",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Chi phí sử dụng vốn (WACC) & Mô hình CAPM",
+    "lesson_order": 1,
+    "lesson_id": "chapter-3-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài lý thuyết chương \"Chi phí sử dụng vốn (WACC) & Mô hình CAPM\" — môn Tài chính doanh nghiệp. WACC và CAPM. Củng cố khái niệm, mô hình, công thức và thuật ngữ then chốt — nền tảng cho bài tập vận dụng và thi cuối kỳ. Liên hệ thực tiễn Masan (Tài chính doanh nghiệp): doanh thu 310 tỷ VND, biên gộp 26%, chi phí cố định 12 tỷ — áp dụng Chi phí sử dụng vốn (WACC) & Mô hình CAPM phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Chi phí sử dụng vốn (WACC) & Mô hình CAPM, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Khung kiến thức Chi phí sử dụng vốn (WACC) & Mô hình CAPM:\n\n1. Re = Rf + β(Rm-Rf)\n2. Beta đo rủi ro hệ thống\n3. WACC dùng cho NPV\n\nCông thức và mô hình:\nCAPM: Re = Rf + β×(Rm-Rf). NPV = Σ CF/(1+WACC)^t.\n\nThuật ngữ chuyên ngành: .\nĐiều kiện áp dụng: xác định giả định mô hình trước khi tính. Lỗi thường gặp: nhầm đơn vị (VND/USD), bỏ qua ràng buộc, kết luận không có số liệu hỗ trợ. Liên hệ thực tiễn Masan (Tài chính doanh nghiệp): doanh thu 310 tỷ VND, biên gộp 26%, chi phí cố định 12 tỷ — áp dụng Chi phí sử dụng vốn (WACC) & Mô hình CAPM phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Chi phí sử dụng vốn (WACC) & Mô hình CAPM, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa Chi phí sử dụng vốn (WACC) & Mô hình CAPM:\nRf=4%, β=1.2, Rm=12% → Re=13.6%. WACC=10.5%.\n\nPhân tích bổ sung: doanh thu 310 tỷ VND/năm, biên gộp 26%, chi phí cố định 12 tỷ. Case Masan — trình bày 4 bước: (1) Dữ kiện (2) Chọn mô hình (3) Tính toán Q=2100 (4) Kết luận và rủi ro nếu biến động 21%. Liên hệ thực tiễn Masan (Tài chính doanh nghiệp): doanh thu 310 tỷ VND, biên gộp 26%, chi phí cố định 12 tỷ — áp dụng Chi phí sử dụng vốn (WACC) & Mô hình CAPM phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Chi phí sử dụng vốn (WACC) & Mô hình CAPM, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "CAPM cho Re. WACC cho NPV. Chuyển sang bài tập vận dụng để tự kiểm tra. Ôn thuật ngữ Anh-Việt trước thi. Liên hệ thực tiễn Masan (Tài chính doanh nghiệp): doanh thu 310 tỷ VND, biên gộp 26%, chi phí cố định 12 tỷ — áp dụng Chi phí sử dụng vốn (WACC) & Mô hình CAPM phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_corporate_finance",
+    "course_title": "Tài chính doanh nghiệp",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Chi phí sử dụng vốn (WACC) & Mô hình CAPM",
+    "lesson_order": 2,
+    "lesson_id": "chapter-3-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng chương \"Chi phí sử dụng vốn (WACC) & Mô hình CAPM\" — môn Tài chính doanh nghiệp. Sau khi nắm lý thuyết, tự giải từng bài trước khi đối chiếu lời giải mẫu. Trình bày có bước: ghi công thức, thay số, đơn vị, kết luận. Không nhảy bước — giảng viên chấm theo quy trình giải. Liên hệ thực tiễn VinFast (Tài chính doanh nghiệp): doanh thu 300 tỷ VND, biên gộp 25%, chi phí cố định 11 tỷ — áp dụng Chi phí sử dụng vốn (WACC) & Mô hình CAPM phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Hướng dẫn làm bài Chi phí sử dụng vốn (WACC) & Mô hình CAPM:\n• Câu lý thuyết: định nghĩa chính xác + vẽ sơ đồ (nếu có) + ví dụ doanh nghiệp VN.\n• Câu tính toán: liệt kê dữ kiện → chọn công thức → thay số → đơn vị → kết luận kinh tế/quản trị.\n• Case study: tóm tắt tình huống → phân tích theo mô hình chương → khuyến nghị có căn cứ số liệu.\n\nCAPM: Re = Rf + β×(Rm-Rf). NPV = Σ CF/(1+WACC)^t.\n\nKiến thức cốt lõi:\n1. Re = Rf + β(Rm-Rf)\n2. Beta đo rủi ro hệ thống\n3. WACC dùng cho NPV Liên hệ thực tiễn VinFast (Tài chính doanh nghiệp): doanh thu 300 tỷ VND, biên gộp 25%, chi phí cố định 11 tỷ — áp dụng Chi phí sử dụng vốn (WACC) & Mô hình CAPM phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập mẫu chương Chi phí sử dụng vốn (WACC) & Mô hình CAPM:\nRf=4%, β=1.2, Rm=12% → Re=13.6%. WACC=10.5%.\n\nDữ kiện bổ sung: P=2000 VND/sp, Q=3000 sp, FC=1100 triệu VND, VC=1200 VND/sp.\n(a) Tính Contribution Margin/sp và tổng lợi nhuận.\n(b) Tính điểm hòa vốn (BEP) theo số lượng.\n(c) Margin of Safety khi Q thực tế = 3000.\n(d) Khuyến nghị cho VinFast dựa trên kết quả.\nĐáp án gợi ý: CM = P − VC; BEP = FC ÷ CM; MOS = (Q − BEP) ÷ Q. Liên hệ thực tiễn VinFast (Tài chính doanh nghiệp): doanh thu 300 tỷ VND, biên gộp 25%, chi phí cố định 11 tỷ — áp dụng Chi phí sử dụng vốn (WACC) & Mô hình CAPM phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Chi phí sử dụng vốn (WACC) & Mô hình CAPM, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Luyện đủ dạng số, lý thuyết và case cho Chi phí sử dụng vốn (WACC) & Mô hình CAPM. Kiểm tra đơn vị và giả định mô hình. Tự giải 2–3 biến thể số liệu trước khi thi. Liên hệ thực tiễn VinFast (Tài chính doanh nghiệp): doanh thu 300 tỷ VND, biên gộp 25%, chi phí cố định 11 tỷ — áp dụng Chi phí sử dụng vốn (WACC) & Mô hình CAPM phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_corporate_finance",
+    "course_title": "Tài chính doanh nghiệp",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Đòn bẩy hoạt động (DOL) & Đòn bẩy tài chính (DFL)",
+    "lesson_order": 1,
+    "lesson_id": "chapter-4-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài lý thuyết chương \"Đòn bẩy hoạt động (DOL) & Đòn bẩy tài chính (DFL)\" — môn Tài chính doanh nghiệp. DOL và DFL. Củng cố khái niệm, mô hình, công thức và thuật ngữ then chốt — nền tảng cho bài tập vận dụng và thi cuối kỳ. Liên hệ thực tiễn Vinamilk (Tài chính doanh nghiệp): doanh thu 360 tỷ VND, biên gộp 31%, chi phí cố định 5 tỷ — áp dụng Đòn bẩy hoạt động (DOL) & Đòn bẩy tài chính (DFL) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đòn bẩy hoạt động (DOL) & Đòn bẩy tài chính (DFL), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Khung kiến thức Đòn bẩy hoạt động (DOL) & Đòn bẩy tài chính (DFL):\n\n1. DOL = %ΔEBIT/%ΔSales\n2. DFL = %ΔEPS/%ΔEBIT\n3. DTL = DOL×DFL\n4. Đòn bẩy tăng rủi ro và lợi nhuận\n\nCông thức và mô hình:\nDOL = (S-VC)/EBIT. DFL = EBIT/(EBIT-I).\n\nThuật ngữ chuyên ngành: .\nĐiều kiện áp dụng: xác định giả định mô hình trước khi tính. Lỗi thường gặp: nhầm đơn vị (VND/USD), bỏ qua ràng buộc, kết luận không có số liệu hỗ trợ. Liên hệ thực tiễn Vinamilk (Tài chính doanh nghiệp): doanh thu 360 tỷ VND, biên gộp 31%, chi phí cố định 5 tỷ — áp dụng Đòn bẩy hoạt động (DOL) & Đòn bẩy tài chính (DFL) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đòn bẩy hoạt động (DOL) & Đòn bẩy tài chính (DFL), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa Đòn bẩy hoạt động (DOL) & Đòn bẩy tài chính (DFL):\nDOL=2.5: sales +10% → EBIT +25%.\n\nPhân tích bổ sung: doanh thu 360 tỷ VND/năm, biên gộp 31%, chi phí cố định 5 tỷ. Case Vinamilk — trình bày 4 bước: (1) Dữ kiện (2) Chọn mô hình (3) Tính toán Q=2600 (4) Kết luận và rủi ro nếu biến động 18%. Liên hệ thực tiễn Vinamilk (Tài chính doanh nghiệp): doanh thu 360 tỷ VND, biên gộp 31%, chi phí cố định 5 tỷ — áp dụng Đòn bẩy hoạt động (DOL) & Đòn bẩy tài chính (DFL) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đòn bẩy hoạt động (DOL) & Đòn bẩy tài chính (DFL), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Đòn bẩy khuếch đại biến động. Chuyển sang bài tập vận dụng để tự kiểm tra. Ôn thuật ngữ Anh-Việt trước thi. Liên hệ thực tiễn Vinamilk (Tài chính doanh nghiệp): doanh thu 360 tỷ VND, biên gộp 31%, chi phí cố định 5 tỷ — áp dụng Đòn bẩy hoạt động (DOL) & Đòn bẩy tài chính (DFL) phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_corporate_finance",
+    "course_title": "Tài chính doanh nghiệp",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Đòn bẩy hoạt động (DOL) & Đòn bẩy tài chính (DFL)",
+    "lesson_order": 2,
+    "lesson_id": "chapter-4-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng chương \"Đòn bẩy hoạt động (DOL) & Đòn bẩy tài chính (DFL)\" — môn Tài chính doanh nghiệp. Sau khi nắm lý thuyết, tự giải từng bài trước khi đối chiếu lời giải mẫu. Trình bày có bước: ghi công thức, thay số, đơn vị, kết luận. Không nhảy bước — giảng viên chấm theo quy trình giải. Liên hệ thực tiễn Masan (Tài chính doanh nghiệp): doanh thu 350 tỷ VND, biên gộp 30%, chi phí cố định 12 tỷ — áp dụng Đòn bẩy hoạt động (DOL) & Đòn bẩy tài chính (DFL) phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Hướng dẫn làm bài Đòn bẩy hoạt động (DOL) & Đòn bẩy tài chính (DFL):\n• Câu lý thuyết: định nghĩa chính xác + vẽ sơ đồ (nếu có) + ví dụ doanh nghiệp VN.\n• Câu tính toán: liệt kê dữ kiện → chọn công thức → thay số → đơn vị → kết luận kinh tế/quản trị.\n• Case study: tóm tắt tình huống → phân tích theo mô hình chương → khuyến nghị có căn cứ số liệu.\n\nDOL = (S-VC)/EBIT. DFL = EBIT/(EBIT-I).\n\nKiến thức cốt lõi:\n1. DOL = %ΔEBIT/%ΔSales\n2. DFL = %ΔEPS/%ΔEBIT\n3. DTL = DOL×DFL\n4. Đòn bẩy tăng rủi ro và lợi nhuận Liên hệ thực tiễn Masan (Tài chính doanh nghiệp): doanh thu 350 tỷ VND, biên gộp 30%, chi phí cố định 12 tỷ — áp dụng Đòn bẩy hoạt động (DOL) & Đòn bẩy tài chính (DFL) phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập mẫu chương Đòn bẩy hoạt động (DOL) & Đòn bẩy tài chính (DFL):\nDOL=2.5: sales +10% → EBIT +25%.\n\nDữ kiện bổ sung: P=2500 VND/sp, Q=3500 sp, FC=1200 triệu VND, VC=1500 VND/sp.\n(a) Tính Contribution Margin/sp và tổng lợi nhuận.\n(b) Tính điểm hòa vốn (BEP) theo số lượng.\n(c) Margin of Safety khi Q thực tế = 3500.\n(d) Khuyến nghị cho Masan dựa trên kết quả.\nĐáp án gợi ý: CM = P − VC; BEP = FC ÷ CM; MOS = (Q − BEP) ÷ Q. Liên hệ thực tiễn Masan (Tài chính doanh nghiệp): doanh thu 350 tỷ VND, biên gộp 30%, chi phí cố định 12 tỷ — áp dụng Đòn bẩy hoạt động (DOL) & Đòn bẩy tài chính (DFL) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đòn bẩy hoạt động (DOL) & Đòn bẩy tài chính (DFL), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Luyện đủ dạng số, lý thuyết và case cho Đòn bẩy hoạt động (DOL) & Đòn bẩy tài chính (DFL). Kiểm tra đơn vị và giả định mô hình. Tự giải 2–3 biến thể số liệu trước khi thi. Liên hệ thực tiễn Masan (Tài chính doanh nghiệp): doanh thu 350 tỷ VND, biên gộp 30%, chi phí cố định 12 tỷ — áp dụng Đòn bẩy hoạt động (DOL) & Đòn bẩy tài chính (DFL) phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_corporate_finance",
+    "course_title": "Tài chính doanh nghiệp",
+    "chapter_order": 5,
+    "chapter_title": "Đề thi tổng hợp Tài chính doanh nghiệp NEU",
+    "lesson_order": 1,
+    "lesson_id": "chapter-5-lesson-1",
+    "lesson_title": "Bài 1: Tài liệu ôn tập & đề thi",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Tài liệu ôn thi môn Tài chính doanh nghiệp — Đề thi tổng hợp Tài chính doanh nghiệp NEU. Ôn Tài chính DN NEU. Hệ thống kiến thức toàn khóa, cấu trúc đề thi và chiến lược làm bài hiệu quả. Sinh viên ôn theo trình tự: lý thuyết từng chương → ví dụ có số liệu → bài tập cuối chương → đề tổng hợp có giới hạn thời gian (90–120 phút). Chuẩn bị thuật ngữ song ngữ Anh-Việt và case doanh nghiệp Việt Nam. Liên hệ thực tiễn Viettel (Tài chính doanh nghiệp): doanh thu 410 tỷ VND, biên gộp 21%, chi phí cố định 6 tỷ — áp dụng Đề thi tổng hợp Tài chính doanh nghiệp NEU phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Cấu trúc đề thi và phân bổ điểm:\nDuPont 30%, WACC 35%, đòn bẩy 35%\n\nChiến lược làm bài chi tiết: (1) Đọc toàn đề 5 phút, đánh dấu câu quen và câu khó. (2) Làm phần trắc nghiệm/tính toán trước — ghi công thức, thay số, đơn vị. (3) Phần case/tự luận: trình bày theo giả thiết → phân tích từng bước → kết luận và kiến nghị. (4) Giữ 20–25% thời gian kiểm tra lại logic và số học. (5) Đối chiếu rubric chấm điểm khi tự luyện. Liên hệ thực tiễn Viettel (Tài chính doanh nghiệp): doanh thu 410 tỷ VND, biên gộp 21%, chi phí cố định 6 tỷ — áp dụng Đề thi tổng hợp Tài chính doanh nghiệp NEU phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đề thi tổng hợp Tài chính doanh nghiệp NEU, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Đề mẫu ôn tập:\nTính WACC và đánh giá dự án NPV.\n\nHướng dẫn luyện: giải đề các năm trước của Tài chính doanh nghiệp; thảo luận nhóm case khó; tự chấm điểm theo thang 10. Case doanh nghiệp VN như Viettel thường xuất hiện — chuẩn bị số liệu và phân tích SWOT/PESTEL nếu là môn marketing/kinh doanh. Với môn có tính toán: kiểm tra lại BEP, NPV, EOQ, tỷ giá tùy chương trình. Liên hệ thực tiễn Viettel (Tài chính doanh nghiệp): doanh thu 410 tỷ VND, biên gộp 21%, chi phí cố định 6 tỷ — áp dụng Đề thi tổng hợp Tài chính doanh nghiệp NEU phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đề thi tổng hợp Tài chính doanh nghiệp NEU, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Ôn chỉ số, WACC, DOL/DFL. Luyện đề có thời gian. Nắm thuật ngữ Anh-Việt. Kiểm tra đơn vị và giả định trước khi nộp bài. Liên hệ thực tiễn Viettel (Tài chính doanh nghiệp): doanh thu 410 tỷ VND, biên gộp 21%, chi phí cố định 6 tỷ — áp dụng Đề thi tổng hợp Tài chính doanh nghiệp NEU phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  }
+]

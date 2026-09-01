@@ -1,0 +1,218 @@
+[
+  {
+    "course_id": "neu_basic-economics",
+    "course_title": "Kinh tế học cơ bản",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: 10 nguyên lý Kinh tế học & Chi phí cơ hội",
+    "lesson_order": 1,
+    "lesson_id": "chapter-1-lesson-1",
+    "lesson_title": "Sự đánh đổi, Chi phí cơ hội và Phân tích cận biên",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Sự đánh đổi, Chi phí cơ hội và Phân tích cận biên là nội dung trọng tâm trong 10 nguyên lý Kinh tế học & Chi phí cơ hội — môn Kinh tế học cơ bản. 10 nguyên lý kinh tế và chi phí cơ hội. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn Trung Nguyên (Kinh tế học cơ bản): doanh thu 280 tỷ VND, biên gộp 23%, chi phí cố định 9 tỷ — áp dụng Sự đánh đổi, Chi phí cơ hội và Phân tích cận biên phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Sự đánh đổi, Chi phí cơ hội và Phân tích cận biên:\n\n1. Trade-off, opportunity cost\n2. Marginal analysis: MB vs MC\n3. Cung-cầu: Qd=Qs tại P*\n4. 10 nguyên lý Mankiw\n\nCông thức:\nOC = giá trị lựa chọn tốt nhất bị từ bỏ. P* từ Qd=Qs.\n\nThuật ngữ: . Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn Trung Nguyên (Kinh tế học cơ bản): doanh thu 280 tỷ VND, biên gộp 23%, chi phí cố định 9 tỷ — áp dụng Sự đánh đổi, Chi phí cơ hội và Phân tích cận biên phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Sự đánh đổi, Chi phí cơ hội và Phân tích cận biên, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Sự đánh đổi, Chi phí cơ hội và Phân tích cận biên:\nSinh viên: 4h học (điểm +2) vs 4h làm thêm (400K). OC làm thêm = điểm mất.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=1800 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 12%. Liên hệ thực tiễn Trung Nguyên (Kinh tế học cơ bản): doanh thu 280 tỷ VND, biên gộp 23%, chi phí cố định 9 tỷ — áp dụng Sự đánh đổi, Chi phí cơ hội và Phân tích cận biên phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Sự đánh đổi, Chi phí cơ hội và Phân tích cận biên, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Chi phí cơ hội và phân tích cận biên. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn Trung Nguyên (Kinh tế học cơ bản): doanh thu 280 tỷ VND, biên gộp 23%, chi phí cố định 9 tỷ — áp dụng Sự đánh đổi, Chi phí cơ hội và Phân tích cận biên phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_basic-economics",
+    "course_title": "Kinh tế học cơ bản",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: 10 nguyên lý Kinh tế học & Chi phí cơ hội",
+    "lesson_order": 2,
+    "lesson_id": "chapter-1-lesson-2",
+    "lesson_title": "Quy luật Cung - Cầu và Điểm cân bằng thị trường",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Quy luật Cung - Cầu và Điểm cân bằng thị trường là nội dung trọng tâm trong 10 nguyên lý Kinh tế học & Chi phí cơ hội — môn Kinh tế học cơ bản. 10 nguyên lý kinh tế và chi phí cơ hội. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn CellphoneS (Kinh tế học cơ bản): doanh thu 290 tỷ VND, biên gộp 24%, chi phí cố định 10 tỷ — áp dụng Quy luật Cung - Cầu và Điểm cân bằng thị trường phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Quy luật Cung - Cầu và Điểm cân bằng thị trường:\n\n1. Trade-off, opportunity cost\n2. Marginal analysis: MB vs MC\n3. Cung-cầu: Qd=Qs tại P*\n4. 10 nguyên lý Mankiw\n\nCông thức:\nOC = giá trị lựa chọn tốt nhất bị từ bỏ. P* từ Qd=Qs.\n\nThuật ngữ: . Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn CellphoneS (Kinh tế học cơ bản): doanh thu 290 tỷ VND, biên gộp 24%, chi phí cố định 10 tỷ — áp dụng Quy luật Cung - Cầu và Điểm cân bằng thị trường phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Quy luật Cung - Cầu và Điểm cân bằng thị trường, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Quy luật Cung - Cầu và Điểm cân bằng thị trường:\nSinh viên: 4h học (điểm +2) vs 4h làm thêm (400K). OC làm thêm = điểm mất.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=1900 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 15%. Liên hệ thực tiễn CellphoneS (Kinh tế học cơ bản): doanh thu 290 tỷ VND, biên gộp 24%, chi phí cố định 10 tỷ — áp dụng Quy luật Cung - Cầu và Điểm cân bằng thị trường phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Quy luật Cung - Cầu và Điểm cân bằng thị trường, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Chi phí cơ hội và phân tích cận biên. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn CellphoneS (Kinh tế học cơ bản): doanh thu 290 tỷ VND, biên gộp 24%, chi phí cố định 10 tỷ — áp dụng Quy luật Cung - Cầu và Điểm cân bằng thị trường phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_basic-economics",
+    "course_title": "Kinh tế học cơ bản",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Cung, Cầu & Cân bằng thị trường",
+    "lesson_order": 1,
+    "lesson_id": "chapter-2-lesson-1",
+    "lesson_title": "Cạnh tranh hoàn hảo vs Độc quyền thuần túy",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Cạnh tranh hoàn hảo vs Độc quyền thuần túy là nội dung trọng tâm trong Cung, Cầu & Cân bằng thị trường — môn Kinh tế học cơ bản. Cung-cầu và cấu trúc thị trường. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn Minh Phú (Kinh tế học cơ bản): doanh thu 230 tỷ VND, biên gộp 33%, chi phí cố định 8 tỷ — áp dụng Cạnh tranh hoàn hảo vs Độc quyền thuần túy phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Cạnh tranh hoàn hảo vs Độc quyền thuần túy:\n\n1. Cạnh tranh vs độc quyền\n2. CS, PS, DWL\n3. Chính sách công: thuế, trợ cấp\n\nThuật ngữ: . Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn Minh Phú (Kinh tế học cơ bản): doanh thu 230 tỷ VND, biên gộp 33%, chi phí cố định 8 tỷ — áp dụng Cạnh tranh hoàn hảo vs Độc quyền thuần túy phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Cạnh tranh hoàn hảo vs Độc quyền thuần túy, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Cạnh tranh hoàn hảo vs Độc quyền thuần túy:\nThuốc lá thuế +10%: Ed=0.4 → doanh thu thuế +6%.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=1300 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 15%. Liên hệ thực tiễn Minh Phú (Kinh tế học cơ bản): doanh thu 230 tỷ VND, biên gộp 33%, chi phí cố định 8 tỷ — áp dụng Cạnh tranh hoàn hảo vs Độc quyền thuần túy phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Cạnh tranh hoàn hảo vs Độc quyền thuần túy, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Cân bằng và cấu trúc thị trường. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn Minh Phú (Kinh tế học cơ bản): doanh thu 230 tỷ VND, biên gộp 33%, chi phí cố định 8 tỷ — áp dụng Cạnh tranh hoàn hảo vs Độc quyền thuần túy phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_basic-economics",
+    "course_title": "Kinh tế học cơ bản",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Thặng dư tiêu dùng (CS) & Thặng dư sản xuất (PS)",
+    "lesson_order": 1,
+    "lesson_id": "chapter-3-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài lý thuyết chương \"Thặng dư tiêu dùng (CS) & Thặng dư sản xuất (PS)\" — môn Kinh tế học cơ bản. Thặng dư tiêu dùng và sản xuất. Củng cố khái niệm, mô hình, công thức và thuật ngữ then chốt — nền tảng cho bài tập vận dụng và thi cuối kỳ. Liên hệ thực tiễn FPT (Kinh tế học cơ bản): doanh thu 180 tỷ VND, biên gộp 28%, chi phí cố định 7 tỷ — áp dụng Thặng dư tiêu dùng (CS) & Thặng dư sản xuất (PS) phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Khung kiến thức Thặng dư tiêu dùng (CS) & Thặng dư sản xuất (PS):\n\n1. CS = ∫(Pmax-P)dQ\n2. PS = ∫(P-Pmin)dQ\n3. DWL từ thuế/trần/sàn\n\nThuật ngữ chuyên ngành: .\nĐiều kiện áp dụng: xác định giả định mô hình trước khi tính. Lỗi thường gặp: nhầm đơn vị (VND/USD), bỏ qua ràng buộc, kết luận không có số liệu hỗ trợ. Liên hệ thực tiễn FPT (Kinh tế học cơ bản): doanh thu 180 tỷ VND, biên gộp 28%, chi phí cố định 7 tỷ — áp dụng Thặng dư tiêu dùng (CS) & Thặng dư sản xuất (PS) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Thặng dư tiêu dùng (CS) & Thặng dư sản xuất (PS), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa Thặng dư tiêu dùng (CS) & Thặng dư sản xuất (PS):\n\n\nPhân tích bổ sung: doanh thu 180 tỷ VND/năm, biên gộp 28%, chi phí cố định 7 tỷ. Case FPT — trình bày 4 bước: (1) Dữ kiện (2) Chọn mô hình (3) Tính toán Q=2800 (4) Kết luận và rủi ro nếu biến động 18%. Liên hệ thực tiễn FPT (Kinh tế học cơ bản): doanh thu 180 tỷ VND, biên gộp 28%, chi phí cố định 7 tỷ — áp dụng Thặng dư tiêu dùng (CS) & Thặng dư sản xuất (PS) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Thặng dư tiêu dùng (CS) & Thặng dư sản xuất (PS), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "CS+PS = phúc lợi xã hội. Chuyển sang bài tập vận dụng để tự kiểm tra. Ôn thuật ngữ Anh-Việt trước thi. Liên hệ thực tiễn FPT (Kinh tế học cơ bản): doanh thu 180 tỷ VND, biên gộp 28%, chi phí cố định 7 tỷ — áp dụng Thặng dư tiêu dùng (CS) & Thặng dư sản xuất (PS) phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_basic-economics",
+    "course_title": "Kinh tế học cơ bản",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Thặng dư tiêu dùng (CS) & Thặng dư sản xuất (PS)",
+    "lesson_order": 2,
+    "lesson_id": "chapter-3-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng chương \"Thặng dư tiêu dùng (CS) & Thặng dư sản xuất (PS)\" — môn Kinh tế học cơ bản. Sau khi nắm lý thuyết, tự giải từng bài trước khi đối chiếu lời giải mẫu. Trình bày có bước: ghi công thức, thay số, đơn vị, kết luận. Không nhảy bước — giảng viên chấm theo quy trình giải. Liên hệ thực tiễn Minh Phú (Kinh tế học cơ bản): doanh thu 190 tỷ VND, biên gộp 29%, chi phí cố định 8 tỷ — áp dụng Thặng dư tiêu dùng (CS) & Thặng dư sản xuất (PS) phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Hướng dẫn làm bài Thặng dư tiêu dùng (CS) & Thặng dư sản xuất (PS):\n• Câu lý thuyết: định nghĩa chính xác + vẽ sơ đồ (nếu có) + ví dụ doanh nghiệp VN.\n• Câu tính toán: liệt kê dữ kiện → chọn công thức → thay số → đơn vị → kết luận kinh tế/quản trị.\n• Case study: tóm tắt tình huống → phân tích theo mô hình chương → khuyến nghị có căn cứ số liệu.\n\n\n\nKiến thức cốt lõi:\n1. CS = ∫(Pmax-P)dQ\n2. PS = ∫(P-Pmin)dQ\n3. DWL từ thuế/trần/sàn Liên hệ thực tiễn Minh Phú (Kinh tế học cơ bản): doanh thu 190 tỷ VND, biên gộp 29%, chi phí cố định 8 tỷ — áp dụng Thặng dư tiêu dùng (CS) & Thặng dư sản xuất (PS) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Thặng dư tiêu dùng (CS) & Thặng dư sản xuất (PS), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập mẫu chương Thặng dư tiêu dùng (CS) & Thặng dư sản xuất (PS):\nVẽ CS, PS. Tính DWL thuế.\n\nDữ kiện bổ sung: P=2900 VND/sp, Q=1900 sp, FC=800 triệu VND, VC=1740 VND/sp.\n(a) Tính Contribution Margin/sp và tổng lợi nhuận.\n(b) Tính điểm hòa vốn (BEP) theo số lượng.\n(c) Margin of Safety khi Q thực tế = 1900.\n(d) Khuyến nghị cho Minh Phú dựa trên kết quả.\nĐáp án gợi ý: CM = P − VC; BEP = FC ÷ CM; MOS = (Q − BEP) ÷ Q. Liên hệ thực tiễn Minh Phú (Kinh tế học cơ bản): doanh thu 190 tỷ VND, biên gộp 29%, chi phí cố định 8 tỷ — áp dụng Thặng dư tiêu dùng (CS) & Thặng dư sản xuất (PS) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Thặng dư tiêu dùng (CS) & Thặng dư sản xuất (PS), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Luyện đủ dạng số, lý thuyết và case cho Thặng dư tiêu dùng (CS) & Thặng dư sản xuất (PS). Kiểm tra đơn vị và giả định mô hình. Tự giải 2–3 biến thể số liệu trước khi thi. Liên hệ thực tiễn Minh Phú (Kinh tế học cơ bản): doanh thu 190 tỷ VND, biên gộp 29%, chi phí cố định 8 tỷ — áp dụng Thặng dư tiêu dùng (CS) & Thặng dư sản xuất (PS) phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_basic-economics",
+    "course_title": "Kinh tế học cơ bản",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Cấu trúc thị trường & Chính sách công",
+    "lesson_order": 1,
+    "lesson_id": "chapter-4-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài lý thuyết chương \"Cấu trúc thị trường & Chính sách công\" — môn Kinh tế học cơ bản. Cấu trúc thị trường và chính sách công. Củng cố khái niệm, mô hình, công thức và thuật ngữ then chốt — nền tảng cho bài tập vận dụng và thi cuối kỳ. Liên hệ thực tiễn Viettel (Kinh tế học cơ bản): doanh thu 130 tỷ VND, biên gộp 23%, chi phí cố định 6 tỷ — áp dụng Cấu trúc thị trường & Chính sách công phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Cấu trúc thị trường & Chính sách công, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Khung kiến thức Cấu trúc thị trường & Chính sách công:\n\n1. Monopoly, oligopoly, externalities\n2. Pigouvian tax\n3. Public goods\n\nThuật ngữ chuyên ngành: .\nĐiều kiện áp dụng: xác định giả định mô hình trước khi tính. Lỗi thường gặp: nhầm đơn vị (VND/USD), bỏ qua ràng buộc, kết luận không có số liệu hỗ trợ. Liên hệ thực tiễn Viettel (Kinh tế học cơ bản): doanh thu 130 tỷ VND, biên gộp 23%, chi phí cố định 6 tỷ — áp dụng Cấu trúc thị trường & Chính sách công phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Cấu trúc thị trường & Chính sách công, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ. Thuật ngữ Anh-Việt thường gặp trong đề Cấu trúc thị trường & Chính sách công: tra cứu song ngữ trước khi thi. Tự luyện thêm với Q=2300 đơn vị sản phẩm để củng cố Cấu trúc thị trường & Chính sách công."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa Cấu trúc thị trường & Chính sách công:\n\n\nPhân tích bổ sung: doanh thu 130 tỷ VND/năm, biên gộp 23%, chi phí cố định 6 tỷ. Case Viettel — trình bày 4 bước: (1) Dữ kiện (2) Chọn mô hình (3) Tính toán Q=2300 (4) Kết luận và rủi ro nếu biến động 21%. Liên hệ thực tiễn Viettel (Kinh tế học cơ bản): doanh thu 130 tỷ VND, biên gộp 23%, chi phí cố định 6 tỷ — áp dụng Cấu trúc thị trường & Chính sách công phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Cấu trúc thị trường & Chính sách công, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Chính sách sửa thất bại thị trường. Chuyển sang bài tập vận dụng để tự kiểm tra. Ôn thuật ngữ Anh-Việt trước thi. Liên hệ thực tiễn Viettel (Kinh tế học cơ bản): doanh thu 130 tỷ VND, biên gộp 23%, chi phí cố định 6 tỷ — áp dụng Cấu trúc thị trường & Chính sách công phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_basic-economics",
+    "course_title": "Kinh tế học cơ bản",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Cấu trúc thị trường & Chính sách công",
+    "lesson_order": 2,
+    "lesson_id": "chapter-4-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng chương \"Cấu trúc thị trường & Chính sách công\" — môn Kinh tế học cơ bản. Sau khi nắm lý thuyết, tự giải từng bài trước khi đối chiếu lời giải mẫu. Trình bày có bước: ghi công thức, thay số, đơn vị, kết luận. Không nhảy bước — giảng viên chấm theo quy trình giải. Liên hệ thực tiễn FPT (Kinh tế học cơ bản): doanh thu 140 tỷ VND, biên gộp 24%, chi phí cố định 7 tỷ — áp dụng Cấu trúc thị trường & Chính sách công phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Hướng dẫn làm bài Cấu trúc thị trường & Chính sách công:\n• Câu lý thuyết: định nghĩa chính xác + vẽ sơ đồ (nếu có) + ví dụ doanh nghiệp VN.\n• Câu tính toán: liệt kê dữ kiện → chọn công thức → thay số → đơn vị → kết luận kinh tế/quản trị.\n• Case study: tóm tắt tình huống → phân tích theo mô hình chương → khuyến nghị có căn cứ số liệu.\n\n\n\nKiến thức cốt lõi:\n1. Monopoly, oligopoly, externalities\n2. Pigouvian tax\n3. Public goods Liên hệ thực tiễn FPT (Kinh tế học cơ bản): doanh thu 140 tỷ VND, biên gộp 24%, chi phí cố định 7 tỷ — áp dụng Cấu trúc thị trường & Chính sách công phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Cấu trúc thị trường & Chính sách công, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập mẫu chương Cấu trúc thị trường & Chính sách công:\n\n\nDữ kiện bổ sung: P=2400 VND/sp, Q=1400 sp, FC=700 triệu VND, VC=1440 VND/sp.\n(a) Tính Contribution Margin/sp và tổng lợi nhuận.\n(b) Tính điểm hòa vốn (BEP) theo số lượng.\n(c) Margin of Safety khi Q thực tế = 1400.\n(d) Khuyến nghị cho FPT dựa trên kết quả.\nĐáp án gợi ý: CM = P − VC; BEP = FC ÷ CM; MOS = (Q − BEP) ÷ Q. Liên hệ thực tiễn FPT (Kinh tế học cơ bản): doanh thu 140 tỷ VND, biên gộp 24%, chi phí cố định 7 tỷ — áp dụng Cấu trúc thị trường & Chính sách công phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Cấu trúc thị trường & Chính sách công, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Luyện đủ dạng số, lý thuyết và case cho Cấu trúc thị trường & Chính sách công. Kiểm tra đơn vị và giả định mô hình. Tự giải 2–3 biến thể số liệu trước khi thi. Liên hệ thực tiễn FPT (Kinh tế học cơ bản): doanh thu 140 tỷ VND, biên gộp 24%, chi phí cố định 7 tỷ — áp dụng Cấu trúc thị trường & Chính sách công phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_basic-economics",
+    "course_title": "Kinh tế học cơ bản",
+    "chapter_order": 5,
+    "chapter_title": "Đề thi trắc nghiệm Kinh tế học cơ bản NEU",
+    "lesson_order": 1,
+    "lesson_id": "chapter-5-lesson-1",
+    "lesson_title": "Bài 1: Tài liệu ôn tập & đề thi",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Tài liệu ôn thi môn Kinh tế học cơ bản — Đề thi trắc nghiệm Kinh tế học cơ bản NEU. Ôn Kinh tế cơ bản NEU. Hệ thống kiến thức toàn khóa, cấu trúc đề thi và chiến lược làm bài hiệu quả. Sinh viên ôn theo trình tự: lý thuyết từng chương → ví dụ có số liệu → bài tập cuối chương → đề tổng hợp có giới hạn thời gian (90–120 phút). Chuẩn bị thuật ngữ song ngữ Anh-Việt và case doanh nghiệp Việt Nam. Liên hệ thực tiễn Vinamilk (Kinh tế học cơ bản): doanh thu 580 tỷ VND, biên gộp 33%, chi phí cố định 5 tỷ — áp dụng Đề thi trắc nghiệm Kinh tế học cơ bản NEU phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Cấu trúc đề thi và phân bổ điểm:\nTrắc nghiệm 40%, tính P* 30%, đồ thị 30%\n\nChiến lược làm bài chi tiết: (1) Đọc toàn đề 5 phút, đánh dấu câu quen và câu khó. (2) Làm phần trắc nghiệm/tính toán trước — ghi công thức, thay số, đơn vị. (3) Phần case/tự luận: trình bày theo giả thiết → phân tích từng bước → kết luận và kiến nghị. (4) Giữ 20–25% thời gian kiểm tra lại logic và số học. (5) Đối chiếu rubric chấm điểm khi tự luyện. Liên hệ thực tiễn Vinamilk (Kinh tế học cơ bản): doanh thu 580 tỷ VND, biên gộp 33%, chi phí cố định 5 tỷ — áp dụng Đề thi trắc nghiệm Kinh tế học cơ bản NEU phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đề thi trắc nghiệm Kinh tế học cơ bản NEU, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Đề mẫu ôn tập:\nQd=80-2P, Qs=-20+3P. Tính P*, CS.\n\nHướng dẫn luyện: giải đề các năm trước của Kinh tế học cơ bản; thảo luận nhóm case khó; tự chấm điểm theo thang 10. Case doanh nghiệp VN như Vinamilk thường xuất hiện — chuẩn bị số liệu và phân tích SWOT/PESTEL nếu là môn marketing/kinh doanh. Với môn có tính toán: kiểm tra lại BEP, NPV, EOQ, tỷ giá tùy chương trình. Liên hệ thực tiễn Vinamilk (Kinh tế học cơ bản): doanh thu 580 tỷ VND, biên gộp 33%, chi phí cố định 5 tỷ — áp dụng Đề thi trắc nghiệm Kinh tế học cơ bản NEU phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đề thi trắc nghiệm Kinh tế học cơ bản NEU, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Ôn cung-cầu, OC, thặng dư. Luyện đề có thời gian. Nắm thuật ngữ Anh-Việt. Kiểm tra đơn vị và giả định trước khi nộp bài. Liên hệ thực tiễn Vinamilk (Kinh tế học cơ bản): doanh thu 580 tỷ VND, biên gộp 33%, chi phí cố định 5 tỷ — áp dụng Đề thi trắc nghiệm Kinh tế học cơ bản NEU phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  }
+]

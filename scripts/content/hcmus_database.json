@@ -1,0 +1,245 @@
+[
+  {
+    "course_id": "hcmus_database",
+    "course_title": "Hệ Cơ sở dữ liệu",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Thiết kế ERD & Chuyển đổi sang CSDL quan hệ",
+    "lesson_order": 1,
+    "lesson_id": "chapter-1-lesson-1",
+    "lesson_title": "Mô hình ERD sang CSDL quan hệ & Khóa chính/ngoại",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Mô hình ERD sang CSDL quan hệ & Khóa chính/ngoại là nội dung cốt lõi trong chương «Thiết kế ERD & Chuyển đổi sang CSDL quan hệ» (Hệ Cơ sở dữ liệu). Bài học giải thích khái niệm, ký hiệu và vai trò của Mô hình ERD sang CSDL quan hệ & Khóa chính/ngoại trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Mô hình ERD sang CSDL quan hệ & Khóa chính/ngoại thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Mô hình ERD sang CSDL quan hệ & Khóa chính/ngoại:\nEntity→table; M:N→junction.\nPK, FK.\nÁp dụng Mô hình ERD sang CSDL quan hệ & Khóa chính/ngoại trong Thiết kế ERD & Chuyển đổi sang CSDL quan hệ.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Thiết kế ERD & Chuyển đổi sang CSDL quan hệ, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán.\n\nACID: Atomicity, Consistency, Isolation, Durability. Index B-tree tăng tốc SELECT, chậm INSERT. Normalization giảm redundancy. JOIN INNER chỉ giữ hàng khớp; LEFT giữ tất cả hàng bảng trái. Transaction BEGIN/COMMIT/ROLLBACK.\n\nLiên hệ Mô hình ERD sang CSDL quan hệ & Khóa chính/ngoại với Thiết kế ERD & Chuyển đổi sang CSDL quan hệ: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Mô hình ERD sang CSDL quan hệ & Khóa chính/ngoại:\nSinhVien-DangKy-MonHoc.\nBài tập mở rộng Mô hình ERD sang CSDL quan hệ & Khóa chính/ngoại.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Mô hình ERD sang CSDL quan hệ & Khóa chính/ngoại:\nFK toàn vẹn tham chiếu.\nLiên kết Thiết kế ERD & Chuyển đổi sang CSDL quan hệ.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_database",
+    "course_title": "Hệ Cơ sở dữ liệu",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Thiết kế ERD & Chuyển đổi sang CSDL quan hệ",
+    "lesson_order": 2,
+    "lesson_id": "chapter-1-lesson-2",
+    "lesson_title": "Chuẩn hóa BCNF & Truy vấn SQL nâng cao (Subquery, Group By)",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Chuẩn hóa BCNF & Truy vấn SQL nâng cao (Subquery, Group By) là nội dung cốt lõi trong chương «Thiết kế ERD & Chuyển đổi sang CSDL quan hệ» (Hệ Cơ sở dữ liệu). Bài học giải thích khái niệm, ký hiệu và vai trò của Chuẩn hóa BCNF & Truy vấn SQL nâng cao (Subquery, Group By) trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Chuẩn hóa BCNF & Truy vấn SQL nâng cao (Subquery, Group By) thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Chuẩn hóa BCNF & Truy vấn SQL nâng cao (Subquery, Group By):\nEntity→table; M:N→junction.\nPK, FK.\nÁp dụng Chuẩn hóa BCNF & Truy vấn SQL nâng cao (Subquery, Group By) trong Thiết kế ERD & Chuyển đổi sang CSDL quan hệ.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Thiết kế ERD & Chuyển đổi sang CSDL quan hệ, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Chuẩn hóa BCNF & Truy vấn SQL nâng cao (Subquery, Group By):\nSinhVien-DangKy-MonHoc.\nBài tập mở rộng Chuẩn hóa BCNF & Truy vấn SQL nâng cao (Subquery, Group By).\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Chuẩn hóa BCNF & Truy vấn SQL nâng cao (Subquery, Group By):\nFK toàn vẹn tham chiếu.\nLiên kết Thiết kế ERD & Chuyển đổi sang CSDL quan hệ.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_database",
+    "course_title": "Hệ Cơ sở dữ liệu",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia)",
+    "lesson_order": 1,
+    "lesson_id": "chapter-2-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia) là nội dung cốt lõi trong chương «Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia)» (Hệ Cơ sở dữ liệu). Bài học giải thích khái niệm, ký hiệu và vai trò của Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia) trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia) thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia):\nCông thức và định nghĩa Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia).\nÁp dụng Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia) trong Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia).\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia), cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia):\nVí dụ Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia) với số liệu.\nBài tập mở rộng Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia).\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia):\nThuộc Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia).\nLiên kết Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia).\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_database",
+    "course_title": "Hệ Cơ sở dữ liệu",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia)",
+    "lesson_order": 2,
+    "lesson_id": "chapter-2-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia) (Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia)). Mục tiêu: luyện kỹ năng giải bài từ cơ bản đến nâng cao với lời giải đầy đủ. Mỗi bài gồm: phát biểu đề, dữ liệu, lời giải từng bước và đáp số. Đây là dạng bài trọng tâm trong đề kiểm tra và thi cuối kỳ — cần vừa đúng kết quả vừa trình bày logic rõ ràng. Môn Hệ Cơ sở dữ liệu đánh giá khả năng vận dụng Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia) qua bài tập và đề thi — cần luyện cả lý thuyết lẫn tính toán."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Phương pháp giải bài Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia):\nĐọc đề Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia).\nChọn công thức.\nGiải từng bước.\nKiểm tra biên.\n\nLưu ý: đọc kỹ đơn vị; kiểm tra biên (n=0, mảng rỗng, nồng độ cực nhỏ); với code — test case ẩn thường ở biên. Không bỏ qua bước trung gian vì đề chấm theo lời giải.\n\nACID: Atomicity, Consistency, Isolation, Durability. Index B-tree tăng tốc SELECT, chậm INSERT. Normalization giảm redundancy. JOIN INNER chỉ giữ hàng khớp; LEFT giữ tất cả hàng bảng trái. Transaction BEGIN/COMMIT/ROLLBACK.\n\nLiên hệ Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia) với Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia): áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập có lời giải:\nBài 1 cơ bản Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia).\nBài 2 đổi số.\nBài 3 tổng hợp Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia).\n\nSau mỗi bài, tự đặt câu hỏi «nếu đổi số liệu thì kết quả thay đổi thế nào?» để củng cố hiểu bài, không chỉ nhớ đáp án.\n\nVí dụ bổ sung Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia): thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia):\nLuyện 5 bài Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia).\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_database",
+    "course_title": "Hệ Cơ sở dữ liệu",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View)",
+    "lesson_order": 1,
+    "lesson_id": "chapter-3-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View) là nội dung cốt lõi trong chương «Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View)» (Hệ Cơ sở dữ liệu). Bài học giải thích khái niệm, ký hiệu và vai trò của Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View) trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View) thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View):\nCông thức và định nghĩa Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View).\nÁp dụng Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View) trong Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View).\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View), cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View):\nVí dụ Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View) với số liệu.\nBài tập mở rộng Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View).\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View):\nThuộc Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View).\nLiên kết Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View).\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_database",
+    "course_title": "Hệ Cơ sở dữ liệu",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View)",
+    "lesson_order": 2,
+    "lesson_id": "chapter-3-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View) (Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View)). Mục tiêu: luyện kỹ năng giải bài từ cơ bản đến nâng cao với lời giải đầy đủ. Mỗi bài gồm: phát biểu đề, dữ liệu, lời giải từng bước và đáp số. Đây là dạng bài trọng tâm trong đề kiểm tra và thi cuối kỳ — cần vừa đúng kết quả vừa trình bày logic rõ ràng."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Phương pháp giải bài Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View):\nĐọc đề Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View).\nChọn công thức.\nGiải từng bước.\nKiểm tra biên.\n\nLưu ý: đọc kỹ đơn vị; kiểm tra biên (n=0, mảng rỗng, nồng độ cực nhỏ); với code — test case ẩn thường ở biên. Không bỏ qua bước trung gian vì đề chấm theo lời giải.\n\nACID: Atomicity, Consistency, Isolation, Durability. Index B-tree tăng tốc SELECT, chậm INSERT. Normalization giảm redundancy. JOIN INNER chỉ giữ hàng khớp; LEFT giữ tất cả hàng bảng trái. Transaction BEGIN/COMMIT/ROLLBACK.\n\nLiên hệ Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View) với Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View): áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập có lời giải:\nBài 1 cơ bản Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View).\nBài 2 đổi số.\nBài 3 tổng hợp Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View).\n\nSau mỗi bài, tự đặt câu hỏi «nếu đổi số liệu thì kết quả thay đổi thế nào?» để củng cố hiểu bài, không chỉ nhớ đáp án.\n\nVí dụ bổ sung Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View): thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View):\nLuyện 5 bài Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View).\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_database",
+    "course_title": "Hệ Cơ sở dữ liệu",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF",
+    "lesson_order": 1,
+    "lesson_id": "chapter-4-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF là nội dung cốt lõi trong chương «Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF» (Hệ Cơ sở dữ liệu). Bài học giải thích khái niệm, ký hiệu và vai trò của Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF:\nCông thức và định nghĩa Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF.\nÁp dụng Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF trong Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF:\nVí dụ Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF với số liệu.\nBài tập mở rộng Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF:\nThuộc Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF.\nLiên kết Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_database",
+    "course_title": "Hệ Cơ sở dữ liệu",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF",
+    "lesson_order": 2,
+    "lesson_id": "chapter-4-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF (Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF). Mục tiêu: luyện kỹ năng giải bài từ cơ bản đến nâng cao với lời giải đầy đủ. Mỗi bài gồm: phát biểu đề, dữ liệu, lời giải từng bước và đáp số. Đây là dạng bài trọng tâm trong đề kiểm tra và thi cuối kỳ — cần vừa đúng kết quả vừa trình bày logic rõ ràng."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Phương pháp giải bài Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF:\nĐọc đề Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF.\nChọn công thức.\nGiải từng bước.\nKiểm tra biên.\n\nLưu ý: đọc kỹ đơn vị; kiểm tra biên (n=0, mảng rỗng, nồng độ cực nhỏ); với code — test case ẩn thường ở biên. Không bỏ qua bước trung gian vì đề chấm theo lời giải.\n\nACID: Atomicity, Consistency, Isolation, Durability. Index B-tree tăng tốc SELECT, chậm INSERT. Normalization giảm redundancy. JOIN INNER chỉ giữ hàng khớp; LEFT giữ tất cả hàng bảng trái. Transaction BEGIN/COMMIT/ROLLBACK.\n\nLiên hệ Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF với Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập có lời giải:\nBài 1 cơ bản Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF.\nBài 2 đổi số.\nBài 3 tổng hợp Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF.\n\nSau mỗi bài, tự đặt câu hỏi «nếu đổi số liệu thì kết quả thay đổi thế nào?» để củng cố hiểu bài, không chỉ nhớ đáp án.\n\nVí dụ bổ sung Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF:\nLuyện 5 bài Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_database",
+    "course_title": "Hệ Cơ sở dữ liệu",
+    "chapter_order": 5,
+    "chapter_title": "Đề thi trắc nghiệm & Tự luận CSDL HCMUS",
+    "lesson_order": 1,
+    "lesson_id": "chapter-5-lesson-1",
+    "lesson_title": "Bài 1: Tài liệu ôn tập & đề thi",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Ôn thi Hệ Cơ sở dữ liệu — Đề thi trắc nghiệm & Tự luận CSDL HCMUS (Đề thi trắc nghiệm & Tự luận CSDL HCMUS). Đề thi đại học kỹ thuật thường gồm trắc nghiệm lý thuyết và bài tập tính toán/viết code. Thời gian 60–120 phút tùy môn. Sinh viên cần nắm công thức cốt lõi, luyện đề cũ và phân bổ thời gian hợp lý: làm câu quen trước, ghi công thức lên nháp, kiểm tra đơn vị trước khi chọn đáp án."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Cấu trúc đề và trọng tâm Đề thi trắc nghiệm & Tự luận CSDL HCMUS:\nĐề Hệ Cơ sở dữ liệu: lý thuyết + tính toán Đề thi trắc nghiệm & Tự luận CSDL HCMUS.\nThời gian 60–120 phút.\nTrọng tâm Đề thi trắc nghiệm & Tự luận CSDL HCMUS.\n\nChiến lược: (1) quét nhanh toàn đề, đánh dấu câu dễ; (2) làm phần tính trước nếu tự tin; (3) dành 10 phút cuối kiểm tra đơn vị và câu chưa làm.\n\nACID: Atomicity, Consistency, Isolation, Durability. Index B-tree tăng tốc SELECT, chậm INSERT. Normalization giảm redundancy. JOIN INNER chỉ giữ hàng khớp; LEFT giữ tất cả hàng bảng trái. Transaction BEGIN/COMMIT/ROLLBACK.\n\nLiên hệ Đề thi trắc nghiệm & Tự luận CSDL HCMUS với Đề thi trắc nghiệm & Tự luận CSDL HCMUS: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Câu hỏi mẫu Đề thi trắc nghiệm & Tự luận CSDL HCMUS:\nCâu lý thuyết Đề thi trắc nghiệm & Tự luận CSDL HCMUS.\nCâu tính thay số.\nCâu tổng hợp Đề thi trắc nghiệm & Tự luận CSDL HCMUS.\n\nVới mỗi câu mẫu, tự biến thể: đổi số liệu, thêm điều kiện, hoặc hỏi ngược (cho kết quả tìm đầu vào).\n\nVí dụ bổ sung Đề thi trắc nghiệm & Tự luận CSDL HCMUS: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Đề thi trắc nghiệm & Tự luận CSDL HCMUS:\nÔn đề cũ Đề thi trắc nghiệm & Tự luận CSDL HCMUS.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  }
+]

@@ -1,0 +1,245 @@
+[
+  {
+    "course_id": "hcmus_programming",
+    "course_title": "Lập trình cơ bản (C++)",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Cấu trúc rẽ nhánh, Vòng lặp & Tối ưu thuật toán",
+    "lesson_order": 1,
+    "lesson_id": "chapter-1-lesson-1",
+    "lesson_title": "Cấu trúc điều khiển, Vòng lặp & Tối ưu thuật toán",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Cấu trúc điều khiển, Vòng lặp & Tối ưu thuật toán là nội dung cốt lõi trong chương «Cấu trúc rẽ nhánh, Vòng lặp & Tối ưu thuật toán» (Lập trình cơ bản (C++)). Bài học giải thích khái niệm, ký hiệu và vai trò của Cấu trúc điều khiển, Vòng lặp & Tối ưu thuật toán trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Cấu trúc điều khiển, Vòng lặp & Tối ưu thuật toán thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Cấu trúc điều khiển, Vòng lặp & Tối ưu thuật toán:\nCông thức và định nghĩa Cấu trúc điều khiển, Vòng lặp & Tối ưu thuật toán.\nÁp dụng Cấu trúc điều khiển, Vòng lặp & Tối ưu thuật toán trong Cấu trúc rẽ nhánh, Vòng lặp & Tối ưu thuật toán.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Cấu trúc rẽ nhánh, Vòng lặp & Tối ưu thuật toán, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Cấu trúc điều khiển, Vòng lặp & Tối ưu thuật toán:\nVí dụ Cấu trúc điều khiển, Vòng lặp & Tối ưu thuật toán với số liệu.\nBài tập mở rộng Cấu trúc điều khiển, Vòng lặp & Tối ưu thuật toán.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Cấu trúc điều khiển, Vòng lặp & Tối ưu thuật toán:\nThuộc Cấu trúc điều khiển, Vòng lặp & Tối ưu thuật toán.\nLiên kết Cấu trúc rẽ nhánh, Vòng lặp & Tối ưu thuật toán.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_programming",
+    "course_title": "Lập trình cơ bản (C++)",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Cấu trúc rẽ nhánh, Vòng lặp & Tối ưu thuật toán",
+    "lesson_order": 2,
+    "lesson_id": "chapter-1-lesson-2",
+    "lesson_title": "Mảng động (new/delete), Con trỏ và Chuỗi ký tự",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Mảng động (new/delete), Con trỏ và Chuỗi ký tự là nội dung cốt lõi trong chương «Cấu trúc rẽ nhánh, Vòng lặp & Tối ưu thuật toán» (Lập trình cơ bản (C++)). Bài học giải thích khái niệm, ký hiệu và vai trò của Mảng động (new/delete), Con trỏ và Chuỗi ký tự trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Mảng động (new/delete), Con trỏ và Chuỗi ký tự thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Mảng động (new/delete), Con trỏ và Chuỗi ký tự:\n*p dereference; arr[i]=*(arr+i).\nstruct . và ->\nÁp dụng Mảng động (new/delete), Con trỏ và Chuỗi ký tự trong Cấu trúc rẽ nhánh, Vòng lặp & Tối ưu thuật toán.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Cấu trúc rẽ nhánh, Vòng lặp & Tối ưu thuật toán, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán.\n\nĐộ phức tạp thời gian và không gian — phân tích trước khi code. Two pointers trên mảng sorted. Prefix sum trả lời truy vấn đoạn O(1) sau O(n) tiền xử lý. fstream C++: ifstream, ofstream. Đệ quy sâu có thể stack overflow — cân nhắc lặp.\n\nLiên hệ Mảng động (new/delete), Con trỏ và Chuỗi ký tự với Cấu trúc rẽ nhánh, Vòng lặp & Tối ưu thuật toán: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Mảng động (new/delete), Con trỏ và Chuỗi ký tự:\nĐảo mảng; struct SV.\nBài tập mở rộng Mảng động (new/delete), Con trỏ và Chuỗi ký tự.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Mảng động (new/delete), Con trỏ và Chuỗi ký tự:\nMảng ≡ con trỏ.\nLiên kết Cấu trúc rẽ nhánh, Vòng lặp & Tối ưu thuật toán.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_programming",
+    "course_title": "Lập trình cơ bản (C++)",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string",
+    "lesson_order": 1,
+    "lesson_id": "chapter-2-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string là nội dung cốt lõi trong chương «Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string» (Lập trình cơ bản (C++)). Bài học giải thích khái niệm, ký hiệu và vai trò của Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string:\nCông thức và định nghĩa Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string.\nÁp dụng Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string trong Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string:\nVí dụ Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string với số liệu.\nBài tập mở rộng Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string:\nThuộc Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string.\nLiên kết Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_programming",
+    "course_title": "Lập trình cơ bản (C++)",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string",
+    "lesson_order": 2,
+    "lesson_id": "chapter-2-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string (Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string). Mục tiêu: luyện kỹ năng giải bài từ cơ bản đến nâng cao với lời giải đầy đủ. Mỗi bài gồm: phát biểu đề, dữ liệu, lời giải từng bước và đáp số. Đây là dạng bài trọng tâm trong đề kiểm tra và thi cuối kỳ — cần vừa đúng kết quả vừa trình bày logic rõ ràng."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Phương pháp giải bài Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string:\nĐọc đề Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string.\nChọn công thức.\nGiải từng bước.\nKiểm tra biên.\n\nLưu ý: đọc kỹ đơn vị; kiểm tra biên (n=0, mảng rỗng, nồng độ cực nhỏ); với code — test case ẩn thường ở biên. Không bỏ qua bước trung gian vì đề chấm theo lời giải.\n\nĐộ phức tạp thời gian và không gian — phân tích trước khi code. Two pointers trên mảng sorted. Prefix sum trả lời truy vấn đoạn O(1) sau O(n) tiền xử lý. fstream C++: ifstream, ofstream. Đệ quy sâu có thể stack overflow — cân nhắc lặp.\n\nLiên hệ Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string với Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập có lời giải:\nBài 1 cơ bản Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string.\nBài 2 đổi số.\nBài 3 tổng hợp Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string.\n\nSau mỗi bài, tự đặt câu hỏi «nếu đổi số liệu thì kết quả thay đổi thế nào?» để củng cố hiểu bài, không chỉ nhớ đáp án.\n\nVí dụ bổ sung Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string:\nLuyện 5 bài Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_programming",
+    "course_title": "Lập trình cơ bản (C++)",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Con trỏ & Cấp phát mảng động (new/delete)",
+    "lesson_order": 1,
+    "lesson_id": "chapter-3-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Con trỏ & Cấp phát mảng động (new/delete) là nội dung cốt lõi trong chương «Con trỏ & Cấp phát mảng động (new/delete)» (Lập trình cơ bản (C++)). Bài học giải thích khái niệm, ký hiệu và vai trò của Con trỏ & Cấp phát mảng động (new/delete) trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Con trỏ & Cấp phát mảng động (new/delete) thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Con trỏ & Cấp phát mảng động (new/delete):\n*p dereference; arr[i]=*(arr+i).\nstruct . và ->\nÁp dụng Con trỏ & Cấp phát mảng động (new/delete) trong Con trỏ & Cấp phát mảng động (new/delete).\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Con trỏ & Cấp phát mảng động (new/delete), cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán.\n\nĐộ phức tạp thời gian và không gian — phân tích trước khi code. Two pointers trên mảng sorted. Prefix sum trả lời truy vấn đoạn O(1) sau O(n) tiền xử lý. fstream C++: ifstream, ofstream. Đệ quy sâu có thể stack overflow — cân nhắc lặp.\n\nLiên hệ Con trỏ & Cấp phát mảng động (new/delete) với Con trỏ & Cấp phát mảng động (new/delete): áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Con trỏ & Cấp phát mảng động (new/delete):\nĐảo mảng; struct SV.\nBài tập mở rộng Con trỏ & Cấp phát mảng động (new/delete).\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Con trỏ & Cấp phát mảng động (new/delete):\nMảng ≡ con trỏ.\nLiên kết Con trỏ & Cấp phát mảng động (new/delete).\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_programming",
+    "course_title": "Lập trình cơ bản (C++)",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Con trỏ & Cấp phát mảng động (new/delete)",
+    "lesson_order": 2,
+    "lesson_id": "chapter-3-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng Con trỏ & Cấp phát mảng động (new/delete) (Con trỏ & Cấp phát mảng động (new/delete)). Mục tiêu: luyện kỹ năng giải bài từ cơ bản đến nâng cao với lời giải đầy đủ. Mỗi bài gồm: phát biểu đề, dữ liệu, lời giải từng bước và đáp số. Đây là dạng bài trọng tâm trong đề kiểm tra và thi cuối kỳ — cần vừa đúng kết quả vừa trình bày logic rõ ràng. Môn Lập trình cơ bản (C++) đánh giá khả năng vận dụng Con trỏ & Cấp phát mảng động (new/delete) qua bài tập và đề thi — cần luyện cả lý thuyết lẫn tính toán."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Phương pháp giải bài Con trỏ & Cấp phát mảng động (new/delete):\nĐọc đề Con trỏ & Cấp phát mảng động (new/delete).\nChọn công thức.\nGiải từng bước.\nKiểm tra biên.\n\nLưu ý: đọc kỹ đơn vị; kiểm tra biên (n=0, mảng rỗng, nồng độ cực nhỏ); với code — test case ẩn thường ở biên. Không bỏ qua bước trung gian vì đề chấm theo lời giải.\n\nĐộ phức tạp thời gian và không gian — phân tích trước khi code. Two pointers trên mảng sorted. Prefix sum trả lời truy vấn đoạn O(1) sau O(n) tiền xử lý. fstream C++: ifstream, ofstream. Đệ quy sâu có thể stack overflow — cân nhắc lặp.\n\nLiên hệ Con trỏ & Cấp phát mảng động (new/delete) với Con trỏ & Cấp phát mảng động (new/delete): áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập có lời giải:\nBài 1 cơ bản Con trỏ & Cấp phát mảng động (new/delete).\nBài 2 đổi số.\nBài 3 tổng hợp Con trỏ & Cấp phát mảng động (new/delete).\n\nSau mỗi bài, tự đặt câu hỏi «nếu đổi số liệu thì kết quả thay đổi thế nào?» để củng cố hiểu bài, không chỉ nhớ đáp án.\n\nVí dụ bổ sung Con trỏ & Cấp phát mảng động (new/delete): thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Con trỏ & Cấp phát mảng động (new/delete):\nLuyện 5 bài Con trỏ & Cấp phát mảng động (new/delete).\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_programming",
+    "course_title": "Lập trình cơ bản (C++)",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Đệ quy & Đọc ghi File fstream",
+    "lesson_order": 1,
+    "lesson_id": "chapter-4-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Đệ quy & Đọc ghi File fstream là nội dung cốt lõi trong chương «Đệ quy & Đọc ghi File fstream» (Lập trình cơ bản (C++)). Bài học giải thích khái niệm, ký hiệu và vai trò của Đệ quy & Đọc ghi File fstream trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Đệ quy & Đọc ghi File fstream thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Đệ quy & Đọc ghi File fstream:\nBase case; binary search O(log n).\nMảng 2D hai vòng for.\nÁp dụng Đệ quy & Đọc ghi File fstream trong Đệ quy & Đọc ghi File fstream.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Đệ quy & Đọc ghi File fstream, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán.\n\nĐộ phức tạp thời gian và không gian — phân tích trước khi code. Two pointers trên mảng sorted. Prefix sum trả lời truy vấn đoạn O(1) sau O(n) tiền xử lý. fstream C++: ifstream, ofstream. Đệ quy sâu có thể stack overflow — cân nhắc lặp.\n\nLiên hệ Đệ quy & Đọc ghi File fstream với Đệ quy & Đọc ghi File fstream: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Đệ quy & Đọc ghi File fstream:\nfact(5)=120; bs tìm 5.\nBài tập mở rộng Đệ quy & Đọc ghi File fstream.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Đệ quy & Đọc ghi File fstream:\nĐệ quy + mảng sorted.\nLiên kết Đệ quy & Đọc ghi File fstream.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_programming",
+    "course_title": "Lập trình cơ bản (C++)",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Đệ quy & Đọc ghi File fstream",
+    "lesson_order": 2,
+    "lesson_id": "chapter-4-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng Đệ quy & Đọc ghi File fstream (Đệ quy & Đọc ghi File fstream). Mục tiêu: luyện kỹ năng giải bài từ cơ bản đến nâng cao với lời giải đầy đủ. Mỗi bài gồm: phát biểu đề, dữ liệu, lời giải từng bước và đáp số. Đây là dạng bài trọng tâm trong đề kiểm tra và thi cuối kỳ — cần vừa đúng kết quả vừa trình bày logic rõ ràng. Môn Lập trình cơ bản (C++) đánh giá khả năng vận dụng Đệ quy & Đọc ghi File fstream qua bài tập và đề thi — cần luyện cả lý thuyết lẫn tính toán."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Phương pháp giải bài Đệ quy & Đọc ghi File fstream:\nĐọc đề Đệ quy & Đọc ghi File fstream.\nChọn công thức.\nGiải từng bước.\nKiểm tra biên.\n\nLưu ý: đọc kỹ đơn vị; kiểm tra biên (n=0, mảng rỗng, nồng độ cực nhỏ); với code — test case ẩn thường ở biên. Không bỏ qua bước trung gian vì đề chấm theo lời giải.\n\nĐộ phức tạp thời gian và không gian — phân tích trước khi code. Two pointers trên mảng sorted. Prefix sum trả lời truy vấn đoạn O(1) sau O(n) tiền xử lý. fstream C++: ifstream, ofstream. Đệ quy sâu có thể stack overflow — cân nhắc lặp.\n\nLiên hệ Đệ quy & Đọc ghi File fstream với Đệ quy & Đọc ghi File fstream: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập có lời giải:\nBài 1 cơ bản Đệ quy & Đọc ghi File fstream.\nBài 2 đổi số.\nBài 3 tổng hợp Đệ quy & Đọc ghi File fstream.\n\nSau mỗi bài, tự đặt câu hỏi «nếu đổi số liệu thì kết quả thay đổi thế nào?» để củng cố hiểu bài, không chỉ nhớ đáp án.\n\nVí dụ bổ sung Đệ quy & Đọc ghi File fstream: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Đệ quy & Đọc ghi File fstream:\nLuyện 5 bài Đệ quy & Đọc ghi File fstream.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_programming",
+    "course_title": "Lập trình cơ bản (C++)",
+    "chapter_order": 5,
+    "chapter_title": "Bộ đề thi thực hành chấm tự động Wecode HCMUS",
+    "lesson_order": 1,
+    "lesson_id": "chapter-5-lesson-1",
+    "lesson_title": "Bài 1: Tài liệu ôn tập & đề thi",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Ôn thi Lập trình cơ bản (C++) — Bộ đề thi thực hành chấm tự động Wecode HCMUS (Bộ đề thi thực hành chấm tự động Wecode HCMUS). Đề thi đại học kỹ thuật thường gồm trắc nghiệm lý thuyết và bài tập tính toán/viết code. Thời gian 60–120 phút tùy môn. Sinh viên cần nắm công thức cốt lõi, luyện đề cũ và phân bổ thời gian hợp lý: làm câu quen trước, ghi công thức lên nháp, kiểm tra đơn vị trước khi chọn đáp án."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Cấu trúc đề và trọng tâm Bộ đề thi thực hành chấm tự động Wecode HCMUS:\nĐề Lập trình cơ bản (C++): lý thuyết + tính toán Bộ đề thi thực hành chấm tự động Wecode HCMUS.\nThời gian 60–120 phút.\nTrọng tâm Bộ đề thi thực hành chấm tự động Wecode HCMUS.\n\nChiến lược: (1) quét nhanh toàn đề, đánh dấu câu dễ; (2) làm phần tính trước nếu tự tin; (3) dành 10 phút cuối kiểm tra đơn vị và câu chưa làm.\n\nĐộ phức tạp thời gian và không gian — phân tích trước khi code. Two pointers trên mảng sorted. Prefix sum trả lời truy vấn đoạn O(1) sau O(n) tiền xử lý. fstream C++: ifstream, ofstream. Đệ quy sâu có thể stack overflow — cân nhắc lặp.\n\nLiên hệ Bộ đề thi thực hành chấm tự động Wecode HCMUS với Bộ đề thi thực hành chấm tự động Wecode HCMUS: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Câu hỏi mẫu Bộ đề thi thực hành chấm tự động Wecode HCMUS:\nCâu lý thuyết Bộ đề thi thực hành chấm tự động Wecode HCMUS.\nCâu tính thay số.\nCâu tổng hợp Bộ đề thi thực hành chấm tự động Wecode HCMUS.\n\nVới mỗi câu mẫu, tự biến thể: đổi số liệu, thêm điều kiện, hoặc hỏi ngược (cho kết quả tìm đầu vào).\n\nVí dụ bổ sung Bộ đề thi thực hành chấm tự động Wecode HCMUS: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Bộ đề thi thực hành chấm tự động Wecode HCMUS:\nÔn đề cũ Bộ đề thi thực hành chấm tự động Wecode HCMUS.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  }
+]

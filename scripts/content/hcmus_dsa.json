@@ -1,0 +1,245 @@
+[
+  {
+    "course_id": "hcmus_dsa",
+    "course_title": "Cấu trúc dữ liệu & Giải thuật",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Phân tích độ phức tạp Big-O & Sorting (Quick, Merge, Heap)",
+    "lesson_order": 1,
+    "lesson_id": "chapter-1-lesson-1",
+    "lesson_title": "Phân tích Big-O: QuickSort, MergeSort, HeapSort",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Phân tích Big-O: QuickSort, MergeSort, HeapSort là nội dung cốt lõi trong chương «Phân tích độ phức tạp Big-O & Sorting (Quick, Merge, Heap)» (Cấu trúc dữ liệu & Giải thuật). Bài học giải thích khái niệm, ký hiệu và vai trò của Phân tích Big-O: QuickSort, MergeSort, HeapSort trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Phân tích Big-O: QuickSort, MergeSort, HeapSort thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Phân tích Big-O: QuickSort, MergeSort, HeapSort:\nO(n log n) merge/quick avg.\nHeapSort in-place.\nAVL O(log n).\nÁp dụng Phân tích Big-O: QuickSort, MergeSort, HeapSort trong Phân tích độ phức tạp Big-O & Sorting (Quick, Merge, Heap).\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Phân tích độ phức tạp Big-O & Sorting (Quick, Merge, Heap), cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán.\n\nĐộ phức tạp amortized: ví dụ push/pop stack O(1) trung bình. In-order duyệt BST cho dãy tăng dần. BFS dùng queue, độ phức tạp O(V+E). DFS dùng stack hoặc đệ quy. Hash load factor α = n/m; rehash khi α > 0,7 thường.\n\nLiên hệ Phân tích Big-O: QuickSort, MergeSort, HeapSort với Phân tích độ phức tạp Big-O & Sorting (Quick, Merge, Heap): áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Phân tích Big-O: QuickSort, MergeSort, HeapSort:\nMerge n=8: 3 tầng×O(n).\nBài tập mở rộng Phân tích Big-O: QuickSort, MergeSort, HeapSort.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Phân tích Big-O: QuickSort, MergeSort, HeapSort:\nChọn sort theo ổn định/bộ nhớ.\nLiên kết Phân tích độ phức tạp Big-O & Sorting (Quick, Merge, Heap).\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_dsa",
+    "course_title": "Cấu trúc dữ liệu & Giải thuật",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Phân tích độ phức tạp Big-O & Sorting (Quick, Merge, Heap)",
+    "lesson_order": 2,
+    "lesson_id": "chapter-1-lesson-2",
+    "lesson_title": "Binary Search Tree (BST) & Cây cân bằng AVL Tree",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Binary Search Tree (BST) & Cây cân bằng AVL Tree là nội dung cốt lõi trong chương «Phân tích độ phức tạp Big-O & Sorting (Quick, Merge, Heap)» (Cấu trúc dữ liệu & Giải thuật). Bài học giải thích khái niệm, ký hiệu và vai trò của Binary Search Tree (BST) & Cây cân bằng AVL Tree trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Binary Search Tree (BST) & Cây cân bằng AVL Tree thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Binary Search Tree (BST) & Cây cân bằng AVL Tree:\nO(n log n) merge/quick avg.\nHeapSort in-place.\nAVL O(log n).\nÁp dụng Binary Search Tree (BST) & Cây cân bằng AVL Tree trong Phân tích độ phức tạp Big-O & Sorting (Quick, Merge, Heap).\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Phân tích độ phức tạp Big-O & Sorting (Quick, Merge, Heap), cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Binary Search Tree (BST) & Cây cân bằng AVL Tree:\nMerge n=8: 3 tầng×O(n).\nBài tập mở rộng Binary Search Tree (BST) & Cây cân bằng AVL Tree.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Binary Search Tree (BST) & Cây cân bằng AVL Tree:\nChọn sort theo ổn định/bộ nhớ.\nLiên kết Phân tích độ phức tạp Big-O & Sorting (Quick, Merge, Heap).\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_dsa",
+    "course_title": "Cấu trúc dữ liệu & Giải thuật",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Danh sách liên kết, Stack & Queue",
+    "lesson_order": 1,
+    "lesson_id": "chapter-2-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Danh sách liên kết, Stack & Queue là nội dung cốt lõi trong chương «Danh sách liên kết, Stack & Queue» (Cấu trúc dữ liệu & Giải thuật). Bài học giải thích khái niệm, ký hiệu và vai trò của Danh sách liên kết, Stack & Queue trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Danh sách liên kết, Stack & Queue thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Danh sách liên kết, Stack & Queue:\nCông thức và định nghĩa Danh sách liên kết, Stack & Queue.\nÁp dụng Danh sách liên kết, Stack & Queue trong Danh sách liên kết, Stack & Queue.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Danh sách liên kết, Stack & Queue, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán.\n\nĐộ phức tạp amortized: ví dụ push/pop stack O(1) trung bình. In-order duyệt BST cho dãy tăng dần. BFS dùng queue, độ phức tạp O(V+E). DFS dùng stack hoặc đệ quy. Hash load factor α = n/m; rehash khi α > 0,7 thường.\n\nLiên hệ Danh sách liên kết, Stack & Queue với Danh sách liên kết, Stack & Queue: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Danh sách liên kết, Stack & Queue:\nVí dụ Danh sách liên kết, Stack & Queue với số liệu.\nBài tập mở rộng Danh sách liên kết, Stack & Queue.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Danh sách liên kết, Stack & Queue:\nThuộc Danh sách liên kết, Stack & Queue.\nLiên kết Danh sách liên kết, Stack & Queue.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_dsa",
+    "course_title": "Cấu trúc dữ liệu & Giải thuật",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Danh sách liên kết, Stack & Queue",
+    "lesson_order": 2,
+    "lesson_id": "chapter-2-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng Danh sách liên kết, Stack & Queue (Danh sách liên kết, Stack & Queue). Mục tiêu: luyện kỹ năng giải bài từ cơ bản đến nâng cao với lời giải đầy đủ. Mỗi bài gồm: phát biểu đề, dữ liệu, lời giải từng bước và đáp số. Đây là dạng bài trọng tâm trong đề kiểm tra và thi cuối kỳ — cần vừa đúng kết quả vừa trình bày logic rõ ràng. Môn Cấu trúc dữ liệu & Giải thuật đánh giá khả năng vận dụng Danh sách liên kết, Stack & Queue qua bài tập và đề thi — cần luyện cả lý thuyết lẫn tính toán."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Phương pháp giải bài Danh sách liên kết, Stack & Queue:\nĐọc đề Danh sách liên kết, Stack & Queue.\nChọn công thức.\nGiải từng bước.\nKiểm tra biên.\n\nLưu ý: đọc kỹ đơn vị; kiểm tra biên (n=0, mảng rỗng, nồng độ cực nhỏ); với code — test case ẩn thường ở biên. Không bỏ qua bước trung gian vì đề chấm theo lời giải.\n\nĐộ phức tạp amortized: ví dụ push/pop stack O(1) trung bình. In-order duyệt BST cho dãy tăng dần. BFS dùng queue, độ phức tạp O(V+E). DFS dùng stack hoặc đệ quy. Hash load factor α = n/m; rehash khi α > 0,7 thường.\n\nLiên hệ Danh sách liên kết, Stack & Queue với Danh sách liên kết, Stack & Queue: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập có lời giải:\nBài 1 cơ bản Danh sách liên kết, Stack & Queue.\nBài 2 đổi số.\nBài 3 tổng hợp Danh sách liên kết, Stack & Queue.\n\nSau mỗi bài, tự đặt câu hỏi «nếu đổi số liệu thì kết quả thay đổi thế nào?» để củng cố hiểu bài, không chỉ nhớ đáp án.\n\nVí dụ bổ sung Danh sách liên kết, Stack & Queue: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Danh sách liên kết, Stack & Queue:\nLuyện 5 bài Danh sách liên kết, Stack & Queue.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_dsa",
+    "course_title": "Cấu trúc dữ liệu & Giải thuật",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree",
+    "lesson_order": 1,
+    "lesson_id": "chapter-3-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree là nội dung cốt lõi trong chương «Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree» (Cấu trúc dữ liệu & Giải thuật). Bài học giải thích khái niệm, ký hiệu và vai trò của Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree:\nBST: trái<gốc<phải.\nAVL balance, xoay LL,RR,LR,RL.\nÁp dụng Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree trong Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree:\nChèn 1,2,3,4 thuần → h=n.\nBài tập mở rộng Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree:\nAVL đảm bảo O(log n).\nLiên kết Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_dsa",
+    "course_title": "Cấu trúc dữ liệu & Giải thuật",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree",
+    "lesson_order": 2,
+    "lesson_id": "chapter-3-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree (Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree). Mục tiêu: luyện kỹ năng giải bài từ cơ bản đến nâng cao với lời giải đầy đủ. Mỗi bài gồm: phát biểu đề, dữ liệu, lời giải từng bước và đáp số. Đây là dạng bài trọng tâm trong đề kiểm tra và thi cuối kỳ — cần vừa đúng kết quả vừa trình bày logic rõ ràng."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Phương pháp giải bài Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree:\nĐọc đề Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree.\nChọn công thức.\nGiải từng bước.\nKiểm tra biên.\n\nLưu ý: đọc kỹ đơn vị; kiểm tra biên (n=0, mảng rỗng, nồng độ cực nhỏ); với code — test case ẩn thường ở biên. Không bỏ qua bước trung gian vì đề chấm theo lời giải.\n\nĐộ phức tạp amortized: ví dụ push/pop stack O(1) trung bình. In-order duyệt BST cho dãy tăng dần. BFS dùng queue, độ phức tạp O(V+E). DFS dùng stack hoặc đệ quy. Hash load factor α = n/m; rehash khi α > 0,7 thường.\n\nLiên hệ Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree với Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập có lời giải:\nBài 1 cơ bản Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree.\nBài 2 đổi số.\nBài 3 tổng hợp Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree.\n\nSau mỗi bài, tự đặt câu hỏi «nếu đổi số liệu thì kết quả thay đổi thế nào?» để củng cố hiểu bài, không chỉ nhớ đáp án.\n\nVí dụ bổ sung Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree:\nLuyện 5 bài Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_dsa",
+    "course_title": "Cấu trúc dữ liệu & Giải thuật",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Bảng băm (Hash Table) & Xử lý đụng độ",
+    "lesson_order": 1,
+    "lesson_id": "chapter-4-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bảng băm (Hash Table) & Xử lý đụng độ là nội dung cốt lõi trong chương «Bảng băm (Hash Table) & Xử lý đụng độ» (Cấu trúc dữ liệu & Giải thuật). Bài học giải thích khái niệm, ký hiệu và vai trò của Bảng băm (Hash Table) & Xử lý đụng độ trong chương trình đại học kỹ thuật. Kiến thức này liên kết trực tiếp với bài tập tính toán và câu hỏi đề thi — sinh viên cần nắm cả định nghĩa lẫn cách vận dụng số. Ở các môn STEM, Bảng băm (Hash Table) & Xử lý đụng độ thường xuất hiện dưới dạng: (1) câu lý thuyết trắc nghiệm; (2) bài tập thay số vào công thức; (3) bài tổng hợp kết hợp nhiều ý trong cùng chương."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết Bảng băm (Hash Table) & Xử lý đụng độ:\nCông thức và định nghĩa Bảng băm (Hash Table) & Xử lý đụng độ.\nÁp dụng Bảng băm (Hash Table) & Xử lý đụng độ trong Bảng băm (Hash Table) & Xử lý đụng độ.\n\nKhi áp dụng, luôn kiểm tra điều kiện giả thiết của công thức (đơn vị SI, miền xác định, giới hạn mô hình). Trong đề thi Bảng băm (Hash Table) & Xử lý đụng độ, cần trình bày rõ: giả thiết → công thức → thay số → kết luận. So sánh với trường hợp đặc biệt (bằng 0, tiến tới vô cùng, đối xứng) giúp phát hiện sai sót tính toán."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ và bài tập Bảng băm (Hash Table) & Xử lý đụng độ:\nVí dụ Bảng băm (Hash Table) & Xử lý đụng độ với số liệu.\nBài tập mở rộng Bảng băm (Hash Table) & Xử lý đụng độ.\n\nKhi giải, trình bày theo bước: tóm tắt đề, chọn công thức, thay số, tính kết quả, nhận xét. Với bài nhiều ý, chia nhỏ và đánh dấu kết quả trung gian. Tự đặt thêm một biến thể đề (đổi số liệu) để kiểm tra mức độ hiểu."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Bảng băm (Hash Table) & Xử lý đụng độ:\nThuộc Bảng băm (Hash Table) & Xử lý đụng độ.\nLiên kết Bảng băm (Hash Table) & Xử lý đụng độ.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_dsa",
+    "course_title": "Cấu trúc dữ liệu & Giải thuật",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Bảng băm (Hash Table) & Xử lý đụng độ",
+    "lesson_order": 2,
+    "lesson_id": "chapter-4-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng Bảng băm (Hash Table) & Xử lý đụng độ (Bảng băm (Hash Table) & Xử lý đụng độ). Mục tiêu: luyện kỹ năng giải bài từ cơ bản đến nâng cao với lời giải đầy đủ. Mỗi bài gồm: phát biểu đề, dữ liệu, lời giải từng bước và đáp số. Đây là dạng bài trọng tâm trong đề kiểm tra và thi cuối kỳ — cần vừa đúng kết quả vừa trình bày logic rõ ràng."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Phương pháp giải bài Bảng băm (Hash Table) & Xử lý đụng độ:\nĐọc đề Bảng băm (Hash Table) & Xử lý đụng độ.\nChọn công thức.\nGiải từng bước.\nKiểm tra biên.\n\nLưu ý: đọc kỹ đơn vị; kiểm tra biên (n=0, mảng rỗng, nồng độ cực nhỏ); với code — test case ẩn thường ở biên. Không bỏ qua bước trung gian vì đề chấm theo lời giải.\n\nĐộ phức tạp amortized: ví dụ push/pop stack O(1) trung bình. In-order duyệt BST cho dãy tăng dần. BFS dùng queue, độ phức tạp O(V+E). DFS dùng stack hoặc đệ quy. Hash load factor α = n/m; rehash khi α > 0,7 thường.\n\nLiên hệ Bảng băm (Hash Table) & Xử lý đụng độ với Bảng băm (Hash Table) & Xử lý đụng độ: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập có lời giải:\nBài 1 cơ bản Bảng băm (Hash Table) & Xử lý đụng độ.\nBài 2 đổi số.\nBài 3 tổng hợp Bảng băm (Hash Table) & Xử lý đụng độ.\n\nSau mỗi bài, tự đặt câu hỏi «nếu đổi số liệu thì kết quả thay đổi thế nào?» để củng cố hiểu bài, không chỉ nhớ đáp án.\n\nVí dụ bổ sung Bảng băm (Hash Table) & Xử lý đụng độ: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Bảng băm (Hash Table) & Xử lý đụng độ:\nLuyện 5 bài Bảng băm (Hash Table) & Xử lý đụng độ.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_dsa",
+    "course_title": "Cấu trúc dữ liệu & Giải thuật",
+    "chapter_order": 5,
+    "chapter_title": "Đề thi thực hành & Lý thuyết DSA HCMUS",
+    "lesson_order": 1,
+    "lesson_id": "chapter-5-lesson-1",
+    "lesson_title": "Bài 1: Tài liệu ôn tập & đề thi",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Ôn thi Cấu trúc dữ liệu & Giải thuật — Đề thi thực hành & Lý thuyết DSA HCMUS (Đề thi thực hành & Lý thuyết DSA HCMUS). Đề thi đại học kỹ thuật thường gồm trắc nghiệm lý thuyết và bài tập tính toán/viết code. Thời gian 60–120 phút tùy môn. Sinh viên cần nắm công thức cốt lõi, luyện đề cũ và phân bổ thời gian hợp lý: làm câu quen trước, ghi công thức lên nháp, kiểm tra đơn vị trước khi chọn đáp án."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Cấu trúc đề và trọng tâm Đề thi thực hành & Lý thuyết DSA HCMUS:\nĐề Cấu trúc dữ liệu & Giải thuật: lý thuyết + tính toán Đề thi thực hành & Lý thuyết DSA HCMUS.\nThời gian 60–120 phút.\nTrọng tâm Đề thi thực hành & Lý thuyết DSA HCMUS.\n\nChiến lược: (1) quét nhanh toàn đề, đánh dấu câu dễ; (2) làm phần tính trước nếu tự tin; (3) dành 10 phút cuối kiểm tra đơn vị và câu chưa làm.\n\nĐộ phức tạp amortized: ví dụ push/pop stack O(1) trung bình. In-order duyệt BST cho dãy tăng dần. BFS dùng queue, độ phức tạp O(V+E). DFS dùng stack hoặc đệ quy. Hash load factor α = n/m; rehash khi α > 0,7 thường.\n\nLiên hệ Đề thi thực hành & Lý thuyết DSA HCMUS với Đề thi thực hành & Lý thuyết DSA HCMUS: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Câu hỏi mẫu Đề thi thực hành & Lý thuyết DSA HCMUS:\nCâu lý thuyết Đề thi thực hành & Lý thuyết DSA HCMUS.\nCâu tính thay số.\nCâu tổng hợp Đề thi thực hành & Lý thuyết DSA HCMUS.\n\nVới mỗi câu mẫu, tự biến thể: đổi số liệu, thêm điều kiện, hoặc hỏi ngược (cho kết quả tìm đầu vào).\n\nVí dụ bổ sung Đề thi thực hành & Lý thuyết DSA HCMUS: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tóm tắt Đề thi thực hành & Lý thuyết DSA HCMUS:\nÔn đề cũ Đề thi thực hành & Lý thuyết DSA HCMUS.\n\nTrước khi sang chương mới, tự giải lại các ví dụ không nhìn đáp án và giải thích bằng lời các công thức chính. Ghi chú lỗi thường gặp ở chủ đề này để tránh lặp lại khi làm đề."
+      }
+    ]
+  }
+]

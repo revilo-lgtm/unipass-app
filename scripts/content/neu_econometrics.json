@@ -1,0 +1,245 @@
+[
+  {
+    "course_id": "neu_econometrics",
+    "course_title": "Toán kinh tế",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Ma trận & Mô hình Input-Output Leontief",
+    "lesson_order": 1,
+    "lesson_id": "chapter-1-lesson-1",
+    "lesson_title": "Ma trận nghịch đảo & Mô hình cân đối liên ngành",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Ma trận nghịch đảo & Mô hình cân đối liên ngành là nội dung trọng tâm trong Ma trận & Mô hình Input-Output Leontief — môn Toán kinh tế. Ma trận và Input-Output Leontief. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn Vinamilk (Toán kinh tế): doanh thu 420 tỷ VND, biên gộp 22%, chi phí cố định 5 tỷ — áp dụng Ma trận nghịch đảo & Mô hình cân đối liên ngành phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Ma trận nghịch đảo & Mô hình cân đối liên ngành:\n\n1. Ma trận nghịch đảo\n2. I-O model: X = (I-A)^-1 × D\n3. Cobb-Douglas Q=AK^αL^β\n4. Lagrange λ cho cực trị\n\nCông thức:\nCobb-Douglas: MPL = αQ/L. Lagrange: ∂f/∂x = λ∂g/∂x.\n\nThuật ngữ: . Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn Vinamilk (Toán kinh tế): doanh thu 420 tỷ VND, biên gộp 22%, chi phí cố định 5 tỷ — áp dụng Ma trận nghịch đảo & Mô hình cân đối liên ngành phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Ma trận nghịch đảo & Mô hình cân đối liên ngành, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Ma trận nghịch đảo & Mô hình cân đối liên ngành:\n2 ngành: A matrix 2×2, demand vector → output.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=2200 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 18%. Liên hệ thực tiễn Vinamilk (Toán kinh tế): doanh thu 420 tỷ VND, biên gộp 22%, chi phí cố định 5 tỷ — áp dụng Ma trận nghịch đảo & Mô hình cân đối liên ngành phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Ma trận nghịch đảo & Mô hình cân đối liên ngành, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Ma trận và tối ưu Lagrange. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn Vinamilk (Toán kinh tế): doanh thu 420 tỷ VND, biên gộp 22%, chi phí cố định 5 tỷ — áp dụng Ma trận nghịch đảo & Mô hình cân đối liên ngành phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_econometrics",
+    "course_title": "Toán kinh tế",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Ma trận & Mô hình Input-Output Leontief",
+    "lesson_order": 2,
+    "lesson_id": "chapter-1-lesson-2",
+    "lesson_title": "Hàm Cobb-Douglas và Cực trị có điều kiện Lagrange",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Hàm Cobb-Douglas và Cực trị có điều kiện Lagrange là nội dung trọng tâm trong Ma trận & Mô hình Input-Output Leontief — môn Toán kinh tế. Ma trận và Input-Output Leontief. Sinh viên cần nắm khái niệm, thuật ngữ song ngữ Anh-Việt và khả năng vận dụng vào bài tập, case study và đề thi cuối kỳ. Kiến thức liên quan trực tiếp thực tiễn doanh nghiệp, chính sách và thị trường Việt Nam. Liên hệ thực tiễn Masan (Toán kinh tế): doanh thu 410 tỷ VND, biên gộp 21%, chi phí cố định 12 tỷ — áp dụng Hàm Cobb-Douglas và Cực trị có điều kiện Lagrange phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Lý thuyết cốt lõi — Hàm Cobb-Douglas và Cực trị có điều kiện Lagrange:\n\n1. Ma trận nghịch đảo\n2. I-O model: X = (I-A)^-1 × D\n3. Cobb-Douglas Q=AK^αL^β\n4. Lagrange λ cho cực trị\n\nCông thức:\nCobb-Douglas: MPL = αQ/L. Lagrange: ∂f/∂x = λ∂g/∂x.\n\nThuật ngữ: . Phân biệt các khái niệm gần nghĩa — thường có trong đề trắc nghiệm. Điều kiện áp dụng mô hình và giới hạn trong bối cảnh Việt Nam. Lỗi phổ biến: mô tả mơ hồ, nhầm đơn vị, bỏ qua dung sai hợp đồng hoặc giả định mô hình. Liên hệ thực tiễn Masan (Toán kinh tế): doanh thu 410 tỷ VND, biên gộp 21%, chi phí cố định 12 tỷ — áp dụng Hàm Cobb-Douglas và Cực trị có điều kiện Lagrange phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Hàm Cobb-Douglas và Cực trị có điều kiện Lagrange, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa — Hàm Cobb-Douglas và Cực trị có điều kiện Lagrange:\n2 ngành: A matrix 2×2, demand vector → output.\n\nPhân tích chi tiết: (1) Tóm tắt dữ kiện và mục tiêu phân tích. (2) Chọn mô hình/công thức phù hợp — ghi từng bước. (3) Tính toán với Q=2100 đơn vị; kiểm tra đơn vị VND/USD. (4) Kết luận, khuyến nghị và rủi ro nếu biến động 15%. Liên hệ thực tiễn Masan (Toán kinh tế): doanh thu 410 tỷ VND, biên gộp 21%, chi phí cố định 12 tỷ — áp dụng Hàm Cobb-Douglas và Cực trị có điều kiện Lagrange phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Hàm Cobb-Douglas và Cực trị có điều kiện Lagrange, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Ma trận và tối ưu Lagrange. Ôn thuật ngữ trước kỳ thi. Luyện bài tập cuối chương và đối chiếu đáp án mẫu. Liên hệ thực tiễn Masan (Toán kinh tế): doanh thu 410 tỷ VND, biên gộp 21%, chi phí cố định 12 tỷ — áp dụng Hàm Cobb-Douglas và Cực trị có điều kiện Lagrange phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_econometrics",
+    "course_title": "Toán kinh tế",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange",
+    "lesson_order": 1,
+    "lesson_id": "chapter-2-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài lý thuyết chương \"Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange\" — môn Toán kinh tế. Đạo hàm riêng và Cobb-Douglas. Củng cố khái niệm, mô hình, công thức và thuật ngữ then chốt — nền tảng cho bài tập vận dụng và thi cuối kỳ. Liên hệ thực tiễn Viettel (Toán kinh tế): doanh thu 470 tỷ VND, biên gộp 27%, chi phí cố định 6 tỷ — áp dụng Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Khung kiến thức Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange:\n\n1. ∂f/∂x, ∂f/∂y\n2. Returns to scale α+β\n3. MRTS = MPL/MPK\n\nThuật ngữ chuyên ngành: .\nĐiều kiện áp dụng: xác định giả định mô hình trước khi tính. Lỗi thường gặp: nhầm đơn vị (VND/USD), bỏ qua ràng buộc, kết luận không có số liệu hỗ trợ. Liên hệ thực tiễn Viettel (Toán kinh tế): doanh thu 470 tỷ VND, biên gộp 27%, chi phí cố định 6 tỷ — áp dụng Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ. Thuật ngữ Anh-Việt thường gặp trong đề Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange: tra cứu song ngữ trước khi thi. Tự luyện thêm với Q=2700 đơn vị sản phẩm để củng cố Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange:\n\n\nPhân tích bổ sung: doanh thu 470 tỷ VND/năm, biên gộp 27%, chi phí cố định 6 tỷ. Case Viettel — trình bày 4 bước: (1) Dữ kiện (2) Chọn mô hình (3) Tính toán Q=2700 (4) Kết luận và rủi ro nếu biến động 15%. Liên hệ thực tiễn Viettel (Toán kinh tế): doanh thu 470 tỷ VND, biên gộp 27%, chi phí cố định 6 tỷ — áp dụng Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Đạo hàm riêng cho tối ưu. Chuyển sang bài tập vận dụng để tự kiểm tra. Ôn thuật ngữ Anh-Việt trước thi. Liên hệ thực tiễn Viettel (Toán kinh tế): doanh thu 470 tỷ VND, biên gộp 27%, chi phí cố định 6 tỷ — áp dụng Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_econometrics",
+    "course_title": "Toán kinh tế",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange",
+    "lesson_order": 2,
+    "lesson_id": "chapter-2-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng chương \"Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange\" — môn Toán kinh tế. Sau khi nắm lý thuyết, tự giải từng bài trước khi đối chiếu lời giải mẫu. Trình bày có bước: ghi công thức, thay số, đơn vị, kết luận. Không nhảy bước — giảng viên chấm theo quy trình giải. Liên hệ thực tiễn Vinamilk (Toán kinh tế): doanh thu 460 tỷ VND, biên gộp 26%, chi phí cố định 5 tỷ — áp dụng Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Hướng dẫn làm bài Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange:\n• Câu lý thuyết: định nghĩa chính xác + vẽ sơ đồ (nếu có) + ví dụ doanh nghiệp VN.\n• Câu tính toán: liệt kê dữ kiện → chọn công thức → thay số → đơn vị → kết luận kinh tế/quản trị.\n• Case study: tóm tắt tình huống → phân tích theo mô hình chương → khuyến nghị có căn cứ số liệu.\n\n\n\nKiến thức cốt lõi:\n1. ∂f/∂x, ∂f/∂y\n2. Returns to scale α+β\n3. MRTS = MPL/MPK Liên hệ thực tiễn Vinamilk (Toán kinh tế): doanh thu 460 tỷ VND, biên gộp 26%, chi phí cố định 5 tỷ — áp dụng Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập mẫu chương Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange:\nQ=K^0.4 L^0.6, I=100, r=w=1. Tối ưu?\n\nDữ kiện bổ sung: P=2600 VND/sp, Q=4600 sp, FC=500 triệu VND, VC=1560 VND/sp.\n(a) Tính Contribution Margin/sp và tổng lợi nhuận.\n(b) Tính điểm hòa vốn (BEP) theo số lượng.\n(c) Margin of Safety khi Q thực tế = 4600.\n(d) Khuyến nghị cho Vinamilk dựa trên kết quả.\nĐáp án gợi ý: CM = P − VC; BEP = FC ÷ CM; MOS = (Q − BEP) ÷ Q. Liên hệ thực tiễn Vinamilk (Toán kinh tế): doanh thu 460 tỷ VND, biên gộp 26%, chi phí cố định 5 tỷ — áp dụng Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Luyện đủ dạng số, lý thuyết và case cho Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange. Kiểm tra đơn vị và giả định mô hình. Tự giải 2–3 biến thể số liệu trước khi thi. Liên hệ thực tiễn Vinamilk (Toán kinh tế): doanh thu 460 tỷ VND, biên gộp 26%, chi phí cố định 5 tỷ — áp dụng Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_econometrics",
+    "course_title": "Toán kinh tế",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Bài toán tối ưu hóa lợi nhuận & Chi phí",
+    "lesson_order": 1,
+    "lesson_id": "chapter-3-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài lý thuyết chương \"Bài toán tối ưu hóa lợi nhuận & Chi phí\" — môn Toán kinh tế. Tối ưu lợi nhuận và chi phí. Củng cố khái niệm, mô hình, công thức và thuật ngữ then chốt — nền tảng cho bài tập vận dụng và thi cuối kỳ. Liên hệ thực tiễn FPT (Toán kinh tế): doanh thu 520 tỷ VND, biên gộp 32%, chi phí cố định 7 tỷ — áp dụng Bài toán tối ưu hóa lợi nhuận & Chi phí phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Bài toán tối ưu hóa lợi nhuận & Chi phí, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Khung kiến thức Bài toán tối ưu hóa lợi nhuận & Chi phí:\n\n1. max π = TR-TC\n2. min TC s.t. Q=Q0\n3. Envelope theorem\n\nThuật ngữ chuyên ngành: .\nĐiều kiện áp dụng: xác định giả định mô hình trước khi tính. Lỗi thường gặp: nhầm đơn vị (VND/USD), bỏ qua ràng buộc, kết luận không có số liệu hỗ trợ. Liên hệ thực tiễn FPT (Toán kinh tế): doanh thu 520 tỷ VND, biên gộp 32%, chi phí cố định 7 tỷ — áp dụng Bài toán tối ưu hóa lợi nhuận & Chi phí phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Bài toán tối ưu hóa lợi nhuận & Chi phí, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ. Thuật ngữ Anh-Việt thường gặp trong đề Bài toán tối ưu hóa lợi nhuận & Chi phí: tra cứu song ngữ trước khi thi. Tự luyện thêm với Q=1200 đơn vị sản phẩm để củng cố Bài toán tối ưu hóa lợi nhuận & Chi phí."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa Bài toán tối ưu hóa lợi nhuận & Chi phí:\nmax 100Q-5Q^2-200. FOC: 100-10Q=0 → Q*=10.\n\nPhân tích bổ sung: doanh thu 520 tỷ VND/năm, biên gộp 32%, chi phí cố định 7 tỷ. Case FPT — trình bày 4 bước: (1) Dữ kiện (2) Chọn mô hình (3) Tính toán Q=1200 (4) Kết luận và rủi ro nếu biến động 12%. Liên hệ thực tiễn FPT (Toán kinh tế): doanh thu 520 tỷ VND, biên gộp 32%, chi phí cố định 7 tỷ — áp dụng Bài toán tối ưu hóa lợi nhuận & Chi phí phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Bài toán tối ưu hóa lợi nhuận & Chi phí, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "FOC = 0 cho cực trị. Chuyển sang bài tập vận dụng để tự kiểm tra. Ôn thuật ngữ Anh-Việt trước thi. Liên hệ thực tiễn FPT (Toán kinh tế): doanh thu 520 tỷ VND, biên gộp 32%, chi phí cố định 7 tỷ — áp dụng Bài toán tối ưu hóa lợi nhuận & Chi phí phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_econometrics",
+    "course_title": "Toán kinh tế",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Bài toán tối ưu hóa lợi nhuận & Chi phí",
+    "lesson_order": 2,
+    "lesson_id": "chapter-3-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng chương \"Bài toán tối ưu hóa lợi nhuận & Chi phí\" — môn Toán kinh tế. Sau khi nắm lý thuyết, tự giải từng bài trước khi đối chiếu lời giải mẫu. Trình bày có bước: ghi công thức, thay số, đơn vị, kết luận. Không nhảy bước — giảng viên chấm theo quy trình giải. Liên hệ thực tiễn Viettel (Toán kinh tế): doanh thu 510 tỷ VND, biên gộp 31%, chi phí cố định 6 tỷ — áp dụng Bài toán tối ưu hóa lợi nhuận & Chi phí phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Hướng dẫn làm bài Bài toán tối ưu hóa lợi nhuận & Chi phí:\n• Câu lý thuyết: định nghĩa chính xác + vẽ sơ đồ (nếu có) + ví dụ doanh nghiệp VN.\n• Câu tính toán: liệt kê dữ kiện → chọn công thức → thay số → đơn vị → kết luận kinh tế/quản trị.\n• Case study: tóm tắt tình huống → phân tích theo mô hình chương → khuyến nghị có căn cứ số liệu.\n\n\n\nKiến thức cốt lõi:\n1. max π = TR-TC\n2. min TC s.t. Q=Q0\n3. Envelope theorem Liên hệ thực tiễn Viettel (Toán kinh tế): doanh thu 510 tỷ VND, biên gộp 31%, chi phí cố định 6 tỷ — áp dụng Bài toán tối ưu hóa lợi nhuận & Chi phí phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Bài toán tối ưu hóa lợi nhuận & Chi phí, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập mẫu chương Bài toán tối ưu hóa lợi nhuận & Chi phí:\nmax 100Q-5Q^2-200. FOC: 100-10Q=0 → Q*=10.\n\nDữ kiện bổ sung: P=1100 VND/sp, Q=5100 sp, FC=600 triệu VND, VC=660 VND/sp.\n(a) Tính Contribution Margin/sp và tổng lợi nhuận.\n(b) Tính điểm hòa vốn (BEP) theo số lượng.\n(c) Margin of Safety khi Q thực tế = 5100.\n(d) Khuyến nghị cho Viettel dựa trên kết quả.\nĐáp án gợi ý: CM = P − VC; BEP = FC ÷ CM; MOS = (Q − BEP) ÷ Q. Liên hệ thực tiễn Viettel (Toán kinh tế): doanh thu 510 tỷ VND, biên gộp 31%, chi phí cố định 6 tỷ — áp dụng Bài toán tối ưu hóa lợi nhuận & Chi phí phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Bài toán tối ưu hóa lợi nhuận & Chi phí, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Luyện đủ dạng số, lý thuyết và case cho Bài toán tối ưu hóa lợi nhuận & Chi phí. Kiểm tra đơn vị và giả định mô hình. Tự giải 2–3 biến thể số liệu trước khi thi. Liên hệ thực tiễn Viettel (Toán kinh tế): doanh thu 510 tỷ VND, biên gộp 31%, chi phí cố định 6 tỷ — áp dụng Bài toán tối ưu hóa lợi nhuận & Chi phí phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_econometrics",
+    "course_title": "Toán kinh tế",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Quy hoạch tuyến tính (Phương pháp đơn nguyên)",
+    "lesson_order": 1,
+    "lesson_id": "chapter-4-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài lý thuyết chương \"Quy hoạch tuyến tính (Phương pháp đơn nguyên)\" — môn Toán kinh tế. Quy hoạch tuyến tính — đơn nguyên. Củng cố khái niệm, mô hình, công thức và thuật ngữ then chốt — nền tảng cho bài tập vận dụng và thi cuối kỳ. Liên hệ thực tiễn Minh Phú (Toán kinh tế): doanh thu 570 tỷ VND, biên gộp 22%, chi phí cố định 8 tỷ — áp dụng Quy hoạch tuyến tính (Phương pháp đơn nguyên) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Quy hoạch tuyến tính (Phương pháp đơn nguyên), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Khung kiến thức Quy hoạch tuyến tính (Phương pháp đơn nguyên):\n\n1. Feasible region\n2. Corner point theorem\n3. Slack variables\n4. Shadow price\n\nThuật ngữ chuyên ngành: .\nĐiều kiện áp dụng: xác định giả định mô hình trước khi tính. Lỗi thường gặp: nhầm đơn vị (VND/USD), bỏ qua ràng buộc, kết luận không có số liệu hỗ trợ. Liên hệ thực tiễn Minh Phú (Toán kinh tế): doanh thu 570 tỷ VND, biên gộp 22%, chi phí cố định 8 tỷ — áp dụng Quy hoạch tuyến tính (Phương pháp đơn nguyên) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Quy hoạch tuyến tính (Phương pháp đơn nguyên), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ. Thuật ngữ Anh-Việt thường gặp trong đề Quy hoạch tuyến tính (Phương pháp đơn nguyên): tra cứu song ngữ trước khi thi. Tự luyện thêm với Q=1700 đơn vị sản phẩm để củng cố Quy hoạch tuyến tính (Phương pháp đơn nguyên)."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ minh họa Quy hoạch tuyến tính (Phương pháp đơn nguyên):\n\n\nPhân tích bổ sung: doanh thu 570 tỷ VND/năm, biên gộp 22%, chi phí cố định 8 tỷ. Case Minh Phú — trình bày 4 bước: (1) Dữ kiện (2) Chọn mô hình (3) Tính toán Q=1700 (4) Kết luận và rủi ro nếu biến động 27%. Liên hệ thực tiễn Minh Phú (Toán kinh tế): doanh thu 570 tỷ VND, biên gộp 22%, chi phí cố định 8 tỷ — áp dụng Quy hoạch tuyến tính (Phương pháp đơn nguyên) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Quy hoạch tuyến tính (Phương pháp đơn nguyên), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "LP: tối ưu tại đỉnh. Chuyển sang bài tập vận dụng để tự kiểm tra. Ôn thuật ngữ Anh-Việt trước thi. Liên hệ thực tiễn Minh Phú (Toán kinh tế): doanh thu 570 tỷ VND, biên gộp 22%, chi phí cố định 8 tỷ — áp dụng Quy hoạch tuyến tính (Phương pháp đơn nguyên) phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_econometrics",
+    "course_title": "Toán kinh tế",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Quy hoạch tuyến tính (Phương pháp đơn nguyên)",
+    "lesson_order": 2,
+    "lesson_id": "chapter-4-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng chương \"Quy hoạch tuyến tính (Phương pháp đơn nguyên)\" — môn Toán kinh tế. Sau khi nắm lý thuyết, tự giải từng bài trước khi đối chiếu lời giải mẫu. Trình bày có bước: ghi công thức, thay số, đơn vị, kết luận. Không nhảy bước — giảng viên chấm theo quy trình giải. Liên hệ thực tiễn FPT (Toán kinh tế): doanh thu 560 tỷ VND, biên gộp 21%, chi phí cố định 7 tỷ — áp dụng Quy hoạch tuyến tính (Phương pháp đơn nguyên) phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Hướng dẫn làm bài Quy hoạch tuyến tính (Phương pháp đơn nguyên):\n• Câu lý thuyết: định nghĩa chính xác + vẽ sơ đồ (nếu có) + ví dụ doanh nghiệp VN.\n• Câu tính toán: liệt kê dữ kiện → chọn công thức → thay số → đơn vị → kết luận kinh tế/quản trị.\n• Case study: tóm tắt tình huống → phân tích theo mô hình chương → khuyến nghị có căn cứ số liệu.\n\n\n\nKiến thức cốt lõi:\n1. Feasible region\n2. Corner point theorem\n3. Slack variables\n4. Shadow price Liên hệ thực tiễn FPT (Toán kinh tế): doanh thu 560 tỷ VND, biên gộp 21%, chi phí cố định 7 tỷ — áp dụng Quy hoạch tuyến tính (Phương pháp đơn nguyên) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Quy hoạch tuyến tính (Phương pháp đơn nguyên), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập mẫu chương Quy hoạch tuyến tính (Phương pháp đơn nguyên):\nmax 3x+2y s.t. 2x+y≤100, x+y≤80.\n\nDữ kiện bổ sung: P=1600 VND/sp, Q=5600 sp, FC=700 triệu VND, VC=960 VND/sp.\n(a) Tính Contribution Margin/sp và tổng lợi nhuận.\n(b) Tính điểm hòa vốn (BEP) theo số lượng.\n(c) Margin of Safety khi Q thực tế = 5600.\n(d) Khuyến nghị cho FPT dựa trên kết quả.\nĐáp án gợi ý: CM = P − VC; BEP = FC ÷ CM; MOS = (Q − BEP) ÷ Q. Liên hệ thực tiễn FPT (Toán kinh tế): doanh thu 560 tỷ VND, biên gộp 21%, chi phí cố định 7 tỷ — áp dụng Quy hoạch tuyến tính (Phương pháp đơn nguyên) phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Quy hoạch tuyến tính (Phương pháp đơn nguyên), ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Luyện đủ dạng số, lý thuyết và case cho Quy hoạch tuyến tính (Phương pháp đơn nguyên). Kiểm tra đơn vị và giả định mô hình. Tự giải 2–3 biến thể số liệu trước khi thi. Liên hệ thực tiễn FPT (Toán kinh tế): doanh thu 560 tỷ VND, biên gộp 21%, chi phí cố định 7 tỷ — áp dụng Quy hoạch tuyến tính (Phương pháp đơn nguyên) phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  },
+  {
+    "course_id": "neu_econometrics",
+    "course_title": "Toán kinh tế",
+    "chapter_order": 5,
+    "chapter_title": "Đề thi kết thúc học phần Toán kinh tế NEU",
+    "lesson_order": 1,
+    "lesson_id": "chapter-5-lesson-1",
+    "lesson_title": "Bài 1: Tài liệu ôn tập & đề thi",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Tài liệu ôn thi môn Toán kinh tế — Đề thi kết thúc học phần Toán kinh tế NEU. Ôn Toán kinh tế NEU. Hệ thống kiến thức toàn khóa, cấu trúc đề thi và chiến lược làm bài hiệu quả. Sinh viên ôn theo trình tự: lý thuyết từng chương → ví dụ có số liệu → bài tập cuối chương → đề tổng hợp có giới hạn thời gian (90–120 phút). Chuẩn bị thuật ngữ song ngữ Anh-Việt và case doanh nghiệp Việt Nam. Liên hệ thực tiễn Trung Nguyên (Toán kinh tế): doanh thu 120 tỷ VND, biên gộp 27%, chi phí cố định 9 tỷ — áp dụng Đề thi kết thúc học phần Toán kinh tế NEU phân tích rủi ro và khuyến nghị."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Cấu trúc đề thi và phân bổ điểm:\nMa trận 25%, Lagrange 35%, LP 40%\n\nChiến lược làm bài chi tiết: (1) Đọc toàn đề 5 phút, đánh dấu câu quen và câu khó. (2) Làm phần trắc nghiệm/tính toán trước — ghi công thức, thay số, đơn vị. (3) Phần case/tự luận: trình bày theo giả thiết → phân tích từng bước → kết luận và kiến nghị. (4) Giữ 20–25% thời gian kiểm tra lại logic và số học. (5) Đối chiếu rubric chấm điểm khi tự luyện. Liên hệ thực tiễn Trung Nguyên (Toán kinh tế): doanh thu 120 tỷ VND, biên gộp 27%, chi phí cố định 9 tỷ — áp dụng Đề thi kết thúc học phần Toán kinh tế NEU phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đề thi kết thúc học phần Toán kinh tế NEU, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Đề mẫu ôn tập:\nCobb-Douglas + budget constraint.\n\nHướng dẫn luyện: giải đề các năm trước của Toán kinh tế; thảo luận nhóm case khó; tự chấm điểm theo thang 10. Case doanh nghiệp VN như Trung Nguyên thường xuất hiện — chuẩn bị số liệu và phân tích SWOT/PESTEL nếu là môn marketing/kinh doanh. Với môn có tính toán: kiểm tra lại BEP, NPV, EOQ, tỷ giá tùy chương trình. Liên hệ thực tiễn Trung Nguyên (Toán kinh tế): doanh thu 120 tỷ VND, biên gộp 27%, chi phí cố định 9 tỷ — áp dụng Đề thi kết thúc học phần Toán kinh tế NEU phân tích rủi ro và khuyến nghị. Khi làm bài thi: đọc kỹ đề, xác định dạng bài Đề thi kết thúc học phần Toán kinh tế NEU, ghi công thức trước khi thay số, kiểm tra đơn vị VND/USD/tấn/chiếc, trình bày giả thiết → phân tích → kết luận có căn cứ."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Ôn đạo hàm, Lagrange, LP. Luyện đề có thời gian. Nắm thuật ngữ Anh-Việt. Kiểm tra đơn vị và giả định trước khi nộp bài. Liên hệ thực tiễn Trung Nguyên (Toán kinh tế): doanh thu 120 tỷ VND, biên gộp 27%, chi phí cố định 9 tỷ — áp dụng Đề thi kết thúc học phần Toán kinh tế NEU phân tích rủi ro và khuyến nghị."
+      }
+    ]
+  }
+]

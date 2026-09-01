@@ -1,0 +1,245 @@
+[
+  {
+    "course_id": "bk_chemistry",
+    "course_title": "Hóa đại cương",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Cấu tạo nguyên tử, 4 số lượng tử & Thuyết MO",
+    "lesson_order": 1,
+    "lesson_id": "chapter-1-lesson-1",
+    "lesson_title": "Orbital nguyên tử, 4 số lượng tử và cấu hình electron",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Hóa đại cương Bách Khoa bắt đầu từ mô hình nguyên tử hiện đại: electron không quay quanh hạt nhân theo quỹ đạo cố định mà chiếm các orbital — vùng không gian xác suất tìm thấy electron. Bốn số lượng tử (n, l, m, s) mô tả trạng thái electron; cấu hình electron giải thích tính chất hóa học, số hóa trị và khả năng tạo liên kết. Thuyết orbital phân tử (MO) mở rộng sang phân tử, giải thích vì sao O₂ có tính từ dù có liên kết đôi. Đây là nền tảng cho nhiệt hóa, điện hóa và động học ở các chương sau."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Bốn số lượng tử:\n• n (số lượng tử chính): lớp electron, n = 1, 2, 3…; n càng lớn năng lượng càng cao.\n• l (số lượng tử phụ): hình dạng orbital, 0 ≤ l ≤ n−1 (s: l=0, p: l=1, d: l=2, f: l=3).\n• m (số lượng tử từ): hướng orbital, −l ≤ m ≤ l.\n• s (spin): ±½.\n\nSố orbital trên lớp n là n²; tối đa 2n² electron/lớp. Thứ tự điền electron (Klechkowski): 1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p. Quy tắc Hund: trên các orbital cùng năng lượng, electron phân bố song song spin trước khi ghép cặp.\n\nThuyết MO: AO kết hợp → MO liên kết (σ, π) và phản liên kết (σ*, π*). Số thứ tự liên kết = (e⁻ liên kết − e⁻ phản liên kết)/2. O₂: cấu hình MO có 2 e⁻ đơn ở π*2p → paramagnetic."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ 1 — Cấu hình Fe (Z=26):\nTheo Klechkowski: 1s²2s²2p⁶3s²3p⁶4s²3d⁶.\nIon Fe²⁺: mất electron 4s trước → Fe²⁺: 1s²2s²2p⁶3s²3p⁶3d⁶.\n\nVí dụ 2 — Lớp n=3:\nCó 3 subshell: 3s (2e), 3p (6e), 3d (10e) → tối đa 18 electron.\n\nVí dụ 3 — O₂ và MO:\n(σ1s)²(σ*1s)²(σ2s)²(σ*2s)²(σ2p)²(π2p)⁴(π*2p)²\ne⁻ liên kết = 8, e⁻ phản liên kết = 4 → số thứ tự liên kết = 2.\nCó 2 e⁻ đơn ở π* → từ tính (thí nghiệm hút nam châm).\n\nBài tập: Viết cấu hình Cr (Z=24). Đáp án: 1s²2s²2p⁶3s²3p⁶4s¹3d⁵ (ngoại lệ bán ổn định)."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Bốn số lượng tử xác định orbital và electron; Klechkowski + Hund cho cấu hình electron.\nThuyết MO giải thích liên kết đa, số thứ tự liên kết và tính từ/paramagnetic.\nNhớ ngoại lệ Cr (4s¹3d⁵), Cu (4s¹3d¹⁰) và quy tắc mất electron 4s trước 3d khi tạo ion kim loại."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_chemistry",
+    "course_title": "Hóa đại cương",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Cấu tạo nguyên tử, 4 số lượng tử & Thuyết MO",
+    "lesson_order": 2,
+    "lesson_id": "chapter-1-lesson-2",
+    "lesson_title": "Hiệu ứng nhiệt (Định luật Hess) & Năng lượng tự do Gibbs",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Nhiệt hóa học định lượng mức năng lượng thay đổi trong phản ứng. Định luật Hess cho phép tính ΔH° tổng từ tổng các bước trung gian — không phụ thuộc đường đi. Năng lượng tự do Gibbs G = H − TS kết hợp enthalpy và entropy, xác định tính tự phát: ΔG < 0 → phản ứng xảy ra tự phát ở điều kiện cho trước. Hai khái niệm này liên kết chặt với cân bằng hóa học, pin điện hóa và điện phân ở các bài sau."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Enthalpy phản ứng: ΔH°rxn = ΣnΔH°f(sản phẩm) − ΣmΔH°f(phản ứng).\nĐịnh luật Hess: ΔH°rxn = ΣΔH°(các bước) nếu phương trình tổng = tổng phương trình con (cùng trạng thái vật chất).\n\nNăng lượng tự do Gibbs: ΔG = ΔH − TΔS.\nỞ điều kiện chuẩn: ΔG° = ΔH° − TΔS°.\nΔG < 0: tự phát; ΔG = 0: cân bằng; ΔG > 0: không tự phát.\n\nLiên hệ cân bằng: ΔG° = −RT ln K.\nNhiệt độ làm thay đổi ΔG qua hạng TΔS — phản ứng tăng entropy (ΔS > 0) được ưu tiên hơn khi T cao.\n\nPhản ứng oxi hóa-khử: số oxi hóa thay đổi; cân bằng electron. Nồng độ mol/L (M) là đơn vị chuẩn trong tính pH và K. Nhiệt độ Kelvin = °C + 273,15 — bắt buộc trong công thức nhiệt động. Độ tan Ksp liên hệ trực tiếp với kết tủa trong dung dịch muối kém tan.\n\nLiên hệ Hiệu ứng nhiệt (Định luật Hess) & Năng lượng tự do Gibbs với Cấu tạo nguyên tử, 4 số lượng tử & Thuyết MO: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ 1 — Hess:\nCho: C(s) + O₂(g) → CO₂(g), ΔH₁ = −393,5 kJ/mol\nCO(g) + ½O₂(g) → CO₂(g), ΔH₂ = −283,0 kJ/mol\nTính ΔH cho C(s) + ½O₂(g) → CO(g).\nPhương trình 1 − phương trình 2: ΔH = −393,5 − (−283,0) = −110,5 kJ/mol.\n\nVí dụ 2 — Gibbs:\nΔH° = −100 kJ, ΔS° = −50 J/K, T = 298 K.\nΔG° = −100000 − 298×(−50) = −100000 + 14900 = −85,1 kJ < 0 → tự phát ở 25°C.\n\nVí dụ 3 — K từ ΔG°:\nΔG° = −RT ln K → K = exp(−ΔG°/RT).\nNếu ΔG° = −5,7 kJ, T = 298 K: K ≈ exp(5700/(8,314×298)) ≈ 9,8."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Hess: cộng/trừ phương trình nhiệt hóa để tính ΔH° không đo trực tiếp.\\\\\\\\\\\\\\\\nGibbs: ΔG° = ΔH° − TΔS°; ΔG° = −RT ln K — cầu nối nhiệt động và cân bằng.\\\\\\\\\\\\\\\\nPhản ứng thu nhiệt (ΔH < 0) thường tự phát lạnh; phản ứng tăng S cần T cao hơn để ΔG < 0."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_chemistry",
+    "course_title": "Hóa đại cương",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Nhiệt hóa học & Năng lượng tự do Gibbs",
+    "lesson_order": 1,
+    "lesson_id": "chapter-2-lesson-1",
+    "lesson_title": "Cân bằng Axit - Bazơ, pH dung dịch đệm",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Cân bằng axit-bazơ là trụ cột của hóa dung dịch. Độ axit pH = −log[H⁺] đo nồng độ ion hiđro; pOH = −log[OH⁻]; ở 25°C: pH + pOH = 14. Dung dịch đệm — hỗn hợp axit yếu và bazơ đồng hành (hoặc ngược lại) — duy trì pH gần không đổi khi thêm axit/bazơ nhỏ. Phương trình Henderson-Hasselbalch là công cụ tính pH đệm, ứng dụng trong sinh học, y học và phòng thí nghiệm."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Axit mạnh: HA → H⁺ + A⁻ hoàn toàn; pH = −log C (xấp xỉ, C ≥ 10⁻⁶ M).\nAxit yếu: HA ⇌ H⁺ + A⁻; Ka = [H⁺][A⁻]/[HA].\npH axit yếu: [H⁺] ≈ √(Ka·C).\n\nBazơ yếu: B + H₂O ⇌ BH⁺ + OH⁻; Kb.\npOH ≈ √(Kb·C); pH = 14 − pOH.\n\nMuối thủy phân: muối axit mạnh + bazơ yếu → pH > 7; axit yếu + bazơ mạnh → pH < 7.\n\nĐệm: pH = pKa + log([A⁻]/[HA]) (Henderson-Hasselbalch).\nDung lượng đệm tối đa khi pH ≈ pKa (tỷ lệ [A⁻]/[HA] ≈ 1).\nĐệm hiệu quả trong khoảng pKa ± 1.\n\nPhản ứng oxi hóa-khử: số oxi hóa thay đổi; cân bằng electron. Nồng độ mol/L (M) là đơn vị chuẩn trong tính pH và K. Nhiệt độ Kelvin = °C + 273,15 — bắt buộc trong công thức nhiệt động. Độ tan Ksp liên hệ trực tiếp với kết tủa trong dung dịch muối kém tan.\n\nLiên hệ Cân bằng Axit - Bazơ, pH dung dịch đệm với Nhiệt hóa học & Năng lượng tự do Gibbs: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ 1 — Axit yếu CH₃COOH:\nKa = 1,8×10⁻⁵, C = 0,10 M.\n[H⁺] = √(1,8×10⁻⁵ × 0,10) = 1,34×10⁻³ M → pH = 2,87.\n\nVí dụ 2 — Đệm CH₃COOH/CH₃COO⁻:\npKa = 4,74; [A⁻]/[HA] = 2/1.\npH = 4,74 + log(2) = 4,74 + 0,30 = 5,04.\n\nVí dụ 3 — Trung hòa:\n25,0 mL HCl 0,100 M + 25,0 mL NaOH 0,100 M → muối NaCl, pH ≈ 7.\n25,0 mL CH₃COOH 0,100 M + 12,5 mL NaOH 0,100 M → nửa trung hòa → đệm, pH ≈ pKa = 4,74."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "pH đo [H⁺]; axit/bazơ yếu dùng Ka, Kb và xấp xỉ bậc hai.\\\\\\\\\\\\\\\\nĐệm: Henderson-Hasselbalch pH = pKa + log([base]/[acid]); hiệu quả nhất tại pH ≈ pKa.\\\\\\\\\\\\\\\\nMuối thủy phân và điểm tương đương quyết định pH sau trung hòa."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_chemistry",
+    "course_title": "Hóa đại cương",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Nhiệt hóa học & Năng lượng tự do Gibbs",
+    "lesson_order": 2,
+    "lesson_id": "chapter-2-lesson-2",
+    "lesson_title": "Pin điện hóa, Thế điện cực chuẩn và Phương trình Nernst",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Điện hóa học nghiên cứu chuyển hóa năng lượng hóa học ↔ điện. Pin điện hóa tạo dòng điện từ phản ứng tự phát (ΔG < 0); điện phân dùng dòng ngoài để buộc phản ứng không tự phát. Thế điện cực chuẩn E° đo xu hướng khử/oxi hóa so với điện cực chuẩn hiđro (SHE). Phương trình Nernst tính thế điện cực ở nồng độ hoạt động bất kỳ — cơ sở cho pin lithium, ắc quy chì và cảm biến pH."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Ký hiệu: Anode (−) oxi hóa; Cathode (+) khử.\nE°cell = E°cathode − E°anode > 0 cho pin tự phát.\nΔG° = −nFE°cell (F = 96485 C/mol).\n\nQuy tắc: E° cao → dễ bị khử (chất oxi hóa mạnh); E° thấp → dễ bị oxi hóa.\n\nPhương trình Nernst (25°C):\nE = E° − (0,0592/n) log Q\nQ = tích nồng độ sản phẩm / tích nồng độ phản ứng (khí: thay bằng áp suất).\n\nLiên hệ: E°cell = (RT/nF) ln K ≈ (0,0592/n) log K ở 25°C.\n\nPhản ứng oxi hóa-khử: số oxi hóa thay đổi; cân bằng electron. Nồng độ mol/L (M) là đơn vị chuẩn trong tính pH và K. Nhiệt độ Kelvin = °C + 273,15 — bắt buộc trong công thức nhiệt động. Độ tan Ksp liên hệ trực tiếp với kết tủa trong dung dịch muối kém tan.\n\nLiên hệ Pin điện hóa, Thế điện cực chuẩn và Phương trình Nernst với Nhiệt hóa học & Năng lượng tự do Gibbs: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ 1 — Pin Daniell:\nZn(s) | Zn²⁺ || Cu²⁺ | Cu(s)\nAnode: Zn → Zn²⁺ + 2e⁻ (E° = −0,76 V)\nCathode: Cu²⁺ + 2e⁻ → Cu (E° = +0,34 V)\nE°cell = 0,34 − (−0,76) = 1,10 V.\n\nVí dụ 2 — Nernst:\nCu²⁺/Cu: E° = 0,34 V, [Cu²⁺] = 0,010 M, n = 2.\nE = 0,34 − (0,0592/2) log(1/0,010) = 0,34 − 0,0592 = 0,28 V.\n\nVí dụ 3 — ΔG°:\nE°cell = 1,10 V, n = 2: ΔG° = −2 × 96485 × 1,10 = −212 kJ/mol.\n\nVí dụ bổ sung Pin điện hóa, Thế điện cực chuẩn và Phương trình Nernst: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Pin: anode oxi hóa (−), cathode khử (+); E°cell = E°cathode − E°anode.\\\\\\\\\\\\\\\\nNernst: E = E° − (0,0592/n)log Q — thế phụ thuộc nồng độ.\\\\\\\\\\\\\\\\nΔG° = −nFE°cell; E°cell liên hệ hằng số cân bằng K."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_chemistry",
+    "course_title": "Hóa đại cương",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Động hóa học & Năng lượng hoạt hóa Arrhenius",
+    "lesson_order": 1,
+    "lesson_id": "chapter-3-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Động hóa học nghiên cứu tốc độ phản ứng — không chỉ \"có xảy ra\" mà \"xảy ra nhanh hay chậm\". Tốc độ v = −(1/ν)d[A]/dt đo biến thiên nồng độ theo thời gian. Phương trình tốc độ v = k[A]ᵐ[B]ⁿ với bậc m, n xác định từ thí nghiệm. Hằng số tốc độ k phụ thuộc nhiệt độ theo phương trình Arrhenius: k = A·e^(−Ea/RT), trong đó Ea là năng lượng hoạt hóa — rào cản năng lượng để phản ứng xảy ra."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Bậc phản ứng: tổng m + n (bậc tổng).\nBậc 0: v = k (tốc độ không đổi).\nBậc 1: v = k[A]; t₁/₂ = 0,693/k (phân rã bậc nhất).\nBậc 2: v = k[A]²; t₁/₂ = 1/(k[A]₀).\n\nPhương trình Arrhenius:\nk = A·e^(−Ea/RT)\nln k = ln A − Ea/(RT)\nDạng tuyến tính: ln k vs 1/T → độ dốc = −Ea/R.\n\nQuy tắc van't Hoff: tăng T 10°C → k tăng khoảng gấp đôi (xấp xỉ, phụ thuộc Ea).\nXúc tác: giảm Ea, tăng k, không đổi ΔG° hay vị trí cân bằng.\n\nPhản ứng oxi hóa-khử: số oxi hóa thay đổi; cân bằng electron. Nồng độ mol/L (M) là đơn vị chuẩn trong tính pH và K. Nhiệt độ Kelvin = °C + 273,15 — bắt buộc trong công thức nhiệt động. Độ tan Ksp liên hệ trực tiếp với kết tủa trong dung dịch muối kém tan.\n\nLiên hệ Động hóa học & Năng lượng hoạt hóa Arrhenius với Động hóa học & Năng lượng hoạt hóa Arrhenius: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ 1 — Bậc 1:\n[A]₀ = 0,50 M, k = 0,0693 min⁻¹.\nt₁/₂ = 0,693/0,0693 = 10,0 min.\nSau 20 min (2 chu kỳ): [A] = 0,50/4 = 0,125 M.\n\nVí dụ 2 — Arrhenius:\nỞ T₁: k₁ = 2,0×10⁻³ s⁻¹; T₂ = T₁ + 10 K, k₂ = 4,0×10⁻³ s⁻¹.\nk₂/k₁ = 2 → Ea ≈ RT₁T₂×ln2/(T₂−T₁) (tính số).\n\nVí dụ 3 — Xác định bậc:\nGấp đôi [A] → tốc độ gấp 4 → bậc theo A = 2.\nv = k[A]²[B], gấp đôi [B] → v gấp đôi → bậc B = 1 → bậc tổng = 3."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Tốc độ v = k[A]ᵐ[B]ⁿ; bậc 1 có t₁/₂ = 0,693/k không phụ thuộc [A]₀.\\\\\\\\\\\\\\\\nArrhenius: k = A·e^(−Ea/RT); ln k vs 1/T cho Ea.\\\\\\\\\\\\\\\\nXúc tác giảm Ea, tăng tốc độ mà không thay đổi cân bằng."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_chemistry",
+    "course_title": "Hóa đại cương",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Động hóa học & Năng lượng hoạt hóa Arrhenius",
+    "lesson_order": 2,
+    "lesson_id": "chapter-3-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng động hóa học: xác định bậc phản ứng từ dữ liệu thí nghiệm, tính t₁/₂, hằng số tốc độ k và năng lượng hoạt hóa Ea từ phương trình Arrhenius. Các bài dạng đề thi Hóa đại cương Bách Khoa thường kết hợp đồ thị ln k – 1/T và suy luận cơ chế phản ứng."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Phương pháp ban đầu: đo v ở các [A]₀ khác nhau, giữ [B] không đổi → suy bậc theo A.\nPhương pháp tích phân: đồ thị ln[A] vs t thẳng → bậc 1; 1/[A] vs t thẳng → bậc 2.\nPhương pháp suy giảm: đo t₁/₂ ở các [A]₀ → t₁/₂ không đổi (bậc 1) hay tỷ lệ nghịch (bậc 2).\n\nArrhenius hai điểm: ln(k₂/k₁) = (Ea/R)(1/T₁ − 1/T₂).\nĐơn vị: Ea thường tính J/mol, R = 8,314 J/(mol·K).\n\nPhản ứng oxi hóa-khử: số oxi hóa thay đổi; cân bằng electron. Nồng độ mol/L (M) là đơn vị chuẩn trong tính pH và K. Nhiệt độ Kelvin = °C + 273,15 — bắt buộc trong công thức nhiệt động. Độ tan Ksp liên hệ trực tiếp với kết tủa trong dung dịch muối kém tan.\n\nLiên hệ Động hóa học & Năng lượng hoạt hóa Arrhenius với Động hóa học & Năng lượng hoạt hóa Arrhenius: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài 1 — Xác định bậc:\nThí nghiệm: [A] (M) | v (M/s): 0,10 | 2,0×10⁻⁴; 0,20 | 8,0×10⁻⁴; 0,40 | 3,2×10⁻³.\nGấp đôi [A] → v gấp 4 → bậc 2. v = k[A]².\n\nBài 2 — Phân rã bậc 1:\nk = 0,0231 min⁻¹, [A]₀ = 1,00 M.\nt₁/₂ = 0,693/0,0231 = 30,0 min.\nSau 60 min: [A] = 1,00 × (1/2)² = 0,25 M.\n\nBài 3 — Ea từ Arrhenius:\nT₁ = 300 K, k₁ = 1,0×10⁻⁴; T₂ = 310 K, k₂ = 2,0×10⁻⁴.\nln(2) = (Ea/8,314)(1/300 − 1/310) → Ea ≈ 53,6 kJ/mol.\n\nVí dụ bổ sung Động hóa học & Năng lượng hoạt hóa Arrhenius: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Bậc: so sánh tỷ lệ thay đổi v khi đổi nồng độ, hoặc dùng đồ thị tích phân.\\\\\\\\\\\\\\\\nt₁/₂ bậc 1 = 0,693/k; bậc 2 = 1/(k[A]₀).\\\\\\\\\\\\\\\\nEa từ ln(k₂/k₁) = (Ea/R)(1/T₁ − 1/T₂)."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_chemistry",
+    "course_title": "Hóa đại cương",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Cân bằng dung dịch, pH & Điện hóa học",
+    "lesson_order": 1,
+    "lesson_id": "chapter-4-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Cân bằng hóa học xảy ra trong phản ứng thuận nghịch khi tốc độ thuận bằng tốc độ nghịch. Hằng số cân bằng K biểu thị tỷ lệ nồng độ (hoặc áp suất) sản phẩm/phản ứng ở cân bằng. Nguyên lý Le Châtelier: hệ cân bằng dịch chuyển để chống lại sự thay đổi nồng độ, áp suất hoặc nhiệt độ. Kết hợp với Ksp (tích số tan) giải thích kết tủa và hiệu ứng ion chung."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "aA + bB ⇌ cC + dD\nKc = [C]ᶜ[D]ᵈ/([A]ᵃ[B]ᵇ) (chỉ số cân bằng).\nKhí: Kp = Kc(RT)^Δn, Δn = (c+d) − (a+b).\n\nQ (hệ số phản ứng): cùng dạng K nhưng nồng độ hiện tại.\nQ < K → phản ứng thuận; Q > K → phản ứng nghịch; Q = K → cân bằng.\n\nLe Châtelier:\n• Tăng [chất] → dịch chuyển giảm chất đó.\n• Tăng P (khí) → dịch về phía ít mol khí.\n• Tăng T → dịch theo hướng thu nhiệt (ΔH > 0: thuận; ΔH < 0: nghịch).\n\nKsp: AxBy(s) ⇌ xA^y+ + yB^x−; Ksp = [A]^x[B]^y.\nQ > Ksp → kết tủa.\n\nPhản ứng oxi hóa-khử: số oxi hóa thay đổi; cân bằng electron. Nồng độ mol/L (M) là đơn vị chuẩn trong tính pH và K. Nhiệt độ Kelvin = °C + 273,15 — bắt buộc trong công thức nhiệt động. Độ tan Ksp liên hệ trực tiếp với kết tủa trong dung dịch muối kém tan.\n\nLiên hệ Cân bằng dung dịch, pH & Điện hóa học với Cân bằng dung dịch, pH & Điện hóa học: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ 1 — Kc:\nN₂ + 3H₂ ⇌ 2NH₃, Kc = 0,50. Ban đầu [N₂]=[H₂]=1,0 M, [NH₃]=0.\nQ = 0 < K → phản ứng thuận. Ở cân bằng: [N₂]=0,68, [H₂]=2,04, [NH₃]=0,64 M (giải hệ).\n\nVí dụ 2 — Le Châtelier:\nN₂O₄ ⇌ 2NO₂, ΔH > 0 (thu nhiệt).\nTăng T → tăng [NO₂]. Tăng P → dịch về N₂O₄ (ít mol khí).\n\nVí dụ 3 — Ksp AgCl:\nKsp = 1,8×10⁻¹⁰. Trong nước: [Ag⁺] = [Cl⁻] = √(Ksp) = 1,34×10⁻⁵ M.\nThêm NaCl 0,10 M: [Cl⁻] ≈ 0,10 → [Ag⁺] = Ksp/0,10 = 1,8×10⁻⁹ M (hiệu ứng ion chung)."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "K mô tả vị trí cân bằng; Q so với K xác định chiều phản ứng.\\\\\\\\\\\\\\\\nLe Châtelier: hệ chống lại biến đổi nồng độ, áp suất, nhiệt độ.\\\\\\\\\\\\\\\\nKsp và hiệu ứng ion chung điều khiển kết tủa trong dung dịch."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_chemistry",
+    "course_title": "Hóa đại cương",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Cân bằng dung dịch, pH & Điện hóa học",
+    "lesson_order": 2,
+    "lesson_id": "chapter-4-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập cân bằng hóa học: tính K, nồng độ cân bằng bằng bảng ICE (Initial–Change–Equilibrium), dự đoán dịch chuyển cân bằng theo Le Châtelier và bài toán kết tủa Ksp. Đây là dạng trọng tâm đề thi Hóa đại cương. Môn Hóa đại cương đánh giá khả năng vận dụng Cân bằng dung dịch, pH & Điện hóa học qua bài tập và đề thi — cần luyện cả lý thuyết lẫn tính toán."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Bảng ICE:\n• Initial: nồng độ ban đầu.\n• Change: −ax, −bx, +cx, +dx (x = mức phản ứng).\n• Equilibrium: initial + change.\nThay vào K, giải x (xấp xỉ nếu K nhỏ và x << initial).\n\nKết hợp Kp–Kc: Kp = Kc(RT)^Δn.\nLiên hệ nhiệt động: ΔG° = −RT ln K.\n\nPhản ứng oxi hóa-khử: số oxi hóa thay đổi; cân bằng electron. Nồng độ mol/L (M) là đơn vị chuẩn trong tính pH và K. Nhiệt độ Kelvin = °C + 273,15 — bắt buộc trong công thức nhiệt động. Độ tan Ksp liên hệ trực tiếp với kết tủa trong dung dịch muối kém tan.\n\nLiên hệ Cân bằng dung dịch, pH & Điện hóa học với Cân bằng dung dịch, pH & Điện hóa học: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị.\n\nPhản ứng oxi hóa-khử: số oxi hóa thay đổi; cân bằng electron. Nồng độ mol/L (M) là đơn vị chuẩn trong tính pH và K. Nhiệt độ Kelvin = °C + 273,15 — bắt buộc trong công thức nhiệt động. Độ tan Ksp liên hệ trực tiếp với kết tủa trong dung dịch muối kém tan.\n\nLiên hệ Cân bằng dung dịch, pH & Điện hóa học với Cân bằng dung dịch, pH & Điện hóa học: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài 1 — ICE:\nHA ⇌ H⁺ + A⁻, Ka = 1,0×10⁻⁵, C₀ = 0,10 M.\nICE: 0,10−x | x | x; Ka = x²/(0,10−x) ≈ x²/0,10.\nx = √(10⁻⁶) = 10⁻³ M → pH = 3,00.\n\nBài 2 — Kp:\n2SO₂ + O₂ ⇌ 2SO₃, Kp = 2,0×10² ở 700 K.\nP(SO₂)=0,50 atm, P(O₂)=0,25 atm, P(SO₃)=1,0 atm.\nQp = (1,0)²/(0,50²×0,25) = 16; Qp < Kp → phản ứng thuận.\n\nBài 3 — Ksp:\nPbI₂, Ksp = 7,1×10⁻⁹. [I⁻] = 0,020 M (từ KI).\nQ = [Pb²⁺][I⁻]²; cần [Pb²⁺] > Ksp/(0,020)² = 1,78×10⁻⁵ M mới kết tủa.\n\nVí dụ bổ sung Cân bằng dung dịch, pH & Điện hóa học: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "ICE: ghi Initial–Change–Equilibrium, thay vào K, giải x.\\\\\\\\\\\\\\\\nQ vs K: Q < K thuận, Q > K nghịch.\\\\\\\\\\\\\\\\nKsp: Q > Ksp thì kết tủa; ion chung làm giảm độ tan."
+      }
+    ]
+  },
+  {
+    "course_id": "bk_chemistry",
+    "course_title": "Hóa đại cương",
+    "chapter_order": 5,
+    "chapter_title": "Đề thi trắc nghiệm Hóa đại cương HCMUT",
+    "lesson_order": 1,
+    "lesson_id": "chapter-5-lesson-1",
+    "lesson_title": "Bài 1: Tài liệu ôn tập & đề thi",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Đề thi trắc nghiệm Hóa đại cương HCMUT (Bách Khoa) gồm khoảng 40–50 câu trong 60–90 phút, bao phủ toàn bộ chương trình: cấu tạo nguyên tử, nhiệt hóa, cân bằng, điện hóa, động học. Câu hỏi dạng tính toán chiếm 40–50%, phần còn lại lý thuyết và suy luận. Điểm đạt thường ≥ 5,0/10; câu khó phân loại ở mức 8–10 điểm."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Cấu trúc đề thường gặp:\n• Phần 1 (10–15 câu): Cấu hình electron, số lượng tử, MO, bán kính, IE, EA.\n• Phần 2 (10 câu): ΔH (Hess), ΔG, entropy, tự phát.\n• Phần 3 (10 câu): pH, đệm, Ka/Kb, trung hòa.\n• Phần 4 (10 câu): E°cell, Nernst, điện phân.\n• Phần 5 (5–10 câu): Tốc độ, Arrhenius, K, Ksp, Le Châtelier.\n\nChiến lược: làm câu dễ trước; ghi công thức lên giấy nháp; kiểm tra đơn vị (kJ vs J, M vs mol/L).\n\nPhản ứng oxi hóa-khử: số oxi hóa thay đổi; cân bằng electron. Nồng độ mol/L (M) là đơn vị chuẩn trong tính pH và K. Nhiệt độ Kelvin = °C + 273,15 — bắt buộc trong công thức nhiệt động. Độ tan Ksp liên hệ trực tiếp với kết tủa trong dung dịch muối kém tan.\n\nLiên hệ Đề thi trắc nghiệm Hóa đại cương HCMUT với Đề thi trắc nghiệm Hóa đại cương HCMUT: áp dụng công thức vào bài tập có số liệu cụ thể, trình bày đủ bước và đơn vị."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Câu mẫu 1 — Cấu hình:\nNguyên tố có Z=29, ion M²⁺ có bao nhiêu electron lẻ ở lớp 3d?\nCu: 4s¹3d¹⁰ → Cu²⁺: 3d⁹ → 1 electron lẻ 3d. Đáp án: 1.\n\nCâu mẫu 2 — Gibbs:\nΔH° = +50 kJ, ΔS° = +200 J/K, T = 298 K.\nΔG° = 50000 − 298×200 = −9600 J < 0 → tự phát. Đáp án: Có.\n\nCâu mẫu 3 — Nernst:\nE°(Cu²⁺/Cu) = 0,34 V, [Cu²⁺] = 0,0010 M.\nE = 0,34 − (0,0592/2)log(1/0,001) = 0,34 − 0,089 = 0,25 V.\n\nCâu mẫu 4 — Ksp:\nKsp(Ag₂CrO₄) = 1,1×10⁻¹². [CrO₄²⁻] trong nước tinh khiết?\n2Ag⁺ + CrO₄²⁻; Ksp = 4s³ → s = ∛(Ksp/4) ≈ 6,5×10⁻⁵ M.\n\nVí dụ bổ sung Đề thi trắc nghiệm Hóa đại cương HCMUT: thay số vào công thức chính, tính kết quả, đối chiếu với đáp án. Với bài code: test n=0, n=1, n lớn. Với bài tính: kiểm tra đơn vị SI trước khi nộp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Đề BK: 40–50 câu, trọng tâm tính toán pH, nhiệt động, điện hóa, cân bằng.\\\\\\\\\\\\\\\\nÔn theo chủ đề + đề cũ; nhớ công thức Nernst, Henderson, Arrhenius, ICE.\\\\\\\\\\\\\\\\nQuản lý thời gian: ~1,5 phút/câu trắc nghiệm tính."
+      }
+    ]
+  }
+]

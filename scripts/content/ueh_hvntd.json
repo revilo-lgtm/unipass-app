@@ -1,0 +1,272 @@
+[
+  {
+    "course_id": "ueh_hvntd",
+    "course_title": "Hành vi người tiêu dùng",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Tổng quan Hành vi NTD",
+    "lesson_order": 1,
+    "lesson_id": "chapter-1-lesson-1",
+    "lesson_title": "Khái niệm, Bản chất & Ý nghĩa của việc nghiên cứu hành vi NTD",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Môn Hành vi người tiêu dùng (Consumer Behavior) tại UEH giúp sinh viên marketing hiểu vì sao khách hàng chọn sản phẩm này thay vì sản phẩm khác. Bài mở đầu chương Tổng quan trả lời câu hỏi: hành vi người tiêu dùng (NTD) là gì, nghiên cứu nó để làm gì, và liên hệ thế nào với chiến lược marketing. Khác với kinh tế vi mô chỉ mô tả cầu theo giá, hành vi NTD đi sâu vào tâm lý, nhận thức, văn hóa và quá trình ra quyết định — từ lúc nhận ra nhu cầu đến sau khi mua. Doanh nghiệp Việt Nam từ Vinamilk, CellphoneS đến Shopee đều dùng insight hành vi để thiết kế sản phẩm, giá, kênh và truyền thông."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Định nghĩa: Hành vi người tiêu dùng là tổng hợp các quyết định liên quan đến việc tìm kiếm, mua, sử dụng, đánh giá và thải bỏ sản phẩm/dịch vụ nhằm thỏa mãn nhu cầu cá nhân hoặc gia đình.\n\nNăm câu hỏi cốt lõi (5W):\n• Who — Ai mua? (nhân khẩu, tâm lý, lối sống)\n• What — Mua gì? (loại sản phẩm, thương hiệu, số lượng)\n• When — Khi nào? (mùa vụ, dịp lễ, chu kỳ thay thế)\n• Where — Mua ở đâu? (online/offline, kênh phân phối)\n• Why & How — Vì sao và như thế nào? (động cơ, quy trình quyết định)\n\nÝ nghĩa với marketing:\n1. Phân khúc thị trường (segmentation) — nhóm khách có hành vi tương tự.\n2. Định vị (positioning) — thông điệp khớp động cơ mua.\n3. Marketing mix 4P — sản phẩm/giá/phân phối/xúc tiến phù hợp hành vi mục tiêu.\n4. Dự báo xu hướng — Gen Z, ESG, mua sắm số.\n\nMô hình khung S-O-R (Stimulus–Organism–Response): kích thích marketing (quảng cáo, giá, bày hàng) đi qua \"hộp đen\" tâm lý (nhận thức, thái độ, động cơ) rồi tạo phản ứng (mua, không mua, trung thành)."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Case Vinamilk — chiến dịch \"Sữa tươi Vinamilk — Vươn cao Việt Nam\":\n• Who: Phụ huynh trẻ 28–40 tuổi, thu nhập trung bình khá, quan tâm dinh dưỡng con.\n• What: Sữa tươi tiệt trùng, thương hiệu quen thuộc.\n• When: Mua định kỳ hàng tuần tại siêu thị.\n• Why: Động cơ an toàn thực phẩm (Safety) + uy tín thương hiệu quốc gia (Esteem).\n• How: So sánh nhãn dinh dưỡng, ưu tiên hàng có khuyến mãi gói combo.\n\nPhân tích S-O-R:\nStimulus: TVC gia đình, sampling tại Co.opmart, giảm 10% khi mua 2 hộp.\nOrganism: Niềm tin \"Vinamilk = chuẩn VN\", so sánh với TH true MILK.\nResponse: Mua lặp lại, tích điểm thẻ khách hàng.\n\nBài tập: Chọn một sản phẩm bạn mua tuần trước, trả lời 5W và vẽ sơ đồ S-O-R một trang."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Hành vi NTD là nền tảng marketing — không chỉ mô tả \"ai mua\" mà giải thích \"vì sao mua\".\nNăm câu hỏi 5W và mô hình S-O-R là khung phân tích cơ bản cho mọi chương sau.\nỨng dụng trực tiếp: segmentation, positioning và thiết kế 4P."
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_hvntd",
+    "course_title": "Hành vi người tiêu dùng",
+    "chapter_order": 1,
+    "chapter_title": "Chương 1: Tổng quan Hành vi NTD",
+    "lesson_order": 2,
+    "lesson_id": "chapter-1-lesson-2",
+    "lesson_title": "Mô hình nghiên cứu hành vi người tiêu dùng đơn giản (S-O-R)",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Mô hình S-O-R (Stimulus–Organism–Response) là khung nghiên cứu hành vi NTD đơn giản nhất và phổ biến nhất trong giáo trình UEH. Bài này phân tích chi tiết ba thành phần: kích thích từ môi trường marketing, quá trình xử lý tâm lý bên trong người tiêu dùng (organism/black box), và phản ứng hành vi có thể quan sát. Hiểu S-O-R giúp marketer biết điều chỉnh yếu tố nào để thay đổi hành vi mua — ví dụ tăng nhận thức thương hiệu (organism) bằng quảng cáo (stimulus) để tăng trial purchase (response)."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "1. STIMULI (Kích thích) — đầu vào từ môi trường:\n• Marketing stimuli (4P): Product (bao bì, tính năng), Price (giá, khuyến mãi), Place (điểm bán, trưng bày), Promotion (quảng cáo, PR, sales promotion).\n• Stimuli khác: kinh tế (lạm phát, thu nhập), công nghệ (app, thanh toán số), văn hóa-xã hội (xu hướng, influencer), chính trị-pháp lý.\n\n2. ORGANISM (Cơ thể/Tâm lý) — \"hộp đen\":\n• Đặc điểm cá nhân: nhân khẩu, kinh tế, tâm lý (động cơ, nhận thức, học tập, thái độ, niềm tin), lối sống.\n• Quá trình xử lý: selective attention (chú ý có chọn lọc) → perception (nhận thức) → learning (học tập cổ điển/điều kiện) → memory (nhớ thương hiệu).\n• Thái độ hình thành qua beliefs + feelings → hành vi dự định.\n\n3. RESPONSE (Phản ứng) — đầu ra quan sát được:\n• Product choice (chọn sản phẩm/thương hiệu), brand choice, dealer choice (chọn cửa hàng), timing (thời điểm), purchase amount (số lượng/chi tiêu).\n\nNguyên tắc: Marketer kiểm soát stimuli; không kiểm soát trực tiếp organism nhưng có thể ảnh hưởng qua thông điệp, trải nghiệm và social proof."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ — Giảm giá 20% tại Co.opmart (stimulus):\nStimulus: POSM \"Giảm 20% — chỉ 3 ngày\", bày hàng đầu kệ, nhân viên giới thiệu.\nOrganism: Khách nhận thức \"tiết kiệm 40.000đ/hộp\", so sánh với giá online, thái độ tích cực vì thương hiệu quen.\nResponse: Mua 3 hộp thay vì 1 (bulk purchase), thêm vào giỏ các SKU cùng nhãn.\n\nCase Vinamilk sampling:\nStimulus: Đứng thử sữa miễn phí + coupon giảm 15% cho lần mua đầu.\nOrganism: Trải nghiệm vị → giảm perceived risk → hình thành thái độ tích cực.\nResponse: Trial purchase ngay trong siêu thị; 30% quay lại mua full-price (theo benchmark ngành FMCG).\n\nBài tập: Vẽ sơ đồ S-O-R cho một quảng cáo TikTok bạn thấy tuần này — ghi rõ từng stimulus, bước organism, response."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "S-O-R: Stimuli (4P + môi trường) → Organism (tâm lý, nhận thức, thái độ) → Response (lựa chọn mua).\nMarketer điều chỉnh stimuli; hiểu organism để thiết kế thông điệp đúng.\nResponse đo lường được: doanh số, trial rate, share of wallet."
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_hvntd",
+    "course_title": "Hành vi người tiêu dùng",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Quá trình Ra quyết định (Mô hình EKB)",
+    "lesson_order": 1,
+    "lesson_id": "chapter-2-lesson-1",
+    "lesson_title": "5 bước ra quyết định mua: Nhận biết nhu cầu đến Đánh giá sau mua",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Mô hình Engel-Kollat-Blackwell (EKB) mô tả quy trình ra quyết định mua hàng qua 5 giai đoạn — từ khi nhận ra nhu cầu đến đánh giá sau mua. Đây là framework chuẩn trong đề thi UEH và case study marketing. Bài học phân tích từng bước, mức độ tham gia (involvement) cao/thấp, và hiện tượng mâu thuẫn nhận thức (cognitive dissonance) sau khi mua — yếu tố quyết định trung thành thương hiệu hay trả hàng."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Năm bước EKB:\n\n1. Problem Recognition (Nhận biết nhu cầu):\nKhoảng cách giữa trạng thái thực tế và mong muốn. Kích hoạt bởi: hết hàng, thay đổi hoàn cảnh, quảng cáo gợi mở nhu cầu.\n\n2. Information Search (Tìm kiếm thông tin):\n• Nguồn nội bộ: kinh nghiệm, trí nhớ.\n• Nguồn ngoại: cá nhân (bạn bè), thương mại (quảng cáo, salesperson), công cộng (review, media), thực nghiệm (dùng thử).\n\n3. Evaluation of Alternatives (Đánh giá phương án):\nXây dựng evoked set (tập thương hiệu xem xét). So sánh theo thuộc tính (attributes) và trọng số cá nhân. Mô hình Fishbein: A₀ = Σ(bᵢ × eᵢ).\n\n4. Purchase Decision (Quyết định mua):\nChọn sản phẩm, thương hiệu, cửa hàng, thời điểm, số lượng, phương thức thanh toán.\n\n5. Post-Purchase Behavior (Hành vi sau mua):\n• Satisfaction = Perceived performance − Expectations.\n• Cognitive dissonance: lo lắng sau mua hàng đắt tiền → cần reassurance (email xác nhận, warranty).\n• Outcomes: repeat purchase, word-of-mouth, complaint.\n\nInvolvement:\n• Cao (xe, laptop): search kỹ, nhiều thuộc tính, rủi ro cao.\n• Thấp (kẹo, nước giặt): habitual, ít search, quyết định nhanh."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Case — Mua laptop cho sinh viên UEH:\n1. Problem: Laptop cũ chậm, không chạy được phần mềm kế toán.\n2. Search: YouTube review, hỏi anh chị khóa trên, xem CellphoneS/FPT Shop, so sánh Dell Inspiron vs Asus Vivobook vs HP Pavilion.\n3. Evaluation: Tiêu chí — giá (<18 triệu), pin (≥6h), bảo hành (2 năm), RAM (16GB). Chấm điểm từng model.\n4. Purchase: Mua Asus tại FPT, trả góp 0%, thêm túi chống sốc.\n5. Post-purchase: Hài lòng nếu máy đúng cam kết; nếu giá giảm 1 triệu sau 2 tuần → cognitive dissonance → FPT gọi điện giải thích chính sách price match hoặc tặng phụ kiện.\n\nCognitive dissonance — ví dụ mua iPhone 15 Pro:\nSau mua thấy Samsung S24 giảm giá mạnh → cảm giác \"có lẽ nên mua Samsung\". Apple giảm dissonance bằng ecosystem (AirPods, iCloud), trade-in program, và cộng đồng fan.\n\nBài tập: Áp dụng 5 bước EKB cho quyết định chọn trường đại học của bạn."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "EKB 5 bước: Nhận biết nhu cầu → Tìm kiếm → Đánh giá → Mua → Sau mua.\nInvolvement cao = search kỹ; thấp = mua thói quen.\nPost-purchase: satisfaction và cognitive dissonance ảnh hưởng loyalty — marketer cần reassurance sau mua."
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_hvntd",
+    "course_title": "Hành vi người tiêu dùng",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Quá trình Ra quyết định (Mô hình EKB)",
+    "lesson_order": 2,
+    "lesson_id": "chapter-2-lesson-2",
+    "lesson_title": "Mô hình hành vi Howard-Sheth và cấu trúc nhận thức",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Mô hình Howard-Sheth (1969) mở rộng EKB bằng cách mô tả chi tiết cấu trúc nhận thức và ba loại quyết định mua: extensive (sâu), limited (hạn chế), habitual (thói quen). Bài học giải thích cách input (stimuli), perceptual constructs (nhận thức), learning constructs (học tập), và output (hành vi) tương tác — đặc biệt hữu ích khi phân tích brand loyalty và mua hàng lặp lại trong thị trường Việt Nam đông đảo thương hiệu."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Ba loại quyết định (Howard-Sheth):\n\n1. Extensive Problem Solving (EPS):\nLần đầu mua, ít kinh nghiệm, nhiều thông tin cần xử lý. Ví dụ: mua ô tô, căn hộ đầu tiên.\n→ Search rộng, so sánh nhiều thuộc tính, thời gian dài.\n\n2. Limited Problem Solving (LPS):\nĐã có kinh nghiệm một phần, biết vài thương hiệu nhưng chưa có thói quen cố định. Ví dụ: đổi loại sữa bột cho con.\n→ Evoked set nhỏ hơn, so sánh 2–3 lựa chọn.\n\n3. Habitual/Routinized Response (RR):\nMua lặp lại không cần suy nghĩ. Ví dụ: xà phòng, nước mắm, báo cùng thương hiệu.\n→ Brand loyalty cao, ít tìm kiếm, nhạy giá/khuyến mãi mới đổi.\n\nCấu trúc nhận thức (Perceptual Constructs):\n• Sensory cues: màu bao bì, logo, vị (food).\n• Perceptual bias: ảnh hưởng thương hiệu lên cảm nhận chất lượng (halo effect).\n• Perceptual ambiguity: không chắc chất lượng thực → cần trial hoặc review.\n\nLearning Constructs:\n• Motives (động cơ), brand comprehension (hiểu biết thương hiệu), attitude, intention, confidence.\n\nSocial & Organizational Influences:\nGia đình, social class, nhóm tham chiếu, văn hóa — đặc biệt mạnh ở VN (mua theo lời khuyên người thân)."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ 1 — Habitual: Xà phòng Lifebuoy\nMẹ mua cùng loại 10 năm. Chỉ đổi khi hết hàng + cửa hàng hết + khuyến mãi Safeguard 30% mạnh. Howard-Sheth: RR, brand loyalty qua learning lặp lại.\n\nVí dụ 2 — Extensive: Mua ô tô lần đầu\nSearch 6 tháng, test drive Toyota Vios, Hyundai Accent, Honda City. So sánh giá, tiêu hao nhiên liệu, giá bán lại, dịch vụ hậu mãi. EPS — mọi perceptual cue đều được xử lý kỹ.\n\nCase Honda vs Yamaha xe máy VN:\n• Honda: positioning \"bền, tiết kiệm, giữ giá\" → habitual cho dân văn phòng.\n• Yamaha: \"trẻ trung, thể thao\" → LPS cho Gen Z muốn đổi từ Honda cũ.\nPerceptual bias: nhiều người VN mặc định \"Honda = ít hỏng\" dù chưa lái Yamaha đời mới.\n\nBài tập: Phân loại 5 sản phẩm bạn mua thường xuyên theo EPS/LPS/RR và giải thích."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Howard-Sheth: EPS (mua sâu), LPS (hạn chế), RR (thói quen).\nNhận thức: sensory cues, bias, ambiguity — ảnh hưởng đánh giá chất lượng.\nBrand loyalty hình thành qua learning constructs khi RR chiếm ưu thế."
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_hvntd",
+    "course_title": "Hành vi người tiêu dùng",
+    "chapter_order": 2,
+    "chapter_title": "Chương 2: Quá trình Ra quyết định (Mô hình EKB)",
+    "lesson_order": 3,
+    "lesson_id": "chapter-2-lesson-3",
+    "lesson_title": "Case Study: Hành vi chọn mua xe máy điện của Gen Z",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Case study này áp dụng mô hình EKB và tháp Maslow để phân tích hành vi chọn mua xe máy điện (EV) của thế hệ Gen Z tại Việt Nam — phân khúc VinFast Feliz, Pega, Dat Bike đang cạnh tranh gay gắt. Bài học rèn kỹ năng case analysis theo format UEH: mô tả bối cảnh → áp dụng lý thuyết → đề xuất marketing mix → đánh giá rủi ro."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Bối cảnh thị trường EV 2 bánh VN (2024–2026):\n• Gen Z (1997–2012): ~20 triệu người VN, digital native, quan tâm môi trường.\n• Drivers mua EV: chi phí vận hành thấp (~500đ/km vs 2.000đ xăng), chính sách xanh, image hiện đại, influencer/KOL review.\n• Barriers: giá mua cao hơn xe xăng 30–50%, range anxiety (lo hết pin), hạ tầng sạc chưa đồng bộ, thời gian sạc lâu hơn đổ xăng.\n\nÁp dụng EKB:\n1. Problem: Chi phí xăng tăng, muốn phong cách sống xanh, đi làm gần (<30km/ngày).\n2. Search: YouTube (Thanh Á Hậu review VinFast), TikTok, group Facebook \"Xe điện Việt Nam\", hỏi bạn đồng nghiệp.\n3. Evaluation: So sánh VinFast Feliz (giá, bảo hành 3 năm) vs Pega (giá rẻ) vs Dat Bike (pin tháo rời). Tiêu chí: giá, km/charge, thiết kế, dịch vụ.\n4. Purchase: Trả góp 0% qua Shinhan, test ride tại showroom.\n5. Post-purchase: Review trên TikTok; nếu pin chai nhanh → complaint + WOM tiêu cực.\n\nMaslow trong case:\n• Esteem: EV = \"mình là người tiên phong, sống xanh\".\n• Belonging: Cộng đồng rider EV, event VinFast."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Survey giả định 200 Gen Z TP.HCM:\n• 65% \"quan tâm\" mua EV trong 2 năm tới.\n• 40% \"sẵn sàng mua\" nếu giá ≤35 triệu và có trạm sạc gần nhà.\n• Top 3 tiêu chí: (1) Giá/trả góp, (2) Pin/km, (3) Thiết kế.\n• 72% biết đến VinFast qua social media trước khi đến showroom.\n\nĐề xuất marketing cho VinFast (Gen Z):\n• Product: Màu sắc trẻ, app theo dõi pin, pin tháo rời sạc tại nhà.\n• Price: Gói trả góp 0% 24 tháng, giảm 2 triệu cho sinh viên.\n• Place: Showroom tại mall (Thiso, AEON), pop-up tại trường đại học.\n• Promotion: KOL test ride, UGC contest TikTok #XeDienCuaToi, referral 1 triệu.\n\nPhân tích số: Nếu CAC (chi phí acquire) = 800.000đ/rider, LTV (giá trị trọn đời: xe + phụ kiện + dịch vụ) = 5 triệu → ROI dương nếu retention >60%."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Case Gen Z EV: EKB 5 bước + Maslow (esteem, belonging).\nDrivers: chi phí vận hành, image xanh. Barriers: giá, range anxiety, hạ tầng.\nMarketing: test ride, trả góp, KOL, cộng đồng rider."
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_hvntd",
+    "course_title": "Hành vi người tiêu dùng",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Yếu tố Tâm lý & Động cơ Maslow",
+    "lesson_order": 1,
+    "lesson_id": "chapter-3-lesson-1",
+    "lesson_title": "Động cơ & Tháp nhu cầu Maslow ứng dụng trong Marketing",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Tháp nhu cầu Maslow (1943) là một trong những lý thuyết động cơ được marketing sử dụng rộng rãi nhất. Bài học trình bày đầy đủ 5 tầng nhu cầu — từ sinh lý đến tự thể hiện — kèm định nghĩa, ví dụ sản phẩm và chiến lược positioning. Tại UEH, câu hỏi thường gặp: \"Liệt kê 5 tầng Maslow và cho ví dụ marketing\" — bài này trang bị đủ chi tiết để trả lời mà không chỉ ghi \"Maslow 5 tầng\"."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Tháp nhu cầu Maslow (từ thấp đến cao):\n\n1. Physiological Needs (Nhu cầu sinh lý):\nThức ăn, nước uống, chỗ ở, ngủ nghỉ, sinh sản.\nMarketing: FMCG (mì gói, nước suối), nhà ở giá rẻ, thuốc cơ bản.\nVí dụ VN: Acecook, Lavie, Công ty nhà ở xã hội.\n\n2. Safety Needs (Nhu cầu an toàn):\nAn ninh cá nhân, sức khỏe, ổn định việc làm, bảo hiểm, tiết kiệm.\nMarketing: Bảo hiểm (Bảo Việt, Prudential), xe có ABS, khóa thông minh, sữa bổ sung dinh dưỡng \"an toàn\".\nVí dụ: Chứng chỉ HACCP trên bao bì thực phẩm; slogan \"An tâm mỗi ngày\".\n\n3. Social/Belonging Needs (Nhu cầu xã hội/thuộc về):\nTình bạn, tình yêu, gia đình, cộng đồng, được chấp nhận.\nMarketing: Mạng xã hội (Facebook, Zalo), nhà hàng gia đình, quà tặng ngày lễ.\nVí dụ VN: Vinamilk \"Con cần cảm nhận yêu thương\" — gắn sữa với tình cảm mẹ con.\nHighlands Coffee — \"không gian gặp gỡ bạn bè\".\n\n4. Esteem Needs (Nhu cầu được tôn trọng):\nTự trọng, thành tựu, sự công nhận, địa vị xã hội.\nMarketing: Hàng hiệu, xe sang, thẻ tín dụng premium, khóa học MBA.\nVí dụ: iPhone/Samsung flagship — \"status symbol\" Gen Z; Mercedes \"The best or nothing\".\n\n5. Self-Actualization (Tự thể hiện):\nPhát huy tối đa tiềm năng, sáng tạo, ý nghĩa cuộc sống.\nMarketing: Du lịch trải nghiệm, khóa học phát triển bản thân, sản phẩm xanh/ESG, nghệ thuật.\nVí dụ: Patagonia \"Don't buy this jacket\"; Uniqlo LifeWear; khóa học online Coursera.\n\nNguyên tắc: Nhu cầu tầng thấp phải thỏa mãn tương đối trước khi tầng cao trở nên động lực chính (nhưng không tuyệt đối — người nghèo vẫn mua điện thoại đắt vì esteem).\n\nDual motivation: Quyết định mua kết hợp động cơ lý trí (giá, chất lượng) và cảm xúc (thương hiệu, xã hội)."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bảng ánh xạ sản phẩm → Maslow:\n\n| Tầng | Sản phẩm VN | Thông điệp marketing |\n|------|-------------|----------------------|\n| Sinh lý | Mì Hảo Hảo, nước Aquafina | \"Ngon, rẻ, đủ no\" |\n| An toàn | Bảo hiểm Manulife, xe Honda | \"Bảo vệ gia đình bạn\" |\n| Xã hội | Zalo, KFC gia đình | \"Kết nối, sum họp\" |\n| Tôn trọng | iPhone, Rolex, Vinhomes | \"Đẳng cấp, thành công\" |\n| Tự thể hiện | Du lịch Luxstay, khóa TEDx | \"Sống trọn passion\" |\n\nCase chi tiết — Vinamilk \"Con cần cảm nhận yêu thương\":\nTầng nhắm: Belonging (tình mẹ con) + Safety (dinh dưỡng).\nKhông chỉ bán sữa (physiological) mà bán cảm xúc gia đình → premium pricing so với sữa nội địa giá rẻ.\n\nCase iPhone tại VN:\nGen Z làm thêm 6 tháng để mua iPhone 15 — esteem > physiological (có thể dùng điện thoại 5 triệu đủ nghe gọi).\nApple Store marketing: \"Shot on iPhone\" — self-expression qua nhiếp ảnh.\n\nBài tập: Chọn 5 quảng cáo VN bạn nhớ, xác định tầng Maslow chính mỗi quảng cáo nhắm vào."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Maslow 5 tầng: Sinh lý → An toàn → Xã hội → Tôn trọng → Tự thể hiện — mỗi tầng có định nghĩa và ví dụ marketing cụ thể.\nPositioning sản phẩm theo tầng nhu cầu mục tiêu; có thể nhắm nhiều tầng (Vinamilk: safety + belonging).\nDual motivation: lý trí + cảm xúc cùng tác động quyết định mua."
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_hvntd",
+    "course_title": "Hành vi người tiêu dùng",
+    "chapter_order": 3,
+    "chapter_title": "Chương 3: Yếu tố Tâm lý & Động cơ Maslow",
+    "lesson_order": 2,
+    "lesson_id": "chapter-3-lesson-2",
+    "lesson_title": "Nhận thức, Thái độ và Mô hình đa thuộc tính Fishbein",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Nhận thức (perception), thái độ (attitude) và mô hình đa thuộc tính Fishbein là ba công cụ đo lường và dự đoán hành vi mua quan trọng nhất trong chương Yếu tố Tâm lý. Bài học giải thích quy trình nhận thức 3 giai đoạn, cấu trúc thái độ A-B-C, công thức Fishbein A₀ = Σ(bᵢ × eᵢ), và mở rộng Theory of Reasoned Action (định hướng hành vi)."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "1. PERCEPTION (Nhận thức) — 3 giai đoạn:\n• Selective Attention: Chỉ chú ý 1/10.000 stimulus — quảng cáo cần nổi bật (màu, âm thanh, celebrity).\n• Selective Distortion: Diễn giải thông tin theo kỳ vọng — fan Apple thấy Android \"chậm\" dù benchmark ngang.\n• Selective Retention: Nhớ điều phù hợp beliefs — nhớ giá rẻ của Shopee, quên trải nghiệm giao chậm.\n\n2. ATTITUDE (Thái độ) — mô hình A-B-C:\n• Affective (cảm xúc): \"Tôi thích thương hiệu này.\"\n• Behavioral (xu hướng hành vi): \"Tôi sẽ mua lại.\"\n• Cognitive (nhận thức/beliefs): \"Sản phẩm bền, giá hợp lý.\"\nThay đổi thái độ: cognitive (thông tin mới), affective (quảng cáo cảm xúc), behavioral (dùng thử → thái độ tích cực).\n\n3. FISHBEIN Multi-Attribute Model:\nA₀ = Σ (bᵢ × eᵢ)\n• bᵢ = belief (niềm tin sản phẩm có thuộc tính i, thang 1–10)\n• eᵢ = evaluation (đánh giá mức quan trọng thuộc tính i, thang 1–10)\nA₀ cao → thái độ tích cực → ý định mua cao.\n\nTheory of Reasoned Action (mở rộng):\nBehavioral Intention = f(Attitude toward behavior, Subjective Norm)\nSubjective norm: \"Gia đình/bạn bè nghĩ gì về việc tôi mua sản phẩm này?\""
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Ví dụ Fishbein — Chọn smartphone (thang 1–10):\n\n| Thuộc tính | Belief (b) | Evaluation (e) | b×e |\n|------------|-----------|--------------|-----|\n| Camera | 8 | 9 | 72 |\n| Pin | 7 | 6 | 42 |\n| Giá | 6 | 8 | 48 |\n| Thiết kế | 9 | 7 | 63 |\n| **A₀** | | | **225** |\n\nSo sánh iPhone A₀=225 vs Samsung A₀=210 → thái độ nghiêng iPhone.\n\nMarketing thay đổi belief:\nSamsung quảng cáo \"Pin 2 ngày\" → belief pin từ 7 lên 9 → A₀ tăng 12 điểm.\n\nPerception — Case Coca-Cola đổi formula 1985:\nKhách có selective distortion mạnh — \"Coke mới không đúng vị\" dù blind test ngang. Coca-Cola phải đưa Classic trở lại.\n\nSubjective norm — Case xe máy VN:\nCon trai muốn Yamaha Exciter nhưng bố mẹ nói \"Honda bền hơn\" → subjective norm ngăn purchase intention.\n\nBài tập: Tính A₀ cho 2 thương hiệu bạn đang cân nhắc mua (chọn 4 thuộc tính, chấm b và e)."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Perception: selective attention, distortion, retention — filter mọi marketing message.\nAttitude A-B-C: cognitive + affective + behavioral; đổi một thành phần có thể đổi hành vi.\nFishbein A₀ = Σ(bᵢ×eᵢ) — đo thái độ đa thuộc tính; marketing thay beliefs hoặc nhấn thuộc tính e cao."
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_hvntd",
+    "course_title": "Hành vi người tiêu dùng",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Yếu tố Văn hóa & Xã hội",
+    "lesson_order": 1,
+    "lesson_id": "chapter-4-lesson-1",
+    "lesson_title": "Bài 1: Lý thuyết",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Chương Yếu tố Văn hóa & Xã hội phân tích cách văn hóa, giai cấp, nhóm tham chiếu và gia đình định hình hành vi mua — đặc biệt quan trọng tại Việt Nam nơi văn hóa collectivist (tập thể) ảnh hưởng mạnh quyết định từ thực phẩm đến bất động sản. Bài lý thuyết trình bày khái niệm văn hóa (culture), subculture, social class, reference groups, và vai trò người ảnh hưởng (opinion leader) trong marketing."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "1. CULTURE (Văn hóa):\nTổng hòa giá trị, niềm tin, phong tục, nghệ thuật truyền từ thế hệ này sang thế hệ khác.\n• Dimension Hofstede áp dụng VN: Collectivism cao (quan tâm nhóm), Power distance cao (tôn trọng người lớn), Uncertainty avoidance trung bình.\n• Ảnh hưởng mua: Tết mua quà biếu, đám cưới chọn vàng/hoa cụ theo phong tục, thờ cúng mua hương/nến.\n\n2. SUBCULTURE (Văn hóa phụ):\nDân tộc (Kinh, Hoa, Khmer), tôn giáo (Phật, Công giáo), vùng miền (Bắc–Trung–Nam), thế hệ (Gen Z vs Boomer).\nVí dụ: Bánh Trung Thu miền Bắc khác miền Nam; Gen Z mua online, Boomer mua chợ truyền thống.\n\n3. SOCIAL CLASS (Giai cấp xã hội):\nThu nhập, nghề nghiệp, học vấn, phong cách sống. VN: upper, middle, working, lower.\nMỗi class có consumption pattern riêng: upper → luxury, international brand; middle → value-for-money, branded FMCG.\n\n4. REFERENCE GROUPS (Nhóm tham chiếu):\n• Aspirational: muốn giống (KOL, celebrity).\n• Membership: đồng nghiệp, bạn bè, hàng xóm.\n• Dissociative: không muốn giống (tránh sản phẩm \"giá rẻ kém chất lượng\").\n\n5. FAMILY (Gia đình):\nVai trò quyết định: influencer (con gợi ý), gatekeeper (mẹ kiểm soát ngân sách), decider (bố quyết định lớn), buyer, user.\nVN: Mua nhà, xe — quyết định cả gia đình, đặc biệt ý kiến cha mẹ."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Case 1 — Tết Việt Nam & FMCG:\nCulture: Tặng quà, sum họp → doanh thu bánh kẹo, rượu, nước ngọt tăng 40–60% tháng 12–1.\nKinh Đô, Bibica, Coca-Cola campaign \"Tết sum vầy\" nhắm belonging + tradition.\n\nCase 2 — Gen Z vs Boomer mua sắm:\n• Gen Z: Shopee/Lazada, review, livestream, trả góp, thương hiệu local (Coolmate, Yody).\n• Boomer: Chợ, Co.opmart, tin salesperson, ưu tiên thương hiệu quen (Omo, P/S).\nSubculture thế hệ quyết định kênh và thông điệp.\n\nCase 3 — Opinion Leader trong làng nghề:\nNông dân mua phân bón theo khuyên của \"thầy giỏi\" địa phương — reference group membership mạnh hơn quảng cáo TV.\n\nCase 4 — Social class & xe máy:\nWorking class: xe số giá rẻ (Wave, Sirius).\nMiddle class: xe tay ga (Vision, Air Blade).\nUpper: xe phân khối lớn hoặc ô tô — status symbol.\n\nBài tập: Phân tích một quyết định mua gần đây — ai là reference group và family role nào ảnh hưởng?"
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Văn hóa và subculture định hình giá trị mua — Tết, phong tục, thế hệ.\nSocial class và reference groups (aspirational, membership) ảnh hưởng lựa chọn thương hiệu.\nGia đình VN: nhiều vai trò trong quyết định mua — đặc biệt sản phẩm lớn."
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_hvntd",
+    "course_title": "Hành vi người tiêu dùng",
+    "chapter_order": 4,
+    "chapter_title": "Chương 4: Yếu tố Văn hóa & Xã hội",
+    "lesson_order": 2,
+    "lesson_id": "chapter-4-lesson-2",
+    "lesson_title": "Bài 2: Bài tập & vận dụng",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Bài tập vận dụng chương Yếu tố Văn hóa & Xã hội — luyện phân tích case và trả lời câu hỏi tình huống theo format đề thi UEH. Sinh viên áp dụng khái niệm culture, subculture, social class, reference groups và family roles vào tình huống doanh nghiệp Việt Nam thực tế."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Hướng dẫn làm bài case văn hóa-xã hội:\n\nBước 1 — Đọc đề, xác định sản phẩm/thị trường mục tiêu.\nBước 2 — Liệt kê yếu tố văn hóa-xã hội liên quan (ít nhất 3).\nBước 3 — Phân tích ảnh hưởng đến hành vi mua (5W hoặc EKB).\nBước 4 — Đề xuất marketing mix phù hợp văn hóa.\nBước 5 — Rủi ro văn hóa (cultural blunder) cần tránh.\n\nChecklist thuật ngữ:\n□ Culture vs subculture\n□ Social class indicators\n□ Reference group type\n□ Family decision role\n□ Opinion leader / influencer\n\nLỗi thường gặp:\n• Nhầm culture với subculture (Tết là culture VN, không phải subculture).\n• Bỏ qua family role trong case VN.\n• Đề xuất campaign không phù hợp collectivism (quá individualistic)."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Bài tập 1 — Highland Coffee mở rộng về tỉnh:\nTình huống: Highland muốn vào Cần Thơ, Đà Nẵng — nơi có văn hóa cà phê phin truyền thống.\nYêu cầu: Phân tích subculture vùng miền + đề xuất 4P.\n\nGợi ý đáp án:\n• Subculture: Miền Nam uống cà phê sữa đá, ngồi vỉa hè; miền Trung thích cà phê đậm.\n• Product: Thêm \"cà phê phin Highlands\" — fusion truyền thống-hiện đại.\n• Price: Giá trung bình, không premium quá so với quán phin (25–45k).\n• Place: Mặt tiền đường, không chỉ mall.\n• Promotion: Hợp tác opinion leader địa phương (food blogger địa phương).\n\nBài tập 2 — Trắc nghiệm:\nCâu 1: Nhóm tham chiếu aspirational là? (A) Bạn bè hiện tại (B) Celebrity muốn bắt chước (C) Nhóm không muốn giống → Đáp án B.\nCâu 2: Vai trò \"gatekeeper\" trong gia đình là? → Người kiểm soát thông tin/sản phẩm đến decider (thường là mẹ).\nCâu 3: Hofstede — Việt Nam Collectivism cao nghĩa là gì? → Ưu tiên mục tiêu nhóm/gia đình; quyết định mua tham khảo người thân.\n\nBài tập 3 — K-beauty nhắm Gen Z VN qua KOL Hàn Quốc:\n(a) Subculture? → Gen Z + fan K-pop. (b) Reference group? → Aspirational (idol). (c) Family role yếu nhất? → Decider — tự mua mỹ phẩm giá thấp."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Case văn hóa-xã hội: xác định culture/subculture → phân tích ảnh hưởng hành vi → đề xuất 4P.\nVN: collectivism, family roles, vùng miền — yếu tố không thể bỏ qua.\nTránh cultural blunder; thích ứng sản phẩm với subculture địa phương.\nLuyện trắc nghiệm Hofstede, reference groups, family roles trước khi thi."
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_hvntd",
+    "course_title": "Hành vi người tiêu dùng",
+    "chapter_order": 5,
+    "chapter_title": "Đề thi Giữa kỳ & Cuối kỳ UEH",
+    "lesson_order": 1,
+    "lesson_id": "chapter-5-lesson-1",
+    "lesson_title": "Bài 1: Tài liệu ôn tập & đề thi",
+    "sections": [
+      {
+        "title": "GIỚI THIỆU",
+        "body": "Tài liệu ôn thi tổng hợp môn Hành vi người tiêu dùng UEH — trắc nghiệm, tự luận và case study theo format giữa kỳ và cuối kỳ. Bài này hệ thống lại toàn bộ chương trình, chiến lược làm bài và đề mẫu có lời giải gợi ý."
+      },
+      {
+        "title": "LÝ THUYẾT CỐT LÕI",
+        "body": "Cấu trúc đề thi điển hình UEH (90 phút):\n\nPhần I — Trắc nghiệm (40%, 30–40 câu):\nChủ đề: S-O-R, EKB 5 bước, Maslow 5 tầng, Fishbein, perception, culture, reference groups.\nChiến lược: 1–1.5 phút/câu; đánh dấu câu khó quay lại sau.\n\nPhần II — Tự luận ngắn (30%, 3–4 câu):\nVí dụ: \"Liệt kê 5 tầng Maslow kèm ví dụ marketing VN\" (5đ).\n\"Phân biệt extensive vs habitual decision\" (3đ).\nTrình bày: định nghĩa + ví dụ + ứng dụng.\n\nPhần III — Case study (30%, 1–2 bài):\nFormat: Đọc case 1 trang → trả lời 3–4 câu hỏi (phân tích lý thuyết + đề xuất).\nThang điểm: Xác định đúng mô hình (30%), phân tích logic (40%), đề xuất khả thi (30%).\n\nÔn tập theo chương:\nCh1: 5W, S-O-R | Ch2: EKB, Howard-Sheth | Ch3: Maslow, Fishbein, perception | Ch4: Culture, reference groups, family.\n\nThuật ngữ Anh-Việt cần thuộc:\nConsumer behavior, stimulus, involvement, cognitive dissonance, evoked set, subjective norm, aspirational group."
+      },
+      {
+        "title": "VÍ DỤ",
+        "body": "Đề mẫu — Tự luận:\nCâu 1 (5đ): Trình bày tháp nhu cầu Maslow và cho mỗi tầng một ví dụ chiến dịch marketing tại Việt Nam.\n\nGợi ý chấm: Mỗi tầng 1đ = tên + định nghĩa ngắn + ví dụ cụ thể (không chung chung).\n\nCâu 2 (5đ): Phân tích case — \"Startup nước giặt xanh nhắm Gen Z\":\n(a) Xác định tầng Maslow chính. (b) Áp dụng EKB bước nào marketer can thiệp? (c) Đề xuất 1 hoạt động promotion.\n\nĐáp án gợi ý:\n(a) Esteem (sống xanh) + Self-actualization.\n(b) Information search (KOL review) + Evaluation (so sánh thành phần).\n(c) UGC TikTok #GiặtXanhCungToi + sampling tại ký túc xá.\n\nCâu 3 (10đ) — Case Vinamilk mở sản phẩm sữa hạt:\nPhân tích culture/subculture, reference group, đề xuất positioning.\n\nChiến lược thi: Làm trắc nghiệm trước (25 phút), tự luận (35 phút), case (30 phút), dự trữ 5 phút kiểm tra."
+      },
+      {
+        "title": "TÓM TẮT",
+        "body": "Đề UEH: trắc nghiệm 40% + tự luận 30% + case 30%.\nÔn theo chương: S-O-R, EKB, Maslow (đủ 5 tầng!), Fishbein, văn hóa-xã hội.\nCase: xác định mô hình → phân tích → đề xuất 4P; trình bày có bước, có ví dụ VN."
+      }
+    ]
+  }
+]
