@@ -12,12 +12,6 @@
     "description": "Chương 1: Cấu tạo nguyên tử"
   },
   {
-    "course_id": "bk_kiem_thu_phan_mem",
-    "title": "Kiểm Thử Phần Mềm",
-    "university": "BK",
-    "description": ""
-  },
-  {
     "course_id": "bk_programming",
     "title": "Nhập môn lập trình",
     "university": "BK",

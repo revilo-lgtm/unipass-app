@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node server.js",
     "check": "node --check server.js",
-    "seed:courses": "node scripts/seed-courses.js"
+    "seed:courses": "node scripts/seed-courses.js",
+    "seed:chapters": "node scripts/seed-chapters.js",
+    "seed:lessons": "node scripts/seed-lessons.js"
   },
   "dependencies": {
     "@google/genai": "^2.19.0",

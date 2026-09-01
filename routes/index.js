@@ -10,6 +10,7 @@ const { PDFDocument, rgb, degrees, StandardFonts } = require('pdf-lib');
 const { getDb, dataDirectory } = require('../config/database');
 const { requireActiveSession, requireAdmin, requireStaff, getAdminFromToken, getActiveUserFromRequest, jwtSecret } = require('../middlewares/auth');
 const authController = require('../controllers/authController');
+const { resolveCourseTitle } = require('../controllers/courseController');
 const { logForensicEvent, forensicSubscribers } = require('../middlewares/tracking');
 const { GoogleGenAI, Type } = require('@google/genai');
 
@@ -24,13 +25,20 @@ function formatHumanReadableLogAction(actionStr) {
 				const list = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
 				const found = list.find(d => d.id === docId);
 				if (found) {
-					const cTitle = found.courseTitle || found.course || 'Môn học';
+					const cTitle = resolveCourseTitle(found.course, found.courseTitle);
 					let lTitle = found.lessonTitle || found.originalName || docId;
 					lTitle = lTitle.replace(/^Mục \d+:\s*Tài liệu Giáo trình Học tập\s*-\s*Bài \d+:\s*/i, '');
 					return `Xem bài học: ${cTitle} - ${lTitle}`;
 				}
 			}
 		} catch (e) { }
+	}
+	const slugMatch = String(actionStr).match(/^(Xem bài học:\s*)([a-z]{2,8}[_-][a-z0-9_-]+)(\s*-\s*)/i);
+	if (slugMatch) {
+		const resolved = resolveCourseTitle(slugMatch[2], slugMatch[2]);
+		if (resolved && resolved !== slugMatch[2]) {
+			return actionStr.replace(slugMatch[0], `${slugMatch[1]}${resolved}${slugMatch[3]}`);
+		}
 	}
 	return actionStr;
 }
@@ -155,6 +163,10 @@ const uploadPdf = multer({
 
 function readPdfMetadata() {
 	try { return JSON.parse(fs.readFileSync(metadataPath, 'utf8')); } catch (error) { return []; }
+}
+function decoratePdfDocument(doc) {
+	if (!doc) return doc;
+	return { ...doc, courseTitle: resolveCourseTitle(doc.course, doc.courseTitle) };
 }
 function writePdfMetadata(metadata) {
 	fs.writeFileSync(metadataPath, JSON.stringify(metadata, null, 2));
@@ -465,7 +477,7 @@ router.get('/user/active-progress', requireActiveSession, async (req, res) => {
 
 		return res.status(200).json({
 			courseId: activeCourseId,
-			courseTitle: dbDetail?.title || courseInfo.title,
+			courseTitle: resolveCourseTitle(activeCourseId, dbDetail?.title || courseInfo.title),
 			university: dbDetail?.university || courseInfo.university,
 			chapterTitle: chapterDisplay,
 			completedCount,

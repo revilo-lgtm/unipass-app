@@ -1,0 +1,2767 @@
+[
+  {
+    "course_id": "bk_calculus_1",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Giới hạn & Khai triển Taylor-Maclaurin",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Vô cùng bé, vô cùng lớn và quy tắc L'Hospital",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Công thức Taylor-Maclaurin ứng dụng tính giới hạn",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Phép tính vi phân hàm một biến",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Tích phân suy rộng loại 1 và loại 2 (Xét hội tụ)",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Chuỗi số dương: D'Alembert, Cauchy, Tiêu chuẩn tích phân",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 3,
+            "lesson_id": "chapter-2-lesson-3",
+            "title": "Chuỗi đan dấu Leibniz & Bán kính hội tụ chuỗi lũy thừa",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Tích phân suy rộng loại 1 & loại 2",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Chuỗi số & Chuỗi lũy thừa",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Đề thi Giữa kỳ & Cuối kỳ Giải tích 1 HCMUT",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "bk_chemistry",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Cấu tạo nguyên tử, 4 số lượng tử & Thuyết MO",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Orbital nguyên tử, 4 số lượng tử và cấu hình electron",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Hiệu ứng nhiệt (Định luật Hess) & Năng lượng tự do Gibbs",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Nhiệt hóa học & Năng lượng tự do Gibbs",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Cân bằng Axit - Bazơ, pH dung dịch đệm",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Pin điện hóa, Thế điện cực chuẩn và Phương trình Nernst",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Động hóa học & Năng lượng hoạt hóa Arrhenius",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Cân bằng dung dịch, pH & Điện hóa học",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Đề thi trắc nghiệm Hóa đại cương HCMUT",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "bk_giai_tich",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Ma trận, Định thức & Hệ phương trình",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Không gian Vector & Cơ sở, Số chiều",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Ánh xạ tuyến tính & Ma trận biểu diễn",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Trị riêng, Vector riêng & Chéo hóa",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Chương 5: Dạng toàn phương Lagrange",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-5-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 6,
+        "title": "Bộ đề thi ĐSTT Bách Khoa các năm",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-6-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "bk_physics",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Động học & Động lực học chất điểm",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Phương trình chuyển động, Vận tốc, Gia tiếp tuyến & pháp tuyến",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Các định luật Newton & Định lý động lượng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Cơ học Vật rắn & Mômen quán tính",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Mômen lực, Mômen quán tính & Định lý Huygens-Steiner",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Phương trình cơ bản chuyển động quay của vật rắn",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Dao động cơ & Sóng cơ học",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Nguyên lý 1: Đẳng nhiệt, đẳng tích, đẳng áp, đoạn nhiệt",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Nguyên lý 2: Chu trình Carnot & Tính toán Entropy",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Nhiệt động lực học (Nguyên lý 1 & 2)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Bộ đề thi trắc nghiệm Vật lý 1 Bách Khoa",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "bk_programming",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Biến, Kiểu dữ liệu, Toán tử & I/O",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Kiểu dữ liệu, Biến, Toán tử và Nhập xuất chuẩn I/O",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Cấu trúc rẽ nhánh if-else và Vòng lặp for, while",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Cấu trúc rẽ nhánh if-else & Vòng lặp",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Truyền tham trị & Tham chiếu trong C/C++",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Con trỏ, Địa chỉ ô nhớ, Mảng và Struct",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 3,
+            "lesson_id": "chapter-2-lesson-3",
+            "title": "Cấp phát bộ nhớ động (new/delete, malloc/free)",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Hàm, Đệ quy & Mảng 1D/2D",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Con trỏ & Cấp phát bộ nhớ động",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Chương 5: Chuỗi ký tự, Struct & File I/O",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-5-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 6,
+        "title": "Bộ bài tập Coding thực hành Bách Khoa",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-6-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "ftu_english",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Unit 1: International Trade & Business Correspondence",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Vocabulary: Trade Terms, Tariffs & Trade Barriers",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Business Email: Inquiry, Quotation & Order Placement",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Unit 2: Banking, Financial Markets & Securities",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Techniques for Translating International Sales Contracts",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Unit 3: Contract Drafting & Translation Techniques",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Unit 4: Business Presentation & Negotiation",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Bộ đề thi Tiếng Anh chuyên ngành FTU",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "ftu_international-payment",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Tỷ giá hối đoái & Công cụ thanh toán",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Tỷ giá hối đoái & Nghiệp vụ Spot, Forward",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Hối phiếu thương mại (Bill of Exchange) & Séc quốc tế",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Phương thức Chuyển tiền (T/T) & Nhờ thu (D/A, D/P)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Quy trình phát hành và thanh toán Thư tín dụng L/C",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745)",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Tín dụng chứng từ L/C theo UCP 600",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Kiểm tra bộ chứng từ xuất nhập khẩu (ISBP 745)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Case study tranh chấp thanh toán quốc tế FTU",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "ftu_logistics",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Bản chất Logistics & Incoterms 2020 (11 điều kiện)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Chi tiết 11 điều kiện Incoterms 2020: Chi phí & Rủi ro",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Vận tải đường biển: Vận đơn B/L, Cước phí & Phụ phí",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Vận tải đường biển, Vận đơn B/L & Cước phí",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Mô hình đặt hàng kinh tế EOQ & Tồn kho an toàn",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Vận tải hàng không & Thủ tục Hải quan",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Quản trị tồn kho mô hình EOQ",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Đề thi cuối kỳ môn Logistics FTU",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "ftu_trade",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Chuẩn bị & Đàm phán Hợp đồng Ngoại thương",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Hỏi hàng, Chào hàng (Offer) & Chấp nhận chào hàng",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Điều khoản Tên hàng, Số lượng, Chất lượng & Giá cả",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 3,
+            "lesson_id": "chapter-1-lesson-3",
+            "title": "Điều khoản Bất khả kháng & Trọng tài thương mại VIAC",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Soạn thảo các điều khoản hợp đồng (Commodity, Price, Payment)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Xử lý vi phạm hợp đồng và khiếu nại quốc tế",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Điều khoản Bất khả kháng & Trọng tài thương mại",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Giải quyết tranh chấp thương mại quốc tế",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Đề thi tự luận môn Giao dịch FTU",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "ftu_vamo",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Co giãn Cung Cầu & Can thiệp Chính phủ",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Độ co giãn của cầu theo giá, thu nhập và giá chéo",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Tác động của Thuế, Trợ cấp, Giá trần và Giá sàn",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Lý thuyết Hành vi Người tiêu dùng",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Đường đẳng ích, Đường ngân sách & Tối ưu hóa tiêu dùng",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Hàm sản xuất, Năng suất cận biên & Các loại chi phí (TC, ATC, MC)",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Lý thuyết Sản xuất & Chi phí",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Thị trường Cạnh tranh hoàn hảo: Cân bằng ngắn & dài hạn",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Thị trường Độc quyền thuần túy & Phân biệt giá cấp 1, 2, 3",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Thị trường Cạnh tranh hoàn hảo",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Chương 5: Độc quyền bán & Độc quyền nhóm",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-5-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 6,
+        "title": "Đề thi Vi mô Ngoại thương các năm",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-6-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_database",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Thiết kế ERD & Chuyển đổi sang CSDL quan hệ",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Mô hình ERD sang CSDL quan hệ & Khóa chính/ngoại",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Chuẩn hóa BCNF & Truy vấn SQL nâng cao (Subquery, Group By)",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Đại số quan hệ (Chọn, Chiếu, Kết nối, Chia)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Truy vấn SQL nâng cao (Group By, Subquery, Trigger, View)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Lý thuyết Chuẩn hóa: Phụ thuộc hàm & Dạng chuẩn BCNF",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Đề thi trắc nghiệm & Tự luận CSDL HCMUS",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_discrete-math",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Logic mệnh đề, Bảng chân trị & Luật De Morgan",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Bảng chân trị, Tương đương logic & Luật De Morgan",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Thuật toán Dijkstra và Cây khung nhỏ nhất Kruskal",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Quan hệ tương đương, Poset & Bìa Karnaugh",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Lý thuyết Đồ thị: Euler, Hamilton, Bổ đề bắt tay",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Thuật toán Dijkstra & Cây khung Kruskal/Prim",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Đề thi cuối kỳ Toán rời rạc HCMUS",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_dsa",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Phân tích độ phức tạp Big-O & Sorting (Quick, Merge, Heap)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Phân tích Big-O: QuickSort, MergeSort, HeapSort",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Binary Search Tree (BST) & Cây cân bằng AVL Tree",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Danh sách liên kết, Stack & Queue",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Cây nhị phân tìm kiếm BST & Cây cân bằng AVL Tree",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Bảng băm (Hash Table) & Xử lý đụng độ",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Đề thi thực hành & Lý thuyết DSA HCMUS",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_networks",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Mô hình OSI 7 tầng vs TCP/IP 4 tầng & Giao thức ứng dụng",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Mô hình OSI vs TCP/IP & Giao thức HTTP, DNS, DHCP",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Kỹ thuật chia mạng con IPv4 (VLSM & Subnet Mask)",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Tầng Giao vận (TCP/UDP) & Kiểm soát tắc nghẽn",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Địa chỉ IPv4 & Chia mạng con Subnetting (VLSM)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Địa chỉ MAC, Switch & Định tuyến Router",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Bộ 100 câu hỏi ôn thi Mạng máy tính HCMUS",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "hcmus_programming",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Cấu trúc rẽ nhánh, Vòng lặp & Tối ưu thuật toán",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Cấu trúc điều khiển, Vòng lặp & Tối ưu thuật toán",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Mảng động (new/delete), Con trỏ và Chuỗi ký tự",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Mảng 1 chiều, 2 chiều & Xử lý chuỗi C-string",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Con trỏ & Cấp phát mảng động (new/delete)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Đệ quy & Đọc ghi File fstream",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Bộ đề thi thực hành chấm tự động Wecode HCMUS",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "neu_basic-economics",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: 10 nguyên lý Kinh tế học & Chi phí cơ hội",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Sự đánh đổi, Chi phí cơ hội và Phân tích cận biên",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Quy luật Cung - Cầu và Điểm cân bằng thị trường",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Cung, Cầu & Cân bằng thị trường",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Cạnh tranh hoàn hảo vs Độc quyền thuần túy",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Thặng dư tiêu dùng (CS) & Thặng dư sản xuất (PS)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Cấu trúc thị trường & Chính sách công",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Đề thi trắc nghiệm Kinh tế học cơ bản NEU",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "neu_corporate_finance",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Phân tích chỉ số tài chính & Mô hình DuPont",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Mô hình DuPont & Quản trị Vốn lưu động",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Chi phí sử dụng vốn WACC & Đòn bẩy tài chính DFL",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Quản trị vốn lưu động & Chu kỳ tiền mặt (CCC)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Chi phí sử dụng vốn (WACC) & Mô hình CAPM",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Đòn bẩy hoạt động (DOL) & Đòn bẩy tài chính (DFL)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Đề thi tổng hợp Tài chính doanh nghiệp NEU",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "neu_econometrics",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Ma trận & Mô hình Input-Output Leontief",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Ma trận nghịch đảo & Mô hình cân đối liên ngành",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Hàm Cobb-Douglas và Cực trị có điều kiện Lagrange",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Đạo hàm riêng, Hàm Cobb-Douglas & Cực trị Lagrange",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Bài toán tối ưu hóa lợi nhuận & Chi phí",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Quy hoạch tuyến tính (Phương pháp đơn nguyên)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Đề thi kết thúc học phần Toán kinh tế NEU",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "neu_managerial_accounting",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Phân loại chi phí biến đổi, cố định & hỗn hợp",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Số dư đảm phí (Contribution Margin) & Điểm hòa vốn",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Dự toán ngân sách hoạt động & Thông tin ra quyết định",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Phân tích Chi phí - Khối lượng - Lợi nhuận (CVP)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Điểm hòa vốn & Vùng an toàn (Margin of Safety)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Dự toán ngân sách & Thông tin ra quyết định",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Đề thi tự luận Kế toán quản trị NEU",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "neu_statistics",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Biến ngẫu nhiên & Phân phối Chuẩn N(mu, sigma)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Phân phối Chuẩn N(mu, sigma^2) & Bảng tra Z-table",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Ước lượng khoảng cho Trung bình & Tỷ lệ",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Lý thuyết mẫu & Ước lượng khoảng tin cậy",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Kiểm định giả thuyết thống kê (Z-test, t-test)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Mô hình hồi quy tuyến tính đơn biến (OLS)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Bộ đề thi Xác suất thống kê NEU có đáp án",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "tdtu_applied-it",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Phần 1: MS Word Nâng cao: Style, Mục lục tự động, Mail Merge",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Định dạng Style, Mục lục tự động & Mail Merge",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Hàm Excel nâng cao (XLOOKUP, INDEX-MATCH, Pivot Table)",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Phần 2: MS Excel: VLOOKUP, INDEX-MATCH, XLOOKUP, Pivot Table",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Phần 3: MS PowerPoint: Thiết kế Slide học thuật chuyên nghiệp",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Đề thi thử Chuẩn đầu ra Tin học văn phòng TDTU",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "tdtu_english_comm",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Unit 1: Everyday Social Conversation & Pronunciation",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Everyday Conversational English & Pronunciation",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Unit 2: Academic Discussion & Giving Opinions",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Unit 3: Presentation Skills & Cross-cultural Communication",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Mock Interview with AI Examiner for TDTU Exit Test",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "tdtu_pe",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Phần 1: Lý luận thể chất, Dinh dưỡng & Sơ cứu chấn thương",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Nguyên lý rèn luyện thể lực & Sơ cứu chấn thương",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Kỹ thuật Bơi ếch & An toàn dưới nước 50m",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Phần 2: Kỹ thuật Bơi ếch & An toàn dưới nước 50m chuẩn TDTU",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Phần 3: Luật thi đấu Bóng đá, Bóng chuyền & Cầu lông",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Bộ câu hỏi thi lý thuyết GDTC TDTU",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "tdtu_startup",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Tư duy Khởi nghiệp & Phương pháp Design Thinking",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Chi tiết 9 khối trong Business Model Canvas (BMC)",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Xây dựng Mô hình Kinh doanh 9 khối (BMC)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Sản phẩm khả dụng tối thiểu (MVP) & Lean Startup",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Kế hoạch Tài chính & Kỹ năng Pitching gọi vốn",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Đề thi cuối kỳ môn Khởi nghiệp ĐMST TDTU",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "tdtu_study-skills",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Quy chế đào tạo tín chỉ & Văn hóa học đường TDTU",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Quy chế đào tạo tín chỉ & Văn hóa học đường TDTU",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Ghi chép Cornell Notes & Ma trận Eisenhower",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Phương pháp ghi chép Cornell Notes & Mindmap",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Quản trị thời gian Ma trận Eisenhower & Pomodoro",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Kỹ năng làm việc nhóm & Thuyết trình chuyên nghiệp",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Đề thi trắc nghiệm kết thúc môn Kỹ năng TDTU",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_accounting",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Đối tượng kế toán & Phương trình kế toán",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Phương trình kế toán: Tài sản = Nợ phải trả + Vốn CSH",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Phân loại tài sản ngắn hạn, dài hạn và nguồn vốn",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Phương pháp Tài khoản & Định khoản Nợ/Có",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Quy tắc ghi Nợ - Có và định khoản kế toán",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Kế toán mua hàng, chi phí mua hàng và nhập kho",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 3,
+            "lesson_id": "chapter-2-lesson-3",
+            "title": "Kế toán bán hàng và xác định kết quả kinh doanh",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Kế toán quá trình Mua - Bán hàng",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Lập Bảng cân đối thử và Bảng cân đối kế toán",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Lập Báo cáo kết quả hoạt động kinh doanh",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Lập Báo cáo tài chính & Khóa sổ",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Bài tập lớn lập BCTC theo chuẩn VAS",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_hr",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Hoạch định & Phân tích công việc (JD/JS)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Bản mô tả công việc (JD) & Tiêu chuẩn công việc (JS)",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Phương pháp phỏng vấn theo hành vi (STAR Method)",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Tuyển dụng & Phỏng vấn STAR Method",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Mô hình đánh giá hiệu quả đào tạo Kirkpatrick",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Hệ thống lương 3P và đãi ngộ Total Rewards",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Đào tạo Kirkpatrick & Đánh giá KPI/OKR",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Hệ thống đãi ngộ lương 3P & Total Rewards",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Bộ câu hỏi tình huống Quản trị nhân sự",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_hvntd",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Tổng quan Hành vi NTD",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Khái niệm, Bản chất & Ý nghĩa của việc nghiên cứu hành vi NTD",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Mô hình nghiên cứu hành vi người tiêu dùng đơn giản (S-O-R)",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Quá trình Ra quyết định (Mô hình EKB)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "5 bước ra quyết định mua: Nhận biết nhu cầu đến Đánh giá sau mua",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Mô hình hành vi Howard-Sheth và cấu trúc nhận thức",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 3,
+            "lesson_id": "chapter-2-lesson-3",
+            "title": "Case Study: Hành vi chọn mua xe máy điện của Gen Z",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Yếu tố Tâm lý & Động cơ Maslow",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Động cơ & Tháp nhu cầu Maslow ứng dụng trong Marketing",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Nhận thức, Thái độ và Mô hình đa thuộc tính Fishbein",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Yếu tố Văn hóa & Xã hội",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Đề thi Giữa kỳ & Cuối kỳ UEH",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_macro",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Đo lường sản lượng quốc gia (GDP & GNP)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Khái niệm GDP, GNP, NDI và các chỉ số giá",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "3 phương pháp tính GDP và bài tập áp dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Mô hình Tổng chi tiêu (AE) & Tài khóa",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Hàm tiêu dùng, hàm tiết kiệm và số nhân chi tiêu",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Chính sách tài khóa mở rộng và thu hẹp",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Thị trường tiền tệ & Mô hình IS-LM",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Cung - Cầu tiền tệ và các công cụ NHTW",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Cân bằng đồng thời IS-LM & Phối hợp chính sách",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Lạm phát, Thất nghiệp & AS-AD",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Bộ 100 câu trắc nghiệm Vĩ mô UEH",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_marketing",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Tư duy Marketing hiện đại & PESTEL/SWOT",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Tư duy Marketing hiện đại & Quy trình Marketing",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Phân tích Môi trường Marketing (PESTEL & SWOT)",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Nghiên cứu thị trường & Chiến lược STP",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Phân đoạn thị trường (Segmentation) & Chọn thị trường mục tiêu",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Chiến lược Định vị thương hiệu (Positioning Strategy)",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 3,
+            "lesson_id": "chapter-2-lesson-3",
+            "title": "Case Study: Chiến lược tái định vị của Vinamilk & Viettel",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Chiến lược Sản phẩm & Định giá",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Vòng đời sản phẩm (PLC) & Quản trị danh mục sản phẩm",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Các phương pháp định giá thâm nhập & hớt váng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Phân phối & Chiêu thị IMC",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Bộ đề thi & Case Study Marketing UEH",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Tài liệu ôn tập & đề thi",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "course_id": "ueh_math",
+    "chapters": [
+      {
+        "chapter_order": 1,
+        "title": "Chương 1: Giá trị thời gian của tiền & Lãi kép",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-1-lesson-1",
+            "title": "Lãi đơn, Lãi kép và Lãi suất tương đương",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-1-lesson-2",
+            "title": "Giá trị tương lai (FV) & Giá trị hiện tại (PV)",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 2,
+        "title": "Chương 2: Chuỗi tiền tệ & Niên kim (Annuity)",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-2-lesson-1",
+            "title": "Niên kim đầu kỳ, cuối kỳ và niên kim vĩnh viễn",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-2-lesson-2",
+            "title": "Phương pháp Giá trị hiện tại thuần (NPV) & IRR",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 3,
+        "title": "Chương 3: Thẩm định dự án đầu tư NPV, IRR",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-3-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-3-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 4,
+        "title": "Chương 4: Lập kế hoạch trả nợ vay ngân hàng",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-4-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-4-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      },
+      {
+        "chapter_order": 5,
+        "title": "Đề ôn tập thi kết thúc học phần UEH",
+        "lessons": [
+          {
+            "lesson_order": 1,
+            "lesson_id": "chapter-5-lesson-1",
+            "title": "Bài 1: Lý thuyết",
+            "type": "doc"
+          },
+          {
+            "lesson_order": 2,
+            "lesson_id": "chapter-5-lesson-2",
+            "title": "Bài 2: Bài tập & vận dụng",
+            "type": "doc"
+          }
+        ]
+      }
+    ]
+  }
+]

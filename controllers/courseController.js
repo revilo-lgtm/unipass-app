@@ -92,6 +92,37 @@ function catalogMetaById() {
     return map;
 }
 
+function normalizeCourseId(value) {
+    return String(value || '').trim().replace(/-/g, '_').toLowerCase();
+}
+
+function catalogEntry(courseId) {
+    const catalog = catalogMetaById();
+    const raw = String(courseId || '').trim();
+    if (!raw) return null;
+    if (catalog[raw]) return catalog[raw];
+    const underscored = raw.replace(/-/g, '_');
+    const hyphenated = raw.replace(/_/g, '-');
+    return catalog[underscored] || catalog[hyphenated] || null;
+}
+
+function looksLikeCourseId(value, courseId) {
+    const stored = String(value || '').trim();
+    if (!stored) return true;
+    if (/^(môn học|mon hoc|khóa học|khoa hoc)$/i.test(stored)) return true;
+    const id = String(courseId || '').trim();
+    if (id && normalizeCourseId(stored) === normalizeCourseId(id)) return true;
+    return /^[a-z]{2,8}[_-][a-z0-9_-]+$/i.test(stored);
+}
+
+function resolveCourseTitle(courseId, storedTitle) {
+    const stored = String(storedTitle || '').trim();
+    if (stored && !looksLikeCourseId(stored, courseId)) return stored;
+    const meta = catalogEntry(courseId);
+    if (meta && meta.title) return meta.title;
+    return 'Môn học';
+}
+
 function coursePageLink(courseId) {
     return `course.html?id=${encodeURIComponent(courseId)}`;
 }
@@ -110,6 +141,8 @@ function uniFromEmail(email) {
 
 exports.coursePageLink = coursePageLink;
 exports.catalogMetaById = catalogMetaById;
+exports.resolveCourseTitle = resolveCourseTitle;
+exports.looksLikeCourseId = looksLikeCourseId;
 
 exports.getCourses = async (req, res) => {
     try {
@@ -164,7 +197,7 @@ exports.getCourses = async (req, res) => {
             }
 
             return {
-                title: row.title,
+                title: resolveCourseTitle(courseId, row.title),
                 icon: meta.icon || 'fa-book',
                 link: coursePageLink(courseId),
                 courseId,
@@ -200,7 +233,7 @@ exports.getPublicCourses = async (req, res) => {
             bg: universityProfiles[code].bg,
             gradient: universityProfiles[code].gradient,
             courses: rows.filter(row => String(row.university || '').toUpperCase() === code).map(row => ({
-                title: row.title,
+                title: resolveCourseTitle(row.course_id, row.title),
                 icon: (catalog[row.course_id] && catalog[row.course_id].icon) || 'fa-book',
                 link: coursePageLink(row.course_id),
                 courseId: row.course_id,
