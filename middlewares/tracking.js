@@ -1,9 +1,10 @@
 const fs = require('fs');
 const path = require('path');
+const { getDb, dataDirectory } = require('../config/database');
 
 function getReadableDocName(docId) {
 	try {
-		const metaPath = path.join(__dirname, '..', 'course-pdfs.json');
+		const metaPath = path.join(dataDirectory, 'course-pdfs.json');
 		if (fs.existsSync(metaPath)) {
 			const list = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
 			const found = list.find(d => d.id === docId);
@@ -19,7 +20,6 @@ function getReadableDocName(docId) {
 }
 
 const jwt = require('jsonwebtoken');
-const { getDb } = require('../config/database');
 const { getClientIp, jwtSecret } = require('./auth');
 
 const forensicSubscribers = new Set();

@@ -2,7 +2,6 @@ const sqlite3 = require('sqlite3');
 const { open } = require('sqlite');
 const fs = require('fs');
 const path = require('path');
-const bcrypt = require('bcrypt');
 
 const dataDirectory = process.env.DATA_DIR || path.join(__dirname, '..');
 fs.mkdirSync(dataDirectory, { recursive: true });
@@ -160,36 +159,21 @@ async function initSchema(db) {
 		);
 	`);
 
-	const isProduction = process.env.NODE_ENV === 'production';
-	if (!isProduction) {
-		const seed = await db.get("SELECT User_ID FROM accounts WHERE User_ID = 'SV001'");
-		if (!seed) {
-			const defaultPassword = await bcrypt.hash('123456', 10);
-			const thirtyDaysFromNow = new Date();
-			thirtyDaysFromNow.setDate(thirtyDaysFromNow.getDate() + 30);
-			await db.run(`INSERT OR IGNORE INTO accounts (User_ID, Email, Fullname, password, Role, Status, Expiry_Date) VALUES (?, ?, ?, ?, ?, ?, ?)`,
-				['SV001', 'mssv@st.ueh.edu.vn', 'Sinh viên UEH', defaultPassword, 'Học viên', 'active', thirtyDaysFromNow.toISOString()]);
-		}
-	}
-
-	const adminPasswordPlain = process.env.ADMIN_PASSWORD || (isProduction ? null : 'admin');
-	if (adminPasswordPlain) {
-		const adminPassword = await bcrypt.hash(adminPasswordPlain, 10);
-		const existingAdmin = await db.get("SELECT User_ID FROM accounts WHERE User_ID = 'ADMIN001'");
-		if (!existingAdmin) {
-			await db.run(`INSERT INTO accounts (User_ID, Email, Fullname, password, Role, Status, Expiry_Date) VALUES (?, ?, ?, ?, ?, ?, ?)`,
-				['ADMIN001', 'admin', 'Quản trị viên', adminPassword, 'admin', 'active', null]);
-		} else if (process.env.ADMIN_PASSWORD) {
-			await db.run("UPDATE accounts SET password = ?, Status = 'active' WHERE User_ID = 'ADMIN001'", [adminPassword]);
-		}
-	}
-
-	const accounts = await db.all('SELECT User_ID, password FROM accounts');
-	for (const account of accounts) {
-		if (account.password && !String(account.password).startsWith('$2')) {
-			const hashed = await bcrypt.hash(String(account.password), 10);
-			await db.run('UPDATE accounts SET password = ? WHERE User_ID = ?', [hashed, account.User_ID]);
-		}
+	// Seed data for accounts
+	const seed = await db.get("SELECT User_ID FROM accounts WHERE User_ID = 'SV001'");
+	if (!seed) {
+		const bcrypt = require('bcrypt');
+		const defaultPassword = await bcrypt.hash('123456', 10);
+		// SV001 is active and expires in 30 days
+		const thirtyDaysFromNow = new Date();
+		thirtyDaysFromNow.setDate(thirtyDaysFromNow.getDate() + 30);
+		
+		await db.run(`INSERT OR IGNORE INTO accounts (User_ID, Email, Fullname, password, Role, Status, Expiry_Date) VALUES (?, ?, ?, ?, ?, ?, ?)`, 
+			['SV001', 'mssv@st.ueh.edu.vn', 'Sinh viên UEH', defaultPassword, 'Học viên', 'active', thirtyDaysFromNow.toISOString()]);
+		
+		const adminPassword = await bcrypt.hash('admin', 10);
+		await db.run(`INSERT OR IGNORE INTO accounts (User_ID, Email, Fullname, password, Role, Status, Expiry_Date) VALUES (?, ?, ?, ?, ?, ?, ?)`, 
+			['ADMIN001', 'admin', 'Quản trị viên', adminPassword, 'admin', 'active', null]);
 	}
 
 	// Seed default settings
