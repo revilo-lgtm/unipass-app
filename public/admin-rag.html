@@ -2361,30 +2361,34 @@
 
 
         async function updateKPIs() {
-            let totalUnis = 0;
-            let totalCourses = 0;
-            for (const uni in universityHierarchy) {
-                totalUnis++;
-                if (universityHierarchy[uni].courses) {
-                    totalCourses += Object.keys(universityHierarchy[uni].courses).length;
-                }
-            }
             const totalUnisEl = document.getElementById('total-unis');
             const totalCoursesEl = document.getElementById('total-courses');
             const ragAccuracyEl = document.getElementById('rag-accuracy');
-            
-            if (totalUnisEl) totalUnisEl.innerText = `${totalUnis} Đại học`;
-            if (totalCoursesEl) totalCoursesEl.innerText = `${totalCourses} Môn`;
+
+            try {
+                const res = await window.Auth.adminRequest('/api/admin/courses-list');
+                const courses = (res && Array.isArray(res.courses)) ? res.courses : [];
+                const totalCourses = courses.length;
+                const totalUnis = new Set(courses.map(c => c.university).filter(Boolean)).size;
+                if (totalUnisEl) totalUnisEl.innerText = `${totalUnis} Đại học`;
+                if (totalCoursesEl) totalCoursesEl.innerText = `${totalCourses} Môn`;
+            } catch (err) {
+                console.error('Lỗi tải KPI môn học:', err);
+                if (totalUnisEl) totalUnisEl.innerText = '-- Đại học';
+                if (totalCoursesEl) totalCoursesEl.innerText = '-- Môn';
+            }
 
             if (ragAccuracyEl) {
                 try {
                     const response = await window.Auth.adminRequest('/api/admin/rag-accuracy');
-                    if (response && response.accuracy) {
+                    if (response && response.accuracy != null && response.accuracy !== '') {
                         ragAccuracyEl.innerText = `${response.accuracy}%`;
+                    } else {
+                        ragAccuracyEl.innerText = '--';
                     }
                 } catch (err) {
                     console.error('Lỗi tải Độ chính xác RAG:', err);
-                    ragAccuracyEl.innerText = '98.2%';
+                    ragAccuracyEl.innerText = '--';
                 }
             }
         }

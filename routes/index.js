@@ -35,14 +35,28 @@ function formatHumanReadableLogAction(actionStr) {
 	return actionStr;
 }
 
+const GEMINI_QUOTA_MESSAGE = 'Quota Gemini đã hết. Vui lòng thử lại sau hoặc đổi mô hình LLM trong Cài đặt.';
+const DEFAULT_LLM_MODEL = 'gemini-3.6-flash';
+const GEMINI_FALLBACK_MODELS = ['gemini-3.6-flash', 'gemini-3.5-flash-lite', 'gemini-3.7-flash'];
+const LEGACY_GEMINI_MODEL_MAP = {
+	'gemini-2.5-flash': DEFAULT_LLM_MODEL,
+	'gemini-2.5-flash-lite': DEFAULT_LLM_MODEL
+};
+
+function normalizeLlmModel(model) {
+	if (!model) return DEFAULT_LLM_MODEL;
+	const trimmed = String(model).trim().replace(/^models\//i, '');
+	return LEGACY_GEMINI_MODEL_MAP[trimmed] || trimmed || DEFAULT_LLM_MODEL;
+}
+
 async function getActiveLlmModel(db) {
 	try {
 		const row = await db.get("SELECT value FROM settings WHERE key = 'llm_model'");
 		if (row && row.value && row.value.trim()) {
-			return row.value.trim();
+			return normalizeLlmModel(row.value);
 		}
 	} catch (e) { }
-	return 'gemini-3.5-flash-lite';
+	return DEFAULT_LLM_MODEL;
 }
 
 function isGeminiQuotaExceededError(error) {
@@ -50,10 +64,31 @@ function isGeminiQuotaExceededError(error) {
 	return /429|quota|exceeded your current quota|resource exhausted|rate limit|too many requests/i.test(message || '');
 }
 
+function isGeminiUnavailableModelError(error) {
+	const status = error && (error.status || error.statusCode || error.code);
+	if (status === 404 || status === '404' || status === 'NOT_FOUND') return true;
+	const message = error && (error.message || String(error));
+	return /404|no longer available|not found|NOT_FOUND|is not found|model .* not (found|available)/i.test(message || '');
+}
+
+function isGeminiFallbackSkippableError(error) {
+	return isGeminiQuotaExceededError(error) || isGeminiUnavailableModelError(error);
+}
+
+async function resolveGeminiApiKey(db) {
+	let apiKey = process.env.GEMINI_API_KEY;
+	try {
+		const conn = db || await getDb();
+		const row = await conn.get("SELECT value FROM settings WHERE key = 'gemini_api_key'");
+		if (row && row.value) apiKey = row.value;
+	} catch (e) { }
+	return apiKey || '';
+}
+
 async function runGeminiWithFallback(apiKey, preferredModel, requestFn) {
 	const preferredModels = [];
-	if (preferredModel) preferredModels.push(preferredModel);
-	for (const candidate of ['gemini-3.5-flash-lite', 'gemini-2.5-flash', 'gemini-3.7-flash']) {
+	if (preferredModel) preferredModels.push(normalizeLlmModel(preferredModel));
+	for (const candidate of GEMINI_FALLBACK_MODELS) {
 		if (!preferredModels.includes(candidate)) preferredModels.push(candidate);
 	}
 
@@ -63,11 +98,26 @@ async function runGeminiWithFallback(apiKey, preferredModel, requestFn) {
 			return await requestFn(model);
 		} catch (error) {
 			lastError = error;
-			if (!isGeminiQuotaExceededError(error)) throw error;
-			console.warn(`[GeminiFallback] Model ${model} hit quota/rate limit, retrying with next fallback model.`);
+			if (!isGeminiFallbackSkippableError(error)) throw error;
+			const reason = isGeminiUnavailableModelError(error) ? 'unavailable/404' : 'quota/rate limit';
+			console.warn(`[GeminiFallback] Model ${model} hit ${reason}, retrying with next fallback model.`);
 		}
 	}
-	throw lastError || new Error('Gemini unavailable');
+	throw lastError || new Error(GEMINI_QUOTA_MESSAGE);
+}
+
+async function runActiveGemini(apiKey, db, requestFn) {
+	const ai = new GoogleGenAI({ apiKey });
+	const preferredModel = await getActiveLlmModel(db);
+	return runGeminiWithFallback(apiKey, preferredModel, (model) => requestFn(ai, model));
+}
+
+function sendGeminiFailure(res, error, logLabel, genericMessage) {
+	console.error(logLabel, error);
+	if (isGeminiQuotaExceededError(error)) {
+		return res.status(429).json({ message: GEMINI_QUOTA_MESSAGE });
+	}
+	return res.status(500).json({ message: genericMessage });
 }
 
 async function auditAdminAction(adminId, action, details) {
@@ -197,10 +247,8 @@ router.post('/ai/gap-analysis', requireActiveSession, async (req, res) => {
 		const { course, university } = req.body || {};
 		if (!course || !university) return res.status(400).json({ message: 'Thiếu thông tin môn học hoặc trường đại học.' });
 
-		let apiKey = process.env.GEMINI_API_KEY;
 		const db = await getDb();
-		const apiKeySetting = await db.get("SELECT value FROM settings WHERE key = 'gemini_api_key'");
-		if (apiKeySetting && apiKeySetting.value) apiKey = apiKeySetting.value;
+		const apiKey = await resolveGeminiApiKey(db);
 
 		if (!apiKey) {
 			// FALLBACK SANG DỮ LIỆU GIẢ LẬP (MOCK DATA) NẾU CHƯA CÓ API KEY
@@ -224,7 +272,6 @@ router.post('/ai/gap-analysis', requireActiveSession, async (req, res) => {
 			});
 		}
 
-		const ai = new GoogleGenAI({ apiKey });
 		const schema = {
 			type: "object",
 			properties: {
@@ -272,15 +319,15 @@ router.post('/ai/gap-analysis', requireActiveSession, async (req, res) => {
 
 		const prompt = `Bạn là trợ lý AI phân tích năng lực sinh viên tại ${university}. Môn học: "${course}". Hãy sinh ra 1 kịch bản đánh giá lỗ hổng kiến thức ngẫu nhiên nhưng đúng thực tế học thuật của môn này. Yêu cầu có 4 chương (skills), 2 điểm mù (gaps) và 3 bước ôn tập cấp tốc (timeline). Không được dùng Markdown formatting codeblock (như \`\`\`json), trả về JSON thuần.`;
 
-		const interaction = await ai.interactions.create({
-			model: activeModel,
+		const interaction = await runActiveGemini(apiKey, db, (ai, model) => ai.interactions.create({
+			model,
 			input: prompt,
 			response_format: {
 				type: "text",
 				mime_type: "application/json",
 				schema: schema,
 			}
-		});
+		}));
 
 		let rawText = interaction.output_text;
 		// Xoá markdown code block nếu AI lỡ sinh ra
@@ -288,8 +335,7 @@ router.post('/ai/gap-analysis', requireActiveSession, async (req, res) => {
 		const data = JSON.parse(rawText);
 		return res.status(200).json(data);
 	} catch (error) {
-		console.error("Gemini API Error:", error);
-		return res.status(500).json({ message: "Lỗi tạo nội dung từ AI: " + error.message });
+		return sendGeminiFailure(res, error, 'Gemini API Error:', 'Lỗi tạo nội dung từ AI: ' + (error && error.message ? error.message : ''));
 	}
 });
 
@@ -1553,10 +1599,8 @@ router.post('/ai/rag-chat', requireActiveSession, async (req, res) => {
 		const { message, context, subject, courseId } = req.body || {};
 		if (!message) return res.status(400).json({ message: 'Thiếu tin nhắn.' });
 
-		let apiKey = process.env.GEMINI_API_KEY;
 		const db = await getDb();
-		const apiKeySetting = await db.get("SELECT value FROM settings WHERE key = 'gemini_api_key'");
-		if (apiKeySetting && apiKeySetting.value) apiKey = apiKeySetting.value;
+		const apiKey = await resolveGeminiApiKey(db);
 
 		let finalReply = '';
 		let finalCitation = '';
@@ -1565,7 +1609,6 @@ router.post('/ai/rag-chat', requireActiveSession, async (req, res) => {
 			finalReply = `Theo tài liệu mình tìm thấy trong hệ thống, nội dung liên quan đến môn <strong>${subject}</strong> đã được tổng hợp. <br><br><strong>Lưu ý:</strong> Đây là phản hồi giả lập (Mock AI) vì chưa có API Key. Cấu hình để nhận câu trả lời thật từ Gemini.`;
 			finalCitation = `${context || 'Tài liệu chung'} (Chương Mock - Slide Mock)`;
 		} else {
-			const ai = new GoogleGenAI({ apiKey });
 
 			let pdfInputs = [];
 			let pdfNames = [];
@@ -1633,8 +1676,8 @@ YÊU CẦU BẮT BUỘC:
 				required: ["reply", "citation"]
 			};
 
-			const interaction = await ai.interactions.create({
-				model: 'gemini-3.5-flash-lite',
+			const interaction = await runActiveGemini(apiKey, db, (ai, model) => ai.interactions.create({
+				model,
 				input: [
 					...pdfInputs,
 					{ type: "text", text: prompt }
@@ -1644,7 +1687,7 @@ YÊU CẦU BẮT BUỘC:
 					mime_type: 'application/json',
 					schema: schema
 				}
-			});
+			}));
 
 			const result = JSON.parse(interaction.output_text);
 			finalReply = result.reply;
@@ -1663,8 +1706,7 @@ YÊU CẦU BẮT BUỘC:
 			query_id: dbResult.lastID
 		});
 	} catch (error) {
-		console.error('RAG Chat Error:', error);
-		return res.status(500).json({ message: 'Lỗi AI: ' + error.message });
+		return sendGeminiFailure(res, error, 'RAG Chat Error:', 'Lỗi AI: ' + (error && error.message ? error.message : ''));
 	}
 });
 
@@ -1695,10 +1737,8 @@ router.post('/ai/generate-exam', requireActiveSession, async (req, res) => {
 		const { examTitle, subject, university, courseId } = req.body || {};
 		if (!examTitle || !subject) return res.status(400).json({ message: 'Thiếu thông tin đề thi.' });
 
-		let apiKey = process.env.GEMINI_API_KEY;
 		const db = await getDb();
-		const apiKeySetting = await db.get("SELECT value FROM settings WHERE key = 'gemini_api_key'");
-		if (apiKeySetting && apiKeySetting.value) apiKey = apiKeySetting.value;
+		const apiKey = await resolveGeminiApiKey(db);
 
 		// Helper trích xuất số thứ tự chương (Chương 1, Chương 2, ...)
 		function extractChapterNumber(text) {
@@ -1819,7 +1859,6 @@ router.post('/ai/generate-exam', requireActiveSession, async (req, res) => {
 			});
 		}
 
-		const ai = new GoogleGenAI({ apiKey });
 		const pdfPluralDesc = pdfInputs.length >= 2
 			? `Hệ thống đã đính kèm TỔNG CỘNG ${pdfInputs.length} FILE TÀI LIỆU GIÁO TRÌNH (${pdfNames.join(', ')}). BẮT BUỘC TỔNG HỢP VÀ KẾT HỢP KIẾN THỨC TỪ TẤT CẢ CÁC TÀI LIỆU NÀY để tạo đề thi.`
 			: `Đã đính kèm tài liệu giáo trình (${pdfNames.join(', ')}). BẮT BUỘC trích xuất và sinh câu hỏi trực tiếp từ nội dung tài liệu này.`;
@@ -1859,8 +1898,8 @@ YÊU CẦU QUAN TRỌNG:
 			required: ["examTitle", "questions"]
 		};
 
-		const interaction = await ai.interactions.create({
-			model: 'gemini-3.5-flash-lite',
+		const interaction = await runActiveGemini(apiKey, db, (ai, model) => ai.interactions.create({
+			model,
 			input: [
 				...pdfInputs,
 				{ type: "text", text: prompt }
@@ -1870,7 +1909,7 @@ YÊU CẦU QUAN TRỌNG:
 				mime_type: 'application/json',
 				schema: schema
 			}
-		});
+		}));
 
 		const result = JSON.parse(interaction.output_text);
 
@@ -1897,8 +1936,7 @@ YÊU CẦU QUAN TRỌNG:
 			questions: finalQuestions.slice(0, 50)
 		});
 	} catch (error) {
-		console.error('Generate Exam Error:', error);
-		return res.status(500).json({ message: 'Lỗi AI: ' + error.message });
+		return sendGeminiFailure(res, error, 'Generate Exam Error:', 'Lỗi AI: ' + (error && error.message ? error.message : ''));
 	}
 });
 
@@ -2004,6 +2042,7 @@ router.get('/admin/settings', requireAdmin, async (req, res) => {
 	for (const row of rows) {
 		settings[row.key] = row.value;
 	}
+	if (settings.llm_model) settings.llm_model = normalizeLlmModel(settings.llm_model);
 	settings.ai_status_cache = JSON.stringify(aiStatusCache);
 	return res.status(200).json(settings);
 });
@@ -2053,7 +2092,10 @@ async function testAiKeys(apiKey, pineconeKey) {
 				gemini = { success: false, message: 'Không nhận được phản hồi hợp lệ.' };
 			}
 		} catch (error) {
-			gemini = { success: false, message: error.message };
+			gemini = {
+				success: false,
+				message: isGeminiQuotaExceededError(error) ? GEMINI_QUOTA_MESSAGE : error.message
+			};
 		}
 	}
 	if (pineconeKey) {
@@ -2082,11 +2124,6 @@ async function runBackgroundAiCheck() {
 	}
 }
 
-// Start background check every 5 minutes and run once on startup
-setInterval(runBackgroundAiCheck, 5 * 60 * 1000);
-setTimeout(runBackgroundAiCheck, 2000);
-
-
 router.post('/admin/test-ai', requireAdmin, async (req, res) => {
 	const { apiKey, pineconeKey } = req.body || {};
 	const result = await testAiKeys(apiKey, pineconeKey);
@@ -2102,7 +2139,8 @@ router.post('/admin/test-ai', requireAdmin, async (req, res) => {
 router.post('/ai/exam-gap-analysis', requireActiveSession, async (req, res) => {
 	try {
 		const { examTitle, subject, chapterTitle, score, totalQuestions, accuracyPercent, wrongQuestions } = req.body || {};
-		const apiKey = getGeminiApiKey();
+		const db = await getDb();
+		const apiKey = await resolveGeminiApiKey(db);
 
 		if (!apiKey || !wrongQuestions || wrongQuestions.length === 0) {
 			return res.status(200).json({
@@ -2113,8 +2151,6 @@ router.post('/ai/exam-gap-analysis', requireActiveSession, async (req, res) => {
 				recommendation: 'Khuyến nghị xem lại chi tiết các bước giải từng câu sai ở mục Xem lại đáp án.'
 			});
 		}
-
-		const ai = new GoogleGenAI({ apiKey });
 
 		const wrongSamples = (wrongQuestions || []).slice(0, 8).map(w => ({
 			cau: w.num,
@@ -2146,19 +2182,22 @@ Hãy phân tích SƯ PHẠM VÀ HỌC THUẬT SẮC BÉN:
 			required: ["weakTopics", "diagnostic"]
 		};
 
-		const interaction = await ai.interactions.create({
-			model: 'gemini-3.5-flash-lite',
+		const interaction = await runActiveGemini(apiKey, db, (ai, model) => ai.interactions.create({
+			model,
 			input: [{ type: "text", text: prompt }],
 			response_format: {
 				type: 'text',
 				mime_type: 'application/json',
 				schema: schema
 			}
-		});
+		}));
 
 		const result = JSON.parse(interaction.output_text);
 		return res.status(200).json(result);
 	} catch (err) {
+		if (isGeminiQuotaExceededError(err)) {
+			return res.status(429).json({ message: GEMINI_QUOTA_MESSAGE });
+		}
 		console.error('Exam Gap Analysis AI Error:', err);
 		return res.status(200).json({
 			weakTopics: ['Định lý & Công thức trọng tâm', 'Kỹ năng biến đổi'],

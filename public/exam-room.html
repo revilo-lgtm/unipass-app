@@ -645,7 +645,12 @@
                     })
                 });
 
-                if (res.ok) {
+                if (!res.ok) {
+                    const errData = await res.json().catch(() => ({}));
+                    if (gapSummary) {
+                        gapSummary.innerHTML = `<div style="font-size: 13.5px; line-height: 1.65; color: var(--text-main);">${escapeHtml(errData.message || 'Không thể phân tích lỗ hổng lúc này.')}</div>`;
+                    }
+                } else {
                     const aiData = await res.json();
                     
                     let topicsHtml = '';
@@ -666,6 +671,9 @@
                 }
             } catch (e) {
                 console.error('Gap analysis error:', e);
+                if (gapSummary) {
+                    gapSummary.innerHTML = `<div style="font-size: 13.5px; line-height: 1.65; color: var(--text-main);">Không thể phân tích lỗ hổng lúc này.</div>`;
+                }
             }
         }
 

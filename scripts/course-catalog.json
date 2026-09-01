@@ -1,0 +1,194 @@
+[
+  {
+    "course_id": "bk_calculus_1",
+    "title": "Giải tích 1",
+    "university": "BK",
+    "description": "Chương 1: Phép tính vi phân hàm 1 biến"
+  },
+  {
+    "course_id": "bk_chemistry",
+    "title": "Hóa đại cương",
+    "university": "BK",
+    "description": "Chương 1: Cấu tạo nguyên tử"
+  },
+  {
+    "course_id": "bk_kiem_thu_phan_mem",
+    "title": "Kiểm Thử Phần Mềm",
+    "university": "BK",
+    "description": ""
+  },
+  {
+    "course_id": "bk_programming",
+    "title": "Nhập môn lập trình",
+    "university": "BK",
+    "description": "Chương 1: Con trỏ & Bộ nhớ"
+  },
+  {
+    "course_id": "bk_physics",
+    "title": "Vật lý Đại cương 1",
+    "university": "BK",
+    "description": "Chương 1: Động học chất điểm"
+  },
+  {
+    "course_id": "bk_giai_tich",
+    "title": "Đại số tuyến tính",
+    "university": "BK",
+    "description": "Mục 1: Tài liệu Giáo trình Học tập"
+  },
+  {
+    "course_id": "ftu_trade",
+    "title": "Giao dịch thương mại quốc tế",
+    "university": "FTU",
+    "description": "Chương 1: Incoterms 2020"
+  },
+  {
+    "course_id": "ftu_vamo",
+    "title": "Kinh tế Vi mô",
+    "university": "FTU",
+    "description": "Chương 3: Độc quyền bán"
+  },
+  {
+    "course_id": "ftu_logistics",
+    "title": "Logistics & Chuỗi cung ứng",
+    "university": "FTU",
+    "description": "Chương 1: Tổng quan Vận tải & Logistics"
+  },
+  {
+    "course_id": "ftu_international-payment",
+    "title": "Thanh toán Quốc tế",
+    "university": "FTU",
+    "description": "Chương 1: Phương thức tín dụng L/C"
+  },
+  {
+    "course_id": "ftu_english",
+    "title": "Tiếng Anh chuyên ngành",
+    "university": "FTU",
+    "description": "Unit 1: Business Correspondence"
+  },
+  {
+    "course_id": "hcmus_dsa",
+    "title": "Cấu trúc dữ liệu & Giải thuật",
+    "university": "HCMUS",
+    "description": "Chương 1: Danh sách liên kết"
+  },
+  {
+    "course_id": "hcmus_database",
+    "title": "Hệ Cơ sở dữ liệu",
+    "university": "HCMUS",
+    "description": "Chương 1: Mô hình ERD"
+  },
+  {
+    "course_id": "hcmus_programming",
+    "title": "Lập trình cơ bản (C++)",
+    "university": "HCMUS",
+    "description": "Chương 1: Cú pháp C/C++"
+  },
+  {
+    "course_id": "hcmus_networks",
+    "title": "Mạng máy tính",
+    "university": "HCMUS",
+    "description": "Chương 1: Mô hình OSI"
+  },
+  {
+    "course_id": "hcmus_discrete-math",
+    "title": "Toán rời rạc",
+    "university": "HCMUS",
+    "description": "Chương 1: Logic mệnh đề"
+  },
+  {
+    "course_id": "neu_basic-economics",
+    "title": "Kinh tế học cơ bản",
+    "university": "NEU",
+    "description": "Chương 1: Cung và cầu"
+  },
+  {
+    "course_id": "neu_managerial_accounting",
+    "title": "Kế toán quản trị",
+    "university": "NEU",
+    "description": "Chương 1: Phân loại chi phí"
+  },
+  {
+    "course_id": "neu_econometrics",
+    "title": "Toán kinh tế",
+    "university": "NEU",
+    "description": "Chương 1: Ma trận & I/O"
+  },
+  {
+    "course_id": "neu_corporate_finance",
+    "title": "Tài chính doanh nghiệp",
+    "university": "NEU",
+    "description": "Chương 1: Giá trị tiền tệ"
+  },
+  {
+    "course_id": "neu_statistics",
+    "title": "Xác suất thống kê",
+    "university": "NEU",
+    "description": "Chương 1: Ước lượng mẫu"
+  },
+  {
+    "course_id": "tdtu_english_comm",
+    "title": "Anh văn giao tiếp quốc tế",
+    "university": "TDTU",
+    "description": "Unit 1: Daily Conversations"
+  },
+  {
+    "course_id": "tdtu_pe",
+    "title": "Giáo dục thể chất",
+    "university": "TDTU",
+    "description": "Phần 1: Khởi động & Thể lực"
+  },
+  {
+    "course_id": "tdtu_startup",
+    "title": "Khởi nghiệp & ĐMST",
+    "university": "TDTU",
+    "description": "Chương 1: Mô hình BMC"
+  },
+  {
+    "course_id": "tdtu_study-skills",
+    "title": "Kỹ năng học đại học",
+    "university": "TDTU",
+    "description": "Chương 1: Quản lý thời gian"
+  },
+  {
+    "course_id": "tdtu_applied-it",
+    "title": "Tin học ứng dụng",
+    "university": "TDTU",
+    "description": "Chương 1: Excel nâng cao"
+  },
+  {
+    "course_id": "ueh_hvntd",
+    "title": "Hành vi người tiêu dùng",
+    "university": "UEH",
+    "description": "Chương 2: Mô hình Howard-Sheth"
+  },
+  {
+    "course_id": "ueh_macro",
+    "title": "Kinh tế Vĩ mô",
+    "university": "UEH",
+    "description": "Chương 1: GDP & Lạm phát"
+  },
+  {
+    "course_id": "ueh_accounting",
+    "title": "Nguyên lý kế toán",
+    "university": "UEH",
+    "description": "Chương 3: Bảng cân đối kế toán"
+  },
+  {
+    "course_id": "ueh_marketing",
+    "title": "Quản trị Marketing",
+    "university": "UEH",
+    "description": "Chương 1: Định vị thương hiệu"
+  },
+  {
+    "course_id": "ueh_hr",
+    "title": "Quản trị nguồn nhân lực",
+    "university": "UEH",
+    "description": "Chương 2: Tuyển dụng"
+  },
+  {
+    "course_id": "ueh_math",
+    "title": "Toán tài chính",
+    "university": "UEH",
+    "description": "Chương 2: Lãi kép"
+  }
+]

@@ -178,7 +178,7 @@ async function initSchema(db) {
 
 	// Seed default settings
 	const defaultSettings = {
-		llm_model: 'gemini-3.5-flash-lite',
+		llm_model: 'gemini-3.6-flash',
 		gemini_api_key: '',
 		pinecone_api_key: '',
 		momo_active: 'true',
