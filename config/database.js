@@ -181,7 +181,7 @@ async function initSchema(db) {
 			console.warn('[Security] Removed demo student account from production database.');
 		}
 
-		const demoAdmin = await db.get("SELECT User_ID FROM accounts WHERE User_ID = 'ADMIN001' OR Email = 'admin'");
+		const demoAdmin = await db.get("SELECT User_ID, password FROM accounts WHERE User_ID = 'ADMIN001' OR Email = 'admin'");
 		const realAdmin = await db.get("SELECT User_ID FROM accounts WHERE Role = 'admin' AND User_ID NOT IN ('SV001', 'ADMIN001') AND Email NOT IN ('mssv@st.ueh.edu.vn', 'admin')");
 
 		if (demoAdmin && !realAdmin) {
@@ -189,13 +189,16 @@ async function initSchema(db) {
 				throw new Error('Demo admin still present in production. Set ADMIN_PASSWORD to migrate it automatically.');
 			}
 			const bcrypt = require('bcrypt');
-			const hashedAdmin = await bcrypt.hash(process.env.ADMIN_PASSWORD, 10);
-			const adminEmail = process.env.ADMIN_EMAIL || 'admin@unipass.app';
-			await db.run(
-				"UPDATE accounts SET password = ?, Email = ?, Fullname = 'Quản trị viên', Status = 'active', Role = 'admin' WHERE User_ID = ?",
-				[hashedAdmin, adminEmail, demoAdmin.User_ID]
-			);
-			console.warn(`[Security] Migrated demo admin to production credentials (${adminEmail}).`);
+			const stillDefaultPassword = await bcrypt.compare('admin', demoAdmin.password);
+			if (stillDefaultPassword) {
+				const hashedAdmin = await bcrypt.hash(process.env.ADMIN_PASSWORD, 10);
+				const adminEmail = process.env.ADMIN_EMAIL || 'admin';
+				await db.run(
+					"UPDATE accounts SET password = ?, Email = ?, Fullname = 'Quản trị viên', Status = 'active', Role = 'admin' WHERE User_ID = ?",
+					[hashedAdmin, adminEmail, demoAdmin.User_ID]
+				);
+				console.warn(`[Security] Migrated demo admin to production credentials (${adminEmail}).`);
+			}
 		} else if (demoAdmin) {
 			await db.run("DELETE FROM accounts WHERE User_ID = 'ADMIN001' OR Email = 'admin'");
 			console.warn('[Security] Removed demo admin account from production database.');

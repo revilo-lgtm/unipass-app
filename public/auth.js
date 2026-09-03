@@ -16,6 +16,19 @@
     'unipass.edu.vn': 'UniPass',
   };
 
+  function isStaffLoginEmail(email){
+    const normalized = String(email || '').trim().toLowerCase();
+    return normalized === 'admin'
+      || normalized.endsWith('@unipass.app')
+      || normalized.endsWith('@unipass.edu.vn');
+  }
+
+  function isStaffUser(user){
+    const role = user && (user.Role || user.role || '');
+    const email = String((user && (user.Email || user.email)) || '').trim().toLowerCase();
+    return role === 'admin' || role === 'Giảng viên' || isStaffLoginEmail(email);
+  }
+
   function universityFromEmail(email){
     const domain = String(email || '').toLowerCase().split('@')[1];
     return UNIVERSITY_DOMAINS[domain] || null;
@@ -49,7 +62,7 @@
   async function loginUser(email,password){
     if(!email || password === undefined || password === null) return {ok:false, msg:'Email và mật khẩu là bắt buộc.'};
     const normalizedEmail = email.trim().toLowerCase();
-    if(normalizedEmail !== 'admin' && !universityFromEmail(normalizedEmail)){
+    if(!isStaffLoginEmail(normalizedEmail) && !universityFromEmail(normalizedEmail)){
       return {ok:false, msg:'Email chưa thuộc trường được hỗ trợ.'};
     }
 
@@ -206,13 +219,13 @@
     const user = getCurrentUser();
     if(user){
       const role = user.Role || user.role || '';
-      const isStaff = role === 'admin' || role === 'Giảng viên' || user.email === 'admin';
+      const isStaff = isStaffUser(user);
       const targetDashboard = isStaff ? 'admin-dashboard.html' : 'dashboard.html';
       const btnLabel = isStaff ? 'Trang Quản trị' : 'Vào học ngay';
       const btnIcon = isStaff ? 'fa-shield-halved' : 'fa-gauge-high';
 
       let greetingText = '';
-      if (role === 'admin' || user.email === 'admin') {
+      if (role === 'admin' || isStaffLoginEmail(user.email)) {
         greetingText = 'Xin chào Admin';
       } else if (role === 'Giảng viên') {
         greetingText = 'Xin chào Giảng viên';
