@@ -58,7 +58,7 @@
     };
 
     const urlParams = new URLSearchParams(window.location.search);
-    const queryCourse = urlParams.get('course');
+    const queryCourse = urlParams.get('course') || urlParams.get('id');
     const COURSE_ID = window.COURSE_ID || queryCourse || courseMap[pathName] || 'ueh_hvntd';
     const normCourseId = COURSE_ID.replace(/-/g, '_');
 

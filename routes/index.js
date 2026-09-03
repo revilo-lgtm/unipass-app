@@ -484,7 +484,7 @@ router.get('/user/active-progress', requireActiveSession, async (req, res) => {
 			completedCount,
 			totalLessons,
 			percentage,
-			link: `course.html?id=${encodeURIComponent(activeCourseId)}`
+			link: `course-portal.html?course=${encodeURIComponent(activeCourseId)}`
 		});
 	} catch (err) {
 		console.error('Error getting active progress:', err);

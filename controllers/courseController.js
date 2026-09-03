@@ -161,7 +161,7 @@ function resolveCourseTitle(courseId, storedTitle) {
 }
 
 function coursePageLink(courseId) {
-    return `course.html?id=${encodeURIComponent(courseId)}`;
+    return `course-portal.html?course=${encodeURIComponent(courseId)}`;
 }
 
 function uniFromEmail(email) {
