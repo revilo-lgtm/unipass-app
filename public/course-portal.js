@@ -17,7 +17,7 @@
 
     // 2. Xác định Course ID hiện tại từ URL hoặc tên file
     const pathName = window.location.pathname.split('/').pop() || 'course-ueh.html';
-    const urlCourseId = new URLSearchParams(window.location.search).get('id');
+    const returnUrl = pathName + window.location.search;
     const courseMap = {
         'course-ueh.html': 'ueh_hvntd',
         'course-ueh-marketing.html': 'ueh_marketing',
@@ -57,13 +57,10 @@
         'course-tdtu-pe.html': 'tdtu_pe'
     };
 
-    const COURSE_ID = urlCourseId || window.COURSE_ID || courseMap[pathName] || '';
-    if (!COURSE_ID) {
-        window.location.href = 'student-courses.html';
-        return;
-    }
+    const urlParams = new URLSearchParams(window.location.search);
+    const queryCourse = urlParams.get('course');
+    const COURSE_ID = window.COURSE_ID || queryCourse || courseMap[pathName] || 'ueh_hvntd';
     const normCourseId = COURSE_ID.replace(/-/g, '_');
-    const returnToPage = urlCourseId ? `course.html?id=${encodeURIComponent(COURSE_ID)}` : pathName;
 
     // 3. Inject CSS Styles
     const portalStyles = `
@@ -211,6 +208,7 @@
     styleEl.textContent = portalStyles;
     document.head.appendChild(styleEl);
 
+    let allPdfs = [];
     let coursePdfs = [];
     let currentSyllabus = null;
 
@@ -238,24 +236,51 @@
     async function loadDynamicSyllabus() {
         trackCourseVisit();
         try {
+            const token = localStorage.getItem('unipass_token') || '';
             const [syllabusRes, pdfsRes] = await Promise.all([
-                fetch(`/api/courses/syllabus/${COURSE_ID}`),
+                fetch(`/api/courses/syllabus/${encodeURIComponent(COURSE_ID)}`, {
+                    headers: { Authorization: `Bearer ${token}` }
+                }),
                 fetch('/api/course-pdfs')
             ]);
 
-            if (!syllabusRes.ok) return;
-            const data = await syllabusRes.json();
-            currentSyllabus = data;
+            if (!syllabusRes.ok) {
+                if (syllabusRes.status === 404) {
+                    const hero = document.querySelector('.course-hero');
+                    if (hero) {
+                        hero.innerHTML = `
+                            <div class="hero-content" style="text-align: center; padding: 50px 20px;">
+                                <i class="fa-solid fa-triangle-exclamation" style="font-size: 52px; color: var(--danger); margin-bottom: 16px; display: inline-block;"></i>
+                                <h1 style="font-size: 26px; font-weight: 800; margin-bottom: 8px;">Môn học không tồn tại hoặc đã bị xóa</h1>
+                                <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 15px;">Môn học này đã được xóa khỏi hệ thống UniPass hoặc đường dẫn không hợp lệ.</p>
+                                <a href="student-courses.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; text-decoration: none; border-radius: 30px; font-weight: 700;">
+                                    <i class="fa-solid fa-arrow-left"></i> Quay lại Khóa học của tôi
+                                </a>
+                            </div>
+                        `;
+                    }
+                    const mainContent = document.querySelector('.course-main, .container, main');
+                    if (mainContent && mainContent !== hero) {
+                        const syllabus = document.querySelector('.syllabus');
+                        if (syllabus) syllabus.style.display = 'none';
+                        const sidebar = document.querySelector('.course-sidebar');
+                        if (sidebar) sidebar.style.display = 'none';
+                    }
+                }
+                return;
+            }
 
             if (pdfsRes.ok) {
                 const pdfsData = await pdfsRes.json();
-                const allDocs = pdfsData.documents || [];
-                coursePdfs = allDocs.filter(d => {
+                allPdfs = pdfsData.documents || [];
+                coursePdfs = allPdfs.filter(d => {
                     const dNorm = String(d.course || '').replace(/-/g, '_');
                     return dNorm === normCourseId || d.course === COURSE_ID;
                 });
             }
             
+            const data = await syllabusRes.json();
+            currentSyllabus = data;
             const course = data.course || {};
             const chapters = data.chapters || [];
 
@@ -277,28 +302,30 @@
 
             // 3. Render Khung chương trình (Syllabus) kèm phần bài tập tự động cuối mỗi chương
             let totalLessonsCount = 0;
+            const syllabusContainer = document.querySelector('.syllabus');
 
             if (chapters.length > 0) {
-                const syllabusContainer = document.querySelector('.syllabus');
                 if (syllabusContainer) {
                     let html = '';
                     chapters.forEach((ch, idx) => {
                         const isActive = idx === 0 ? 'active' : '';
                         const chapterNum = ch.chapter_order || (idx + 1);
 
-                        // Tìm tất cả các PDF thuộc chương này
-                        const chapterPdfList = coursePdfs.filter(p => {
-                            // Match qua document_id gán trong lesson
+                        // Tìm tất cả các PDF thuộc chương này (tìm trong allPdfs)
+                        const chapterPdfList = allPdfs.filter(p => {
+                            // Match qua document_id gán trong lesson của chương này
                             const matchLessonDoc = ch.lessons && ch.lessons.some(l => String(l.document_id) === String(p.id));
                             if (matchLessonDoc) return true;
 
-                            // Match qua lessonId format (chapter-X-lesson-Y)
+                            // Match qua course ID và lessonId / tên chương
+                            const dNorm = String(p.course || '').replace(/-/g, '_');
+                            if (dNorm !== normCourseId && p.course !== COURSE_ID) return false;
+
                             const pLessonId = String(p.lessonId || '').toLowerCase();
                             if (pLessonId.includes(`chapter-${chapterNum}-`) || pLessonId.includes(`chapter_${chapterNum}_`) || pLessonId === `chapter-${chapterNum}`) {
                                 return true;
                             }
 
-                            // Match qua tên chương
                             const pLessonTitle = String(p.lessonTitle || '').toLowerCase();
                             const chTitleLower = String(ch.title || '').toLowerCase();
                             if (pLessonTitle.includes(`chương ${chapterNum}`) || pLessonTitle.includes(`chuong ${chapterNum}`)) {
@@ -316,15 +343,29 @@
                         let lessonsHtml = '';
                         docLessons.forEach(l => {
                             totalLessonsCount++;
+                            const explicitDocId = l.document_id || '';
+                            const matchingPdf = allPdfs.find(p => {
+                                if (explicitDocId && String(p.id) === String(explicitDocId)) return true;
+                                const dNorm = String(p.course || '').replace(/-/g, '_');
+                                if (dNorm !== normCourseId && p.course !== COURSE_ID) return false;
+                                const pLessonId = String(p.lessonId || '').toLowerCase();
+                                const exactLessonId = `chapter-${chapterNum}-lesson-${l.lesson_order || 1}`;
+                                return pLessonId === exactLessonId;
+                            });
+
+                            const hasPdf = Boolean(matchingPdf);
                             const metaText = l.meta_text ? `<span style="display:block; font-size:12px; color:var(--text-muted); margin-top:2px;">${escapeHtml(l.meta_text)}</span>` : '';
+                            const docIdAttr = matchingPdf ? matchingPdf.id : explicitDocId;
 
                             lessonsHtml += `
-                                <li data-lesson-id="${l.lesson_id || ('lesson_' + l.id)}" data-doc-id="${l.document_id || ''}">
+                                <li data-lesson-id="${l.lesson_id || ('lesson_' + l.id)}" data-doc-id="${docIdAttr}" data-ch-pk="${ch.id || ''}" data-ls-pk="${l.id || ''}" class="${hasPdf ? 'has-pdf-document' : ''}" style="${hasPdf ? 'cursor:pointer;' : ''}">
                                     <div style="flex:1;">
-                                        <span><i class="fa-solid fa-file-lines"></i> ${escapeHtml(l.title)}</span>
+                                        <span style="font-weight:600;"><i class="fa-solid fa-file-lines" style="color:var(--primary); margin-right:6px;"></i> ${escapeHtml(l.title)}</span>
                                         ${metaText}
                                     </div>
-                                    <span class="lesson-type type-doc"><i class="fa-solid fa-file-lines"></i> Tài liệu</span>
+                                    <span class="lesson-type type-doc" style="${hasPdf ? 'background: rgba(79, 70, 229, 0.12); color: var(--primary); font-weight: 700;' : ''}">
+                                        <i class="fa-solid ${hasPdf ? 'fa-book-open' : 'fa-file-lines'}"></i> ${hasPdf ? 'Đọc tài liệu' : 'Tài liệu'}
+                                    </span>
                                     <label class="lesson-complete"><input type="checkbox"> Đã học</label>
                                 </li>
                             `;
@@ -339,29 +380,22 @@
                             // ĐÃ CÓ ít nhất 1 file PDF
                             const pdfDesc = chapterPdfList.length === 1 
                                 ? `Tự động sinh đề từ 1 tài liệu PDF: <strong>${escapeHtml(chapterPdfList[0].originalName || chapterPdfList[0].name || '')}</strong>`
-                                : `Tự động tổng hợp đề từ <strong>${chapterPdfList.length} tài liệu PDF</strong> trong chương này`;
+                                : `Tổng hợp đề thi từ <strong>${chapterPdfList.length} tài liệu PDF</strong> trong chương`;
 
                             lessonsHtml += `
-                                <li class="lesson-quiz-auto has-exam" 
-                                    data-chapter-id="${ch.id}" 
-                                    data-chapter-num="${chapterNum}" 
-                                    data-chapter-title="${escapeHtml(ch.title)}" 
-                                    data-lesson-id="${quizLessonId}">
+                                <li class="lesson-quiz-auto has-exam" data-chapter-id="${ch.id || ''}" data-chapter-num="${chapterNum}" data-chapter-title="${escapeHtml(ch.title)}" data-lesson-id="${quizLessonId}">
                                     <div class="ai-quiz-icon-badge">
-                                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                        <i class="fa-solid fa-bolt"></i>
                                     </div>
                                     <div class="ai-quiz-info">
                                         <div class="ai-quiz-title">
-                                            <span>Bài tập trắc nghiệm AI</span>
-                                            <span class="ai-quiz-chip"><i class="fa-solid fa-bolt"></i> Auto Gen</span>
+                                            <span class="ai-quiz-chip">AI RAG Exam</span>
+                                            <span>Phòng thi trắc nghiệm & Tổng ôn tập AI</span>
                                         </div>
                                         <div class="ai-quiz-desc">${pdfDesc}</div>
                                     </div>
                                     <div class="ai-quiz-actions">
-                                        <button type="button" class="btn-start-chapter-quiz" 
-                                            data-chapter-id="${ch.id}" 
-                                            data-chapter-num="${chapterNum}" 
-                                            data-chapter-title="${escapeHtml(ch.title)}">
+                                        <button type="button" class="btn-start-chapter-quiz">
                                             <i class="fa-solid fa-play"></i> <span>Bắt đầu thi</span>
                                         </button>
                                         <label class="lesson-complete"><input type="checkbox"> <span>Đã học</span></label>
@@ -369,15 +403,15 @@
                                 </li>
                             `;
                         } else {
-                            // CHƯA CÓ file PDF
+                            // CHƯA CÓ PDF nào
                             lessonsHtml += `
-                                <li class="lesson-quiz-auto disabled" 
-                                    data-lesson-id="${quizLessonId}">
+                                <li class="lesson-quiz-auto disabled" data-chapter-id="${ch.id || ''}" data-chapter-num="${chapterNum}" data-chapter-title="${escapeHtml(ch.title)}" data-lesson-id="${quizLessonId}">
                                     <div class="ai-quiz-icon-badge">
                                         <i class="fa-solid fa-lock"></i>
                                     </div>
                                     <div class="ai-quiz-info">
                                         <div class="ai-quiz-title">
+                                            <span class="ai-quiz-chip" style="background: rgba(148, 163, 184, 0.15); color: #94A3B8;">AI Exam</span>
                                             <span style="color: var(--text-muted);">Bài tập trắc nghiệm AI</span>
                                         </div>
                                         <div class="ai-quiz-desc">Chương này hiện chưa có file PDF nào để sinh đề thi</div>
@@ -420,11 +454,14 @@
                         };
                     });
                 }
-            } else {
-                const syllabusContainer = document.querySelector('.syllabus');
-                if (syllabusContainer) {
-                    syllabusContainer.innerHTML = '<div class="accordion-item"><div class="accordion-content" style="max-height:none;padding:20px;color:var(--text-muted);font-weight:600;">Chưa có chương học trong database. Admin thêm chương ở tab Khung chương trình.</div></div>';
-                }
+            } else if (syllabusContainer) {
+                syllabusContainer.innerHTML = `
+                    <div style="text-align: center; padding: 48px 20px; color: var(--text-muted); background: var(--surface); border-radius: 16px; border: 1px dashed var(--border-color);">
+                        <i class="fa-solid fa-folder-open" style="font-size: 32px; color: var(--text-muted); margin-bottom: 12px; display: block;"></i>
+                        <h3 style="font-size: 16px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">Môn học đang được chuẩn bị giáo trình</h3>
+                        <p style="font-size: 13.5px; margin: 0;">Giảng viên đang biên soạn nội dung và cập nhật bài học cho môn này.</p>
+                    </div>
+                `;
             }
 
             // 4. Cập nhật Badges thống kê ở Hero Header
@@ -442,6 +479,15 @@
             await syncSavedProgress();
         } catch (e) {
             console.warn('Lỗi tải khung chương trình động:', e);
+            const syllabusContainer = document.querySelector('.syllabus');
+            if (syllabusContainer) {
+                syllabusContainer.innerHTML = `
+                    <div style="text-align: center; padding: 40px; color: var(--danger);">
+                        <i class="fa-solid fa-circle-exclamation" style="font-size: 28px; margin-bottom: 10px; display: block;"></i>
+                        <div>Không thể tải dữ liệu môn học lúc này. Vui lòng tải lại trang.</div>
+                    </div>
+                `;
+            }
         }
     }
 
@@ -459,11 +505,16 @@
                 const lessonNum = lessonIdx + 1;
                 const exactLessonId = `chapter-${chapterNum}-lesson-${lessonNum}`;
                 const explicitDocId = li.dataset.docId || '';
+                const chPk = li.dataset.chPk || '';
+                const lsPk = li.dataset.lsPk || '';
+                const dbLessonId = (chPk && lsPk) ? `${chPk}-lesson-${lsPk}` : '';
 
-                const matchingPdf = coursePdfs.find(p => {
+                const matchingPdf = allPdfs.find(p => {
                     if (explicitDocId && String(p.id) === String(explicitDocId)) return true;
+                    const dNorm = String(p.course || '').replace(/-/g, '_');
+                    if (dNorm !== normCourseId && p.course !== COURSE_ID) return false;
                     const pLessonId = String(p.lessonId || '').toLowerCase();
-                    return pLessonId === exactLessonId;
+                    return pLessonId === exactLessonId || (dbLessonId && pLessonId === dbLessonId);
                 });
 
                 if (matchingPdf) {
@@ -473,14 +524,12 @@
                     li.onclick = async (e) => {
                         if (e.target.tagName === 'INPUT' || e.target.closest('.lesson-complete')) return;
                         await updateLessonProgress(li, true);
-                        setTimeout(() => {
-                            const lessonTitle = li.querySelector('.lesson-left span')?.textContent?.trim() || li.querySelector('span')?.textContent?.trim() || matchingPdf.originalName || 'Bài học';
-                            const chapterHeader = accordionItem.querySelector('.chapter-title')?.textContent?.trim() || '';
-                            const courseTitle = currentSyllabus?.course?.title || '';
-                            const fullTitle = chapterHeader ? `${chapterHeader}: ${lessonTitle}` : lessonTitle;
-                            
-                            window.location.href = `pdf-viewer.html?id=${encodeURIComponent(matchingPdf.id)}&course=${encodeURIComponent(courseTitle)}&chapter=${encodeURIComponent(chapterHeader)}&lesson=${encodeURIComponent(lessonTitle)}&title=${encodeURIComponent(fullTitle)}&returnTo=${encodeURIComponent(returnToPage)}`;
-                        }, 60);
+                        const lessonTitle = li.querySelector('span')?.textContent?.trim() || matchingPdf.originalName || 'Bài học';
+                        const chapterHeader = accordionItem.querySelector('.chapter-title')?.textContent?.trim() || '';
+                        const courseTitle = currentSyllabus?.course?.title || '';
+                        const fullTitle = chapterHeader ? `${chapterHeader}: ${lessonTitle}` : lessonTitle;
+                        
+                        window.location.href = `pdf-viewer.html?id=${encodeURIComponent(matchingPdf.id)}&course=${encodeURIComponent(courseTitle)}&chapter=${encodeURIComponent(chapterHeader)}&lesson=${encodeURIComponent(lessonTitle)}&title=${encodeURIComponent(fullTitle)}&returnTo=${encodeURIComponent(returnUrl)}`;
                     };
                 }
             });
@@ -551,8 +600,8 @@
                     btn.innerHTML = `<i class="fa-solid fa-check"></i> <span>Hoàn tất 100%!</span>`;
                     // Lưu dữ liệu đề thi và chuyển sang phòng thi exam-room.html
                     sessionStorage.setItem('current_exam_data', JSON.stringify(examData));
-                    sessionStorage.setItem('exam_return_url', returnToPage);
-                    window.location.href = `exam-room.html?returnTo=${encodeURIComponent(returnToPage)}`;
+                    sessionStorage.setItem('exam_return_url', returnUrl);
+                    window.location.href = `exam-room.html?returnTo=${encodeURIComponent(returnUrl)}`;
 
                 } catch (err) {
                     clearInterval(progressTimer);

@@ -334,6 +334,10 @@
         }
       } catch (error) {
         console.error('Error loading recent courses:', error);
+        const container = document.getElementById('recent-courses-list');
+        if (container) {
+          container.innerHTML = '<div style="color: var(--text-muted); font-size: 13.5px; padding: 16px;">Chưa có môn học nào được ghi nhận.</div>';
+        }
       }
     }
     loadOverviewProgress();
@@ -367,20 +371,42 @@
     }
 
     function renderLibrary(documents) {
-      if (!documents || !documents.length) {
+      const safeDocs = Array.isArray(documents) ? documents.filter(doc => {
+        const course = String(doc?.course || '').trim();
+        return course.length > 0 && course !== 'unassigned';
+      }) : [];
+
+      if (!safeDocs.length) {
         libraryGrid.innerHTML = '<div class="card library-empty"><i class="fa-solid fa-book-open"></i>Chưa có tài liệu nào trong tủ sách của bạn.</div>';
         return;
       }
 
-      libraryGrid.innerHTML = documents.map(doc => {
-        const courseNames = {
-          ueh_hvntd: 'Hành vi người tiêu dùng',
-          bk_giai_tich: 'Đại số Tuyến tính',
-          bk_physics: 'Vật lý Đại cương 1',
-          ftu_vamo: 'Kinh tế Vi mô'
-        };
-        const course = escapeHtml(doc.courseTitle || courseNames[doc.course] || 'Khóa học');
-        const lesson = escapeHtml(doc.lessonTitle || doc.originalName || 'Chương học');
+      libraryGrid.innerHTML = safeDocs.map(doc => {
+        let course = doc.courseTitle;
+        if (!course || course.includes('Chưa gán')) {
+          const fallbackCourseMap = {
+            ueh_marketing: 'Quản trị Marketing',
+            ueh_hvntd: 'Hành vi Người tiêu dùng',
+            ueh_macro: 'Kinh tế Vĩ mô',
+            ueh_accounting: 'Nguyên lý Kế toán',
+            ueh_math: 'Toán Tài chính',
+            ueh_hr: 'Quản trị Nguồn nhân lực',
+            bk_giai_tich: 'Đại số Tuyến tính',
+            bk_calculus_1: 'Giải tích 1',
+            bk_physics: 'Vật lý Đại cương 1',
+            bk_chemistry: 'Hóa học Đại cương',
+            bk_programming: 'Lập trình C/C++',
+            ftu_vamo: 'Kinh tế Vi mô',
+            ftu_international_payment: 'Thanh toán Quốc tế',
+            ftu_logistics: 'Logistics & Chuỗi cung ứng',
+            neu_economics: 'Kinh tế học Cơ bản',
+            hcmus_dsa: 'Cấu trúc Dữ liệu & Giải thuật',
+            tdtu_startup: 'Khởi nghiệp & ĐMST'
+          };
+          course = fallbackCourseMap[doc.course] || (doc.university ? `Môn học [${doc.university}]` : 'Giáo trình Môn học');
+        }
+        course = escapeHtml(course);
+        const lesson = escapeHtml(doc.lessonTitle || doc.originalName || 'Tài liệu học tập');
         const documentId = encodeURIComponent(doc.id);
         const docTitle = encodeURIComponent(doc.originalName || doc.lessonTitle || '');
         const isRecent = doc.isRecent || Boolean(doc.lastReadAt);
@@ -412,24 +438,34 @@
           });
           if (res.ok) {
             const data = await res.json();
-            if (data.documents && data.documents.length > 0) {
-              renderLibrary(data.documents);
+            const docs = Array.isArray(data.documents) ? data.documents.filter(doc => {
+              const course = String(doc?.course || '').trim();
+              return course.length > 0 && course !== 'unassigned';
+            }) : [];
+            if (docs.length > 0) {
+              renderLibrary(docs);
               return;
             }
           }
         }
         
-        // Fallback: nếu chưa đăng nhập hoặc chưa có lịch sử đọc
-        const course = libraryCourses[overviewUni] || '';
-        let response = await fetch(`/api/course-pdfs?course=${encodeURIComponent(course)}`);
+        // Fallback: Lấy danh sách tài liệu theo trường của sinh viên
+        let response = await fetch(`/api/course-pdfs?university=${encodeURIComponent(overviewUni)}`);
         let data = await response.json();
+        const docs = Array.isArray(data.documents) ? data.documents.filter(doc => {
+          const course = String(doc?.course || '').trim();
+          return course.length > 0 && course !== 'unassigned';
+        }) : [];
         
-        if (!data.documents || data.documents.length === 0) {
+        if (!docs.length) {
           response = await fetch(`/api/course-pdfs`);
           data = await response.json();
         }
         
-        renderLibrary(Array.isArray(data.documents) ? data.documents : []);
+        renderLibrary(Array.isArray(data.documents) ? data.documents.filter(doc => {
+          const course = String(doc?.course || '').trim();
+          return course.length > 0 && course !== 'unassigned';
+        }) : []);
       } catch (error) {
         libraryGrid.innerHTML = '<div class="card library-empty"><i class="fa-solid fa-circle-exclamation"></i>Không thể tải tủ sách lúc này.</div>';
       }

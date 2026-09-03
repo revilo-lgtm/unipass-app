@@ -7,8 +7,23 @@ html, body, button, input, select, textarea, p, h1, h2, h3, h4, h5, h6, span, a,
   -moz-osx-font-smoothing: grayscale;
 }
 
-i, .fa, .fas, .far, .fab, .fa-solid, .fa-regular, .fa-brands {
-  font-family: var(--fa-style-family, "Font Awesome 6 Free"), "Font Awesome 6 Brands" !important;
+i.fa-solid, .fa-solid, .fas {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+  font-style: normal !important;
+  display: inline-block;
+}
+i.fa-regular, .fa-regular, .far {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  display: inline-block;
+}
+i.fa-brands, .fa-brands, .fab {
+  font-family: "Font Awesome 6 Brands" !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  display: inline-block;
 }
 
 /* Shared admin shell keeps navigation dimensions stable across pages. */

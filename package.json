@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "dev": "node --watch server.js",
     "check": "node --check server.js",
     "seed:courses": "node scripts/seed-courses.js",
     "seed:chapters": "node scripts/seed-chapters.js",
@@ -16,11 +17,14 @@
     "@google/genai": "^2.19.0",
     "bcrypt": "^6.0.0",
     "compression": "^1.8.1",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
+    "csrf-csrf": "^4.0.3",
     "dejavu-fonts-ttf": "^2.37.3",
     "dotenv": "^17.4.2",
     "express": "^5.1.0",
     "express-rate-limit": "^8.6.2",
+    "express-validator": "^7.3.2",
     "helmet": "^8.3.0",
     "jsonwebtoken": "^9.0.2",
     "katex": "^0.18.4",
@@ -29,7 +33,11 @@
     "multer": "^2.0.2",
     "pdf-lib": "^1.17.1",
     "pdfkit": "^0.20.2",
+    "sanitize-html": "^2.17.7",
     "sqlite": "^5.1.1",
     "sqlite3": "^6.0.1"
+  },
+  "overrides": {
+    "htmlparser2": "^9.1.0"
   }
 }

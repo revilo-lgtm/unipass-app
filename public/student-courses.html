@@ -179,8 +179,19 @@
 
             
 
+            <!-- Filter Tabs -->
+            <div class="tabs" id="course-filter-tabs" style="display: none;">
+                <button class="tab-btn active" data-filter="all">Tất cả môn học <span class="tab-count" id="count-all">0</span></button>
+                <button class="tab-btn" data-filter="in-progress">Đang học <span class="tab-count" id="count-in-progress">0</span></button>
+                <button class="tab-btn" data-filter="completed">Đã hoàn thành <span class="tab-count" id="count-completed">0</span></button>
+            </div>
+
             <div class="course-grid" id="course-container">
+                <div style="grid-column: 1 / -1; text-align: center; padding: 48px 24px; color: var(--text-muted);">
+                    <i class="fa-solid fa-spinner fa-spin" style="font-size: 32px; margin-bottom: 12px; display: inline-block;"></i>
+                    <p>Đang tải lộ trình học tập từ hệ thống...</p>
                 </div>
+            </div>
 
         </main>
     </div>
@@ -210,12 +221,114 @@
 
         function updateIcon(theme) { themeIcon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon'; }
 
-        
-        /* --- 3. DỮ LIỆU ĐỘNG (TỪ BACKEND) --- */
+        /* --- 3. DỮ LIỆU ĐỘNG TỪ BACKEND --- */
+        let studentCoursesData = [];
+        let currentFilter = 'all';
+
+        function renderCoursesList() {
+            const container = document.getElementById('course-container');
+            const tabsEl = document.getElementById('course-filter-tabs');
+            
+            if (!studentCoursesData || studentCoursesData.length === 0) {
+                if (tabsEl) tabsEl.style.display = 'none';
+                container.innerHTML = `
+                    <div style="grid-column: 1 / -1; background: var(--surface); padding: 56px 24px; text-align: center; border-radius: 20px; border: 1px dashed var(--border-color); box-shadow: var(--shadow-sm);">
+                        <i class="fa-solid fa-book-bookmark" style="font-size: 52px; color: var(--text-muted); opacity: 0.4; margin-bottom: 18px; display: inline-block;"></i>
+                        <h3 style="font-size: 20px; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">Chưa có môn học nào</h3>
+                        <p style="color: var(--text-muted); font-size: 15px; max-width: 500px; margin: 0 auto 20px;">Chương trình đào tạo của trường bạn hiện chưa có môn học nào được kích hoạt trong CSDL. Quản trị viên sẽ sớm cập nhật giáo trình.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            if (tabsEl) tabsEl.style.display = 'flex';
+
+            // Cập nhật số lượng trên các tab
+            const inProgressCount = studentCoursesData.filter(c => (c.percentage || 0) > 0 && (c.percentage || 0) < 100).length;
+            const completedCount = studentCoursesData.filter(c => (c.percentage || 0) === 100).length;
+            
+            document.getElementById('count-all').textContent = studentCoursesData.length;
+            document.getElementById('count-in-progress').textContent = inProgressCount;
+            document.getElementById('count-completed').textContent = completedCount;
+
+            // Lọc danh sách theo tab đang chọn
+            let filtered = studentCoursesData;
+            if (currentFilter === 'in-progress') {
+                filtered = studentCoursesData.filter(c => (c.percentage || 0) > 0 && (c.percentage || 0) < 100);
+            } else if (currentFilter === 'completed') {
+                filtered = studentCoursesData.filter(c => (c.percentage || 0) === 100);
+            }
+
+            if (filtered.length === 0) {
+                const emptyMsg = currentFilter === 'in-progress' 
+                    ? 'Bạn chưa có môn học nào đang học dở.' 
+                    : 'Bạn chưa hoàn thành môn học nào.';
+                container.innerHTML = `
+                    <div style="grid-column: 1 / -1; background: var(--surface); padding: 40px 24px; text-align: center; border-radius: 16px; border: 1px dashed var(--border-color);">
+                        <i class="fa-solid fa-filter" style="font-size: 36px; color: var(--text-muted); opacity: 0.4; margin-bottom: 12px; display: inline-block;"></i>
+                        <p style="color: var(--text-muted); font-size: 15px;">${emptyMsg}</p>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = '';
+            filtered.forEach(course => {
+                const percent = typeof course.percentage === 'number' ? course.percentage : 0;
+                const isDone = percent === 100;
+                const hasStarted = percent > 0;
+                
+                html += `
+                    <div class="course-card-detail">
+                        <div class="course-top">
+                            <div class="course-icon"><i class="fa-solid ${course.icon || 'fa-book-open'}"></i></div>
+                            <div class="course-info">
+                                <h3>${course.title}</h3>
+                                <p><i class="fa-solid fa-layer-group"></i> ${course.totalLessons || 1} Bài giảng & Chương học</p>
+                            </div>
+                        </div>
+
+                        <div class="progress-section" data-course-progress="${course.courseId}" data-total-lessons="${course.totalLessons}">
+                            <div class="progress-header">
+                                <span>Tiến độ học tập</span>
+                                <span class="course-progress-percent" style="${isDone ? 'color: var(--success); font-weight: 800;' : ''}">${percent}%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: ${percent}%; transition: width 0.8s ease-out; ${isDone ? 'background: linear-gradient(135deg, #10B981 0%, #059669 100%);' : ''}"></div>
+                            </div>
+                            <div class="next-lesson">
+                                <i class="fa-solid ${isDone ? 'fa-circle-check' : (hasStarted ? 'fa-clock-rotate-left' : 'fa-circle-play')}" style="${isDone ? 'color: var(--success);' : (hasStarted ? 'color: var(--primary);' : 'color: var(--warning);')}"></i>
+                                <span>${course.next || 'Chương 1: Bắt đầu học'}</span>
+                            </div>
+                        </div>
+
+                        <div class="card-actions">
+                            <a href="${course.link || `course-portal.html?course=${course.courseId}`}" class="btn-main">${isDone ? 'Ôn lại bài' : (hasStarted ? 'Học tiếp bài sau' : 'Vào lớp học')}</a>
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        // Tab click listeners
+        document.getElementById('course-filter-tabs')?.addEventListener('click', (e) => {
+            const tabBtn = e.target.closest('.tab-btn');
+            if (!tabBtn) return;
+            document.querySelectorAll('#course-filter-tabs .tab-btn').forEach(b => b.classList.remove('active'));
+            tabBtn.classList.add('active');
+            currentFilter = tabBtn.dataset.filter || 'all';
+            renderCoursesList();
+        });
+
         async function initStudentProfile() {
             try {
-                const response = await fetch('/api/courses', {
-                    headers: { Authorization: `Bearer ${localStorage.getItem('unipass_token') || ''}` }
+                const response = await fetch(`/api/courses?t=${Date.now()}`, {
+                    cache: 'no-store',
+                    headers: { 
+                        'Authorization': `Bearer ${localStorage.getItem('unipass_token') || ''}`,
+                        'Cache-Control': 'no-cache'
+                    }
                 });
                 
                 if (!response.ok) {
@@ -223,62 +336,23 @@
                 }
                 
                 const data = await response.json();
-                const profile = data.profile;
+                const profile = data.profile || {};
                 const assignedUni = data.uni;
 
                 // Cập nhật CSS Variables để đổi màu toàn trang
                 const root = document.documentElement;
-                root.style.setProperty('--uni-color', profile.color);
-                root.style.setProperty('--uni-bg', profile.bg);
-                root.style.setProperty('--uni-grad', profile.gradient);
+                if (profile.color) root.style.setProperty('--uni-color', profile.color);
+                if (profile.bg) root.style.setProperty('--uni-bg', profile.bg);
+                if (profile.gradient) root.style.setProperty('--uni-grad', profile.gradient);
 
                 // Cập nhật Badge Trường
-                document.getElementById('uni-badge').innerHTML = `<i class="fa-solid fa-university"></i> ${profile.name}`;
+                document.getElementById('uni-badge').innerHTML = `<i class="fa-solid fa-university"></i> ${profile.name || 'UniPass'}`;
                 
-                // Render Courses
-                const container = document.getElementById('course-container');
-                if (!profile.courses || !profile.courses.length) {
-                    container.innerHTML = '<p style="color:var(--text-muted);font-weight:600;padding:24px;">Chưa có môn học trong database cho trường này. Admin thêm môn ở Khung chương trình.</p>';
-                    return;
-                }
-                let html = '';
-                profile.courses.forEach(course => {
-                    const percent = typeof course.percentage === 'number' ? course.percentage : 0;
-                    const isDone = percent === 100;
-                    
-                    html += `
-                        <div class="course-card-detail">
-                            <div class="course-top">
-                                <div class="course-icon"><i class="fa-solid ${course.icon}"></i></div>
-                                <div class="course-info">
-                                    <h3>${course.title}</h3>
-                                    <p><i class="fa-solid fa-layer-group"></i> ${course.totalLessons} Bài giảng</p>
-                                </div>
-                            </div>
-
-                            <div class="progress-section" data-course-progress="${course.courseId}" data-total-lessons="${course.totalLessons}">
-                                <div class="progress-header">
-                                    <span>Tiến độ học tập</span>
-                                    <span class="course-progress-percent" style="${isDone ? 'color: var(--success); font-weight: 800;' : ''}">${percent}%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: ${percent}%; transition: width 0.8s ease-out; ${isDone ? 'background: linear-gradient(135deg, #10B981 0%, #059669 100%);' : ''}"></div>
-                                </div>
-                                <div class="next-lesson">
-                                    <i class="fa-solid ${isDone ? 'fa-circle-check' : 'fa-circle-play'}" style="${isDone ? 'color: var(--success);' : ''}"></i> ${course.next}
-                                </div>
-                            </div>
-
-                            <div class="card-actions">
-                                <a href="${course.link}" class="btn-main">${isDone ? 'Ôn lại bài' : 'Vào lớp học'}</a>
-                            </div>
-                        </div>
-                    `;
-                });
-                container.innerHTML = html;
+                studentCoursesData = Array.isArray(profile.courses) ? profile.courses : [];
+                renderCoursesList();
             } catch (err) {
                 console.error(err);
-                document.getElementById('course-container').innerHTML = '<p style="color:red;">Lỗi tải dữ liệu. Hãy thử đăng nhập lại.</p>';
+                document.getElementById('course-container').innerHTML = '<p style="color:var(--danger); padding:24px; text-align:center;">Lỗi tải dữ liệu khóa học. Hãy thử đăng nhập lại.</p>';
             }
         }
 

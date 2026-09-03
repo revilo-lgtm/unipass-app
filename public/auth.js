@@ -311,12 +311,24 @@
         Authorization: `Bearer ${token || ''}`,
       },
     });
-    const data = await response.json();
+    
     if(response.status === 401){
       logout();
       if(!window.location.pathname.endsWith('login.html')) window.location.href = 'login.html?session=revoked';
     }
-    if(!response.ok) throw new Error(data.message || 'Không thể thực hiện thao tác.');
+
+    let data = {};
+    const text = await response.text();
+    try {
+      data = text ? JSON.parse(text) : {};
+    } catch(err) {
+      if (!response.ok) {
+        throw new Error(`Máy chủ phản hồi lỗi ${response.status}. Vui lòng khởi động lại server.`);
+      }
+      data = { raw: text };
+    }
+
+    if(!response.ok) throw new Error(data.message || `Lỗi kết nối máy chủ (${response.status})`);
     return data;
   }
 

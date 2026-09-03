@@ -2,6 +2,14 @@ const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const { getDb } = require('../config/database');
 
+if (!process.env.JWT_SECRET) {
+	if (process.env.NODE_ENV === 'production') {
+		throw new Error('FATAL SECURITY ERROR: JWT_SECRET environment variable is not defined in production!');
+	} else {
+		console.warn('[SECURITY WARNING] JWT_SECRET is not defined. Using default fallback key for development only.');
+	}
+}
+
 let jwtSecret = process.env.JWT_SECRET || 'unipass-development-secret-safe-fixed-key';
 
 const MAX_ACTIVE_SESSIONS = 2;
@@ -32,6 +40,9 @@ async function requireActiveSession(req, res, next) {
 		const db = await getDb();
 		const account = await db.get('SELECT * FROM accounts WHERE User_ID = ?', [payload.User_ID]);
 		if (!account) throw new Error('Account not found');
+		if (account.Expiry_Date && account.Role !== 'admin' && account.Role !== 'Giảng viên' && new Date(account.Expiry_Date) <= new Date()) {
+			return res.status(403).json({ code: 'PAYMENT_REQUIRED', message: 'Gói học của bạn đã hết hạn.' });
+		}
 
 		if (payload.Role !== 'admin') {
 			const maintenance = await db.get('SELECT value FROM settings WHERE key = "maintenance_mode"');
@@ -72,6 +83,7 @@ async function requireAdmin(req, res, next) {
 		if (!isActive) throw new Error('Inactive session');
 		if (payload.Role !== 'admin') return res.status(403).json({ message: 'Bạn không có quyền quản trị.' });
 		req.admin = payload;
+		req.user = payload;
 		next();
 	} catch (error) {
 		return res.status(401).json({ message: 'Token quản trị không hợp lệ hoặc đã hết hạn.' });
@@ -116,6 +128,7 @@ async function requireStaff(req, res, next) {
 		if (!isActive) throw new Error('Inactive session');
 		if (payload.Role !== 'admin' && payload.Role !== 'Giảng viên') return res.status(403).json({ message: 'Bạn không có quyền thao tác.' });
 		req.admin = payload;
+		req.user = payload;
 		next();
 	} catch (error) {
 		return res.status(401).json({ message: 'Token không hợp lệ hoặc đã hết hạn.' });

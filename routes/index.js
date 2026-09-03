@@ -13,6 +13,7 @@ const authController = require('../controllers/authController');
 const { resolveCourseTitle } = require('../controllers/courseController');
 const { logForensicEvent, forensicSubscribers } = require('../middlewares/tracking');
 const { GoogleGenAI, Type } = require('@google/genai');
+const { validators, handleValidationErrors } = require('../middlewares/validators');
 
 function formatHumanReadableLogAction(actionStr) {
 	if (!actionStr) return actionStr;
@@ -173,17 +174,17 @@ function writePdfMetadata(metadata) {
 }
 
 // Auth Routes
-router.post('/login', authController.login);
+router.post('/login', validators.login, handleValidationErrors, authController.login);
 router.post('/logout', requireActiveSession, authController.logout);
 router.get('/verify-token', authController.verifyToken);
-router.post('/register', authController.register);
+router.post('/register', validators.register, handleValidationErrors, authController.register);
 router.get('/auth/sessions', requireActiveSession, authController.getUserSessions);
 router.get('/sessions', requireActiveSession, authController.getUserSessions);
 router.post('/auth/logout-other-devices', requireActiveSession, authController.logoutOtherDevices);
 router.post('/logout-other-devices', requireActiveSession, authController.logoutOtherDevices);
 
 // Đổi mật khẩu cá nhân
-router.post('/user/change-password', requireActiveSession, async (req, res) => {
+router.post('/user/change-password', validators.changePassword, handleValidationErrors, requireActiveSession, async (req, res) => {
 	const { oldPassword, newPassword } = req.body || {};
 	if ((oldPassword === undefined || oldPassword === null) || !newPassword) return res.status(400).json({ message: 'Vui lòng cung cấp mật khẩu cũ và mới.' });
 
@@ -209,7 +210,7 @@ router.post('/user/change-password', requireActiveSession, async (req, res) => {
 	return res.status(200).json({ message: 'Đổi mật khẩu thành công.' });
 });
 
-router.post('/forgot-password', async (req, res) => {
+router.post('/forgot-password', validators.forgotPassword, handleValidationErrors, async (req, res) => {
 	const { email } = req.body || {};
 	if (!email) return res.status(400).json({ message: 'Email là bắt buộc.' });
 
@@ -699,6 +700,125 @@ router.get('/admin/courses-list', requireStaff, async (req, res) => {
 	}
 });
 
+// Admin: Tạo môn học mới
+router.post('/admin/courses', validators.createCourse, handleValidationErrors, requireStaff, async (req, res) => {
+	try {
+		const db = await getDb();
+		let { course_id, title, university, description, chapters } = req.body || {};
+		if (!title || !university) return res.status(400).json({ message: 'Tên môn học và trường đại học là bắt buộc.' });
+
+		title = String(title).trim();
+		university = String(university).trim().toUpperCase();
+		description = String(description || '').trim();
+
+		if (!course_id || !String(course_id).trim()) {
+			const slug = title.toLowerCase()
+				.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+				.replace(/đ/g, 'd').replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '');
+			course_id = `${university.toLowerCase()}_${slug || Date.now()}`;
+		} else {
+			course_id = String(course_id).trim().toLowerCase().replace(/[^a-z0-9_-]/g, '_');
+		}
+
+		const existing = await db.get('SELECT course_id FROM course_details WHERE course_id = ?', [course_id]);
+		if (existing) {
+			return res.status(409).json({ message: `Mã môn học "${course_id}" đã tồn tại. Vui lòng nhập mã môn khác.` });
+		}
+
+		await db.run(`
+			INSERT INTO course_details (course_id, title, university, description, updated_at)
+			VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)
+		`, [course_id, title, university, description]);
+
+		if (!chapters || !Array.isArray(chapters) || chapters.length === 0) {
+			chapters = ['Chương 1: Tổng quan & Khái niệm trọng tâm'];
+		}
+
+		let order = 1;
+		for (const chapTitle of chapters) {
+			const chapName = String(chapTitle).trim() || `Chương ${order}`;
+			const chapResult = await db.run(`
+				INSERT INTO course_chapters (course_id, chapter_order, title, meta)
+				VALUES (?, ?, ?, '1 Bài học')
+			`, [course_id, order, chapName]);
+
+			await db.run(`
+				INSERT INTO course_lessons (course_id, chapter_id, lesson_order, lesson_id, title, type, meta_text)
+				VALUES (?, ?, 1, ?, 'Bài 1: Giới thiệu', 'doc', 'Tài liệu')
+			`, [course_id, chapResult.lastID, `${course_id}_les_${Date.now()}_${order}`]);
+
+			order++;
+		}
+
+		const staffId = req.admin ? req.admin.User_ID : (req.user ? req.user.User_ID : 'Staff');
+		await auditAdminAction(staffId, 'CREATE_COURSE', `Created course ${title} (${course_id}) for ${university}`);
+
+		return res.status(201).json({
+			success: true,
+			course_id,
+			title,
+			university,
+			message: `Đã tạo thành công môn học "${title}"!`
+		});
+	} catch (err) {
+		console.error('Error creating course:', err);
+		return res.status(500).json({ message: 'Lỗi tạo môn học: ' + err.message });
+	}
+});
+
+// Admin: Tự động sinh mô tả tóm tắt môn học bằng AI (Gemini)
+router.post('/admin/courses/generate-desc', requireStaff, async (req, res) => {
+	try {
+		const { title, university, chapters } = req.body || {};
+		if (!title || !String(title).trim()) {
+			return res.status(400).json({ message: 'Vui lòng nhập tên môn học trước khi sinh mô tả.' });
+		}
+
+		const uniNameMap = {
+			'BK': 'Đại học Bách Khoa TP.HCM (HCMUT)',
+			'UEH': 'Đại học Kinh tế TP.HCM (UEH)',
+			'FTU': 'Đại học Ngoại thương (FTU)',
+			'NEU': 'Đại học Kinh tế Quốc dân (NEU)',
+			'HCMUS': 'Đại học Khoa học Tự nhiên (HCMUS)',
+			'TDTU': 'Đại học Tôn Đức Thắng (TDTU)',
+		};
+		const fullUni = uniNameMap[university] || university || 'Đại học';
+		const chapListText = (chapters && Array.isArray(chapters) && chapters.length > 0)
+			? chapters.filter(c => c && c.trim()).join(', ')
+			: 'Kiến thức cốt lõi và bài tập thực hành';
+
+		const db = await getDb();
+		const apiKey = await resolveGeminiApiKey(db);
+		if (!apiKey) {
+			const chapsSummary = (chapters && Array.isArray(chapters) && chapters.length > 0)
+				? chapters.map(c => `- ${c}`).join('\n')
+				: '- Kiến thức nền tảng và phương pháp luận chuyên sâu\n- Kỹ năng ứng dụng thực tiễn và chuẩn đầu ra học phần';
+			const fallbackDesc = `Môn học ${title} thuộc chương trình đào tạo của ${fullUni}, cung cấp cho sinh viên hệ thống kiến thức toàn diện, chuẩn học thuật cao cấp và phương pháp tư duy giải quyết vấn đề thực tế. Giáo trình bao gồm các trọng tâm:\n${chapsSummary}\nMôn học trang bị nền tảng vững chắc phục vụ học phần chuyên ngành và bài thi đánh giá kết quả học tập.`;
+			return res.status(200).json({ description: fallbackDesc });
+		}
+
+		const prompt = `Bạn là chuyên gia thiết kế giáo trình đại học chuẩn quốc gia và quốc tế.
+Hãy viết một đoạn MÔ TẢ TÓM TẮT MÔN HỌC (Course Description) cô đọng, chuyên nghiệp và chuẩn học thuật (Academic Standard) cho:
+- Tên môn học: ${title}
+- Trường: ${fullUni}
+- Các nội dung/chương dự kiến: ${chapListText}
+
+Yêu cầu:
+1. Độ dài khoảng 2 - 4 câu (hoặc 1 đoạn văn súc tích 60-120 từ tiếng Việt).
+2. Nêu bật mục tiêu môn học, kiến thức cốt lõi, phương pháp ứng dụng thực tiễn và giá trị chuẩn đầu ra cho sinh viên.
+3. Không chào hỏi, không dùng ký hiệu markdown rườm rà hay tiêu đề thừa, trả về duy nhất nội dung mô tả thuần văn bản tiếng Việt chuẩn mực.`;
+
+		const interaction = await runActiveGemini(apiKey, db, (ai, model) => ai.interactions.create({ model, input: prompt }));
+		const description = interaction.output_text ? interaction.output_text.trim() : '';
+		return res.status(200).json({ description });
+	} catch (err) {
+		console.error('Error generating course description:', err);
+		const fullUni = req.body?.university || 'Đại học';
+		const fallbackDesc = `Môn học ${req.body?.title || ''} thuộc chương trình đào tạo của ${fullUni}, cung cấp cho sinh viên hệ thống kiến thức toàn diện, chuẩn học thuật và phương pháp ứng dụng thực tiễn giải quyết bài toán chuyên ngành.`;
+		return res.status(200).json({ description: fallbackDesc });
+	}
+});
+
 // Admin: Cập nhật thông tin môn học (Tên, mô tả, trường)
 router.put('/admin/course-details/:courseId', requireStaff, async (req, res) => {
 	try {
@@ -727,7 +847,7 @@ router.put('/admin/course-details/:courseId', requireStaff, async (req, res) => 
 	}
 });
 
-router.delete('/admin/course-details/:courseId', requireStaff, async (req, res) => {
+const handleDeleteCourse = async (req, res) => {
 	try {
 		const db = await getDb();
 		const courseId = String(req.params.courseId || '').trim();
@@ -735,21 +855,28 @@ router.delete('/admin/course-details/:courseId', requireStaff, async (req, res) 
 			return res.status(400).json({ message: 'Mã môn học không hợp lệ.' });
 		}
 
-		const existing = await db.get('SELECT course_id FROM course_details WHERE course_id = ?', [courseId]);
+		const existing = await db.get('SELECT course_id, title FROM course_details WHERE course_id = ?', [courseId]);
 		if (!existing) {
 			return res.status(404).json({ message: 'Không tìm thấy môn học.' });
 		}
 
 		await db.run('DELETE FROM course_lessons WHERE course_id = ?', [courseId]);
 		await db.run('DELETE FROM course_chapters WHERE course_id = ?', [courseId]);
+		await db.run('DELETE FROM course_progress WHERE course_id = ?', [courseId]);
 		await db.run('DELETE FROM course_details WHERE course_id = ?', [courseId]);
+
+		const staffId = req.admin ? req.admin.User_ID : (req.user ? req.user.User_ID : 'Staff');
+		await auditAdminAction(staffId, 'DELETE_COURSE', `Deleted course ${existing.title} (${courseId})`);
 
 		return res.status(200).json({ success: true, message: 'Đã xóa môn học và toàn bộ chương, bài học liên quan.' });
 	} catch (err) {
 		console.error('Error deleting course:', err);
 		return res.status(500).json({ message: 'Lỗi xóa môn học.' });
 	}
-});
+};
+
+router.delete('/admin/course-details/:courseId', requireStaff, handleDeleteCourse);
+router.delete('/admin/courses/:courseId', requireStaff, handleDeleteCourse);
 
 // Admin: Tạo chương mới
 router.post('/admin/course-chapters', requireStaff, async (req, res) => {
@@ -1002,7 +1129,38 @@ router.delete('/admin/accounts/:userId', requireAdmin, async (req, res) => {
 	return res.status(200).json({ message: 'Đã xóa account thành công.' });
 });
 
-// PDF Routes
+// PDF & RAG KPI Stats
+router.get('/admin/rag-kpis', requireStaff, async (req, res) => {
+	try {
+		const db = await getDb();
+		const courseCountRow = await db.get('SELECT COUNT(*) as totalCourses FROM course_details');
+		const docs = readPdfMetadata();
+
+		const rateResult = await db.get(`
+			SELECT 
+				COUNT(*) as total_rated,
+				SUM(CASE WHEN rating = 1 THEN 1 ELSE 0 END) as total_likes
+			FROM rag_queries 
+			WHERE rating IN (1, -1)
+		`);
+
+		let accuracy = 100.0;
+		if (rateResult && rateResult.total_rated > 0) {
+			accuracy = (rateResult.total_likes / rateResult.total_rated) * 100;
+		}
+
+		return res.status(200).json({
+			totalDocs: docs.length,
+			totalCourses: courseCountRow ? (courseCountRow.totalCourses || 0) : 0,
+			totalUnis: 6,
+			accuracy: parseFloat(accuracy.toFixed(1))
+		});
+	} catch (err) {
+		console.error('Error getting RAG KPIs:', err);
+		return res.status(500).json({ message: 'Lỗi nạp thống kê.' });
+	}
+});
+
 router.get('/admin/rag-accuracy', requireStaff, async (req, res) => {
 	try {
 		const db = await getDb();
@@ -1988,6 +2146,59 @@ router.post('/admin/course-pdfs', requireStaff, (req, res) => {
 		writePdfMetadata(metadata);
 		return res.status(201).json({ document });
 	});
+});
+
+router.put('/admin/course-pdfs/:documentId/assign', validators.assignPdf, handleValidationErrors, requireStaff, async (req, res) => {
+	try {
+		const { course, courseTitle, university, lessonId, lessonTitle } = req.body || {};
+		const metadata = readPdfMetadata();
+		const doc = metadata.find(item => item.id === req.params.documentId);
+		if (!doc) return res.status(404).json({ message: 'Không tìm thấy tài liệu cần gán.' });
+
+		const normalizedCourse = String(course || '').trim();
+		doc.course = normalizedCourse;
+		doc.courseTitle = resolveCourseTitle(normalizedCourse, courseTitle || normalizedCourse || 'Chưa gán môn học');
+		doc.university = String(university || (normalizedCourse ? normalizedCourse.split('_')[0].toUpperCase() : '')).trim();
+		doc.lessonId = String(lessonId || '').trim();
+		doc.lessonTitle = String(lessonTitle || '').trim();
+		doc.updatedAt = new Date().toISOString();
+
+		writePdfMetadata(metadata);
+		return res.status(200).json({ success: true, document: decoratePdfDocument(doc), message: 'Đã gán tài liệu vào môn học thành công!' });
+	} catch (err) {
+		console.error('Error assigning course to PDF:', err);
+		return res.status(500).json({ message: 'Lỗi gán môn học: ' + err.message });
+	}
+});
+
+router.post('/admin/course-pdfs/bulk-delete', requireStaff, async (req, res) => {
+	try {
+		const { documentIds } = req.body || {};
+		if (!Array.isArray(documentIds) || documentIds.length === 0) {
+			return res.status(400).json({ message: 'Danh sách tài liệu cần xóa không hợp lệ.' });
+		}
+		const metadata = readPdfMetadata();
+		const idSet = new Set(documentIds);
+		const remaining = [];
+		let deletedCount = 0;
+
+		for (const doc of metadata) {
+			if (idSet.has(doc.id)) {
+				if (doc.filePath && fs.existsSync(doc.filePath)) {
+					try { fs.unlinkSync(doc.filePath); } catch (e) {}
+				}
+				deletedCount++;
+			} else {
+				remaining.push(doc);
+			}
+		}
+
+		writePdfMetadata(remaining);
+		return res.status(200).json({ success: true, deletedCount, message: `Đã xóa ${deletedCount} tài liệu thành công.` });
+	} catch (err) {
+		console.error('Error bulk deleting PDFs:', err);
+		return res.status(500).json({ message: 'Lỗi xóa tài liệu: ' + err.message });
+	}
 });
 
 const studyGroupClients = new Set();

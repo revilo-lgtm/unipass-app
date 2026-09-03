@@ -713,7 +713,13 @@ async function loadSecurePDF(documentId) {
         // Ghi nhận lịch sử đọc tài liệu cho Tủ sách gần đây
         try {
             const token = localStorage.getItem('unipass_token');
-            if (token) {
+            const qp = new URLSearchParams(window.location.search);
+            const curDocId = qp.get('docId') || qp.get('id');
+            const curCourse = qp.get('course');
+            const curLesson = qp.get('lesson');
+            const curTitle = qp.get('title');
+
+            if (token && curDocId) {
                 fetch(`${PDF_API_BASE_URL}/api/user/recent-reads`, {
                     method: 'POST',
                     headers: {
@@ -721,8 +727,10 @@ async function loadSecurePDF(documentId) {
                         'Authorization': `Bearer ${token}`
                     },
                     body: JSON.stringify({
-                        documentId,
-                        documentTitle: docTitle ? decodeURIComponent(docTitle) : undefined
+                        documentId: curDocId,
+                        documentTitle: curTitle ? decodeURIComponent(curTitle) : (docTitle ? decodeURIComponent(docTitle) : undefined),
+                        courseTitle: curCourse ? decodeURIComponent(curCourse) : undefined,
+                        lessonTitle: curLesson ? decodeURIComponent(curLesson) : (curTitle ? decodeURIComponent(curTitle) : undefined)
                     })
                 }).catch(() => {});
             }

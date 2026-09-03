@@ -381,43 +381,18 @@
         }
         /* --- ĐỒNG BỘ DỮ LIỆU MÔN HỌC & ĐỀ THI VỚI STUDENT-COURSES.HTML --- */
         const localUniversityCourses = {
-            BK: {
-                name: 'ĐH Bách Khoa (HCMUT)',
-                courses: [
-                    { title: "Đại số tuyến tính", icon: "fa-square-root-variable", link: "course-bk.html", courseId: "bk_giai_tich", totalLessons: 12, next: "Chương 2: Ma trận nghịch đảo", aiHint: "Hổng kiến thức Ma trận" },
-                    { title: "Vật lý Đại cương 1", icon: "fa-atom", link: "course-bk-physics.html", courseId: "bk_physics", totalLessons: 9, next: "Chương 1: Động học chất điểm", aiHint: null },
-                    { title: "Giải tích 1", icon: "fa-chart-area", link: "course-bk-calculus.html", courseId: "bk_calculus_1", totalLessons: 10, next: "Chương 2: Tích phân suy rộng", aiHint: "Quan trọng" },
-                    { title: "Hóa đại cương", icon: "fa-flask", link: "course-bk-chemistry.html", courseId: "bk_chemistry", totalLessons: 9, next: "Chương 2: Cấu tạo nguyên tử", aiHint: null },
-                    { title: "Nhập môn lập trình", icon: "fa-laptop-code", link: "course-bk-programming.html", courseId: "bk_programming", totalLessons: 10, next: "Chương 3: Con trỏ", aiHint: "Cơ bản" }
-                ]
-            },
-            UEH: {
-                name: 'ĐH Kinh tế TP.HCM (UEH)',
-                courses: [
-                    { title: "Hành vi người tiêu dùng", icon: "fa-bullseye", link: "course-ueh.html", courseId: "ueh_hvntd", totalLessons: 10, next: "Chương 2: Mô hình Howard-Sheth", aiHint: "Cần ôn tập gấp" },
-                    { title: "Quản trị Marketing", icon: "fa-chart-simple", link: "course-ueh-marketing.html", courseId: "ueh_marketing", totalLessons: 12, next: "Chương 1: Định vị thương hiệu", aiHint: null },
-                    { title: "Kinh tế Vĩ mô", icon: "fa-earth-asia", link: "course-ueh-macro.html", courseId: "ueh_macro", totalLessons: 12, next: "Chương 1: GDP & Lạm phát", aiHint: null },
-                    { title: "Nguyên lý kế toán", icon: "fa-file-invoice", link: "course-ueh-accounting.html", courseId: "ueh_accounting", totalLessons: 12, next: "Chương 3: Bảng cân đối kế toán", aiHint: "Khá khó" },
-                    { title: "Toán tài chính", icon: "fa-calculator", link: "course-ueh-math.html", courseId: "ueh_math", totalLessons: 9, next: "Chương 2: Lãi kép", aiHint: null },
-                    { title: "Quản trị nguồn nhân lực", icon: "fa-users", link: "course-ueh-hr.html", courseId: "ueh_hr", totalLessons: 9, next: "Chương 2: Tuyển dụng", aiHint: "Sắp thi" }
-                ]
-            },
-            FTU: {
-                name: 'ĐH Ngoại thương (FTU)',
-                courses: [
-                    { title: "Kinh tế Vi mô", icon: "fa-chart-pie", link: "course-ftu.html", courseId: "ftu_vamo", totalLessons: 10, next: "Chương 3: Độc quyền bán", aiHint: "Sẵn sàng cho bài thi" },
-                    { title: "Thanh toán Quốc tế", icon: "fa-money-bill-transfer", link: "course-ftu-payment.html", courseId: "ftu_international-payment", totalLessons: 8, next: "Chương 1: Tỷ giá hối đoái", aiHint: null },
-                    { title: "Logistics & Chuỗi cung ứng", icon: "fa-truck-fast", link: "course-ftu-logistics.html", courseId: "ftu_logistics", totalLessons: 8, next: "Chương 2: Chuỗi cung ứng", aiHint: "Đang học" },
-                    { title: "Giao dịch thương mại quốc tế", icon: "fa-handshake", link: "course-ftu-trade.html", courseId: "ftu_trade", totalLessons: 8, next: "Chương 2: Hợp đồng ngoại thương", aiHint: null },
-                    { title: "Tiếng Anh chuyên ngành", icon: "fa-language", link: "course-ftu-english.html", courseId: "ftu_english", totalLessons: 8, next: "Unit 2: Financial Terms", aiHint: null }
-                ]
-            }
+            BK: { name: 'ĐH Bách Khoa (HCMUT)', courses: [] },
+            UEH: { name: 'ĐH Kinh tế TP.HCM (UEH)', courses: [] },
+            FTU: { name: 'ĐH Ngoại thương (FTU)', courses: [] },
+            NEU: { name: 'ĐH Kinh tế Quốc dân (NEU)', courses: [] },
+            HCMUS: { name: 'ĐH Khoa học Tự nhiên (HCMUS)', courses: [] },
+            TDTU: { name: 'ĐH Tôn Đức Thắng (TDTU)', courses: [] }
         };
 
         let currentUniCode = window.Auth.universityFromEmail(currentEmail) || 'BK';
         let defaultProfile = localUniversityCourses[currentUniCode] || localUniversityCourses.BK;
         let currentUniName = defaultProfile.name;
-        let currentStudentCourses = defaultProfile.courses;
+        let currentStudentCourses = [];
 
         
         function escapeHtml(str) {
@@ -487,7 +462,9 @@ let syllabusCache = {};
                         chapters = syllabusCache[course.courseId].chapters || [];
                     } else {
                         try {
-                            const sylRes = await fetch(`/api/courses/syllabus/${course.courseId}`);
+                            const sylRes = await fetch(`/api/courses/syllabus/${encodeURIComponent(course.courseId)}`, {
+                                headers: { Authorization: 'Bearer ' + token }
+                            });
                             if (sylRes.ok) {
                                 const sylData = await sylRes.json();
                                 syllabusCache[course.courseId] = sylData;

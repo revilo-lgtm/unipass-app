@@ -796,8 +796,7 @@
                     <div class="form-group">
                         <label>Mô hình Ngôn ngữ mặc định (LLM)</label>
                         <select id="setting-llm_model" class="input-control">
-                            <option value="gemini-3.6-flash">Google Gemini 3.6 Flash (Khuyến nghị)</option>
-                            <option value="gemini-3.5-flash-lite">Google Gemini 3.5 Flash-Lite</option>
+                            <option value="gemini-3.5-flash-lite">Google Gemini 3.5 Flash-Lite (Khuyến nghị)</option>
                             <option value="gemini-3.7-flash">Google Gemini 3.7 Flash (Có thể quota hạn chế)</option>
                         </select>
                     </div>
@@ -1076,13 +1075,14 @@
             if (pineconeKey) document.getElementById('pinecone-status').innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang kiểm tra...';
 
             try {
+                const model = document.getElementById('setting-llm_model').value;
                 const res = await fetch('/api/admin/test-ai', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': 'Bearer ' + localStorage.getItem('unipass_token')
                     },
-                    body: JSON.stringify({ apiKey, pineconeKey })
+                    body: JSON.stringify({ apiKey, pineconeKey, model })
                 });
                 const data = await res.json();
 

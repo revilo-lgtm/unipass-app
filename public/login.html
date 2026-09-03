@@ -1080,10 +1080,11 @@
             if (!regApprovalPoller) {
                 regApprovalPoller = setInterval(async () => {
                     try {
+                        const pwd = registeredCredentials ? registeredCredentials.password : '';
                         const verifyRes = await fetch('/api/payment/check-transfer', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ email, memoCode: memo, planId: selectedPlan.id })
+                            body: JSON.stringify({ email, memoCode: memo, planId: selectedPlan.id, password: pwd })
                         });
                         const verifyData = await verifyRes.json();
                         if (verifyRes.ok && verifyData.token) {
@@ -1111,10 +1112,11 @@
                 try {
                     const memo = registeredCredentials ? registeredCredentials.memoCode : '';
                     const email = registeredCredentials ? registeredCredentials.email : '';
+                    const pwd = registeredCredentials ? registeredCredentials.password : '';
                     const verifyRes = await fetch('/api/payment/check-transfer', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ email, memoCode: memo, planId: selectedPlan.id })
+                        body: JSON.stringify({ email, memoCode: memo, planId: selectedPlan.id, password: pwd })
                     });
                     const verifyData = await verifyRes.json();
 
@@ -1146,11 +1148,12 @@
                 try {
                     const memo = registeredCredentials ? registeredCredentials.memoCode : '';
                     const email = registeredCredentials ? registeredCredentials.email : '';
+                    const pwd = registeredCredentials ? registeredCredentials.password : '';
 
                     const verifyRes = await fetch('/api/payment/check-transfer', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ email, memoCode: memo, planId: selectedPlan.id })
+                        body: JSON.stringify({ email, memoCode: memo, planId: selectedPlan.id, password: pwd })
                     });
                     const verifyData = await verifyRes.json();
 

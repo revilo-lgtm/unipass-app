@@ -138,6 +138,18 @@ async function initSchema(db) {
 		CREATE INDEX IF NOT EXISTS idx_course_chapters_course ON course_chapters(course_id, chapter_order);
 		CREATE INDEX IF NOT EXISTS idx_course_lessons_chapter ON course_lessons(chapter_id, lesson_order);
 		CREATE INDEX IF NOT EXISTS idx_reading_history_user ON reading_history(user_id, last_read_at DESC);
+		CREATE TABLE IF NOT EXISTS security_logs (
+			id INTEGER PRIMARY KEY AUTOINCREMENT,
+			event_type TEXT NOT NULL,
+			user_id TEXT,
+			email TEXT,
+			ip_address TEXT,
+			user_agent TEXT,
+			endpoint TEXT,
+			details TEXT,
+			timestamp TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+			FOREIGN KEY(user_id) REFERENCES accounts(User_ID) ON DELETE SET NULL
+		);
 		CREATE INDEX IF NOT EXISTS idx_sessions_user_id ON sessions(user_id);
 		CREATE INDEX IF NOT EXISTS idx_sessions_token ON sessions(token);
 	`);
@@ -150,6 +162,9 @@ async function initSchema(db) {
 	try { await db.exec("ALTER TABLE accounts ADD COLUMN reset_requested INTEGER DEFAULT 0"); } catch(e){}
 	try { await db.exec("ALTER TABLE transactions ADD COLUMN plan TEXT NOT NULL DEFAULT 'Membership'"); } catch(e){}
 	try { await db.exec("ALTER TABLE transactions ADD COLUMN method TEXT NOT NULL DEFAULT 'Unknown'"); } catch(e){}
+	try { await db.exec('ALTER TABLE rag_queries ADD COLUMN question TEXT'); } catch(e){}
+	try { await db.exec('ALTER TABLE rag_queries ADD COLUMN answer TEXT'); } catch(e){}
+	try { await db.exec('ALTER TABLE rag_queries ADD COLUMN rating INTEGER DEFAULT 0'); } catch(e){}
 
 	// Create settings table
 	await db.exec(`
@@ -159,9 +174,14 @@ async function initSchema(db) {
 		);
 	`);
 
-	// Seed data for accounts
+	if (process.env.NODE_ENV === 'production') {
+		const demoAccount = await db.get("SELECT User_ID FROM accounts WHERE User_ID IN ('SV001', 'ADMIN001') OR Email IN ('mssv@st.ueh.edu.vn', 'admin')");
+		if (demoAccount) throw new Error('Remove demo accounts before starting in production.');
+	}
+
+	// Seed data for accounts (opt-in via SEED_DEMO_ACCOUNTS)
 	const seed = await db.get("SELECT User_ID FROM accounts WHERE User_ID = 'SV001'");
-	if (!seed) {
+	if (!seed && process.env.SEED_DEMO_ACCOUNTS === 'true') {
 		const bcrypt = require('bcrypt');
 		const defaultPassword = await bcrypt.hash('123456', 10);
 		// SV001 is active and expires in 30 days

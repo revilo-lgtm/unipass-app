@@ -953,7 +953,7 @@
                 <li><a href="admin-students.html" title="Quản lý Học viên"><i class="fa-solid fa-users"></i> Quản lý Học viên</a></li>
                 <li><a href="admin-transactions.html" title="Lịch sử Giao dịch"><i class="fa-solid fa-file-invoice-dollar"></i> Lịch sử Giao
                         dịch</a></li>
-                <li><a href="admin-rag.html" title="Dữ liệu AI RAG"><i class="fa-solid fa-database"></i> Dữ liệu AI RAG</a></li>
+                <li><a href="admin-rag.html?v=3.2" title="Dữ liệu AI RAG"><i class="fa-solid fa-database"></i> Dữ liệu AI RAG</a></li>
                 <li><a href="admin-settings.html" title="Cài đặt Hệ thống"><i class="fa-solid fa-gear"></i> Cài đặt Hệ thống</a></li>
                 <li class="sidebar-home-link" style="margin-top: 14px; border-top: 1px dashed var(--border-color); padding-top: 12px;"><a href="index.html"  style="color: var(--primary); font-weight: 700;" title="Về Trang chủ UniPass"><i class="fa-solid fa-house"></i> Về Trang chủ</a></li>
             </ul>
@@ -1017,7 +1017,7 @@
                     </div>
                 </a>
 
-                <a href="admin-rag.html" class="kpi-card purple" title="Dữ liệu AI RAG">
+                <a href="admin-rag.html?v=3.2" class="kpi-card purple" title="Dữ liệu AI RAG">
                     <div class="kpi-card-top">
                         <span class="kpi-title">Truy vấn AI RAG / Ngày</span>
                         <div class="kpi-icon-wrap"><i class="fa-solid fa-robot"></i></div>
@@ -1064,7 +1064,7 @@
                         </div>
                         <i class="fa-solid fa-chevron-right qa-arrow"></i>
                     </a>
-                    <a href="admin-rag.html" class="quick-action-card" title="Dữ liệu AI RAG">
+                    <a href="admin-rag.html?v=3.2" class="quick-action-card" title="Dữ liệu AI RAG">
                         <div class="qa-icon"><i class="fa-solid fa-file-pdf"></i></div>
                         <div class="qa-info">
                             <h4>Kho Giáo trình & AI RAG</h4>
@@ -1237,7 +1237,7 @@
                 // Ẩn menu không cho phép
                 document.querySelectorAll('.nav-menu li').forEach(li => {
                     const link = li.querySelector('a').getAttribute('href') || '';
-                    if (!link.includes('admin-students.html') && !link.includes('admin-rag.html') && !link.includes('admin-dashboard.html')) {
+                    if (!link.includes('admin-students.html') && !link.includes('admin-rag.html?v=3.2') && !link.includes('admin-dashboard.html')) {
                         li.style.display = 'none';
                     }
                 });

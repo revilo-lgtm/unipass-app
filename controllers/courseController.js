@@ -82,6 +82,43 @@ const universityProfiles = {
 
 exports.universityProfiles = universityProfiles;
 
+const courseIcons = {
+	'marketing': 'fa-chart-simple',
+	'macro': 'fa-earth-asia',
+	'accounting': 'fa-file-invoice',
+	'math': 'fa-calculator',
+	'hr': 'fa-users',
+	'physics': 'fa-atom',
+	'calculus': 'fa-chart-area',
+	'giai_tich': 'fa-square-root-variable',
+	'chemistry': 'fa-flask',
+	'programming': 'fa-laptop-code',
+	'logistics': 'fa-truck-fast',
+	'trade': 'fa-handshake',
+	'english': 'fa-language',
+	'economics': 'fa-chart-line',
+	'statistics': 'fa-dice',
+	'finance': 'fa-building-columns',
+	'discrete': 'fa-diagram-project',
+	'dsa': 'fa-network-wired',
+	'database': 'fa-database',
+	'networks': 'fa-server',
+	'study': 'fa-graduation-cap',
+	'it': 'fa-laptop-code',
+	'startup': 'fa-lightbulb',
+	'pe': 'fa-person-running',
+	'hvntd': 'fa-bullseye',
+	'payment': 'fa-money-bill-transfer'
+};
+
+function getCourseIcon(courseId) {
+	const id = String(courseId || '').toLowerCase();
+	for (const [key, icon] of Object.entries(courseIcons)) {
+		if (id.includes(key)) return icon;
+	}
+	return 'fa-book';
+}
+
 function catalogMetaById() {
     const map = {};
     Object.keys(universityProfiles).forEach(uni => {
@@ -154,13 +191,16 @@ exports.getCourses = async (req, res) => {
 
         const lessonCountRows = await db.all("SELECT course_id, COUNT(*) as count FROM course_lessons WHERE type != 'quiz' GROUP BY course_id");
         const chapterCountRows = await db.all('SELECT course_id, COUNT(*) as count FROM course_chapters GROUP BY course_id');
+        const firstChapterRows = await db.all('SELECT course_id, title FROM course_chapters WHERE chapter_order = 1');
         const lessonCountMap = {};
         for (const row of lessonCountRows) { lessonCountMap[row.course_id] = row.count; }
         const chapterCountMap = {};
         for (const row of chapterCountRows) { chapterCountMap[row.course_id] = row.count; }
+        const firstChapterMap = {};
+        for (const row of firstChapterRows) { firstChapterMap[row.course_id] = row.title; }
 
         const dbCourses = await db.all(
-            'SELECT course_id, title, description, university FROM course_details WHERE university = ? ORDER BY title ASC',
+            'SELECT course_id, title, description, university FROM course_details WHERE UPPER(TRIM(university)) = ? ORDER BY title ASC',
             [assignedUni]
         );
 
@@ -185,7 +225,7 @@ exports.getCourses = async (req, res) => {
             const completedCount = Math.min(completedList.length, realTotalLessons);
             const percentage = Math.min(100, Math.round((completedCount / realTotalLessons) * 100));
 
-            let nextText = row.description || 'Chưa có chương học';
+            let nextText = firstChapterMap[courseId] || row.description || 'Chưa có chương học';
             if (percentage === 100) {
                 nextText = '🎉 Đã hoàn thành 100% môn học';
             } else if (completedCount > 0) {
@@ -198,7 +238,7 @@ exports.getCourses = async (req, res) => {
 
             return {
                 title: resolveCourseTitle(courseId, row.title),
-                icon: meta.icon || 'fa-book',
+                icon: meta.icon || getCourseIcon(courseId),
                 link: coursePageLink(courseId),
                 courseId,
                 totalLessons: realTotalLessons,
@@ -232,9 +272,9 @@ exports.getPublicCourses = async (req, res) => {
             color: universityProfiles[code].color,
             bg: universityProfiles[code].bg,
             gradient: universityProfiles[code].gradient,
-            courses: rows.filter(row => String(row.university || '').toUpperCase() === code).map(row => ({
+            courses: rows.filter(row => String(row.university || '').trim().toUpperCase() === code).map(row => ({
                 title: resolveCourseTitle(row.course_id, row.title),
-                icon: (catalog[row.course_id] && catalog[row.course_id].icon) || 'fa-book',
+                icon: (catalog[row.course_id] && catalog[row.course_id].icon) || getCourseIcon(row.course_id),
                 link: coursePageLink(row.course_id),
                 courseId: row.course_id,
                 totalLessons: 0,
