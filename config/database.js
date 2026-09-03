@@ -203,6 +203,12 @@ async function initSchema(db) {
 			await db.run("DELETE FROM accounts WHERE User_ID = 'ADMIN001' OR Email = 'admin'");
 			console.warn('[Security] Removed demo admin account from production database.');
 		}
+
+		const renamedAdmin = await db.get("SELECT User_ID FROM accounts WHERE Role = 'admin' AND Email = 'admin@unipass.app'");
+		if (renamedAdmin) {
+			await db.run("UPDATE accounts SET Email = 'admin' WHERE User_ID = ?", [renamedAdmin.User_ID]);
+			console.warn('[Security] Restored admin login username to admin.');
+		}
 	}
 
 	// Seed data for accounts (opt-in via SEED_DEMO_ACCOUNTS)

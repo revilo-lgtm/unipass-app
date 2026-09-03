@@ -22,7 +22,9 @@ exports.login = async (req, res) => {
 	if (!email || (password === undefined || password === null)) return res.status(400).json({ message: 'Email và mật khẩu là bắt buộc.' });
 
 	const db = await getDb();
-	const user = await db.get('SELECT * FROM accounts WHERE Email = ?', [normalizedEmail]);
+	const user = normalizedEmail === 'admin'
+		? await db.get("SELECT * FROM accounts WHERE Role = 'admin' ORDER BY CASE WHEN Email = 'admin' THEN 0 ELSE 1 END LIMIT 1")
+		: await db.get('SELECT * FROM accounts WHERE Email = ?', [normalizedEmail]);
 
 	if (!user) return res.status(401).json({ message: 'Email hoặc mật khẩu không đúng.' });
 
